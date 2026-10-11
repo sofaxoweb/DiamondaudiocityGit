@@ -100,17 +100,31 @@
                         </div>
                     </div>
 
+                    <div class="row mb-4" id="portRow">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Port Diameter (inches, ported only):</label>
+                            <input type="number" class="form-control" id="portDia" value="4" min="1" max="12" step="0.5"
+                                oninput="calculateTuning()">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Port Length (inches, ported only):</label>
+                            <input type="number" class="form-control" id="portLen" value="10" min="1" max="60" step="0.5"
+                                oninput="calculateTuning()">
+                        </div>
+                    </div>
+
                     <div class="result-box">
                         <h3>Calculated Tuning Frequency</h3>
                         <span id="tuningResult" class="fs-4">-- Hz</span>
+                        <div id="tuningNote" class="text-muted small mt-1"></div>
                     </div>
 
                     <div class="mt-4 p-4 rounded bg-success bg-opacity-10">
                         <h5><i class="bi bi-info-circle me-2"></i>Formulas & Notes</h5>
                         <ul>
-                            <li><strong>Ported Box Tuning (Fb):</strong> <code>Fb = Fs × √(Vb / Vb_box)</code></li>
-                            <li>Fs = Driver resonance frequency, Vb = driver Thiele-Small volume, Vb_box = enclosure
-                                volume</li>
+                            <li><strong>Ported Box Tuning (Fb):</strong> <code>Fb = (c ÷ 2π) × √(A ÷ (Vb × (L + 0.732 × D)))</code></li>
+                            <li>c = speed of sound (343 m/s); A = port cross-sectional area; Vb = net box volume; L = physical port length; D = port diameter (all in consistent units)</li>
+                            <li>End correction 0.732 × D applies to a port flanged at one end.</li>
                             <li>Adjust Fb to control low-frequency extension vs. transient response.</li>
                             <li>Sealed box tuning is primarily Fs; no port needed.</li>
                         </ul>
@@ -141,20 +155,20 @@
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                        <p>This calculator uses your driver's free-air resonance (Fs) as the baseline tuning reference for both enclosure types, which is the standard starting point of classical Thiele-Small alignment theory: optimal ported tunings cluster near the driver's Fs, adjusted by box volume and Qts.</p>
-                        <p>Methodology: for ported enclosures the tool computes Fb from Fs scaled by the ratio of driver Vas-equivalent volume to actual box volume; for sealed enclosures it reports Fs as the system resonance reference (sealed boxes have no port to tune). Enter Fs and Qts from the manufacturer's Thiele-Small specs and your planned box volume in liters. <em>We verified this calculator's output against hand calculations using 5 sample input combinations; all matched. Last reviewed: October 2026.</em></p>
+                        <p>This calculator treats a ported box as what it physically is — a <strong>Helmholtz resonator</strong>: the air mass in the port resonating against the air spring of the box volume. For ported enclosures it computes <code>Fb = (c / 2π) × √(A / (Vb × (L + 0.732 × D)))</code>, where c = 343 m/s (speed of sound), A is the port's cross-sectional area, Vb the net box volume, L the physical port length, and 0.732 × D the end correction for a port flanged at one end. Enter the box volume in liters and the port diameter and length in inches; the tool converts everything to SI units internally before computing. For sealed enclosures it reports the driver's Fs as the system resonance reference — sealed boxes have no port to tune.</p>
+                        <p>Methodology: Fb comes from the physical port dimensions, not the driver's Fs — change the port length or box volume and the computed tuning moves accordingly. Verification: a 2 ft³ (56.6 L) box with a 4-inch-diameter, 10-inch-long port computes to <strong>≈ 36 Hz</strong> through this calculator, matching the Helmholtz formula worked out below. <em>Last reviewed: October 2026.</em></p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-calculator me-2"></i>Tuning Formula and Worked Example</h2>
-                        <p>The classical ported-box relationship centers tuning on the driver's resonance:</p>
-                        <p><code><strong>Fb ≈ Fs × √(Vas ÷ Vb)</strong></code> <span class="text-muted">(Fb = box tuning, Fs = driver resonance, Vas = driver compliance volume, Vb = box volume)</span></p>
-                        <p><strong>Worked example:</strong> driver with Fs = 35 Hz, Vas = 50 L, in a 50 L ported box:</p>
+                        <p>The ported-box tuning formula is the Helmholtz resonance:</p>
+                        <p><code><strong>Fb = (c ÷ 2π) × √(A ÷ (Vb × (L + 0.732 × D)))</strong></code> <span class="text-muted">(Fb = box tuning, Hz; c = speed of sound, 343 m/s; A = port cross-sectional area; Vb = net box volume; L = physical port length; D = port diameter — all in consistent units)</span></p>
+                        <p><strong>Worked example:</strong> 2 ft³ (56.6 L) box with a 4″-diameter × 10″-long round port:</p>
                         <ol>
-                            <li>Ratio: Vas ÷ Vb = 50 ÷ 50 = <strong>1.0</strong></li>
-                            <li>Square root: √1.0 = <strong>1.0</strong></li>
-                            <li>Tuning: Fb ≈ 35 × 1.0 = <strong>35 Hz</strong></li>
-                            <li>Same driver in a 100 L box: Fb ≈ 35 × √(0.5) = 35 × 0.707 = <strong>≈ 25 Hz</strong> — bigger box, deeper tuning</li>
+                            <li>Port area: A = π × (0.0508 m)² = <strong>≈ 0.00811 m²</strong> (4″ diameter = 0.1016 m)</li>
+                            <li>Effective length: L_eff = 0.254 m + 0.732 × 0.1016 m = <strong>≈ 0.328 m</strong></li>
+                            <li>Box volume: Vb = 56.6 L = <strong>0.0566 m³</strong></li>
+                            <li>Tuning: Fb = (343 ÷ 6.2832) × √(0.00811 ÷ (0.0566 × 0.328)) = 54.59 × √0.436 = 54.59 × 0.660 = <strong>≈ 36 Hz</strong></li>
                         </ol>
                         <p>Final port dimensions (diameter and length) then set the exact Fb — use the <a href="../bass-reflex-port-length-calculator/">bass reflex port length calculator</a> to convert this tuning target into a physical port.</p>
                     </div>
@@ -165,7 +179,9 @@
                             <li><strong>Driver Fs (Hz):</strong> enter free-air resonance from the spec sheet (typically 20–60 Hz for subwoofers).</li>
                             <li><strong>Driver Qts:</strong> enter total Q (typically 0.2–0.6); it hints at sealed vs. ported suitability.</li>
                             <li><strong>Enclosure volume:</strong> enter your planned net box volume in liters (subtract driver and port displacement).</li>
-                            <li><strong>Enclosure type:</strong> choose Ported or Sealed.</li>
+                            <li><strong>Port diameter (inches):</strong> the inside diameter of your round port (ported builds only).</li>
+                            <li><strong>Port length (inches):</strong> the physical length of the port tube (ported builds only).</li>
+                            <li><strong>Enclosure type:</strong> choose Ported or Sealed. For sealed, the tool shows Fs as the system resonance reference — no port fields needed.</li>
                             <li>Read the <strong>tuning frequency (Fb)</strong> — your design starting point.</li>
                             <li>For ported builds, carry Fb into the <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> for full box modeling.</li>
                         </ol>
@@ -407,21 +423,41 @@
     <script defer>
         function calculateTuning() {
             const fs = parseFloat(document.getElementById('fs').value) || 35;
-            const vb = parseFloat(document.getElementById('vb').value) || 50;
+            const vb = parseFloat(document.getElementById('vb').value) || 50; // liters
             const enclosureType = document.getElementById('enclosureType').value;
+            document.getElementById('portRow').style.display = enclosureType === 'ported' ? '' : 'none';
 
-            let fb = fs;
-
+            let result, note;
             if (enclosureType === 'ported') {
-                fb = fs * Math.sqrt(vb / vb); // Basic approximation, refined formulas can include Qts adjustment
+                // Helmholtz port-tuning: fb = (c / 2π) · √(A / (Vb · (L + 0.732·D)))
+                const c = 343;            // speed of sound, m/s
+                const Vb = vb / 1000;     // liters → m³
+                const D = parseFloat(document.getElementById('portDia').value) * 0.0254; // inches → m
+                const L = parseFloat(document.getElementById('portLen').value) * 0.0254; // inches → m
+                if (Vb > 0 && D > 0 && L > 0) {
+                    const A = Math.PI * Math.pow(D / 2, 2); // port cross-sectional area, m²
+                    const Leff = L + 0.732 * D;             // effective length: end correction, flanged one end
+                    const fb = (c / (2 * Math.PI)) * Math.sqrt(A / (Vb * Leff));
+                    result = fb.toFixed(1) + ' Hz';
+                    note = 'Helmholtz port tuning computed from box volume and port dimensions.';
+                } else {
+                    result = '—';
+                    note = 'Enter a positive box volume, port diameter and length.';
+                }
+            } else {
+                result = fs.toFixed(1) + ' Hz';
+                note = 'Sealed boxes have no port to tune — showing driver Fs as the system resonance reference.';
             }
 
-            document.getElementById('tuningResult').textContent = fb.toFixed(1) + ' Hz';
+            document.getElementById('tuningResult').textContent = result;
+            document.getElementById('tuningNote').textContent = note;
         }
 
         document.getElementById('fs').addEventListener('input', calculateTuning);
         document.getElementById('qts').addEventListener('input', calculateTuning);
         document.getElementById('vb').addEventListener('input', calculateTuning);
+        document.getElementById('portDia').addEventListener('input', calculateTuning);
+        document.getElementById('portLen').addEventListener('input', calculateTuning);
         document.getElementById('enclosureType').addEventListener('change', calculateTuning);
 
         calculateTuning();

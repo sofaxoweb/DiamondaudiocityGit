@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chord Progression Generator – Musical Keys, Diatonic & Jazz Progressions</title>
+  <meta name="description"
+    content="Generate musical chord progressions in all 12 keys. Explore pop 4-chord loops, jazz ii-V-I cadences, modal interchange, and functional Roman numeral analysis." />
+  <meta name="keywords"
+    content="chord progression generator, chord sequences, songwriting chords, diatonic chord generator, jazz chord progression generator, ii-v-i generator, pop chord progression" />
+  <link rel="canonical" href="https://pitchdetectors.com/music-theory-tools/chord-progression-generator/" />
+  <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/bootstrap5.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link href="./assets/tools.css" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"
+    crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a chord progression in music theory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A chord progression is an intentional sequence of two or more musical chords played in succession. Progressions establish tonal gravity and harmonic direction by navigating between states of acoustic rest (tonic), departure or preparation (subdominant/predominant), and harmonic tension (dominant) that resolves back to the home key."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Roman numeral analysis in chord progressions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Roman numeral analysis represents chords by their scale degree within a parent key. Uppercase numerals (I, IV, V) represent major chords, while lowercase numerals (ii, iii, vi) represent minor chords, and a degree symbol (vii°) denotes diminished chords. This allows musicians to transpose progressions effortlessly to any of the 12 chromatic keys."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the most famous pop chord progression?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The I - V - vi - IV progression (in C major: C - G - Am - F) is the most commercially successful chord progression in modern music history. Featured in hundreds of chart-topping pop, rock, and country hits, it balances emotional uplift (I and V) with melancholic poignancy (vi) and open resolution (IV)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the jazz ii - V - I chord cadence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The ii - V - I progression is the foundational harmonic cadence of jazz music. In C major, it is Dm7 (supertonic subdominant) to G7 (dominant 7th with tritone tension) to Cmaj7 (tonic resolution). The smooth circle-of-fifths root motion and stepwise half-step guide tone resolution make it the standard building block of jazz standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is modal interchange (borrowed chords)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modal interchange occurs when a composer temporarily borrows chords from the parallel minor key while remaining in a major key. The most iconic example is the 'minor iv' chord (playing Fm instead of F in C major), which creates a poignant, bittersweet resolution back to the major tonic I."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does harmonic rhythm affect a song's feel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Harmonic rhythm is the rate at which chords change over time. Slower harmonic rhythm (changing chords every 1 to 2 measures) creates a spacious, atmospheric, or heavy foundation common in ambient, ballad, and trap music. Faster harmonic rhythm (changing chords every 1 to 2 beats) creates momentum, harmonic urgency, and virtuosic complexity common in bebop and classical counterpoint."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-3 col-md-4">
+        <div class="tools-sidebar">
+          <div class="sidebar-search mb-4">
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                onkeyup="searchTools()">
+            </div>
+          </div>
+
+          <div class="sidebar-categories">
+            <div class="sidebar-category active">
+              <h5><i class="bi bi-music-note-list me-2"></i>Music Theory Tools</h5>
+              <ul class="sidebar-links">
+                <li><a href="/music-theory-tools/scale-finder/"><i class="bi bi-keyboard"></i> Scale Finder</a></li>
+                <li><a href="/music-theory-tools/chord-progression-generator/" class="active"><i
+                      class="bi bi-journal-music"></i> Chord Progression Generator</a></li>
+                <li><a href="/music-theory-tools/interval-calculator/"><i class="bi bi-circle-half"></i> Interval
+                    Calculator</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="col-lg-9 col-md-8">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/music-theory-tools/">Music Theory Tools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Chord Progression Generator</li>
+          </ol>
+        </nav>
+
+        <div class="tool-container">
+          <div class="tool-title">
+            <h2><i class="bi bi-journal-music me-2"></i>Chord Progression Generator</h2>
+            <p>Generate chord progressions in any key, using major, minor, 7th, and extended chords. Perfect for
+              songwriting, music production, and learning music theory.</p>
+          </div>
+
+          <!-- Input -->
+          <div class="row mb-4">
+            <div class="col-md-6 mx-auto">
+              <label class="form-label fw-bold">Select Key</label>
+              <select id="keySelect" class="form-control form-control-lg text-center" onchange="generateProgression()">
+                <option value="C">C</option>
+                <option value="C#">C# / Db</option>
+                <option value="D">D</option>
+                <option value="D#">D# / Eb</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F# / Gb</option>
+                <option value="G">G</option>
+                <option value="G#">G# / Ab</option>
+                <option value="A">A</option>
+                <option value="A#">A# / Bb</option>
+                <option value="B">B</option>
+              </select>
+            </div>
+            <div class="col-md-6 mx-auto mt-3 mt-md-0 text-center">
+              <label class="form-label fw-bold">Progression Length</label>
+              <select id="lengthSelect" class="form-control form-control-lg text-center"
+                onchange="generateProgression()">
+                <option value="3">3 Chords</option>
+                <option value="4" selected>4 Chords</option>
+                <option value="5">5 Chords</option>
+                <option value="6">6 Chords</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="result-box text-center">
+            <h3>Generated Progression</h3>
+            <p id="progressionDisplay" class="fs-4 fw-bold mt-2">C - G - Am - F</p>
+            <button class="btn btn-primary mt-3" onclick="generateProgression()">🔄 Generate New Progression</button>
+          </div>
+
+          <!-- Educational & Technical Content -->
+          <article class="tool-container mt-4">
+            <section class="mb-4">
+              <h1 class="mb-3">Chord Progression Generator: Harmonic Architecture & Cadence Engine</h1>
+              <p class="lead text-muted">
+                Create compelling musical chord progressions across all 12 chromatic keys. Explore diatonic harmony,
+                functional Roman numeral analysis, modal interchange, and iconic cadences that define pop, jazz, rock,
+                and classical composition.
+              </p>
+              <p>
+                In musical composition, melody provides narrative contour, rhythm injects physical motion, but
+                <strong>harmony establishes emotional context</strong>. A single melodic note like $E$ sounds triumphant
+                over a $C\text{ major}$ chord, deeply melancholic over an $A\text{ minor}$ chord, mysterious over an
+                $F\sharp\text{ half-diminished}$ chord, and breathtakingly dramatic over an $F\text{maj7}\sharp 11$. A
+                chord progression is not merely a random string of chords; it is an organized acoustic journey that
+                navigates between states of rest, departure, tension, and resolution.
+              </p>
+            </section>
+
+            <!-- Functional Harmony: Tonic, Subdominant, Dominant -->
+            <section class="mb-4">
+              <h2 class="text-teal mb-3"><i class="bi bi-compass me-2"></i>Functional Harmony: The Three Pillars of
+                Tonal Gravity</h2>
+              <p>
+                Under classical and contemporary music theory, all diatonic chords belong to one of three functional
+                families based on their acoustic tension and desire to resolve:
+              </p>
+              <div class="row g-3 my-2">
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm p-3 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-house-door text-teal me-2"></i>1. Tonic Family ($T$)
+                    </h5>
+                    <p class="small text-muted mb-2">Chords: $I$ (Tonic), $vi$ (Submediant), $iii$ (Mediant)</p>
+                    <p class="small mb-0">
+                      Represents maximum stability, rest, and acoustic equilibrium. Progressions almost always begin or
+                      conclude here. The $vi$ chord acts as a softer, emotional tonic substitute (relative minor).
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm p-3 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-arrow-right-circle text-teal me-2"></i>2. Subdominant
+                      Family ($S$)</h5>
+                    <p class="small text-muted mb-2">Chords: $IV$ (Subdominant), $ii$ (Supertonic)</p>
+                    <p class="small mb-0">
+                      Represents departure, preparation, and moderate tension. Moves the listener away from home and
+                      serves as a harmonic bridge (predominant) leading directly toward the dominant.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm p-3 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-lightning-charge text-teal me-2"></i>3. Dominant
+                      Family ($D$)</h5>
+                    <p class="small text-muted mb-2">Chords: $V$ (Dominant), $vii^\circ$ (Leading Tone)</p>
+                    <p class="small mb-0">
+                      Contains maximum acoustic tension and instability. Driven by the leading tone (scale degree
+                      $\hat{7}$) pulling upward toward $\hat{1}$ and the tritone interval in dominant 7th chords ($V7$)
+                      that urgently demands resolution to $I$.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Diatonic Harmony Table: Major vs Minor -->
+            <section class="mb-4">
+              <h2 class="text-teal mb-3"><i class="bi bi-table me-2"></i>Diatonic Triads & 7th Chords Across Major and
+                Minor Keys</h2>
+              <div class="table-responsive mb-3">
+                <table class="table table-hover table-bordered align-middle">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Degree</th>
+                      <th>Major Key Triad</th>
+                      <th>Major Key 7th</th>
+                      <th>Harmonic Function</th>
+                      <th>Natural Minor Triad</th>
+                      <th>Natural Minor 7th</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">I / i</td>
+                      <td>Major ($I$)</td>
+                      <td>Major 7th ($I\text{maj7}$)</td>
+                      <td>Tonic (Home)</td>
+                      <td>Minor ($i$)</td>
+                      <td>Minor 7th ($i\text{m7}$)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">ii / ii°</td>
+                      <td>Minor ($ii$)</td>
+                      <td>Minor 7th ($ii\text{m7}$)</td>
+                      <td>Predominant / Subdominant</td>
+                      <td>Diminished ($ii^\circ$)</td>
+                      <td>Half-Diminished ($ii^{\varnothing 7}$)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">iii / III</td>
+                      <td>Minor ($iii$)</td>
+                      <td>Minor 7th ($iii\text{m7}$)</td>
+                      <td>Tonic Substitute / Mediant</td>
+                      <td>Major ($III$)</td>
+                      <td>Major 7th ($III\text{maj7}$)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">IV / iv</td>
+                      <td>Major ($IV$)</td>
+                      <td>Major 7th ($IV\text{maj7}$)</td>
+                      <td>Subdominant</td>
+                      <td>Minor ($iv$)</td>
+                      <td>Minor 7th ($iv\text{m7}$)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">V / v</td>
+                      <td>Major ($V$)</td>
+                      <td>Dominant 7th ($V7$)</td>
+                      <td>Dominant (Tension)</td>
+                      <td>Minor ($v$) / Major ($V$)</td>
+                      <td>Dom 7th ($V7$ in Harmonic Minor)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">vi / VI</td>
+                      <td>Minor ($vi$)</td>
+                      <td>Minor 7th ($vi\text{m7}$)</td>
+                      <td>Submediant / Relative Minor</td>
+                      <td>Major ($VI$)</td>
+                      <td>Major 7th ($VI\text{maj7}$)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">vii° / VII</td>
+                      <td>Diminished ($vii^\circ$)</td>
+                      <td>Half-Dim ($vii^{\varnothing 7}$)</td>
+                      <td>Leading Tone Dominant</td>
+                      <td>Major ($VII$)</td>
+                      <td>Dominant 7th ($VII7$)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Legendary Chord Progressions -->
+            <section class="mb-4">
+              <h2 class="text-teal mb-3"><i class="bi bi-stars me-2"></i>Iconic Chord Progressions That Shaped Music
+              </h2>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-disc text-teal me-2"></i>1. The Pop 4-Chord Loop ($I -
+                      V - vi - IV$)</h5>
+                    <p class="small text-muted mb-1">In C Major: <code>C – G – Am – F</code></p>
+                    <p class="small mb-0">
+                      The undisputed champion of modern songwriting, powering hundreds of global anthems (The Beatles'
+                      "Let It Be", Journey's "Don't Stop Believin'", Adele's "Someone Like You"). Rotations include the
+                      dramatic $vi - IV - I - V$ (Hans Zimmer, Lady Gaga).
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-vinyl text-teal me-2"></i>2. The Jazz Golden Cadence
+                      ($ii - V - I$)</h5>
+                    <p class="small text-muted mb-1">In C Major: <code>Dm7 – G7 – Cmaj7</code></p>
+                    <p class="small mb-0">
+                      The cornerstone of the American Songbook and bebop. Employs root motion by descending fifths ($D
+                      \to G \to C$) and half-step voice leading where the 7th of $ii$ falls smoothly to the 3rd of $V7$,
+                      which resolves into $I$.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-record-circle text-teal me-2"></i>3. The Andalusian
+                      Cadence ($i - lat VII - lat VI - V$)</h5>
+                    <p class="small text-muted mb-1">In A Minor: <code>Am – G – F – E(7)</code></p>
+                    <p class="small mb-0">
+                      A descending phrygian tetrachord progression famous in flamenco, rock, and cinematic film scores
+                      (Dire Straits' "Sultans of Swing", Ray Charles' "Hit the Road Jack"). Concludes with an
+                      authoritative major $V$ resolution.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-music-note-beamed text-teal me-2"></i>4. The Royal
+                      Road Progression ($IV - V - iii - vi$)</h5>
+                    <p class="small text-muted mb-1">In C Major: <code>F – G – Em – Am</code></p>
+                    <p class="small mb-0">
+                      Dubbed <em>Oudou Shinkou</em> in Japanese music theory, this progression drives the majority of
+                      J-Pop, anime theme songs, and progressive EDM. Avoids landing on the root tonic $I$, maintaining
+                      an intoxicating forward momentum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Modal Interchange & Advanced Harmonic Techniques -->
+            <section class="mb-4">
+              <h2 class="text-teal mb-3"><i class="bi bi-palette me-2"></i>Advanced Songwriting: Modal Interchange &
+                Voice Leading</h2>
+              <div class="p-3 bg-light rounded border mb-3">
+                <h6 class="fw-bold text-dark mb-1"><i class="bi bi-droplet-half text-teal me-2"></i>The Magic of the
+                  "Minor iv" Chord ($I - IV - iv - I$)</h6>
+                <p class="small text-muted mb-2">
+                  One of the most emotionally devastating moves in songwriting is replacing or following a major $IV$
+                  with a borrowed minor $iv$ (e.g., $C \to F \to Fm \to C$). In $Fm$, the note $A\flat$ is borrowed from
+                  the parallel minor scale. The voice leading drops in poignant half-steps: $A \to A\flat \to G$,
+                  creating an unforgettable pang of nostalgia and sorrow.
+                </p>
+                <h6 class="fw-bold text-dark mb-1"><i class="bi bi-arrow-repeat text-teal me-2"></i>Smooth Voice Leading
+                  Principle</h6>
+                <p class="small text-muted mb-0">
+                  Amateur chord progressions often sound clunky because the chords are jumped up and down the keyboard
+                  in root position. Professional arrangers keep <strong>common tones</strong> stationary and move other
+                  voices by the smallest possible scalar intervals (stepwise motion of 1 or 2 semitones).
+                </p>
+              </div>
+            </section>
+
+            <!-- Frequently Asked Questions -->
+            <section class="mb-4">
+              <h2 class="text-teal mb-4"><i class="bi bi-question-circle me-2"></i>Frequently Asked Questions</h2>
+              <div class="accordion" id="progFaqAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="pFaqHead1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pFaqCol1"
+                      aria-expanded="true" aria-controls="pFaqCol1">
+                      What is a chord progression in music theory?
+                    </button>
+                  </h3>
+                  <div id="pFaqCol1" class="accordion-collapse collapse show" aria-labelledby="pFaqHead1"
+                    data-bs-parent="#progFaqAccordion">
+                    <div class="accordion-body">
+                      A chord progression is an intentional sequence of two or more musical chords played in succession.
+                      Progressions establish tonal gravity and harmonic direction by navigating between states of
+                      acoustic rest (tonic), departure or preparation (subdominant/predominant), and harmonic tension
+                      (dominant) that resolves back to the home key.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="pFaqHead2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pFaqCol2" aria-expanded="false" aria-controls="pFaqCol2">
+                      What is Roman numeral analysis in chord progressions?
+                    </button>
+                  </h3>
+                  <div id="pFaqCol2" class="accordion-collapse collapse" aria-labelledby="pFaqHead2"
+                    data-bs-parent="#progFaqAccordion">
+                    <div class="accordion-body">
+                      Roman numeral analysis represents chords by their scale degree within a parent key. Uppercase
+                      numerals (I, IV, V) represent major chords, while lowercase numerals (ii, iii, vi) represent minor
+                      chords, and a degree symbol (vii°) denotes diminished chords. This allows musicians to transpose
+                      progressions effortlessly to any of the 12 chromatic keys.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="pFaqHead3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pFaqCol3" aria-expanded="false" aria-controls="pFaqCol3">
+                      What is the most famous pop chord progression?
+                    </button>
+                  </h3>
+                  <div id="pFaqCol3" class="accordion-collapse collapse" aria-labelledby="pFaqHead3"
+                    data-bs-parent="#progFaqAccordion">
+                    <div class="accordion-body">
+                      The I - V - vi - IV progression (in C major: C - G - Am - F) is the most commercially successful
+                      chord progression in modern music history. Featured in hundreds of chart-topping pop, rock, and
+                      country hits, it balances emotional uplift (I and V) with melancholic poignancy (vi) and open
+                      resolution (IV).
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="pFaqHead4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pFaqCol4" aria-expanded="false" aria-controls="pFaqCol4">
+                      What is the jazz ii - V - I chord cadence?
+                    </button>
+                  </h3>
+                  <div id="pFaqCol4" class="accordion-collapse collapse" aria-labelledby="pFaqHead4"
+                    data-bs-parent="#progFaqAccordion">
+                    <div class="accordion-body">
+                      The ii - V - I progression is the foundational harmonic cadence of jazz music. In C major, it is
+                      Dm7 (supertonic subdominant) to G7 (dominant 7th with tritone tension) to Cmaj7 (tonic
+                      resolution). The smooth circle-of-fifths root motion and stepwise half-step guide tone resolution
+                      make it the standard building block of jazz standards.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="pFaqHead5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pFaqCol5" aria-expanded="false" aria-controls="pFaqCol5">
+                      What is modal interchange (borrowed chords)?
+                    </button>
+                  </h3>
+                  <div id="pFaqCol5" class="accordion-collapse collapse" aria-labelledby="pFaqHead5"
+                    data-bs-parent="#progFaqAccordion">
+                    <div class="accordion-body">
+                      Modal interchange occurs when a composer temporarily borrows chords from the parallel minor key
+                      while remaining in a major key. The most iconic example is the 'minor iv' chord (playing Fm
+                      instead of F in C major), which creates a poignant, bittersweet resolution back to the major tonic
+                      I.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="pFaqHead6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pFaqCol6" aria-expanded="false" aria-controls="pFaqCol6">
+                      How does harmonic rhythm affect a song's feel?
+                    </button>
+                  </h3>
+                  <div id="pFaqCol6" class="accordion-collapse collapse" aria-labelledby="pFaqHead6"
+                    data-bs-parent="#progFaqAccordion">
+                    <div class="accordion-body">
+                      Harmonic rhythm is the rate at which chords change over time. Slower harmonic rhythm (changing
+                      chords every 1 to 2 measures) creates a spacious, atmospheric, or heavy foundation common in
+                      ambient, ballad, and trap music. Faster harmonic rhythm (changing chords every 1 to 2 beats)
+                      creates momentum, harmonic urgency, and virtuosic complexity common in bebop and classical
+                      counterpoint.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Related Music Theory Tools -->
+            <div class="card my-4 shadow-sm border-0 bg-light">
+              <div class="card-body p-4">
+                <h5 class="fw-bold mb-3"><i class="bi bi-link-45deg text-teal me-2"></i>Explore Related Music Theory
+                  Tools</h5>
+                <div class="row g-2">
+                  <div class="col-sm-6 col-md-3">
+                    <a class="btn btn-outline-primary w-100 text-start" href="/music-theory-tools/chord-identifier/">
+                      <i class="bi bi-vinyl me-1"></i> Chord Identifier
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <a class="btn btn-outline-primary w-100 text-start" href="/music-theory-tools/scale-finder/">
+                      <i class="bi bi-grid-3x3 me-1"></i> Scale Finder
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <a class="btn btn-outline-primary w-100 text-start" href="/music-theory-tools/interval-calculator/">
+                      <i class="bi bi-arrows-expand me-1"></i> Interval Calculator
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <a class="btn btn-outline-primary w-100 text-start" href="/music-theory-tools/online-metronome/">
+                      <i class="bi bi-stopwatch me-1"></i> Online Metronome
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div> <!-- /main col -->
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="./assets/bootstrap5.js" defer></script>
+  <script src="./assets/tools.js" defer></script>
+
+  <!-- Tool JS: chord generation -->
+  <script defer>
+    const chordFormulas = {
+      major: ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'vii°'],
+      chords: ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+    };
+
+    const chordMap = {
+      'C': ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bdim'],
+      'C#': ['C#', 'D#m', 'Fm', 'F#', 'G#', 'A#m', 'Cdim'],
+      'D': ['D', 'Em', 'F#m', 'G', 'A', 'Bm', 'C#dim'],
+      'D#': ['D#', 'Fm', 'Gm', 'G#', 'A#', 'Cm', 'Ddim'],
+      'E': ['E', 'F#m', 'G#m', 'A', 'B', 'C#m', 'D#dim'],
+      'F': ['F', 'Gm', 'Am', 'A#', 'C', 'Dm', 'Edim'],
+      'F#': ['F#', 'G#m', 'A#m', 'B', 'C#', 'D#m', 'Fdim'],
+      'G': ['G', 'Am', 'Bm', 'C', 'D', 'Em', 'F#dim'],
+      'G#': ['G#', 'A#m', 'Cm', 'C#', 'D#', 'Fm', 'Gdim'],
+      'A': ['A', 'Bm', 'C#m', 'D', 'E', 'F#m', 'G#dim'],
+      'A#': ['A#', 'Cm', 'Dm', 'D#', 'F', 'Gm', 'Adim'],
+      'B': ['B', 'C#m', 'D#m', 'E', 'F#', 'G#m', 'A#dim']
+    };
+
+    function generateProgression() {
+      const key = document.getElementById('keySelect').value;
+      const length = parseInt(document.getElementById('lengthSelect').value);
+      const chords = chordMap[key];
+      let progression = [];
+      for (let i = 0; i < length; i++) {
+        const idx = Math.floor(Math.random() * chords.length);
+        progression.push(chords[idx]);
+      }
+      document.getElementById('progressionDisplay').textContent = progression.join(' - ');
+    }
+
+    // init
+    generateProgression();
+
+    // include header/footer
+    window.addEventListener("load", () => {
+      Promise.all([
+        fetch("../../header.html").then(res => res.text()),
+        fetch("../../footer.html").then(res => res.text())
+      ]).then(([header, footer]) => {
+        document.getElementById("header").innerHTML = header;
+        document.getElementById("footer").innerHTML = footer;
+      }).catch(err => console.error("Include load failed:", err));
+    });
+  </script>
+
+</body>
+
+</html>

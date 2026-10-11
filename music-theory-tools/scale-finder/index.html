@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Scale Finder – Notes, Intervals & Modes Explorer | Pitch Detectors</title>
+    <meta name="description"
+        content="Interactive musical scale finder and mode explorer. Discover notes, interval formulas, bright-to-dark modal hierarchies, and audio playback for all 12 keys.">
+    <meta name="keywords"
+        content="scale finder, musical scale explorer, major scale, natural minor, church modes, pentatonic scale, blues scale, scale notes and intervals">
+
+    <link rel="canonical" href="https://pitchdetectors.com/music-theory-tools/scale-finder/">
+
+    <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="./assets/bootstrap5.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="./assets/tools.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the structural difference between a major scale and a natural minor scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The major scale follows the whole-step and half-step formula W-W-H-W-W-W-H (1-2-3-4-5-6-7), creating bright, consonant harmonic stability anchored by its major 3rd, major 6th, and major 7th. The natural minor scale (Aeolian mode) lowers degrees 3, 6, and 7 by one semitone: W-H-W-W-H-W-W (1-2-♭3-4-5-♭6-♭7), imparting an introspective, darker tonal character."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the 7 diatonic church modes in order from brightest to darkest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 7 diatonic modes ranked from brightest to darkest based on the number of sharped or flatted scale degrees are: Lydian (1-2-3-♯4-5-6-7), Ionian/Major (1-2-3-4-5-6-7), Mixolydian (1-2-3-4-5-6-♭7), Dorian (1-2-♭3-4-5-6-♭7), Aeolian/Natural Minor (1-2-♭3-4-5-♭6-♭7), Phrygian (1-♭2-♭3-4-5-♭6-♭7), and Locrian (1-♭2-♭3-4-♭5-♭6-♭7)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the harmonic minor scale have an augmented second interval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The natural minor scale has a flat 7th (subtonic), lacking a half-step leading tone to pull resolving melodies back to the tonic. The harmonic minor scale raises the 7th degree back to a natural 7. This creates a wide 3-semitone interval (augmented second) between ♭6 and ♮7, producing its iconic dramatic, neoclassical, and Middle Eastern sonic contour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are pentatonic scales so popular for melodic improvisation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pentatonic scales omit the two notes of the diatonic scale that form half-step intervals and the unstable tritone. For example, the C Major pentatonic scale (C-D-E-G-A) eliminates F (the 4th) and B (the 7th). Without unstable leading tones, almost every note sounds harmonious over underlying tonic and dominant chords without dissonant collisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 'blue note' in the blues scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The blues scale expands the 5-note minor pentatonic scale (1-♭3-4-5-♭7) by inserting a diminished fifth (♭5 / ♯4) between the perfect 4th and perfect 5th. This chromatic passing tone (the 'blue note') creates intense acoustic tension that resolves expressively up to the 5th or down to the 4th."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do guitarists and keyboardists visualize scale patterns across their instruments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keyboardists visualize scales through the spatial distribution of white and black keys, observing where the half-step intervals (B-C and E-F) occur. Guitarists typically use two spatial frameworks: the CAGED system (which anchors 5 interconnected octave positions based on open chord shapes) and the 3-Notes-Per-String (3NPS) system, which standardizes fingering mechanics for fast alternate-picking modal runs."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .scale-notes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 24px 0;
+        }
+
+        .scale-note {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .scale-note.root {
+            background: var(--teal);
+            color: #fff;
+            border: 3px solid var(--accent);
+            transform: scale(1.05);
+        }
+
+        .scale-note.note {
+            background: var(--dark-blue);
+            color: #fff;
+        }
+
+        .scale-note:hover {
+            transform: scale(1.15);
+            background: var(--accent);
+            color: var(--dark-blue);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        .scale-note.playing {
+            animation: pulse 0.35s ease;
+            background: #fff !important;
+            color: var(--teal) !important;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+                box-shadow: 0 0 25px rgba(253, 235, 158, 0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <div class="tools-sidebar">
+                    <div class="sidebar-search mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                                onkeyup="searchTools()">
+                        </div>
+                    </div>
+
+                    <div class="sidebar-categories">
+                        <div class="sidebar-category active">
+                            <h5><i class="bi bi-music-note-list me-2"></i>Music Theory Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/music-theory-tools/scale-finder/" class="active"><i
+                                            class="bi bi-grid-3x3"></i> Scale Finder</a></li>
+                                <li><a href="/music-theory-tools/chord-identifier/"><i class="bi bi-vinyl"></i> Chord
+                                        Identifier</a></li>
+                                <li><a href="/music-theory-tools/chord-progression-generator/"><i
+                                            class="bi bi-diagram-3"></i>
+                                        Chord Progression</a></li>
+                                <li><a href="/music-theory-tools/online-metronome/"><i class="bi bi-stopwatch"></i>
+                                        Online Metronome</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-category">
+                            <h5><i class="bi bi-soundwave me-2"></i>Pitch Detector Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/pitch-detector-tools/note-to-frequency-online/"><i
+                                            class="bi bi-calculator"></i>
+                                        Note to Frequency</a></li>
+                                <li><a href="/pitch-detector-tools/frequency-to-note-online/"><i
+                                            class="bi bi-arrow-left-right"></i>
+                                        Frequency to Note</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-9">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/music-theory-tools/">Music Theory Tools</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Scale Finder</li>
+                    </ol>
+                </nav>
+
+                <div class="tool-container">
+                    <div class="tool-title">
+                        <h2><i class="bi bi-grid-3x3 me-2"></i>Scale Finder</h2>
+                        <p>Explore musical scales in any key. See the notes, intervals, and hear how each scale sounds.
+                        </p>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Root Note:</label>
+                            <select class="form-select form-select-lg" id="rootNote" onchange="updateScale()">
+                                <option value="C">C</option>
+                                <option value="C#">C# / Db</option>
+                                <option value="D">D</option>
+                                <option value="D#">D# / Eb</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                                <option value="F#">F# / Gb</option>
+                                <option value="G">G</option>
+                                <option value="G#">G# / Ab</option>
+                                <option value="A" selected>A</option>
+                                <option value="A#">A# / Bb</option>
+                                <option value="B">B</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Scale Type:</label>
+                            <select class="form-select form-select-lg" id="scaleType" onchange="updateScale()">
+                                <optgroup label="Common Scales">
+                                    <option value="major" selected>Major (Ionian)</option>
+                                    <option value="natural_minor">Natural Minor (Aeolian)</option>
+                                    <option value="harmonic_minor">Harmonic Minor</option>
+                                    <option value="melodic_minor">Melodic Minor</option>
+                                </optgroup>
+                                <optgroup label="Pentatonic & Blues">
+                                    <option value="major_pentatonic">Major Pentatonic</option>
+                                    <option value="minor_pentatonic">Minor Pentatonic</option>
+                                    <option value="blues">Blues Scale</option>
+                                </optgroup>
+                                <optgroup label="Modes">
+                                    <option value="dorian">Dorian</option>
+                                    <option value="phrygian">Phrygian</option>
+                                    <option value="lydian">Lydian</option>
+                                    <option value="mixolydian">Mixolydian</option>
+                                    <option value="locrian">Locrian</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Octave:</label>
+                            <select class="form-select form-select-lg" id="octave" onchange="updateScale()">
+                                <option value="3">3 (Low)</option>
+                                <option value="4" selected>4 (Middle)</option>
+                                <option value="5">5 (High)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="result-box">
+                        <h3 id="scaleName">A Major Scale</h3>
+                        <div class="scale-notes" id="scaleNotes"></div>
+                        <button class="btn btn-primary btn-lg mt-3" onclick="playScale()">
+                            <i class="bi bi-play-fill me-2"></i>Play Scale
+                        </button>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-light rounded">
+                        <h5 class="text-mid mb-3">Scale Information</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Intervals:</strong>
+                                <p id="scaleIntervals" class="mb-2">W - W - H - W - W - W - H</p>
+                                <strong>Formula:</strong>
+                                <p id="scaleFormula" class="mb-0">1 - 2 - 3 - 4 - 5 - 6 - 7</p>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Mood/Character:</strong>
+                                <p id="scaleMood" class="mb-2">Bright, happy, uplifting</p>
+                                <strong>Common Uses:</strong>
+                                <p id="scaleUses" class="mb-0">Pop, rock, classical, country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Use -->
+                <div class="tool-container mt-4">
+                    <div class="tool-section">
+                        <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>How to Use the Musical Scale
+                            Finder</h2>
+                        <ol class="lead-steps mb-4">
+                            <li><strong>Select the Root Note (Tonic):</strong> Choose any of the 12 chromatic pitches
+                                (e.g., $C$, $F\sharp$, $B\flat$). The root acts as the tonal center and harmonic
+                                gravitational anchor of the scale.</li>
+                            <li><strong>Choose the Scale Family or Mode:</strong> Browse through traditional <em>Common
+                                    Scales</em> (Major, Natural Minor, Harmonic Minor, Melodic Minor), <em>Pentatonic &
+                                    Blues</em>, or the 7 ancient <em>Diatonic Church Modes</em> (Dorian, Phrygian,
+                                Lydian, Mixolydian, Locrian).</li>
+                            <li><strong>Audition Individual Notes or Entire Sequences:</strong> Click any circular note
+                                badge to hear its precise audio pitch synthesized via the Web Audio API, or click
+                                <strong>Play Scale</strong> to audition the complete ascending scale run.</li>
+                            <li><strong>Analyze Formula & Emotional Character:</strong> Examine the real-time breakdown
+                                of whole/half step intervals (e.g., $W-W-H-W-W-W-H$), numerical scale degree formulas,
+                                and genre recommendations for your compositions.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Technical Deep-Dive -->
+                <div class="tool-container mt-4">
+                    <div class="tool-section">
+                        <h2 class="text-mid mb-3"><i class="bi bi-cpu me-2"></i>The Mathematics and Anatomy of Musical
+                            Scales</h2>
+                        <p>In music theory and mathematical acoustics, a scale is a strictly ordered subset of
+                            frequencies chosen from the 12-tone chromatic universe ($\mathbb{Z}_{12}$). The distance
+                            between pitches is measured in whole steps ($W = 2\text{ semitones}$) and half steps ($H =
+                            1\text{ semitone}$).</p>
+
+                        <div class="card p-3 my-3 bg-light border-0 shadow-sm">
+                            <h5 class="fw-bold mb-2">Mathematical Formulation of Scale Intervals:</h5>
+                            <p class="mb-1">Let each chromatic semitone be represented by an integer $x \in \{0, 1, 2,
+                                \dots, 11\}$ where the root note is $0$. The fundamental Western major scale is defined
+                                by the interval set:</p>
+                            <code
+                                class="d-block p-2 bg-white rounded border fs-6 my-2 text-dark font-monospace">Major Scale = {0, 2, 4, 5, 7, 9, 11} (mod 12)</code>
+                            <p class="mb-1">Calculating the adjacent step distances yields the universal major step
+                                sequence:</p>
+                            <code
+                                class="d-block p-2 bg-white rounded border fs-6 my-2 text-dark font-monospace">(2 - 0)=W, (4 - 2)=W, (5 - 4)=H, (7 - 5)=W, (9 - 7)=W, (11 - 9)=W, (12 - 11)=H → W - W - H - W - W - W - H</code>
+                            <p class="mb-0 text-muted small">Notice how the two half steps ($H$) occur naturally between
+                                degrees $3-4$ and $7-8$ (the leading tone resolving to the tonic).</p>
+                        </div>
+
+                        <h3 class="text-mid mt-4 mb-3"><i class="bi bi-sun me-2"></i>The 7 Diatonic Modes: Bright to
+                            Dark Hierarchy</h3>
+                        <p>The 7 diatonic church modes are constructed by starting on consecutive degrees of the major
+                            scale. In modern film scoring and jazz composition, modes are conceptualized not merely as
+                            scale rotations, but along an acoustic spectrum from <strong>brightest</strong> (most
+                            sharped intervals) to <strong>darkest</strong> (most flatted intervals):</p>
+
+                        <div class="table-responsive my-3">
+                            <table class="table table-bordered table-striped align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Mode</th>
+                                        <th>Brightness Rank</th>
+                                        <th>Scale Degree Formula</th>
+                                        <th>Characteristic Note</th>
+                                        <th>Emotional Mood & Aesthetic Usage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Lydian</strong></td>
+                                        <td>1 (Brightest)</td>
+                                        <td><code>1 - 2 - 3 - ♯4 - 5 - 6 - 7</code></td>
+                                        <td><strong>♯4 (Raised 4th)</strong></td>
+                                        <td>Dreamy, mystical, floating, futuristic; ubiquitous in John Williams and
+                                            sci-fi film scores.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ionian (Major)</strong></td>
+                                        <td>2</td>
+                                        <td><code>1 - 2 - 3 - 4 - 5 - 6 - 7</code></td>
+                                        <td><strong>♮4, ♮7</strong></td>
+                                        <td>Pure, uplifting, resolved, triumphant; foundational bedrock of Western
+                                            classical and pop music.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mixolydian</strong></td>
+                                        <td>3</td>
+                                        <td><code>1 - 2 - 3 - 4 - 5 - 6 - ♭7</code></td>
+                                        <td><strong>♭7 (Flatted 7th)</strong></td>
+                                        <td>Bluesy major, laid-back, groovy; dominant mode of classic rock, funk, and
+                                            Southern blues.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dorian</strong></td>
+                                        <td>4 (Tonal Center)</td>
+                                        <td><code>1 - 2 - ♭3 - 4 - 5 - 6 - ♭7</code></td>
+                                        <td><strong>♮6 (Natural 6th)</strong></td>
+                                        <td>Sophisticated minor, soulful, jazzy; famous in modal jazz (Miles Davis'
+                                            <em>So What</em>) and Pink Floyd.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aeolian (Natural Minor)</strong></td>
+                                        <td>5</td>
+                                        <td><code>1 - 2 - ♭3 - 4 - 5 - ♭6 - ♭7</code></td>
+                                        <td><strong>♭6 (Flatted 6th)</strong></td>
+                                        <td>Sad, somber, epic, heroic; default minor mode in rock, modern metal, and
+                                            cinematic drama.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phrygian</strong></td>
+                                        <td>6</td>
+                                        <td><code>1 - ♭2 - ♭3 - 4 - 5 - ♭6 - ♭7</code></td>
+                                        <td><strong>♭2 (Half-step 2nd)</strong></td>
+                                        <td>Dark, exotic, Spanish, menacing; iconic in Flamenco, thrash metal riffs, and
+                                            Middle Eastern themes.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Locrian</strong></td>
+                                        <td>7 (Darkest)</td>
+                                        <td><code>1 - ♭2 - ♭3 - 4 - ♭5 - ♭6 - ♭7</code></td>
+                                        <td><strong>♭5 (Diminished 5th)</strong></td>
+                                        <td>Dissonant, tense, unstable; lacks a stable perfect 5th tonic; used in horror
+                                            soundtracks and extreme metal.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="text-mid mt-4 mb-3"><i class="bi bi-diagram-3 me-2"></i>Minor Scale Variants:
+                            Harmonic, Melodic, and Synthetic Forms</h3>
+                        <p>Because the natural minor scale lacks a half-step leading tone below the tonic (its 7th
+                            degree is $\flat 7$, two semitones below $8$), composers developed specialized variants to
+                            solve harmonic and melodic challenges:</p>
+                        <ul>
+                            <li><strong>Harmonic Minor (Formula: <code>1 - 2 - ♭3 - 4 - 5 - ♭6 - 7</code>):</strong> The
+                                7th degree is raised by one semitone back to a natural leading tone ($\natural 7$). This
+                                allows the dominant chord ($V$) to be a major or dominant 7th chord (e.g., $E7
+                                \rightarrow Am$), providing strong cadential resolution. However, this creates an exotic
+                                <strong>augmented second ($3H$)</strong> gap between $\flat 6$ and $\natural 7$.</li>
+                            <li><strong>Melodic Minor (Formula: <code>1 - 2 - ♭3 - 4 - 5 - 6 - 7</code>):</strong> To
+                                smooth out the awkward augmented second leap for classical vocalists, the 6th degree is
+                                also raised to a natural $6$ when ascending, reverting to natural minor when descending.
+                                In modern jazz ("Jazz Minor"), this ascending form is played in both directions,
+                                yielding rich chord substitutions like the Altered and Lydian Dominant scales.</li>
+                        </ul>
+
+                        <h3 class="text-mid mt-4 mb-3"><i class="bi bi-music-note-list me-2"></i>Instrument Application:
+                            CAGED, 3NPS, and Keyboard Visualization</h3>
+                        <p>Mastering scales requires translating theoretical intervals into spatial muscle memory across
+                            instruments:</p>
+                        <div class="row g-3 my-2">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded h-100 bg-white shadow-sm">
+                                    <h6 class="fw-bold text-dark"><i class="bi bi-grid-3x3 me-1 text-teal"></i> Guitar:
+                                        CAGED vs. 3NPS Systems</h6>
+                                    <p class="small text-muted mb-0">Guitarists visualize scales using either the
+                                        <strong>CAGED system</strong> (which maps 5 interconnected chord box positions
+                                        across the fretboard based on open $C-A-G-E-D$ shapes) or the
+                                        <strong>3-Notes-Per-String (3NPS) system</strong>. The 3NPS framework
+                                        distributes exactly three notes on every string, maintaining uniform picking
+                                        strokes across all octaves for high-speed modal runs.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded h-100 bg-white shadow-sm">
+                                    <h6 class="fw-bold text-dark"><i class="bi bi-keyboard me-1 text-teal"></i> Piano
+                                        Keyboard Geography</h6>
+                                    <p class="small text-muted mb-0">Pianists track scales by identifying where natural
+                                        half steps ($E-F$ and $B-C$) fall relative to the raised black keys. For
+                                        instance, in $C$ Major, all intervals fall strictly on white keys. In $F\sharp$
+                                        Major, every single note except $B$ and $E\sharp$ lands on black keys, giving
+                                        each scale a distinct physical tactile topography.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="tool-container mt-4">
+                    <div class="tool-section">
+                        <h2 class="text-mid mb-4"><i class="bi bi-question-circle me-2"></i>Frequently Asked Questions
+                        </h2>
+
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq1">
+                                        What is the structural difference between a major scale and a natural minor
+                                        scale?
+                                    </button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The major scale follows the whole-step and half-step formula $W-W-H-W-W-W-H$
+                                        ($1-2-3-4-5-6-7$), creating bright, consonant harmonic stability anchored by its
+                                        major 3rd, major 6th, and major 7th. The natural minor scale (Aeolian mode)
+                                        lowers degrees 3, 6, and 7 by one semitone: $W-H-W-W-H-W-W$ ($1-2-\flat
+                                        3-4-5-\flat 6-\flat 7$), imparting an introspective, darker tonal character.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2">
+                                        What are the 7 diatonic church modes in order from brightest to darkest?
+                                    </button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The 7 diatonic modes ranked from brightest to darkest based on the number of
+                                        sharped or flatted scale degrees are: <strong>Lydian</strong> ($1-2-3-\sharp
+                                        4-5-6-7$), <strong>Ionian/Major</strong> ($1-2-3-4-5-6-7$),
+                                        <strong>Mixolydian</strong> ($1-2-3-4-5-6-\flat 7$), <strong>Dorian</strong>
+                                        ($1-2-\flat 3-4-5-6-\flat 7$), <strong>Aeolian/Natural Minor</strong>
+                                        ($1-2-\flat 3-4-5-\flat 6-\flat 7$), <strong>Phrygian</strong> ($1-\flat 2-\flat
+                                        3-4-5-\flat 6-\flat 7$), and <strong>Locrian</strong> ($1-\flat 2-\flat
+                                        3-4-\flat 5-\flat 6-\flat 7$).
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3">
+                                        Why does the harmonic minor scale have an augmented second interval?
+                                    </button>
+                                </h3>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The natural minor scale has a flat 7th (subtonic), lacking a half-step leading
+                                        tone to pull resolving melodies back to the tonic. The harmonic minor scale
+                                        raises the 7th degree back to a natural 7. This creates a wide 3-semitone
+                                        interval (augmented second) between $\flat 6$ and $\natural 7$, producing its
+                                        iconic dramatic, neoclassical, and Middle Eastern sonic contour.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4">
+                                        Why are pentatonic scales so popular for melodic improvisation?
+                                    </button>
+                                </h3>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Pentatonic scales omit the two notes of the diatonic scale that form half-step
+                                        intervals and the unstable tritone. For example, the C Major pentatonic scale
+                                        ($C-D-E-G-A$) eliminates $F$ (the 4th) and $B$ (the 7th). Without unstable
+                                        leading tones, almost every note sounds harmonious over underlying tonic and
+                                        dominant chords without dissonant collisions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq5">
+                                        What is the 'blue note' in the blues scale?
+                                    </button>
+                                </h3>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The blues scale expands the 5-note minor pentatonic scale ($1-\flat 3-4-5-\flat
+                                        7$) by inserting a diminished fifth ($\flat 5 / \sharp 4$) between the perfect
+                                        4th and perfect 5th. This chromatic passing tone (the 'blue note') creates
+                                        intense acoustic tension that resolves expressively up to the 5th or down to the
+                                        4th.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq6">
+                                        How do guitarists and keyboardists visualize scale patterns across their
+                                        instruments?
+                                    </button>
+                                </h3>
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Keyboardists visualize scales through the spatial distribution of white and
+                                        black keys, observing where the half-step intervals ($B-C$ and $E-F$) occur.
+                                        Guitarists typically use two spatial frameworks: the CAGED system (which anchors
+                                        5 interconnected octave positions based on open chord shapes) and the
+                                        3-Notes-Per-String (3NPS) system, which standardizes fingering mechanics for
+                                        fast alternate-picking modal runs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Tools Cards -->
+                        <div class="card my-4 shadow-sm border-0">
+                            <div class="card-body p-4 bg-light rounded">
+                                <h5 class="card-title fw-bold mb-3"><i
+                                        class="bi bi-grid-fill me-2 text-teal"></i>Related Music Theory Tools</h5>
+                                <div class="row g-2">
+                                    <div class="col-md-4">
+                                        <a class="btn btn-outline-secondary w-100 text-start py-2"
+                                            href="/music-theory-tools/chord-identifier/">
+                                            <i class="bi bi-vinyl me-1 text-teal"></i> Chord Identifier
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="btn btn-outline-secondary w-100 text-start py-2"
+                                            href="/music-theory-tools/chord-progression-generator/">
+                                            <i class="bi bi-diagram-3 me-1 text-teal"></i> Chord Progression Generator
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="btn btn-outline-secondary w-100 text-start py-2"
+                                            href="/music-theory-tools/interval-calculator/">
+                                            <i class="bi bi-arrows-expand me-1 text-teal"></i> Interval Calculator
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="btn btn-outline-secondary w-100 text-start py-2"
+                                            href="/music-theory-tools/melody-generator/">
+                                            <i class="bi bi-bezier2 me-1 text-teal"></i> Melody Generator
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="btn btn-outline-secondary w-100 text-start py-2"
+                                            href="/music-theory-tools/online-metronome/">
+                                            <i class="bi bi-stopwatch me-1 text-teal"></i> Online Metronome
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="btn btn-outline-secondary w-100 text-start py-2"
+                                            href="/music-theory-tools/rhythm-pattern-maker/">
+                                            <i class="bi bi-soundwave me-1 text-teal"></i> Rhythm Pattern Maker
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="./assets/bootstrap5.js" defer></script>
+    <script src="./assets/tools.js" defer></script>
+    <!-- tool js -->
+    <script defer>
+        const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+        const scales = {
+            major: { intervals: [0, 2, 4, 5, 7, 9, 11], pattern: 'W-W-H-W-W-W-H', formula: '1-2-3-4-5-6-7', mood: 'Bright, happy, uplifting', uses: 'Pop, rock, classical, country' },
+            natural_minor: { intervals: [0, 2, 3, 5, 7, 8, 10], pattern: 'W-H-W-W-H-W-W', formula: '1-2-♭3-4-5-♭6-♭7', mood: 'Dark, sad, emotional', uses: 'Rock, metal, classical, pop ballads' },
+            harmonic_minor: { intervals: [0, 2, 3, 5, 7, 8, 11], pattern: 'W-H-W-W-H-3H-H', formula: '1-2-♭3-4-5-♭6-7', mood: 'Exotic, dramatic, tense', uses: 'Classical, metal, Middle Eastern' },
+            melodic_minor: { intervals: [0, 2, 3, 5, 7, 9, 11], pattern: 'W-H-W-W-W-W-H', formula: '1-2-♭3-4-5-6-7', mood: 'Jazzy, sophisticated', uses: 'Jazz, fusion, classical' },
+            major_pentatonic: { intervals: [0, 2, 4, 7, 9], pattern: 'W-W-3H-W-3H', formula: '1-2-3-5-6', mood: 'Bright, open, versatile', uses: 'Country, rock, pop, folk' },
+            minor_pentatonic: { intervals: [0, 3, 5, 7, 10], pattern: '3H-W-W-3H-W', formula: '1-♭3-4-5-♭7', mood: 'Bluesy, raw, powerful', uses: 'Blues, rock, metal solos' },
+            blues: { intervals: [0, 3, 5, 6, 7, 10], pattern: '3H-W-H-H-3H-W', formula: '1-♭3-4-♭5-5-♭7', mood: 'Soulful, expressive', uses: 'Blues, rock, jazz' },
+            dorian: { intervals: [0, 2, 3, 5, 7, 9, 10], pattern: 'W-H-W-W-W-H-W', formula: '1-2-♭3-4-5-6-♭7', mood: 'Minor but brighter', uses: 'Jazz, funk, rock' },
+            phrygian: { intervals: [0, 1, 3, 5, 7, 8, 10], pattern: 'H-W-W-W-H-W-W', formula: '1-♭2-♭3-4-5-♭6-♭7', mood: 'Spanish, exotic, dark', uses: 'Flamenco, metal, Middle Eastern' },
+            lydian: { intervals: [0, 2, 4, 6, 7, 9, 11], pattern: 'W-W-W-H-W-W-H', formula: '1-2-3-#4-5-6-7', mood: 'Dreamy, floating, bright', uses: 'Film scores, jazz, progressive' },
+            mixolydian: { intervals: [0, 2, 4, 5, 7, 9, 10], pattern: 'W-W-H-W-W-H-W', formula: '1-2-3-4-5-6-♭7', mood: 'Bluesy major, groovy', uses: 'Rock, blues, funk, country' },
+            locrian: { intervals: [0, 1, 3, 5, 6, 8, 10], pattern: 'H-W-W-H-W-W-W', formula: '1-♭2-♭3-4-♭5-♭6-♭7', mood: 'Unstable, dissonant', uses: 'Metal, jazz, experimental' }
+        };
+
+        let audioContext = null;
+
+        function getScaleNotes(root, scaleType) {
+            const rootIndex = notes.indexOf(root);
+            const scale = scales[scaleType];
+            return scale.intervals.map(interval => notes[(rootIndex + interval) % 12]);
+        }
+
+        function updateScale() {
+            const root = document.getElementById('rootNote').value;
+            const scaleType = document.getElementById('scaleType').value;
+            const scale = scales[scaleType];
+            const scaleNotes = getScaleNotes(root, scaleType);
+
+            const scaleName = scaleType.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            document.getElementById('scaleName').textContent = `${root} ${scaleName}`;
+
+            let html = '';
+            scaleNotes.forEach((note, i) => {
+                const isRoot = i === 0;
+                html += `<div class="scale-note ${isRoot ? 'root' : 'note'}" onclick="playNote('${note}', ${document.getElementById('octave').value})">${note}</div>`;
+            });
+            document.getElementById('scaleNotes').innerHTML = html;
+
+            document.getElementById('scaleIntervals').textContent = scale.pattern;
+            document.getElementById('scaleFormula').textContent = scale.formula;
+            document.getElementById('scaleMood').textContent = scale.mood;
+            document.getElementById('scaleUses').textContent = scale.uses;
+        }
+
+        function getFrequency(note, octave) {
+            const noteIndex = notes.indexOf(note);
+            const a4 = 440;
+            const semitones = (octave - 4) * 12 + (noteIndex - 9);
+            return a4 * Math.pow(2, semitones / 12);
+        }
+
+        function playNote(note, octave) {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            const freq = getFrequency(note, octave);
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+
+            osc.frequency.value = freq;
+            osc.type = 'sine';
+
+            gain.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+
+            osc.start();
+            osc.stop(audioContext.currentTime + 0.5);
+        }
+
+        function playScale() {
+            const root = document.getElementById('rootNote').value;
+            const scaleType = document.getElementById('scaleType').value;
+            const octave = parseInt(document.getElementById('octave').value);
+            const scaleNotes = getScaleNotes(root, scaleType);
+
+            const noteElements = document.querySelectorAll('.scale-note');
+
+            scaleNotes.forEach((note, i) => {
+                setTimeout(() => {
+                    playNote(note, i === scaleNotes.length - 1 ? octave + 1 : octave);
+                    noteElements[i].classList.add('playing');
+                    setTimeout(() => noteElements[i].classList.remove('playing'), 300);
+                }, i * 400);
+            });
+        }
+
+        updateScale();
+
+        window.addEventListener("load", () => {
+            Promise.all([
+                fetch("../../header.html").then(res => res.text()),
+                fetch("../../footer.html").then(res => res.text())
+            ])
+                .then(([header, footer]) => {
+                    document.getElementById("header").innerHTML = header;
+                    document.getElementById("footer").innerHTML = footer;
+                })
+                .catch(err => console.error("Include load failed:", err));
+        });
+    </script>
+</body>
+
+</html>

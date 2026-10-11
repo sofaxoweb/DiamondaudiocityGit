@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pitch Detector – Real-Time Voice Pitch & Musical Note Finder</title>
+  <meta name="description"
+    content="Free online real-time pitch detector. Analyze your singing voice or instrument pitch via microphone. Detect fundamental frequency (Hz), musical note, octave, and cent tuning accuracy instantly based on A4 = 440 Hz.">
+  <link rel="canonical" href="https://pitchdetectors.com/pitch-detector-tools/pitch-detector/">
+  <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pitch Detector – Real-Time Voice Pitch & Musical Note Finder">
+  <meta property="og:description"
+    content="Analyze vocal pitch and instrumental notes in real time using your microphone. View fundamental frequency, note name, and cent accuracy instantly.">
+  <meta property="og:url" content="https://pitchdetectors.com/pitch-detector-tools/pitch-detector/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/imgs/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pitch Detector – Real-Time Voice & Note Finder">
+  <meta name="twitter:description"
+    content="Check your singing pitch and instrument tuning in real time using your microphone.">
+  <meta name="twitter:image" content="./assets/imgs/logo.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/bootstrap5.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link href="./assets/tools.css" rel="stylesheet">
+  <meta name="author" content="Pitch Detectors">
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this real-time pitch detector analyze sound?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The pitch detector processes microphone audio in real time using the Web Audio API. It captures waveform buffers and runs a normalized autocorrelation algorithm to detect the fundamental period of the sound wave, converting the period into fundamental frequency (Hz), closest musical note, and cent deviation from equal temperament standard A4 = 440 Hz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between pitch and frequency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Frequency is an objective physical measurement of acoustic vibrations per second, expressed in Hertz (Hz). Pitch is the subjective psychoacoustic perception of frequency by the human auditory system. For example, a vibration of 440.00 Hz is perceived by human hearing as the musical note A in octave 4 (A4)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do 'cents' mean on the tuning meter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In music acoustics, a cent is a logarithmic unit of pitch measurement where one semitone (the distance between adjacent piano keys) equals exactly 100 cents. A reading of 0 cents means your pitch is perfectly in tune with equal temperament. +15 cents means sharp (slightly high), while -15 cents means flat (slightly low). Professional vocalists generally maintain pitch within ±5 to 10 cents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What vocal frequency range can this tool detect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This pitch detector tracks fundamental frequencies from approximately 50 Hz (sub-bass notes below low C2) up to 2000 Hz (soprano high C6 and whistle register). This comfortably encompasses all six standard classical vocal classifications: Bass, Baritone, Tenor, Contralto, Mezzo-Soprano, and Soprano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is A4 = 440 Hz the default concert tuning standard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A4 = 440 Hz was internationally adopted by the International Organization for Standardization (ISO 16) in 1955 as the universal concert pitch standard. It ensures that pianos, orchestral instruments, synthesizers, and digital audio workstations worldwide are calibrated to the exact same pitch reference."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my microphone audio recorded or sent to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All microphone audio capture, fast mathematical autocorrelation, and display rendering occur 100% locally inside your web browser via the Web Audio API. No audio streams or recordings are ever saved, stored, or transmitted to any external server."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .subtitle {
+      color: #718096;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .instructions {
+      background: #f0fdfa;
+      border-left: 4px solid var(--text-teal);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .instructions h3 {
+      color: #0f766e;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .instructions ol {
+      margin-left: 20px;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    .control-panel {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .start-btn {
+      padding: 16px 48px;
+      background: var(--text-teal);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+    }
+
+    .start-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
+      background: #0f766e;
+    }
+
+    .start-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .start-btn.active {
+      background: #dc2626 !important;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
+    }
+
+    .display-box {
+      background: #0f172a;
+      border-radius: 16px;
+      padding: 35px;
+      margin: 25px 0;
+      text-align: center;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .note-display {
+      font-size: 72px;
+      font-weight: bold;
+      color: #38bdf8;
+      margin-bottom: 8px;
+      text-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+    }
+
+    .frequency-display {
+      font-size: 24px;
+      color: #94a3b8;
+      margin-bottom: 5px;
+      font-family: monospace;
+    }
+
+    .cents-display {
+      font-size: 18px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .tuning-meter {
+      width: 100%;
+      max-width: 520px;
+      height: 38px;
+      background: #334155;
+      border-radius: 20px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #475569;
+    }
+
+    .tuning-zones {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    .zone {
+      flex: 1;
+      height: 100%;
+    }
+
+    .zone.flat {
+      background: linear-gradient(90deg, #ef4444, #f59e0b);
+    }
+
+    .zone.intune {
+      background: #10b981;
+      flex: 0.35;
+    }
+
+    .zone.sharp {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    .tuning-needle {
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      background: #ffffff;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: left 0.08s ease-out;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    }
+
+    .piano-keyboard {
+      background: #f8fafc;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border: 1px solid #e2e8f0;
+      overflow-x: auto;
+    }
+
+    .keyboard {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 190px;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .white-key {
+      width: 48px;
+      height: 190px;
+      background: white;
+      border: 1.5px solid #334155;
+      border-radius: 0 0 4px 4px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .white-key.active {
+      background: #0d9488 !important;
+      box-shadow: 0 0 20px rgba(13, 148, 136, 0.7);
+    }
+
+    .white-key.active .key-label {
+      color: white !important;
+    }
+
+    .black-key {
+      width: 28px;
+      height: 115px;
+      background: #0f172a;
+      border: 1.5px solid #000;
+      border-radius: 0 0 4px 4px;
+      position: absolute;
+      cursor: pointer;
+      z-index: 2;
+      transition: all 0.15s;
+    }
+
+    .black-key.active {
+      background: #38bdf8 !important;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+    }
+
+    .key-label {
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .black-key .key-label {
+      color: #cbd5e1;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 25px 0;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    .stat-label {
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .stat-value {
+      color: #0f172a;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .warning {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px;
+      border-radius: 8px;
+      color: #92400e;
+      margin-top: 20px;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .note-display {
+        font-size: 52px;
+      }
+
+      .white-key {
+        width: 38px;
+        height: 160px;
+      }
+
+      .black-key {
+        width: 24px;
+        height: 95px;
+      }
+
+      .keyboard {
+        min-width: 680px;
+        justify-content: flex-start;
+      }
+
+      .start-btn {
+        padding: 14px 32px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div class="container">
+    <div class="row g-4 align-items-start justify-content-center py-5 mt-4">
+      <!-- Right: Sidebar Tools Box -->
+      <div class="col-lg-3 col-md-4">
+        <div class="tools-sidebar">
+          <!-- Search Box -->
+          <div class="sidebar-search mb-4">
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                onkeyup="searchTools()">
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="sidebar-categories">
+            <div class="sidebar-category active">
+              <h5><i class="bi bi-soundwave me-2"></i>Pitch Detector Tools</h5>
+              <ul class="sidebar-links">
+                <li><a href="/pitch-detector-tools/guitar-tuner-online/" class=""><i
+                      class="bi bi-music-note-beamed"></i>
+                    Guitar Tuner</a></li>
+                <li><a href="/pitch-detector-tools/vocal-range-finder-online/"><i class="bi bi-mic"></i> Vocal
+                    Range Finder</a></li>
+                <li><a href="/pitch-detector-tools/frequency-to-note-online/"><i class="bi bi-arrow-left-right"></i>
+                    Frequency
+                    to Note</a></li>
+                <li><a href="/pitch-detector-tools/note-to-frequency-online/"><i class="bi bi-calculator"></i>
+                    Note to Frequency</a></li>
+                <li><a href="/pitch-detector-tools/cents-calculator-online/"><i class="bi bi-rulers"></i> Cents
+                    Calculator</a></li>
+                <li><a href="/pitch-detector-tools/transpose-calculator-online/"><i class="bi bi-arrows-expand"></i>
+                    Transpose
+                    Calculator</a></li>
+                <li><a href="/pitch-detector-tools/harmonic-series-calculator-online/"><i
+                      class="bi bi-bar-chart-steps"></i>
+                    Harmonic Series</a></li>
+                <li><a href="/pitch-detector-tools/pitch-shift-calculator/"><i class="bi bi-music-note-list"></i>
+                    Pitch Shift Calculator</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-category">
+              <h5><i class="bi bi-disc me-2"></i>DJ & Production Tools</h5>
+              <ul class="sidebar-links">
+                <li><a href="/dj-music-production-tools/bpm-calculator/"><i class="bi bi-speedometer2"></i> BPM
+                    Calculator</a></li>
+                <li><a href="/dj-music-production-tools/bpm-tap-tempo/"><i class="bi bi-hand-index"></i>
+                    BPM Tap Tempo</a></li>
+                <li><a href="/dj-music-production-tools/bpm-to-ms/"><i class="bi bi-clock"></i> BPM to
+                    Milliseconds</a></li>
+                <li><a href="/dj-music-production-tools/song-key-finder/"><i class="bi bi-key"></i> Song
+                    Key Finder</a></li>
+                <li><a href="https://pitchdetectors.com/BPM-Pitch-Calculator.html"><i class="bi bi-sliders"></i>
+                    Pitch Shifter</a></li>
+                <!-- <li><a href="/ /"><i class="bi bi-fast-forward"></i> Tempo
+                    Changer</a></li> -->
+              </ul>
+            </div>
+
+            <div class="sidebar-category">
+              <h5><i class="bi bi-music-note-list me-2"></i>Music Theory Tools</h5>
+              <ul class="sidebar-links">
+                <li><a href="/music-theory-tools/online-metronome/"><i class="bi bi-stopwatch"></i>
+                    Online Metronome</a></li>
+                <li><a href="/music-theory-tools/scale-finder/"><i class="bi bi-grid-3x3"></i> Scale
+                    Finder</a></li>
+                <li><a href="/music-theory-tools/chord-identifier/"><i class="bi bi-vinyl"></i> Chord
+                    Identifier</a></li>
+                <li><a href="/music-theory-tools/rhythm-pattern-maker/"><i class="bi bi-activity"></i>
+                    Rhythm Pattern Maker</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-category">
+              <h5><i class="bi bi-graph-up me-2"></i>Sound Analysis Tools</h5>
+              <ul class="sidebar-links">
+                <li><a href="/sound-analysis-tools/decibel-meter/"><i class="bi bi-volume-up"></i>
+                    Decibel Meter</a></li>
+
+
+                <li><a href="/sound-analysis-tools/microphone-test/"><i class="bi bi-mic"></i>
+                    Microphone Test</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- Left: Main Tool -->
+      <div class="col-lg-9 col-md-9">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/pitch-detector-tools/">Pitch Detector Tools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pitch Detector</li>
+          </ol>
+        </nav>
+        <div class="tool-container">
+          <h2 class="tool-title">🎵 Pitch Detector</h2>
+          <p class="subtitle">Real-time voice & pitch analyzer for musicians and vocalists</p>
+
+          <div class="instructions">
+            <h3>Get Started:</h3>
+            <ol>
+              <li>Click the <strong>START</strong> button below</li>
+              <li>Click <strong>"Allow"</strong> when asked about microphone access</li>
+              <li>Sing or play a note into your microphone</li>
+              <li>Watch the note appear on screen and on the piano keyboard</li>
+              <li>The tuning meter shows if you're sharp (right), flat (left), or in tune (center)</li>
+            </ol>
+          </div>
+
+          <div class="control-panel">
+            <button id="startBtn" class="start-btn">🎤 START DETECTION</button>
+          </div>
+
+          <div class="display-box">
+            <div id="noteDisplay" class="note-display">--</div>
+            <div id="frequencyDisplay" class="frequency-display">-- Hz</div>
+            <div id="centsDisplay" class="cents-display">-- cents</div>
+          </div>
+
+          <div class="tuning-meter">
+            <div class="tuning-zones">
+              <div class="zone flat"></div>
+              <div class="zone intune"></div>
+              <div class="zone sharp"></div>
+            </div>
+            <div id="tuningNeedle" class="tuning-needle"></div>
+          </div>
+
+          <div class="piano-keyboard">
+            <h3 style="text-align:center; margin-bottom:20px; color:#2d3748;">Piano Keyboard</h3>
+            <div class="keyboard" id="keyboard"></div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">Current Note</div>
+              <div class="stat-value" id="currentNote">--</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Frequency</div>
+              <div class="stat-value" id="currentFreq">-- Hz</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Accuracy</div>
+              <div class="stat-value" id="accuracy">--</div>
+            </div>
+          </div>
+
+          <div id="warning" class="warning">
+            ⚠️ <strong>Microphone not detected.</strong> Please ensure your microphone is connected and you've granted
+            permission in your browser settings.
+          </div>
+
+
+          <!-- COMPREHENSIVE GUIDE & REFERENCE -->
+          <div class="mt-5 pt-3">
+            <section class="mb-5">
+              <h2 class="h3 fw-bold text-teal mb-3">Understanding Real-Time Pitch Detection: Acoustic Physics &
+                Algorithmic Analysis</h2>
+              <p>
+                In musical acoustics, <strong>pitch</strong> is the perceptual attribute of sound that allows listeners
+                to order audio on a frequency-related scale extending from low to high. While pitch is perceived
+                subjectively by the human auditory cortex, it correlates mathematically with the <strong>fundamental
+                  frequency ($f_0$)</strong>—the rate of periodic repetition in the acoustic waveform.
+              </p>
+              <p>
+                When a vocalist sings or an instrumentalist plays, vocal cords or vibrating strings produce complex
+                waveforms consisting of the fundamental pitch alongside integer-multiple harmonics (overtones). The
+                <strong>Pitch Detector</strong> isolates this periodic fundamental frequency in real time, compares it
+                to international equal temperament standards ($A_4 = 440\text{ Hz}$), and provides instant feedback on
+                exact musical note, octave, and microtonal cent deviation.
+              </p>
+            </section>
+
+            <section class="mb-5">
+              <h3 class="h4 fw-bold mb-3">The Mathematical Principles of Pitch Detection</h3>
+              <p>
+                This tool performs live mathematical analysis in your browser using the <strong>Web Audio API</strong>:
+              </p>
+              <div class="row g-4 my-2">
+                <div class="col-md-4">
+                  <div class="p-3 bg-light rounded border h-100">
+                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-activity me-2"></i>1. Autocorrelation Analysis
+                    </h5>
+                    <p class="small text-muted mb-0">Unlike simple Fast Fourier Transforms (FFT) which can suffer from
+                      spectral leakage at low frequencies, our engine employs time-domain
+                      <strong>autocorrelation</strong>. It shifts and correlates the audio buffer against itself to
+                      identify the exact cycle period ($\tau$ in samples):</p>
+                    <div class="bg-white p-2 rounded border font-monospace text-center small my-2">
+                      $$f_0 = \frac{\text{Sample Rate}}{\tau}$$
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-3 bg-light rounded border h-100">
+                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-music-note me-2"></i>2. Frequency to MIDI Note
+                    </h5>
+                    <p class="small text-muted mb-0">Once $f_0$ is isolated, it is mapped to the standard 12-Tone Equal
+                      Temperament chromatic scale calibrated to $A_4 = 440\text{ Hz}$ using the logarithmic formula:</p>
+                    <div class="bg-white p-2 rounded border font-monospace text-center small my-2">
+                      $$n = 69 + 12 \times \log_2\left(\frac{f_0}{440}\right)$$
+                    </div>
+                    <p class="small text-muted mb-0">The integer part corresponds to the MIDI note number ($60 =
+                      \text{C}_4$, $69 = \text{A}_4$).</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-3 bg-light rounded border h-100">
+                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-bullseye me-2"></i>3. Cent Tuning Deviation</h5>
+                    <p class="small text-muted mb-0">To quantify whether you are singing sharp or flat, the tool
+                      measures pitch distance in <strong>cents</strong> ($100\text{ cents} = 1\text{ semitone}$):</p>
+                    <div class="bg-white p-2 rounded border font-monospace text-center small my-2">
+                      $$\Delta c = 1200 \times \log_2\left(\frac{f_{\text{detected}}}{f_{\text{target}}}\right)$$
+                    </div>
+                    <p class="small text-muted mb-0">Values within $\pm 5\text{ cents}$ indicate professional in-tune
+                      intonation.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Human Vocal Classifications & Frequency Range -->
+            <section class="mb-5">
+              <h3 class="h4 fw-bold mb-3">Human Vocal Range & Frequency Reference Table</h3>
+              <p>
+                Human singing voices are divided into six primary vocal registers based on anatomical vocal cord length,
+                thickness, and vocal tract resonance:
+              </p>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                  <thead class="table-light text-center">
+                    <tr>
+                      <th>Voice Type</th>
+                      <th>Category</th>
+                      <th>Typical Note Range</th>
+                      <th>Fundamental Frequency Range ($f_0$)</th>
+                      <th>Tessitura (Comfort Zone)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Bass</strong></td>
+                      <td>Male Low</td>
+                      <td>E2 &ndash; E4</td>
+                      <td>82.41 Hz &ndash; 329.63 Hz</td>
+                      <td>G2 &ndash; C4 (98 &ndash; 261 Hz)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Baritone</strong></td>
+                      <td>Male Mid</td>
+                      <td>A2 &ndash; A4</td>
+                      <td>110.00 Hz &ndash; 440.00 Hz</td>
+                      <td>C3 &ndash; F4 (130 &ndash; 349 Hz)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Tenor</strong></td>
+                      <td>Male High</td>
+                      <td>C3 &ndash; C5</td>
+                      <td>130.81 Hz &ndash; 523.25 Hz</td>
+                      <td>E3 &ndash; A4 (164 &ndash; 440 Hz)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Contralto</strong></td>
+                      <td>Female Low</td>
+                      <td>F3 &ndash; F5</td>
+                      <td>174.61 Hz &ndash; 698.46 Hz</td>
+                      <td>A3 &ndash; D5 (220 &ndash; 587 Hz)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Mezzo-Soprano</strong></td>
+                      <td>Female Mid</td>
+                      <td>A3 &ndash; A5</td>
+                      <td>220.00 Hz &ndash; 880.00 Hz</td>
+                      <td>C4 &ndash; F5 (261 &ndash; 698 Hz)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Soprano</strong></td>
+                      <td>Female High</td>
+                      <td>C4 &ndash; C6</td>
+                      <td>261.63 Hz &ndash; 1046.50 Hz</td>
+                      <td>E4 &ndash; A5 (329 &ndash; 880 Hz)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Standard Pitch Frequencies (Octave 4) -->
+            <section class="mb-5">
+              <h3 class="h4 fw-bold mb-3">Chromatic Note Frequencies in Equal Temperament ($A_4 = 440\text{ Hz}$)</h3>
+              <p>
+                The table below provides exact frequencies, MIDI numbers, and period times for the central octave
+                (Octave 4):
+              </p>
+              <div class="table-responsive">
+                <table class="table table-bordered text-center align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Note Name</th>
+                      <th>MIDI Number</th>
+                      <th>Exact Frequency ($f_0$)</th>
+                      <th>Wave Period (ms)</th>
+                      <th>Wavelength in Air (at 20&deg;C)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>C4 (Middle C)</strong></td>
+                      <td>60</td>
+                      <td>261.63 Hz</td>
+                      <td>3.82 ms</td>
+                      <td>1.31 m (51.6 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>C#4 / Db4</strong></td>
+                      <td>61</td>
+                      <td>277.18 Hz</td>
+                      <td>3.61 ms</td>
+                      <td>1.24 m (48.7 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>D4</strong></td>
+                      <td>62</td>
+                      <td>293.66 Hz</td>
+                      <td>3.41 ms</td>
+                      <td>1.17 m (46.0 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>D#4 / Eb4</strong></td>
+                      <td>63</td>
+                      <td>311.13 Hz</td>
+                      <td>3.21 ms</td>
+                      <td>1.10 m (43.4 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>E4</strong></td>
+                      <td>64</td>
+                      <td>329.63 Hz</td>
+                      <td>3.03 ms</td>
+                      <td>1.04 m (41.0 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>F4</strong></td>
+                      <td>65</td>
+                      <td>349.23 Hz</td>
+                      <td>2.86 ms</td>
+                      <td>0.98 m (38.7 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>F#4 / Gb4</strong></td>
+                      <td>66</td>
+                      <td>369.99 Hz</td>
+                      <td>2.70 ms</td>
+                      <td>0.93 m (36.5 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>G4</strong></td>
+                      <td>67</td>
+                      <td>392.00 Hz</td>
+                      <td>2.55 ms</td>
+                      <td>0.87 m (34.4 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>G#4 / Ab4</strong></td>
+                      <td>68</td>
+                      <td>415.30 Hz</td>
+                      <td>2.41 ms</td>
+                      <td>0.83 m (32.5 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>A4 (Concert Pitch)</strong></td>
+                      <td>69</td>
+                      <td>440.00 Hz</td>
+                      <td>2.27 ms</td>
+                      <td>0.78 m (30.7 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>A#4 / Bb4</strong></td>
+                      <td>70</td>
+                      <td>466.16 Hz</td>
+                      <td>2.15 ms</td>
+                      <td>0.74 m (29.0 in)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>B4</strong></td>
+                      <td>71</td>
+                      <td>493.88 Hz</td>
+                      <td>2.02 ms</td>
+                      <td>0.69 m (27.3 in)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Practical Vocal Tips -->
+            <section class="mb-5">
+              <h3 class="h4 fw-bold mb-3">Pro Tips for Accurate Pitch Practice</h3>
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="p-3 bg-light rounded border h-100">
+                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-mic me-2"></i>1. Sing Straight Tones First</h5>
+                    <p class="small text-muted mb-0">When calibrating pitch, sing a straight, steady "ah" or "oo" vowel
+                      without vibrato. Natural vibrato oscillates pitch by &plusmn;20 to 50 cents, which makes testing
+                      your initial intonation center difficult.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-3 bg-light rounded border h-100">
+                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-headphones me-2"></i>2. Monitor Over Headphones
+                    </h5>
+                    <p class="small text-muted mb-0">Avoid audio feedback from computer speakers entering your
+                      microphone. Use headphones with one ear off so you can hear your acoustic bone-conduction voice
+                      clearly while practicing.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-3 bg-light rounded border h-100">
+                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-speedometer2 me-2"></i>3. Aim for the Green
+                      Center</h5>
+                    <p class="small text-muted mb-0">Watch the tuning needle. If it leans red to the left, support your
+                      breath from the diaphragm to raise the flat pitch. If it leans right, release throat tension to
+                      prevent pushing sharp.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-5">
+              <h3 class="h4 fw-bold mb-4">Frequently Asked Questions</h3>
+              <div class="accordion" id="pdFaqAccordion">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="pdHead1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pdFaq1"
+                      aria-expanded="true">
+                      How does this real-time pitch detector analyze sound?
+                    </button>
+                  </h2>
+                  <div id="pdFaq1" class="accordion-collapse collapse show" data-bs-parent="#pdFaqAccordion">
+                    <div class="accordion-body">
+                      The pitch detector processes microphone audio in real time using the Web Audio API. It captures
+                      waveform buffers and runs a normalized autocorrelation algorithm to detect the fundamental period
+                      of the sound wave, converting the period into fundamental frequency (Hz), closest musical note,
+                      and cent deviation from equal temperament standard A4 = 440 Hz.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="pdHead2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pdFaq2">
+                      What is the difference between pitch and frequency?
+                    </button>
+                  </h2>
+                  <div id="pdFaq2" class="accordion-collapse collapse" data-bs-parent="#pdFaqAccordion">
+                    <div class="accordion-body">
+                      Frequency is an objective physical measurement of acoustic vibrations per second, expressed in
+                      Hertz (Hz). Pitch is the subjective psychoacoustic perception of frequency by the human auditory
+                      system. For example, a vibration of 440.00 Hz is perceived by human hearing as the musical note A
+                      in octave 4 (A4).
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="pdHead3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pdFaq3">
+                      What do "cents" mean on the tuning meter?
+                    </button>
+                  </h2>
+                  <div id="pdFaq3" class="accordion-collapse collapse" data-bs-parent="#pdFaqAccordion">
+                    <div class="accordion-body">
+                      In music acoustics, a cent is a logarithmic unit of pitch measurement where one semitone (the
+                      distance between adjacent piano keys) equals exactly 100 cents. A reading of 0 cents means your
+                      pitch is perfectly in tune with equal temperament. +15 cents means sharp (slightly high), while
+                      -15 cents means flat (slightly low). Professional vocalists generally maintain pitch within
+                      &plusmn;5 to 10 cents.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="pdHead4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pdFaq4">
+                      What vocal frequency range can this tool detect?
+                    </button>
+                  </h2>
+                  <div id="pdFaq4" class="accordion-collapse collapse" data-bs-parent="#pdFaqAccordion">
+                    <div class="accordion-body">
+                      This pitch detector tracks fundamental frequencies from approximately 50 Hz (sub-bass notes below
+                      low C2) up to 2000 Hz (soprano high C6 and whistle register). This comfortably encompasses all six
+                      standard classical vocal classifications: Bass, Baritone, Tenor, Contralto, Mezzo-Soprano, and
+                      Soprano.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="pdHead5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pdFaq5">
+                      Why is A4 = 440 Hz the default concert tuning standard?
+                    </button>
+                  </h2>
+                  <div id="pdFaq5" class="accordion-collapse collapse" data-bs-parent="#pdFaqAccordion">
+                    <div class="accordion-body">
+                      A4 = 440 Hz was internationally adopted by the International Organization for Standardization (ISO
+                      16) in 1955 as the universal concert pitch standard. It ensures that pianos, orchestral
+                      instruments, synthesizers, and digital audio workstations worldwide are calibrated to the exact
+                      same pitch reference.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="pdHead6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#pdFaq6">
+                      Is my microphone audio recorded or sent to a server?
+                    </button>
+                  </h2>
+                  <div id="pdFaq6" class="accordion-collapse collapse" data-bs-parent="#pdFaqAccordion">
+                    <div class="accordion-body">
+                      No. All microphone audio capture, fast mathematical autocorrelation, and display rendering occur
+                      100% locally inside your web browser via the Web Audio API. No audio streams or recordings are
+                      ever saved, stored, or transmitted to any external server.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="card my-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title mb-3">Related Pitch Detection Tools</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a class="link-primary text-decoration-none fw-medium" href="/pitch-detector-tools/pitch-detector/">
+                  Online Pitch Detector
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a class="link-primary text-decoration-none fw-medium"
+                  href="/pitch-detector-tools/guitar-tuner-online/">
+                  Guitar Tuner
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a class="link-primary text-decoration-none fw-medium"
+                  href="/pitch-detector-tools/frequency-to-note-online/">
+                  Frequency to Note Converter
+                </a>
+              </li>
+
+              <li>
+                <a class="link-primary text-decoration-none fw-medium"
+                  href="/pitch-detector-tools/note-to-frequency-online/">
+                  Note to Frequency Converter
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="./assets/bootstrap5.js" defer></script>
+
+  <!--include js-->
+  <script defer>
+
+
+    window.addEventListener("load", () => {
+      Promise.all([
+        fetch("../../header.html").then(res => res.text()),
+        fetch("../../footer.html").then(res => res.text())
+      ])
+        .then(([header, footer]) => {
+          document.getElementById("header").innerHTML = header;
+          document.getElementById("footer").innerHTML = footer;
+        })
+        .catch(err => console.error("Include load failed:", err));
+    });
+
+  </script>
+
+  <!-- tools js -->
+  <script defer>
+    const startBtn = document.getElementById('startBtn');
+    const noteDisplay = document.getElementById('noteDisplay');
+    const frequencyDisplay = document.getElementById('frequencyDisplay');
+    const centsDisplay = document.getElementById('centsDisplay');
+    const tuningNeedle = document.getElementById('tuningNeedle');
+    const keyboard = document.getElementById('keyboard');
+    const warning = document.getElementById('warning');
+    const currentNote = document.getElementById('currentNote');
+    const currentFreq = document.getElementById('currentFreq');
+    const accuracy = document.getElementById('accuracy');
+
+    let audioContext = null;
+    let analyser = null;
+    let microphone = null;
+    let isDetecting = false;
+    let animationId = null;
+
+    // Note frequencies (A4 = 440 Hz)
+    const noteStrings = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+    // Create piano keyboard
+    function createKeyboard() {
+      const octaves = [3, 4, 5];
+      const whiteNotes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+      const blackNotePositions = {
+        'C#': 0.7, 'D#': 1.7, 'F#': 3.7, 'G#': 4.7, 'A#': 5.7
+      };
+
+      octaves.forEach(octave => {
+        whiteNotes.forEach((note, index) => {
+          const key = document.createElement('div');
+          key.className = 'white-key';
+          key.dataset.note = note + octave;
+
+          const label = document.createElement('div');
+          label.className = 'key-label';
+          label.textContent = note + octave;
+          key.appendChild(label);
+
+          keyboard.appendChild(key);
+
+          // Add black keys
+          const blackNote = Object.keys(blackNotePositions).find(
+            bn => bn.startsWith(note + '#')
+          );
+          if (blackNote && index < 6) {
+            const blackKey = document.createElement('div');
+            blackKey.className = 'black-key';
+            blackKey.dataset.note = blackNote + octave;
+            // blackKey.style.left = ((octave - 3) * 7 + blackNotePositions[blackNote]) * 50 + 'px';
+            const totalWhiteKeys = octaves.length * 7;
+            const whiteIndex = (octave - 3.1) * 7 + blackNotePositions[blackNote];
+
+            blackKey.style.left = (whiteIndex / totalWhiteKeys) * 100 + '%';
+
+            const blackLabel = document.createElement('div');
+            blackLabel.className = 'key-label';
+            blackLabel.textContent = blackNote + octave;
+            blackKey.appendChild(blackLabel);
+
+            keyboard.appendChild(blackKey);
+          }
+        });
+      });
+    }
+
+    createKeyboard();
+
+    // Get frequency from note
+    function noteToFrequency(note, octave) {
+      const A4 = 440;
+      const noteIndex = noteStrings.indexOf(note);
+      const halfSteps = (octave - 4) * 12 + noteIndex - 9; // A4 is index 9
+      return A4 * Math.pow(2, halfSteps / 12);
+    }
+
+    // Get note from frequency
+    function frequencyToNote(frequency) {
+      const A4 = 440;
+      const halfSteps = 12 * Math.log2(frequency / A4);
+      const octave = Math.floor(halfSteps / 12) + 4;
+      const noteIndex = Math.round(halfSteps % 12 + 9);
+      const note = noteStrings[(noteIndex + 12) % 12];
+
+      const targetFreq = noteToFrequency(note, octave);
+      const cents = Math.round(1200 * Math.log2(frequency / targetFreq));
+
+      return { note, octave, cents, frequency: targetFreq };
+    }
+
+    // Autocorrelation pitch detection
+    function autoCorrelate(buffer, sampleRate) {
+      const SIZE = buffer.length;
+      const MAX_SAMPLES = Math.floor(SIZE / 2);
+      let best_offset = -1;
+      let best_correlation = 0;
+      let rms = 0;
+
+      // Calculate RMS
+      for (let i = 0; i < SIZE; i++) {
+        const val = buffer[i];
+        rms += val * val;
+      }
+      rms = Math.sqrt(rms / SIZE);
+
+      // Not enough signal
+      if (rms < 0.01) return -1;
+
+      // Find the best offset
+      let lastCorrelation = 1;
+      for (let offset = 1; offset < MAX_SAMPLES; offset++) {
+        let correlation = 0;
+
+        for (let i = 0; i < MAX_SAMPLES; i++) {
+          correlation += Math.abs(buffer[i] - buffer[i + offset]);
+        }
+
+        correlation = 1 - (correlation / MAX_SAMPLES);
+
+        if (correlation > 0.9 && correlation > lastCorrelation) {
+          const foundGoodCorrelation = correlation > best_correlation;
+          if (foundGoodCorrelation) {
+            best_correlation = correlation;
+            best_offset = offset;
+          }
+        }
+
+        lastCorrelation = correlation;
+      }
+
+      if (best_correlation > 0.01) {
+        return sampleRate / best_offset;
+      }
+
+      return -1;
+    }
+
+    function updateDisplay(frequency) {
+      if (frequency === -1 || frequency < 50 || frequency > 2000) {
+        return;
+      }
+
+      const noteInfo = frequencyToNote(frequency);
+      const noteName = noteInfo.note + noteInfo.octave;
+
+      // Update main display
+      noteDisplay.textContent = noteName;
+      frequencyDisplay.textContent = frequency.toFixed(1) + ' Hz';
+      centsDisplay.textContent = (noteInfo.cents > 0 ? '+' : '') + noteInfo.cents + ' cents';
+
+      // Update stats
+      currentNote.textContent = noteName;
+      currentFreq.textContent = frequency.toFixed(1) + ' Hz';
+
+      // Calculate accuracy
+      const acc = Math.max(0, 100 - Math.abs(noteInfo.cents));
+      accuracy.textContent = acc.toFixed(0) + '%';
+
+      // Update tuning needle (cents range -50 to +50)
+      const needlePosition = 50 + (noteInfo.cents / 50) * 35;
+      tuningNeedle.style.left = Math.max(15, Math.min(85, needlePosition)) + '%';
+
+      // Highlight piano key
+      document.querySelectorAll('.white-key, .black-key').forEach(key => {
+        key.classList.remove('active');
+      });
+
+      const activeKey = document.querySelector(`[data-note="${noteName}"]`);
+      if (activeKey) {
+        activeKey.classList.add('active');
+      }
+    }
+
+    function detectPitch() {
+      const bufferLength = analyser.fftSize;
+      const buffer = new Float32Array(bufferLength);
+      analyser.getFloatTimeDomainData(buffer);
+
+      const frequency = autoCorrelate(buffer, audioContext.sampleRate);
+      updateDisplay(frequency);
+
+      if (isDetecting) {
+        animationId = requestAnimationFrame(detectPitch);
+      }
+    }
+
+    startBtn.onclick = async () => {
+      if (!isDetecting) {
+        try {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          analyser = audioContext.createAnalyser();
+          analyser.fftSize = 2048;
+          analyser.smoothingTimeConstant = 0.8;
+
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          microphone = audioContext.createMediaStreamSource(stream);
+          microphone.connect(analyser);
+
+          isDetecting = true;
+          startBtn.textContent = '⏹ STOP DETECTION';
+          startBtn.classList.add('active');
+          warning.style.display = 'none';
+
+          detectPitch();
+
+        } catch (err) {
+          console.error('Microphone error:', err);
+          warning.style.display = 'block';
+          alert('Could not access microphone. Please check your browser permissions.');
+        }
+      } else {
+        // Stop detection
+        isDetecting = false;
+
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+        }
+
+        if (microphone) {
+          microphone.disconnect();
+          microphone.mediaStream.getTracks().forEach(track => track.stop());
+        }
+
+        if (audioContext) {
+          audioContext.close();
+        }
+
+        startBtn.textContent = '🎤 START DETECTION';
+        startBtn.classList.remove('active');
+
+        // Reset displays
+        noteDisplay.textContent = '--';
+        frequencyDisplay.textContent = '-- Hz';
+        centsDisplay.textContent = '-- cents';
+        currentNote.textContent = '--';
+        currentFreq.textContent = '-- Hz';
+        accuracy.textContent = '--';
+        tuningNeedle.style.left = '50%';
+
+        document.querySelectorAll('.white-key, .black-key').forEach(key => {
+          key.classList.remove('active');
+        });
+      }
+    };
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Acoustics Calculator | RT60 Reverberation Time, Axial Modes & Treatment</title>
+    <meta name="description"
+        content="Calculate room acoustics, RT60 reverberation decay times, standing wave room modes, and acoustic panel placement for home theaters, mixing control rooms, and listening spaces.">
+    <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/room-acoustics-calculator/">
+
+    <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="./assets/bootstrap5.css" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/tools.css" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"
+        crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://pitchdetectors.com/speaker-tools/room-acoustics-calculator/#webpage",
+          "url": "https://pitchdetectors.com/speaker-tools/room-acoustics-calculator/",
+          "name": "Room Acoustics & RT60 Calculator",
+          "description": "Analyze room reverberation time (RT60), standing wave room modes, Schroeder crossover frequencies, and optimal acoustic treatment.",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://pitchdetectors.com/#website",
+            "name": "Pitch Detectors",
+            "url": "https://pitchdetectors.com/"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://pitchdetectors.com/speaker-tools/room-acoustics-calculator/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is RT60 and why is it important for listening rooms and studios?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "RT60 is the reverberation time in seconds required for sound pressure level to decay by 60 decibels after a sound source abruptly stops. If RT60 is too long (>0.6s in small rooms), reflected echoes mask musical transients and muddy speech intelligibility. If RT60 is too short (<0.2s), the acoustic environment sounds unnaturally dry and lifeless, fatiguing listeners."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between axial, tangential, and oblique room modes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Axial modes involve sound waves reflecting parallel between two opposing surfaces (length, width, or height) and possess the highest energy and strongest resonant peaks/nulls (+6 dB to +12 dB). Tangential modes involve four boundary surfaces and carry half the energy of axial modes. Oblique modes involve all six room boundaries, carrying only a quarter of the energy, and are significantly more damped."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the Schroeder frequency and why does it divide acoustic behavior?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Schroeder frequency (fs ≈ 2000 √(T60 / V)) marks the transition between wave acoustics and geometric ray acoustics in an enclosed room. Below the Schroeder frequency (typically 100 Hz to 250 Hz in domestic rooms), sound behaves as isolated discrete resonant modes causing localized bass peaks and nulls. Above fs, modal density is dense enough that sound behaves statistically as smooth diffuse reflections."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why are cubical rooms (L = W = H) acoustically problematic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When room dimensions are identical or exact integer multiples (e.g. 10 ft × 10 ft × 10 ft), axial resonant modes for all three dimensions fall on the exact same frequencies. This triple modal degeneracy causes catastrophic acoustic bass booming at those specific frequencies and severe nulls in adjacent bands."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where should bass traps and acoustic absorption panels be installed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bass traps should be installed in tri-hedral corners (where two walls meet the ceiling or floor) because all axial, tangential, and oblique room modes build to maximum acoustic pressure in corners. Mid/high frequency absorption panels should be placed at the first reflection points on side walls and ceilings (identified via the mirror technique) to eliminate early specular reflections that corrupt stereo imaging."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can digital room correction EQ replace physical acoustic treatment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Digital EQ (DSP room correction) can only alter the initial direct signal leaving the speaker; it cannot alter the decay time (RT60) or eliminate non-minimum-phase destructive boundary cancellations (phase nulls). Pumping EQ boost into an acoustic null wastes amplifier power without filling the dip. Physical bass trapping and absorption are essential to control time-domain ringing and acoustic reflections."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container-fluid py-4">
+        <div class="row justify-content-around">
+
+            <!-- Main Content (col-lg-9 col-md-8) -->
+            <div class="col-lg-9 col-md-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/speaker-tools/">Speaker Tools</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Room Acoustics Calculator</li>
+                    </ol>
+                </nav>
+
+                <div class="tool-container">
+                    <div class="tool-title">
+                        <h1><i class="bi bi-house me-2"></i>Room Acoustics Calculator</h1>
+                        <p>Analyze room reverberation time (RT60), standing wave room modes (axial, tangential, and
+                            oblique), Schroeder frequency transitions, and acoustic panel requirements.</p>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Room Length (feet):</label>
+                            <input type="number" class="form-control" id="roomLength" value="20" min="6" max="100"
+                                oninput="calculate()">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Room Width (feet):</label>
+                            <input type="number" class="form-control" id="roomWidth" value="15" min="6" max="100"
+                                oninput="calculate()">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Room Height (feet):</label>
+                            <input type="number" class="form-control" id="roomHeight" value="9" min="6" max="30"
+                                oninput="calculate()">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Boundary Surface Condition:</label>
+                            <select class="form-select" id="roomType" onchange="calculate()">
+                                <option value="bare">Bare (Hard drywall, tile/hardwood floor)</option>
+                                <option value="furnished" selected>Furnished (Carpet, sofa, curtains, bookshelves)
+                                </option>
+                                <option value="treated">Acoustically Treated (Bass traps & absorption panels)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Target Acoustic Use Case:</label>
+                            <select class="form-select" id="useCase" onchange="calculate()">
+                                <option value="listening" selected>Hi-Fi Stereo Music Listening</option>
+                                <option value="mixing">Studio Mixing & Mastering Control Room</option>
+                                <option value="recording">Live Tracking & Vocal Recording</option>
+                                <option value="hometheater">Multi-Channel Home Theater (Dolby Atmos)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="result-box">
+                        <h3>Acoustic Room Analysis</h3>
+                        <div class="row text-start mt-3">
+                            <div class="col-md-3 col-6 mb-3">
+                                <strong>Room Enclosed Volume:</strong><br>
+                                <span id="roomVolume" class="fs-4 text-teal">2700 ft³</span>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <strong>Estimated RT60:</strong><br>
+                                <span id="rt60" class="fs-4 text-teal">0.45s</span>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <strong>Target Ideal RT60:</strong><br>
+                                <span id="idealRT60" class="fs-4 text-teal">0.3-0.5s</span>
+                            </div>
+                            <div class="col-md-3 col-6 mb-3">
+                                <strong>Acoustic Rating:</strong><br>
+                                <span id="roomRating" class="fs-4">Good</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-light rounded border">
+                        <h5 class="text-dark fw-bold mb-3"><i class="bi bi-activity text-teal me-2"></i>Fundamental
+                            Axial Room Modes (Standing Waves)</h5>
+                        <p class="text-secondary small mb-3">Axial modes represent reflections parallel between opposing
+                            boundary walls. These frequencies produce dramatic standing wave peaks (+6 dB to +12 dB) and
+                            cancellation nulls (-30 dB):</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center align-middle bg-white">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Boundary Dimension</th>
+                                        <th>1st Harmonic Mode ($n=1$)</th>
+                                        <th>2nd Harmonic Mode ($n=2$)</th>
+                                        <th>3rd Harmonic Mode ($n=3$)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modesTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 rounded" id="recommendationsBox">
+                        <h5 class="fw-bold"><i class="bi bi-lightbulb text-teal me-2"></i>Acoustic Treatment
+                            Recommendations</h5>
+                        <ul id="recommendations" class="mb-0"></ul>
+                    </div>
+                </div>
+
+                <!-- Comprehensive Technical Guide -->
+                <div class="card border-0 shadow-sm mt-4 p-4">
+                    <h2 class="h3 text-dark fw-bold mb-3"><i class="bi bi-soundwave text-teal me-2"></i>The Physics of
+                        Architectural Acoustics in Enclosed Listening Spaces</h2>
+                    <p class="text-secondary">
+                        When a loudspeaker emits sound inside a closed room, the listener hears two distinct acoustic
+                        components: the <strong>direct sound</strong> propagating straight from the transducer cone,
+                        followed milliseconds later by thousands of <strong>reflected sound waves</strong> bounding off
+                        the floor, ceiling, and boundary walls. How these reflections interact dictates tonal
+                        coloration, stereo imaging precision, and bass definition.
+                    </p>
+                    <p class="text-secondary">
+                        Unlike open-air amphitheaters or anechoic chambers, small room acoustics operate across two
+                        distinct physical regimes separated by the <strong>Schroeder Frequency ($f_s$)</strong>: wave
+                        acoustics at low frequencies and statistical geometric acoustics at mid and high frequencies.
+                    </p>
+
+                    <hr class="my-4">
+
+                    <h3 class="h4 text-dark fw-bold mb-3">The Schroeder Frequency & Acoustic Regimes</h3>
+                    <p class="text-secondary">
+                        Developed by acoustic physicist Manfred Schroeder, the Schroeder frequency marks the boundary
+                        where modal density becomes high enough for reflections to overlap into a continuous diffuse
+                        sound field:
+                    </p>
+                    <div class="p-3 bg-light rounded border text-center my-3">
+                        <span class="fs-5 text-dark font-monospace">$$f_s approx 2000 sqrt{rac{T_{60}}{V}} quad [
+                            ext{Hz}]$$</span>
+                        <div class="small text-muted mt-2">Where $T_{60}$ is reverberation time in seconds, and $V$ is
+                            room volume in cubic meters ($1, ext{m}^3 approx 35.315, ext{ft}^3$).</div>
+                    </div>
+                    <ul class="text-secondary">
+                        <li class="mb-2"><strong>Below $f_s$ (Wave Regime / Modal Zone):</strong> Typically below 100 Hz
+                            to 200 Hz in domestic rooms. Individual standing waves (room modes) dictate sound. Pressure
+                            varies wildly by 20 to 30 dB from one chair to the next. Standard porous panels are
+                            ineffective here; thick corner bass traps or membrane absorbers are required.</li>
+                        <li class="mb-2"><strong>Above $f_s$ (Geometric / Ray Regime):</strong> Sound behaves like light
+                            rays. Specular reflections create comb filtering and flutter echoes. Treatment relies on
+                            mid/high porous absorption panels at first reflection points and quadratic residue diffusers
+                            (QRD).</li>
+                    </ul>
+
+                    <hr class="my-4">
+
+                    <h3 class="h4 text-dark fw-bold mb-3">Reverberation Time: The Sabine & Eyring Equations</h3>
+                    <p class="text-secondary">
+                        Reverberation time ($T_{60}$) is quantified as the time required for sound energy to decay by 60
+                        dB (to one-millionth of its initial intensity). In rooms with moderate absorption, Wallace
+                        Sabine's empirical formulation applies:
+                    </p>
+                    <div class="row g-3 my-2">
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded border text-center">
+                                <span class="fw-bold text-dark">Sabine Equation (Metric):</span><br>
+                                <span class="fs-5 font-monospace text-teal">$$T_{60} = rac{0.161 cdot V}{A} =
+                                    rac{0.161 cdot V}{sum S_i alpha_i}$$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded border text-center">
+                                <span class="fw-bold text-dark">Sabine Equation (Imperial):</span><br>
+                                <span class="fs-5 font-monospace text-teal">$$T_{60} = rac{0.049 cdot V}{A_{
+                                    ext{sabins}}}$$</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-secondary">
+                        Where $V$ is room volume, $S_i$ is surface area of material $i$, and $alpha_i$ is the material's
+                        sound absorption coefficient. When average absorption $ar{alpha}$ exceeds 0.20 (in well-treated
+                        recording control rooms), the <strong>Eyring Equation</strong> provides superior predictive
+                        accuracy by preventing mathematically impossible negative decay times:
+                    </p>
+                    <div class="p-3 bg-light rounded border text-center my-3">
+                        <span class="fs-5 text-dark font-monospace">$$T_{60} = rac{0.161 cdot V}{-S cdot ln(1 -
+                            ar{alpha})}$$</span>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h3 class="h4 text-dark fw-bold mb-3">The Mathematics of Room Modes: Standing Wave Resonance</h3>
+                    <p class="text-secondary">
+                        Room modes occur when an acoustic wavelength fits exactly between opposing boundary walls,
+                        setting up standing waves of constructive and destructive interference. The frequencies for all
+                        rectangular room modes are calculated via Lord Rayleigh's 3D wave equation:
+                    </p>
+                    <div class="p-3 bg-light rounded border text-center my-3">
+                        <span class="fs-5 text-dark font-monospace">$$f(n_x, n_y, n_z) = rac{c}{2}
+                            sqrt{left(rac{n_x}{L}
+                            ight)^2 + left(rac{n_y}{W}
+                            ight)^2 + left(rac{n_z}{H}
+                            ight)^2}$$</span>
+                        <div class="small text-muted mt-2">Where $c = 1125, ext{ft/s}$ (343 m/s), $L, W, H$ are room
+                            dimensions, and $n_x, n_y, n_z$ are non-negative mode integers ($0, 1, 2, 3dots$).</div>
+                    </div>
+
+                    <div class="table-responsive my-3">
+                        <table class="table table-bordered table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Mode Classification</th>
+                                    <th>Non-Zero Integers</th>
+                                    <th>Active Boundary Surfaces</th>
+                                    <th>Acoustic Energy & Severity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Axial Modes</strong></td>
+                                    <td>One index non-zero (e.g., $1,0,0$)</td>
+                                    <td>2 parallel walls</td>
+                                    <td><strong>Highest energy (100%)</strong>. Severe peaks and nulls; primary cause of
+                                        muddy bass and bass dropouts.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tangential Modes</strong></td>
+                                    <td>Two indices non-zero (e.g., $1,1,0$)</td>
+                                    <td>4 boundary surfaces</td>
+                                    <td><strong>Moderate energy (50%)</strong>. Half the energy of axial modes;
+                                        intermediate decay times.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Oblique Modes</strong></td>
+                                    <td>All three non-zero (e.g., $1,1,1$)</td>
+                                    <td>All 6 boundary surfaces</td>
+                                    <td><strong>Lowest energy (25%)</strong>. Damped rapidly by room surface absorption;
+                                        minor acoustic impact.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h3 class="h4 text-dark fw-bold mb-3">Dimensional Ratios & The Bolt Area</h3>
+                    <p class="text-secondary">
+                        The distribution of room modes depends directly on room dimensional proportions ($L:W:H$).
+                        Severe acoustic flaws arise when dimensions are identical or exact multiples:
+                    </p>
+                    <ul class="text-secondary">
+                        <li class="mb-2"><strong>Cubical Rooms ($1:1:1$):</strong> Triple modal degeneracy. The length,
+                            width, and height axial modes coincide at the exact same frequencies, producing massive
+                            acoustic boomy resonances followed by deep dead zones.</li>
+                        <li class="mb-2"><strong>Favorable Bolt Ratios:</strong> Acoustician Richard Bolt established
+                            favorable dimensional proportions that distribute modes evenly across the low-frequency
+                            spectrum without severe clustering:
+                            <ul>
+                                <li><strong>Sepmeyer Ratio A:</strong> $1.00 : 1.14 : 1.39$ (Height : Width : Length)
+                                </li>
+                                <li><strong>Sepmeyer Ratio B:</strong> $1.00 : 1.28 : 1.54$</li>
+                                <li><strong>Louden Ratio:</strong> $1.00 : 1.40 : 1.90$</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Structured FAQ Accordion -->
+                <div class="card border-0 shadow-sm mt-4 p-4">
+                    <h2 class="h3 text-dark fw-bold mb-3"><i class="bi bi-question-circle text-teal me-2"></i>Frequently
+                        Asked Questions</h2>
+                    <div class="accordion" id="roomAcousticsFAQ">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    What is RT60 and why is it important for listening rooms and studios?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#roomAcousticsFAQ">
+                                <div class="accordion-body text-secondary">
+                                    RT60 is the reverberation time in seconds required for sound pressure level to decay
+                                    by 60 decibels after a sound source abruptly stops. If RT60 is too long (&gt;0.6s in
+                                    small rooms), reflected echoes mask musical transients and muddy speech
+                                    intelligibility. If RT60 is too short (&lt;0.2s), the acoustic environment sounds
+                                    unnaturally dry and lifeless, fatiguing listeners.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    What is the difference between axial, tangential, and oblique room modes?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                <div class="accordion-body text-secondary">
+                                    Axial modes involve sound waves reflecting parallel between two opposing surfaces
+                                    (length, width, or height) and possess the highest energy and strongest resonant
+                                    peaks/nulls (+6 dB to +12 dB). Tangential modes involve four boundary surfaces and
+                                    carry half the energy of axial modes. Oblique modes involve all six room boundaries,
+                                    carrying only a quarter of the energy, and are significantly more damped.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    What is the Schroeder frequency and why does it divide acoustic behavior?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                <div class="accordion-body text-secondary">
+                                    The Schroeder frequency ($f_s approx 2000 sqrt{T_{60} / V}$) marks the transition
+                                    between wave acoustics and geometric ray acoustics in an enclosed room. Below the
+                                    Schroeder frequency (typically 100 Hz to 250 Hz in domestic rooms), sound behaves as
+                                    isolated discrete resonant modes causing localized bass peaks and nulls. Above
+                                    $f_s$, modal density is dense enough that sound behaves statistically as smooth
+                                    diffuse reflections.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    Why are cubical rooms (L = W = H) acoustically problematic?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                <div class="accordion-body text-secondary">
+                                    When room dimensions are identical or exact integer multiples (e.g. 10 ft &times; 10
+                                    ft &times; 10 ft), axial resonant modes for all three dimensions fall on the exact
+                                    same frequencies. This triple modal degeneracy causes catastrophic acoustic bass
+                                    booming at those specific frequencies and severe nulls in adjacent bands.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq5">
+                                    Where should bass traps and acoustic absorption panels be installed?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                <div class="accordion-body text-secondary">
+                                    Bass traps should be installed in tri-hedral corners (where two walls meet the
+                                    ceiling or floor) because all axial, tangential, and oblique room modes build to
+                                    maximum acoustic pressure in corners. Mid/high frequency absorption panels should be
+                                    placed at the first reflection points on side walls and ceilings (identified via the
+                                    mirror technique) to eliminate early specular reflections that corrupt stereo
+                                    imaging.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq6">
+                                    Can digital room correction EQ replace physical acoustic treatment?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                <div class="accordion-body text-secondary">
+                                    No. Digital EQ (DSP room correction) can only alter the initial direct signal
+                                    leaving the speaker; it cannot alter the decay time ($T_{60}$) or eliminate
+                                    non-minimum-phase destructive boundary cancellations (phase nulls). Pumping EQ boost
+                                    into an acoustic null wastes amplifier power without filling the dip. Physical bass
+                                    trapping and absorption are essential to control time-domain ringing and acoustic
+                                    reflections.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar (col-lg-3 col-md-4) -->
+            <div class="col-lg-3 col-md-4">
+                <div class="tools-sidebar">
+                    <div class="sidebar-search mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                                onkeyup="searchTools()">
+                        </div>
+                    </div>
+
+                    <div class="sidebar-categories">
+                        <div class="sidebar-category active">
+                            <h5><i class="bi bi-speaker me-2"></i>Speaker Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/speaker-tools/speaker-wattage-calculator/"><i class="bi bi-lightning"></i>
+                                        Speaker Wattage</a></li>
+                                <li><a href="/speaker-tools/speaker-impedance-calculator/"><i
+                                            class="bi bi-diagram-3"></i>
+                                        Impedance Calculator</a></li>
+                                <li><a href="/speaker-tools/amplifier-power-calculator/"><i class="bi bi-plug"></i>
+                                        Amplifier Power</a></li>
+                                <li><a href="/speaker-tools/room-acoustics-calculator/" class="text-teal"><i
+                                            class="bi bi-house"></i>
+                                        Room Acoustics</a></li>
+                                <li><a href="/speaker-tools/room-modes-calculator/"><i class="bi bi-activity"></i>
+                                        Room Modes</a></li>
+                                <li><a href="/speaker-tools/room-volume-calculator/"><i
+                                            class="bi bi-box-arrow-in-up-right"></i>
+                                        Room Volume</a></li>
+                                <li><a href="/speaker-tools/speaker-placement-calculator/"><i
+                                            class="bi bi-arrows-move"></i>
+                                        Speaker Placement</a></li>
+                                <li><a href="/speaker-tools/sound-reflection-absorption-calculator/"><i
+                                            class="bi bi-layers"></i>
+                                        Reflection & Absorption</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>./assets/
+    ./assets/
+    <div id="footer"></div>
+    <script src="/assets/bootstrap5.js" defer></script>
+    <script src="/assets/tools.js" defer></script>
+
+    <!-- tool js -->
+    <script defer>
+        function calculate() {
+            const length = parseFloat(document.getElementById('roomLength').value) || 20;
+            const width = parseFloat(document.getElementById('roomWidth').value) || 15;
+            const height = parseFloat(document.getElementById('roomHeight').value) || 9;
+            const roomType = document.getElementById('roomType').value;
+            const useCase = document.getElementById('useCase').value;
+
+            // Convert to meters
+            const lengthM = length * 0.3048;
+            const widthM = width * 0.3048;
+            const heightM = height * 0.3048;
+
+            const volume = length * width * height;
+            const volumeM = lengthM * widthM * heightM;
+            const surfaceArea = 2 * (length * width + length * height + width * height);
+            const surfaceAreaM = surfaceArea * 0.0929;
+
+            document.getElementById('roomVolume').textContent = Math.round(volume) + ' ft³';
+
+            // Calculate room modes (f = c / 2L where c = 1125 ft/s)
+            const speedOfSound = 1125; // ft/s
+            const modes = {
+                length: [speedOfSound / (2 * length), speedOfSound / length, 3 * speedOfSound / (2 * length)],
+                width: [speedOfSound / (2 * width), speedOfSound / width, 3 * speedOfSound / (2 * width)],
+                height: [speedOfSound / (2 * height), speedOfSound / height, 3 * speedOfSound / (2 * height)]
+            };
+
+            let modesHTML = '';
+            modesHTML += `<tr><td>Length (${length}')</td>
+                <td>${modes.length[0].toFixed(1)} Hz</td>
+                <td>${modes.length[1].toFixed(1)} Hz</td>
+                <td>${modes.length[2].toFixed(1)} Hz</td></tr>`;
+            modesHTML += `<tr><td>Width (${width}')</td>
+                <td>${modes.width[0].toFixed(1)} Hz</td>
+                <td>${modes.width[1].toFixed(1)} Hz</td>
+                <td>${modes.width[2].toFixed(1)} Hz</td></tr>`;
+            modesHTML += `<tr><td>Height (${height}')</td>
+                <td>${modes.height[0].toFixed(1)} Hz</td>
+                <td>${modes.height[1].toFixed(1)} Hz</td>
+                <td>${modes.height[2].toFixed(1)} Hz</td></tr>`;
+            document.getElementById('modesTable').innerHTML = modesHTML;
+
+            // Estimate RT60 using Sabine formula
+            let avgAbsorption = 0.1; // default
+            switch (roomType) {
+                case 'bare': avgAbsorption = 0.05; break;
+                case 'furnished': avgAbsorption = 0.15; break;
+                case 'treated': avgAbsorption = 0.35; break;
+            }
+
+            const totalAbsorption = surfaceAreaM * avgAbsorption;
+            const rt60 = 0.161 * volumeM / totalAbsorption;
+
+            document.getElementById('rt60').textContent = rt60.toFixed(2) + 's';
+
+            // Ideal RT60 based on use case
+            let idealRT60 = '0.3-0.5s';
+            let minIdeal = 0.3, maxIdeal = 0.5;
+            switch (useCase) {
+                case 'listening': idealRT60 = '0.3-0.5s'; minIdeal = 0.3; maxIdeal = 0.5; break;
+                case 'mixing': idealRT60 = '0.2-0.4s'; minIdeal = 0.2; maxIdeal = 0.4; break;
+                case 'recording': idealRT60 = '0.3-0.6s'; minIdeal = 0.3; maxIdeal = 0.6; break;
+                case 'hometheater': idealRT60 = '0.4-0.6s'; minIdeal = 0.4; maxIdeal = 0.6; break;
+            }
+            document.getElementById('idealRT60').textContent = idealRT60;
+
+            // Room rating
+            let rating = 'Good';
+            let ratingClass = 'text-success';
+            if (rt60 < minIdeal * 0.7) {
+                rating = 'Too Dead';
+                ratingClass = 'text-warning';
+            } else if (rt60 > maxIdeal * 1.5) {
+                rating = 'Too Live';
+                ratingClass = 'text-danger';
+            } else if (rt60 >= minIdeal && rt60 <= maxIdeal) {
+                rating = 'Excellent';
+                ratingClass = 'text-success';
+            }
+            document.getElementById('roomRating').textContent = rating;
+            document.getElementById('roomRating').className = 'fs-4 ' + ratingClass;
+
+            // Recommendations
+            const recs = [];
+            if (rt60 > maxIdeal) {
+                recs.push('Add broadband absorption panels on first-reflection wall and ceiling points');
+                recs.push('Lay dense carpet or wool area rugs over hard floor surfaces to reduce vertical slap echo');
+                recs.push('Hang heavy velour acoustic curtains over windows to attenuate high-frequency flutter');
+            }
+            if (rt60 < minIdeal) {
+                recs.push('Room is acoustically over-damped; replace some absorption with 1D/2D QRD diffusers');
+                recs.push('Restore natural reverberation to prevent listener ear fatigue');
+            }
+
+            const lowestMode = Math.min(modes.length[0], modes.width[0], modes.height[0]);
+            if (lowestMode < 40) {
+                recs.push(`Deep axial fundamental mode detected at ${lowestMode.toFixed(0)} Hz — install corner bass traps`);
+            }
+
+            const ratio1 = length / width;
+            const ratio2 = length / height;
+            if (Math.abs(ratio1 - 1) < 0.2 || Math.abs(ratio2 - 1) < 0.2) {
+                recs.push('Room dimensions are nearly cubic or square — expect pronounced modal clustering');
+            }
+
+            if (recs.length === 0) {
+                recs.push('Room dimensions and surface absorption are well balanced within ideal criteria');
+                recs.push('Fine-tune speaker distance from front wall to optimize SBIR boundary loading');
+            }
+
+            document.getElementById('recommendations').innerHTML = recs.map(r => '<li>' + r + '</li>').join('');
+            document.getElementById('recommendationsBox').className =
+                rt60 > maxIdeal * 1.3 || rt60 < minIdeal * 0.7
+                    ? 'mt-4 p-4 rounded bg-warning bg-opacity-10'
+                    : 'mt-4 p-4 rounded bg-success bg-opacity-10';
+        }
+
+        calculate();
+
+        window.addEventListener("load", () => {
+            Promise.all([
+                fetch("../../header.html").then(res => res.text()),
+                fetch("../../footer.html").then(res => res.text())
+            ])
+                .then(([header, footer]) => {
+                    document.getElementById("header").innerHTML = header;
+                    document.getElementById("footer").innerHTML = footer;
+                })
+                .catch(err => console.error("Include load failed:", err));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossover Frequency Calculator – Passive Speaker Filter Design | Pitch Detectors</title>
+    <meta name="description"
+        content="Calculate passive speaker crossover components (L & C values) for 1st, 2nd, 3rd, and 4th order filters. Compare Butterworth, Linkwitz-Riley, and Bessel topologies." />
+    <meta name="keywords"
+        content="crossover frequency calculator, speaker crossover calculator, passive crossover design, 2-way crossover calculator, linkwitz-riley crossover, butterworth filter, inductor capacitor values" />
+
+    <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/crossover-frequency-calculator/">
+    <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title"
+        content="Crossover Frequency Calculator – Passive Speaker Filter Design | Pitch Detectors" />
+    <meta property="og:description"
+        content="Design passive multi-way speaker crossovers. Calculate exact inductor (mH) and capacitor (µF) values for Butterworth, Linkwitz-Riley, and Bessel alignments." />
+    <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/crossover-frequency-calculator/" />
+    <meta property="og:site_name" content="Pitch Detectors" />
+    <meta property="og:image" content="./assets/imgs/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Crossover Frequency Calculator by Pitch Detectors" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title"
+        content="Crossover Frequency Calculator – Passive Speaker Filter Design | Pitch Detectors" />
+    <meta name="twitter:description"
+        content="Calculate passive crossover components for 2-way speakers. Fast, accurate capacitor and inductor value calculation." />
+    <meta name="twitter:image" content="./assets/imgs/logo.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="./assets/bootstrap5.css" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/tools.css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"
+        crossorigin="anonymous"></script>
+
+    <!-- Structured Data: WebApplication & FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://pitchdetectors.com/speaker-tools/crossover-frequency-calculator/#webapp",
+          "name": "Crossover Frequency Calculator",
+          "url": "https://pitchdetectors.com/speaker-tools/crossover-frequency-calculator/",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All modern browsers (Chrome, Firefox, Safari, Edge)",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Calculates passive speaker crossover component values (capacitors in µF, inductors in mH) across 1st, 2nd, 3rd, and 4th order Butterworth, Linkwitz-Riley, and Bessel topologies."
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://pitchdetectors.com/speaker-tools/crossover-frequency-calculator/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the primary function of a speaker crossover network?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A crossover network is an electrical filter system that splits the full-bandwidth audio spectrum into designated frequency bands. High-pass filters route high frequencies to the tweeter while blocking low bass frequencies that would cause thermal voice coil burnout or mechanical distortion. Low-pass filters route low frequencies to the woofer while cutting high frequencies where the heavy cone suffers from severe acoustic cone breakup and narrow beaming directivity."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why must the tweeter's polarity be inverted in a 2nd-order crossover?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A 2nd-order (12 dB/octave) filter introduces a 90-degree phase lead in the high-pass section and a 90-degree phase lag in the low-pass section, resulting in an exact 180-degree phase difference between woofer and tweeter at the crossover frequency. If wired in normal polarity, the two drivers cancel each other out, creating a deep, audible acoustic null (-20 dB to -30 dB) at the crossover point. Inverting the tweeter's positive and negative terminals puts them back in acoustic phase."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between Butterworth and Linkwitz-Riley crossover alignments?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Butterworth filter has a Q of 0.707 and is down -3 dB at the crossover frequency, which causes an on-axis +3 dB acoustic power peak when two in-phase drivers sum together. A Linkwitz-Riley (LR) filter is down -6 dB at the crossover frequency (Q = 0.500), which results in a mathematically flat (0 dB) summed magnitude response across the transition region with zero on-axis acoustic peaking."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I choose the correct crossover frequency for a 2-way speaker?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The crossover point is chosen based on driver physical limits: it should be at least two octaves above the tweeter's fundamental resonant frequency (e.g., if Fs = 1,000 Hz, cross over no lower than 2,000 Hz to 2,500 Hz), and below the woofer's cone breakup and beaming frequency (typically below 2,500 Hz for a 6.5-inch driver, or below 1,800 Hz for an 8-inch driver)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do real-world speaker crossovers differ from textbook calculations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Textbook calculations assume the speaker is a pure constant resistance (e.g., flat 8 Ohms). In reality, a speaker's voice coil has inductance (Le) that causes impedance to rise with frequency, and a mechanical resonance (Fs) that creates a large impedance spike. To make textbook crossover filters work accurately, engineers install an RC Zobel network to flatten voice coil inductance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the trade-offs between 1st-order and 4th-order crossovers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A 1st-order crossover (6 dB/octave) uses only 1 component per driver and offers perfect transient impulse response with zero phase distortion, but provides minimal protection to the tweeter and causes a massive frequency overlap band. A 4th-order crossover (24 dB/octave) requires 4 components per driver and has more phase rotation, but provides razor-sharp driver isolation, virtually zero lobing tilt, and superior tweeter power handling."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container-fluid py-4">
+        <div class="row justify-content-around">
+
+            <div class="col-lg-3 col-md-4">
+                <div class="tools-sidebar">
+                    <div class="sidebar-search mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                                onkeyup="searchTools()">
+                        </div>
+                    </div>
+
+                    <div class="sidebar-categories">
+                        <div class="sidebar-category active">
+                            <h5><i class="bi bi-speaker me-2"></i>Speaker Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/speaker-tools/speaker-wattage-calculator/"><i class="bi bi-lightning"></i>
+                                        Speaker Wattage</a></li>
+                                <li><a href="/speaker-tools/speaker-impedance-calculator/"><i
+                                            class="bi bi-diagram-3"></i>
+                                        Impedance Calculator</a></li>
+                                <li><a href="/speaker-tools/amplifier-power-calculator/"><i class="bi bi-plug"></i>
+                                        Amplifier Power</a></li>
+                                <li><a href="/speaker-tools/sound-distance-drop-calculator/"><i
+                                            class="bi bi-rulers"></i>
+                                        Sound Distance Drop</a></li>
+                                <li><a href="/speaker-tools/speaker-placement-calculator/"><i
+                                            class="bi bi-arrows-move"></i>
+                                        Speaker Placement</a></li>
+                                <li><a href="/speaker-tools/room-acoustics-calculator/"><i class="bi bi-house"></i> Room
+                                        Acoustics</a></li>
+                                <li><a href="/speaker-tools/ported-enclosure-calculator/"><i class="bi bi-box"></i>
+                                        Ported Enclosure</a></li>
+                                <li><a href="/speaker-tools/sealed-box-calculator/"><i class="bi bi-box-seam"></i>
+                                        Sealed Box</a></li>
+                                <li><a href="/speaker-tools/crossover-frequency-calculator/"><i
+                                            class="bi bi-filter"></i>
+                                        Crossover Frequency</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/speaker-tools/">Speaker Tools</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Crossover Frequency Calculator</li>
+                    </ol>
+                </nav>
+
+                <div class="tool-container">
+                    <div class="tool-title">
+                        <h2><i class="bi bi-filter me-2"></i>Crossover Frequency Calculator</h2>
+                        <p>Calculate component values for passive speaker crossovers. Design high-pass and low-pass
+                            filters for multi-way speakers.</p>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Crossover Frequency (Hz):</label>
+                            <input type="number" class="form-control" id="crossoverFreq" value="3000" min="100"
+                                max="20000" oninput="calculate()">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Speaker Impedance (Ω):</label>
+                            <select class="form-select" id="impedance" onchange="calculate()">
+                                <option value="4">4 Ω</option>
+                                <option value="6">6 Ω</option>
+                                <option value="8" selected>8 Ω</option>
+                                <option value="16">16 Ω</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Crossover Order:</label>
+                            <select class="form-select" id="order" onchange="calculate()">
+                                <option value="1">1st Order (6 dB/oct)</option>
+                                <option value="2" selected>2nd Order (12 dB/oct)</option>
+                                <option value="3">3rd Order (18 dB/oct)</option>
+                                <option value="4">4th Order (24 dB/oct)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Crossover Type (2nd order):</label>
+                            <select class="form-select" id="crossoverType" onchange="calculate()">
+                                <option value="butterworth" selected>Butterworth (Q = 0.707)</option>
+                                <option value="linkwitz">Linkwitz-Riley (Q = 0.5)</option>
+                                <option value="bessel">Bessel (Q = 0.577)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="result-box h-100">
+                                <h3><i class="bi bi-arrow-down me-2"></i>Low-Pass (Woofer)</h3>
+                                <div class="text-start mt-3">
+                                    <div class="mb-3">
+                                        <strong>Inductor (L):</strong><br>
+                                        <span id="lpInductor" class="fs-3 text-teal">0.42 mH</span>
+                                    </div>
+                                    <div class="mb-3" id="lpCapRow">
+                                        <strong>Capacitor (C):</strong><br>
+                                        <span id="lpCapacitor" class="fs-3 text-teal">6.63 µF</span>
+                                    </div>
+                                    <div id="lpExtra"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="result-box h-100">
+                                <h3><i class="bi bi-arrow-up me-2"></i>High-Pass (Tweeter)</h3>
+                                <div class="text-start mt-3">
+                                    <div class="mb-3">
+                                        <strong>Capacitor (C):</strong><br>
+                                        <span id="hpCapacitor" class="fs-3 text-teal">6.63 µF</span>
+                                    </div>
+                                    <div class="mb-3" id="hpIndRow">
+                                        <strong>Inductor (L):</strong><br>
+                                        <span id="hpInductor" class="fs-3 text-teal">0.42 mH</span>
+                                    </div>
+                                    <div id="hpExtra"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-light rounded">
+                        <h5 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>Crossover Characteristics</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Slope:</strong> <span id="slope">12 dB/octave</span><br>
+                                <strong>Phase Shift:</strong> <span id="phaseShift">180° (invert polarity)</span>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Summed Response:</strong> <span id="sumResponse">Flat at crossover</span><br>
+                                <strong>Recommended For:</strong> <span id="recommended">General use</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-container mt-4">
+                    <div class="tool-section">
+                        <h2 class="text-mid mb-4"><i class="bi bi-lightning me-2"></i>Crossover Order Comparison</h2>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Slope</th>
+                                        <th>Components</th>
+                                        <th>Phase</th>
+                                        <th>Character</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1st</td>
+                                        <td>6 dB/oct</td>
+                                        <td>1 each</td>
+                                        <td>90°</td>
+                                        <td>Gentle, wide overlap</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2nd</td>
+                                        <td>12 dB/oct</td>
+                                        <td>2 each</td>
+                                        <td>180°</td>
+                                        <td>Common, good isolation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3rd</td>
+                                        <td>18 dB/oct</td>
+                                        <td>3 each</td>
+                                        <td>270°</td>
+                                        <td>Better isolation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4th</td>
+                                        <td>24 dB/oct</td>
+                                        <td>4 each</td>
+                                        <td>360°</td>
+                                        <td>Steep, excellent isolation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Start -->
+                <article class="tool-container mt-4" id="main-content">
+                    <header class="mb-4">
+                        <h1 class="text-teal mb-3">Speaker Crossover Design: Technical Guide to Passive Filter
+                            Topologies, Phase Alignment & Driver Integration</h1>
+                        <p class="lead text-muted">
+                            Master the electrical and acoustic engineering behind passive loudspeaker crossovers.
+                            Discover how reactive capacitance and inductance partition the audio spectrum, mitigate cone
+                            breakup, manage voice coil impedance, and ensure seamless acoustic summation at the
+                            crossover point.
+                        </p>
+                    </header>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-diagram-3 me-2"></i>1. The Physics of Passive
+                            Crossover Networks</h2>
+                        <p>
+                            No single electroacoustic driver can cleanly reproduce the entire audible frequency spectrum
+                            ($20\text{ Hz}$ to $20,000\text{ Hz}$). Large woofer cones excel at moving large volumes of
+                            air at low frequencies but suffer from high moving mass, narrow high-frequency directivity
+                            (beaming), and severe harmonic distortion due to cone flexure (breakup modes). Conversely,
+                            delicate lightweight tweeter domes reproduce sparkling highs but distort and burn their
+                            voice coils if subjected to high-amplitude low-frequency excursions.
+                        </p>
+                        <p>
+                            A <strong>passive crossover network</strong> solves this by using reactive electrical
+                            components—<strong>inductors ($L$)</strong> and <strong>capacitors ($C$)</strong>—whose AC
+                            impedances vary inversely with frequency:
+                        </p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded h-100 bg-light">
+                                    <h3 class="h6 text-teal mb-2"><i class="bi bi-arrow-down-circle me-2"></i>Low-Pass
+                                        Filter (Woofer)</h3>
+                                    <p class="small text-muted mb-2">Inductor inductive reactance increases with
+                                        frequency:</p>
+                                    <code>X_L = 2\pi f L = \omega L \quad (\Omega)</code>
+                                    <p class="small text-muted mt-2 mb-0">Series inductors pass DC and low bass with
+                                        zero resistance while creating a high-impedance barrier against high
+                                        frequencies.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded h-100 bg-light">
+                                    <h3 class="h6 text-teal mb-2"><i class="bi bi-arrow-up-circle me-2"></i>High-Pass
+                                        Filter (Tweeter)</h3>
+                                    <p class="small text-muted mb-2">Capacitor capacitive reactance decreases with
+                                        frequency:</p>
+                                    <code>X_C = \frac{1}{2\pi f C} = \frac{1}{\omega C} \quad (\Omega)</code>
+                                    <p class="small text-muted mt-2 mb-0">Series capacitors completely block DC and low
+                                        frequencies while presenting a near-zero ohm path for high frequencies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-sliders me-2"></i>2. Comparing Crossover
+                            Alignments: Butterworth vs. Linkwitz-Riley vs. Bessel</h2>
+                        <p>
+                            The mathematical damping factor or quality factor ($Q$) of a second-order filter dictates
+                            its transfer function shape, phase response, and how driver outputs sum together
+                            acoustically in the room:
+                        </p>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Filter Alignment</th>
+                                        <th>Quality Factor ($Q$)</th>
+                                        <th>Attenuation at $f_c$</th>
+                                        <th>Summed Magnitude Response</th>
+                                        <th>Impulse & Transient Character</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Butterworth</strong></td>
+                                        <td>$Q = 0.707$</td>
+                                        <td>-3.0 dB</td>
+                                        <td>+3.0 dB acoustic bump (if in-phase); flat electrical power response.</td>
+                                        <td>Maximally flat passband; moderate transient overshoot and ringing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Linkwitz-Riley (LR2/LR4)</strong></td>
+                                        <td>$Q = 0.500$</td>
+                                        <td>-6.0 dB</td>
+                                        <td><span class="badge bg-success">Mathematically Flat (0 dB)</span> on-axis
+                                            summed response.</td>
+                                        <td>Critically damped ($Q=0.5$); zero peaking; the modern studio benchmark.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bessel</strong></td>
+                                        <td>$Q = 0.577$</td>
+                                        <td>-4.8 dB</td>
+                                        <td>Subtle dip at crossover; gradual transition knee.</td>
+                                        <td>Maximally flat group delay; zero phase distortion; perfect square-wave
+                                            tracking.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-shuffle me-2"></i>3. Phase Rotation, Driver
+                            Polarity & Lobing Tilt</h2>
+                        <p>
+                            Every reactive filter order introduces an electrical phase rotation:
+                        </p>
+                        <ul>
+                            <li><strong>1st Order ($6\text{ dB/octave}$):</strong> Total $90^\circ$ phase difference
+                                between high-pass and low-pass branches.</li>
+                            <li><strong>2nd Order ($12\text{ dB/octave}$):</strong> Total $180^\circ$ phase shift. At
+                                the crossover frequency, the woofer cone is moving forward while the tweeter dome is
+                                moving backward! If connected with normal polarity, this causes total destructive
+                                acoustic cancellation, leaving a <strong>$-20\text{ dB}$ to $-30\text{ dB}$
+                                    drop</strong> in sound. <em>You must invert the tweeter polarity ($+ \leftrightarrow
+                                    -$) to achieve in-phase summation.</em></li>
+                            <li><strong>3rd Order ($18\text{ dB/octave}$):</strong> Total $270^\circ$ phase shift
+                                ($90^\circ$ net difference in quadrature). Provides smooth off-axis power integration.
+                            </li>
+                            <li><strong>4th Order ($24\text{ dB/octave}$ Linkwitz-Riley):</strong> Total $360^\circ$
+                                phase rotation. Because $360^\circ \equiv 0^\circ$, drivers are naturally in-phase
+                                without polarity inversion, keeping the vertical acoustic listening lobe aimed directly
+                                forward.</li>
+                        </ul>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-shield-check me-2"></i>4. Real-World Speaker
+                            Impedance & The Role of Zobel Networks</h2>
+                        <p>
+                            A common novice mistake in crossover design is calculating components using a nominal rating
+                            (e.g., $8\,\Omega$). In reality, a dynamic loudspeaker driver is not a pure resistor; its
+                            voice coil possesses winding inductance ($L_e$).
+                        </p>
+                        <p>
+                            As frequency rises into the crossover transition zone, inductive reactance ($X_L = 2\pi f
+                            L_e$) causes the speaker's true impedance to climb to $12\,\Omega$, $16\,\Omega$, or higher.
+                            Because the passive filter formulas depend strictly on load resistance $R$, this rising
+                            impedance detunes the filter, shallowing the low-pass slope and causing harsh midrange peak
+                            leakage into the woofer.
+                        </p>
+                        <div class="p-3 border rounded bg-light mb-4">
+                            <h3 class="h6 text-teal mb-2"><i class="bi bi-wrench-adjustable me-2"></i>The Solution: RC
+                                Zobel Impedance Equalization</h3>
+                            <p class="small text-muted mb-2">
+                                Wiring a series resistor-capacitor (RC) network in parallel across the woofer terminals
+                                cancels voice coil inductance, presenting a flat resistive load to the crossover:
+                            </p>
+                            <code>R_z \approx 1.25 \cdot R_e, \qquad C_z \approx \frac{L_e}{R_z^2}</code>
+                            <p class="small text-muted mt-2 mb-0">With a Zobel network installed, textbook crossover
+                                component values achieve their exact theoretical roll-off slopes.</p>
+                        </div>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-check2-circle me-2"></i>5. Step-by-Step Crossover
+                            Design Workflow</h2>
+                        <ol class="list-group list-group-numbered mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Select Crossover Frequency ($f_c$)</div>
+                                    Choose a frequency at least two octaves above the tweeter's mechanical resonance
+                                    ($f_c \ge 2 \cdot F_s$) and below the woofer's directional beaming frequency
+                                    ($f_{\text{beam}} \approx 343 / (\pi \cdot D_{\text{cone}})$). For typical 6.5"
+                                    woofers and 1" domes, $2,500\text{ Hz to } 3,000\text{ Hz}$ is ideal.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Specify Nominal Load Impedance</div>
+                                    Select $4\,\Omega$, $6\,\Omega$, or $8\,\Omega$ to match the driver's voice coil
+                                    specifications.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Select Filter Order & Alignment</div>
+                                    Choose 2nd-order Linkwitz-Riley for studio precision and flat on-axis summation, or
+                                    2nd-order Butterworth for standard Hi-Fi builds.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Assemble & Verify Components</div>
+                                    Use non-polarized film capacitors (polypropylene or polyester) for high-frequency
+                                    branches and air-core inductors for low distortion in series paths.
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-4"><i class="bi bi-question-circle me-2"></i>6. Frequently Asked
+                            Questions</h2>
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse1" aria-expanded="false"
+                                        aria-controls="faqCollapse1">
+                                        What is the primary function of a speaker crossover network?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        A crossover network is an electrical filter system that splits the
+                                        full-bandwidth audio spectrum into designated frequency bands. High-pass filters
+                                        route high frequencies to the tweeter while blocking low bass frequencies that
+                                        would cause thermal voice coil burnout or mechanical distortion. Low-pass
+                                        filters route low frequencies to the woofer while cutting high frequencies where
+                                        the heavy cone suffers from severe acoustic cone breakup and narrow beaming
+                                        directivity.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse2" aria-expanded="false"
+                                        aria-controls="faqCollapse2">
+                                        Why must the tweeter's polarity be inverted in a 2nd-order crossover?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        A 2nd-order (12 dB/octave) filter introduces a 90-degree phase lead in the
+                                        high-pass section and a 90-degree phase lag in the low-pass section, resulting
+                                        in an exact 180-degree phase difference between woofer and tweeter at the
+                                        crossover frequency. If wired in normal polarity, the two drivers cancel each
+                                        other out, creating a deep, audible acoustic null (-20 dB to -30 dB) at the
+                                        crossover point. Inverting the tweeter's positive and negative terminals puts
+                                        them back in acoustic phase.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse3" aria-expanded="false"
+                                        aria-controls="faqCollapse3">
+                                        What is the difference between Butterworth and Linkwitz-Riley crossover
+                                        alignments?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        A Butterworth filter has a Q of 0.707 and is down -3 dB at the crossover
+                                        frequency, which causes an on-axis +3 dB acoustic power peak when two in-phase
+                                        drivers sum together. A Linkwitz-Riley (LR) filter is down -6 dB at the
+                                        crossover frequency (Q = 0.500), which results in a mathematically flat (0 dB)
+                                        summed magnitude response across the transition region with zero on-axis
+                                        acoustic peaking.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse4" aria-expanded="false"
+                                        aria-controls="faqCollapse4">
+                                        How do I choose the correct crossover frequency for a 2-way speaker?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        The crossover point is chosen based on driver physical limits: it should be at
+                                        least two octaves above the tweeter's fundamental resonant frequency (e.g., if
+                                        Fs = 1,000 Hz, cross over no lower than 2,000 Hz to 2,500 Hz), and below the
+                                        woofer's cone breakup and beaming frequency (typically below 2,500 Hz for a
+                                        6.5-inch driver, or below 1,800 Hz for an 8-inch driver).
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse5" aria-expanded="false"
+                                        aria-controls="faqCollapse5">
+                                        Why do real-world speaker crossovers differ from textbook calculations?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Textbook calculations assume the speaker is a pure constant resistance (e.g.,
+                                        flat 8 Ohms). In reality, a speaker's voice coil has inductance (Le) that causes
+                                        impedance to rise with frequency, and a mechanical resonance (Fs) that creates a
+                                        large impedance spike. To make textbook crossover filters work accurately,
+                                        engineers install an RC Zobel network to flatten voice coil inductance.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse6" aria-expanded="false"
+                                        aria-controls="faqCollapse6">
+                                        What are the trade-offs between 1st-order and 4th-order crossovers?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        A 1st-order crossover (6 dB/octave) uses only 1 component per driver and offers
+                                        perfect transient impulse response with zero phase distortion, but provides
+                                        minimal protection to the tweeter and causes a massive frequency overlap band. A
+                                        4th-order crossover (24 dB/octave) requires 4 components per driver and has more
+                                        phase rotation, but provides razor-sharp driver isolation, virtually zero lobing
+                                        tilt, and superior tweeter power handling.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="p-4 border rounded bg-light">
+                        <h2 class="h5 text-teal mb-3"><i class="bi bi-link-45deg me-2"></i>Explore Related Speaker
+                            Engineering Tools</h2>
+                        <ul class="list-unstyled mb-0 d-flex flex-wrap gap-3">
+                            <li><a href="/speaker-tools/zobel-network-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-cpu me-1"></i> Zobel Network
+                                    Calculator</a></li>
+                            <li><a href="/speaker-tools/crossover-slope-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-graph-up me-1"></i> Crossover
+                                    Slope Calculator</a></li>
+                            <li><a href="/speaker-tools/passive-crossover-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-filter-square me-1"></i> Passive
+                                    Crossover Calculator</a></li>
+                            <li><a href="/speaker-tools/speaker-impedance-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-diagram-3 me-1"></i> Speaker
+                                    Impedance Calculator</a></li>
+                            <li><a href="/speaker-tools/frequency-response-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-activity me-1"></i> Frequency
+                                    Response Calculator</a></li>
+                        </ul>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="./assets/bootstrap5.js" defer></script>
+    <script src="./assets/tools.js" defer></script>
+    <!-- tool js -->
+    <script defer>
+        function calculate() {
+            const freq = parseFloat(document.getElementById('crossoverFreq').value) || 3000;
+            const impedance = parseFloat(document.getElementById('impedance').value) || 8;
+            const order = parseInt(document.getElementById('order').value) || 2;
+            const crossoverType = document.getElementById('crossoverType').value;
+
+            const omega = 2 * Math.PI * freq;
+
+            // Get Q factor based on type
+            let Q = 0.707; // Butterworth default
+            if (crossoverType === 'linkwitz') Q = 0.5;
+            else if (crossoverType === 'bessel') Q = 0.577;
+
+            let lpL, lpC, hpC, hpL;
+            let lpL2, lpC2, hpC2, hpL2;
+
+            // First order: L = R/ω, C = 1/(ωR)
+            const L1 = (impedance / omega) * 1000; // mH
+            const C1 = (1 / (omega * impedance)) * 1000000; // µF
+
+            if (order === 1) {
+                lpL = L1;
+                hpC = C1;
+                document.getElementById('lpCapRow').style.display = 'none';
+                document.getElementById('hpIndRow').style.display = 'none';
+                document.getElementById('lpExtra').innerHTML = '';
+                document.getElementById('hpExtra').innerHTML = '';
+            } else if (order === 2) {
+                // Second order
+                lpL = (impedance / omega) * 1000; // mH
+                lpC = (1 / (omega * impedance)) * 1000000; // µF
+
+                // Adjust for Q
+                lpL = lpL / Q;
+                lpC = lpC / Q;
+
+                hpC = lpC;
+                hpL = lpL;
+
+                document.getElementById('lpCapRow').style.display = 'block';
+                document.getElementById('hpIndRow').style.display = 'block';
+                document.getElementById('lpCapacitor').textContent = lpC.toFixed(2) + ' µF';
+                document.getElementById('hpInductor').textContent = hpL.toFixed(2) + ' mH';
+                document.getElementById('lpExtra').innerHTML = '';
+                document.getElementById('hpExtra').innerHTML = '';
+            } else if (order === 3) {
+                // Third order (simplified)
+                lpL = (1.5 * impedance / omega) * 1000;
+                lpC = (0.667 / (omega * impedance)) * 1000000;
+                lpL2 = (0.5 * impedance / omega) * 1000;
+
+                hpC = (0.667 / (omega * impedance)) * 1000000;
+                hpL = (1.5 * impedance / omega) * 1000;
+                hpC2 = (1.333 / (omega * impedance)) * 1000000;
+
+                document.getElementById('lpCapRow').style.display = 'block';
+                document.getElementById('hpIndRow').style.display = 'block';
+                document.getElementById('lpCapacitor').textContent = lpC.toFixed(2) + ' µF';
+                document.getElementById('hpInductor').textContent = hpL.toFixed(2) + ' mH';
+                document.getElementById('lpExtra').innerHTML = `<strong>L2:</strong> ${lpL2.toFixed(2)} mH`;
+                document.getElementById('hpExtra').innerHTML = `<strong>C2:</strong> ${hpC2.toFixed(2)} µF`;
+            } else {
+                // Fourth order
+                lpL = (1.414 * impedance / omega) * 1000;
+                lpC = (0.707 / (omega * impedance)) * 1000000;
+                lpL2 = (0.707 * impedance / omega) * 1000;
+                lpC2 = (1.414 / (omega * impedance)) * 1000000;
+
+                hpC = lpC;
+                hpL = lpL;
+                hpC2 = lpC2;
+                hpL2 = lpL2;
+
+                document.getElementById('lpCapRow').style.display = 'block';
+                document.getElementById('hpIndRow').style.display = 'block';
+                document.getElementById('lpCapacitor').textContent = lpC.toFixed(2) + ' µF';
+                document.getElementById('hpInductor').textContent = hpL.toFixed(2) + ' mH';
+                document.getElementById('lpExtra').innerHTML = `<strong>L2:</strong> ${lpL2.toFixed(2)} mH<br><strong>C2:</strong> ${lpC2.toFixed(2)} µF`;
+                document.getElementById('hpExtra').innerHTML = `<strong>C2:</strong> ${hpC2.toFixed(2)} µF<br><strong>L2:</strong> ${hpL2.toFixed(2)} mH`;
+            }
+
+            document.getElementById('lpInductor').textContent = lpL.toFixed(2) + ' mH';
+            document.getElementById('hpCapacitor').textContent = (hpC || C1).toFixed(2) + ' µF';
+
+            // Update characteristics
+            document.getElementById('slope').textContent = (order * 6) + ' dB/octave';
+            document.getElementById('phaseShift').textContent = (order * 90) + '° total';
+
+            let sumResponse = 'Flat at crossover';
+            if (crossoverType === 'linkwitz') sumResponse = '-6 dB at crossover (LR flat sum)';
+            else if (crossoverType === 'bessel') sumResponse = 'Best transient response';
+            document.getElementById('sumResponse').textContent = sumResponse;
+
+            let recommended = 'General use';
+            if (order === 1) recommended = 'Coaxial, simple systems';
+            else if (order === 2 && crossoverType === 'butterworth') recommended = 'Most 2-way speakers';
+            else if (order === 4 && crossoverType === 'linkwitz') recommended = 'Professional, home theater';
+            document.getElementById('recommended').textContent = recommended;
+        }
+
+        calculate();
+
+        window.addEventListener("load", () => {
+            Promise.all([
+                fetch("../../header.html").then(res => res.text()),
+                fetch("../../footer.html").then(res => res.text())
+            ])
+                .then(([header, footer]) => {
+                    document.getElementById("header").innerHTML = header;
+                    document.getElementById("footer").innerHTML = footer;
+                })
+                .catch(err => console.error("Include load failed:", err));
+        });
+    </script>
+</body>
+
+</html>

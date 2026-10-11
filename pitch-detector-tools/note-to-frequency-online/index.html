@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note to Frequency Calculator – Convert Musical Notes to Exact Hz & MIDI</title>
+    <meta name="description"
+        content="Free online Note to Frequency Calculator. Convert any musical note and octave to exact acoustic frequency (Hz), MIDI number, wavelength, and wave period. Play audio tones and calibrate A4 from 400 to 480 Hz.">
+    <link rel="canonical" href="https://pitchdetectors.com/pitch-detector-tools/note-to-frequency-online/">
+    <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Note to Frequency Calculator – Musical Notes to Exact Hz & MIDI">
+    <meta property="og:description"
+        content="Convert musical notes to exact frequencies in Hertz (Hz), MIDI numbers, and wavelengths. Includes tone generator audio playback.">
+    <meta property="og:url" content="https://pitchdetectors.com/pitch-detector-tools/note-to-frequency-online/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/imgs/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Note to Frequency Calculator – Notes to Hz">
+    <meta name="twitter:description"
+        content="Calculate exact frequencies, MIDI numbers, wavelengths, and periods for any musical note.">
+    <meta name="twitter:image" content="./assets/imgs/logo.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="./assets/bootstrap5.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="./assets/tools.css" rel="stylesheet">
+    <meta name="author" content="Pitch Detectors">
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the formula to convert any musical note to frequency (Hz)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The frequency of any note in 12-Tone Equal Temperament is computed using: f = A4 × 2^((m - 69) / 12), where 'm' is the MIDI note number (0 to 127) and A4 is the reference concert pitch (typically 440 Hz). Middle C (C4, MIDI 60) yields f = 440 × 2^(-9/12) = 261.63 Hz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does acoustic wavelength relate to musical pitch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wavelength (λ) is the physical distance between consecutive sound wave crests in air, calculated as λ = v / f, where 'v' is the speed of sound (343 m/s at 20°C). Deep bass notes have immense physical wavelengths (e.g. C1 at 32.7 Hz has a 10.5-meter wave), while high treble notes have tiny wavelengths (e.g. C8 at 4186 Hz has an 8.2-centimeter wave)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are MIDI note numbers and how do they map to octaves?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard MIDI protocol represents musical notes as integers from 0 to 127. Under standard Scientific Pitch Notation (SPN), C-1 is MIDI 0, C0 is MIDI 12, Middle C (C4) is MIDI 60, Concert A (A4) is MIDI 69, and G9 is MIDI 127. Each increment of 1 represents exactly one semitone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do musicians calibrate tuning standards to 432 Hz, 442 Hz, or 444 Hz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While A4 = 440 Hz is the standard international ISO pitch, European orchestras (especially in Germany, Austria, and Switzerland) commonly tune to 442 Hz or 443 Hz for added acoustic brightness and string brilliance. Baroque ensembles often tune down to 415 Hz, and alternative music traditions explore 432 Hz for warm mathematical harmonies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do sound engineers use note-to-frequency conversions in DAWs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Producers convert notes to frequencies to tune sub-bass oscillators to the root key of a song, set parametric EQ resonant boosts on kick drum fundamental tones, sync LFO frequency rates to musical pitch, and tune acoustic room bass traps to room resonance modes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the wave period (ms) of a musical note?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The period (T) is the exact time required for one complete acoustic cycle to occur, calculated as T = 1 / f seconds (or 1000 / f in milliseconds). For A4 (440 Hz), one complete wave cycle completes every 2.27 milliseconds."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container py-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-4">
+                <div class="tools-sidebar">
+                    <!-- Search Box -->
+                    <div class="sidebar-search mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                                onkeyup="searchTools()">
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-categories">
+                        <div class="sidebar-category active">
+                            <h5><i class="bi bi-soundwave me-2"></i>Pitch Detector Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/pitch-detector-tools/guitar-tuner-online/" class=""><i
+                                            class="bi bi-music-note-beamed"></i> Guitar Tuner</a></li>
+                                <li><a href="/pitch-detector-tools/vocal-range-finder-online/"><i class="bi bi-mic"></i>
+                                        Vocal
+                                        Range Finder</a></li>
+                                <li><a href="/pitch-detector-tools/frequency-to-note-online/"><i
+                                            class="bi bi-arrow-left-right"></i> Frequency to Note</a></li>
+                                <li><a href="/pitch-detector-tools/note-to-frequency-online/" class="active"><i
+                                            class="bi bi-calculator"></i>
+                                        Note to Frequency</a></li>
+                                <li><a href="/pitch-detector-tools/cents-calculator-online/"><i
+                                            class="bi bi-rulers"></i> Cents
+                                        Calculator</a></li>
+                                <li><a href="/pitch-detector-tools/transpose-calculator-online/"><i
+                                            class="bi bi-arrows-expand"></i> Transpose Calculator</a></li>
+                                <li><a href="/pitch-detector-tools/harmonic-series-calculator-online/"><i
+                                            class="bi bi-bar-chart-steps"></i> Harmonic Series</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-category">
+                            <h5><i class="bi bi-disc me-2"></i>DJ & Production Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/dj-music-production-tools/bpm-calculator/"><i
+                                            class="bi bi-speedometer2"></i> BPM Calculator</a></li>
+                                <li><a href="/dj-music-production-tools/bpm-tap-tempo/"><i class="bi bi-hand-index"></i>
+                                        BPM Tap Tempo</a></li>
+                                <li><a href="/dj-music-production-tools/bpm-to-ms/"><i class="bi bi-clock"></i> BPM to
+                                        Milliseconds</a></li>
+                                <li><a href="/dj-music-production-tools/song-key-finder/"><i class="bi bi-key"></i> Song
+                                        Key Finder</a></li>
+                                <li><a href="https://pitchdetectors.com/BPM-Pitch-Calculator.html"><i
+                                            class="bi bi-sliders"></i>
+                                        Pitch Shifter</a></li>
+                                <!-- <li><a href="/ /"><i
+                                            class="bi bi-fast-forward"></i> Tempo Changer</a></li> -->
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-category">
+                            <h5><i class="bi bi-music-note-list me-2"></i>Music Theory Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/music-theory-tools/online-metronome/"><i class="bi bi-stopwatch"></i>
+                                        Online Metronome</a></li>
+                                <li><a href="/music-theory-tools/scale-finder/"><i class="bi bi-grid-3x3"></i> Scale
+                                        Finder</a></li>
+                                <li><a href="/music-theory-tools/chord-identifier/"><i class="bi bi-vinyl"></i> Chord
+                                        Identifier</a></li>
+                                <li><a href="/music-theory-tools/rhythm-pattern-maker/"><i class="bi bi-activity"></i>
+                                        Rhythm Pattern Maker</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-category">
+                            <h5><i class="bi bi-graph-up me-2"></i>Sound Analysis Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/sound-analysis-tools/decibel-meter/"><i class="bi bi-volume-up"></i>
+                                        Decibel Meter</a></li>
+
+                                <li><a href="/sound-analysis-tools/microphone-test/"><i class="bi bi-mic"></i>
+                                        Microphone Test</a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/pitch-detector-tools/">Pitch Detector Tools</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Note to Frequency Calculator</li>
+                    </ol>
+                </nav>
+
+                <div class="tool-container">
+                    <div class="tool-title">
+                        <h1><i class="bi bi-calculator me-2"></i>Note to Frequency Calculator</h1>
+                        <p>Calculate the exact frequency in Hz for any musical note. Select a note and octave to find
+                            its
+                            frequency. Supports different tuning standards.</p>
+                    </div>
+
+                    <!-- Note Selection -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Select Note:</label>
+                        <div class="note-selector" id="noteSelector">
+                            <button class="note-btn active" data-note="C">C</button>
+                            <button class="note-btn sharp" data-note="C#">C#</button>
+                            <button class="note-btn" data-note="D">D</button>
+                            <button class="note-btn sharp" data-note="D#">D#</button>
+                            <button class="note-btn" data-note="E">E</button>
+                            <button class="note-btn" data-note="F">F</button>
+                            <button class="note-btn sharp" data-note="F#">F#</button>
+                            <button class="note-btn" data-note="G">G</button>
+                            <button class="note-btn sharp" data-note="G#">G#</button>
+                            <button class="note-btn" data-note="A">A</button>
+                            <button class="note-btn sharp" data-note="A#">A#</button>
+                            <button class="note-btn" data-note="B">B</button>
+                        </div>
+                    </div>
+
+                    <!-- Octave Selection -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Select Octave:</label>
+                        <div class="octave-selector" id="octaveSelector">
+                            <button class="octave-btn" data-octave="0">0</button>
+                            <button class="octave-btn" data-octave="1">1</button>
+                            <button class="octave-btn" data-octave="2">2</button>
+                            <button class="octave-btn" data-octave="3">3</button>
+                            <button class="octave-btn active" data-octave="4">4</button>
+                            <button class="octave-btn" data-octave="5">5</button>
+                            <button class="octave-btn" data-octave="6">6</button>
+                            <button class="octave-btn" data-octave="7">7</button>
+                            <button class="octave-btn" data-octave="8">8</button>
+                        </div>
+                    </div>
+
+                    <!-- A4 Reference -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label">A4 Reference Frequency (Hz):</label>
+                            <input type="number" class="form-control" id="a4Reference" value="440" min="400" max="480">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Quick Tuning Standards:</label>
+                            <div class="quick-buttons">
+                                <button class="quick-btn" onclick="setA4(432)">432 Hz</button>
+                                <button class="quick-btn" onclick="setA4(440)">440 Hz</button>
+                                <button class="quick-btn" onclick="setA4(442)">442 Hz</button>
+                                <button class="quick-btn" onclick="setA4(444)">444 Hz</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Box -->
+                    <div class="result-box">
+                        <h3 id="resultNote">C4</h3>
+                        <p style="font-size: 48px; font-weight: 700; margin: 20px 0;" id="resultFreq">261.63 Hz</p>
+                        <button class="play-btn" onclick="playNote()">
+                            <i class="bi bi-play-fill"></i> Play This Note
+                        </button>
+                        <div class="row text-start mt-4">
+                            <div class="col-6 col-md-3 mb-3">
+                                <strong>MIDI Note:</strong><br>
+                                <span id="midiNote">60</span>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <strong>Wavelength:</strong><br>
+                                <span id="wavelength">1.31 m</span>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <strong>Period:</strong><br>
+                                <span id="period">3.82 ms</span>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <strong>Octave Below:</strong><br>
+                                <span id="octaveBelow">130.81 Hz</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- All Octaves Table -->
+                    <div class="mt-4">
+                        <h4 class="text-mid mb-3">Same Note Across All Octaves</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="octavesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Note</th>
+                                        <th>Frequency (Hz)</th>
+                                        <th>MIDI</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Generated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- COMPREHENSIVE NOTE TO FREQUENCY GUIDE & REFERENCE -->
+                <div class="mt-5 pt-3">
+                    <section class="mb-5">
+                        <h2 class="h3 fw-bold text-teal mb-3">The Physics of Musical Pitch: Converting Notes to
+                            Fundamental Frequencies (Hz)</h2>
+                        <p>
+                            In Western music theory, notes are discrete symbolic labels—such as $C_4$, $F\sharp_3$, or
+                            $B\flat_5$. In acoustic physics, however, these musical notes correspond to exact continuous
+                            vibration rates measured in <strong>Hertz (Hz)</strong>, representing cycles per second.
+                        </p>
+                        <p>
+                            Modern instruments and digital synthesizers are tuned according to <strong>12-Tone Equal
+                                Temperament (12-TET)</strong>. In this mathematical tuning system, the octave is divided
+                            into 12 semitones spaced by a constant logarithmic frequency multiplier equal to the twelfth
+                            root of two:
+                        </p>
+                        <div class="p-3 bg-light rounded border text-center font-monospace my-3">
+                            $$\sqrt[12]{2} = 2^{\frac{1}{12}} \approx 1.059463094$$
+                        </div>
+                        <p class="small text-muted mb-0">
+                            Every time you ascend one semitone (e.g. from C to C#), frequency is multiplied by $\approx
+                            1.059463$. Ascending 12 semitones multiplies frequency by $(2^{1/12})^{12} = 2.0$, creating
+                            an exact octave doubling.
+                        </p>
+                    </section>
+
+                    <!-- Mathematical Derivations -->
+                    <section class="mb-5">
+                        <h3 class="h4 fw-bold mb-3">Mathematical Equations &amp; Acoustic Parameters</h3>
+                        <div class="row g-4 my-2">
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded border h-100">
+                                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-cpu me-2"></i>1. Frequency from
+                                        MIDI Note</h5>
+                                    <p class="small text-muted mb-2">Computes fundamental frequency $f$ from MIDI note
+                                        number $m$ (where $A_4 = 69$):</p>
+                                    <div class="bg-white p-2 rounded border font-monospace text-center small mb-2">
+                                        $$f = A_4 \times 2^{\frac{m - 69}{12}}$$
+                                    </div>
+                                    <p class="small text-muted mb-0">At standard $A_4 = 440\text{ Hz}$, Middle C ($m =
+                                        60$) yields $440 \times 2^{-9/12} = 261.63\text{ Hz}$.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded border h-100">
+                                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-arrows-expand me-2"></i>2.
+                                        Acoustic Wavelength</h5>
+                                    <p class="small text-muted mb-2">Calculates the physical distance spanned by one
+                                        full acoustic cycle in air at 20&deg;C ($v = 343\text{ m/s}$):</p>
+                                    <div class="bg-white p-2 rounded border font-monospace text-center small mb-2">
+                                        $$\lambda = \frac{v}{f} = \frac{343}{f}\text{ meters}$$
+                                    </div>
+                                    <p class="small text-muted mb-0">Bass notes span meters; high treble notes span mere
+                                        centimeters.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded border h-100">
+                                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-clock-history me-2"></i>3. Wave
+                                        Period</h5>
+                                    <p class="small text-muted mb-2">Measures the duration in milliseconds required for
+                                        one single waveform oscillation:</p>
+                                    <div class="bg-white p-2 rounded border font-monospace text-center small mb-2">
+                                        $$T = \frac{1000}{f}\text{ ms}$$
+                                    </div>
+                                    <p class="small text-muted mb-0">For $A_4$ ($440\text{ Hz}$), each wave oscillation
+                                        takes $1000 / 440 = 2.27\text{ ms}$.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Complete Octave Reference Table -->
+                    <section class="mb-5">
+                        <h3 class="h4 fw-bold mb-3">Complete Note Frequency Matrix (Octaves 1 to 7)</h3>
+                        <p>
+                            The table below shows exact frequencies (Hz) across seven octaves for standard concert pitch
+                            ($A_4 = 440\text{ Hz}$):
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover text-center align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Note</th>
+                                        <th>Oct 1 (Sub)</th>
+                                        <th>Oct 2 (Bass)</th>
+                                        <th>Oct 3 (Low)</th>
+                                        <th>Oct 4 (Mid)</th>
+                                        <th>Oct 5 (Treble)</th>
+                                        <th>Oct 6 (High)</th>
+                                        <th>Oct 7 (Top)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>C</strong></td>
+                                        <td>32.70 Hz</td>
+                                        <td>65.41 Hz</td>
+                                        <td>130.81 Hz</td>
+                                        <td class="fw-bold text-teal">261.63 Hz</td>
+                                        <td>523.25 Hz</td>
+                                        <td>1046.50 Hz</td>
+                                        <td>2093.00 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>C# / Db</strong></td>
+                                        <td>34.65 Hz</td>
+                                        <td>69.30 Hz</td>
+                                        <td>138.59 Hz</td>
+                                        <td>277.18 Hz</td>
+                                        <td>554.37 Hz</td>
+                                        <td>1108.73 Hz</td>
+                                        <td>2217.46 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>D</strong></td>
+                                        <td>36.71 Hz</td>
+                                        <td>73.42 Hz</td>
+                                        <td>146.83 Hz</td>
+                                        <td>293.66 Hz</td>
+                                        <td>587.33 Hz</td>
+                                        <td>1174.66 Hz</td>
+                                        <td>2349.32 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>D# / Eb</strong></td>
+                                        <td>38.89 Hz</td>
+                                        <td>77.78 Hz</td>
+                                        <td>155.56 Hz</td>
+                                        <td>311.13 Hz</td>
+                                        <td>622.25 Hz</td>
+                                        <td>1244.51 Hz</td>
+                                        <td>2489.02 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>E</strong></td>
+                                        <td>41.20 Hz</td>
+                                        <td>82.41 Hz</td>
+                                        <td>164.81 Hz</td>
+                                        <td>329.63 Hz</td>
+                                        <td>659.25 Hz</td>
+                                        <td>1318.51 Hz</td>
+                                        <td>2637.02 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>F</strong></td>
+                                        <td>43.65 Hz</td>
+                                        <td>87.31 Hz</td>
+                                        <td>174.61 Hz</td>
+                                        <td>349.23 Hz</td>
+                                        <td>698.46 Hz</td>
+                                        <td>1396.91 Hz</td>
+                                        <td>2793.83 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>F# / Gb</strong></td>
+                                        <td>46.25 Hz</td>
+                                        <td>92.50 Hz</td>
+                                        <td>185.00 Hz</td>
+                                        <td>369.99 Hz</td>
+                                        <td>739.99 Hz</td>
+                                        <td>1479.98 Hz</td>
+                                        <td>2959.96 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>G</strong></td>
+                                        <td>49.00 Hz</td>
+                                        <td>98.00 Hz</td>
+                                        <td>196.00 Hz</td>
+                                        <td>392.00 Hz</td>
+                                        <td>783.99 Hz</td>
+                                        <td>1567.98 Hz</td>
+                                        <td>3135.96 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>G# / Ab</strong></td>
+                                        <td>51.91 Hz</td>
+                                        <td>103.83 Hz</td>
+                                        <td>207.65 Hz</td>
+                                        <td>415.30 Hz</td>
+                                        <td>830.61 Hz</td>
+                                        <td>1661.22 Hz</td>
+                                        <td>3322.44 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>A</strong></td>
+                                        <td>55.00 Hz</td>
+                                        <td>110.00 Hz</td>
+                                        <td>220.00 Hz</td>
+                                        <td class="fw-bold text-teal">440.00 Hz</td>
+                                        <td>880.00 Hz</td>
+                                        <td>1760.00 Hz</td>
+                                        <td>3520.00 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>A# / Bb</strong></td>
+                                        <td>58.27 Hz</td>
+                                        <td>116.54 Hz</td>
+                                        <td>233.08 Hz</td>
+                                        <td>466.16 Hz</td>
+                                        <td>932.33 Hz</td>
+                                        <td>1864.66 Hz</td>
+                                        <td>3729.31 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>B</strong></td>
+                                        <td>61.74 Hz</td>
+                                        <td>123.47 Hz</td>
+                                        <td>246.94 Hz</td>
+                                        <td>493.88 Hz</td>
+                                        <td>987.77 Hz</td>
+                                        <td>1975.53 Hz</td>
+                                        <td>3951.07 Hz</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Audio Engineering Applications -->
+                    <section class="mb-5">
+                        <h3 class="h4 fw-bold mb-3">Sound Engineering &amp; DAW Production Workflows</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded border h-100">
+                                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-sliders me-2"></i>1. Sub-Bass
+                                        &amp; Kick Tuning</h5>
+                                    <p class="small text-muted mb-0">In electronic music, setting an 808 sub-bass to the
+                                        exact frequency of your root note prevents low-end phase cancellations. If your
+                                        track is in D Minor, tune your sub fundamental to $D_1$ (36.71 Hz) or $D_2$
+                                        (73.42 Hz).</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded border h-100">
+                                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-broadcast me-2"></i>2. Resonant
+                                        Filter Tracking</h5>
+                                    <p class="small text-muted mb-0">When calibrating self-oscillating synth filters
+                                        (keyboard tracking set to 100%), knowing exact note frequencies allows you to
+                                        play the filter's resonance as a pure sine wave lead instrument.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-light rounded border h-100">
+                                    <h5 class="fw-bold text-teal mb-2"><i class="bi bi-soundwave me-2"></i>3. Room
+                                        Acoustic Modes</h5>
+                                    <p class="small text-muted mb-0">Studio room dimensions create standing waves (room
+                                        modes). An axial mode at 65 Hz corresponds exactly to $C_2$, meaning every time
+                                        a bassline hits C, that specific note will boom uncomfortably in an untreated
+                                        control room.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="mb-5">
+                        <h3 class="h4 fw-bold mb-4">Frequently Asked Questions</h3>
+                        <div class="accordion" id="nfFaqAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nfHead1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nfFaq1" aria-expanded="true">
+                                        What is the formula to convert any musical note to frequency (Hz)?
+                                    </button>
+                                </h2>
+                                <div id="nfFaq1" class="accordion-collapse collapse show"
+                                    data-bs-parent="#nfFaqAccordion">
+                                    <div class="accordion-body">
+                                        The frequency of any note in 12-Tone Equal Temperament is computed using:
+                                        <code>f = A4 × 2^((m - 69) / 12)</code>, where 'm' is the MIDI note number (0 to
+                                        127) and A4 is the reference concert pitch (typically 440 Hz). Middle C (C4,
+                                        MIDI 60) yields <code>f = 440 × 2^(-9/12) = 261.63 Hz</code>.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nfHead2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nfFaq2">
+                                        How does acoustic wavelength relate to musical pitch?
+                                    </button>
+                                </h2>
+                                <div id="nfFaq2" class="accordion-collapse collapse" data-bs-parent="#nfFaqAccordion">
+                                    <div class="accordion-body">
+                                        Wavelength (λ) is the physical distance between consecutive sound wave crests in
+                                        air, calculated as <code>λ = v / f</code>, where 'v' is the speed of sound (343
+                                        m/s at 20°C). Deep bass notes have immense physical wavelengths (e.g. C1 at 32.7
+                                        Hz has a 10.5-meter wave), while high treble notes have tiny wavelengths (e.g.
+                                        C8 at 4186 Hz has an 8.2-centimeter wave).
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nfHead3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nfFaq3">
+                                        What are MIDI note numbers and how do they map to octaves?
+                                    </button>
+                                </h2>
+                                <div id="nfFaq3" class="accordion-collapse collapse" data-bs-parent="#nfFaqAccordion">
+                                    <div class="accordion-body">
+                                        The standard MIDI protocol represents musical notes as integers from 0 to 127.
+                                        Under standard Scientific Pitch Notation (SPN), C-1 is MIDI 0, C0 is MIDI 12,
+                                        Middle C (C4) is MIDI 60, Concert A (A4) is MIDI 69, and G9 is MIDI 127. Each
+                                        increment of 1 represents exactly one semitone.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nfHead4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nfFaq4">
+                                        Why do musicians calibrate tuning standards to 432 Hz, 442 Hz, or 444 Hz?
+                                    </button>
+                                </h2>
+                                <div id="nfFaq4" class="accordion-collapse collapse" data-bs-parent="#nfFaqAccordion">
+                                    <div class="accordion-body">
+                                        While A4 = 440 Hz is the standard international ISO pitch, European orchestras
+                                        (especially in Germany, Austria, and Switzerland) commonly tune to 442 Hz or 443
+                                        Hz for added acoustic brightness and string brilliance. Baroque ensembles often
+                                        tune down to 415 Hz, and alternative music traditions explore 432 Hz for warm
+                                        mathematical harmonies.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nfHead5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nfFaq5">
+                                        How do sound engineers use note-to-frequency conversions in DAWs?
+                                    </button>
+                                </h2>
+                                <div id="nfFaq5" class="accordion-collapse collapse" data-bs-parent="#nfFaqAccordion">
+                                    <div class="accordion-body">
+                                        Producers convert notes to frequencies to tune sub-bass oscillators to the root
+                                        key of a song, set parametric EQ resonant boosts on kick drum fundamental tones,
+                                        sync LFO frequency rates to musical pitch, and tune acoustic room bass traps to
+                                        room resonance modes.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="nfHead6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nfFaq6">
+                                        What is the wave period (ms) of a musical note?
+                                    </button>
+                                </h2>
+                                <div id="nfFaq6" class="accordion-collapse collapse" data-bs-parent="#nfFaqAccordion">
+                                    <div class="accordion-body">
+                                        The period (T) is the exact time required for one complete acoustic cycle to
+                                        occur, calculated as <code>T = 1 / f seconds</code> (or <code>1000 / f</code> in
+                                        milliseconds). For A4 (440 Hz), one complete wave cycle completes every 2.27
+                                        milliseconds.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="./assets/bootstrap5.js" defer></script>
+
+    <!-- tool js -->
+    <script defer>
+        const NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+        let selectedNote = 'C';
+        let selectedOctave = 4;
+        let audioContext = null;
+        let oscillator = null;
+
+        function init() {
+            document.querySelectorAll('.note-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.note-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedNote = btn.dataset.note;
+                    calculate();
+                });
+            });
+
+            document.querySelectorAll('.octave-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.octave-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedOctave = parseInt(btn.dataset.octave);
+                    calculate();
+                });
+            });
+
+            document.getElementById('a4Reference').addEventListener('input', calculate);
+            calculate();
+        }
+
+        function setA4(freq) {
+            document.getElementById('a4Reference').value = freq;
+            calculate();
+        }
+
+        function calculate() {
+            const a4 = parseFloat(document.getElementById('a4Reference').value) || 440;
+            const noteIndex = NOTE_NAMES.indexOf(selectedNote);
+            const semitonesFromA4 = (selectedOctave - 4) * 12 + (noteIndex - 9);
+            const frequency = a4 * Math.pow(2, semitonesFromA4 / 12);
+            const midiNote = 69 + semitonesFromA4;
+            const speedOfSound = 343;
+            const wavelength = speedOfSound / frequency;
+            const period = 1000 / frequency;
+
+            document.getElementById('resultNote').textContent = selectedNote + selectedOctave;
+            document.getElementById('resultFreq').textContent = frequency.toFixed(2) + ' Hz';
+            document.getElementById('midiNote').textContent = midiNote;
+            document.getElementById('wavelength').textContent = wavelength.toFixed(2) + ' m';
+            document.getElementById('period').textContent = period.toFixed(2) + ' ms';
+            document.getElementById('octaveBelow').textContent = (frequency / 2).toFixed(2) + ' Hz';
+
+            updateOctavesTable(noteIndex, a4);
+        }
+
+        function updateOctavesTable(noteIndex, a4) {
+            const tbody = document.querySelector('#octavesTable tbody');
+            let html = '';
+
+            for (let oct = 0; oct <= 8; oct++) {
+                const semitonesFromA4 = (oct - 4) * 12 + (noteIndex - 9);
+                const freq = a4 * Math.pow(2, semitonesFromA4 / 12);
+                const midi = 69 + semitonesFromA4;
+
+                let desc = '';
+                if (oct === 4 && noteIndex === 0) desc = 'Middle C';
+                else if (oct === 4 && noteIndex === 9) desc = 'Concert A';
+                else if (oct < 2) desc = 'Sub-bass';
+                else if (oct < 4) desc = 'Bass';
+                else if (oct < 6) desc = 'Mid range';
+                else desc = 'High range';
+
+                const isActive = oct === selectedOctave ? 'table-primary' : '';
+
+                html += `<tr class="${isActive}">
+                    <td><strong>${selectedNote}${oct}</strong></td>
+                    <td>${freq.toFixed(2)} Hz</td>
+                    <td>${midi}</td>
+                    <td>${desc}</td>
+                </tr>`;
+            }
+
+            tbody.innerHTML = html;
+        }
+
+        function playNote() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            if (oscillator) {
+                oscillator.stop();
+            }
+
+            const a4 = parseFloat(document.getElementById('a4Reference').value) || 440;
+            const noteIndex = NOTE_NAMES.indexOf(selectedNote);
+            const semitonesFromA4 = (selectedOctave - 4) * 12 + (noteIndex - 9);
+            const frequency = a4 * Math.pow(2, semitonesFromA4 / 12);
+
+            oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'sine';
+
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 2);
+
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + 2);
+        }
+
+        init();
+
+        window.addEventListener("load", () => {
+            Promise.all([
+                fetch("../../header.html").then(res => res.text()),
+                fetch("../../footer.html").then(res => res.text())
+            ])
+                .then(([header, footer]) => {
+                    document.getElementById("header").innerHTML = header;
+                    document.getElementById("footer").innerHTML = footer;
+                })
+                .catch(err => console.error("Include load failed:", err));
+        });
+    </script>
+
+    <!-- faq schema -->
+
+
+</body>
+
+</html>

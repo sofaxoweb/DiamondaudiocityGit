@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossover Slope Calculator – Filter Roll-Off & Attenuation | Pitch Detectors</title>
+    <meta name="description"
+        content="Calculate speaker crossover filter slopes (dB/octave), capacitor and inductor values, and phase characteristics for Butterworth, Linkwitz-Riley, and Bessel topologies." />
+    <meta name="keywords"
+        content="crossover slope calculator, speaker filter slope, roll off slope, db per octave calculator, butterworth vs linkwitz riley, bessel crossover, passive crossover slope" />
+
+    <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/crossover-slope-calculator/">
+    <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Crossover Slope Calculator – Filter Roll-Off & Attenuation | Pitch Detectors" />
+    <meta property="og:description"
+        content="Compute passive speaker crossover roll-off slopes and component values. Compare Butterworth, Linkwitz-Riley, and Bessel alignments online." />
+    <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/crossover-slope-calculator/" />
+    <meta property="og:site_name" content="Pitch Detectors" />
+    <meta property="og:image" content="./assets/imgs/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Crossover Slope Calculator Tool by Pitch Detectors" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Crossover Slope Calculator – Filter Roll-Off & Attenuation | Pitch Detectors" />
+    <meta name="twitter:description"
+        content="Calculate crossover filter slopes and component values online with full acoustic phase and roll-off analysis." />
+    <meta name="twitter:image" content="./assets/imgs/logo.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="./assets/bootstrap5.css" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/tools.css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"
+        crossorigin="anonymous"></script>
+
+    <!-- Structured Data: WebApplication & FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://pitchdetectors.com/speaker-tools/crossover-slope-calculator/#webapp",
+          "name": "Crossover Slope Calculator",
+          "url": "https://pitchdetectors.com/speaker-tools/crossover-slope-calculator/",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All modern browsers (Chrome, Firefox, Safari, Edge)",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Calculates passive speaker crossover filter roll-off slopes and component values for Butterworth, Linkwitz-Riley, and Bessel topologies."
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://pitchdetectors.com/speaker-tools/crossover-slope-calculator/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a crossover slope and how is it measured in audio engineering?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A crossover slope measures the rate of acoustic or electrical attenuation outside a driver's intended passband, expressed in decibels per octave (dB/octave) or decibels per decade (dB/decade). Each filter order adds approximately 6 dB/octave of attenuation: a 1st-order filter attenuates at 6 dB/oct, 2nd-order at 12 dB/oct, 3rd-order at 18 dB/oct, and 4th-order at 24 dB/oct."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does crossover slope steepness affect speaker sound quality and driver protection?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Steeper slopes (such as 18 dB or 24 dB/octave) narrow the acoustic overlap band where both woofer and tweeter radiate sound simultaneously, which dramatically reduces destructive comb filtering, prevents tweeter voice coil burnout from low bass transients, and suppresses woofer cone breakup harmonics. Gentler slopes (6 dB or 12 dB/octave) introduce less phase rotation and simpler circuits, but leave drivers exposed to out-of-band distortion."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is Linkwitz-Riley considered the standard for 2nd and 4th order crossovers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Linkwitz-Riley (LR) crossovers are engineered by cascading two identical Butterworth filters. This creates a -6 dB attenuation point at the crossover frequency, ensuring that the acoustic outputs of two in-phase drivers sum together to a perfectly flat 0 dB response without the +3 dB on-axis acoustic peaking characteristic of Butterworth alignments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the advantage of a Bessel crossover alignment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bessel filters are optimized for maximally flat group delay across the passband. This means all frequency components pass through the filter with the exact same time delay, preserving transient wavefronts, square waves, and percussive attacks with zero electrical ringing or overshoot."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is vertical polar lobing and how does slope reduce it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In a 2-way speaker, the physical distance between woofer and tweeter acoustic centers creates path length differences for listeners sitting above or below the design axis. In the frequency region where both drivers play together, these path differences cause destructive interference (lobing nulls). Steeper crossover slopes narrow the frequency range of driver overlap, shrinking the lobing zone and expanding the clean vertical listening sweet spot."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I mix different crossover slopes between the woofer and tweeter?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Experienced speaker designers frequently use asymmetric crossover slopes to compensate for natural acoustic roll-offs. For example, an electrical 2nd-order electrical low-pass filter combined with a woofer's natural 2nd-order acoustic roll-off yields an effective 4th-order acoustic slope, which can be mated to a 4th-order electrical high-pass filter on the tweeter for perfect acoustic summation."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container-fluid py-4">
+        <div class="row justify-content-around">
+
+            <div class="col-lg-3 col-md-4">
+                <div class="tools-sidebar">
+                    <div class="sidebar-search mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" id="toolSearch" placeholder="Search tools..."
+                                onkeyup="searchTools()">
+                        </div>
+                    </div>
+
+                    <div class="sidebar-categories">
+                        <div class="sidebar-category active">
+                            <h5><i class="bi bi-speaker me-2"></i>Speaker Tools</h5>
+                            <ul class="sidebar-links">
+                                <li><a href="/speaker-tools/speaker-wattage-calculator/"><i class="bi bi-lightning"></i>
+                                        Speaker Wattage</a></li>
+                                <li><a href="/speaker-tools/speaker-impedance-calculator/"><i
+                                            class="bi bi-diagram-3"></i> Impedance Calculator</a></li>
+                                <li><a href="/speaker-tools/amplifier-power-calculator/"><i class="bi bi-plug"></i>
+                                        Amplifier Power</a></li>
+                                <li><a href="/speaker-tools/crossover-frequency-calculator/"><i
+                                            class="bi bi-filter"></i> Crossover Frequency</a></li>
+                                <li><a href="/speaker-tools/passive-crossover-calculator/"><i class="bi bi-sliders"></i>
+                                        Passive Crossover Calculator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/speaker-tools/">Speaker Tools</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Crossover Slope Calculator</li>
+                    </ol>
+                </nav>
+
+                <div class="tool-container">
+                    <div class="tool-title">
+                        <h2><i class="bi bi-sliders me-2"></i>Crossover Slope Calculator</h2>
+                        <p>Calculate capacitor and inductor values for Butterworth, Linkwitz-Riley, and Bessel slopes
+                            in multi-driver speakers. Compare slopes and design smooth frequency transitions.</p>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Crossover Frequency (Hz):</label>
+                            <input type="number" class="form-control" id="crossoverFreq" value="3000" min="100"
+                                max="20000" oninput="calculate()">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Speaker Impedance (Ω):</label>
+                            <select class="form-select" id="impedance" onchange="calculate()">
+                                <option value="4">4 Ω</option>
+                                <option value="6">6 Ω</option>
+                                <option value="8" selected>8 Ω</option>
+                                <option value="16">16 Ω</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Slope Type:</label>
+                            <select class="form-select" id="slopeType" onchange="calculate()">
+                                <option value="butterworth" selected>Butterworth</option>
+                                <option value="linkwitz">Linkwitz-Riley</option>
+                                <option value="bessel">Bessel</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="result-box h-100">
+                                <h3><i class="bi bi-arrow-down me-2"></i>Low-Pass (Woofer)</h3>
+                                <div class="text-start mt-3">
+                                    <div class="mb-3">
+                                        <strong>Inductor (L):</strong><br>
+                                        <span id="lpInductor" class="fs-3 text-teal">0.00 mH</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <strong>Capacitor (C):</strong><br>
+                                        <span id="lpCapacitor" class="fs-3 text-teal">0.00 µF</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="result-box h-100">
+                                <h3><i class="bi bi-arrow-up me-2"></i>High-Pass (Tweeter)</h3>
+                                <div class="text-start mt-3">
+                                    <div class="mb-3">
+                                        <strong>Capacitor (C):</strong><br>
+                                        <span id="hpCapacitor" class="fs-3 text-teal">0.00 µF</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <strong>Inductor (L):</strong><br>
+                                        <span id="hpInductor" class="fs-3 text-teal">0.00 mH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-light rounded">
+                        <h5 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>Slope Characteristics</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Selected Slope:</strong> <span id="selectedSlope">Butterworth</span><br>
+                                <strong>Roll-off:</strong> <span id="slopeDb">12 dB/octave</span>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Recommended Use:</strong> <span id="recommendedUse">General 2-way
+                                    speakers</span><br>
+                                <strong>Phase Characteristics:</strong> <span id="phaseChar">Standard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <article class="tool-container mt-4" id="main-content">
+                    <header class="mb-4">
+                        <h1 class="text-teal mb-3">Crossover Slope Engineering: Technical Guide to Filter Roll-Offs,
+                            Driver Overlap & Acoustic Summation</h1>
+                        <p class="lead text-muted">
+                            Master the electrical and acoustic dynamics of loudspeaker crossover attenuation slopes.
+                            Explore how filter steepness governs passband overlap, suppresses out-of-band distortion,
+                            controls vertical polar lobing, and dictates system phase alignment.
+                        </p>
+                    </header>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-graph-down me-2"></i>1. The Mathematics of
+                            Crossover Attenuation Slopes</h2>
+                        <p>
+                            In loudspeaker design, the <strong>crossover slope</strong> defines the rate at which
+                            electrical signal power is attenuated outside a driver's operating passband. This
+                            attenuation is quantified in <strong>decibels per octave (dB/octave)</strong>:
+                        </p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded h-100 bg-light">
+                                    <h3 class="h6 text-teal mb-2"><i class="bi bi-calculator me-2"></i>Asymptotic
+                                        Attenuation Formula</h3>
+                                    <code>\text{Attenuation (dB)} = 20 \cdot N \cdot \log_{10}\left(\frac{f}{f_c}\right)</code>
+                                    <p class="small text-muted mt-2 mb-0">Where $N$ is the filter order and $f_c$ is the
+                                        crossover transition frequency. Every reactive element (inductor or capacitor)
+                                        adds one order ($N=1$).</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded h-100 bg-light">
+                                    <h3 class="h6 text-teal mb-2"><i class="bi bi-arrow-repeat me-2"></i>Octave to
+                                        Factor Scaling</h3>
+                                    <code>\Delta \text{dB/octave} \approx 6.02 \cdot N \quad (\text{dB/oct})</code>
+                                    <p class="small text-muted mt-2 mb-0">Doubling the frequency (one octave up or down)
+                                        results in $6\text{ dB}$ (1st-order), $12\text{ dB}$ (2nd-order), $18\text{ dB}$
+                                        (3rd-order), or $24\text{ dB}$ (4th-order) attenuation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-layers me-2"></i>2. Driver Overlap Bandwidth &
+                            Excursion Protection</h2>
+                        <p>
+                            Loudspeaker drivers do not cease playing abruptly at the crossover frequency. Instead, they
+                            share an <strong>acoustic overlap band</strong> where both woofer and tweeter radiate
+                            simultaneously into the listening room:
+                        </p>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Filter Slope</th>
+                                        <th>Overlap Width (-20 dB Attenuation)</th>
+                                        <th>Tweeter Excursion Stress</th>
+                                        <th>Woofer Breakup Suppression</th>
+                                        <th>Transient Phase Response</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>6 dB/oct (1st Order)</strong></td>
+                                        <td>Wide (~3.3 Octaves)</td>
+                                        <td><span class="badge bg-danger">Severe</span> (High low-frequency energy
+                                            reaches dome)</td>
+                                        <td>Minimal (Harsh cone flexure remains audible)</td>
+                                        <td><span class="badge bg-success">Perfect</span> (Zero phase distortion, flat
+                                            group delay)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>12 dB/oct (2nd Order)</strong></td>
+                                        <td>Moderate (~1.7 Octaves)</td>
+                                        <td>Good for medium listening levels</td>
+                                        <td>Moderate suppression of cone resonance</td>
+                                        <td>180° phase inversion required at terminals</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>18 dB/oct (3rd Order)</strong></td>
+                                        <td>Narrow (~1.1 Octaves)</td>
+                                        <td>High protection for soft-dome tweeters</td>
+                                        <td>Excellent suppression of breakup peaks</td>
+                                        <td>90° phase quadrature difference</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>24 dB/oct (4th Order)</strong></td>
+                                        <td>Very Narrow (~0.8 Octaves)</td>
+                                        <td><span class="badge bg-success">Maximum Protection</span> (Sub-bass fully
+                                            isolated)</td>
+                                        <td>Complete suppression of metal cone breakup</td>
+                                        <td>360° total phase shift (drivers in-phase)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            Because dynamic driver excursion increases fourfold ($+12\text{ dB}$) for every octave drop
+                            at constant SPL ($X_{\text{peak}} \propto 1/f^2$), a shallow $6\text{ dB/octave}$ high-pass
+                            filter allows substantial low-frequency cone movement to pass into the tweeter, creating
+                            high intermodulation distortion and risking mechanical voice coil detachment.
+                        </p>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-compass me-2"></i>3. Polar Lobing Tilt & Comb
+                            Filtering Interference</h2>
+                        <p>
+                            In any multi-driver loudspeaker where woofer and tweeter are physically separated on a
+                            baffle by distance $d$, their sound waves travel slightly different distances to an off-axis
+                            listener.
+                        </p>
+                        <p>
+                            Throughout the shared overlap band, these path length differences create constructive and
+                            destructive interference:
+                        </p>
+                        <div class="p-3 border rounded bg-light mb-4 text-center">
+                            <code>\Delta L = d \cdot \sin(\theta) \implies \text{Phase Difference } \Delta \phi = 2\pi \cdot \frac{\Delta L}{\lambda} = 2\pi \cdot \frac{d \cdot \sin(\theta) \cdot f}{c}</code>
+                        </div>
+                        <p>
+                            When $\Delta \phi = 180^\circ$, a complete acoustic cancellation null forms in the vertical
+                            listening window. By choosing a steeper slope ($18\text{ dB}$ or $24\text{ dB/octave}$),
+                            engineers compress the frequency span of this overlap, confining destructive comb filtering
+                            to an imperceptibly narrow band and ensuring a wide, stable sweet spot.
+                        </p>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-sliders2 me-2"></i>4. Detailed Topology Analysis:
+                            Butterworth vs. Linkwitz-Riley vs. Bessel</h2>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h6 text-teal"><i class="bi bi-soundwave me-2"></i>Butterworth ($Q =
+                                            0.707$)</h3>
+                                        <p class="small text-muted mb-2">
+                                            Electrical attenuation is down $-3.01\text{ dB}$ at $f_c$. When two coherent
+                                            drivers sum on-axis, voltage increases by $+6\text{ dB}$, producing an
+                                            acoustic power bump of $+3\text{ dB}$ at crossover.
+                                        </p>
+                                        <span class="badge bg-secondary">Best for: Car audio, high electrical
+                                            efficiency</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h6 text-teal"><i class="bi bi-check-circle me-2"></i>Linkwitz-Riley
+                                            ($Q = 0.500$)</h3>
+                                        <p class="small text-muted mb-2">
+                                            Engineered by Siegfried Linkwitz and Russ Riley. Both branches are down
+                                            exactly $-6.02\text{ dB}$ at $f_c$, summing to a perfectly flat $0.0\text{
+                                            dB}$ magnitude response across the listening axis.
+                                        </p>
+                                        <span class="badge bg-success">Best for: Studio monitors, Hi-Fi mastering</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h6 text-teal"><i class="bi bi-activity me-2"></i>Bessel ($Q = 0.577$)
+                                        </h3>
+                                        <p class="small text-muted mb-2">
+                                            Maximizes linear phase response and minimizes group delay dispersion.
+                                            Produces zero ringing on musical transients, but exhibits a broader
+                                            transition knee and slightly wider driver overlap.
+                                        </p>
+                                        <span class="badge bg-info text-dark">Best for: Audiophile impulse
+                                            fidelity</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-check2-circle me-2"></i>5. Step-by-Step Crossover
+                            Slope Sizing Guide</h2>
+                        <ol class="list-group list-group-numbered mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Specify Crossover Frequency ($f_c$)</div>
+                                    Enter your target frequency in Hz (typically $2,000–3,500\text{ Hz}$ for 2-way
+                                    bookshelf systems).
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Input Driver Nominal Impedance</div>
+                                    Select $4\,\Omega$, $6\,\Omega$, $8\,\Omega$, or $16\,\Omega$ to match the speaker
+                                    voice coil load.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Select Filter Slope Alignment</div>
+                                    Choose <strong>Linkwitz-Riley</strong> for flat on-axis summing,
+                                    <strong>Butterworth</strong> for standard roll-off, or <strong>Bessel</strong> for
+                                    optimal transient response.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Review Reactive Component Values</div>
+                                    The tool instantly calculates precise low-pass and high-pass inductor values (mH)
+                                    and capacitor values (µF).
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-4"><i class="bi bi-question-circle me-2"></i>6. Frequently Asked
+                            Questions</h2>
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse1" aria-expanded="false"
+                                        aria-controls="faqCollapse1">
+                                        What is a crossover slope and how is it measured in audio engineering?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        A crossover slope measures the rate of acoustic or electrical attenuation
+                                        outside a driver's intended passband, expressed in decibels per octave
+                                        (dB/octave) or decibels per decade (dB/decade). Each filter order adds
+                                        approximately 6 dB/octave of attenuation: a 1st-order filter attenuates at 6
+                                        dB/oct, 2nd-order at 12 dB/oct, 3rd-order at 18 dB/oct, and 4th-order at 24
+                                        dB/oct.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse2" aria-expanded="false"
+                                        aria-controls="faqCollapse2">
+                                        How does crossover slope steepness affect speaker sound quality and driver
+                                        protection?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Steeper slopes (such as 18 dB or 24 dB/octave) narrow the acoustic overlap band
+                                        where both woofer and tweeter radiate sound simultaneously, which dramatically
+                                        reduces destructive comb filtering, prevents tweeter voice coil burnout from low
+                                        bass transients, and suppresses woofer cone breakup harmonics. Gentler slopes (6
+                                        dB or 12 dB/octave) introduce less phase rotation and simpler circuits, but
+                                        leave drivers exposed to out-of-band distortion.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse3" aria-expanded="false"
+                                        aria-controls="faqCollapse3">
+                                        Why is Linkwitz-Riley considered the standard for 2nd and 4th order crossovers?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Linkwitz-Riley (LR) crossovers are engineered by cascading two identical
+                                        Butterworth filters. This creates a -6 dB attenuation point at the crossover
+                                        frequency, ensuring that the acoustic outputs of two in-phase drivers sum
+                                        together to a perfectly flat 0 dB response without the +3 dB on-axis acoustic
+                                        peaking characteristic of Butterworth alignments.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse4" aria-expanded="false"
+                                        aria-controls="faqCollapse4">
+                                        What is the advantage of a Bessel crossover alignment?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Bessel filters are optimized for maximally flat group delay across the passband.
+                                        This means all frequency components pass through the filter with the exact same
+                                        time delay, preserving transient wavefronts, square waves, and percussive
+                                        attacks with zero electrical ringing or overshoot.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse5" aria-expanded="false"
+                                        aria-controls="faqCollapse5">
+                                        What is vertical polar lobing and how does slope reduce it?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        In a 2-way speaker, the physical distance between woofer and tweeter acoustic
+                                        centers creates path length differences for listeners sitting above or below the
+                                        design axis. In the frequency region where both drivers play together, these
+                                        path differences cause destructive interference (lobing nulls). Steeper
+                                        crossover slopes narrow the frequency range of driver overlap, shrinking the
+                                        lobing zone and expanding the clean vertical listening sweet spot.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="faqHeading6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faqCollapse6" aria-expanded="false"
+                                        aria-controls="faqCollapse6">
+                                        Can I mix different crossover slopes between the woofer and tweeter?
+                                    </button>
+                                </h3>
+                                <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-muted">
+                                        Yes. Experienced speaker designers frequently use asymmetric crossover slopes to
+                                        compensate for natural acoustic roll-offs. For example, an electrical 2nd-order
+                                        electrical low-pass filter combined with a woofer's natural 2nd-order acoustic
+                                        roll-off yields an effective 4th-order acoustic slope, which can be mated to a
+                                        4th-order electrical high-pass filter on the tweeter for perfect acoustic
+                                        summation.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="p-4 border rounded bg-light">
+                        <h2 class="h5 text-teal mb-3"><i class="bi bi-link-45deg me-2"></i>Explore Related Speaker Tools
+                        </h2>
+                        <ul class="list-unstyled mb-0 d-flex flex-wrap gap-3">
+                            <li><a href="/speaker-tools/crossover-frequency-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-filter me-1"></i> Crossover
+                                    Frequency Calculator</a></li>
+                            <li><a href="/speaker-tools/passive-crossover-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-sliders me-1"></i> Passive
+                                    Crossover Calculator</a></li>
+                            <li><a href="/speaker-tools/zobel-network-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-cpu me-1"></i> Zobel Network
+                                    Calculator</a></li>
+                            <li><a href="/speaker-tools/speaker-impedance-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-diagram-3 me-1"></i> Speaker
+                                    Impedance Calculator</a></li>
+                            <li><a href="/speaker-tools/speaker-phase-alignment-calculator/"
+                                    class="btn btn-outline-teal btn-sm"><i class="bi bi-shuffle me-1"></i> Phase
+                                    Alignment Calculator</a></li>
+                        </ul>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="./assets/bootstrap5.js" defer></script>
+    <script src="./assets/tools.js" defer></script>
+
+    <!-- Tool JS -->
+    <script>
+        function calculate() {
+            const freq = parseFloat(document.getElementById('crossoverFreq').value) || 3000;
+            const R = parseFloat(document.getElementById('impedance').value) || 8;
+            const slope = document.getElementById('slopeType').value;
+
+            const omega = 2 * Math.PI * freq;
+            let C = 1 / (omega * R) * 1000000; // µF
+            let L = R / omega * 1000; // mH
+
+            // Adjust C and L for slope type
+            if (slope === 'linkwitz') { C *= Math.sqrt(2); L *= Math.sqrt(2); }
+            else if (slope === 'bessel') { C *= 1.2; L *= 1.2; }
+
+            document.getElementById('lpInductor').textContent = L.toFixed(2) + ' mH';
+            document.getElementById('lpCapacitor').textContent = C.toFixed(2) + ' µF';
+            document.getElementById('hpCapacitor').textContent = C.toFixed(2) + ' µF';
+            document.getElementById('hpInductor').textContent = L.toFixed(2) + ' mH';
+
+            document.getElementById('selectedSlope').textContent = slope.charAt(0).toUpperCase() + slope.slice(1);
+            document.getElementById('slopeDb').textContent = '12 dB/octave';
+            document.getElementById('recommendedUse').textContent = 'General 2-way speakers';
+            document.getElementById('phaseChar').textContent = 'Standard';
+        }
+
+        calculate();
+
+        window.addEventListener("load", () => {
+            Promise.all([
+                fetch("../../header.html").then(res => res.text()),
+                fetch("../../footer.html").then(res => res.text())
+            ])
+                .then(([header, footer]) => {
+                    document.getElementById("header").innerHTML = header;
+                    document.getElementById("footer").innerHTML = footer;
+                })
+                .catch(err => console.error("Include load failed:", err));
+        });
+    </script>
+
+</body>
+
+</html>

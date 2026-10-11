@@ -99,7 +99,7 @@
       "name": "Why does the calculator show sharps instead of flats?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The calculator normalizes all pitches to sharp spellings internally, so results always display sharps (F♯, C♯). These are enharmonically identical to their flat equivalents (G♭, D♭) — the same piano key. Respell them to flats when working in flat key signatures."
+        "text": "The transposed results display sharp spellings (F♯, C♯) because the transposition engine outputs sharps. These are enharmonically identical to their flat equivalents (G♭, D♭) — the same piano key — so respell them to flats when working in flat key signatures. Note this only affects results: flat notes you type in (like B♭ or E♭) are passed through unchanged, not transposed — see Limitations."
       }
     }
   ]
@@ -177,7 +177,7 @@
                                         Milliseconds</a></li>
                                 <li><a href="/dj-music-production-tools/song-key-finder/"><i class="bi bi-key"></i> Song
                                         Key Finder</a></li>
-                                <li><a href="https://pitchdetectors.com/BPM-Pitch-Calculator.html"><i
+                                <li><a href="https://pitchdetectors.com/dj-music-production-tools/bpm-to-speed/"><i
                                             class="bi bi-sliders"></i>
                                         Pitch Shifter</a></li>
                                 <!-- <li><a href="/ /"><i
@@ -316,7 +316,7 @@
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Transpose Calculator Works</h2>
-                        <p>This calculator treats the twelve chromatic pitches as numbered positions 0–11 (C=0 through B=11) and adds your semitone shift with wraparound arithmetic. Flats you type are normalized to their sharp equivalents first (D&#9837; becomes C&#9839;), then the shift is applied modulo 12, and any octave crossings adjust the octave number automatically.</p>
+                        <p>This calculator treats the twelve chromatic pitches as numbered positions 0–11 (C=0 through B=11) and adds your semitone shift with wraparound arithmetic. Note a real widget limitation: flat spellings are <strong>not</strong> normalized — typing D&#9837; or B&#9837; currently passes the input through untransposed (see Limitations below), so enter the sharp equivalents (C&#9839;, A&#9839;) for correct results. After the shift is applied modulo 12, any octave crossings adjust the octave number automatically.</p>
                         <p>Methodology: <code>new index = (note index + semitones + octave shift × 12) mod 12</code>. We verified the widget's transpose function against standard transposition references using five sample inputs — C, F, and G shifted up 4 semitones correctly produced E, A, and B, and E4 shifted down 4 semitones produced C4, matching manual chromatic-scale counting exactly.</p>
                         <p><em>Last reviewed: October 2026. Interval math follows twelve-tone equal temperament (12-TET), the standard tuning of modern Western music.</em></p><p class="text-muted small">Sources: transposing-instrument intervals per <a href="https://tamucc.pressbooks.pub/stepstomusictheory/chapter/transposing-instruments/" target="_blank" rel="noopener">Steps to Music Theory (TAMUCC)</a> and <a href="https://www.musictheoryacademy.com/how-to-read-sheet-music/transposing-instruments/" target="_blank" rel="noopener">Music Theory Academy</a>.</p>
                     </section>
@@ -381,7 +381,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p><strong>Example:</strong> a song in A is too low for your singer, who wants it in B. Put the capo on fret 2 (+2 semitones) and play your familiar G-shape fingerings — they now sound in A... wait, G+2 = A. To reach B from G shapes you need fret 4. Enter <code>G, C, D</code> with +4 semitones in the calculator above to confirm: B, E, F&#9839;.</p>
+                        <p><strong>Example:</strong> you know your G-shape fingerings but the singer wants the song in A major — clamp the capo on fret 2 (+2 semitones: G&rarr;G&#9839;&rarr;A) and play your familiar shapes, which now sound in A. To reach B major from G shapes instead, use fret 4 (+4 semitones: G&rarr;G&#9839;&rarr;A&rarr;A&#9839;&rarr;B). Enter <code>G, C, D</code> with +4 semitones in the calculator above to confirm: B, E, F&#9839;.</p>
                     </section>
 
                     <section class="mb-4">
@@ -599,7 +599,7 @@
                                 <div id="tFaqCol10" class="accordion-collapse collapse" aria-labelledby="tFaqHead10"
                                     data-bs-parent="#transposeFaqAccordion">
                                     <div class="accordion-body">
-                                        The calculator normalizes all pitches to sharp spellings internally, so results always display sharps (F&#9839;, C&#9839;). These are enharmonically identical to their flat equivalents (G&#9837;, D&#9837;) — the same piano key. Respell them to flats when working in flat key signatures.
+                                        The transposed results display sharp spellings (F&#9839;, C&#9839;) because the transposition engine outputs sharps. These are enharmonically identical to their flat equivalents (G&#9837;, D&#9837;) — the same piano key — so respell them to flats when working in flat key signatures. Note this only affects results: flat notes you type in (like B&#9837; or E&#9837;) are passed through unchanged, not transposed — see Limitations.
                                     </div>
                                 </div>
                             </div>

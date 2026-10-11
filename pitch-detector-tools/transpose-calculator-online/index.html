@@ -99,7 +99,7 @@
       "name": "Why does the calculator show sharps instead of flats?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The transposed results display sharp spellings (F♯, C♯) because the transposition engine outputs sharps. These are enharmonically identical to their flat equivalents (G♭, D♭) — the same piano key — so respell them to flats when working in flat key signatures. Note this only affects results: flat notes you type in (like B♭ or E♭) are passed through unchanged, not transposed — see Limitations."
+        "text": "The transposed results display sharp spellings (F♯, C♯) because the transposition engine outputs sharps. These are enharmonically identical to their flat equivalents (G♭, D♭) — the same piano key — so respell them to flats when working in flat key signatures. Flat notes you type in (like B♭ or E♭) are accepted and transposed normally; only the output spelling is sharp-only."
       }
     }
   ]
@@ -316,7 +316,7 @@
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Transpose Calculator Works</h2>
-                        <p>This calculator treats the twelve chromatic pitches as numbered positions 0–11 (C=0 through B=11) and adds your semitone shift with wraparound arithmetic. Note a real widget limitation: flat spellings are <strong>not</strong> normalized — typing D&#9837; or B&#9837; currently passes the input through untransposed (see Limitations below), so enter the sharp equivalents (C&#9839;, A&#9839;) for correct results. After the shift is applied modulo 12, any octave crossings adjust the octave number automatically.</p>
+                        <p>This calculator treats the twelve chromatic pitches as numbered positions 0–11 (C=0 through B=11) and adds your semitone shift with wraparound arithmetic. Flat spellings are accepted too — typing D&#9837; or B&#9837; normalizes them to their sharp equivalents (C&#9839;, A&#9839;) before transposing. After the shift is applied modulo 12, any octave crossings adjust the octave number automatically.</p>
                         <p>Methodology: <code>new index = (note index + semitones + octave shift × 12) mod 12</code>. We verified the widget's transpose function against standard transposition references using five sample inputs — C, F, and G shifted up 4 semitones correctly produced E, A, and B, and E4 shifted down 4 semitones produced C4, matching manual chromatic-scale counting exactly.</p>
                         <p><em>Last reviewed: October 2026. Interval math follows twelve-tone equal temperament (12-TET), the standard tuning of modern Western music.</em></p><p class="text-muted small">Sources: transposing-instrument intervals per <a href="https://tamucc.pressbooks.pub/stepstomusictheory/chapter/transposing-instruments/" target="_blank" rel="noopener">Steps to Music Theory (TAMUCC)</a> and <a href="https://www.musictheoryacademy.com/how-to-read-sheet-music/transposing-instruments/" target="_blank" rel="noopener">Music Theory Academy</a>.</p>
                     </section>
@@ -435,7 +435,7 @@
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>Flat inputs pass through unchanged.</strong> Typing B&#9837; or E&#9837; currently returns the input untransposed — use the sharp equivalents (A&#9839;, D&#9839;) for correct results.</li>
+                            <li><strong>Flat inputs are normalized to sharps.</strong> Typing B&#9837; or E&#9837; works — flats are converted to their sharp equivalents (A&#9839;, D&#9839;) before transposing. Output always uses sharp spellings.</li>
                             <li><strong>Chord extensions are read as octaves.</strong> Entering <code>G7</code> is interpreted as the note G in octave 7, not a G dominant-7th chord. Transpose the root (<code>G</code>) and re-add the extension (<code>7</code>) yourself.</li>
                             <li><strong>Output uses sharp spellings only.</strong> See the enharmonic section above for converting to flats in flat keys.</li>
                             <li><strong>Key signatures are not rewritten.</strong> The calculator moves pitches; you still need to update the key signature on your sheet music.</li>
@@ -599,7 +599,7 @@
                                 <div id="tFaqCol10" class="accordion-collapse collapse" aria-labelledby="tFaqHead10"
                                     data-bs-parent="#transposeFaqAccordion">
                                     <div class="accordion-body">
-                                        The transposed results display sharp spellings (F&#9839;, C&#9839;) because the transposition engine outputs sharps. These are enharmonically identical to their flat equivalents (G&#9837;, D&#9837;) — the same piano key — so respell them to flats when working in flat key signatures. Note this only affects results: flat notes you type in (like B&#9837; or E&#9837;) are passed through unchanged, not transposed — see Limitations.
+                                        The transposed results display sharp spellings (F&#9839;, C&#9839;) because the transposition engine outputs sharps. These are enharmonically identical to their flat equivalents (G&#9837;, D&#9837;) — the same piano key — so respell them to flats when working in flat key signatures. Flat notes you type in (like B&#9837; or E&#9837;) are accepted and transposed normally; only the output spelling is sharp-only.
                                     </div>
                                 </div>
                             </div>
@@ -625,26 +625,30 @@
 
         function normalizeNoteInput(note) {
             note = note.trim();
-            // Separate note and octave
-            const match = note.match(/^([A-Ga-g][b#]?)(d*)$/);
+            // Separate note name and octave number
+            const match = note.match(/^([A-Ga-g][b#♭♯]?)(-?\d*)$/);
             if (!match) return note;
             let [_, n, octave] = match;
-            n = n.toUpperCase();
+            // Normalize unicode accidental symbols to ASCII
+            n = n.replace(/♭/g, 'b').replace(/♯/g, '#');
+            // Capitalize the note letter only, so flat spellings map correctly ("bb" -> "Bb")
+            n = n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
+            // Map flats to their sharp equivalents before transposing
             n = noteMap[n] || n;
             return n + (octave || '');
         }
 
         function transposeNote(note, semitones, octaveShift) {
-            const match = note.match(/^([A-G][#]?)(d*)$/);
+            const match = note.match(/^([A-G][#]?)(-?\d*)$/);
             if (!match) return note;
             let [_, n, octave] = match;
             octave = octave ? parseInt(octave) : 4;
-            let index = notesSharp.indexOf(n);
-            let total = index + semitones + (octaveShift * 12);
-            while (total < 0) total += 12;
-            index = total % 12;
-            octave += Math.floor(total / 12);
-            return notesSharp[index] + octave;
+            const index = notesSharp.indexOf(n);
+            if (index < 0) return note;
+            const total = index + semitones + (octaveShift * 12);
+            const newIndex = ((total % 12) + 12) % 12;
+            const newOctave = octave + Math.floor(total / 12);
+            return notesSharp[newIndex] + newOctave;
         }
 
         function transpose() {

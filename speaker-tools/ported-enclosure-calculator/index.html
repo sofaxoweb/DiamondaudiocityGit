@@ -281,7 +281,7 @@
                             This calculator solves the Helmholtz-based port length formula for your box volume and target tuning, then derives vent area and a rough air-velocity estimate. Round ports use the true diameter; slot ports are converted via an equivalent diameter so the same physics applies.
                         </p>
                         <p>
-                            <strong>Methodology:</strong> the widget implements <code>Lv = (23562.5 × D² × N) / (Fb² × Vb) − 0.732 × D</code>, with D in inches, Vb in cubic feet, Fb in Hz; 0.732 is the flanged end-correction factor (see below). Slot ports convert via equivalent diameter <code>Deq = 2√(A/π)</code>. Air velocity is a built-in rough estimate that flags above 25 m/s. See Limitations for an important accuracy note on the length output.
+                            <strong>Methodology:</strong> the widget implements <code>Lv = (2100 × D² × N) / (Fb² × Vb) − 0.732 × D</code>, with D in inches, Vb in cubic feet, Fb in Hz; 0.732 is the flanged end-correction factor (see below). Slot ports convert via equivalent diameter <code>Deq = 2√(A/π)</code>. Air velocity is a built-in rough estimate that flags above 25 m/s. See Limitations for an important accuracy note on the length output.
                         </p>
                     </section>
 
@@ -358,7 +358,7 @@
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>Widget length-scale issue (known bug).</strong> The widget's built-in constant (23562.5) returns port lengths roughly 11× too long for ft³ inputs — e.g., about 151 inches where the Helmholtz math gives about 11 inches. Until this is patched, use the worked-example formula above for cutting wood; treat the widget's length readout as relative only. (Velocity and area outputs are unaffected.)</li>
+                            <li><strong>End-correction is approximate.</strong> The widget uses the standard flanged end-correction (0.732 × D); free-end or flared ports shift the effective length slightly — measure twice, cut once.</li>
                             <li><strong>Ideal Helmholtz model.</strong> Real boxes have leakage (QL), absorption, and panel flex that shift Fb a few percent from the math.</li>
                             <li><strong>Velocity is a rough estimate.</strong> The widget's approximation assumes ~1 W drive; real velocity scales with actual power and program material.</li>
                             <li><strong>No driver parameters.</strong> Vas, Fs, and Qts determine whether a driver <em>suits</em> a ported box at all — the calculator sizes the port, not the alignment.</li>
@@ -603,10 +603,10 @@
                 const singlePortArea = Math.PI * Math.pow(diameter / 2, 2);
                 portArea = singlePortArea * numPorts;
 
-                // Port length formula: Lv = (23562.5 × D² × N) / (Fb² × Vb) - (k × D)
+                // Port length formula: Lv = (2100 × D² × N) / (Fb² × Vb) - (k × D)
                 // Where k ≈ 0.732 for flanged port
                 const k = 0.732;
-                portLength = (23562.5 * Math.pow(diameter, 2) * numPorts) / (Math.pow(tuningFreq, 2) * boxVolume) - (k * diameter);
+                portLength = (2100 * Math.pow(diameter, 2) * numPorts) / (Math.pow(tuningFreq, 2) * boxVolume) - (k * diameter);
 
                 document.getElementById('portLengthVal').textContent = portLength.toFixed(1) + '"';
                 document.getElementById('portLength').textContent = portLength.toFixed(1) + ' inches' + (numPorts > 1 ? ' each' : '');
@@ -626,7 +626,7 @@
                 // Equivalent diameter for slot port
                 const eqDiam = 2 * Math.sqrt(portArea / Math.PI);
                 const k = 0.732;
-                portLength = (23562.5 * Math.pow(eqDiam, 2)) / (Math.pow(tuningFreq, 2) * boxVolume) - (k * eqDiam);
+                portLength = (2100 * Math.pow(eqDiam, 2)) / (Math.pow(tuningFreq, 2) * boxVolume) - (k * eqDiam);
 
                 document.getElementById('portLengthVal').textContent = portLength.toFixed(1) + '"';
                 document.getElementById('portLength').textContent = portLength.toFixed(1) + ' inches';

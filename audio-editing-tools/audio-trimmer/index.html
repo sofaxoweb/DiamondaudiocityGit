@@ -316,10 +316,10 @@
                             <p><code><strong>n<sub>start</sub> = ⌊t<sub>start</sub> × f<sub>s</sub>⌋, n<sub>end</sub> = ⌊t<sub>end</sub> × f<sub>s</sub>⌋, y[m] = x[m + n<sub>start</sub>]</strong></code></p>
                             <p><strong>Worked example:</strong> trim a podcast from <strong>1:15.50 to 2:00.00</strong> at 44.1 kHz:</p>
                             <ol>
-                                <li>Start in seconds: 1 × 60 + 15.50 = <strong>75.50 s</strong> → n<sub>start</sub> = ⌊75.50 × 44100⌋ = <strong>3,323,550</strong></li>
+                                <li>Start in seconds: 1 × 60 + 15.50 = <strong>75.50 s</strong> → n<sub>start</sub> = ⌊75.50 × 44100⌋ = <strong>3,329,550</strong></li>
                                 <li>End in seconds: 120.00 s → n<sub>end</sub> = ⌊120 × 44100⌋ = <strong>5,292,000</strong></li>
-                                <li>Clip length: 5,292,000 − 3,323,550 = <strong>1,968,450 samples</strong> (44.64 s)</li>
-                                <li>Export size (stereo 16-bit WAV): 1,968,450 × 2 channels × 2 bytes ≈ <strong>7.9 MB</strong></li>
+                                <li>Clip length: 5,292,000 − 3,329,550 = <strong>1,962,450 samples</strong> (44.50 s)</li>
+                                <li>Export size (stereo 16-bit WAV): 1,962,450 × 2 channels × 2 bytes ≈ <strong>7.8 MB</strong></li>
                             </ol>
                             <p>Sample precision is why the seconds inputs accept one decimal place: at 44.1 kHz, 0.1 s is 4,410 samples — plenty fine for dialogue, though frame-level beats for music should use the waveform view to land on beat transients.</p>
                         </section>

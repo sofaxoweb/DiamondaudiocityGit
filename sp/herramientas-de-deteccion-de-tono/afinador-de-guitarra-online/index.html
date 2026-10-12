@@ -75,7 +75,7 @@
     },
     {
       "@type": "Question",
-      "name": "¿Cuáles son los offsets de afinación endulzada de James Taylor?",
+      "name": "¿Cuáles son las correcciones de afinación endulzada de James Taylor?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "De la sexta cuerda (mi grave) a la primera (mi agudo): −12, −10, −8, −4, −6 y −3 cents. Los bemoles compensan la presión del capo, que sube las cuerdas, y que las cuerdas graves suenen agudas en el ataque. Los afinadores estroboscópicos Peterson incluyen estos números como el preset endulzado «ACU». Sin capo, puede sonar notablemente bajo."
@@ -120,13 +120,53 @@
         "@type": "Answer",
         "text": "Afina al empezar cada sesión — y revisa después de unas canciones si la habitación es húmeda o tocas fuerte. Las cuerdas nuevas se estiran bajo tensión durante un día o dos; afínalas al tono, levanta suavemente cada cuerda un par de centímetros a la altura del traste 12 y reafina, repitiendo tres o cuatro veces hasta que el tono se mantenga."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo usarlo como afinador de bajo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La detección cromática rastrea cualquier nota, incluido el Mi grave (E1, 41.20 Hz) y el Si grave (B0, 30.87 Hz) del bajo. Como las frecuencias bajas necesitan una ventana de análisis más larga, deja sonar cada cuerda unos dos segundos y mantén la habitación en silencio — los ventiladores zumban en el mismo rango que tus cuerdas más graves. Si hay preset de bajo disponible, selecciónalo para que las notas objetivo coincidan con la afinación estándar del bajo (E1–A1–D2–G2)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona el afinador en el celular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Es un afinador de guitarra para celular que corre en el navegador: no hay que descargar nada ni registrarse. Abre la página en Chrome o Safari, permite el acceso al micrófono y afina. El micrófono del borde inferior del teléfono suele dar la mejor lectura; apoya el celular en una mesa con ese extremo hacia la guitarra y evita sostenerlo con la mano que pulsa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El afinador de guitarra es gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, totalmente gratis: sin cuenta, sin descarga y sin límite de afinaciones. Funciona íntegramente en tu navegador usando el micrófono del dispositivo. A diferencia de muchas apps gratuitas, no hay anuncios que interrumpan tu afinación ni funciones bloqueadas tras un pago, como las afinaciones alternativas o la calibración de referencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve para guitarra criolla o clásica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La guitarra criolla y la clásica usan afinación estándar (Mi–La–Re–Sol–Si–Mi), así que el preset estándar sirve directo. Ten en cuenta que las cuerdas de nailon se estiran durante días: afina, toca unos minutos y vuelve a afinar. Las primas nuevas pueden tardar una semana en estabilizarse, así que no te sorprendas si la guitarra se baja entre sesiones los primeros días."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo afino cuerda por cuerda con este afinador?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Empieza por la sexta cuerda (Mi grave) y avanza hacia la primera (Mi agudo): pulsa cada cuerda al aire, mira la desviación en cents y gira la clavija correspondiente hasta centrar la aguja. Afina siempre subiendo hacia la nota — si te pasas, baja por debajo y vuelve a subir. Después de afinar las seis, repasa la primera de nuevo: la tensión total del mástil cambia al afinar y las primeras cuerdas suelen moverse un poco."
+      }
     }
   ]
 }
   </script>
 
   <style>
-    .tuner-display {
+   .tuner-display {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       border-radius: 16px;
       padding: 35px 25px;
@@ -136,7 +176,7 @@
       border: 1px solid #334155;
     }
 
-    .note-display {
+   .note-display {
       font-size: 100px;
       font-weight: 800;
       line-height: 1;
@@ -144,26 +184,26 @@
       text-shadow: 0 4px 25px rgba(56, 189, 248, 0.4);
     }
 
-    .octave-display {
+   .octave-display {
       font-size: 36px;
       vertical-align: super;
       opacity: 0.85;
       color: #94a3b8;
     }
 
-    .frequency-display {
+   .frequency-display {
       font-size: 24px;
       color: #cbd5e1;
       margin-top: 8px;
       font-family: monospace;
     }
 
-    .cents-meter {
+   .cents-meter {
       margin: 25px auto 15px;
       max-width: 440px;
     }
 
-    .cents-bar {
+   .cents-bar {
       height: 22px;
       background: #334155;
       border-radius: 11px;
@@ -172,7 +212,7 @@
       border: 1px solid #475569;
     }
 
-    .cents-indicator {
+   .cents-indicator {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -185,7 +225,7 @@
       box-shadow: 0 0 10px rgba(13, 148, 136, 0.8);
     }
 
-    .cents-labels {
+   .cents-labels {
       display: flex;
       justify-content: space-between;
       margin-top: 6px;
@@ -194,14 +234,14 @@
       font-weight: 600;
     }
 
-    .cents-value {
+   .cents-value {
       font-size: 20px;
       font-weight: 700;
       margin-top: 10px;
       color: #f8fafc;
     }
 
-    .tuning-status {
+   .tuning-status {
       font-size: 18px;
       font-weight: 600;
       margin-top: 15px;
@@ -210,27 +250,27 @@
       display: inline-block;
     }
 
-    .status-flat {
+   .status-flat {
       background: #ef4444;
       color: white;
     }
 
-    .status-sharp {
+   .status-sharp {
       background: #f59e0b;
       color: white;
     }
 
-    .status-tune {
+   .status-tune {
       background: #10b981;
       color: white;
     }
 
-    .status-waiting {
+   .status-waiting {
       background: rgba(255, 255, 255, 0.15);
       color: #cbd5e1;
     }
 
-    .start-btn {
+   .start-btn {
       background: var(--text-teal);
       color: #fff;
       border: none;
@@ -246,18 +286,18 @@
       box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
     }
 
-    .start-btn:hover {
+   .start-btn:hover {
       background: #0f766e;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
     }
 
-    .start-btn.active {
-      background: #dc2626 !important;
-      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
+   .start-btn.active {
+      background: #dc2626!important;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4)!important;
     }
 
-    .tuning-presets {
+   .tuning-presets {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -265,7 +305,7 @@
       margin: 15px 0;
     }
 
-    .preset-btn {
+   .preset-btn {
       background: #f1f5f9;
       color: #334155;
       border: 1px solid #cbd5e1;
@@ -277,21 +317,21 @@
       transition: all 0.2s ease;
     }
 
-    .preset-btn:hover,
-    .preset-btn.active {
-      background: var(--text-teal) !important;
-      color: #fff !important;
-      border-color: var(--text-teal) !important;
+   .preset-btn:hover,
+   .preset-btn.active {
+      background: var(--text-teal)!important;
+      color: #fff!important;
+      border-color: var(--text-teal)!important;
     }
 
-    .reference-notes {
+   .reference-notes {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 10px;
       margin: 15px 0;
     }
 
-    .ref-note {
+   .ref-note {
       background: #f8fafc;
       border: 1.5px solid #cbd5e1;
       border-radius: 10px;
@@ -301,30 +341,30 @@
       transition: all 0.2s ease;
     }
 
-    .ref-note:hover {
+   .ref-note:hover {
       border-color: var(--text-teal);
       background: #f0fdfa;
       transform: translateY(-2px);
     }
 
-    .ref-note .note {
+   .ref-note.note {
       font-size: 22px;
       font-weight: 700;
       color: #0f172a;
     }
 
-    .ref-note .freq {
+   .ref-note.freq {
       font-size: 11px;
       color: #64748b;
       font-family: monospace;
     }
 
     @media (max-width: 576px) {
-      .note-display {
+     .note-display {
         font-size: 72px;
       }
 
-      .reference-notes {
+     .reference-notes {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -530,14 +570,14 @@
             <h2 class="text-mid mb-3"><i class="bi bi-cpu me-2"></i>Cómo funciona este afinador</h2>
             <p>Este afinador toma fragmentos cortos del audio del micrófono y aplica un <strong>algoritmo de autocorrelación</strong> — una técnica estándar de detección de tono — para encontrar la frecuencia fundamental de la cuerda: la vibración más grave y fuerte de la nota pulsada.</p>
             <p>Cada fragmento contiene 4,096 muestras de audio (aproximadamente una décima de segundo a 44,100 Hz). El algoritmo compara el fragmento con copias retrasadas de sí mismo; el retraso que mejor coincide revela el período de la onda, y la interpolación parabólica entre retrasos vecinos afina la estimación más allá de la rejilla de muestras. Un umbral de volumen ignora el silencio y el ruido de fondo para que el medidor solo reaccione a notas reales.</p>
-            <p>La frecuencia medida se convierte al nombre de nota más cercano, y la diferencia se muestra en cents: 1,200 × log₂(measured ÷ target). La referencia A4 es 440 Hz por defecto y puede ajustarse de 430 a 450 Hz para igualar pianos, orquestas o grabaciones afinadas a 432 Hz. El método de detección sigue la misma técnica de autocorrelación publicada en la referencia de código abierto PitchDetect de Chris Wilson, que está detrás de muchos afinadores de navegador.</p>
+            <p>La frecuencia medida se convierte al nombre de nota más cercano, y la diferencia se muestra en cents: 1,200 × log₂(medido ÷ objetivo). La referencia A4 es 440 Hz por defecto y puede ajustarse de 430 a 450 Hz para igualar pianos, orquestas o grabaciones afinadas a 432 Hz. El método de detección sigue la misma técnica de autocorrelación publicada en la referencia de código abierto PitchDetect de Chris Wilson, que está detrás de muchos afinadores de navegador.</p>
           </div>
         </div>
 
         <div class="tool-container mt-4">
           <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-calculator me-2"></i>La matemática de la afinación: la fórmula de cents y un ejemplo</h2>
-            <p>Los cents convierten pequeñas diferencias de tono en números legibles: 100 cents equivalen a un semitono (un traste), y cada semitono multiplica la frecuencia por aproximadamente 1.05946. La fórmula es <strong>cents = 1,200 × log₂(f_measured ÷ f_target)</strong>.</p>
+            <p>Los cents convierten pequeñas diferencias de tono en números legibles: 100 cents equivalen a un semitono (un traste), y cada semitono multiplica la frecuencia por aproximadamente 1.05946. La fórmula es <strong>cents = 1,200 × log₂(f_medida ÷ f_objetivo)</strong>.</p>
             <p><strong>Ejemplo práctico:</strong> tu mi grave debería estar en 82.41 Hz. El afinador lee 81.95 Hz: 1,200 × log₂(81.95 ÷ 82.41) ≈ −9.7 cents. La cuerda está unos 10 cents baja — aprieta la clavija de la sexta cuerda en giros pequeños y vuelve a pulsar hasta que la lectura se mantenga cerca de cero.</p>
             <p>La fórmula también funciona al revés: la frecuencia 8 cents por encima de A2 (110.00 Hz) es 110 × 2^(8÷1200) ≈ 110.51 Hz. Para conversiones repetidas, la <a href="../calculadora-de-cents-online/">Calculadora de cents</a> hace este cálculo para cualquier intervalo.</p>
           </div>
@@ -595,8 +635,8 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-stars me-2"></i>Afinación endulzada: los offsets en cents de James Taylor</h2>
-            <p><strong>James Taylor afina cada cuerda deliberadamente un poco baja</strong> — offsets específicos que compensan las formas en que tocar de verdad sube el tono.</p>
+            <h2 class="text-mid mb-3"><i class="bi bi-stars me-2"></i>Afinación endulzada: las correcciones en cents de James Taylor</h2>
+            <p><strong>James Taylor afina cada cuerda deliberadamente un poco baja</strong> — correcciones específicas que compensan las formas en que tocar de verdad sube el tono.</p>
             <div class="table-responsive my-3">
               <table class="table table-bordered table-striped align-middle text-center small">
                 <thead class="table-dark">
@@ -607,8 +647,8 @@
                 </tbody>
               </table>
             </div>
-            <p>Dos razones explican los offsets. Primero, la presión del capo aprieta las cuerdas hacia arriba — más en las graves. Segundo, las cuerdas graves suenan agudas en el ataque, como se describió arriba. Los afinadores estroboscópicos Peterson incluyen sus números como el preset endulzado «ACU».</p>
-            <p>Una advertencia de la misma entrevista (MusicRadar): sin capo el resultado puede sonar notablemente bajo. Trata la afinación endulzada como una herramienta para quienes tocan con capo — ajusta estos offsets con el campo A4 y la lectura en cents de este afinador si tocas sets con capo.</p>
+            <p>Dos razones explican las correcciones. Primero, la presión del capo aprieta las cuerdas hacia arriba — más en las graves. Segundo, las cuerdas graves suenan agudas en el ataque, como se describió arriba. Los afinadores estroboscópicos Peterson incluyen sus números como el preset endulzado «ACU».</p>
+            <p>Una advertencia de la misma entrevista (MusicRadar): sin capo el resultado puede sonar notablemente bajo. Trata la afinación endulzada como una herramienta para quienes tocan con capo — ajusta estas correcciones con el campo A4 y la lectura en cents de este afinador si tocas con capo.</p>
           </div>
         </div>
 
@@ -663,6 +703,35 @@
           <div class="border rounded p-5 bg-light text-muted">[Diagrama: tabla de guitarra de seis cuerdas del clavijero al puente que mapea cada cuerda al aire E2–E4 a su frecuencia en Hz y su relación en cents con A4 = 440 Hz]</div>
           <figcaption class="small text-muted mt-2">Alt text: "Tabla de frecuencias de cuerdas al aire de guitarra que muestra E2 82.41 Hz hasta E4 329.63 Hz en tono de concierto"</figcaption>
         </figure>
+
+        <div class="tool-container mt-4">
+          <div class="tool-section">
+            <h2 class="text-mid mb-3"><i class="bi bi-music-note-beamed me-2"></i>Afinación según el tipo de guitarra: acústica, eléctrica, bajo y criolla</h2>
+            <p>
+              Este afinador de guitarra gratis funciona como afinador de guitarra acústica, afinador de guitarra eléctrica y afinador de bajo: la detección cromática identifica cualquier nota, así que la misma herramienta cubre todos los instrumentos de la familia de la guitarra. Con pequeños ajustes según el instrumento obtendrás lecturas más rápidas y estables.
+            </p>
+            <h3>Guitarra acústica</h3>
+            <p>
+              Como afinador de guitarra acústica, esta herramienta escucha a través del micrófono, así que la colocación importa. Pon tu celular o computadora a unos 30 cm de la boca de la guitarra, ligeramente de lado — justo al centro capta demasiados graves y confunde la lectura de las cuerdas Mi grave y La. Pulsa con la yema del dedo en vez de la púa para un fundamental más limpio, y deja sonar cada nota un segundo completo para que el afinador se fije en el sustain.
+            </p>
+            <h3>Guitarra eléctrica</h3>
+            <p>
+              Para afinar una guitarra eléctrica, una sólida desenchufada suena bajo pero sirve perfectamente: acerca el micrófono al hombro superior de la caja, lejos de tu mano de pulsación, y pulsa con firmeza. Si hay ruido ambiente, baja un poco el tono de la guitarra — recorta los armónicos agresivos del ataque y deja un fundamental más puro para el detector. Funciona con humbuckers y single-coils por igual; el afinador solo necesita la vibración acústica que llega al micrófono.
+            </p>
+            <h3>Bajo eléctrico</h3>
+            <p>
+              Usado como afinador de bajo, el mismo motor cromático rastrea hasta el Si grave de un bajo de 5 cuerdas (30.87 Hz). Las notas graves necesitan una ventana de análisis más larga: deja sonar cada cuerda dos segundos completos y reduce el ruido de fondo — los aires acondicionados y ventiladores zumban en el mismo rango que tu cuerda Mi. Afina primero las cuerdas graves; su vibración puede excitar por simpatía a las agudas y emborronar sus lecturas.
+            </p>
+            <h3>Guitarra criolla, clásica y de 12 cuerdas</h3>
+            <p>
+              La guitarra criolla (de cuerdas de nailon) se afina igual que la clásica, pero espera más deriva: el nailon cede durante días, así que afina, toca cinco minutos y vuelve a afinar. Las primas nuevas de nailon pueden tardar una semana en asentarse. En una guitarra de 12 cuerdas, afina primero las seis cuerdas principales (las graves de cada par) con las octavas apagadas — tócalas suavemente con la mano izquierda mientras pulsas — y después afina cada cuerda de octava contra su compañera.
+            </p>
+            <h3>En el celular</h3>
+            <p>
+              Este afinador de guitarra para celular funciona directo en el navegador, sin descargar apps ni ocupar memoria. En el teléfono, el micrófono del borde inferior suele rendir mejor: apoya el celular sobre una mesa con ese extremo apuntando a la guitarra. Evita sostenerlo con la mano que pulsa, porque el ruido de manipulación arruina la lectura. Funciona con los datos móviles o wifi, y no necesitas crear ninguna cuenta.
+            </p>
+          </div>
+        </div>
 
         <div class="tool-container mt-4">
           <div class="tool-section">
@@ -759,7 +828,7 @@
               <div class="accordion-item">
                 <h3 class="accordion-header" id="gtHeading5">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq5">
-                    ¿Cuáles son los offsets de afinación endulzada de James Taylor?
+                    ¿Cuáles son las correcciones de afinación endulzada de James Taylor?
                   </button>
                 </h3>
                 <div id="gtFaq5" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
@@ -830,6 +899,69 @@
                 <div id="gtFaq10" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
                   <div class="accordion-body">
                     Afina al empezar cada sesión — y revisa después de unas canciones si la habitación es húmeda o tocas fuerte. Las cuerdas nuevas se estiran bajo tensión durante un día o dos; afínalas al tono, levanta suavemente cada cuerda un par de centímetros a la altura del traste 12 y reafina, repitiendo tres o cuatro veces hasta que el tono se mantenga.
+                  </div>
+                </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading11">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq11" aria-expanded="false">
+                    ¿Puedo usarlo como afinador de bajo?
+                  </button>
+                </h3>
+                <div id="gtFaq11" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Sí. La detección cromática rastrea cualquier nota, incluido el Mi grave (E1, 41.20 Hz) y el Si grave (B0, 30.87 Hz) del bajo. Como las frecuencias bajas necesitan una ventana de análisis más larga, deja sonar cada cuerda unos dos segundos y mantén la habitación en silencio — los ventiladores zumban en el mismo rango que tus cuerdas más graves. Si hay preset de bajo disponible, selecciónalo para que las notas objetivo coincidan con la afinación estándar del bajo (E1–A1–D2–G2).
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading12">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq12" aria-expanded="false">
+                    ¿Funciona el afinador en el celular?
+                  </button>
+                </h3>
+                <div id="gtFaq12" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Sí. Es un afinador de guitarra para celular que corre en el navegador: no hay que descargar nada ni registrarse. Abre la página en Chrome o Safari, permite el acceso al micrófono y afina. El micrófono del borde inferior del teléfono suele dar la mejor lectura; apoya el celular en una mesa con ese extremo hacia la guitarra y evita sostenerlo con la mano que pulsa.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading13">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq13" aria-expanded="false">
+                    ¿El afinador de guitarra es gratis?
+                  </button>
+                </h3>
+                <div id="gtFaq13" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Sí, totalmente gratis: sin cuenta, sin descarga y sin límite de afinaciones. Funciona íntegramente en tu navegador usando el micrófono del dispositivo. A diferencia de muchas apps gratuitas, no hay anuncios que interrumpan tu afinación ni funciones bloqueadas tras un pago, como las afinaciones alternativas o la calibración de referencia.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading14">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq14" aria-expanded="false">
+                    ¿Sirve para guitarra criolla o clásica?
+                  </button>
+                </h3>
+                <div id="gtFaq14" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Sí. La guitarra criolla y la clásica usan afinación estándar (Mi–La–Re–Sol–Si–Mi), así que el preset estándar sirve directo. Ten en cuenta que las cuerdas de nailon se estiran durante días: afina, toca unos minutos y vuelve a afinar. Las primas nuevas pueden tardar una semana en estabilizarse, así que no te sorprendas si la guitarra se baja entre sesiones los primeros días.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading15">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq15" aria-expanded="false">
+                    ¿Cómo afino cuerda por cuerda con este afinador?
+                  </button>
+                </h3>
+                <div id="gtFaq15" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Empieza por la sexta cuerda (Mi grave) y avanza hacia la primera (Mi agudo): pulsa cada cuerda al aire, mira la desviación en cents y gira la clavija correspondiente hasta centrar la aguja. Afina siempre subiendo hacia la nota — si te pasas, baja por debajo y vuelve a subir. Después de afinar las seis, repasa la primera de nuevo: la tensión total del mástil cambia al afinar y las primeras cuerdas suelen moverse un poco.
                   </div>
                 </div>
               </div>

@@ -405,7 +405,7 @@
         <!-- How to Use -->
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>¿Qué Es un Generador de Ritmos?</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>¿Qué es un generador de ritmos?</h2>
             <p><strong>Un generador de ritmos es un secuenciador por pasos online que te permite programar grooves de batería activando pasos en una cuadrícula.</strong> Cada columna es una porción de tiempo musical y cada fila es un sonido de batería; el patrón se repite en bucle continuo. Esta herramienta gratuita te ofrece una cuadrícula de 16 pasos (ampliable a 32 o 64), controles de tempo y swing, kits de batería clásicos y exportación con un clic.</p>
             <p>El secuenciador por pasos es una de las ideas más antiguas de la música electrónica: divide un compás en pasos iguales, decide qué pasos disparan un sonido y repítelo en bucle. Esta herramienta trae ese flujo de trabajo a tu navegador con sincronización precisa a nivel de muestra.</p>
           </div>
@@ -413,7 +413,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-check2-square me-2"></i>Puntos Clave</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-check2-square me-2"></i>Puntos clave</h2>
             <ul>
               <li>Una <strong>cuadrícula de 16 pasos = un compás de semicorcheas</strong> en compás de 4/4; los pasos 1, 5, 9 y 13 son los tiempos fuertes de negra.</li>
               <li>La duración de cada paso en milisegundos es <strong>15,000 ÷ BPM</strong> : a 120 BPM cada paso dura exactamente 125 ms.</li>
@@ -426,7 +426,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-cpu me-2"></i>Cómo Funciona Este Generador de Ritmos</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-cpu me-2"></i>Cómo funciona este generador de ritmos</h2>
             <p>Esta herramienta programa cada golpe de batería en el <strong>reloj Transport de Tone.js</strong>, conectado directamente al reloj de hardware de Web Audio API. Los temporizadores estándar del navegador, como <code>setTimeout</code> se desvían bajo carga de CPU; el reloj Transport preprograma cada golpe contra las marcas de tiempo del hardware de audio, así un bucle a 120 BPM se mantiene fijo en la cuadrícula.</p>
             <p>Metodología: cada celda activa corresponde a una subdivisión de semicorchea de la longitud del patrón. El tempo (40–240 BPM) define el pulso; <strong>División</strong> reasigna la cuadrícula a negras, corcheas, semicorcheas o tresillos de semicorchea; <strong>Swing</strong> (0–60%) retrasa los pasos pares. Incluye dos kits: <strong>Classic</strong> y <strong>505</strong>. <em>Última revisión: octubre de 2026.</em></p>
           </div>
@@ -434,7 +434,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-calculator me-2"></i>Matemática del Tempo por Paso y Ejemplo Resuelto</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-calculator me-2"></i>Matemática del tempo por paso y ejemplo resuelto</h2>
             <p>Todo secuenciador por pasos funciona con una fórmula. En compás de 4/4, un compás contiene 4 tiempos de negra y cada tiempo se divide en 4 semicorcheas: 16 pasos por compás. El tiempo que ocupa cada paso es:</p>
             <p><code><strong>Step duration (ms) = 15,000 ÷ BPM</strong></code></p>
             <p>(Porque una negra dura 60,000 ÷ BPM milisegundos y una semicorchea es la cuarta parte). Esto es lo que significa en tempos comunes:</p>
@@ -458,7 +458,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-list-ol me-2"></i>Cómo Usar Este Generador de Ritmos</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-list-ol me-2"></i>Cómo usar este generador de ritmos</h2>
             <ol class="lead-steps mb-4">
               <li><strong>Ajusta el BPM:</strong> arrastra el deslizador de tempo (40–240). Empieza cerca del tempo típico de tu género: 90–95 para boom-bap, 124–128 para house, 140 para trap. Marca el tempo junto con nuestra <a href="../../../dj-music-production-tools/bpm-tap-tempo/">BPM tap tempo</a> herramienta si estás igualando una pista existente.</li>
               <li><strong>Elige la longitud del patrón:</strong> 16 pasos = 1 compás, 32 = 2 compases, 64 = 4 compases. Usa 16 para bocetar y 32–64 cuando tu fill necesite espacio para respirar.</li>
@@ -473,7 +473,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-grid-3x3-gap me-2"></i>Cómo Leer tu Patrón: Dónde Caen los Tiempos</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-grid-3x3-gap me-2"></i>Cómo leer tu patrón: dónde caen los tiempos</h2>
             <p>En una cuadrícula de 16 pasos en 4/4, no todos los pasos son iguales. Los pasos <strong>1, 5, 9 y 13</strong> son los tiempos fuertes de negra: el pulso que marcas con la cabeza. Los pasos 3, 7, 11 y 15 son los «contratiempos» entre pulsos, donde viven los hi-hats a contratiempo. Todo lo demás es detalle de semicorcheas.</p>
             <div class="table-responsive my-3">
               <table class="table table-bordered table-striped align-middle text-center small">
@@ -499,7 +499,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-music-note-beamed me-2"></i>Patrones Base de Grooves por Género: Copia Estos Patrones de Pasos</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-music-note-beamed me-2"></i>Patrones base de grooves por género: copia estos patrones de pasos</h2>
             <p>Empieza con el ADN rítmico de un género y cambia 2–3 pasos para hacerlo tuyo:</p>
             <ul>
               <li><strong>House / Techno (124–128 BPM):</strong> kick en 1, 5, 9, 13 (four-on-the-floor); clap en 5, 13; hi-hats abiertos en 3, 7, 11, 15; hi-hats cerrados en cada paso par.</li>
@@ -514,7 +514,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-sliders me-2"></i>Porcentaje de Swing Traducido a Milisegundos</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-sliders me-2"></i>Porcentaje de swing traducido a milisegundos</h2>
             <p>El swing retrasa cada paso par en una fracción de la duración del paso. La fórmula del desplazamiento es:</p>
             <p><code><strong>Swing offset (ms) = (Swing% ÷ 100) × Step duration (ms)</strong></code></p>
             <p><strong>Ejemplo resuelto:</strong> a <strong>120 BPM</strong> con <strong>58% de swing</strong>, un paso dura 125 ms. Cada paso a contratiempo se desplaza 0.58 × 125 = <strong>72.5 ms</strong>. Ese retraso de 72 ms es la diferencia entre una cuadrícula robótica y un groove que te hace asentir: lo bastante largo para sentirse, lo bastante corto para mantenerse fijo.</p>
@@ -524,7 +524,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-box-arrow-up me-2"></i>Del Navegador al DAW: El Flujo de Exportación</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-box-arrow-up me-2"></i>Del navegador al DAW: el flujo de exportación</h2>
             <p>El botón Export JSON descarga tu sesión completa — disparadores de la cuadrícula, BPM, swing, kit y longitud del patrón — como un pequeño archivo de texto. El JSON asigna a cada voz de batería un arreglo de números de pasos activos, por ejemplo <code>{"kick": [1, 5, 9, 13], "bpm": 128}</code>. Para continuar en un DAW:</p>
             <ol>
               <li>Exporta el JSON y ábrelo en cualquier editor de texto para ver tus números de pasos.</li>
@@ -538,7 +538,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-layers me-2"></i>Cómo Elegir la Longitud del Patrón para las Secciones de una Canción</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-layers me-2"></i>Cómo elegir la longitud del patrón para las secciones de una canción</h2>
             <p>La longitud del patrón es una decisión de arreglo, no solo una cuadrícula más grande. <strong>16 pasos (1 compás)</strong> sirve para bocetar y para secciones que deben sentirse hipnóticas: intros de techno, versos de trap. <strong>32 pasos (2 compases)</strong> permite escribir pregunta y respuesta: mantén simple el primer compás y añade un fill o variación en el segundo. <strong>64 pasos (4 compases)</strong> encaja una frase completa con intro, build y turnaround: ideal para coros y drops.</p>
             <p>Un flujo práctico: boceta el verso a 16 pasos, expande a 32 para el pre-coro con un fill añadido y abre los 64 completos para el coro. Para conversiones de compás a tiempo en tu tempo, usa la <a href="../../../dj-music-production-tools/bpm-to-ms/">BPM to milliseconds</a> calculadora.</p>
           </div>
@@ -546,7 +546,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-diagram-3 me-2"></i>Polirritmia vs. Polimetría: Deja de Confundirlas</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-diagram-3 me-2"></i>Polirritmia frente a polimetría: deja de confundirlas</h2>
             <p>Una <strong>polirritmia</strong> superpone dos subdivisiones sobre el <em>mismo</em> lapso: 3 golpes equidistantes en el tiempo de 2 pulsos (la hemiola 3:2). Una <strong>polimetría</strong> superpone dos <em>distintas longitudes de compás</em> que comparten la misma duración de paso: un bucle de 4 pasos contra uno de 5 pasos, que se realinean cada 20 pasos (su mínimo común múltiplo).</p>
             <p>En esta cuadrícula, acentúa los pasos 1, 6 y 11 contra kicks rectos de negra para una polirritmia de 3 contra 4. Para una polimetría, repite una frase de 12 pasos dentro de la cuadrícula de 16 silenciando los últimos 4 pasos de una voz y deja que el tiempo fuerte se desplace.</p>
           </div>
@@ -572,7 +572,7 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-3"><i class="bi bi-arrow-left-right me-2"></i>Generador de Ritmos vs. Alternativas</h2>
+            <h2 class="text-mid mb-3"><i class="bi bi-arrow-left-right me-2"></i>Generador de ritmos frente a las alternativas</h2>
             <div class="table-responsive my-3">
               <table class="table table-bordered table-striped align-middle small">
                 <thead class="table-dark">
@@ -594,7 +594,7 @@
         <!-- FAQ Section -->
         <div class="tool-container mt-4">
           <div class="tool-section">
-            <h2 class="text-mid mb-4"><i class="bi bi-question-circle me-2"></i>Preguntas Frecuentes</h2>
+            <h2 class="text-mid mb-4"><i class="bi bi-question-circle me-2"></i>Preguntas frecuentes</h2>
 
             <div class="accordion" id="faqAccordion">
               <div class="accordion-item">

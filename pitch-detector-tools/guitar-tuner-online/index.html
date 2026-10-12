@@ -116,6 +116,46 @@
         "@type": "Answer",
         "text": "Tune at the start of every session — and re-check after a few songs if the room is humid or you play hard. New strings stretch under tension for a day or two; tune to pitch, gently lift each string about an inch at the 12th fret, and retune, repeating three or four times until the pitch holds."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this as a bass guitar tuner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The chromatic detection tracks any note, including the low E (E1, 41.20 Hz) and low B (B0, 30.87 Hz) of a bass guitar. Because low frequencies need a longer analysis window, let each string ring for about two seconds and keep the room quiet — fans and air conditioners hum in the same range as your lowest strings. Select a bass preset if available so the target notes match standard bass tuning (E1–A1–D2–G2)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I tune a 12-string guitar with this tuner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tune in two passes. First, mute the six thin octave strings by lightly touching them with your fretting hand and tune the six main strings to standard pitch. Then tune each octave string individually against its already-tuned partner — the tuner will confirm when the octave string reads exactly 12 semitones (1,200 cents) above. Work from the low E pair toward the high E pair, since the heavier strings pull the neck most."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this online guitar tuner really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely free, with no account, no download, and no limit on tuning sessions. It runs entirely in your browser using your device microphone. Unlike many free tuner apps, there are no ads interrupting your tuning and no premium tier locking features like alternate tunings or reference-pitch calibration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should I place my microphone for the best reading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 30 cm (12 inches) from the guitar, aimed at the soundhole but slightly off-center. Too close and the low strings overload the mic with bass boom; too far and room noise competes with the note. On a phone, the bottom-edge mic usually performs best — lay the phone on a table with the mic end pointing at the guitar. Avoid holding the device in your picking hand, where handling noise ruins the reading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I tune a ukulele or other instruments with this chromatic tuner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because the tuner is fully chromatic, it identifies any of the 12 notes — so ukulele (G4–C4–E4–A4), violin, mandolin, banjo, and even wind instruments all work. Just ignore the guitar-specific presets and read the detected note name and cents deviation directly. For ukulele, tune the G string first; its high pitch settles fastest and gives the detector a clean reference."
+      }
     }
   ]
 }
@@ -669,6 +709,31 @@
 
         <div class="tool-container mt-4">
           <div class="tool-section">
+            <h2 class="text-mid mb-3"><i class="bi bi-music-note-beamed me-2"></i>Tuning Acoustic, Electric, Bass, and 12-String Guitars</h2>
+            <p>
+              This free online guitar tuner works as an acoustic guitar tuner, an electric guitar tuner, and a bass guitar tuner — the chromatic detection identifies any note, so the same tool covers every instrument in the guitar family. A few adjustments per instrument give you faster, more stable readings.
+            </p>
+            <h3>Acoustic guitar</h3>
+            <p>
+              As an acoustic guitar tuner, this tool listens through your microphone, so placement matters. Set your phone or laptop about 30 cm (12 inches) from the soundhole, slightly off-axis — dead-center picks up too much boomy low end and confuses the reading on the low E and A strings. Pluck with your fingertip rather than a pick for a cleaner fundamental, and let each note ring for a full second so the tuner locks onto the sustain.
+            </p>
+            <h3>Electric guitar</h3>
+            <p>
+              For an electric guitar tuner session, an unplugged solid-body is quiet but perfectly usable: hold the microphone near the upper bout, away from your picking hand, and pluck firmly. If the room is noisy, roll your tone knob down slightly — it trims the harsh attack harmonics and leaves a purer fundamental for the detector. Humbuckers and single-coils both work; the tuner only needs the acoustic vibration reaching the mic.
+            </p>
+            <h3>Bass guitar</h3>
+            <p>
+              Used as a bass guitar tuner, the same chromatic engine tracks down to the low B of a 5-string (30.87 Hz). Low notes need a longer analysis window, so let each string ring for two full seconds and keep background noise down — air conditioners and computer fans live in the same frequency neighborhood as your E string. Tune the low strings first; their vibration can sympathetically excite the higher strings and blur their readings.
+            </p>
+            <h3>12-string and classical guitars</h3>
+            <p>
+              On a 12-string guitar, tune the six primary (lower-octave) strings first with the octave pairs muted — lightly touch the octave strings with your fretting hand while you pluck. Then tune each octave string against its partner. For a classical guitar with nylon strings, expect more drift: nylon stretches for days, so tune up, play for five minutes, and tune again. New nylon trebles can take a full week to settle.
+            </p>
+          </div>
+        </div>
+
+        <div class="tool-container mt-4">
+          <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
             <ul>
               <li><strong>Noise wins:</strong> in a loud room the meter reacts to voices and drums, not your guitar — use a clip-on tuner on stage.</li>
@@ -833,6 +898,69 @@
                 <div id="gtFaq10" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
                   <div class="accordion-body">
                     Tune at the start of every session — and re-check after a few songs if the room is humid or you play hard. New strings stretch under tension for a day or two; tune to pitch, gently lift each string about an inch at the 12th fret, and retune, repeating three or four times until the pitch holds.
+                  </div>
+                </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading11">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq11" aria-expanded="false">
+                    Can I use this as a bass guitar tuner?
+                  </button>
+                </h3>
+                <div id="gtFaq11" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Yes. The chromatic detection tracks any note, including the low E (E1, 41.20 Hz) and low B (B0, 30.87 Hz) of a bass guitar. Because low frequencies need a longer analysis window, let each string ring for about two seconds and keep the room quiet — fans and air conditioners hum in the same range as your lowest strings. Select a bass preset if available so the target notes match standard bass tuning (E1–A1–D2–G2).
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading12">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq12" aria-expanded="false">
+                    How do I tune a 12-string guitar with this tuner?
+                  </button>
+                </h3>
+                <div id="gtFaq12" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Tune in two passes. First, mute the six thin octave strings by lightly touching them with your fretting hand and tune the six main strings to standard pitch. Then tune each octave string individually against its already-tuned partner — the tuner will confirm when the octave string reads exactly 12 semitones (1,200 cents) above. Work from the low E pair toward the high E pair, since the heavier strings pull the neck most.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading13">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq13" aria-expanded="false">
+                    Is this online guitar tuner really free?
+                  </button>
+                </h3>
+                <div id="gtFaq13" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Yes — completely free, with no account, no download, and no limit on tuning sessions. It runs entirely in your browser using your device microphone. Unlike many free tuner apps, there are no ads interrupting your tuning and no premium tier locking features like alternate tunings or reference-pitch calibration.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading14">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq14" aria-expanded="false">
+                    Where should I place my microphone for the best reading?
+                  </button>
+                </h3>
+                <div id="gtFaq14" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    About 30 cm (12 inches) from the guitar, aimed at the soundhole but slightly off-center. Too close and the low strings overload the mic with bass boom; too far and room noise competes with the note. On a phone, the bottom-edge mic usually performs best — lay the phone on a table with the mic end pointing at the guitar. Avoid holding the device in your picking hand, where handling noise ruins the reading.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="gtHeading15">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gtFaq15" aria-expanded="false">
+                    Can I tune a ukulele or other instruments with this chromatic tuner?
+                  </button>
+                </h3>
+                <div id="gtFaq15" class="accordion-collapse collapse" data-bs-parent="#gtFaqAccordion">
+                  <div class="accordion-body">
+                    Yes. Because the tuner is fully chromatic, it identifies any of the 12 notes — so ukulele (G4–C4–E4–A4), violin, mandolin, banjo, and even wind instruments all work. Just ignore the guitar-specific presets and read the detected note name and cents deviation directly. For ukulele, tune the G string first; its high pitch settles fastest and gives the detector a clean reference.
                   </div>
                 </div>
               </div>

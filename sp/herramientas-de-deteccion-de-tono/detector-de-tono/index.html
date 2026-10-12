@@ -94,7 +94,7 @@
       "name": "¿Qué rango de frecuencias vocales puede detectar esta herramienta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rastrea fundamentales desde unos 50 Hz (por debajo del Do2 grave) hasta 2000 Hz (por encima del Do6 agudo de soprano), lo que cubre los seis tipos de voz clásicos: bajo, barítono, tenor, contralto, mezzosoprano y soprano. Las notas de registro de silbido y de subgraves fuera de esa ventana no se registrarán."
+        "text": "Rastrea fundamentales desde unos 50 Hz (por debajo del Do2 grave) hasta 2000 Hz (por encima del Do6 agudo de soprano), lo que cubre los seis tipos de voz clásicos: bajo, barítono, tenor, contralto, mezzosoprano y soprano. Las notas del registro de silbido y las notas subgraves fuera de esa ventana no se registrarán."
       }
     },
     {
@@ -126,14 +126,14 @@
   </script>
 
   <style>
-    .subtitle {
+   .subtitle {
       color: #718096;
       font-size: 16px;
       text-align: center;
       margin-bottom: 25px;
     }
 
-    .instructions {
+   .instructions {
       background: #f0fdfa;
       border-left: 4px solid var(--text-teal);
       padding: 20px;
@@ -141,25 +141,25 @@
       margin-bottom: 25px;
     }
 
-    .instructions h3 {
+   .instructions h3 {
       color: #0f766e;
       margin-bottom: 10px;
       font-size: 18px;
       font-weight: 700;
     }
 
-    .instructions ol {
+   .instructions ol {
       margin-left: 20px;
       color: #334155;
       line-height: 1.7;
     }
 
-    .control-panel {
+   .control-panel {
       text-align: center;
       margin: 25px 0;
     }
 
-    .start-btn {
+   .start-btn {
       padding: 16px 48px;
       background: var(--text-teal);
       color: white;
@@ -172,23 +172,23 @@
       box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
     }
 
-    .start-btn:hover:not(:disabled) {
+   .start-btn:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
       background: #0f766e;
     }
 
-    .start-btn:disabled {
+   .start-btn:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }
 
-    .start-btn.active {
-      background: #dc2626 !important;
-      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
+   .start-btn.active {
+      background: #dc2626!important;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4)!important;
     }
 
-    .display-box {
+   .display-box {
       background: #0f172a;
       border-radius: 16px;
       padding: 35px;
@@ -201,7 +201,7 @@
       align-items: center;
     }
 
-    .note-display {
+   .note-display {
       font-size: 72px;
       font-weight: bold;
       color: #38bdf8;
@@ -209,20 +209,20 @@
       text-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
     }
 
-    .frequency-display {
+   .frequency-display {
       font-size: 24px;
       color: #94a3b8;
       margin-bottom: 5px;
       font-family: monospace;
     }
 
-    .cents-display {
+   .cents-display {
       font-size: 18px;
       color: #cbd5e1;
       font-weight: 600;
     }
 
-    .tuning-meter {
+   .tuning-meter {
       width: 100%;
       max-width: 520px;
       height: 38px;
@@ -234,32 +234,32 @@
       border: 2px solid #475569;
     }
 
-    .tuning-zones {
+   .tuning-zones {
       position: absolute;
       width: 100%;
       height: 100%;
       display: flex;
     }
 
-    .zone {
+   .zone {
       flex: 1;
       height: 100%;
     }
 
-    .zone.flat {
+   .zone.flat {
       background: linear-gradient(90deg, #ef4444, #f59e0b);
     }
 
-    .zone.intune {
+   .zone.intune {
       background: #10b981;
       flex: 0.35;
     }
 
-    .zone.sharp {
+   .zone.sharp {
       background: linear-gradient(90deg, #f59e0b, #ef4444);
     }
 
-    .tuning-needle {
+   .tuning-needle {
       position: absolute;
       width: 4px;
       height: 100%;
@@ -270,7 +270,7 @@
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
     }
 
-    .piano-keyboard {
+   .piano-keyboard {
       background: #f8fafc;
       padding: 25px;
       border-radius: 12px;
@@ -279,7 +279,7 @@
       overflow-x: auto;
     }
 
-    .keyboard {
+   .keyboard {
       display: flex;
       justify-content: center;
       position: relative;
@@ -288,7 +288,7 @@
       max-width: 100%;
     }
 
-    .white-key {
+   .white-key {
       width: 48px;
       height: 190px;
       background: white;
@@ -299,16 +299,16 @@
       transition: all 0.15s;
     }
 
-    .white-key.active {
-      background: #0d9488 !important;
+   .white-key.active {
+      background: #0d9488!important;
       box-shadow: 0 0 20px rgba(13, 148, 136, 0.7);
     }
 
-    .white-key.active .key-label {
-      color: white !important;
+   .white-key.active.key-label {
+      color: white!important;
     }
 
-    .black-key {
+   .black-key {
       width: 28px;
       height: 115px;
       background: #0f172a;
@@ -320,12 +320,12 @@
       transition: all 0.15s;
     }
 
-    .black-key.active {
-      background: #38bdf8 !important;
+   .black-key.active {
+      background: #38bdf8!important;
       box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
     }
 
-    .key-label {
+   .key-label {
       position: absolute;
       bottom: 8px;
       width: 100%;
@@ -335,18 +335,18 @@
       color: #64748b;
     }
 
-    .black-key .key-label {
+   .black-key.key-label {
       color: #cbd5e1;
     }
 
-    .stats-grid {
+   .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px;
       margin: 25px 0;
     }
 
-    .stat-box {
+   .stat-box {
       background: #f8fafc;
       padding: 18px;
       border-radius: 12px;
@@ -354,7 +354,7 @@
       border: 1px solid #e2e8f0;
     }
 
-    .stat-label {
+   .stat-label {
       color: #64748b;
       font-size: 13px;
       margin-bottom: 6px;
@@ -362,13 +362,13 @@
       text-transform: uppercase;
     }
 
-    .stat-value {
+   .stat-value {
       color: #0f172a;
       font-size: 26px;
       font-weight: bold;
     }
 
-    .warning {
+   .warning {
       background: #fef3c7;
       border-left: 4px solid #f59e0b;
       padding: 15px;
@@ -379,26 +379,26 @@
     }
 
     @media (max-width: 768px) {
-      .note-display {
+     .note-display {
         font-size: 52px;
       }
 
-      .white-key {
+     .white-key {
         width: 38px;
         height: 160px;
       }
 
-      .black-key {
+     .black-key {
         width: 24px;
         height: 95px;
       }
 
-      .keyboard {
+     .keyboard {
         min-width: 680px;
         justify-content: flex-start;
       }
 
-      .start-btn {
+     .start-btn {
         padding: 14px 32px;
         font-size: 16px;
       }
@@ -698,7 +698,7 @@
             <section class="mb-5">
               <h2 class="h3 fw-bold text-teal mb-3">Encuentra tu rango vocal con tu nota</h2>
               <p>
-                <strong>Canta tu nota más grave y tu nota más aguda más cómodas frente al detector y busca tu tipo de voz en
+                <strong>Canta tu nota más grave y tu nota más aguda dentro de tu zona de confort frente al detector y busca tu tipo de voz en
                   esta tabla:</strong>
               </p>
               <div class="table-responsive">
@@ -938,7 +938,7 @@
                   </h2>
                   <div id="pdFaq7" class="accordion-collapse collapse" data-bs-parent="#pdFaqAccordion">
                     <div class="accordion-body">
-                      Rastrea fundamentales desde unos 50 Hz (por debajo del Do2 grave) hasta 2000 Hz (por encima del Do6 agudo de soprano), lo que cubre los seis tipos de voz clásicos: bajo, barítono, tenor, contralto, mezzosoprano y soprano. Las notas de registro de silbido y de subgraves fuera de esa ventana no se registrarán.
+                      Rastrea fundamentales desde unos 50 Hz (por debajo del Do2 grave) hasta 2000 Hz (por encima del Do6 agudo de soprano), lo que cubre los seis tipos de voz clásicos: bajo, barítono, tenor, contralto, mezzosoprano y soprano. Las notas del registro de silbido y las notas subgraves fuera de esa ventana no se registrarán.
                     </div>
                   </div>
                 </div>

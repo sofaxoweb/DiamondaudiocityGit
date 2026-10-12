@@ -247,7 +247,7 @@
                         <h2 class="text-mid mb-4"><i class="bi bi-calculator me-2"></i>Cents: la unidad que mide lo que es «estar afinado»</h2>
                         <p>Un cent es la centésima parte de un semitono temperado: 100 cents por semitono, 1200 por octava. La fórmula convierte cualquier razón de frecuencias en cents:</p>
                         <p><strong>cents = 1200 × log₂(f₂ / f₁)</strong></p>
-                        <p>Esta única fórmula mueve la <a href="calculadora-de-cents-online/">Calculadora de cents</a>, la lectura de desviación en <a href="frecuencia-a-nota-online/">Frecuencia a nota</a> y la aguja de los afinadores. Algunos puntos de referencia que vale la pena conocer:</p>
+                        <p>Esta única fórmula es la que usan la <a href="calculadora-de-cents-online/">Calculadora de cents</a>, la lectura de desviación en <a href="frecuencia-a-nota-online/">Frecuencia a nota</a> y la aguja de los afinadores. Algunos puntos de referencia que vale la pena conocer:</p>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead><tr><th>Comparación</th><th>Cents</th><th>Qué significa</th></tr></thead>
@@ -267,7 +267,7 @@
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-mic me-2"></i>Cómo funciona la detección de tono en el navegador</h2>
                         <p>Cuando concedes acceso al micrófono, el navegador captura el audio y ejecuta un algoritmo de detección de tono, normalmente <strong>autocorrelación</strong> o su descendiente refinado <strong>YIN</strong>, que encuentra el período que mejor se repite en la forma de onda y lo convierte en una frecuencia. El AnalyserNode de la Web Audio API entrega las muestras crudas; todo el procesamiento ocurre en tu dispositivo.</p>
-                        <p>La precisión suele estar dentro de unos pocos cents en una habitación silenciosa, pero tres cosas la degradan: el <strong>ruido de fondo</strong> (el algoritmo se fija en la señal periódica más fuerte, que podría ser un ventilador), la <strong>reverberación de la sala</strong> (los reflejos difuminan la periodicidad) y las <strong>fundamentales débiles</strong> (algunos instrumentos y el fry vocal producen armónicos más fuertes que la fundamental, lo que causa errores de octava). Si el afinador salta de octava, toca o canta más fuerte y más cerca del micrófono. Para verificar niveles más que tono, el <a href="/sound-analysis-tools/decibel-meter/">Medidor de decibelios</a> muestra lo que tu micrófono está escuchando en realidad.</p>
+                        <p>La precisión suele estar dentro de unos pocos cents en una habitación silenciosa, pero tres cosas la degradan: el <strong>ruido de fondo</strong> (el algoritmo se fija en la señal periódica más fuerte, que podría ser un ventilador), la <strong>reverberación de la sala</strong> (los reflejos difuminan la periodicidad) y las <strong>fundamentales débiles</strong> (algunos instrumentos y el vocal fry producen armónicos más fuertes que la fundamental, lo que causa errores de octava). Si el afinador salta de octava, toca o canta más fuerte y más cerca del micrófono. Para verificar niveles más que tono, el <a href="/sound-analysis-tools/decibel-meter/">Medidor de decibelios</a> muestra lo que tu micrófono está escuchando en realidad.</p>
                     </div>
 
                     <div class="tool-section mt-4">
@@ -285,12 +285,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p>Regla: para convertir el tono <em>escrito</em> en tono de <em>concierto</em>, transporta hacia abajo el intervalo del instrumento (hacia arriba para el flautín). La música para guitarra ya contempla su transposición de octava, así que los guitarristas pueden ignorarla.</p>
+                        <p>Regla: para convertir el tono <em>escrito</em> en tono de <em>concierto</em>, transporta hacia abajo el intervalo del instrumento (hacia arriba para el flautín). La música para guitarra ya tiene en cuenta su transposición de octava, así que los guitarristas pueden ignorarla.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-music-note-beamed me-2"></i>Rangos vocales y tipos de voz</h2>
-                        <p>El <a href="detector-de-rango-vocal/">Detector de rango vocal</a> mide tu nota cantada más grave y más aguda más cómodas y las asigna a los tipos de voz corales estándar. Son límites aproximados: las voces reales los traslapan.</p>
+                        <p>El <a href="detector-de-rango-vocal/">Detector de rango vocal</a> mide tu nota cantada más grave y tu nota cantada más aguda dentro de tu zona de confort y las asigna a los tipos de voz corales estándar. Son límites aproximados: las voces reales los traslapan.</p>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead><tr><th>Tipo de voz</th><th>Rango típico</th></tr></thead>
@@ -304,12 +304,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p>El rango es solo la mitad de la clasificación: la <strong>tesitura</strong> (dónde suena mejor tu voz y menos se cansa) importa igual. Un barítono que puede llegar con esfuerzo a un Do5 sigue siendo barítono si sus notas cómodas están en la banda Sol2–Sol4.</p>
+                        <p>El rango es solo la mitad de la clasificación: la <strong>tesitura</strong> (dónde suena mejor tu voz y menos se cansa) importa igual. Un barítono que puede llegar con esfuerzo a un Do5 sigue siendo barítono si sus notas cómodas están entre Sol2 y Sol4.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-bar-chart-steps me-2"></i>La serie armónica y por qué los instrumentos suenan distinto</h2>
-                        <p>Toca un La a 110 Hz y no oyes solo 110 Hz: oyes 110, 220, 330, 440 Hz y así sucesivamente, múltiplos enteros de la fundamental. Esa pila es la serie armónica (de armónicos), y la intensidad relativa de cada uno es lo que hace que una trompeta suene como trompeta y una flauta como flauta. La herramienta <a href="calculadora-de-serie-armonica-online/">Serie armónica</a> lista estos parciales con sus frecuencias y desplazamientos en cents; fíjate en que el séptimo parcial está unos 31 cents por debajo del temperamento igual, por eso los metales lo corrigen con la embocadura.</p>
+                        <p>Toca un La a 110 Hz y no oyes solo 110 Hz: oyes 110, 220, 330, 440 Hz y así sucesivamente, múltiplos enteros de la fundamental. Esa pila es la serie armónica, y la intensidad relativa de cada uno es lo que hace que una trompeta suene como trompeta y una flauta como flauta. La herramienta <a href="calculadora-de-serie-armonica-online/">Serie armónica</a> lista estos parciales con sus frecuencias y desplazamientos en cents; fíjate en que el séptimo parcial está unos 31 cents por debajo del temperamento igual, por eso los metales lo corrigen con la embocadura.</p>
                     </div>
 
                     <div class="tool-section mt-4">

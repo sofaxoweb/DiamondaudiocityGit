@@ -92,4 +92,52 @@
   <url><loc>https://pitchdetectors.com/speaker-tools/total-harmonic-distortion-thd-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pitchdetectors.com/speaker-tools/zobel-network-calculator/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pitchdetectors.com/terms-and-conditions.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/buscador-de-escalas/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/identificador-de-acordes/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/calculadora-de-intervalos/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/metronomo-online/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/generador-de-ritmos/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/generador-de-melodias/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pitchdetectors.com/sp/herramientas-de-teoria-musical/generador-de-progresiones-de-acordes/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

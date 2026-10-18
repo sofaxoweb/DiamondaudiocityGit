@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Interval Calculator: Semitones Between Any Two Notes</title>
   <meta name="description"
-  content="Find the interval between any two notes: free calculator names every interval and its semitone distance, with quality tables, compound intervals and FAQs.">
+  content="Free interval calculator: name the interval between any two notes with semitone distance, quality tables, inversion rules, compound intervals, and FAQs.">
   <meta name="keywords"
     content="interval calculator, musical intervals, semitone calculator, note distance, major minor perfect intervals, tritone calculator, ear training intervals" />
   <link rel="canonical" href="https://pitchdetectors.com/music-theory-tools/interval-calculator/"
     <meta property="og:type" content="website">
     <meta property="og:title" content="Interval Calculator: Semitones Between Any Two Notes">
-    <meta property="og:description" content="Find the interval between any two notes: free calculator names every interval and its semitone distance, with quality tables, compound intervals and FAQs.">
+    <meta property="og:description" content="Free interval calculator: name the interval between any two notes with semitone distance, quality tables, inversion rules, compound intervals, and FAQs.">
     <meta property="og:url" content="https://pitchdetectors.com/music-theory-tools/interval-calculator/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Interval Calculator: Semitones Between Any Two Notes">
-    <meta name="twitter:description" content="Find the interval between any two notes: free calculator names every interval and its semitone distance, with quality tables, compound intervals and FAQs."> />
+    <meta name="twitter:description" content="Free interval calculator: name the interval between any two notes with semitone distance, quality tables, inversion rules, compound intervals, and FAQs.">
   <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="../../assets/bootstrap5.css" rel="stylesheet">
@@ -35,7 +35,7 @@
       "name": "How do you calculate the interval between two notes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Number the chromatic scale C = 0 through B = 11, subtract the lower note's number from the higher's, and wrap around with modulo 12. Then look up the semitone count: 7 is a perfect fifth, 4 a major third, 3 a minor third. The calculator above does this instantly."
+        "text": "Number the chromatic scale C = 0 through B = 11, then apply semitones = (higher − lower + 12) mod 12. Look up the count: 7 is a perfect fifth, 4 a major third, 3 a minor third. The calculator above runs this computation instantly."
       }
     },
     {
@@ -159,7 +159,7 @@
         <div class="tool-container">
           <div class="tool-title">
             <h1><i class="bi bi-circle-half me-2"></i>Interval Calculator</h1>
-            <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
             <p>Calculate the interval between two notes. Supports all major, minor, perfect, augmented, and diminished
               intervals.</p>
           </div>
@@ -274,9 +274,9 @@
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
-                            <li><strong>An interval is the distance between two pitches</strong>, named by its size (2nd, 3rd, 5th…) and quality (major, minor, perfect, augmented, diminished).</li>
-                            <li><strong>Count semitones first, name second:</strong> 7 semitones is always a perfect fifth — the fastest reliable identification method.</li>
-                            <li><strong>Perfect intervals</strong> (unison, 4th, 5th, octave) can't be major or minor — only augmented or diminished.</li>
+                            <li><strong>An interval is the distance between two pitches</strong>, named by size (2nd, 3rd, 5th) and quality (major, minor, perfect, augmented, diminished).</li>
+                            <li><strong>Count semitones first, name second:</strong> 7 semitones is a perfect fifth — the fastest reliable identification method.</li>
+                            <li><strong>Perfect intervals</strong> (unison, 4th, 5th, octave) are never major or minor — only augmented or diminished.</li>
                             <li>The <strong>tritone</strong> (6 semitones) splits the octave exactly in half — the most unstable interval in tonal music.</li>
                             <li>Intervals are the atoms of harmony: stack them to build chords (<a href="../chord-identifier/">chord identifier</a>) and scales (<a href="../scale-finder/">scale finder</a>).</li>
                         </ul>
@@ -284,20 +284,20 @@
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Is an Interval Calculator?</h2>
-                        <p><strong>An interval calculator measures the musical distance between two notes and names it.</strong> Select any two pitches — say, C and G — and it reports the interval: a perfect fifth spanning 7 semitones. The name tells you both the size (fifth = five letter-names apart) and the quality (perfect = the stable, "pure" version).</p>
-                        <p>Intervals are the foundation everything else is built from: chords are stacks of intervals, scales are sequences of them, and melodies are intervals in motion. If chord names confuse you, intervals are the simpler layer underneath — learn these and chords start making sense.</p>
+                        <p><strong>An interval calculator measures the musical distance between two notes and names it.</strong> Select C and G and it reports a perfect fifth spanning 7 semitones. The name carries two facts: the size (fifth = five letter-names apart) and the quality (perfect = the stable, pure version).</p>
+                        <p>Intervals underpin everything else: chords stack intervals, scales sequence them, melodies move through them. Chord names confuse beginners; intervals are the simpler layer underneath. Learn these and chords start making sense.</p>
                     </section>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                        <p>The widget above names intervals by <strong>semitone counting with wraparound</strong> — the same method theorists use, minus the spelling nuance. The exact procedure:</p>
+                        <p><strong>The widget above names intervals by semitone counting with wraparound — the theorist's method minus the spelling nuance.</strong> The exact procedure:</p>
                         <ol>
-                            <li><strong>Pick two notes:</strong> each pitch maps to its position in the chromatic scale (C = 0, C♯ = 1, D = 2 … B = 11).</li>
-                            <li><strong>Subtract and wrap:</strong> semitones = (second − first + 12) mod 12, so going down still gives a positive ascending distance.</li>
-                            <li><strong>Look up the name:</strong> the semitone count maps to a fixed table — 4 → major 3rd, 7 → perfect 5th, 12 → octave.</li>
+                            <li><strong>Pick two notes:</strong> each pitch maps to its chromatic position (C = 0, C♯ = 1, D = 2 … B = 11).</li>
+                            <li><strong>Subtract and wrap:</strong> semitones = (second − first + 12) mod 12, so a downward pair still yields a positive ascending distance.</li>
+                            <li><strong>Look up the name:</strong> the count maps to a fixed table — 4 → major 3rd, 7 → perfect 5th, 12 → octave.</li>
                             <li><strong>Display:</strong> the interval name plus its semitone count, e.g. "Minor 3rd (3 semitones)."</li>
                         </ol>
-                        <p>One simplification to know: the widget names by semitone count alone, so C to D♯ reads as "minor 3rd" (3 semitones) even though the spelling technically makes it an augmented 2nd — see the enharmonic section below.</p>
+                        <p>One simplification matters: the widget names by semitone count alone, so C to D♯ reads as "minor 3rd" (3 semitones) though the spelling makes it an augmented 2nd. The enharmonic section below explains when that distinction counts.</p>
                     </section>
 
                     <section class="mb-4">
@@ -309,9 +309,9 @@
                             <li>Positions: C = 0, A = 9.</li>
                             <li>Semitones: (9 − 0 + 12) mod 12 = <strong>9</strong>.</li>
                             <li>Table lookup: 9 semitones = <strong>major 6th</strong>.</li>
-                            <li>Sanity check: C–D–E–F–G–A spans six letter names, and the major scale of C contains A natural — major 6th confirmed.</li>
+                            <li>Sanity check: C–D–E–F–G–A spans six letter names, and C major contains A natural — major 6th confirmed.</li>
                         </ol>
-                        <p><strong>Descending example — G down to E:</strong> the widget measures ascending distance, so G (7) to E (4) gives (4 − 7 + 12) mod 12 = 9 semitones = major 6th upward — equivalently, E to G is the minor 3rd you hear going down.</p>
+                        <p><strong>Descending example — G down to E:</strong> the widget measures ascending distance, so G (7) to E (4) gives (4 − 7 + 12) mod 12 = 9 semitones — a major 6th upward. Flip it: E up to G is the minor 3rd you hear going down.</p>
                     </section>
 
                     <section class="mb-4">
@@ -345,31 +345,66 @@
                                 </tbody>
                             </table>
                         </div>
+                        <p class="mt-4"><strong>Recognize intervals by ear with famous openings:</strong> each melody below starts with the listed interval.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead><tr><th>Interval</th><th>Opening melody</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Minor 2nd</td><td><em>Jaws</em> theme (E–F)</td></tr>
+                                    <tr><td>Major 2nd</td><td>"Happy Birthday" (first two notes)</td></tr>
+                                    <tr><td>Minor 3rd</td><td>"Smoke on the Water" riff</td></tr>
+                                    <tr><td>Major 3rd</td><td>"When the Saints Go Marching In"</td></tr>
+                                    <tr><td>Perfect 4th</td><td>"Here Comes the Bride"</td></tr>
+                                    <tr><td>Tritone</td><td><em>The Simpsons</em> theme</td></tr>
+                                    <tr><td>Perfect 5th</td><td><em>Star Wars</em> main theme</td></tr>
+                                    <tr><td>Octave</td><td>"Somewhere Over the Rainbow"</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="mb-4">
+                        <h2 class="text-teal mb-3"><i class="bi bi-bullseye me-2"></i>What Each Interval Does in a Key</h2>
+                        <p><strong>Intervals have jobs, not just names — each one pushes harmony in a specific direction.</strong> The perfect 5th is the stability anchor: C–G sounds finished because its 3:2 frequency ratio is the simplest after the octave. The minor 7th above the tonic spells dominant color — add B♭ to a C major triad and the chord suddenly wants to resolve to F.</p>
+                        <p>The tritone does the heavy lifting. In C major, F–B (scale degrees 4 and 7) spans 6 semitones of pure tension, and it resolves by half steps in opposite directions: F falls to E, B rises to C. That squeeze is the engine inside every dominant-7th chord and the reason V7–I cadences sound inevitable.</p>
+                        <p>Songwriter's shortcut: <strong>when a melody note forms a tritone against the bass, you are standing on the dominant — resolve it.</strong></p>
+                    </section>
+
+                    <section class="mb-4">
+                        <h2 class="text-teal mb-3"><i class="bi bi-arrows-expand me-2"></i>Melodic vs Harmonic: Same Distance, Different Job</h2>
+                        <p><strong>A melodic interval sounds its notes in sequence; a harmonic interval sounds them together — and the ear judges them by different rules.</strong> Played together, intervals are judged by consonance: thirds and sixths blend, seconds grind. Played in sequence, direction and singability rule instead.</p>
+                        <p>The practical consequence: <strong>a melody full of leaps wider than a perfect 5th is hard to sing</strong>, while harmony stacks 7ths and 9ths without strain. Write melodies in steps and small leaps; let the chords carry the wide intervals.</p>
+                    </section>
+
+                    <section class="mb-4">
+                        <h2 class="text-teal mb-3"><i class="bi bi-stopwatch me-2"></i>Count Intervals on Guitar Frets in Seconds</h2>
+                        <p><strong>Every fret is one semitone, so the fretboard is a built-in interval ruler.</strong> Pick any string, count frets upward from the starting note, and read the interval off the count.</p>
+                        <p><strong>Worked example on the low E string:</strong> open E to the 7th fret is 7 semitones — a <strong>perfect 5th</strong> (the note is B). The 12th fret is 12 semitones — the <strong>octave</strong> (E again). The 5th fret gives 5 semitones — a <strong>perfect 4th</strong> (A). Three landmarks — 5th, 7th, and 12th frets — name the three most-used intervals with no math.</p>
                     </section>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-patch-question me-2"></i>Compound Intervals: 9ths, 11ths, and 13ths</h2>
-                        <p><strong>A compound interval is a simple interval plus an octave: a 9th is a 2nd up an octave, an 11th a 4th, a 13th a 6th.</strong> The widget above reports the simple form (within one octave), so subtract 7 from any compound number to find what it will display: a 9th (14 semitones) reads as a major 2nd (2 semitones).</p>
-                        <p>Jazz chord symbols use compound names deliberately — C13 tells the player the 13th sits <em>above</em> the 7th in the voicing, information the simple "6th" would lose. For naming, think compound; for measuring, the calculator's simple interval is all you need.</p>
+                        <p><strong>A compound interval is a simple interval plus an octave: a 9th is a 2nd up an octave, an 11th a 4th, a 13th a 6th.</strong> The widget reports the simple form (within one octave): subtract 7 from any compound number to find what it displays. A 9th (14 semitones) reads as a major 2nd (2 semitones).</p>
+                        <p>Jazz chord symbols use compound names deliberately — C13 tells the player the 13th sits <em>above</em> the 7th in the voicing, information the simple "6th" would lose. Think compound for naming; the calculator's simple interval is enough for measuring.</p>
                     </section>
 
                     <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: a piano octave with C–G highlighted as a perfect 5th (7 semitones), and C–G an octave higher labeled "perfect 12th = compound 5th"]</div><figcaption class="small text-muted mt-2">Alt text: Piano diagram showing a perfect fifth within one octave and its compound form, the perfect twelfth, an octave higher.</figcaption></figure>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-arrow-left-right me-2"></i>Enharmonic Intervals: Same Sound, Different Name</h2>
-                        <p><strong>Enharmonic intervals sound identical but are spelled — and named — differently.</strong> C to D♯ and C to E♭ are both 3 semitones, but the first is technically an augmented 2nd and the second a minor 3rd. The widget reports "minor 3rd" for both, because it counts semitones rather than reading spelling.</p>
-                        <p>Does it matter? For <strong>sound</strong>, no — 3 semitones is 3 semitones. For <strong>theory homework and notation</strong>, yes: the correct name follows the letter distance (C to D is a 2nd of some kind; C to E is a 3rd). Use the calculator for sound, and apply the letter-count rule when spelling matters.</p>
+                        <p><strong>Enharmonic intervals sound identical but are spelled — and named — differently.</strong> C to D♯ and C to E♭ are both 3 semitones, but the first is an augmented 2nd and the second a minor 3rd. The widget reports "minor 3rd" for both: it counts semitones, not spelling.</p>
+                        <p>For <strong>sound</strong>, the distinction never matters — 3 semitones is 3 semitones. For <strong>notation and theory exams</strong>, it does: the correct name follows the letter distance (C to D is a 2nd of some kind; C to E is a 3rd). Use the calculator for sound; apply the letter-count rule when spelling counts.</p>
                     </section>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-lightbulb me-2"></i>The Quality Pattern: Major, Minor, Perfect in 30 Seconds</h2>
-                        <p><strong>Interval quality follows one pattern.</strong> Seconds, thirds, sixths, and sevenths come in <strong>major/minor</strong> pairs — the major version is one semitone wider. Unisons, fourths, fifths, and octaves are <strong>perfect</strong> — they have no major/minor form, only augmented (wider) or diminished (narrower).</p>
-                        <p>Memory hook: "perfect" intervals are the ones that sound hollow and stable (P4, P5, P8) — the pillars of the scale. Everything else carries major/minor color. Widen any perfect or major interval by a semitone and it becomes <strong>augmented</strong>; narrow any perfect or minor interval and it becomes <strong>diminished</strong>.</p>
+                        <p><strong>Interval quality follows one pattern.</strong> Seconds, thirds, sixths, and sevenths come in <strong>major/minor</strong> pairs — the major version is one semitone wider. Unisons, fourths, fifths, and octaves are <strong>perfect</strong>: no major/minor form, only augmented (wider) or diminished (narrower).</p>
+                        <p>Memory hook: perfect intervals sound hollow and stable (P4, P5, P8) — the pillars of the scale. Everything else carries major/minor color. Widen any perfect or major interval by a semitone for <strong>augmented</strong>; narrow any perfect or minor interval for <strong>diminished</strong>.</p>
                     </section>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-diagram-3 me-2"></i>From Intervals to Chords and Scales</h2>
-                        <p><strong>Every chord is a stack of intervals, and every scale is a sequence of them.</strong> A major triad is a major 3rd plus a minor 3rd (4 + 3 semitones); a major scale is the interval pattern whole–whole–half–whole–whole–whole–half. Once you can name intervals instantly, chord formulas stop being memorization and become arithmetic.</p>
+                        <p><strong>Every chord is a stack of intervals, and every scale is a sequence of them.</strong> A major triad is a major 3rd plus a minor 3rd (4 + 3 semitones); a major scale is the interval pattern whole–whole–half–whole–whole–whole–half. Name intervals instantly and chord formulas become arithmetic instead of memorization.</p>
                         <p>Workflow: measure an unfamiliar chord's intervals here, then enter the full note set into the <a href="../chord-identifier/">chord identifier</a> for the complete name — or check a melody's notes against candidate scales in the <a href="../scale-finder/">scale finder</a>.</p>
                     </section>
 
@@ -419,7 +454,7 @@
                                 <div id="iFaqCol1" class="accordion-collapse collapse show" aria-labelledby="iFaqHead1"
                                     data-bs-parent="#intervalFaqAccordion">
                                     <div class="accordion-body">
-                                        Number the chromatic scale C = 0 through B = 11, subtract the lower note's number from the higher's, and wrap around with modulo 12. Then look up the semitone count: 7 is a perfect fifth, 4 a major third, 3 a minor third. The calculator above does this instantly.
+                                        Number the chromatic scale C = 0 through B = 11, then apply semitones = (higher − lower + 12) mod 12. Look up the count: 7 is a perfect fifth, 4 a major third, 3 a minor third. The calculator above runs this computation instantly.
                                     </div>
                                 </div>
                             </div>

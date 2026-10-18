@@ -153,7 +153,7 @@
                     <div class="tool-section">
                         <h2 class="text-mid mb-4"><i class="bi bi-info-circle me-2"></i>Speaker Placement Guide</h2>
                         <div class="row">
-                            <divclass="col-md-6">
+                            <div class="col-md-6">
                                 <h5 class="text-teal">Stereo Setup (2.0)</h5>
                                 <ul>
                                     <li>Form equilateral triangle with listener</li>
@@ -196,7 +196,7 @@
 
                     <h2 class="h3 text-dark fw-bold mb-3"><i class="bi bi-gear text-teal me-2"></i>How This Calculator Works</h2>
                     <p class="text-secondary">This calculator applies studio-standard placement rules to your room's dimensions and chosen setup, then outputs each speaker's position in feet from your walls — no tape measure gymnastics required.</p>
-                    <p class="text-secondary">Methodology: front left/right spread = the smaller of <strong>0.6 × room width</strong> and <strong>0.8 × listening distance</strong>; fronts sit at least <strong>2 ft (or 15% of room length)</strong> off the front wall; surrounds go at <strong>110°</strong> and 7.1 rears behind you per Dolby/ITU practice; tweeters at 36–42 inches. It also checks whether your triangle is equilateral or isosceles and flags side-wall clearance. <em>We verified this calculator's geometry against hand-computed positions for 5 sample rooms (10–24 ft); all matched to one decimal place.</em></p>
+                    <p class="text-secondary">Methodology: front left/right spread = the smaller of <strong>0.6 × room width</strong> and <strong>0.8 × listening distance</strong>; fronts sit at least <strong>2 ft (or 15% of room length)</strong> off the front wall; surrounds go at <strong>110°</strong> and 7.1 rears behind you per Dolby/ITU practice; tweeters at 36–42 inches. The widget checks whether your triangle is equilateral or isosceles and flags side-wall clearance. <em>We verified this calculator's geometry against hand-computed positions for 5 sample rooms (10–24 ft); all matched to one decimal place.</em></p>
                     <p class="text-secondary"><em>Last reviewed: October 2026. All distances in feet; multiply by 0.305 for meters.</em></p>
 
                     <hr class="my-4">
@@ -250,7 +250,7 @@
                     <hr class="my-4">
 
                     <h2 class="h3 text-dark fw-bold mb-3"><i class="bi bi-arrows-angle-expand text-teal me-2"></i>Why Distance From the Front Wall Matters (SBIR)</h2>
-                    <p class="text-secondary">Put a speaker against the front wall and bass reflecting off that wall arrives slightly later, canceling the direct sound at the frequency where the round trip equals half a wavelength — the <strong>speaker-boundary interference (SBIR) dip</strong>, typically a hollow suckout between 80–200 Hz. Each nearby boundary also adds ~3 dB of bass boost. The calculator's 2-ft minimum (or 15% of room length) pushes the SBIR dip low enough and the boost tame enough to manage — then fine-tune with the <a href="../sound-distance-drop-calculator/">Sound Distance Drop Calculator</a> mindset: small moves, big changes.</p>
+                    <p class="text-secondary">Put a speaker against the front wall and bass reflecting off that wall arrives slightly later, canceling the direct sound at the frequency where the round trip equals half a wavelength — the <strong>speaker-boundary interference (SBIR) dip</strong>, typically a hollow suckout between 80–200 Hz. Each nearby boundary adds ~3 dB of bass boost. The calculator's 2-ft minimum (or 15% of room length) pushes the SBIR dip low enough and the boost tame enough to manage — then fine-tune with the <a href="../sound-distance-drop-calculator/">Sound Distance Drop Calculator</a> mindset: small moves, big changes.</p>
 
                     <hr class="my-4">
 
@@ -302,7 +302,7 @@
                         <li class="mb-2"><strong>Furniture ignored.</strong> Couches absorb, tables reflect, bookshelves diffuse — real rooms deviate from geometry.</li>
                         <li class="mb-2"><strong>One listening position.</strong> Optimizing the main seat can worsen others; compromise for shared couches.</li>
                         <li class="mb-2"><strong>No height modeling.</strong> The widget works in plan view; Atmos height channels need elevation angles too.</li>
-                        <li class="mb-2"><strong>Modes need treatment or EQ.</strong> Placement dodges the worst nulls but can't eliminate room modes — that takes bass traps or DSP.</li>
+                        <li class="mb-2"><strong>Modes need treatment or EQ.</strong> Placement dodges the worst nulls but can't eliminate room modes — that takes bass traps or DSP. EQ cuts peaks but cannot fill nulls: boosting into a null burns amplifier headroom while the room cancels it again, so placement comes before EQ.</li>
                     </ul>
 
                     <hr class="my-4">

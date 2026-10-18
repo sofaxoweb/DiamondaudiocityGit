@@ -36,7 +36,7 @@
       "name": "How do I test if my microphone is working?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Press Start Mic Test above, allow microphone access, and speak normally. If the level meter moves with your voice, your mic works and the signal path is good. Then run the 3-second silence check: quiet should read near zero. If the meter never moves, work through the troubleshooting checklist above — it's almost always a permission or wrong-device issue."
+        "text": "Press Start Mic Test above, allow microphone access, and speak normally. If the level bar moves with your voice, your mic works and the signal path is good. Then do the 3-second silence check yourself: stay quiet and watch the bar fall near zero. If the bar never moves, work through the troubleshooting checklist above — it's almost always a permission or wrong-device issue."
       }
     },
     {
@@ -44,7 +44,7 @@
       "name": "What level should my microphone peak at?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aim for peaks between −12 and −6 dBFS, with your average speech around −18 dBFS. That leaves headroom for laughs, emphasis, and plosives without clipping. For video calls you can run slightly lower (−20 to −12 dBFS peaks); for music recording, never let peaks touch 0 dBFS."
+        "text": "Aim for peaks between −12 and −6 dBFS, with your average speech around −18 dBFS. That leaves headroom for laughs, emphasis, and plosives without clipping. On this page's bar, that range is roughly the middle-to-upper green and yellow — out of the red zone. For video calls you can run slightly lower (−20 to −12 dBFS peaks); for music recording, never let peaks touch 0 dBFS."
       }
     },
     {
@@ -60,7 +60,7 @@
       "name": "Why does my microphone sound distorted or crackly?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "That's clipping — your input gain is too high and peaks are hitting 0 dBFS. Lower the gain until peaks stay under −6 dBFS. If distortion persists at low levels, suspect a failing cable, a USB port without enough power (try another port), or a sample-rate mismatch between the mic and your OS."
+        "text": "That's clipping — your input gain is too high and peaks are hitting 0 dBFS. Lower the gain until the bar stays out of the red zone on loud speech. If distortion persists at modest levels, suspect a failing cable, a USB port without enough power (try another port), or a sample-rate mismatch between the mic and your OS."
       }
     },
     {
@@ -84,7 +84,7 @@
       "name": "Why does my mic work in Zoom but not in Chrome?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Permissions are per-site: Zoom got OS-level access while Chrome's site permission is blocked or set to the wrong device. Click the lock icon in Chrome's address bar, set Microphone to Allow, and check that the selected device matches your mic. Also close Zoom — it may be holding the mic exclusively."
+        "text": "Permissions are per-site: Zoom got OS-level access while Chrome's site permission is blocked or set to the wrong device. Click the lock icon in Chrome's address bar, set Microphone to Allow, and check that the selected device matches your mic. Close Zoom too — it may be holding the mic exclusively."
       }
     },
     {
@@ -92,7 +92,7 @@
       "name": "What is the 3-second silence test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Stop talking and stay silent for three seconds while watching the meter. It should fall near zero. If it keeps bouncing above 20%, you have measurable background noise — fan hum, room tone, or electrical interference — entering your recordings. Fix the loudest source before reaching for software noise removal."
+        "text": "Do it yourself: stop talking and stay silent for three seconds while watching the bar. It should fall near zero. If it keeps bouncing above 20%, you have measurable background noise — fan hum, room tone, or electrical interference — entering your recordings. Fix the loudest source before reaching for software noise removal."
       }
     },
     {
@@ -265,7 +265,7 @@
                     <div class="tool-title">
                         <h1><i class="bi bi-mic me-2"></i>Microphone Test Tool (Online & Free)</h1>
                         <p>Click "Start" to allow access to your microphone and test the input.</p>
-<p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+<p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                     </div>
 
                     <div class="mic-test-panel">
@@ -280,30 +280,31 @@
                         <div class="content_area container py-4">
           <article>
           <section class="mb-4">
-            <p class="lead">A <strong>microphone test</strong> checks that your mic works, shows your <strong>live input level</strong>, and reveals problems like clipping or background noise — before your recording, stream, or call. Press <strong>Start Mic Test</strong> and speak normally.</p>
+            <p class="lead">A <strong>microphone test</strong> checks that your mic works and shows your <strong>live input level</strong> — before a call, stream, or recording. Press <strong>Start Mic Test</strong> and speak normally: this free online tool draws a real-time level bar from your microphone signal, so you can confirm the signal path, set a healthy gain, and spot a dead mic or background noise in seconds. The bar is a relative 0–100% level, not calibrated decibels.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
             <ul>
-              <li>Healthy mic level: peaks between <strong>−12 and −6 dBFS</strong>, average around <strong>−18 dBFS</strong>.</li>
-              <li><strong>Red = clipping.</strong> Back off the gain or the mic until peaks stay out of the red.</li>
-              <li>Silence should read near <strong>zero</strong> — a bouncing meter with no speech means background noise.</li>
-              <li><strong>Disable auto gain control (AGC)</strong> in OS settings before testing, or readings lie.</li>
-              <li>This test checks <strong>function and levels</strong>, not frequency response or studio-grade quality.</li>
+              <li>This microphone test confirms <strong>signal and level</strong>, not studio-grade mic quality.</li>
+              <li>The bar shows a <strong>relative 0–100% level</strong>, not calibrated dBFS numbers.</li>
+              <li>Healthy speech on this meter: the bar fills roughly the <strong>middle two-thirds</strong>, flicking toward red only on loud peaks.</li>
+              <li><strong>Silence should read near zero</strong> — a bouncing bar with no speech means background noise.</li>
+              <li><strong>Turn off auto gain control (AGC)</strong> before testing, or the meter dances on its own.</li>
             </ul>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>What Is a Microphone Test?</h2>
             <p><strong>A microphone test is a quick check that your microphone captures audio correctly: it verifies the browser can access the mic, displays your live input level, and exposes issues like clipping, low gain, or background noise.</strong> It takes thirty seconds and prevents the classic disaster of recording an hour of audio with a dead or distorted mic.</p>
-            <p>This tool uses the <strong>getUserMedia API</strong> to open your default recording device and draws a real-time level meter. Speak, watch the meter, run the 3-second silence check below — you'll know exactly where your setup stands.</p>
+            <p>This microphone test uses the <strong>getUserMedia API</strong> to open your default recording device and visualizes the live stream as a level bar. Nothing is recorded, stored, or transmitted — the audio never leaves your browser. Speak, watch the bar, run the 3-second silence check below: you will know exactly where your setup stands.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-gear me-2"></i>How This Microphone Test Works</h2>
-            <p>Clicking <strong>Start Mic Test</strong> asks the browser for microphone permission, then connects the live stream to an analyser that measures input amplitude many times per second and drives the on-screen meter. <strong>Stop Test</strong> releases the microphone so no other app is blocked.</p>
-            <p>Methodology: the meter maps instantaneous amplitude to a green–yellow–red scale — green for healthy signal, yellow approaching hot, red at digital clipping (0 dBFS). The 3-second silence protocol (below) separates your voice from the room's noise floor. Validation method: clap once loudly — the meter should spike into red momentarily, then fall back; if it never moves, the wrong input device is selected.</p>
+            <p>Clicking <strong>Start Mic Test</strong> asks the browser for microphone permission, then routes the live stream through an analyser node. <strong>This microphone test maps the signal's frequency-spectrum average to a 0–100% bar — a relative level indicator, not a dBFS measurement.</strong> Each update averages the analyser's frequency bins (each scaled 0–255) and sets the bar width from that average.</p>
+            <p>That honesty matters: the bar cannot tell you peaks sit at −12 dBFS, and it has no clip detector. What it does tell you: a frozen bar at 0% means no signal reaches the browser; a bar pinned at 100% means the input is very hot; steady movement with speech means the whole chain works. The green–yellow–red gradient is a fixed color scale — louder signals simply fill further into the red zone.</p>
+            <p>Validation you can repeat: clap once loudly — the bar should spike near 100% and fall back. If it never moves, the wrong input device is selected or permission is blocked. <strong>Stop Test</strong> releases the microphone so no other app is blocked.</p>
             <p><em>Last reviewed: October 2026. Capture follows the W3C getUserMedia specification; see MDN Web Docs for reference.</em></p>
           </section>
 
@@ -320,6 +321,7 @@
                 </tbody>
               </table>
             </div>
+            <p>This page's bar is relative, so translate those targets into bar zones: speech filling the <strong>green-to-yellow middle</strong> (roughly 40–80% of the bar) is the healthy zone; <strong>flicking into red on loud peaks</strong> is fine; <strong>pinned in the red</strong> means too hot; <strong>below about 20%</strong> while speaking normally means too quiet. These zones are approximate — the bar is not calibrated — but they map the dBFS targets onto what you actually see.</p>
             <p><strong>Worked example:</strong> your meter peaks at −24 dBFS while speaking normally — 12 dB too quiet for recording. Since +6 dB ≈ double the digital amplitude, you need roughly <strong>+12 dB of gain</strong> (about 4× amplitude). Raise the OS input level or interface gain until peaks kiss −12 to −6 dBFS, leaving headroom for laughs and emphasis.</p>
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: vertical dBFS meter showing green zone (−18), yellow (−12 to −6), red (0), with "your target" band highlighted]</div><figcaption class="small text-muted">Where your mic level should sit. Suggested alt text: "Diagram of ideal microphone input levels on a dBFS meter"</figcaption></figure>
           </section>
@@ -329,8 +331,8 @@
             <ol>
               <li><strong>Click Start Mic Test</strong> and choose <strong>Allow</strong> when the browser asks for microphone access.</li>
               <li><strong>Speak normally</strong> — count "one, two, three" at your real recording volume and distance.</li>
-              <li><strong>Watch the meter:</strong> healthy speech lives in the green, occasionally touching yellow (−12 to −6 dBFS).</li>
-              <li><strong>Run the 3-second silence test:</strong> stop talking and stay quiet — the meter should fall near zero.</li>
+              <li><strong>Watch the bar:</strong> healthy speech fills the middle of the bar, flicking into yellow on louder syllables.</li>
+              <li><strong>Run the 3-second silence test:</strong> stop talking and stay quiet — the bar should fall near zero.</li>
               <li><strong>Adjust gain</strong> in your OS sound settings or interface until both checks pass.</li>
               <li><strong>Click Stop Test</strong> to release the microphone when done.</li>
             </ol>
@@ -342,11 +344,11 @@
               <table class="table table-bordered">
                 <thead><tr><th>What you see</th><th>What it means</th><th>What to do</th></tr></thead>
                 <tbody>
-                  <tr><td>Green, peaking −12 to −6 dBFS</td><td>Perfect gain staging</td><td>Nothing — you're ready</td></tr>
-                  <tr><td>Constantly red</td><td>Clipping — distorted audio</td><td>Lower input gain or move the mic back</td></tr>
-                  <tr><td>Barely moves past 10%</td><td>Gain far too low</td><td>Raise OS/interface gain; check you're on the right device</td></tr>
+                  <tr><td>Bar in the middle two-thirds</td><td>Healthy gain staging</td><td>Nothing — you're ready</td></tr>
+                  <tr><td>Pinned near 100% (deep in the red zone)</td><td>Input far too hot — almost certainly clipping</td><td>Lower input gain or move the mic back</td></tr>
+                  <tr><td>Stays below ~20% while speaking</td><td>Gain far too low</td><td>Raise OS/interface gain; check you're on the right device</td></tr>
                   <tr><td>Bounces above 20% in silence</td><td>Background noise (fan, hum, room)</td><td>Kill noise sources; move closer to the mic</td></tr>
-                  <tr><td>Meter never moves at all</td><td>Wrong device or blocked permission</td><td>See the troubleshooting checklist below</td></tr>
+                  <tr><td>Bar never moves at all</td><td>Wrong device or blocked permission</td><td>See the troubleshooting checklist below</td></tr>
                 </tbody>
               </table>
             </div>
@@ -367,13 +369,19 @@
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-volume-down me-2"></i>AGC: The Setting That Silently Ruins Your Levels</h2>
-            <p><strong>Automatic gain control (AGC)</strong> is an OS feature that rides your mic gain up and down to "normalize" speech. It makes testing meaningless — the meter dances on its own — and it pumps background noise up during pauses. <strong>Turn it off before any serious test or recording:</strong> Windows → Sound settings → Input → disable "Automatically adjust microphone settings"/"audio enhancements"; macOS → no system AGC, but check individual apps (Zoom's "automatically adjust volume" is a common culprit); Chrome → <code>chrome://settings/content/microphone</code> has no AGC toggle, so fix it at the OS level.</p>
+            <p><strong>Automatic gain control (AGC)</strong> is an OS or app feature that rides your mic gain up and down to "normalize" speech. It makes testing meaningless — the bar dances on its own — and it pumps background noise up during pauses. <strong>Turn it off before any serious test or recording:</strong> Windows → Sound settings → Input → disable "Automatically adjust microphone settings"/"audio enhancements"; macOS → no system AGC, but check individual apps (Zoom's "automatically adjust volume" is a common culprit); Chrome → <code>chrome://settings/content/microphone</code> has no AGC toggle, so fix it at the OS level.</p>
+          </section>
+
+          <section class="mb-4">
+            <h2 class="text-mid mb-3"><i class="bi bi-telephone me-2"></i>Meter Looks Fine but Callers Can't Hear You</h2>
+            <p><strong>If this test shows a healthy bar but people on calls say you're quiet, the problem sits downstream of the browser.</strong> Meeting apps run their own processing: Zoom's "automatically adjust microphone volume," Teams' noise suppression, Discord's attenuation. Fix in order: turn off auto-volume inside the call app, set the call app's input to the same device you tested here, then re-test with a short voice memo in the app itself. A browser microphone test only verifies what reaches the browser — it cannot see what Zoom does next.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
             <ul>
               <li><strong>Checks function, not fidelity.</strong> The test confirms signal path and levels — it cannot measure frequency response, self-noise specs, or "studio quality."</li>
+              <li><strong>Relative bar, not dBFS.</strong> The 0–100% bar comes from a frequency-spectrum average — it cannot report exact peak values or detect true clipping.</li>
               <li><strong>Browser processing applies.</strong> Some browsers apply noise suppression to getUserMedia streams; for a raw check, prefer Chrome/Edge with OS enhancements off.</li>
               <li><strong>One device at a time.</strong> The test uses your default input; to check a second mic, switch the OS default and re-run.</li>
               <li><strong>No recording.</strong> Nothing is captured or stored — if you need a sample, record a voice memo separately after the level check.</li>
@@ -407,7 +415,7 @@
                 </h3>
                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Press Start Mic Test above, allow microphone access, and speak normally. If the level meter moves with your voice, your mic works and the signal path is good. Then run the 3-second silence check: quiet should read near zero. If the meter never moves, work through the troubleshooting checklist above — it's almost always a permission or wrong-device issue.
+                    Press Start Mic Test above, allow microphone access, and speak normally. If the level bar moves with your voice, your mic works and the signal path is good. Then do the 3-second silence check yourself: stay quiet and watch the bar fall near zero. If the bar never moves, work through the troubleshooting checklist above — it's almost always a permission or wrong-device issue.
                   </div>
                 </div>
               </div>
@@ -419,7 +427,7 @@
                 </h3>
                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Aim for peaks between −12 and −6 dBFS, with your average speech around −18 dBFS. That leaves headroom for laughs, emphasis, and plosives without clipping. For video calls you can run slightly lower (−20 to −12 dBFS peaks); for music recording, never let peaks touch 0 dBFS.
+                    Aim for peaks between −12 and −6 dBFS, with your average speech around −18 dBFS. That leaves headroom for laughs, emphasis, and plosives without clipping. On this page's bar, that range is roughly the middle-to-upper green and yellow — out of the red zone. For video calls you can run slightly lower (−20 to −12 dBFS peaks); for music recording, never let peaks touch 0 dBFS.
                   </div>
                 </div>
               </div>
@@ -443,7 +451,7 @@
                 </h3>
                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    That's clipping — your input gain is too high and peaks are hitting 0 dBFS. Lower the gain until peaks stay under −6 dBFS. If distortion persists at low levels, suspect a failing cable, a USB port without enough power (try another port), or a sample-rate mismatch between the mic and your OS.
+                    That's clipping — your input gain is too high and peaks are hitting 0 dBFS. Lower the gain until the bar stays out of the red zone on loud speech. If distortion persists at modest levels, suspect a failing cable, a USB port without enough power (try another port), or a sample-rate mismatch between the mic and your OS.
                   </div>
                 </div>
               </div>
@@ -479,7 +487,7 @@
                 </h3>
                 <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Permissions are per-site: Zoom got OS-level access while Chrome's site permission is blocked or set to the wrong device. Click the lock icon in Chrome's address bar, set Microphone to Allow, and check that the selected device matches your mic. Also close Zoom — it may be holding the mic exclusively.
+                    Permissions are per-site: Zoom got OS-level access while Chrome's site permission is blocked or set to the wrong device. Click the lock icon in Chrome's address bar, set Microphone to Allow, and check that the selected device matches your mic. Close Zoom too — it may be holding the mic exclusively.
                   </div>
                 </div>
               </div>
@@ -491,7 +499,7 @@
                 </h3>
                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Stop talking and stay silent for three seconds while watching the meter. It should fall near zero. If it keeps bouncing above 20%, you have measurable background noise — fan hum, room tone, or electrical interference — entering your recordings. Fix the loudest source before reaching for software noise removal.
+                    Do it yourself: stop talking and stay silent for three seconds while watching the bar. It should fall near zero. If it keeps bouncing above 20%, you have measurable background noise — fan hum, room tone, or electrical interference — entering your recordings. Fix the loudest source before reaching for software noise removal.
                   </div>
                 </div>
               </div>
@@ -530,6 +538,7 @@
             <p class="text-muted small">Related tools: <a href="../decibel-meter/">decibel meter</a> for room noise levels, <a href="../loudness-meter/">loudness meter</a> for LUFS mastering, <a href="../audio-to-waveform-visualizer/">waveform visualizer</a> to see recordings, and <a href="../../pitch-detector-tools/pitch-detector/">pitch detector</a> for vocal pitch tracking.</p>
           </section>
           </article>
+
                         </div>
 
                     </div>

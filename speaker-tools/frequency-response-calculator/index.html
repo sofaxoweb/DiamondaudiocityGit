@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequency Response Calculator – Speaker & Room Guide</title>
     <meta name="description"
-        content="Estimate speaker frequency response in your room: effective bandwidth, room gain and SPL variation. Free calculator with formulas and examples.">
+        content="Estimate in-room speaker frequency response: effective bandwidth, room gain, and SPL variation. Free calculator with formulas and worked examples.">
     <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/frequency-response-calculator/"
     <meta property="og:type" content="website">
     <meta property="og:title" content="Frequency Response Calculator – Speaker &amp; Room Guide">
-    <meta property="og:description" content="Estimate speaker frequency response in your room: effective bandwidth, room gain and SPL variation. Free calculator with formulas and examples.">
+    <meta property="og:description" content="Estimate in-room speaker frequency response: effective bandwidth, room gain, and SPL variation. Free calculator with formulas and worked examples.">
     <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/frequency-response-calculator/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Frequency Response Calculator – Speaker &amp; Room Guide">
-    <meta name="twitter:description" content="Estimate speaker frequency response in your room: effective bandwidth, room gain and SPL variation. Free calculator with formulas and examples.">>
+    <meta name="twitter:description" content="Estimate in-room speaker frequency response: effective bandwidth, room gain, and SPL variation. Free calculator with formulas and worked examples.">>
 
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
 
@@ -52,7 +52,7 @@
                         "name": "What does \"45 Hz–20 kHz (±3 dB)\" mean on a speaker spec?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "It means the speaker's output stays within 3 dB above or below its average level (a 6 dB total window) between 45 Hz and 20 kHz. The 45 Hz and 20 kHz endpoints are the −3 dB half-power points where output has dropped to half its acoustic power. Without the ±3 dB qualifier, the range numbers are meaningless."
+                                    "text": "**It means the speaker's output stays within 3 dB above or below its average level (a 6 dB total window) between 45 Hz and 20 kHz.** The 45 Hz and 20 kHz endpoints are the −3 dB half-power points where output has dropped to half its acoustic power. Without the ±3 dB qualifier, the range numbers are meaningless."
                         }
             },
             {
@@ -60,7 +60,7 @@
                         "name": "Why does my speaker sound different in my room than the specs suggest?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Specs are measured in reflection-free conditions, but your room adds reflections, standing waves, and boundary gain. Below the Schroeder frequency (~100–250 Hz), room modes alone can swing bass ±10–15 dB — far more than the speaker's own ±3 dB tolerance. Placement and treatment matter more than the spec sheet once the speaker is in your room."
+                                    "text": "**Specs are measured in reflection-free conditions; your room adds reflections, standing waves, and boundary gain.** Below the Schroeder frequency (~100–250 Hz), room modes alone can swing bass ±10–15 dB — far more than the speaker's own ±3 dB tolerance. Placement and treatment matter more than the spec sheet once the speaker is in your room."
                         }
             },
             {
@@ -68,7 +68,7 @@
                         "name": "What is room gain in audio?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Room gain is bass boost caused by nearby boundaries reflecting sound in phase with the direct wave. One wall adds ~+3 dB, a wall/floor junction ~+6 dB, and a corner up to +9 dB. Below the room's lowest resonance, sealed pressure-vessel gain adds roughly +12 dB per octave — which is why small rooms and cars can produce deep bass from modest speakers."
+                                    "text": "**Room gain is bass boost from nearby boundaries reflecting sound in phase with the direct wave.** One wall adds ~+3 dB, a wall/floor junction ~+6 dB, and a corner up to +9 dB. Below the room's lowest resonance, sealed pressure-vessel gain adds roughly +12 dB per octave — which is why small rooms and cars produce deep bass from modest speakers."
                         }
             },
             {
@@ -76,7 +76,7 @@
                         "name": "What is the Schroeder frequency?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "The Schroeder frequency (fs ≈ 2000·√(T60/V)) divides a room's bass behavior in two. Below it, distinct standing-wave modes cause sharp peaks and nulls; above it, reflections are dense enough to blend smoothly. In typical living rooms it falls between 100 and 250 Hz. Treat and calibrate below it; trust the speaker above it."
+                                    "text": "**The Schroeder frequency (fs ≈ 2000·√(T60/V)) divides a room's bass behavior in two.** Below it, distinct standing-wave modes cause sharp peaks and nulls; above it, reflections are dense enough to blend smoothly. In typical living rooms it falls between 100 and 250 Hz. Treat and calibrate below it; trust the speaker above it."
                         }
             },
             {
@@ -84,7 +84,7 @@
                         "name": "Can I use EQ to fix dips in my frequency response?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Only for broad, minimum-phase dips. Narrow nulls caused by wave cancellation are non-minimum-phase: boosting them with EQ wastes amplifier power and risks driver damage while the cancellation persists. Fix nulls by moving the speaker or listening position, adding bass traps, or using multiple subwoofers — then use EQ for gentle broad shaping."
+                                    "text": "**Yes, but only for broad, minimum-phase dips.** Narrow nulls caused by wave cancellation are non-minimum-phase: boosting them with EQ wastes amplifier power and risks driver damage while the cancellation persists. Fix nulls by moving the speaker or listening position, adding bass traps, or using multiple subwoofers — then use EQ for gentle broad shaping."
                         }
             },
             {
@@ -92,7 +92,7 @@
                         "name": "What is baffle step loss?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Baffle step loss is a ~6 dB drop in forward bass output that occurs when sound wavelengths grow longer than the speaker's front baffle width (fstep ≈ 115 / baffle width in meters) and wrap around the cabinet. Designers compensate with a baffle-step correction (BSC) circuit. It's why narrow speakers can sound thin without compensation."
+                                    "text": "**Baffle step loss is a ~6 dB drop in forward bass output when sound wavelengths outgrow the front baffle width and wrap around the cabinet.** The transition sits at fstep ≈ 115 ÷ baffle width in meters — 575 Hz for a 0.2 m-wide bookshelf speaker. Designers compensate with a baffle-step correction (BSC) circuit; narrow speakers sound thin without it."
                         }
             },
             {
@@ -100,7 +100,7 @@
                         "name": "Should my in-room frequency response be perfectly flat?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "No. Harman International's listening research shows people prefer a gentle downward tilt of about −1 dB per octave with a modest bass lift — a literally flat in-room curve sounds bright and thin. Calibrate to a tilted target curve (many room-correction systems offer one) rather than chasing a flat line."
+                                    "text": "**No — a flat in-room curve sounds bright and thin.** Harman International's listening research shows people prefer a gentle downward tilt of about −1 dB per octave with a modest bass lift. Calibrate to a tilted target curve (many room-correction systems offer one) rather than chasing a flat line."
                         }
             },
             {
@@ -108,7 +108,7 @@
                         "name": "How is speaker frequency response actually measured?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "The standard is 2.83 V RMS input (1 watt into 8 Ω) measured at 1 meter on-axis, ideally in an anechoic chamber. DIY measurers use time-gated impulse responses in REW to simulate anechoic conditions down to fmin = 1/gate time, and the moving-microphone method for in-room spatial averages. The IEC 60268-5 standard formalizes these procedures."
+                                    "text": "**The standard is 2.83 V RMS input (1 watt into 8 Ω) measured at 1 meter on-axis, ideally in an anechoic chamber.** DIY measurers use time-gated impulse responses in REW to simulate anechoic conditions down to fmin = 1/gate time, and the moving-microphone method for in-room spatial averages. The IEC 60268-5 standard formalizes these procedures."
                         }
             },
             {
@@ -116,7 +116,7 @@
                         "name": "Do I need a subwoofer if my speakers already reach 40 Hz?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Often yes — not for extension, but for placement freedom. A subwoofer can sit where bass modes are smoothest (which is rarely where stereo imaging is best), and crossing over at 80 Hz relieves your main speakers of the most distortion-prone octave. The result is cleaner midrange as well as deeper bass."
+                                    "text": "**Often yes — not for extension, but for placement freedom.** A subwoofer can sit where bass modes are smoothest (which is rarely where stereo imaging is best), and crossing over at 80 Hz relieves your main speakers of the most distortion-prone octave. The result is cleaner midrange as well as deeper bass."
                         }
             },
             {
@@ -124,7 +124,7 @@
                         "name": "Why does bass get louder when I push my speaker into a corner?",
                         "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "A corner constrains sound radiation to one-eighth of free space, so reflections combine in phase with the direct sound — up to +9 dB of boundary gain. It also excites every room mode at once, which is why corner bass sounds loud but often boomy and uneven. Pulling the speaker out trades quantity for quality."
+                                    "text": "**Bass gets louder in a corner because the corner constrains radiation to one-eighth of free space** — reflections combine in phase with the direct sound for up to +9 dB of boundary gain. Corner placement excites every room mode at once, which is why corner bass sounds loud but often boomy and uneven. Pulling the speaker out trades quantity for quality."
                         }
             }
 ]
@@ -154,7 +154,7 @@
                             <h1><i class="bi bi-easel2 me-2"></i>Frequency Response Calculator</h1>
                             <p>Analyze loudspeaker cutoff boundaries, room gain reinforcement, and expected in-room SPL
                                 variation for studio monitors, hi-fi stereo, and subwoofer integrations.</p>
-                            <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         </div>
 
                         <div class="row mb-4">
@@ -207,19 +207,19 @@
                     <div class="card border-0 shadow-sm mt-4 p-4">
                         <h2 class="h3 text-dark fw-bold mb-3"><i class="bi bi-soundwave text-teal me-2"></i>What Is Frequency Response?</h2>
                         <div class="p-3 border rounded bg-light mb-3">
-                            <strong>Definition:</strong> Frequency response describes how evenly a loudspeaker reproduces sound across the audible spectrum (20 Hz–20 kHz), measured in dB SPL. A "flat" response means bass, mids, and treble all play at roughly the same loudness; deviations show up as boomy bass, harsh treble, or hollow mids.
+                            <strong>Definition:</strong> <strong>Frequency response is how evenly a loudspeaker reproduces sound across the audible spectrum (20 Hz–20 kHz), measured in dB SPL.</strong> A "flat" response means bass, mids, and treble play at roughly the same loudness; deviations show up as boomy bass, harsh treble, or hollow mids.
                         </div>
                         <p class="text-secondary">
-                            A <strong>frequency response calculator</strong> estimates how a speaker's published limits translate into your actual room. Enter the speaker's low/high frequency limits, expected room gain, and crossover frequency — the tool outputs the effective bandwidth and the SPL variation you can expect once walls, corners, and reflections get involved.
+                            <strong>A frequency response calculator estimates how a speaker's published limits translate into your actual room.</strong> Enter the speaker's low/high frequency limits, expected room gain, and crossover frequency — the tool outputs the effective bandwidth and the SPL variation you can expect once walls, corners, and reflections get involved.
                         </p>
 
                         <h3 class="h4 text-dark fw-bold mb-3 mt-4"><i class="bi bi-check2-square text-teal me-2"></i>Key Takeaways</h3>
                         <ul class="text-secondary">
-                            <li><strong>"45 Hz–20 kHz ±3 dB"</strong> means output stays within a 6 dB window across that range; the −3 dB points are half-power cutoffs.</li>
-                            <li>Your room routinely adds <strong>±10–15 dB swings</strong> in the bass — dwarfing the ±3 dB spec measured in a lab.</li>
-                            <li>Corner placement can boost bass up to <strong>+9 dB</strong>; free-space placement gives no boost at all.</li>
-                            <li><strong>EQ cannot fix narrow nulls</strong> caused by reflections — move the speaker or listener instead.</li>
-                            <li>A perfectly flat in-room curve sounds harsh; research favors a gentle <strong>downward tilt</strong> with a bass lift (the Harman curve).</li>
+                            <li><strong>"45 Hz–20 kHz ±3 dB" means output stays within a 6 dB window</strong> across that range; the −3 dB endpoints are half-power cutoffs.</li>
+                            <li><strong>Your room adds ±10–15 dB swings in the bass</strong> — dwarfing the ±3 dB tolerance measured in a lab.</li>
+                            <li><strong>Corner placement boosts bass up to +9 dB</strong>; free-space placement gives no boost at all.</li>
+                            <li><strong>EQ cannot fix narrow nulls</strong> from wave cancellation — move the speaker or listener instead.</li>
+                            <li><strong>A flat in-room curve sounds harsh</strong>; listening research favors a gentle downward tilt with a bass lift (the Harman curve).</li>
                         </ul>
 
                         <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: anechoic ±3 dB speaker curve vs the same speaker's in-room curve with ±12 dB modal swings below 250 Hz]</div><figcaption>Anechoic lab response vs typical in-room response — the room dominates below the Schroeder frequency.</figcaption></figure>
@@ -228,7 +228,7 @@
 
                         <h3 class="h4 text-dark fw-bold mb-3">How This Calculator Works</h3>
                         <p class="text-secondary">
-                            This calculator combines your speaker's published bandwidth with a room-gain estimate to predict in-room behavior. It takes the low/high frequency limits straight from the spec sheet, then widens the expected SPL variation as room gain grows — because stronger boundary reinforcement means stronger peaks <em>and</em> deeper cancellations.
+                            <strong>This calculator combines your speaker's published bandwidth with a room-gain estimate to predict in-room behavior.</strong> It takes the low/high frequency limits straight from the spec sheet, then widens the expected SPL variation as room gain grows — stronger boundary reinforcement means stronger peaks <em>and</em> deeper cancellations.
                         </p>
                         <p class="text-secondary">
                             <strong>Methodology (stated honestly):</strong> estimated SPL variation = <strong>±(3 + |room gain|) dB</strong>. The ±3 dB baseline reflects the speaker's own anechoic tolerance; each dB of room gain adds roughly a dB of in-room variance from modal peaks and boundary interference. We verified the widget's arithmetic against hand calculations for 5 input sets (corner, wall, and free placements); outputs match exactly. This is a planning estimator, not a measurement substitute — it cannot model your room's specific modes.
@@ -253,10 +253,10 @@
 
                         <h3 class="h4 text-dark fw-bold mb-3">How to Use This Calculator</h3>
                         <ol class="text-secondary">
-                            <li class="mb-2"><strong>Speaker low frequency (Hz):</strong> the −3 dB bass limit from the spec sheet (e.g. 45).</li>
-                            <li class="mb-2"><strong>Speaker high frequency (Hz):</strong> the treble limit (usually 20,000).</li>
-                            <li class="mb-2"><strong>Room gain (dB):</strong> 0 for free space, +3 against one wall, +6 at a wall/floor junction, +9 in a corner. Negative if the speaker is heavily treated.</li>
-                            <li class="mb-2"><strong>Crossover frequency (Hz):</strong> where bass hands off to the subwoofer (80 Hz is the THX standard; use 0 if none).</li>
+                            <li class="mb-2"><strong>Enter the speaker's low-frequency limit (Hz)</strong> — the −3 dB bass point from the spec sheet (e.g. 45).</li>
+                            <li class="mb-2"><strong>Enter the high-frequency limit (Hz)</strong> — the treble reach (usually 20,000).</li>
+                            <li class="mb-2"><strong>Estimate the room gain (dB)</strong>: 0 for free space, +3 against one wall, +6 at a wall/floor junction, +9 in a corner. Negative if the speaker is heavily treated.</li>
+                            <li class="mb-2"><strong>Enter the crossover frequency (Hz)</strong> — where bass hands off to the subwoofer (80 Hz is the THX standard; use 0 if none).</li>
                         </ol>
 
                         <hr class="my-4">
@@ -280,10 +280,10 @@
 
                         <h3 class="h4 text-dark fw-bold mb-3">Reading a Spec Sheet Honestly</h3>
                         <p class="text-secondary">
-                            "45 Hz–20 kHz" without a ±dB tolerance is marketing, not engineering — it might be measured at −10 dB, where the bass is barely audible. Always look for the tolerance: <strong>±3 dB</strong> is the honest standard (6 dB total window). Some brands quote "frequency range" at −6 or −10 dB to inflate bass extension; mentally subtract ~10 Hz of claimed extension for every missing ±3 dB qualifier.
+                            <strong>"45 Hz–20 kHz" without a ±dB tolerance is marketing, not engineering</strong> — it might be measured at −10 dB, where the bass is barely audible. Always look for the tolerance: <strong>±3 dB</strong> is the honest standard (6 dB total window). Some brands quote "frequency range" at −6 or −10 dB to inflate bass extension; an unqualified number always flatters the low end.
                         </p>
                         <p class="text-secondary">
-                            Also check <em>how</em> it was measured: anechoic (or quasi-anechoic gated) specs are comparable between brands; unspecified "in-room" specs are not. The IEC 60268-5 standard defines loudspeaker measurement conditions — brands that cite it are usually the careful ones.
+                            Check <em>how</em> it was measured: anechoic (or quasi-anechoic gated) specs are comparable between brands; unspecified "in-room" specs are not. The IEC 60268-5 standard defines loudspeaker measurement conditions — brands that cite it are usually the careful ones.
                         </p>
 
                         <hr class="my-4">
@@ -345,6 +345,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <p class="text-secondary"><strong>Watch the smoothing.</strong> A 1/3-octave-smoothed curve hides narrow dips and peaks that 1/12-octave smoothing reveals — always check which smoothing a published curve uses before comparing two speakers. Heavy smoothing flatters; fine smoothing tells the truth.</p>
 
                         <hr class="my-4">
 
@@ -369,7 +370,7 @@
                                 </h3>
                                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        It means the speaker's output stays within 3 dB above or below its average level (a 6 dB total window) between 45 Hz and 20 kHz. The 45 Hz and 20 kHz endpoints are the −3 dB half-power points where output has dropped to half its acoustic power. Without the ±3 dB qualifier, the range numbers are meaningless.
+                                        **It means the speaker's output stays within 3 dB above or below its average level (a 6 dB total window) between 45 Hz and 20 kHz.** The 45 Hz and 20 kHz endpoints are the −3 dB half-power points where output has dropped to half its acoustic power. Without the ±3 dB qualifier, the range numbers are meaningless.
                                     </div>
                                 </div>
                             </div>
@@ -381,7 +382,7 @@
                                 </h3>
                                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Specs are measured in reflection-free conditions, but your room adds reflections, standing waves, and boundary gain. Below the Schroeder frequency (~100–250 Hz), room modes alone can swing bass ±10–15 dB — far more than the speaker's own ±3 dB tolerance. Placement and treatment matter more than the spec sheet once the speaker is in your room.
+                                        **Specs are measured in reflection-free conditions; your room adds reflections, standing waves, and boundary gain.** Below the Schroeder frequency (~100–250 Hz), room modes alone can swing bass ±10–15 dB — far more than the speaker's own ±3 dB tolerance. Placement and treatment matter more than the spec sheet once the speaker is in your room.
                                     </div>
                                 </div>
                             </div>
@@ -393,7 +394,7 @@
                                 </h3>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Room gain is bass boost caused by nearby boundaries reflecting sound in phase with the direct wave. One wall adds ~+3 dB, a wall/floor junction ~+6 dB, and a corner up to +9 dB. Below the room's lowest resonance, sealed pressure-vessel gain adds roughly +12 dB per octave — which is why small rooms and cars can produce deep bass from modest speakers.
+                                        **Room gain is bass boost from nearby boundaries reflecting sound in phase with the direct wave.** One wall adds ~+3 dB, a wall/floor junction ~+6 dB, and a corner up to +9 dB. Below the room's lowest resonance, sealed pressure-vessel gain adds roughly +12 dB per octave — which is why small rooms and cars produce deep bass from modest speakers.
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +406,7 @@
                                 </h3>
                                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        The Schroeder frequency (fs ≈ 2000·√(T60/V)) divides a room's bass behavior in two. Below it, distinct standing-wave modes cause sharp peaks and nulls; above it, reflections are dense enough to blend smoothly. In typical living rooms it falls between 100 and 250 Hz. Treat and calibrate below it; trust the speaker above it.
+                                        **The Schroeder frequency (fs ≈ 2000·√(T60/V)) divides a room's bass behavior in two.** Below it, distinct standing-wave modes cause sharp peaks and nulls; above it, reflections are dense enough to blend smoothly. In typical living rooms it falls between 100 and 250 Hz. Treat and calibrate below it; trust the speaker above it.
                                     </div>
                                 </div>
                             </div>
@@ -417,7 +418,7 @@
                                 </h3>
                                 <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Only for broad, minimum-phase dips. Narrow nulls caused by wave cancellation are non-minimum-phase: boosting them with EQ wastes amplifier power and risks driver damage while the cancellation persists. Fix nulls by moving the speaker or listening position, adding bass traps, or using multiple subwoofers — then use EQ for gentle broad shaping.
+                                        **Yes, but only for broad, minimum-phase dips.** Narrow nulls caused by wave cancellation are non-minimum-phase: boosting them with EQ wastes amplifier power and risks driver damage while the cancellation persists. Fix nulls by moving the speaker or listening position, adding bass traps, or using multiple subwoofers — then use EQ for gentle broad shaping.
                                     </div>
                                 </div>
                             </div>
@@ -429,7 +430,7 @@
                                 </h3>
                                 <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Baffle step loss is a ~6 dB drop in forward bass output that occurs when sound wavelengths grow longer than the speaker's front baffle width (fstep ≈ 115 / baffle width in meters) and wrap around the cabinet. Designers compensate with a baffle-step correction (BSC) circuit. It's why narrow speakers can sound thin without compensation.
+                                        **Baffle step loss is a ~6 dB drop in forward bass output when sound wavelengths outgrow the front baffle width and wrap around the cabinet.** The transition sits at fstep ≈ 115 ÷ baffle width in meters — 575 Hz for a 0.2 m-wide bookshelf speaker. Designers compensate with a baffle-step correction (BSC) circuit; narrow speakers sound thin without it.
                                     </div>
                                 </div>
                             </div>
@@ -441,7 +442,7 @@
                                 </h3>
                                 <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        No. Harman International's listening research shows people prefer a gentle downward tilt of about −1 dB per octave with a modest bass lift — a literally flat in-room curve sounds bright and thin. Calibrate to a tilted target curve (many room-correction systems offer one) rather than chasing a flat line.
+                                        **No — a flat in-room curve sounds bright and thin.** Harman International's listening research shows people prefer a gentle downward tilt of about −1 dB per octave with a modest bass lift. Calibrate to a tilted target curve (many room-correction systems offer one) rather than chasing a flat line.
                                     </div>
                                 </div>
                             </div>
@@ -453,7 +454,7 @@
                                 </h3>
                                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        The standard is 2.83 V RMS input (1 watt into 8 Ω) measured at 1 meter on-axis, ideally in an anechoic chamber. DIY measurers use time-gated impulse responses in REW to simulate anechoic conditions down to fmin = 1/gate time, and the moving-microphone method for in-room spatial averages. The IEC 60268-5 standard formalizes these procedures.
+                                        **The standard is 2.83 V RMS input (1 watt into 8 Ω) measured at 1 meter on-axis, ideally in an anechoic chamber.** DIY measurers use time-gated impulse responses in REW to simulate anechoic conditions down to fmin = 1/gate time, and the moving-microphone method for in-room spatial averages. The IEC 60268-5 standard formalizes these procedures.
                                     </div>
                                 </div>
                             </div>
@@ -465,7 +466,7 @@
                                 </h3>
                                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Often yes — not for extension, but for placement freedom. A subwoofer can sit where bass modes are smoothest (which is rarely where stereo imaging is best), and crossing over at 80 Hz relieves your main speakers of the most distortion-prone octave. The result is cleaner midrange as well as deeper bass.
+                                        **Often yes — not for extension, but for placement freedom.** A subwoofer can sit where bass modes are smoothest (which is rarely where stereo imaging is best), and crossing over at 80 Hz relieves your main speakers of the most distortion-prone octave. The result is cleaner midrange as well as deeper bass.
                                     </div>
                                 </div>
                             </div>
@@ -477,7 +478,7 @@
                                 </h3>
                                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#freqResponseFAQ">
                                     <div class="accordion-body text-secondary">
-                                        A corner constrains sound radiation to one-eighth of free space, so reflections combine in phase with the direct sound — up to +9 dB of boundary gain. It also excites every room mode at once, which is why corner bass sounds loud but often boomy and uneven. Pulling the speaker out trades quantity for quality.
+                                        **Bass gets louder in a corner because the corner constrains radiation to one-eighth of free space** — reflections combine in phase with the direct sound for up to +9 dB of boundary gain. Corner placement excites every room mode at once, which is why corner bass sounds loud but often boomy and uneven. Pulling the speaker out trades quantity for quality.
                                     </div>
                                 </div>
                             </div>

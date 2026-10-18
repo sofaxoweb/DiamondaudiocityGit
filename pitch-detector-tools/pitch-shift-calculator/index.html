@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitch Shift Calculator: Semitones, Cents &amp; Ratio</title>
     <meta name="description"
-        content="Free pitch shift calculator: turn semitones and cents into exact frequency ratios, varispeed tempo shifts and duration factors for music producers and DJs." />
+        content="Free pitch shift calculator: convert semitones and cents to exact frequency ratios, varispeed tempo shifts and duration factors for producers and DJs." />
     <meta name="keywords"
         content="pitch shift calculator, semitone to frequency ratio, varispeed calculator, cents to pitch ratio, pitch ratio formula, transpose audio calculator, turntable pitch fader semitones" />
     <link rel="canonical" href="https://pitchdetectors.com/pitch-detector-tools/pitch-shift-calculator/"
     <meta property="og:type" content="website">
     <meta property="og:title" content="Pitch Shift Calculator: Semitones, Cents &amp; Ratio">
-    <meta property="og:description" content="Free pitch shift calculator: turn semitones and cents into exact frequency ratios, varispeed tempo shifts and duration factors for music producers and DJs.">
+    <meta property="og:description" content="Free pitch shift calculator: convert semitones and cents to exact frequency ratios, varispeed tempo shifts and duration factors for producers and DJs.">
     <meta property="og:url" content="https://pitchdetectors.com/pitch-detector-tools/pitch-shift-calculator/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Pitch Shift Calculator: Semitones, Cents &amp; Ratio">
-    <meta name="twitter:description" content="Free pitch shift calculator: turn semitones and cents into exact frequency ratios, varispeed tempo shifts and duration factors for music producers and DJs.">>
+    <meta name="twitter:description" content="Free pitch shift calculator: convert semitones and cents to exact frequency ratios, varispeed tempo shifts and duration factors for producers and DJs.">>
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="../../assets/bootstrap5.css" rel="stylesheet">
@@ -35,7 +35,7 @@
       "name": "How does pitch shifting relate to frequency ratio mathematically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pitch shifting is exponential. Shifting by S semitones and C cents multiplies every frequency in the sound by the ratio r = 2^((S + C/100) / 12). A shift of +7 semitones (a perfect fifth) gives r = 2^(7/12) \u2248 1.49831, so a 220 Hz tone becomes 329.63 Hz \u2014 every partial scales by the same factor."
+        "text": "Pitch shifting is exponential: shifting by S semitones and C cents multiplies every frequency by r = 2^((S + C/100) / 12). A +7-semitone shift (a perfect fifth) gives r = 2^(7/12) ≈ 1.49831, so a 220 Hz tone becomes 329.63 Hz — every partial scales by the same factor."
       }
     },
     {
@@ -43,7 +43,7 @@
       "name": "What is the difference between varispeed and time-independent pitch shifting?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Varispeed (tape/turntable style) changes pitch and playback speed together: pitching up raises the tempo and shortens the audio. Time-independent pitch shifting uses DSP such as phase vocoders or zplane \u00e9lastique to change pitch while keeping the original tempo and duration, at the cost of possible artifacts."
+        "text": "Varispeed changes pitch and playback speed together: pitching up raises tempo and shortens the audio. Time-independent pitch shifting uses DSP such as phase vocoders or zplane élastique to change pitch while keeping the original tempo and duration, at the cost of possible artifacts."
       }
     },
     {
@@ -51,7 +51,7 @@
       "name": "What causes the \"chipmunk effect\" when shifting vocal pitch?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The chipmunk effect happens when pitch is shifted up without formant preservation. Formants are the fixed resonances of the vocal tract that give a voice its identity. Shifting them upward with the pitch makes an adult voice sound like a small child. Formant-preserving algorithms hold the formants in place while the pitch moves."
+        "text": "Shifting pitch up without formant preservation causes it. Formants are the fixed resonances of the vocal tract that give a voice its identity. Moving them upward with the pitch makes an adult voice sound like a small child. Formant-preserving algorithms hold the formants in place while the pitch moves."
       }
     },
     {
@@ -59,7 +59,7 @@
       "name": "How do you calculate tempo change when repitching a sample without time-stretching?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "New BPM = original BPM \u00d7 r, where r = 2^(semitones / 12). The speed change is (r \u2212 1) \u00d7 100%. Shifting a 120 BPM loop up 2 semitones gives r \u2248 1.12246, so the new tempo is 134.70 BPM \u2014 a +12.25% speed increase."
+        "text": "New BPM = original BPM × r, where r = 2^(semitones / 12). The speed change is (r − 1) × 100%. Shifting a 120 BPM loop up 2 semitones gives r ≈ 1.12246, so the new tempo is 134.70 BPM — a +12.25% speed increase."
       }
     },
     {
@@ -67,7 +67,7 @@
       "name": "How many cents equal one semitone?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exactly 100 cents make one equal-tempered semitone, and 1200 cents make one octave. Cents exist for micro-tuning: a +15-cent detune adds subtle chorus-like movement to a synth, while a −31.77-cent offset is the exact conversion from A440 to A432. Measure the offset between two pitches with the cents calculator."
+        "text": "Exactly 100 cents make one equal-tempered semitone; 1200 cents make one octave. Cents exist for micro-tuning: a +15-cent detune adds subtle chorus-like movement to a synth, while a −31.77-cent offset converts A440 to A432 exactly. Measure the offset between two pitches with the cents calculator."
       }
     },
     {
@@ -75,15 +75,15 @@
       "name": "Which DAW pitch-shift algorithm should I use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In Ableton Live, use Complex Pro (with the Formants control) for vocals and full mixes, Beats for drums, and Re-Pitch for tape-style varispeed. In Logic Pro, use Flex Pitch for monophonic pitch edits and the Polyphonic or Monophonic Flex Time modes for stretching. In Pro Tools, Elastic Audio's Monophonic and Rhythmic modes cover solo and drum material; X-Form is the highest-quality offline render."
+        "text": "Match the algorithm to the material. In Ableton Live: Complex Pro (with Formants) for vocals and full mixes, Beats for drums, Re-Pitch for tape-style varispeed. In Logic Pro: Flex Pitch for monophonic pitch edits, Polyphonic or Monophonic Flex Time for stretching. In Pro Tools: Elastic Audio Monophonic and Rhythmic for solo and drum material; X-Form is the highest-quality offline render."
       }
     },
     {
       "@type": "Question",
-      "name": "What does a turntable's \u00b18% pitch fader equal in semitones?",
+      "name": "What does a turntable's ±8% pitch fader equal in semitones?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A +8% speed increase equals +1.33 semitones (+133.24 cents); \u22128% equals \u22121.44 semitones (\u2212144.35 cents). The range is asymmetric because pitch follows an exponential ratio: equal percentage changes in speed map to unequal semitone steps above and below the original pitch."
+        "text": "+8% speed equals +1.33 semitones (+133.24 cents); −8% equals −1.44 semitones (−144.35 cents). The range is asymmetric because pitch follows an exponential ratio: equal percentage speed changes map to unequal semitone steps above and below the original pitch."
       }
     },
     {
@@ -91,7 +91,7 @@
       "name": "How far can I pitch-shift a vocal before it sounds unnatural?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "With formant preservation, \u00b11\u20132 semitones sounds clean, \u00b13\u20134 stays natural with slight timbre change, and \u00b15\u20137 becomes an obvious effect. Without formant correction, even \u00b12\u20133 semitones starts to sound chipmunk-like on the way up or unnaturally dark on the way down. Beyond \u00b18 semitones is effect territory either way."
+        "text": "With formant preservation: ±1–2 semitones sound clean, ±3–4 stay natural with slight timbre change, and ±5–7 become an obvious effect. Without formant correction, even ±2–3 semitones start to sound chipmunk-like going up or unnaturally dark going down. Beyond ±8 semitones is effect territory either way."
       }
     },
     {
@@ -99,7 +99,7 @@
       "name": "Does pitch shifting change the key of a song?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Shifting every note up by the same interval moves the whole song to a new key: +2 semitones turns A minor into B minor. That is exactly how DJs and producers match an acapella to a beat's key. The relationship between notes stays the same, so the melody and chords are unchanged \u2014 only the absolute pitch moves."
+        "text": "Yes — shifting every note up by the same interval moves the whole song to a new key. +2 semitones turn A minor into B minor. That is how DJs and producers match an acapella to a beat's key: the relationships between notes stay the same, so melody and chords are unchanged — only the absolute pitch moves."
       }
     }
   ]
@@ -211,7 +211,7 @@
                 <div class="tool-container py-4">
                     <div class="tool-title mb-4">
                         <h1><i class="bi bi-sliders me-2"></i>Pitch Shift Calculator: Semitones, Cents &amp; Ratio</h1>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p class="lead">A <strong>pitch shift calculator</strong> converts a pitch change — measured in semitones and cents — into its exact frequency ratio, varispeed tempo change, and duration factor. Enter +3 semitones and the math says every frequency multiplies by 1.18921: a 120 BPM loop repitched tape-style becomes 142.70 BPM. Use the tool for the arithmetic, then read the guide to understand what the numbers mean for vocals, samples, and DJ sets.</p>
                     </div>
 
@@ -377,7 +377,7 @@
                     <h2 class="text-teal mb-3"><i class="bi bi-person-lines-fill me-2"></i>Formants and the Chipmunk Effect</h2>
                     <p>When a person sings different notes, the vocal tract — throat, mouth, nasal cavity — stays the same physical size. Its resonant frequency bands, called <strong>formants</strong> (F1–F4), stay fixed while the vocal cords change pitch. That fixed formant pattern is a big part of why a voice sounds like <em>that person</em>.</p>
                     <p>Naive pitch shifting moves everything together: pitch <em>and</em> formants. Shift a vocal up several semitones and the formants land where a much smaller vocal tract would put them — the result is the classic <strong>"chipmunk effect,"</strong> a tiny childlike voice. Shift down and you get the opposite: a cavernous, sluggish "monster" voice. <strong>Formant-preserving</strong> algorithms split the signal into the pitch excitation and the spectral envelope, move only the pitch, and leave the formants anchored — so a shifted vocal still sounds like the same singer.</p>
-                    <p>Creative producers also shift formants <em>deliberately</em>. Pitch a vocal up while pushing formants down (Ableton's Complex Pro Formants knob, or dedicated tools like SoundToys Little AlterBoy) and you get an androgynous, otherworldly harmony that still sits naturally in a mix — a staple of modern electronic and pop vocal production. So the calculator's ratio tells you how far the notes move; the formant setting decides whether the <em>voice</em> moves with them.</p>
+                    <p>Creative producers shift formants <em>deliberately</em>. Pitch a vocal up while pushing formants down (Ableton's Complex Pro Formants knob, or dedicated tools like SoundToys Little AlterBoy) and you get an androgynous, otherworldly harmony that still sits naturally in a mix — a staple of modern electronic and pop vocal production. So the calculator's ratio tells you how far the notes move; the formant setting decides whether the <em>voice</em> moves with them.</p>
                 </section>
 
                 <figure class="my-4 text-center">
@@ -429,7 +429,7 @@
                             <div id="faqCollapse1" class="accordion-collapse collapse show"
                                 aria-labelledby="faqHeading1" data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    Pitch shifting is exponential. Shifting by S semitones and C cents multiplies every frequency in the sound by the ratio r = 2^((S + C/100) / 12). A shift of +7 semitones (a perfect fifth) gives r = 2^(7/12) ≈ 1.49831, so a 220 Hz tone becomes 329.63 Hz — every partial scales by the same factor.
+                                    Pitch shifting is exponential: shifting by S semitones and C cents multiplies every frequency by r = 2^((S + C/100) / 12). A +7-semitone shift (a perfect fifth) gives r = 2^(7/12) ≈ 1.49831, so a 220 Hz tone becomes 329.63 Hz — every partial scales by the same factor.
                                 </div>
                             </div>
                         </div>
@@ -445,7 +445,7 @@
                             <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    Varispeed (tape/turntable style) changes pitch and playback speed together: pitching up raises the tempo and shortens the audio. Time-independent pitch shifting uses DSP such as phase vocoders or zplane élastique to change pitch while keeping the original tempo and duration, at the cost of possible artifacts.
+                                    Varispeed changes pitch and playback speed together: pitching up raises tempo and shortens the audio. Time-independent pitch shifting uses DSP such as phase vocoders or zplane élastique to change pitch while keeping the original tempo and duration, at the cost of possible artifacts.
                                 </div>
                             </div>
                         </div>
@@ -461,7 +461,7 @@
                             <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    The chipmunk effect happens when pitch is shifted up without formant preservation. Formants are the fixed resonances of the vocal tract that give a voice its identity. Shifting them upward with the pitch makes an adult voice sound like a small child. Formant-preserving algorithms hold the formants in place while the pitch moves.
+                                    Shifting pitch up without formant preservation causes it. Formants are the fixed resonances of the vocal tract that give a voice its identity. Moving them upward with the pitch makes an adult voice sound like a small child. Formant-preserving algorithms hold the formants in place while the pitch moves.
                                 </div>
                             </div>
                         </div>
@@ -493,7 +493,7 @@
                             <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    Exactly 100 cents make one equal-tempered semitone, and 1200 cents make one octave. Cents exist for micro-tuning: a +15-cent detune adds subtle chorus-like movement to a synth, while a −31.77-cent offset is the exact conversion from A440 to A432. Measure the offset between two pitches with the cents calculator.
+                                    Exactly 100 cents make one equal-tempered semitone; 1200 cents make one octave. Cents exist for micro-tuning: a +15-cent detune adds subtle chorus-like movement to a synth, while a −31.77-cent offset converts A440 to A432 exactly. Measure the offset between two pitches with the cents calculator.
                                 </div>
                             </div>
                         </div>
@@ -509,7 +509,7 @@
                             <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    In Ableton Live, use Complex Pro (with the Formants control) for vocals and full mixes, Beats for drums, and Re-Pitch for tape-style varispeed. In Logic Pro, use Flex Pitch for monophonic pitch edits and the Polyphonic or Monophonic Flex Time modes for stretching. In Pro Tools, Elastic Audio's Monophonic and Rhythmic modes cover solo and drum material; X-Form is the highest-quality offline render.
+                                    Match the algorithm to the material. In Ableton Live: Complex Pro (with Formants) for vocals and full mixes, Beats for drums, Re-Pitch for tape-style varispeed. In Logic Pro: Flex Pitch for monophonic pitch edits, Polyphonic or Monophonic Flex Time for stretching. In Pro Tools: Elastic Audio Monophonic and Rhythmic for solo and drum material; X-Form is the highest-quality offline render.
                                 </div>
                             </div>
                         </div>
@@ -525,7 +525,7 @@
                             <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    A +8% speed increase equals +1.33 semitones (+133.24 cents); −8% equals −1.44 semitones (−144.35 cents). The range is asymmetric because pitch follows an exponential ratio: equal percentage changes in speed map to unequal semitone steps above and below the original pitch.
+                                    +8% speed equals +1.33 semitones (+133.24 cents); −8% equals −1.44 semitones (−144.35 cents). The range is asymmetric because pitch follows an exponential ratio: equal percentage speed changes map to unequal semitone steps above and below the original pitch.
                                 </div>
                             </div>
                         </div>
@@ -541,7 +541,7 @@
                             <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    With formant preservation, ±1–2 semitones sounds clean, ±3–4 stays natural with slight timbre change, and ±5–7 becomes an obvious effect. Without formant correction, even ±2–3 semitones starts to sound chipmunk-like on the way up or unnaturally dark on the way down. Beyond ±8 semitones is effect territory either way.
+                                    With formant preservation: ±1–2 semitones sound clean, ±3–4 stay natural with slight timbre change, and ±5–7 become an obvious effect. Without formant correction, even ±2–3 semitones start to sound chipmunk-like going up or unnaturally dark going down. Beyond ±8 semitones is effect territory either way.
                                 </div>
                             </div>
                         </div>
@@ -557,7 +557,7 @@
                             <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9"
                                 data-bs-parent="#pitchShiftFAQ">
                                 <div class="accordion-body">
-                                    Yes. Shifting every note up by the same interval moves the whole song to a new key: +2 semitones turns A minor into B minor. That is exactly how DJs and producers match an acapella to a beat's key. The relationship between notes stays the same, so the melody and chords are unchanged — only the absolute pitch moves.
+                                    Yes — shifting every note up by the same interval moves the whole song to a new key. +2 semitones turn A minor into B minor. That is how DJs and producers match an acapella to a beat's key: the relationships between notes stay the same, so melody and chords are unchanged — only the absolute pitch moves.
                                 </div>
                             </div>
                         </div>

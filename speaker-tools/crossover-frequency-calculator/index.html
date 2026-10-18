@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crossover Frequency Calculator: Design LP/HP Filters</title>
     <meta name="description"
-        content="Calculate crossover inductor and capacitor values from frequency, impedance and filter order. Free Butterworth, Linkwitz-Riley and Bessel tool.">
+        content="Calculate crossover inductor and capacitor values from frequency, impedance, and filter order. Butterworth, Linkwitz-Riley, and Bessel alignments.">
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
 
     <!-- Open Graph / Facebook -->
@@ -14,7 +14,7 @@
     <meta property="og:title"
         content="Crossover Frequency Calculator – Passive Speaker Filter Design | Pitch Detectors" />
     <meta property="og:description"
-        content="Design passive multi-way speaker crossovers. Calculate exact inductor (mH) and capacitor (µF) values for Butterworth, Linkwitz-Riley, and Bessel alignments." />
+        content="Calculate crossover inductor and capacitor values from frequency, impedance, and filter order. Butterworth, Linkwitz-Riley, and Bessel alignments." />
     <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/crossover-frequency-calculator/" />
     <meta property="og:site_name" content="Pitch Detectors" />
     <meta property="og:image" content="./assets/imgs/logo.png" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Crossover Frequency Calculator – Passive Speaker Filter Design | Pitch Detectors" />
     <meta name="twitter:description"
-        content="Calculate passive crossover components for 2-way speakers. Fast, accurate capacitor and inductor value calculation." />
+        content="Calculate crossover inductor and capacitor values from frequency, impedance, and filter order. Butterworth, Linkwitz-Riley, and Bessel alignments." />
     <meta name="twitter:image" content="./assets/imgs/logo.png" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -52,7 +52,7 @@
       "name": "How do I calculate capacitor and inductor values for a crossover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For first order: L = R ÷ (2πf) henries and C = 1 ÷ (2πfR) farads, then convert to mH and µF. At 3000 Hz into 8 Ω that gives 0.42 mH and 6.63 µF. Higher orders cascade these sections and scale by the alignment's Q factor — or just enter your numbers above and read the results."
+        "text": "To calculate crossover capacitor and inductor values, use L = R ÷ (2πf) henries and C = 1 ÷ (2πfR) farads for first order, then convert to mH and µF. At 3000 Hz into 8 Ω that gives 0.42 mH and 6.63 µF. Higher orders cascade these sections and scale by the alignment's Q factor — or enter your numbers in the calculator above and read the results."
       }
     },
     {
@@ -60,7 +60,7 @@
       "name": "What crossover frequency should I use for a tweeter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most 1\" dome tweeters cross safely at 2500–3500 Hz with a 2nd-order (12 dB/oct) high-pass; never cross below roughly twice the tweeter's resonant frequency (Fs). Smaller tweeters and 1st-order slopes need higher points. When in doubt, cross higher — a tweeter playing too low distorts and dies young."
+        "text": "The safe crossover frequency for most 1\" dome tweeters is 2500–3500 Hz with a 2nd-order (12 dB/oct) high-pass. Never cross below roughly twice the tweeter's resonant frequency (Fs). Smaller tweeters and 1st-order slopes need higher points. When in doubt, cross higher — a tweeter playing too low distorts and fails early."
       }
     },
     {
@@ -68,7 +68,7 @@
       "name": "Butterworth vs Linkwitz-Riley: which crossover alignment is better?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Butterworth (Q=0.707) gives the flattest individual response; Linkwitz-Riley (Q=0.5) gives flat summed response with drivers in phase — the modern default for studio monitors and serious DIY. Choose Butterworth for simplicity and PA; Linkwitz-Riley when imaging and flat summing matter most."
+        "text": "It depends on your priority. Butterworth (Q=0.707) gives the flattest individual response; Linkwitz-Riley (Q=0.5) gives flat <em>summed</em> response with drivers in phase — the modern default for studio monitors and serious DIY. Choose Butterworth for simplicity and PA; Linkwitz-Riley when imaging and flat summing matter most."
       }
     },
     {
@@ -76,7 +76,7 @@
       "name": "Why do you reverse the tweeter polarity in a 2nd-order crossover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 2nd-order filter shifts phase 180°, putting tweeter and woofer out of phase at the crossover point — they'd cancel and carve a deep null. Reversing the tweeter's +/− wires restores in-phase summing. It's standard practice, not a hack; 4th-order Linkwitz-Riley needs no reversal."
+        "text": "You reverse the tweeter's polarity because a 2nd-order filter shifts phase 180°, putting tweeter and woofer out of phase at the crossover point — they'd cancel and carve a deep null. Reversing the tweeter's +/− wires restores in-phase summing. It's standard practice, not a hack; 4th-order Linkwitz-Riley needs no reversal."
       }
     },
     {
@@ -84,7 +84,7 @@
       "name": "What order crossover should I use: 1st, 2nd, or 4th?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "2nd order (12 dB/oct) is the sweet spot for most 2-way builds: solid driver protection without the parts count and phase headaches of higher orders. Use 1st order only with robust drivers crossed high; 4th order when you need brick-wall separation and can afford the complexity."
+        "text": "Use 2nd order (12 dB/oct) for most 2-way builds: solid driver protection without the parts count and phase headaches of higher orders. Use 1st order only with robust drivers crossed high; 4th order when you need brick-wall separation and can afford the complexity."
       }
     },
     {
@@ -92,7 +92,7 @@
       "name": "Do I need a Zobel network with my crossover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Often yes for the woofer: a driver's impedance rises with frequency due to voice-coil inductance, which skews textbook filter values. A Zobel (resistor + capacitor in series, shunted across the driver) flattens it back toward nominal. Try our Zobel network calculator to get its values."
+        "text": "Yes, often for the woofer: a driver's impedance rises with frequency due to voice-coil inductance, which skews textbook filter values. A Zobel (resistor + capacitor in series, shunted across the driver) flattens it back toward nominal. Size it with the Zobel network calculator."
       }
     },
     {
@@ -100,7 +100,7 @@
       "name": "Can I use electrolytic capacitors in a crossover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They work and they're cheap, but non-polarized electrolytics drift with age and sound worse than film types in the tweeter path. Use film/foil capacitors (polypropylene) for everything in the signal path if budget allows; save electrolytics for shunt positions in budget woofer sections only."
+        "text": "Yes, but only non-polarized (bipolar) types — and film capacitors (polypropylene) are the better choice for everything in the signal path. Electrolytics are cheap, but they drift with age and sound worse in the tweeter path. Save them for shunt positions in budget woofer sections only."
       }
     },
     {
@@ -108,7 +108,7 @@
       "name": "Why does my DIY crossover sound wrong?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The top suspects: tweeter polarity not reversed (hollow midrange null), real driver impedance differing from the nominal value used in math (shifts Fc), or parts wired to the wrong driver. Verify polarity first, then measure or estimate actual impedance — textbook values assume a perfect resistor."
+        "text": "Your DIY crossover sounds wrong most often because of three suspects: tweeter polarity not reversed (hollow midrange null), real driver impedance differing from the nominal value used in the math (shifts Fc), or parts wired to the wrong driver. Verify polarity first, then measure or estimate actual impedance — textbook values assume a perfect resistor."
       }
     },
     {
@@ -116,7 +116,7 @@
       "name": "How accurate are online crossover calculators?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The math is exact for ideal components and resistive loads — excellent starting values. Real builds deviate because of parts tolerance (5–10%) and drivers' non-flat impedance curves. Treat results as precision starting points, then verify by ear or measurement and tweak."
+        "text": "Online crossover calculators are exact for ideal components and resistive loads — excellent starting values. Real builds deviate because of parts tolerance (5–10%) and drivers' non-flat impedance curves. Treat results as precision starting points, then verify by ear or measurement and tweak."
       }
     },
     {
@@ -124,12 +124,12 @@
       "name": "What is Q factor in a crossover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Q describes the filter's shape at the crossover point: Q=0.707 (Butterworth) is maximally flat, Q=0.5 (Linkwitz-Riley) sums flat in phase, Q=0.577 (Bessel) preserves transient shape best. Higher Q means a peakier knee; lower Q means a gentler, more gradual transition."
+        "text": "Q factor describes the filter's shape at the crossover point: Q=0.707 (Butterworth) is maximally flat, Q=0.5 (Linkwitz-Riley) sums flat in phase, Q=0.577 (Bessel) preserves transient shape best. Higher Q means a peakier knee; lower Q means a gentler, more gradual transition."
       }
     }
   ]
 }
-  </script>
+    </script>
 </head>
 
 <body>
@@ -331,7 +331,7 @@
                     </div>
                 </div>
                 <!-- Content Start -->
-                <article class="tool-container mt-4" id="main-content">
+                                <article class="tool-container mt-4" id="main-content">
           <section class="mb-4">
             <h1 class="text-teal mb-3">Crossover Frequency Calculator</h1>
             <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
@@ -357,45 +357,46 @@
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-            <p>The tool starts from textbook first-order formulas, then scales them for higher orders and your chosen alignment's Q factor. Inductors block highs (series for low-pass), capacitors block lows (series for high-pass) — the reactances equal the load impedance exactly at the crossover frequency.</p>
-            <p>Methodology: with ω = 2πf, first order uses <code><strong>L = R/ω</strong> (henries)</code> and <code><strong>C = 1/(ωR)</strong> (farads)</code>, converted to mH/µF. Second order divides both by the alignment Q (<strong>Butterworth 0.707, Linkwitz-Riley 0.5, Bessel 0.577</strong>); higher orders cascade sections. The tool also reports the filter's <strong>phase shift</strong>. Validation method: enter 3000 Hz / 8 Ω / 1st order and confirm L ≈ 0.42 mH and C ≈ 6.63 µF — the closed-form check anyone can verify by hand.</p>
+            <p><strong>The tool starts from textbook first-order formulas, then scales them for higher orders and your chosen alignment's Q factor.</strong> Inductors block highs (series for low-pass); capacitors block lows (series for high-pass) — the reactances equal the load impedance exactly at the crossover frequency.</p>
+            <p>Methodology: with ω = 2πf, first order uses <code><strong>L = R/ω</strong> (henries)</code> and <code><strong>C = 1/(ωR)</strong> (farads)</code>, converted to mH/µF. Second order divides both by the alignment Q (<strong>Butterworth 0.707, Linkwitz-Riley 0.5, Bessel 0.577</strong>); higher orders cascade sections. The tool reports the filter's <strong>phase shift</strong>. Validation method: enter 3000 Hz / 8 Ω / 1st order and confirm L ≈ 0.42 mH and C ≈ 6.63 µF — the closed-form check anyone can verify by hand.</p>
             <p><em>Last reviewed: October 2026. Formulas follow standard passive filter theory.</em></p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-calculator me-2"></i>Worked Example: 3000 Hz, 8 Ω, 2nd-Order Butterworth</h2>
-            <p>Designing a 2-way with crossover at <strong>3000 Hz</strong> into <strong>8 Ω</strong> drivers:</p>
+            <p><strong>Designing a 2-way with crossover at 3000 Hz into 8 Ω drivers works like this:</strong></p>
             <ol>
               <li>ω = 2π × 3000 ≈ <strong>18,850 rad/s</strong></li>
               <li>First-order values: L = 8/18,850 ≈ <strong>0.42 mH</strong>; C = 1/(18,850 × 8) ≈ <strong>6.63 µF</strong></li>
-              <li>2nd-order Butterworth (Q = 0.707): scale both by 1/Q → L ≈ <strong>0.60 mH</strong>, C ≈ <strong>9.38 µF</strong></li>
+              <li>2nd-order Butterworth (Q = 0.707): divide both by Q → L ≈ <strong>0.60 mH</strong>, C ≈ <strong>9.38 µF</strong></li>
               <li>Low-pass (woofer): series <strong>0.60 mH</strong> inductor + shunt <strong>9.38 µF</strong> capacitor</li>
               <li>High-pass (tweeter): series <strong>9.38 µF</strong> capacitor + shunt <strong>0.60 mH</strong> inductor — and <strong>reverse the tweeter's polarity</strong> (180° phase shift)</li>
             </ol>
-            <p>Buy the nearest standard values (0.60 mH → 0.60 mH air-core; 9.38 µF → 9.4 µF or 10 µF film cap) — 5–10% tolerance is normal and shifts Fc only slightly.</p>
+            <p>Buy the nearest standard values (0.60 mH air-core; 9.38 µF → 9.4 µF or 10 µF film cap) — 5–10% tolerance is normal and shifts Fc only slightly.</p>
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: 2nd-order crossover schematic — amplifier splitting to low-pass branch (series L, shunt C to woofer) and high-pass branch (series C, shunt L to tweeter)]</div><figcaption class="small text-muted">2nd-order crossover topology. Suggested alt text: "Schematic diagram of a second-order passive speaker crossover"</figcaption></figure>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-list-ol me-2"></i>How to Use the Crossover Calculator</h2>
             <ol>
-              <li><strong>Crossover frequency:</strong> enter Hz — 2500–3500 Hz is typical for 2-ways with 1" tweeters.</li>
-              <li><strong>Speaker impedance:</strong> select the driver's nominal Ω (4, 6, 8, or 16).</li>
-              <li><strong>Crossover order:</strong> choose 1st (6 dB/oct) through 4th (24 dB/oct).</li>
-              <li><strong>Crossover type:</strong> pick the 2nd-order alignment — Butterworth, Linkwitz-Riley, or Bessel.</li>
-              <li><strong>Read both result boxes:</strong> low-pass L and C for the woofer, high-pass C and L for the tweeter, plus phase shift.</li>
-              <li><strong>Buy standard values</strong> nearest the results; wire per the diagram, minding tweeter polarity.</li>
+              <li><strong>Enter</strong> the crossover frequency in Hz — 2500–3500 Hz is typical for 2-ways with 1" tweeters.</li>
+              <li><strong>Select</strong> the driver's nominal impedance (4, 6, 8, or 16 Ω).</li>
+              <li><strong>Choose</strong> the crossover order: 1st (6 dB/oct) through 4th (24 dB/oct).</li>
+              <li><strong>Pick</strong> the 2nd-order alignment — Butterworth, Linkwitz-Riley, or Bessel.</li>
+              <li><strong>Read</strong> both result boxes: low-pass L and C for the woofer, high-pass C and L for the tweeter, plus phase shift.</li>
+              <li><strong>Buy</strong> standard values nearest the results; wire per the diagram, minding tweeter polarity.</li>
             </ol>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-table me-2"></i>Reading Your Result: What the Values Mean</h2>
+            <p><strong>Each result is one part of the filter network — buy and wire all of them.</strong> This table decodes the output:</p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Result</th><th>What it is</th><th>What to buy</th></tr></thead>
                 <tbody>
                   <tr><td>LP inductor (mH)</td><td>Series coil rolling off highs to the woofer</td><td>Air-core inductor, nearest mH value, rated above your amp's current</td></tr>
-                  <tr><td>LP capacitor (µF)</td><td>Shunt cap completing the low-pass</td><td>Film/foil capacitor (avoid cheap electrolytics in the signal path)</td></tr>
+                  <tr><td>LP capacitor (µF)</td><td>Shunt cap completing the low-pass</td><td>Film/foil capacitor (cheap electrolytics don't belong in the signal path)</td></tr>
                   <tr><td>HP capacitor (µF)</td><td>Series cap blocking lows from the tweeter</td><td>Film capacitor — this one directly shapes treble clarity</td></tr>
                   <tr><td>HP inductor (mH)</td><td>Shunt coil completing the high-pass</td><td>Air-core inductor, same current care as LP</td></tr>
                   <tr><td>Phase shift</td><td>90° per order per section</td><td>2nd order = 180° → reverse tweeter polarity</td></tr>
@@ -406,7 +407,7 @@
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-diagram-3 me-2"></i>Which Alignment Should You Choose?</h2>
-            <p>The alignment (Q factor) decides the filter's character — this is the choice competitors gloss over:</p>
+            <p><strong>The alignment (Q factor) decides the filter's character — this is the choice most calculator pages gloss over.</strong></p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Alignment</th><th>Q</th><th>Character</th><th>Choose it when…</th></tr></thead>
@@ -422,20 +423,25 @@
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-arrow-repeat me-2"></i>The 180° Phase Flip (and the One-Wire Fix)</h2>
-            <p>Every 2nd-order filter shifts phase <strong>90° per section</strong> — and with two sections (LP + HP) the tweeter ends up <strong>180° out of phase</strong> with the woofer at the crossover point. In-phase drivers sum; out-of-phase drivers <em>cancel</em>, carving a deep null right where the two bands meet.</p>
-            <p>The fix is one wire: <strong>reverse the tweeter's +/− connections</strong>. This is standard practice in 2nd-order designs, not a hack — commercial speakers do it routinely. (4th-order Linkwitz-Riley stays in phase and needs no reversal; 1st and 3rd order shift 90°/270°, where the answer depends on driver offset.) If your fresh build sounds hollow in the midrange, reversed tweeter polarity is suspect number one.</p>
+            <p><strong>A 2nd-order filter rotates phase 180°, so the tweeter's output arrives 180° out of phase with the woofer at the crossover point.</strong> In-phase drivers sum; out-of-phase drivers <em>cancel</em>, carving a deep null right where the two bands meet.</p>
+            <p>The fix is one wire: <strong>reverse the tweeter's +/− connections</strong>. This is standard practice in 2nd-order designs, not a hack — commercial speakers do it routinely. (4th-order Linkwitz-Riley stays in phase and needs no reversal; 1st and 3rd order shift 90°/270°, where the answer depends on driver offset.) If a fresh build sounds hollow in the midrange, reversed tweeter polarity is suspect number one.</p>
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: frequency response curves showing the cancellation null with normal polarity vs flat summing with reversed tweeter polarity at Fc]</div><figcaption class="small text-muted">Tweeter polarity and the crossover null. Suggested alt text: "Graph showing crossover response null fixed by reversing tweeter polarity"</figcaption></figure>
+          </section>
+
+          <section class="mb-4">
+            <h2 class="text-mid mb-3"><i class="bi bi-patch-question me-2"></i>LR2 vs LR4: Specify the Order</h2>
+            <p><strong>"Linkwitz-Riley" alone doesn't tell you the slope.</strong> <strong>LR2</strong> is the 12 dB/octave version; <strong>LR4</strong> is the 24 dB/octave version — and the one most people mean when they say "Linkwitz-Riley." Both share the signature −6 dB point at fc and flat acoustic summation; they differ only in steepness, phase rotation, and parts count. When following a design or forum advice, confirm which one is meant.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
             <ul>
-              <li><strong>Nominal impedance is a fiction.</strong> Real drivers' impedance swings with frequency (peaks at resonance, rises with voice-coil inductance) — textbook values assume a flat 8 Ω that doesn't exist. Consider a <a href="../zobel-network-calculator/">Zobel network</a> to flatten it.</li>
+              <li><strong>Nominal impedance is a fiction.</strong> Real drivers' impedance swings with frequency (peaks at resonance, rises with voice-coil inductance) — textbook values assume a flat 8 Ω that doesn't exist. Consider a <a href="../zobel-network-calculator/">Zobel network calculator</a> to flatten it.</li>
               <li><strong>Parts have tolerance.</strong> 5–10% tolerance on caps and coils shifts Fc noticeably; buy 5% film caps for the tweeter path at minimum.</li>
               <li><strong>2nd-order values scale by alignment Q</strong> in this tool — verify critical builds against a crossover design reference or measurement before ordering expensive parts.</li>
-              <li><strong>No baffle-step or diffraction compensation.</strong> Real designs add level correction the textbook math omits — measure the finished speaker if you can.</li>
+              <li><strong>No baffle-step or diffraction compensation.</strong> Real designs add level correction the textbook math omits — measure the finished speaker when possible.</li>
             </ul>
-            <p class="text-muted small"><em>Safety:</em> passive crossover parts are low-voltage, but always disconnect the amplifier before wiring, and keep soldering irons away from flammable materials.</p>
+            <p class="text-muted small"><em>Safety:</em> passive crossover parts are low-voltage, but disconnect the amplifier before wiring, and keep soldering irons away from flammable materials.</p>
           </section>
 
           <section class="mb-4">
@@ -464,7 +470,7 @@
                 </h3>
                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    For first order: L = R ÷ (2πf) henries and C = 1 ÷ (2πfR) farads, then convert to mH and µF. At 3000 Hz into 8 Ω that gives 0.42 mH and 6.63 µF. Higher orders cascade these sections and scale by the alignment's Q factor — or just enter your numbers above and read the results.
+                    To calculate crossover capacitor and inductor values, use L = R ÷ (2πf) henries and C = 1 ÷ (2πfR) farads for first order, then convert to mH and µF. At 3000 Hz into 8 Ω that gives 0.42 mH and 6.63 µF. Higher orders cascade these sections and scale by the alignment's Q factor — or enter your numbers in the calculator above and read the results.
                   </div>
                 </div>
               </div>
@@ -476,7 +482,7 @@
                 </h3>
                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Most 1" dome tweeters cross safely at 2500–3500 Hz with a 2nd-order (12 dB/oct) high-pass; never cross below roughly twice the tweeter's resonant frequency (Fs). Smaller tweeters and 1st-order slopes need higher points. When in doubt, cross higher — a tweeter playing too low distorts and dies young.
+                    The safe crossover frequency for most 1" dome tweeters is 2500–3500 Hz with a 2nd-order (12 dB/oct) high-pass. Never cross below roughly twice the tweeter's resonant frequency (Fs). Smaller tweeters and 1st-order slopes need higher points. When in doubt, cross higher — a tweeter playing too low distorts and fails early.
                   </div>
                 </div>
               </div>
@@ -488,7 +494,7 @@
                 </h3>
                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Butterworth (Q=0.707) gives the flattest individual response; Linkwitz-Riley (Q=0.5) gives flat <em>summed</em> response with drivers in phase — the modern default for studio monitors and serious DIY. Choose Butterworth for simplicity and PA; Linkwitz-Riley when imaging and flat summing matter most.
+                    It depends on your priority. Butterworth (Q=0.707) gives the flattest individual response; Linkwitz-Riley (Q=0.5) gives flat <em>summed</em> response with drivers in phase — the modern default for studio monitors and serious DIY. Choose Butterworth for simplicity and PA; Linkwitz-Riley when imaging and flat summing matter most.
                   </div>
                 </div>
               </div>
@@ -500,7 +506,7 @@
                 </h3>
                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    A 2nd-order filter shifts phase 180°, putting tweeter and woofer out of phase at the crossover point — they'd cancel and carve a deep null. Reversing the tweeter's +/− wires restores in-phase summing. It's standard practice, not a hack; 4th-order Linkwitz-Riley needs no reversal.
+                    You reverse the tweeter's polarity because a 2nd-order filter shifts phase 180°, putting tweeter and woofer out of phase at the crossover point — they'd cancel and carve a deep null. Reversing the tweeter's +/− wires restores in-phase summing. It's standard practice, not a hack; 4th-order Linkwitz-Riley needs no reversal.
                   </div>
                 </div>
               </div>
@@ -512,7 +518,7 @@
                 </h3>
                 <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    2nd order (12 dB/oct) is the sweet spot for most 2-way builds: solid driver protection without the parts count and phase headaches of higher orders. Use 1st order only with robust drivers crossed high; 4th order when you need brick-wall separation and can afford the complexity.
+                    Use 2nd order (12 dB/oct) for most 2-way builds: solid driver protection without the parts count and phase headaches of higher orders. Use 1st order only with robust drivers crossed high; 4th order when you need brick-wall separation and can afford the complexity.
                   </div>
                 </div>
               </div>
@@ -524,7 +530,7 @@
                 </h3>
                 <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Often yes for the woofer: a driver's impedance rises with frequency due to voice-coil inductance, which skews textbook filter values. A Zobel (resistor + capacitor in series, shunted across the driver) flattens it back toward nominal. Try our Zobel network calculator to get its values.
+                    Yes, often for the woofer: a driver's impedance rises with frequency due to voice-coil inductance, which skews textbook filter values. A Zobel (resistor + capacitor in series, shunted across the driver) flattens it back toward nominal. Size it with the Zobel network calculator.
                   </div>
                 </div>
               </div>
@@ -536,7 +542,7 @@
                 </h3>
                 <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    They work and they're cheap, but non-polarized electrolytics drift with age and sound worse than film types in the tweeter path. Use film/foil capacitors (polypropylene) for everything in the signal path if budget allows; save electrolytics for shunt positions in budget woofer sections only.
+                    Yes, but only non-polarized (bipolar) types — and film capacitors (polypropylene) are the better choice for everything in the signal path. Electrolytics are cheap, but they drift with age and sound worse in the tweeter path. Save them for shunt positions in budget woofer sections only.
                   </div>
                 </div>
               </div>
@@ -548,7 +554,7 @@
                 </h3>
                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    The top suspects: tweeter polarity not reversed (hollow midrange null), real driver impedance differing from the nominal value used in math (shifts Fc), or parts wired to the wrong driver. Verify polarity first, then measure or estimate actual impedance — textbook values assume a perfect resistor.
+                    Your DIY crossover sounds wrong most often because of three suspects: tweeter polarity not reversed (hollow midrange null), real driver impedance differing from the nominal value used in the math (shifts Fc), or parts wired to the wrong driver. Verify polarity first, then measure or estimate actual impedance — textbook values assume a perfect resistor.
                   </div>
                 </div>
               </div>
@@ -560,7 +566,7 @@
                 </h3>
                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    The math is exact for ideal components and resistive loads — excellent starting values. Real builds deviate because of parts tolerance (5–10%) and drivers' non-flat impedance curves. Treat results as precision starting points, then verify by ear or measurement and tweak.
+                    Online crossover calculators are exact for ideal components and resistive loads — excellent starting values. Real builds deviate because of parts tolerance (5–10%) and drivers' non-flat impedance curves. Treat results as precision starting points, then verify by ear or measurement and tweak.
                   </div>
                 </div>
               </div>
@@ -572,7 +578,7 @@
                 </h3>
                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Q describes the filter's shape at the crossover point: Q=0.707 (Butterworth) is maximally flat, Q=0.5 (Linkwitz-Riley) sums flat in phase, Q=0.577 (Bessel) preserves transient shape best. Higher Q means a peakier knee; lower Q means a gentler, more gradual transition.
+                    Q factor describes the filter's shape at the crossover point: Q=0.707 (Butterworth) is maximally flat, Q=0.5 (Linkwitz-Riley) sums flat in phase, Q=0.577 (Bessel) preserves transient shape best. Higher Q means a peakier knee; lower Q means a gentler, more gradual transition.
                   </div>
                 </div>
               </div>
@@ -580,7 +586,7 @@
           </section>
 
           <section class="mb-4">
-            <p class="text-muted small">Related tools: <a href="../passive-crossover-calculator/">passive crossover calculator</a> for full networks, <a href="../crossover-slope-calculator/">crossover slope calculator</a>, <a href="../zobel-network-calculator/">Zobel network calculator</a> for impedance flattening, <a href="../speaker-impedance-calculator/">impedance calculator</a>, and <a href="../impedance-frequency-plotter-advanced/">impedance frequency plotter</a> to see real curves.</p>
+            <p class="text-muted small">Related tools: <a href="../passive-crossover-calculator/">passive crossover calculator</a> for full networks, <a href="../crossover-slope-calculator/">crossover slope calculator</a>, <a href="../zobel-network-calculator/">Zobel network calculator</a> for impedance flattening, <a href="../speaker-impedance-calculator/">speaker impedance calculator</a>, and <a href="../impedance-frequency-plotter-advanced/">impedance frequency plotter</a> to see real curves.</p>
           </section>
                 </article>
             </div>

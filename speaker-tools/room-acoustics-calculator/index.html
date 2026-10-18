@@ -54,7 +54,7 @@
                     "name": "What is RT60 in room acoustics?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "RT60 is the time in seconds for sound to decay by 60 dB after the source stops. It summarizes how \"live\" or \"dead\" a room sounds. Small studios target 0.2–0.5 s; concert halls run 1.5–2.2 s. It's estimated with the Sabine formula: RT60 = 0.161 × V / A."
+                        "text": "RT60 is the time in seconds for sound to decay by 60 dB after the source stops. It summarizes how \"live\" or \"dead\" a room sounds. Small studios target 0.2–0.5 s; concert halls run 1.5–2.2 s. Estimate it with the Sabine formula: RT60 = 0.161 × V / A."
                     }
                 },
                 {
@@ -70,7 +70,15 @@
                     "name": "What is a good RT60 for a home studio?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "For mixing, 0.2–0.4 s — dry enough that the room doesn't lie to you about reverb in the mix. For recording vocals or instruments, 0.3–0.6 s keeps some life. Measure or estimate your current RT60 first; most untreated bedrooms sit near 0.7–1.0 s and need significant treatment."
+                        "text": "For mixing, 0.2–0.4 s — dry enough that the room does not lie to you about reverb in the mix. For recording vocals or instruments, 0.3–0.6 s keeps some life. Estimate your current RT60 first; most untreated bedrooms sit near 0.7–1.0 s and need significant treatment."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How many sabins of absorption do I need?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Work backwards from your target: required sabins = 0.161 × volume (m³) ÷ target RT60, minus the absorption you already have. Our worked example (76.5 m³ room, furnished, targeting 0.4 s) needs 30.8 sabins total and must add 13.7 — about 15 m² of α = 0.9 panel, or roughly ten 2×4 ft panels."
                     }
                 },
                 {
@@ -78,7 +86,7 @@
                     "name": "Why does my room sound boomy at certain bass notes?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "You're hearing axial room modes — standing waves that amplify specific frequencies. Check your room's mode table: the boomy note will match one closely. Fix it with bass traps in the corners (pressure maxima), and move your listening position away from the mode's null or peak."
+                        "text": "You are hearing axial room modes — standing waves that amplify specific frequencies. Check your room's mode table: the boomy note will match one closely. Fix it with bass traps in the corners (pressure maxima), and move your listening position away from the mode's null or peak."
                     }
                 },
                 {
@@ -102,7 +110,7 @@
                     "name": "Do foam acoustic panels work for bass?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "No — thin foam (1–2\") absorbs mids and highs only. Bass wavelengths are feet long; effective bass traps need 4+ inches of depth in pressure zones (corners). Foam helps flutter echo and harshness, but it will never fix a boomy room. That's the most common treatment money pit."
+                        "text": "No — thin foam (1–2\") absorbs mids and highs only. Bass wavelengths are feet long; effective bass traps need 4+ inches of depth in pressure zones (corners). Foam helps flutter echo and harshness, but it will never fix a boomy room. That is the most common treatment money pit."
                     }
                 },
                 {
@@ -110,7 +118,7 @@
                     "name": "What are the best room dimensions for audio?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Ratios that spread modes evenly, like 1 : 1.26 : 1.59 or 1 : 1.6 : 2.33 (H:W:L). Avoid cubes and simple multiples (12×12×8 ft stacks every mode). If you're stuck with bad ratios, compensate with extra bass trapping at the coincident frequencies."
+                        "text": "Ratios that spread modes evenly, like 1 : 1.26 : 1.59 or 1 : 1.6 : 2.33 (H:W:L). Avoid cubes and simple multiples (12×12×8 ft stacks every mode). If you are stuck with bad ratios, compensate with extra bass trapping at the coincident frequencies."
                     }
                 },
                 {
@@ -118,7 +126,7 @@
                     "name": "How do I stop flutter echo?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Treat one of the two parallel walls — absorption on just one side breaks the back-and-forth cycle. Alternatively, diffuse one wall to scatter reflections. Test with a sharp hand clap: the metallic ringing tail should disappear after treatment."
+                        "text": "Treat one of the two parallel walls — absorption on just one side breaks the back-and-forth cycle. Diffuse one wall to scatter reflections as an alternative. Test with a sharp hand clap: the metallic ringing tail should disappear after treatment."
                     }
                 },
                 {
@@ -126,7 +134,7 @@
                     "name": "Absorption or diffusion: which should I buy first?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Absorption first — it solves the biggest problems (reflections, modal ringing, flutter). Add diffusion later on the rear wall to restore a sense of space without adding echo. Diffusers need several feet of distance to work properly, so they're a poor choice for tiny rooms."
+                        "text": "Absorption first — it solves the biggest problems (reflections, modal ringing, flutter). Add diffusion later on the rear wall to restore a sense of space without adding echo. Diffusers need several feet of distance to work properly, so they are a poor choice for tiny rooms."
                     }
                 }
             ]
@@ -251,9 +259,9 @@
                 <article class="tool-container mt-4" id="main-content">
                     <header class="mb-4">
                         <h1 class="text-teal mb-3">Room Acoustics Calculator</h1>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p class="lead text-muted">
-                            A <strong>room acoustics calculator</strong> estimates your room's reverberation time (RT60), axial standing-wave modes, and treatment needs from its dimensions. Enter length, width, height, surface condition, and use case — this tool returns RT60, the first three modes per dimension, and targeted treatment recommendations.
+                            A <strong>room acoustics calculator</strong> estimates your room's reverberation time (RT60), lists its first axial standing-wave modes, and tells you what treatment to add first. Enter length, width, height, surface condition, and use case — this tool returns RT60, the nine most important bass frequencies, and recommendations ranked by impact per dollar.
                         </p>
                     </header>
 
@@ -262,13 +270,13 @@
                         <ul>
                             <li><strong>RT60 = 0.161 × V / A</strong> (Sabine, metric) — volume divided by total absorption sets decay time.</li>
                             <li>Axial modes: <strong>f = c / 2L</strong> — the first three per dimension cause most small-room bass problems.</li>
-                            <li>Target RT60: <strong>0.2–0.4 s</strong> mixing, <strong>0.3–0.5 s</strong> listening, <strong>0.4–0.6 s</strong> home theater.</li>
+                            <li>Target RT60: <strong>0.2–0.4 s</strong> mixing, <strong>0.3–0.5 s</strong> listening, <strong>0.4–0.6 s</strong> recording and home theater.</li>
+                            <li>To halve your RT60 you must <strong>double</strong> total absorption — a worked panel budget is below.</li>
                             <li>Below the <strong>Schroeder frequency</strong> (~150–250 Hz in small rooms), modes rule — treat bass, not reverb.</li>
-                            <li><strong>Bass traps go in corners</strong>; thin foam only tames mids and highs.</li>
                         </ul>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: room cross-section showing axial standing wave between two walls (node lines), first-reflection paths from speaker to listener via side wall, and corner bass-trap placement]</div><figcaption>Axial modes, first reflections, and corner bass buildup — the three things this calculator quantifies.</figcaption></figure>
+                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: room cross-section showing an axial standing wave between two walls, first-reflection paths from speaker to listener via the side wall, and corner bass-trap placement]</div><figcaption>Axial modes, first reflections, and corner bass buildup — the three things this calculator quantifies.</figcaption></figure>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Is Room Acoustics?</h2>
@@ -276,17 +284,17 @@
                             <strong>Definition:</strong> Room acoustics is how a room's size, shape, and surfaces shape the sound you hear. Two numbers summarize it: RT60, the seconds for sound to decay 60 dB (reverberation), and the room's modal frequencies, where sound waves fit exactly between walls and pile up into boomy standing waves.
                         </div>
                         <p>
-                            In small rooms — studios, bedrooms, home theaters — the <strong>modes</strong> matter more than the reverb. A 15-foot room has its first length mode near 38 Hz; play a bass note there and the room amplifies it, while a note halfway between modes nearly disappears. Move your head a foot and the bass changes completely. That's modal behavior, and no equalizer fully fixes it — only treatment and placement do.
+                            In small rooms — studios, bedrooms, home theaters — the <strong>modes</strong> matter more than the reverb. A 15-foot room has its first length mode near 38 Hz; play a bass note there and the room amplifies it, while a note between modes nearly disappears. Move your head a foot and the bass changes completely. No equalizer fully fixes modal behavior — only treatment and placement do.
                         </p>
                         <p>
-                            <strong>RT60</strong> describes the statistical wash of reflections above the modal region. Too long and speech smears; too short and the room sounds unnaturally dead. Different uses want different targets (see the table below).
+                            <strong>RT60</strong> describes the statistical wash of reflections above the modal region. Too long and speech smears; too short and the room sounds unnaturally dead. Different uses want different targets, and this calculator compares your room against each one.
                         </p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
                         <p>
-                            This calculator combines three classic acoustic models from your room dimensions. It computes the first three <strong>axial modes</strong> per dimension, estimates <strong>RT60</strong> with the Sabine formula using a preset absorption coefficient for your surface condition, and compares the result against target ranges for your use case to generate treatment recommendations.
+                            This calculator combines two classic acoustic models from your room dimensions. It computes the first three <strong>axial modes</strong> per dimension, estimates <strong>RT60</strong> with the Sabine formula using a preset average absorption for your surface condition, then compares the result against your use case's target range to generate treatment recommendations.
                         </p>
                         <p>
                             <strong>Methodology:</strong> axial modes via <code>f = c / 2L</code> (c = 1125 ft/s), giving f1, f2, f3 per dimension. RT60 via Sabine: <code>RT60 = 0.161 × V / A</code> with metric volume and total absorption A = surface-area × α, where α = 0.05 (bare), 0.15 (furnished), or 0.35 (treated). We verified the widget's mode frequencies and RT60 against hand calculations for 5 room sizes (10×12×8 ft through 25×18×10 ft); all match to the displayed precision.
@@ -302,9 +310,9 @@
                         <p><strong>Worked example:</strong> room <strong>20 × 15 × 9 ft</strong>, furnished (α = 0.15):</p>
                         <ol>
                             <li>Volume: 20 × 15 × 9 = 2,700 ft³ = <strong>76.5 m³</strong>.</li>
-                            <li>Surface: 2(20×15 + 20×9 + 15×9) = 2(300 + 180 + 135) = <strong>1,230 ft²</strong> = 114.3 m².</li>
+                            <li>Surface: 2(20×15 + 20×9 + 15×9) = 2(300 + 180 + 135) = 1,230 ft² = <strong>114.3 m²</strong>.</li>
                             <li>Absorption: A = 114.3 × 0.15 = <strong>17.1 sabins</strong>.</li>
-                            <li>RT60 = 0.161 × 76.5 / 17.1 = <strong>0.72 s</strong> — too live for mixing (target 0.2–0.4 s); needs treatment.</li>
+                            <li>RT60 = 0.161 × 76.5 / 17.1 = <strong>0.72 s</strong> — too live for mixing (target 0.2–0.4 s); this room needs treatment.</li>
                             <li>First length mode: f1 = 1125 / (2 × 20) = <strong>28.1 Hz</strong>; f2 = 56.3 Hz; f3 = 84.4 Hz.</li>
                         </ol>
                     </section>
@@ -338,6 +346,18 @@
                     </section>
 
                     <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-cart me-2"></i>How Many Sabins You Actually Need</h2>
+                        <p>RT60 targets convert directly into a shopping list. <strong>Work backwards:</strong> the absorption your target requires is <code>A_needed = 0.161 × V / RT60_target</code> — subtract what you already have, and the remainder is what you must buy.</p>
+                        <p><strong>Worked budget</strong> on the example room (76.5 m³, furnished, existing A = 17.1 sabins), targeting 0.4 s for mixing-adjacent listening:</p>
+                        <ol>
+                            <li>A_needed = 0.161 × 76.5 / 0.4 = <strong>30.8 sabins</strong>.</li>
+                            <li>To add: 30.8 − 17.1 = <strong>13.7 sabins</strong>.</li>
+                            <li>With α = 0.9 panels: 13.7 / 0.9 ≈ <strong>15.2 m² of panel</strong> — about 164 ft², or roughly ten 2×4 ft panels.</li>
+                        </ol>
+                        <p>Remember the doubling rule: to halve your RT60, you must <strong>double</strong> total absorption. Buy panels rated with full frequency data (not just NRC), and subtract absorption you already own — carpet, curtains, and bookshelves count.</p>
+                    </section>
+
+                    <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-patch-question me-2"></i>Schroeder Frequency: Where Modes Stop and Reverb Starts</h2>
                         <p>Below roughly <strong>2000 × √(RT60 / V)</strong> Hz, your room is a collection of individual resonances; above it, reflections blur into statistical reverb. For the worked 76.5 m³ room at 0.72 s RT60: 2000 × √(0.72/76.5) ≈ <strong>194 Hz</strong>.</p>
                         <p>This dividing line changes your treatment strategy completely. <strong>Below</strong> it, RT60 tweaks do almost nothing — you need bass traps targeting specific modal frequencies. <strong>Above</strong> it, absorption panels and diffusion control the decay. Most small-room complaints ("boomy bass", "boxy vocals") live below the Schroeder frequency, which is why foam panels alone never fix them.</p>
@@ -352,10 +372,10 @@
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-soundwave me-2"></i>Flutter Echo: The Clap Test</h2>
                         <p>Stand in the middle of your room and <strong>clap once, sharply</strong>. If you hear a metallic ringing tail — like a spring reverb — that's <strong>flutter echo</strong>: sound bouncing back and forth between parallel bare walls. It murders vocal clarity and stereo imaging.</p>
-                        <p>Fix it by breaking the parallelism's symmetry: absorption on <strong>one</strong> of the two walls is enough (both is overkill), or add diffusion to scatter the reflections in time. Bookshelves full of uneven books are a surprisingly effective folk remedy — genuine diffusion, not absorption.</p>
+                        <p>Fix it by breaking the cycle: absorption on <strong>one</strong> of the two walls is enough (both is overkill), or add diffusion to scatter the reflections in time. Bookshelves full of uneven books are a surprisingly effective folk remedy — genuine diffusion, not absorption.</p>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: top-down room view showing speaker/listener triangle, mirror-trick reflection points on side walls marked for panels, bass traps in all four corners, and a diffuser on the rear wall]</div><figcaption>Priority treatment layout: corner bass traps, first-reflection panels, rear-wall diffusion.</figcaption></figure>
+                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: top-down room view showing the speaker/listener triangle, mirror-trick reflection points on side walls marked for panels, bass traps in all four corners, and a diffuser on the rear wall]</div><figcaption>Priority treatment layout: corner bass traps, first-reflection panels, rear-wall diffusion.</figcaption></figure>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-rulers me-2"></i>Room Ratios: Don't Build a Cube</h2>
@@ -365,12 +385,13 @@
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-box-seam me-2"></i>Bass Traps: Why Corners, How Deep</h2>
-                        <p>Bass <strong>pressure is highest where room boundaries meet</strong> — corners, especially tri-corners where two walls meet the ceiling or floor. That's where traps absorb the most modal energy per square foot. A trap on a flat wall mid-room does a fraction of the work.</p>
-                        <p>Depth is everything: porous absorption only works where air <strong>moves</strong>, and bass wavelengths are huge. Effective bass traps start at <strong>4 inches deep</strong> (straddling corners to gain depth) and the classic "superchunk" — a floor-to-ceiling triangle of insulation stuffed into the corner — remains the price/performance king. The 1-inch foam squares sold as "bass traps" are not bass traps.</p>
+                        <p>Bass <strong>pressure is highest where room boundaries meet</strong> — corners, especially tri-corners where two walls meet the ceiling or floor. That's where traps absorb the most modal energy per square foot. A trap on a flat mid-room wall does a fraction of the work.</p>
+                        <p>Depth follows the <strong>quarter-wavelength rule</strong>: porous absorption peaks where the material thickness (plus any air gap) reaches about a quarter wavelength. A 4" panel peaks near <strong>850 Hz</strong>; straddling a corner with an 8" effective depth pushes that to ~<strong>420 Hz</strong>. The classic "superchunk" — a floor-to-ceiling triangle of insulation stuffed into the corner — wins on price per low-frequency sabin. The 1-inch foam squares sold as "bass traps" are not bass traps.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-table me-2"></i>Absorption Coefficients: What's Actually Absorptive</h2>
+                        <p>Typical values at <strong>500 Hz</strong> (speech range). One number never tells the whole story — real absorption falls off toward bass and rises toward treble:</p>
                         <div class="table-responsive mb-4">
                             <table class="table table-bordered table-hover align-middle">
                                 <thead class="table-light">
@@ -380,6 +401,7 @@
                                     <tr><td>Concrete / brick</td><td>0.02</td><td>Essentially reflective</td></tr>
                                     <tr><td>Drywall on studs</td><td>0.05</td><td>The widget's "bare" preset</td></tr>
                                     <tr><td>Window glass</td><td>0.04</td><td>Reflective; heavy curtains help</td></tr>
+                                    <tr><td>Open doorway / window</td><td>~1.0</td><td>Sound leaves the room — counts as perfect absorption</td></tr>
                                     <tr><td>Carpet on concrete</td><td>0.3</td><td>Highs only — no bass effect</td></tr>
                                     <tr><td>Heavy curtains</td><td>0.5</td><td>Good broadband-ish absorber</td></tr>
                                     <tr><td>2" acoustic panel</td><td>0.8</td><td>Effective down to ~500 Hz</td></tr>
@@ -387,7 +409,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p>Sanity-check the widget's presets against this table: a "furnished" 0.15 average is plausible for a carpeted living room with curtains and a couch; a bare drywall box really is near 0.05.</p>
+                        <p>Sanity-check the widget's presets against this table: a "furnished" 0.15 average is plausible for a carpeted living room with curtains and a couch; a bare drywall box really is near 0.05. And remember that open doorway: a permanently open room behaves acoustically larger than its measured volume.</p>
                     </section>
 
                     <section class="mb-5">
@@ -396,6 +418,7 @@
                             <li><strong>Axial modes only.</strong> Tangential and oblique modes exist too but are weaker; the widget lists the dominant three per dimension.</li>
                             <li><strong>Single-number RT60.</strong> Real RT60 varies with frequency — bass decays longer. The widget gives a mid-band estimate.</li>
                             <li><strong>Absorption presets are averages.</strong> Your actual α depends on furnishings; measure with a clap and an RTA app for ground truth.</li>
+                            <li><strong>Sabine overestimates dead rooms.</strong> The "treated" preset (α = 0.35) pushes past the range where the Sabine formula is most accurate — the Eyring–Norris formula gives truer numbers for heavily treated rooms.</li>
                             <li><strong>Rectangular rooms assumed.</strong> L-shaped rooms, vaulted ceilings, and open floor plans break the simple models.</li>
                             <li><strong>No speaker/listener positions.</strong> Mode <em>excitation</em> depends on where the sub and your ears sit relative to nodes — the frequencies are fixed, the audibility isn't.</li>
                         </ul>
@@ -429,7 +452,7 @@
                                 </h3>
                                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
-                                        RT60 is the time in seconds for sound to decay by 60 dB after the source stops. It summarizes how "live" or "dead" a room sounds. Small studios target 0.2–0.5 s; concert halls run 1.5–2.2 s. It's estimated with the Sabine formula: RT60 = 0.161 × V / A.
+                                        RT60 is the time in seconds for sound to decay by 60 dB after the source stops. It summarizes how "live" or "dead" a room sounds. Small studios target 0.2–0.5 s; concert halls run 1.5–2.2 s. Estimate it with the Sabine formula: RT60 = 0.161 × V / A.
                                     </div>
                                 </div>
                             </div>
@@ -453,29 +476,41 @@
                                 </h3>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
-                                        For mixing, 0.2–0.4 s — dry enough that the room doesn't lie to you about reverb in the mix. For recording vocals or instruments, 0.3–0.6 s keeps some life. Measure or estimate your current RT60 first; most untreated bedrooms sit near 0.7–1.0 s and need significant treatment.
+                                        For mixing, 0.2–0.4 s — dry enough that the room does not lie to you about reverb in the mix. For recording vocals or instruments, 0.3–0.6 s keeps some life. Estimate your current RT60 first; most untreated bedrooms sit near 0.7–1.0 s and need significant treatment.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                        Why does my room sound boomy at certain bass notes?
+                                        How many sabins of absorption do I need?
                                     </button>
                                 </h3>
                                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
-                                        You're hearing axial room modes — standing waves that amplify specific frequencies. Check your room's mode table: the boomy note will match one closely. Fix it with bass traps in the corners (pressure maxima), and move your listening position away from the mode's null or peak.
+                                        Work backwards from your target: required sabins = 0.161 × volume (m³) ÷ target RT60, minus the absorption you already have. Our worked example (76.5 m³ room, furnished, targeting 0.4 s) needs 30.8 sabins total and must add 13.7 — about 15 m² of α = 0.9 panel, or roughly ten 2×4 ft panels.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                        What is the Schroeder frequency?
+                                        Why does my room sound boomy at certain bass notes?
                                     </button>
                                 </h3>
                                 <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        You are hearing axial room modes — standing waves that amplify specific frequencies. Check your room's mode table: the boomy note will match one closely. Fix it with bass traps in the corners (pressure maxima), and move your listening position away from the mode's null or peak.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                        What is the Schroeder frequency?
+                                    </button>
+                                </h3>
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
                                         The frequency dividing modal behavior from statistical reverberation, roughly 2000√(RT60/V). Below it (typically 150–250 Hz in small rooms), individual room modes dominate and need targeted bass trapping. Above it, broadband absorption and diffusion control the sound.
                                     </div>
@@ -483,11 +518,11 @@
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
                                         Where should I put acoustic panels first?
                                     </button>
                                 </h3>
-                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
                                         In priority order: (1) bass traps in the front corners, (2) absorption at side-wall first-reflection points (find them with the mirror trick), (3) a ceiling cloud above the listening position, (4) diffusion or absorption on the rear wall. This sequence gives the most improvement per dollar.
                                     </div>
@@ -495,49 +530,49 @@
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-                                        Do foam acoustic panels work for bass?
-                                    </button>
-                                </h3>
-                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
-                                    <div class="accordion-body text-secondary">
-                                        No — thin foam (1–2") absorbs mids and highs only. Bass wavelengths are feet long; effective bass traps need 4+ inches of depth in pressure zones (corners). Foam helps flutter echo and harshness, but it will never fix a boomy room. That's the most common treatment money pit.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
-                                        What are the best room dimensions for audio?
+                                        Do foam acoustic panels work for bass?
                                     </button>
                                 </h3>
                                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Ratios that spread modes evenly, like 1 : 1.26 : 1.59 or 1 : 1.6 : 2.33 (H:W:L). Avoid cubes and simple multiples (12×12×8 ft stacks every mode). If you're stuck with bad ratios, compensate with extra bass trapping at the coincident frequencies.
+                                        No — thin foam (1–2") absorbs mids and highs only. Bass wavelengths are feet long; effective bass traps need 4+ inches of depth in pressure zones (corners). Foam helps flutter echo and harshness, but it will never fix a boomy room. That is the most common treatment money pit.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
-                                        How do I stop flutter echo?
+                                        What are the best room dimensions for audio?
                                     </button>
                                 </h3>
                                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Treat one of the two parallel walls — absorption on just one side breaks the back-and-forth cycle. Alternatively, diffuse one wall to scatter reflections. Test with a sharp hand clap: the metallic ringing tail should disappear after treatment.
+                                        Ratios that spread modes evenly, like 1 : 1.26 : 1.59 or 1 : 1.6 : 2.33 (H:W:L). Avoid cubes and simple multiples (12×12×8 ft stacks every mode). If you are stuck with bad ratios, compensate with extra bass trapping at the coincident frequencies.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
-                                        Absorption or diffusion: which should I buy first?
+                                        How do I stop flutter echo?
                                     </button>
                                 </h3>
                                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Absorption first — it solves the biggest problems (reflections, modal ringing, flutter). Add diffusion later on the rear wall to restore a sense of space without adding echo. Diffusers need several feet of distance to work properly, so they're a poor choice for tiny rooms.
+                                        Treat one of the two parallel walls — absorption on just one side breaks the back-and-forth cycle. Diffuse one wall to scatter reflections as an alternative. Test with a sharp hand clap: the metallic ringing tail should disappear after treatment.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                        Absorption or diffusion: which should I buy first?
+                                    </button>
+                                </h3>
+                                <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#roomAcousticsFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Absorption first — it solves the biggest problems (reflections, modal ringing, flutter). Add diffusion later on the rear wall to restore a sense of space without adding echo. Diffusers need several feet of distance to work properly, so they are a poor choice for tiny rooms.
                                     </div>
                                 </div>
                             </div>
@@ -559,6 +594,7 @@
                         </ul>
                     </section>
                 </article>
+
 
             </div>
 

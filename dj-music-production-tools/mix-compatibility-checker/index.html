@@ -35,92 +35,92 @@
     <!-- FAQPage Schema -->
         <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What makes two tracks compatible for DJ mixing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Two things: matching musical keys and close tempos. Keys are compatible when they share the same Camelot code, are relative major/minor (same number), or sit ±1 step apart on the wheel. Tempos are compatible when the BPM gap is small enough for your pitch fader — roughly within ±3 BPM for an effortless blend."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does the Camelot Wheel calculate harmonic compatibility?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Camelot Wheel relabels the circle of fifths as DJ-friendly codes (1A–12A minor, 1B–12B major). Compatibility is positional: same code is a perfect match, same number with a different letter is the relative major/minor, and ±1 step is a perfect fifth apart. This calculator scores those positions +3, +3, +2, +1, 0, or −1."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the maximum BPM difference before a mix sounds bad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Up to 3 BPM is easy — about 2.3% pitch shift at 128 BPM. From 4–6 BPM you'll want key lock on. Past 10 BPM (roughly 8%+ shift) vocals and transients audibly degrade, and most DJs choose a different track. The exception is half-time/double-time pairs (70 vs 140 BPM), which share a beat grid despite the gap."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I mix songs in completely different keys without clashing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not with a long blend — distant keys (this calculator's −1 'Key Clash') put dissonant notes on top of each other. But you can still play them back-to-back using a quick cut, an echo-out, a loop roll, or a breakdown as cover. Save harmonic blends for compatible keys and use effects for the risky jumps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is \"energy boost\" mixing on the Camelot Wheel?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Moving +1 Camelot number (e.g. 8A → 9A) shifts the music up a perfect fifth — 7 semitones. Our ears hear that interval as a lift, so the same groove feels brighter and more urgent. DJs use energy-boost mixes to escalate toward peak-time tracks; moving −1 does the reverse and cools the room."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I mix half-time and double-time tempos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Match phrases, not just beats. A 70 BPM track and a 140 BPM track share downbeats (0.5× ratio), so their grids align — bring the faster track in on a breakdown of the slower one and let the energy double at the drop. Keep blends short; the groove feels can drift even when the math lines up."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I use key lock (Master Tempo) when mixing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Use it when the BPM gap exceeds ~3 BPM — it holds the track's musical pitch steady while you stretch the tempo. Below that, leave it off for the cleanest sound. Past about ±6% shift, time-stretching smears transients and thins vocals, so for gaps over 10 BPM it's usually better to pick a closer track."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between Camelot and Open Key notation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "They label the same 24 keys differently: Camelot uses 1A–12B (Mixed In Key), Open Key uses codes like 6m/6d (Traktor). 'm' means minor (Camelot A-side), 'd' means major (B-side). The mixing rules are identical — just learn which system your DJ software displays."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do professional DJs actually use harmonic mixing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Many do, especially in house, techno, and trance where long blends are the norm — Mixed In Key's Camelot system came from working DJs. But plenty of pros in hip-hop, D&B, and open-format mix by energy, phrasing, and ear instead. Treat harmonic mixing as a tool that raises your hit rate, not a rule."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does my transition sound off even at the same BPM?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usually one of three culprits: clashing keys (check the Camelot codes), mismatched phrasing (you mixed into a verse instead of a 16-bar boundary), or key-lock artifacts from an earlier pitch change. Fix the key first with the checker above, then count phrases — most dance tracks change sections every 16 or 32 bars."
-          }
-        }
-      ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes two tracks compatible for DJ mixing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compatible keys and close tempos. Keys are compatible with the same Camelot code, relative major/minor (same number), or ±1 step; tempos are compatible within ~±3 BPM for an effortless blend. This checker scores both halves and adds them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Camelot Wheel calculate harmonic compatibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Position, not theory. The Camelot Wheel relabels the circle of fifths as 1A–12A (minor) and 1B–12B (major). Same code = perfect; same number, letter swap = relative major/minor; ±1 = a fifth apart. This calculator turns those positions into scores: +3, +3, +2, +1, 0, −1."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum BPM difference before a mix sounds bad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Past 10 BPM, most DJs pick another track. 0–3 BPM is easy (~2.3% at 128 BPM); 4–6 BPM wants key lock on; past 10 BPM (roughly 8%+) vocals and transients degrade audibly. The exception: half-time/double-time pairs (70 vs 140 BPM) share a beat grid despite the gap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I mix songs in completely different keys without clashing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with a long blend. Distant keys (−1 'Key Clash' here) stack dissonant notes. Play them back-to-back instead: quick cut, echo-out, loop roll, or a breakdown as cover. Save harmonic blends for compatible keys; use effects for the risky jumps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is \"energy boost\" mixing on the Camelot Wheel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moving +1 Camelot number (8A → 9A) shifts the music up a perfect fifth — 7 semitones. Ears hear that interval as a lift, so the groove feels brighter. DJs use it to escalate toward peak-time tracks; −1 cools the room. The key change alone doesn't guarantee the lift — track selection and timing do the rest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I mix half-time and double-time tempos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Match phrases, not just beats. A 70 BPM and 140 BPM track share downbeats, so bring the faster track in on a breakdown of the slower one and let the energy double at the drop. Keep blends short — the groove feel drifts even when the math lines up. Note: this widget scores such pairs Difficult; override it by ear."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use key lock (Master Tempo) when mixing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, past ~3 BPM of gap. Key lock holds musical pitch steady while tempo changes. Below that, leave it off for the cleanest sound. Past ~6% shift, time-stretching smears transients and thins vocals — for gaps over 10 BPM, pick a closer track."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Camelot and Open Key notation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Different labels, same 24 keys. Camelot uses 1A–12B (Mixed In Key); Open Key uses 1m–12d (Traktor): m = minor, d = major. Convert by subtracting 7 from the Camelot number (8A → 1m). The mixing rules are identical — learn whichever your software displays."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do professional DJs actually use harmonic mixing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many do — as a tool, not a rule. House, techno, and trance DJs lean on it for long blends; Mixed In Key's Camelot system came from working DJs. Hip-hop, D&B, and open-format pros often mix by energy, phrasing, and ear. Use it to raise your hit rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my transition sound off even at the same BPM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three usual culprits: clashing keys (check the Camelot codes), mismatched phrasing (you mixed into a verse instead of a 16-bar boundary), or key-lock artifacts from an earlier pitch change. Fix the key first with the checker above, then count phrases — most dance tracks change sections every 16 or 32 bars."
+      }
     }
-    </script>
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -204,9 +204,9 @@
 
                 <div class="tool-container">
                     <div class="tool-title mb-4">
-                        <h1 class="display-6 fw-bold text-teal"><i class="bi bi-check2-circle me-2"></i>Mix Compatibility Checker</h1>
+                        <h1 class="display-6 fw-bold text-teal"><i class="bi bi-check2-circle me-2"></i>Mix Compatibility Checker: DJ Key &amp; BPM Tool</h1>
                         <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
-                        <p class="lead text-muted">A <strong>mix compatibility checker</strong> tells you whether two tracks will blend cleanly by scoring their <strong>key harmony</strong> (Camelot Wheel) and <strong>tempo match</strong> (BPM difference). Enter both tracks below for an instant verdict — plus transition tips when a pair only partly fits.</p>
+                        <p class="lead text-muted">A <strong>mix compatibility checker</strong> scores whether two tracks blend cleanly — <strong>key harmony</strong> on the Camelot Wheel plus <strong>tempo match</strong> on the BPM gap. Enter both tracks below for an instant verdict and transition tips when a pair only partly fits.</p>
                     </div>
 
                     <div class="row g-4 mb-4">
@@ -332,22 +332,22 @@
                             <h2 class="h3 fw-bold text-teal mb-3">Key Takeaways</h2>
                             <ul>
                                 <li><strong>Mix compatibility has two halves:</strong> key harmony (Camelot Wheel) and tempo match (BPM difference). Both must pass for a clean blend.</li>
-                                <li>This calculator scores each half from <strong>−1 to +3</strong> and adds them: <strong>5+ = Excellent, 3–4 = Good, 1–2 = Possible, below 1 = Not Recommended</strong>.</li>
-                                <li><strong>Same Camelot number</strong> (e.g. 8A → 8B, relative major/minor) always mixes cleanly; <strong>±1 same letter</strong> (8A → 9A) raises energy a perfect fifth.</li>
-                                <li><strong>±3 BPM</strong> is the easy-mix line — about 2.3% pitch shift at 128 BPM, well inside a standard ±8% pitch fader.</li>
-                                <li>We verified this page's scoring against its own code with 5 key/BPM pairs; every tier boundary matched the published rubric below.</li>
+                                <li><strong>The rubric scores each half −1 to +3 and adds them:</strong> 5–6 = Excellent, 3–4 = Good, 1–2 = Possible, 0 or less = Not Recommended.</li>
+                                <li><strong>Same Camelot code always mixes cleanly;</strong> ±1 step with the same letter shifts the music up a perfect fifth (the energy-boost move).</li>
+                                <li><strong>±3 BPM is the easy-mix line</strong> — a 2.3% pitch shift at 128 BPM, comfortably inside a standard ±8% pitch fader.</li>
+                                <li><strong>The recommendation box follows fixed bands</strong> — key score ≥2 / 0–1 / below 0, BPM gap 0 / ≤3 / ≤6 / above 6 — so identical inputs always produce identical advice. No black box.</li>
                             </ul>
                         </section>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">What Is Mix Compatibility?</h2>
                             <p><strong>Mix compatibility is a measure of whether two tracks can be blended smoothly in a DJ set.</strong> It judges two things: do the musical keys harmonize (so melodies and basslines don't clash), and are the tempos close enough to beatmatch without audible pitch damage? When both pass, a transition sounds like one continuous piece of music.</p>
-                            <p>DJs call the key side of this <strong>harmonic mixing</strong> — choosing the next track by musical key instead of by feel alone. The tempo side is <strong>beatmatching</strong>: aligning the beats per minute so both tracks run in sync. Most train-wreck transitions fail on one of these two axes, which is why this checker tests both at once. If you don't know a track's key yet, run it through our <a href="../song-key-finder/">song key finder</a> first.</p>
+                            <p>DJs call the key side <strong>harmonic mixing</strong> — choosing the next track by musical key instead of feel alone. The tempo side is <strong>beatmatching</strong>: aligning beats per minute so both tracks run in sync. Most train-wreck transitions fail on one of these two axes, which is why this checker tests both at once. If you don't know a track's key yet, run it through our <a href="../song-key-finder/">Song Key Finder</a> first.</p>
                         </section>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">How This Calculator Works</h2>
-                            <p>This calculator grades your two tracks with a transparent scoring rubric — the same logic running in the widget above, published here so you can see exactly why a pair passes or fails. Each axis earns −1 to +3 points.</p>
+                            <p>This calculator grades your two tracks with a transparent scoring rubric — the same logic running in the widget above, published here so you can check exactly why a pair passes or fails. Each axis earns −1 to +3 points. We verified the rubric against the widget's own code with five key/BPM pairs at every tier boundary; each result matched.</p>
                             <h3 class="h4 fw-bold mb-3">Key compatibility scoring (Camelot Wheel)</h3>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -375,29 +375,29 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p>The two scores are added together for the overall verdict. The wheel math behind the key score comes from the <strong>circle of fifths</strong>: neighboring Camelot numbers sit a fifth apart and share nearly all their scale notes, which is why ±1 mixes sound smooth while distant jumps clash.</p>
+                            <p>The two scores are added together for the overall verdict. The wheel math behind the key score comes from the <strong>circle of fifths</strong>: neighboring Camelot numbers sit a fifth apart and share nearly all their scale notes, which is why ±1 mixes sound smooth while distant jumps clash. The BPM bands come from pitch-fader math: 3 BPM at 128 is 2.3%, 6 BPM is 4.7%, 10 BPM is 7.8% — each band sits at a meaningfully different point on a ±8% fader.</p>
                         </section>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">Compatibility Score Formula and Worked Example</h2>
-                            <p>The overall formula is simple addition:</p>
                             <p><code><strong>Total score = Key score (−1 to +3) + BPM score (−1 to +3)</strong></code></p>
                             <p><strong>Worked example:</strong> Track A is 128 BPM in 8A; Track B is 126 BPM in 9A.</p>
                             <ol>
                                 <li><strong>Key score:</strong> 8A → 9A is +1 step, same letter = Adjacent Key = <strong>+2</strong>.</li>
                                 <li><strong>BPM score:</strong> |128 − 126| = 2 BPM difference = Easy Mix = <strong>+2</strong>.</li>
-                                <li><strong>Total:</strong> 2 + 2 = <strong>4 → Good Match</strong>. The energy rises a fifth while the tempo nudge stays inside the easy zone.</li>
+                                <li><strong>Total:</strong> 2 + 2 = <strong>4 → Good Match</strong>. The key rises a fifth while the tempo nudge stays inside the easy zone.</li>
                             </ol>
-                            <p>Contrast that with 8A at 128 BPM against 3B at 128 BPM: the tempo is a perfect +3, but the keys clash (−1), giving a total of 2 — only a Possible Mix. This is exactly why tempo alone never guarantees a good blend.</p>
+                            <p><strong>Contrast:</strong> 8A at 128 BPM against 3B at 128 BPM scores key −1 (Key Clash) and BPM +3 (Exact Match) for a total of 2 — only a Possible Mix. Tempo alone never guarantees a good blend.</p>
+                            <p><strong>Tier boundaries, checked:</strong> 8A/128 vs 8A/128 = 3 + 3 = 6 (Excellent); 8A/128 vs 10A/135 = 0 + 0 = 0 (Not Recommended); 8A/128 vs 9B/131 = 1 + 2 = 3 (Good, at the floor of the tier). The rubric has no hidden weights — what you see is what the widget computes.</p>
                         </section>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">How to Use This Calculator</h2>
                             <ol>
-                                <li><strong>Track A tempo:</strong> enter the outgoing track's BPM (find it with our <a href="../bpm-calculator/">BPM calculator</a> if needed).</li>
-                                <li><strong>Track A key:</strong> select its Camelot code (e.g. 8A) from the dropdown.</li>
-                                <li><strong>Track B tempo and key:</strong> enter the incoming track's BPM and Camelot code the same way.</li>
-                                <li><strong>Read the verdict:</strong> the key result, tempo result, and overall match update instantly, with transition recommendations below.</li>
+                                <li><strong>Enter Track A's tempo:</strong> the outgoing track's BPM (find it with our <a href="../bpm-calculator/">BPM Calculator</a> if needed).</li>
+                                <li><strong>Select Track A's key:</strong> its Camelot code (e.g. 8A) from the dropdown.</li>
+                                <li><strong>Enter Track B's tempo and key</strong> the same way for the incoming track.</li>
+                                <li><strong>Read the verdict:</strong> key result, tempo result, and overall match update instantly, with transition recommendations underneath.</li>
                             </ol>
                         </section>
 
@@ -418,36 +418,57 @@
                         </section>
 
                         <section class="mb-5">
+                            <h2 class="h3 fw-bold text-teal mb-3">How the Recommendation Box Decides</h2>
+                            <p><strong>The advice box under the verdict follows fixed rules — no guesswork.</strong> It reads your two sub-scores and fires the matching guidance every time:</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead><tr><th>Condition</th><th>Advice you get</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Key score ≥ 2</td><td>Blend melodies and vocals freely — the keys are harmonically compatible</td></tr>
+                                        <tr><td>Key score 0–1</td><td>EQ-filter mids and highs, keep the transition under 16 bars, blend during a percussion breakdown</td></tr>
+                                        <tr><td>Key score below 0</td><td>Avoid overlapping melodic parts — use a drop swap, echo-out, or cut on the downbeat</td></tr>
+                                        <tr><td>BPM gap = 0</td><td>No pitch fader adjustment needed</td></tr>
+                                        <tr><td>BPM gap 1–3</td><td>Small pitch nudge, transparent to the dancefloor</td></tr>
+                                        <tr><td>BPM gap 4–6</td><td>Enable Master Tempo (key lock) to preserve vocal pitch</td></tr>
+                                        <tr><td>BPM gap above 6</td><td>Transition through a breakdown, half-time rhythm, or tempo ramp</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p>The box turns green, amber, or red with the verdict — and identical inputs always produce identical advice. That determinism is the point: you can learn the rubric once and predict the box before it appears.</p>
+                        </section>
+
+                        <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">Pro Mixing Techniques</h2>
                             <h3 class="h4 fw-bold mb-3">Energy boost mixing: raising intensity a perfect fifth</h3>
-                            <p>Moving <strong>+1 Camelot number</strong> (e.g. 8A → 9A) shifts the music up a <strong>perfect fifth — 7 semitones</strong>. Our ears hear a fifth as a lift: the same melody feels brighter and more urgent. DJs use this "energy boost" to escalate a set before a peak-time track. Moving −1 does the reverse, cooling the room down. Try the shift with our <a href="../key-transposition/">key transposition</a> tool to hear the interval first.</p>
+                            <p>Moving <strong>+1 Camelot number</strong> (e.g. 8A → 9A) shifts the music up a <strong>perfect fifth — 7 semitones</strong>. Our ears hear a fifth as a lift: the same melody feels brighter and more urgent. DJs use this "energy boost" to escalate a set before a peak-time track; moving −1 does the reverse and cools the room. One caveat from Mixed In Key itself: the key change alone doesn't guarantee a rise — loudness, groove, and where you enter the track decide whether the room actually lifts. Try the interval first with our <a href="../key-transposition/">Key Transposition</a> tool.</p>
                             <h3 class="h4 fw-bold mb-3">Why ±3 BPM is the "easy" line</h3>
                             <p>The widget calls a 1–3 BPM gap an Easy Mix because of pitch-fader math. A standard DJ pitch fader spans <strong>±8%</strong> (Pioneer CDJ). At 128 BPM, 3 BPM is only a <strong>2.3% shift</strong> — comfortably inside the fader, with no audible strain. A 10+ BPM gap needs ~8% or more, which sits at the fader's edge and is where most DJs engage key lock or choose another track.</p>
                             <h3 class="h4 fw-bold mb-3">Key lock: when it saves a mix and when it wrecks it</h3>
                             <p><strong>Key lock</strong> (Master Tempo) holds a track's musical pitch steady while you change its tempo, using time-stretching. It saves mixes with 6–10 BPM gaps — but past roughly <strong>±6% shift</strong>, time-stretching smears transients and thins vocals, an artifact dancers can hear. Rule of thumb: inside ±3 BPM, leave key lock off; from ±4 to ±8 BPM, switch it on; past that, pick a closer track.</p>
                             <h3 class="h4 fw-bold mb-3">Half-time and double-time transitions</h3>
-                            <p>Tracks at a <strong>0.5× or 2× tempo ratio</strong> — say 70 BPM against 140 BPM — share the same beat grid: every downbeat of the slower track lands on the faster one's. That makes them mixable despite a huge BPM number gap (the widget will flag it Difficult, and it's right to warn you). Hip-hop DJs ride 70↔140 transitions constantly; the trick is matching phrases, not just beats, so the switch lands on a natural break.</p>
+                            <p>Tracks at a <strong>0.5× or 2× tempo ratio</strong> — say 70 BPM against 140 BPM — share the same beat grid: every downbeat of the slower track lands on the faster one's. That makes them mixable despite a huge BPM number gap. Hip-hop DJs ride 70↔140 transitions constantly; the trick is matching phrases, not just beats, so the switch lands on a natural break.</p>
+                            <p><strong>Honest note:</strong> this calculator's rubric has no ratio exception, so it scores these pairs Difficult. That warning is correct for naive blends — and wrong when your phrases align. Override the score by ear here.</p>
                         </section>
 
                         <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: the Camelot Wheel with a highlighted +1 energy-boost move from 8A to 9A]</div><figcaption class="small text-muted mt-2">Alt text: Camelot Wheel diagram showing an energy-boost mix moving from 8A up a perfect fifth to 9A.</figcaption></figure>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">Camelot vs Open Key Notation</h2>
-                            <p><strong>Camelot</strong> (1A–12B, from Mixed In Key) and <strong>Open Key</strong> (e.g. 1m–12m / 1d–12d, used by Traktor) describe the same 24 keys with different labels. Use whichever your DJ software displays — the mixing rules are identical.</p>
+                            <p><strong>Camelot</strong> (1A–12B, from Mixed In Key) and <strong>Open Key</strong> (1m–12d, used by Traktor and Lexicon) describe the same 24 keys with different labels. "m" means minor (the Camelot A side), "d" means major (the B side, from German <em>dur</em>). Use whichever your DJ software displays — the mixing rules are identical.</p>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead><tr><th>Camelot</th><th>Open Key</th><th>Musical key</th></tr></thead>
                                     <tbody>
-                                        <tr><td>8A</td><td>6m</td><td>A minor</td></tr>
-                                        <tr><td>8B</td><td>6d</td><td>C major</td></tr>
-                                        <tr><td>9A</td><td>7m</td><td>E minor</td></tr>
-                                        <tr><td>9B</td><td>7d</td><td>G major</td></tr>
-                                        <tr><td>11A</td><td>9m</td><td>G minor</td></tr>
-                                        <tr><td>11B</td><td>9d</td><td>B♭ major</td></tr>
+                                        <tr><td>8A</td><td>1m</td><td>A minor</td></tr>
+                                        <tr><td>8B</td><td>1d</td><td>C major</td></tr>
+                                        <tr><td>9A</td><td>2m</td><td>E minor</td></tr>
+                                        <tr><td>9B</td><td>2d</td><td>G major</td></tr>
+                                        <tr><td>11A</td><td>4m</td><td>F♯ minor</td></tr>
+                                        <tr><td>11B</td><td>4d</td><td>A major</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <p>Converting is mechanical: Open Key's number runs opposite to Camelot's, and "m" = minor (A side), "d" = major (B side). Rekordbox and Serato show Camelot-style codes; Traktor shows Open Key — check which one your library uses before a gig.</p>
+                            <p>Converting is mechanical: <strong>subtract 7 from the Camelot number</strong> (wrapping around 1–12), then swap A→m and B→d. 8A becomes 1m, 9B becomes 2d, 11A becomes 4m. Both wheels ascend by fifths in the same direction — Open Key simply starts its count at C major / A minor (1d / 1m). Rekordbox and Serato show Camelot-style codes; Traktor shows Open Key — check which one your library uses before a gig.</p>
                         </section>
 
                         <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: pitch-fader percentage scale showing where the 3, 6, and 10 BPM bands sit at 128 BPM]</div><figcaption class="small text-muted mt-2">Alt text: Infographic mapping the calculator's BPM bands to pitch-fader percentages at 128 BPM.</figcaption></figure>
@@ -455,8 +476,9 @@
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">Limitations</h2>
                             <ul>
-                                <li><strong>Key detection isn't perfect.</strong> Software key analysis mislabels roughly 1 in 10 tracks (genre-dependent); if a "Perfect Match" sounds wrong, trust your ears and re-analyze.</li>
-                                <li><strong>Energy and phrasing aren't scored.</strong> Two compatible tracks can still clash if one has a vocal over the other's drop — phrase matching matters as much as key.</li>
+                                <li><strong>Key detection isn't perfect.</strong> Software key analysis mislabels a real share of tracks — one survey of tools puts errors anywhere from 14% to 59% depending on the tool (digitaldjpool). If a "Perfect Match" sounds wrong, trust your ears and re-analyze.</li>
+                                <li><strong>Energy and phrasing aren't scored.</strong> Two compatible tracks still clash when a vocal sits on the other's drop — phrase matching matters as much as key.</li>
+                                <li><strong>No half-time/double-time exception.</strong> The rubric scores 70-vs-140 BPM pairs Difficult even when the beat grids align; override it when phrases match.</li>
                                 <li><strong>Genre conventions differ.</strong> Hip-hop and drum &amp; bass DJs routinely break harmonic rules with cuts and doubles; the rubric fits smooth house/techno-style blending best.</li>
                                 <li><strong>Live key changes fool the math.</strong> Tracks that modulate mid-song (common in pop) get one label but contain two keys.</li>
                             </ul>
@@ -480,7 +502,7 @@
                                     <div id="mixFaq1" class="accordion-collapse collapse show"
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Two things: matching musical keys and close tempos. Keys are compatible when they share the same Camelot code, are relative major/minor (same number), or sit ±1 step apart on the wheel. Tempos are compatible when the BPM gap is small enough for your pitch fader — roughly within ±3 BPM for an effortless blend.
+                                            <strong>Compatible keys and close tempos.</strong> Keys are compatible with the same Camelot code, relative major/minor (same number), or ±1 step; tempos are compatible within ~±3 BPM for an effortless blend. This checker scores both halves and adds them.
                                         </div>
                                     </div>
                                 </div>
@@ -494,7 +516,7 @@
                                     <div id="mixFaq2" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            The Camelot Wheel relabels the circle of fifths as DJ-friendly codes (1A–12A minor, 1B–12B major). Compatibility is positional: same code is a perfect match, same number with a different letter is the relative major/minor, and ±1 step is a perfect fifth apart. This calculator scores those positions +3, +3, +2, +1, 0, or −1.
+                                            <strong>Position, not theory.</strong> The Camelot Wheel relabels the circle of fifths as 1A–12A (minor) and 1B–12B (major). Same code = perfect; same number, letter swap = relative major/minor; ±1 = a fifth apart. This calculator turns those positions into scores: +3, +3, +2, +1, 0, −1.
                                         </div>
                                     </div>
                                 </div>
@@ -508,7 +530,7 @@
                                     <div id="mixFaq3" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Up to 3 BPM is easy — about 2.3% pitch shift at 128 BPM. From 4–6 BPM you'll want key lock on. Past 10 BPM (roughly 8%+ shift) vocals and transients audibly degrade, and most DJs choose a different track. The exception is half-time/double-time pairs (70 vs 140 BPM), which share a beat grid despite the gap.
+                                            <strong>Past 10 BPM, most DJs pick another track.</strong> 0–3 BPM is easy (~2.3% at 128 BPM); 4–6 BPM wants key lock on; past 10 BPM (roughly 8%+) vocals and transients degrade audibly. The exception: half-time/double-time pairs (70 vs 140 BPM) share a beat grid despite the gap.
                                         </div>
                                     </div>
                                 </div>
@@ -522,7 +544,7 @@
                                     <div id="mixFaq4" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Not with a long blend — distant keys (this calculator's −1 'Key Clash') put dissonant notes on top of each other. But you can still play them back-to-back using a quick cut, an echo-out, a loop roll, or a breakdown as cover. Save harmonic blends for compatible keys and use effects for the risky jumps.
+                                            <strong>Not with a long blend.</strong> Distant keys (−1 'Key Clash' here) stack dissonant notes. Play them back-to-back instead: quick cut, echo-out, loop roll, or a breakdown as cover. Save harmonic blends for compatible keys; use effects for the risky jumps.
                                         </div>
                                     </div>
                                 </div>
@@ -536,7 +558,7 @@
                                     <div id="mixFaq5" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Moving +1 Camelot number (e.g. 8A → 9A) shifts the music up a perfect fifth — 7 semitones. Our ears hear that interval as a lift, so the same groove feels brighter and more urgent. DJs use energy-boost mixes to escalate toward peak-time tracks; moving −1 does the reverse and cools the room.
+                                            <strong>Moving +1 Camelot number (8A → 9A) shifts the music up a perfect fifth — 7 semitones.</strong> Ears hear that interval as a lift, so the groove feels brighter. DJs use it to escalate toward peak-time tracks; −1 cools the room. The key change alone doesn't guarantee the lift — track selection and timing do the rest.
                                         </div>
                                     </div>
                                 </div>
@@ -550,7 +572,7 @@
                                     <div id="mixFaq6" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Match phrases, not just beats. A 70 BPM track and a 140 BPM track share downbeats (0.5× ratio), so their grids align — bring the faster track in on a breakdown of the slower one and let the energy double at the drop. Keep blends short; the groove feels can drift even when the math lines up.
+                                            <strong>Match phrases, not just beats.</strong> A 70 BPM and 140 BPM track share downbeats, so bring the faster track in on a breakdown of the slower one and let the energy double at the drop. Keep blends short — the groove feel drifts even when the math lines up. Note: this widget scores such pairs Difficult; override it by ear.
                                         </div>
                                     </div>
                                 </div>
@@ -564,7 +586,7 @@
                                     <div id="mixFaq7" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Use it when the BPM gap exceeds ~3 BPM — it holds the track's musical pitch steady while you stretch the tempo. Below that, leave it off for the cleanest sound. Past about ±6% shift, time-stretching smears transients and thins vocals, so for gaps over 10 BPM it's usually better to pick a closer track.
+                                            <strong>Yes, past ~3 BPM of gap.</strong> Key lock holds musical pitch steady while tempo changes. Below that, leave it off for the cleanest sound. Past ~6% shift, time-stretching smears transients and thins vocals — for gaps over 10 BPM, pick a closer track.
                                         </div>
                                     </div>
                                 </div>
@@ -578,7 +600,7 @@
                                     <div id="mixFaq8" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            They label the same 24 keys differently: Camelot uses 1A–12B (Mixed In Key), Open Key uses codes like 6m/6d (Traktor). 'm' means minor (Camelot A-side), 'd' means major (B-side). The mixing rules are identical — just learn which system your DJ software displays.
+                                            <strong>Different labels, same 24 keys.</strong> Camelot uses 1A–12B (Mixed In Key); Open Key uses 1m–12d (Traktor): m = minor, d = major. Convert by subtracting 7 from the Camelot number (8A → 1m). The mixing rules are identical — learn whichever your software displays.
                                         </div>
                                     </div>
                                 </div>
@@ -592,7 +614,7 @@
                                     <div id="mixFaq9" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Many do, especially in house, techno, and trance where long blends are the norm — Mixed In Key's Camelot system came from working DJs. But plenty of pros in hip-hop, D&B, and open-format mix by energy, phrasing, and ear instead. Treat harmonic mixing as a tool that raises your hit rate, not a rule.
+                                            <strong>Many do — as a tool, not a rule.</strong> House, techno, and trance DJs lean on it for long blends; Mixed In Key's Camelot system came from working DJs. Hip-hop, D&B, and open-format pros often mix by energy, phrasing, and ear. Use it to raise your hit rate.
                                         </div>
                                     </div>
                                 </div>
@@ -606,7 +628,7 @@
                                     <div id="mixFaq10" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            Usually one of three culprits: clashing keys (check the Camelot codes), mismatched phrasing (you mixed into a verse instead of a 16-bar boundary), or key-lock artifacts from an earlier pitch change. Fix the key first with the checker above, then count phrases — most dance tracks change sections every 16 or 32 bars.
+                                            <strong>Three usual culprits:</strong> clashing keys (check the Camelot codes), mismatched phrasing (you mixed into a verse instead of a 16-bar boundary), or key-lock artifacts from an earlier pitch change. Fix the key first with the checker above, then count phrases — most dance tracks change sections every 16 or 32 bars.
                                         </div>
                                     </div>
                                 </div>

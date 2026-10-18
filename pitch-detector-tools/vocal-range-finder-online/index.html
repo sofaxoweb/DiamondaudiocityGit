@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vocal Range Finder: Test Your Range & Voice Type</title>
   <meta name="description"
-        content="Find your vocal range with your microphone. Get your lowest and highest notes, octave span and voice type (soprano, alto, tenor, bass)." />
+        content="Find your vocal range with your microphone. Get your lowest and highest notes, octave span, and voice type — soprano, alto, tenor, or bass." />
   <meta name="keywords"
     content="vocal range finder online, test my vocal range, voice type calculator, singing voice test, soprano alto tenor bass range, find vocal range microphone, vocal tessitura test" />
   <link rel="canonical" href="https://pitchdetectors.com/pitch-detector-tools/vocal-range-finder-online/"
     <meta property="og:type" content="website">
     <meta property="og:title" content="Vocal Range Finder: Test Your Range &amp; Voice Type">
-    <meta property="og:description" content="Find your vocal range with your microphone. Get your lowest and highest notes, octave span and voice type (soprano, alto, tenor, bass).">
+    <meta property="og:description" content="Find your vocal range with your microphone. Get your lowest and highest notes, octave span, and voice type — soprano, alto, tenor, or bass.">
     <meta property="og:url" content="https://pitchdetectors.com/pitch-detector-tools/vocal-range-finder-online/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Vocal Range Finder: Test Your Range &amp; Voice Type">
-    <meta name="twitter:description" content="Find your vocal range with your microphone. Get your lowest and highest notes, octave span and voice type (soprano, alto, tenor, bass).">>
+    <meta name="twitter:description" content="Find your vocal range with your microphone. Get your lowest and highest notes, octave span, and voice type — soprano, alto, tenor, or bass.">>
   <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="../../assets/bootstrap5.css" rel="stylesheet">
@@ -75,7 +75,7 @@
       "name": "Can I expand my vocal range with training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, typically by a few semitones on each end over months of consistent practice. Better breath support extends the bottom; register-blending technique unlocks notes above your old break. Your vocal-fold length sets a hard anatomical floor, so a baritone won't become a tenor — but most beginners discover usable notes they already owned."
+        "text": "Yes, typically by a few semitones on each end over months of consistent practice. Better breath support extends the bottom; register-blending technique adds notes above your old break. Your vocal-fold length sets a hard anatomical floor, so a baritone won't become a tenor — but most beginners discover usable notes they already owned."
       }
     },
     {
@@ -467,10 +467,8 @@
                 <article class="tool-container mt-4">
           <section class="mb-4">
             <h1 class="mb-3">Vocal Range Finder: Test Your Range & Voice Type</h1>
-            <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
-            <p class="lead">
-              A <strong>vocal range finder</strong> measures the lowest and highest notes you can sing and tells you your voice type — soprano, mezzo-soprano, alto, tenor, baritone, or bass. Allow microphone access, sing your lowest and highest comfortable notes, and get your range, octave span, and classification instantly.
-            </p>
+            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+            <p class="lead">A <strong>vocal range finder</strong> measures the lowest and highest notes you can sing and <strong>maps them to your voice type</strong> — soprano, mezzo-soprano, alto, tenor, baritone, or bass. Allow microphone access, sing your lowest and highest comfortable notes, and get your range, octave span, and classification instantly.
           </section>
 
           <section class="mb-4">
@@ -486,20 +484,20 @@
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Is Vocal Range?</h2>
-            <p><strong>Vocal range is the span of musical pitches a person can sing, from the lowest to the highest note, usually written with scientific pitch notation such as C3–C5.</strong> In this system C4 is middle C, and each octave number marks a doubling of frequency — so a C3–C5 range covers two full octaves, or 24 semitones, from the lowest C to the highest.</p>
+            <p><strong>Vocal range is the span of musical pitches a person can sing, from the lowest to the highest note, usually written with scientific pitch notation such as C3–C5.</strong> In this system C4 is middle C, and each octave number marks a doubling of frequency — so a C3–C5 range covers two full octaves, or 24 semitones, from the lowest C to the highest.
             <p>Range alone doesn't fully define a voice. Two singers can share the same E2–E4 span while one sounds like a lyric baritone and the other like a dramatic bass — timbre (tone color), weight, and tessitura complete the picture. That's why this tool reports your range <em>and</em> maps it to the closest standard voice type.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Vocal Range Finder Works</h2>
-            <p>This finder captures your voice through your device microphone using the Web Audio API, then runs an <strong>autocorrelation pitch detector</strong> on each slice of audio. Autocorrelation finds the fundamental frequency by locating the repeating period in the sound wave — the same proven technique behind most tuner apps.</p>
+            <p><strong>This finder captures your voice through your device microphone using the Web Audio API, then runs an autocorrelation pitch detector on each slice of audio.</strong> Autocorrelation finds the fundamental frequency by locating the repeating period in the sound wave — the same proven technique behind most tuner apps.
             <p>Methodology: the detector accepts frequencies between <strong>60 Hz and 1500 Hz</strong> (roughly B1 to F&#9839;6, covering every standard voice type), snaps each reading to the nearest note, and tracks the extremes across two guided phases — lowest note, then highest note. Your span is converted to an octave count (semitones ÷ 12) and matched against the six standard voice-type ranges. For reliable detection, the tool requests raw microphone input with echo cancellation, noise suppression, and auto gain control disabled.</p>
             <p><em>Last reviewed: October 2026. Pitch detection follows standard autocorrelation practice; voice-type boundaries follow widely published choral and pedagogical ranges.</em></p><p class="text-muted small">Sources: voice-type ranges per <a href="https://www.backstage.com/magazine/article/vocal-ranges-explained-75441/" target="_blank" rel="noopener">Backstage</a> and <a href="https://en.wikipedia.org/wiki/Voice_classification_in_non-classical_music" target="_blank" rel="noopener">Wikipedia (voice classification in non-classical music)</a>.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-calculator me-2"></i>The Note–Frequency Formula and Worked Example</h2>
-            <p>Every note name maps to an exact frequency through twelve-tone equal temperament, anchored at <strong>A4 = 440 Hz</strong> (the international tuning standard):</p>
+            <p><strong>Every note name maps to an exact frequency through twelve-tone equal temperament, anchored at A4 = 440 Hz (the international tuning standard):</strong>
             <p><code><strong>f = 440 × 2<sup>((m − 69) / 12)</sup></strong></code> &nbsp;where <em>m</em> is the MIDI note number (A4 = 69) and <em>f</em> is frequency in Hz.</p>
             <p><strong>Worked example:</strong> find the frequency of middle C (C4, MIDI 60):</p>
             <ol>
@@ -507,7 +505,7 @@
               <li>Raise 2 to that power: 2<sup>−0.75</sup> ≈ <strong>0.5946</strong></li>
               <li>Multiply by 440: 440 × 0.5946 ≈ <strong>261.63 Hz</strong> — the standard pitch of middle C.</li>
             </ol>
-            <p>Each octave doubles the frequency: C5 is 523.25 Hz, C6 is 1046.50 Hz. To convert any frequency back to a note name, try our <a href="../frequency-to-note-online/">frequency to note calculator</a>.</p>
+            <p>Each octave doubles the frequency: C5 is 523.25 Hz, C6 is 1046.50 Hz. To convert any frequency back to a note name, try our <a href="../frequency-to-note-online/">Frequency to Note</a> calculator.
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: piano keyboard from E2 to C6 with the six voice-type ranges highlighted as colored bands]</div><figcaption class="small text-muted">Voice-type ranges mapped on a piano keyboard. Suggested alt text: "Piano keyboard showing soprano, mezzo-soprano, alto, tenor, baritone and bass vocal ranges"</figcaption></figure>
           </section>
 
@@ -515,7 +513,7 @@
             <h2 class="text-teal mb-3"><i class="bi bi-list-ol me-2"></i>How to Use the Vocal Range Finder</h2>
             <ol>
               <li><strong>Warm up first.</strong> Hum scales gently for 3–5 minutes. A cold voice tests up to a 4th narrower than your real range.</li>
-              <li><strong>Pick your room.</strong> Choose a quiet space; background noise and echo confuse the pitch detector. If your mic sounds off, run our <a href="../../sound-analysis-tools/microphone-test/">microphone test</a> first.</li>
+              <li><strong>Pick your room.</strong> Choose a quiet space; background noise and echo confuse the pitch detector. If your mic sounds off, run our <a href="../../sound-analysis-tools/microphone-test/">Microphone Test</a> first.
               <li><strong>Allow microphone access</strong> when the browser asks, then press <strong>Start Test</strong>.</li>
               <li><strong>Sing your lowest note.</strong> Glide down on an "ah" vowel until the tone stays clear — no growling vocal fry. Press <strong>Confirm Lowest Note</strong>.</li>
               <li><strong>Sing your highest note.</strong> Glide up in full voice (chest/mix, not falsetto) until the tone stays clean, then confirm.</li>
@@ -525,7 +523,7 @@
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-table me-2"></i>Reading Your Result: Voice Types and Ranges</h2>
-            <p>Your result maps to the nearest of the six standard voice types. Published charts vary slightly by source; the ranges below are the ones this tool uses for classification:</p>
+            <p><strong>Your result maps to the nearest of the six standard voice types.</strong> Published charts vary slightly by source; the ranges below are the ones this tool uses for classification.
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Voice type</th><th>Range</th><th>Typical profile</th><th>Safe next step</th></tr></thead>
@@ -544,7 +542,7 @@
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-diagram-3 me-2"></i>Range vs Tessitura vs Voice Type: What's the Difference?</h2>
-            <p>These three terms get mixed up constantly, and the confusion leads singers to misclassify themselves. Here's the clean separation:</p>
+            <p><strong>These three terms get mixed up constantly, and the confusion leads singers to misclassify themselves.</strong> Here's the clean separation:
             <ul>
               <li><strong>Range</strong> = every note you can physically produce, extremes included. It's a measurement.</li>
               <li><strong>Tessitura</strong> = the sub-range where your voice sounds best and tires least — typically the middle 60–70% of your range. It's where songs should live.</li>
@@ -555,7 +553,7 @@
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-mic me-2"></i>Why Your Microphone Test Might Lie: 6 Measurement Rules</h2>
-            <p>Most "wrong" results come from testing technique, not the detector. Follow these rules for an honest measurement:</p>
+            <p><strong>Most "wrong" results come from testing technique, not the detector.</strong> Follow these rules for an honest measurement:
             <ol>
               <li><strong>No vocal fry at the bottom.</strong> That creaky growl below your modal voice isn't singable pitch — stop at the lowest <em>clear</em> tone.</li>
               <li><strong>No falsetto at the top (for classification).</strong> Falsetto can add a 4th or more, but classical ranges count full-voice notes. Note it separately if you like.</li>
@@ -568,7 +566,7 @@
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-activity me-2"></i>The Passaggio Map: Where Voices Naturally Break</h2>
-            <p>The <strong>passaggio</strong> (Italian for "passage") is the transition zone where the voice shifts gears between registers — the spot where untrained singers "crack." Cracking there is normal physiology, not a flaw; every voice type has one.</p>
+            <p>The <strong>passaggio</strong> (Italian for "passage") is the transition zone where the voice shifts gears between registers — the spot where untrained singers "crack." Cracking there is normal physiology, not a flaw; every voice type has one.
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Voice type</th><th>Typical passaggio zone</th></tr></thead>
@@ -588,7 +586,7 @@
 
           <section class="mb-4">
             <h2 class="text-teal mb-3"><i class="bi bi-graph-up-arrow me-2"></i>Can You Really Expand Your Range? A Reality Check</h2>
-            <p>Yes — within limits. Consistent training typically adds <strong>a few semitones on each end</strong> over months: better breath support and fold closure extend the bottom slightly, while register-blending technique unlocks notes above the old break. What training <em>can't</em> do is change your vocal-fold length, which sets the hard floor of your anatomy.</p>
+            <p><strong>Yes — within limits.</strong> Consistent training typically adds a few semitones on each end over months: better breath support and fold closure extend the bottom slightly, while register-blending technique adds notes above the old break. What training can't do is change your vocal-fold length, which sets the hard floor of your anatomy.
             <ul>
               <li><strong>Realistic:</strong> a baritone (G2–G4) gaining E2–A4 after a year of lessons.</li>
               <li><strong>Unrealistic:</strong> a baritone becoming a tenor — the tessitura and timbre won't follow the extra notes.</li>
@@ -706,7 +704,7 @@
                 <div id="vfaqCollapse6" class="accordion-collapse collapse" aria-labelledby="vfaqHead6"
                   data-bs-parent="#vocalFaqAccordion">
                   <div class="accordion-body">
-                    Yes, typically by a few semitones on each end over months of consistent practice. Better breath support extends the bottom; register-blending technique unlocks notes above your old break. Your vocal-fold length sets a hard anatomical floor, so a baritone won't become a tenor — but most beginners discover usable notes they already owned.
+                    Yes, typically by a few semitones on each end over months of consistent practice. Better breath support extends the bottom; register-blending technique adds notes above your old break. Your vocal-fold length sets a hard anatomical floor, so a baritone won't become a tenor — but most beginners discover usable notes they already owned.
                   </div>
                 </div>
               </div>

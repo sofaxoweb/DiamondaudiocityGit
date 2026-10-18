@@ -8,20 +8,20 @@
   <title>Audio Visualizer: Turn MP3 &amp; WAV into 60fps Video</title>
 
   <meta name="description"
-    content="Free online audio visualizer turns MP3 and WAV into reactive waveform videos. Bars, wave and circle styles, 60fps WebM export — files stay on your device.">
+    content="Free online audio visualizer turns MP3 and WAV into reactive FFT videos. Bars, wave and circle styles, 60fps WebM export — files stay on your device.">
 
   <meta name="keywords"
     content="audio waveform visualizer, music spectrum visualizer, online audio visualizer, audiogram generator, waveform video generator, fft audio visualizer">
 
-  <link rel="canonical" href="https://pitchdetectors.com/sound-analysis-tools/audio-to-waveform-visualizer/"
+  <link rel="canonical" href="https://pitchdetectors.com/sound-analysis-tools/audio-to-waveform-visualizer/" />
     <meta property="og:type" content="website">
     <meta property="og:title" content="Audio Visualizer: Turn MP3 &amp; WAV into 60fps Video">
-    <meta property="og:description" content="Free online audio visualizer turns MP3 and WAV into reactive waveform videos. Bars, wave and circle styles, 60fps WebM export — files stay on your device.">
+    <meta property="og:description" content="Free online audio visualizer turns MP3 and WAV into reactive FFT videos. Bars, wave and circle styles, 60fps WebM export — files stay on your device.">
     <meta property="og:url" content="https://pitchdetectors.com/sound-analysis-tools/audio-to-waveform-visualizer/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Audio Visualizer: Turn MP3 &amp; WAV into 60fps Video">
-    <meta name="twitter:description" content="Free online audio visualizer turns MP3 and WAV into reactive waveform videos. Bars, wave and circle styles, 60fps WebM export — files stay on your device."> />
+    <meta name="twitter:description" content="Free online audio visualizer turns MP3 and WAV into reactive FFT videos. Bars, wave and circle styles, 60fps WebM export — files stay on your device.">
   <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -39,7 +39,7 @@
       "name": "How does an audio to waveform visualizer turn sound into visuals?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It decodes your audio file in the browser with the Web Audio API, then runs a Fast Fourier Transform (FFT) on every frame to split the sound into frequency bins. Those bin values drive the canvas animation — bars, oscilloscope wave, or radial display — redrawn 60 times per second via requestAnimationFrame."
+        "text": "It decodes your audio file in the browser with the Web Audio API, then runs a Fast Fourier Transform (FFT) on every frame to split the sound into frequency bins. Those bin values drive the canvas animation — bars, a spectrum line, or a radial display — redrawn 60 times per second via requestAnimationFrame."
       }
     },
     {
@@ -47,7 +47,7 @@
       "name": "What is the difference between a waveform and a spectrum visualizer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A waveform (time domain) plots amplitude against time, showing the physical shape of the sound — transients, clipping, and dynamics. A spectrum (frequency domain) plots energy against frequency, showing how much bass, midrange, and treble the sound contains at each moment. This tool offers both, plus a circular spectrum style."
+        "text": "A waveform (time domain) plots amplitude against time, showing the physical shape of the sound — transients, clipping, and dynamics. A spectrum (frequency domain) plots energy against frequency, showing how much bass, midrange, and treble the sound contains at each moment. All three styles in this tool are frequency-domain: Bars, a spectrum line (Wave), and a circular spectrum (Circle)."
       }
     },
     {
@@ -63,7 +63,7 @@
       "name": "Is my uploaded audio sent to a server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Decoding, analysis, rendering, and video encoding all happen locally with browser-native APIs. Your file never leaves your device, which also means unreleased tracks stay private and there is no upload wait — even a 50 MB WAV starts visualizing instantly."
+        "text": "No. Decoding, analysis, rendering, and video encoding all happen locally with browser-native APIs. Your file never leaves your device, which means unreleased tracks stay private and there is no upload wait — even a 50 MB WAV starts visualizing instantly."
       }
     },
     {
@@ -79,7 +79,7 @@
       "name": "What does the smoothing slider actually do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It controls an exponential moving average between raw FFT frames: higher values blend each new frame more with the previous one, so bars glide instead of flickering. At 0.7 (the default) you get punchy attacks with graceful decay; near 0.9 the motion turns slow and dreamy; near 0.4 it reacts violently to every transient."
+        "text": "Nothing in this build — the slider is decorative. Smoothing is fixed internally at 0.7 (an exponential moving average between FFT frames: each new frame blends 70% with the previous one, so bars glide instead of flickering). The same applies to the Bar Count slider: the visualizer always draws 64 bars."
       }
     },
     {
@@ -87,7 +87,7 @@
       "name": "Which visualization style should I choose for a podcast clip?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use the Wave style — it is the classic audiogram look that social audiences instantly recognize as listenable audio. Bars suit beat-driven music where bass movement sells the energy, and Circle works best as an ambient backdrop behind album art or a logo."
+        "text": "Use the Wave style — a smooth spectrum line that social audiences instantly recognize as listenable audio. Bars suit beat-driven music where bass movement sells the energy, and Circle works best as an ambient backdrop behind album art or a logo."
       }
     },
     {
@@ -103,7 +103,7 @@
       "name": "Can the visualizer show how loud my audio is in decibels?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not in calibrated decibels. Bar height reflects relative FFT magnitude (0–255), which shows the shape of your mix but not absolute loudness. For real loudness numbers use our loudness meter (LUFS) or decibel meter; for checking clipping, the Wave view's flat tops are a reliable visual tell."
+        "text": "Not in calibrated decibels. Bar height reflects relative FFT magnitude (0–255), which shows the shape of your mix but not absolute loudness. For real loudness numbers use our loudness meter (LUFS) or decibel meter. And because the Wave style plots frequency magnitudes — not a time-domain waveform — it cannot show clipping as flat tops; use a DAW or the loudness meter for that."
       }
     },
     {
@@ -407,30 +407,30 @@
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
             <ul>
-              <li>A <strong>waveform</strong> shows amplitude over time; a <strong>spectrum</strong> shows energy across frequencies — this tool does both, plus a radial style.</li>
-              <li>Visualization runs on the <strong>Web Audio API</strong>: a 2048-sample FFT split into frequency bins, smoothed and drawn on canvas at 60 fps.</li>
+              <li>This <strong>audio visualizer</strong> renders <strong>frequency spectra</strong> — Bars, a spectrum line, and a circular spectrum — from a 2048-sample FFT, drawn on canvas at 60 fps.</li>
               <li>Video export uses <strong>canvas.captureStream(60) + MediaRecorder</strong> to produce a WebM file with VP8/VP9 video and Opus audio.</li>
               <li>Your audio is <strong>decoded locally</strong> — nothing is uploaded to a server.</li>
+              <li>The <strong>Bar Count and Smoothing sliders are decorative in this build</strong>: the tool always uses 64 bars and a fixed smoothing of 0.7.</li>
               <li>WebM plays natively on <strong>YouTube, Chrome, and Discord</strong>; convert to MP4 for Instagram with free tools like HandBrake or FFmpeg.</li>
             </ul>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>What Is an Audio Visualizer?</h2>
-            <p><strong>An audio visualizer is software that converts an audio signal into animated graphics that move in sync with the sound, typically as a waveform, frequency spectrum bars, or a radial display.</strong> Musicians use visualizers to make music videos, podcasters use them to create <strong>audiograms</strong> — short captioned clips pairing audio with a moving waveform for social feeds — and DJs use them as live eye candy.</p>
+            <p><strong>An audio visualizer is software that converts an audio signal into animated graphics that move in sync with the sound, typically as frequency spectrum bars, a spectrum line, or a radial display.</strong> Musicians use visualizers to make music videos, podcasters use them to create <strong>audiograms</strong> — short clips pairing audio with a moving waveform for social feeds — and DJs use them as live eye candy.</p>
             <p>Unlike a static waveform image in an editor, a visualizer is <em>reactive</em>: every frame is computed from the actual audio playing at that moment. When the kick drum hits, the bass bars jump; when the vocal starts, the midrange lights up. That direct coupling is what makes the result feel alive rather than decorative.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-gear me-2"></i>How This Visualizer Works</h2>
-            <p>This tool runs an end-to-end <strong>browser-native pipeline</strong>: decode → analyze → smooth → draw → record. Your file is decoded by the Web Audio API into raw PCM samples, then an <strong>AnalyserNode</strong> performs a Fast Fourier Transform on every frame of audio.</p>
-            <p>Methodology: FFT size is <strong>2048 samples</strong> (1024 usable frequency bins), temporal smoothing defaults to <strong>0.7</strong>, and the canvas redraws via <strong>requestAnimationFrame at 60 fps</strong>. For video export, <code>canvas.captureStream(60)</code> grabs the animation while a <code>MediaStreamAudioDestinationNode</code> taps the audio; <strong>MediaRecorder</strong> multiplexes both into WebM. Validation method: feed the tool a 440 Hz test tone and the spectrum peak should land in the bin nearest 440 Hz — a reproducible check anyone can run.</p>
+            <p><strong>This tool runs an end-to-end browser-native pipeline: decode → analyze → smooth → draw → record.</strong> Your file is decoded by the Web Audio API into raw PCM samples, then an <strong>AnalyserNode</strong> performs a Fast Fourier Transform on every frame of audio.</p>
+            <p>Methodology: FFT size is <strong>2048 samples</strong> (1024 usable frequency bins), temporal smoothing is fixed at <strong>0.7</strong>, and the canvas redraws via <strong>requestAnimationFrame at 60 fps</strong>. For video export, <code>canvas.captureStream(60)</code> grabs the animation while a <code>MediaStreamAudioDestinationNode</code> taps the audio; <strong>MediaRecorder</strong> multiplexes both into WebM. Validation method: feed the tool a 440 Hz test tone and the spectrum peak lands in the bin nearest 440 Hz — a reproducible check anyone can run.</p>
             <p><em>Last reviewed: October 2026. Pipeline follows the W3C Web Audio API and MediaRecorder specifications; see MDN Web Docs for reference.</em></p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-calculator me-2"></i>FFT Bin Math and Worked Example</h2>
-            <p>The FFT slices the frequency range into equal bins. Bin width is simply:</p>
+            <p><strong>The FFT slices the frequency range into equal bins.</strong> Bin width is simply:</p>
             <p><code><strong>Bin width (Hz) = Sample rate ÷ FFT size</strong></code></p>
             <p><strong>Worked example</strong> at CD quality (44,100 Hz sample rate, FFT size 2048):</p>
             <ol>
@@ -438,9 +438,9 @@
               <li>A 440 Hz tone (A4) lands in bin 440 ÷ 21.53 ≈ <strong>bin 20</strong></li>
               <li>The bass region 20–250 Hz spans only about <strong>11 bins</strong> — which is why bass bars look chunky while treble looks smooth</li>
             </ol>
-            <p>Smoothing then tames flicker with an exponential moving average:</p>
+            <p>Smoothing tames flicker with an exponential moving average:</p>
             <p><code><strong>P<sub>display</sub>(t) = α × P<sub>display</sub>(t−1) + (1 − α) × P<sub>raw</sub>(t)</strong></code></p>
-            <p>At <strong>α = 0.7</strong> (this tool's default), bars attack fast on drum hits but decay gracefully — the classic VU-meter feel. Push α toward 0.9 for slow ambient washes; drop it toward 0.4 for hyper-reactive EDM.</p>
+            <p>At <strong>α = 0.7</strong> (this tool's fixed value), bars attack fast on drum hits but decay gracefully — the classic VU-meter feel. An α near 0.9 would give slow ambient washes; near 0.4, hyper-reactive motion.</p>
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: FFT frequency bins from 20 Hz to 20 kHz showing wide bass bins vs narrow treble resolution, with the 21.53 Hz/bin calculation]</div><figcaption class="small text-muted">How FFT bin resolution shapes what you see. Suggested alt text: "Diagram of FFT frequency bins showing 21.53 Hz resolution per bin"</figcaption></figure>
           </section>
 
@@ -449,42 +449,41 @@
             <ol>
               <li><strong>Upload audio:</strong> click <strong>Choose File</strong> and pick an MP3, WAV, AAC, FLAC, or OGG file. It decodes locally — no upload wait.</li>
               <li><strong>Press Play</strong> to start the live visualization on the canvas.</li>
-              <li><strong>Pick a style:</strong> <strong>Bars</strong> for the classic equalizer, <strong>Wave</strong> for the oscilloscope line, <strong>Circle</strong> for the radial burst.</li>
-              <li><strong>Set bar count</strong> (16–256, default 64): fewer bars look bold and chunky; more bars look detailed.</li>
-              <li><strong>Adjust smoothing</strong> (0–0.95, default 0.7): higher values calm flicker; lower values react harder.</li>
+              <li><strong>Pick a style:</strong> <strong>Bars</strong> for the classic equalizer, <strong>Wave</strong> for the spectrum line, <strong>Circle</strong> for the radial burst.</li>
               <li><strong>Pick a color</strong> for the bars, wave line, or radial arms.</li>
               <li><strong>Tick "Include audio in video"</strong> if you want sound in the export (recommended for sharing).</li>
               <li><strong>Click Generate Video:</strong> the tool replays your track while recording at 60 fps. Wait for the "Video Generated Successfully" status.</li>
               <li><strong>Preview and download</strong> the WebM file with the Download Video button.</li>
             </ol>
+            <p class="text-muted small">Note: the Bar Count and Smoothing sliders shown above the canvas are decorative in this build — the visualizer always renders 64 bars with smoothing fixed at 0.7.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-eye me-2"></i>Reading Your Result: What the Visuals Tell You</h2>
-            <p>The visuals are more than decoration — they reveal mix problems at a glance:</p>
+            <p><strong>The visuals reveal mix problems at a glance — but only in the frequency domain.</strong> All three styles plot FFT magnitudes, so they show <em>where energy sits across frequencies</em>, not amplitude over time:</p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>What you see</th><th>What it means</th><th>What to do</th></tr></thead>
                 <tbody>
-                  <tr><td>Waveform with <strong>flat tops</strong></td><td>Clipping — the signal exceeds 0 dBFS</td><td>Lower the track gain and re-render before publishing</td></tr>
                   <tr><td>Only the <strong>lowest bars</strong> moving</td><td>Bass-heavy mix; mids and highs are buried</td><td>Check your mix balance or EQ</td></tr>
-                  <tr><td><strong>Thin, spiky</strong> wave with gaps</td><td>Over-compressed or gated audio</td><td>Ease off the limiter if it sounds lifeless</td></tr>
-                  <tr><td><strong>Asymmetric</strong> wave (taller on top)</td><td>DC offset or phase issue</td><td>Run a DC-offset removal pass in your editor</td></tr>
-                  <tr><td><strong>Full, even</strong> bars and wave</td><td>Healthy, dynamic mix</td><td>Nothing — export with confidence</td></tr>
+                  <tr><td><strong>Thin, jittery</strong> bars with gaps</td><td>Over-compressed or gated audio</td><td>Ease off the limiter if it sounds lifeless</td></tr>
+                  <tr><td><strong>Full, even</strong> bars and spectrum</td><td>Healthy, dynamic mix</td><td>Nothing — export with confidence</td></tr>
+                  <tr><td>A sharp <strong>spike at one bin</strong></td><td>Hum or resonance (e.g. 50/60 Hz mains hum)</td><td>Notch it out in your editor</td></tr>
                 </tbody>
               </table>
             </div>
+            <p>Honest limit: because the Wave style draws frequency magnitudes as a line — not a time-domain waveform — it cannot show clipping as flat tops. For clipping and true peak checks, use a DAW meter or our <a href="../loudness-meter/">loudness meter</a>.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-shield-lock me-2"></i>Your Audio Never Leaves Your Browser</h2>
-            <p>Most online visualizer tools upload your file to a server, render it in the cloud, and send back a video — your unreleased track sits on someone else's disk. This tool does everything with <strong>browser-native APIs</strong>: decoding, FFT analysis, canvas rendering, and MediaRecorder encoding all happen in your device's memory.</p>
-            <p>That architecture has three practical benefits: <strong>privacy</strong> (unreleased music stays yours), <strong>speed</strong> (no upload/download round trip — a 50 MB WAV starts visualizing instantly), and <strong>cost</strong> (no server rendering means the tool stays free with no watermark). You can verify it yourself: open your browser's network tab while generating a video and watch — no audio bytes leave the page.</p>
+            <p><strong>Most online visualizer tools upload your file to a server, render it in the cloud, and send back a video — your unreleased track sits on someone else's disk.</strong> This tool does everything with <strong>browser-native APIs</strong>: decoding, FFT analysis, canvas rendering, and MediaRecorder encoding all happen in your device's memory.</p>
+            <p>That architecture has three practical benefits: <strong>privacy</strong> (unreleased music stays yours), <strong>speed</strong> (no upload/download round trip — a 50 MB WAV starts visualizing instantly), and <strong>cost</strong> (no server rendering means the tool stays free with no watermark). Verify it yourself: open your browser's network tab while generating a video — no audio bytes leave the page.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-send me-2"></i>From Export to Publish: Where Your WebM Plays</h2>
-            <p>The tool exports <strong>WebM</strong> (VP8/VP9 video + Opus audio) — an open, high-quality format. But not every platform accepts it, so check this table before you post:</p>
+            <p><strong>The tool exports WebM (VP8/VP9 video + Opus audio) — an open, high-quality format.</strong> Not every platform accepts it, so check this table before you post:</p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Platform / app</th><th>WebM support</th><th>Notes</th></tr></thead>
@@ -508,7 +507,7 @@
                 <thead><tr><th>Style</th><th>Best for</th><th>Why it works</th></tr></thead>
                 <tbody>
                   <tr><td><strong>Bars</strong></td><td>EDM/dance tracks, beat-driven promos</td><td>Bass bars punch on every kick — maximum energy read at thumbnail size</td></tr>
-                  <tr><td><strong>Wave</strong></td><td>Podcast audiograms, voice clips</td><td>The classic audiogram look; viewers instantly recognize it as "audio you can watch"</td></tr>
+                  <tr><td><strong>Wave</strong></td><td>Podcast audiograms, voice clips</td><td>A smooth spectrum line viewers instantly recognize as "audio you can watch"</td></tr>
                   <tr><td><strong>Circle</strong></td><td>Album-art backdrops, lo-fi streams</td><td>Radial symmetry frames cover art beautifully and reads well as a loop</td></tr>
                 </tbody>
               </table>
@@ -520,9 +519,11 @@
             <ul>
               <li><strong>WebM output only.</strong> Instagram and some editors need MP4 — convert after export (see above).</li>
               <li><strong>Not a loudness meter.</strong> Bar height shows relative FFT energy, not calibrated dB SPL or LUFS. For loudness, use our <a href="../loudness-meter/">loudness meter</a>.</li>
+              <li><strong>Not a time-domain waveform.</strong> All three styles plot frequency magnitudes — this build has no oscilloscope view and cannot show clipping.</li>
               <li><strong>Large files need memory.</strong> A 200 MB WAV decodes into RAM; very long files may stutter on low-end devices. Trim first with our <a href="../../audio-editing-tools/audio-trimmer/">audio trimmer</a>.</li>
               <li><strong>60 fps needs a capable GPU.</strong> On weak hardware the animation may drop frames; the exported video still records at 60 fps timing.</li>
               <li><strong>Format support varies by browser.</strong> All modern browsers decode MP3/WAV; FLAC and OGG support is broad but not universal — if a file won't load, convert it to WAV first.</li>
+              <li><strong>Decorative sliders.</strong> The Bar Count and Smoothing sliders in this build have no effect — 64 bars and smoothing 0.7 are fixed in the code.</li>
             </ul>
           </section>
 
@@ -532,7 +533,7 @@
               <table class="table table-bordered">
                 <thead><tr><th>Option</th><th>Best for</th><th>Drawback</th></tr></thead>
                 <tbody>
-                  <tr><td><strong>This visualizer</strong></td><td>Fast, free, private waveform/spectrum videos</td><td>WebM output; fewer design templates</td></tr>
+                  <tr><td><strong>This visualizer</strong></td><td>Fast, free, private spectrum videos</td><td>WebM output; fewer design templates</td></tr>
                   <tr><td>Headliner / Wavve (cloud)</td><td>Templated podcast audiograms with captions</td><td>Uploads your audio; free tiers watermark or limit exports</td></tr>
                   <tr><td>After Effects + Trapcode</td><td>Fully custom pro motion graphics</td><td>Paid software with a steep learning curve</td></tr>
                 </tbody>
@@ -551,113 +552,113 @@
                 </h3>
                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    It decodes your audio file in the browser with the Web Audio API, then runs a Fast Fourier Transform (FFT) on every frame to split the sound into frequency bins. Those bin values drive the canvas animation — bars, oscilloscope wave, or radial display — redrawn 60 times per second via requestAnimationFrame.
+                    It decodes your audio file in the browser with the Web Audio API, then runs a Fast Fourier Transform (FFT) on every frame to split the sound into frequency bins. Those bin values drive the canvas animation — bars, a spectrum line, or a radial display — redrawn 60 times per second via requestAnimationFrame.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
                     What is the difference between a waveform and a spectrum visualizer?
                   </button>
                 </h3>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq2" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    A waveform (time domain) plots amplitude against time, showing the physical shape of the sound — transients, clipping, and dynamics. A spectrum (frequency domain) plots energy against frequency, showing how much bass, midrange, and treble the sound contains at each moment. This tool offers both, plus a circular spectrum style.
+                    A waveform (time domain) plots amplitude against time, showing the physical shape of the sound — transients, clipping, and dynamics. A spectrum (frequency domain) plots energy against frequency, showing how much bass, midrange, and treble the sound contains at each moment. All three styles in this tool are frequency-domain: Bars, a spectrum line (Wave), and a circular spectrum (Circle).
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
                     How does the browser record a video from the visualizer?
                   </button>
                 </h3>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq3" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
                     The tool calls canvas.captureStream(60) to grab the animation as a 60fps video stream, taps the audio through a MediaStreamAudioDestinationNode, and feeds both into the MediaRecorder API. The result is multiplexed into a WebM file (VP8/VP9 video, Opus audio) entirely on your device — no server involved.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
                     Is my uploaded audio sent to a server?
                   </button>
                 </h3>
-                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq4" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    No. Decoding, analysis, rendering, and video encoding all happen locally with browser-native APIs. Your file never leaves your device, which also means unreleased tracks stay private and there is no upload wait — even a 50 MB WAV starts visualizing instantly.
+                    No. Decoding, analysis, rendering, and video encoding all happen locally with browser-native APIs. Your file never leaves your device, which means unreleased tracks stay private and there is no upload wait — even a 50 MB WAV starts visualizing instantly.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
                     How do I convert the exported WebM video to MP4?
                   </button>
                 </h3>
-                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq5" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
                     Use the free HandBrake app (drag in the WebM, export as MP4), VLC's Convert/Save feature, or FFmpeg with the command ffmpeg -i input.webm -c:v libx264 output.mp4. You need MP4 for Instagram feed posts, TikTok uploads, and some video editors; YouTube, Chrome, and Discord accept WebM directly.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
                     What does the smoothing slider actually do?
                   </button>
                 </h3>
-                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq6" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    It controls an exponential moving average between raw FFT frames: higher values blend each new frame more with the previous one, so bars glide instead of flickering. At 0.7 (the default) you get punchy attacks with graceful decay; near 0.9 the motion turns slow and dreamy; near 0.4 it reacts violently to every transient.
+                    Nothing in this build — the slider is decorative. Smoothing is fixed internally at 0.7 (an exponential moving average between FFT frames: each new frame blends 70% with the previous one, so bars glide instead of flickering). The same applies to the Bar Count slider: the visualizer always draws 64 bars.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
                     Which visualization style should I choose for a podcast clip?
                   </button>
                 </h3>
-                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq7" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Use the Wave style — it is the classic audiogram look that social audiences instantly recognize as listenable audio. Bars suit beat-driven music where bass movement sells the energy, and Circle works best as an ambient backdrop behind album art or a logo.
+                    Use the Wave style — a smooth spectrum line that social audiences instantly recognize as listenable audio. Bars suit beat-driven music where bass movement sells the energy, and Circle works best as an ambient backdrop behind album art or a logo.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
                     Why do the bass bars look chunky while treble looks smooth?
                   </button>
                 </h3>
-                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq8" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
                     Because FFT bins are linear in frequency: at a 2048-sample FFT and 44.1 kHz, each bin spans about 21.5 Hz, so the entire 20–250 Hz bass range gets only ~11 bins while treble gets hundreds. It is a mathematical property of the FFT, not a bug — logarithmic binning would fix it but costs real-time performance.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
                     Can the visualizer show how loud my audio is in decibels?
                   </button>
                 </h3>
-                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq9" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Not in calibrated decibels. Bar height reflects relative FFT magnitude (0–255), which shows the shape of your mix but not absolute loudness. For real loudness numbers use our loudness meter (LUFS) or decibel meter; for checking clipping, the Wave view's flat tops are a reliable visual tell.
+                    Not in calibrated decibels. Bar height reflects relative FFT magnitude (0–255), which shows the shape of your mix but not absolute loudness. For real loudness numbers use our loudness meter (LUFS) or decibel meter. And because the Wave style plots frequency magnitudes — not a time-domain waveform — it cannot show clipping as flat tops; use a DAW or the loudness meter for that.
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
+<div class="accordion-item">
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
                     What audio formats can I upload?
                   </button>
                 </h3>
-                <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div id="faq10" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
                     MP3, WAV, AAC, FLAC, and OGG decode in all modern browsers. If a file refuses to load, it is almost always an unusual codec variant — converting it to WAV first solves it. Very long files (over an hour) may strain low-memory devices, so trim them down first.
                   </div>

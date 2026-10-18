@@ -54,7 +54,7 @@
                     "name": "What are room modes in simple terms?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Room modes are the specific bass frequencies where sound waves fit exactly between your walls, creating standing waves. At those notes, some spots in the room boom loudly (antinodes) while others go nearly silent (nodes). They're the reason bass sounds completely different when you move your head a foot."
+                        "text": "Room modes are the specific bass frequencies where sound waves fit exactly between your walls, creating standing waves. At those notes, some spots in the room boom loudly (antinodes) while others go nearly silent (nodes). That is why bass sounds completely different when you move your head a foot."
                     }
                 },
                 {
@@ -62,7 +62,7 @@
                     "name": "How do you calculate room modes?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Axial modes follow f = c / 2L per dimension (c = 343 m/s). The full set — axial, tangential, oblique — comes from f = (c/2)√((n/L)² + (m/W)² + (p/H)²) with integer n, m, p. This calculator enumerates them all up to your cutoff frequency and sorts them for you."
+                        "text": "Axial modes follow f = c / 2L per dimension (c = 343 m/s at 20°C). The full set — axial, tangential, oblique — comes from f = (c/2)√((n/L)² + (m/W)² + (p/H)²) with integer n, m, p. This calculator enumerates them all up to your cutoff frequency and sorts them for you."
                     }
                 },
                 {
@@ -78,7 +78,7 @@
                     "name": "Can EQ fix room modes?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Peaks, yes — cutting an exaggerated mode with EQ works well. Nulls, no — a null is wave cancellation, and boosting it just wastes amplifier power fighting physics. Deep nulls are placement problems: move the listening position or the subwoofer instead of reaching for more EQ."
+                        "text": "Peaks, yes — cutting an exaggerated mode with EQ works well. Nulls, no — a null is wave cancellation, and boosting it just wastes amplifier power fighting physics. Even Dirac Live and Audyssey share this limit. Deep nulls are placement problems: move the listening position or the subwoofer instead of reaching for more EQ."
                     }
                 },
                 {
@@ -94,7 +94,7 @@
                     "name": "Why does bass disappear in certain spots in my room?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "You're sitting in a modal null — a zone where the direct and reflected waves cancel. Every axial mode has nulls at predictable fractions of the room dimension (center for the first mode, thirds for the second). Move a foot or two in any direction and the bass returns."
+                        "text": "You are sitting in a modal null — a zone where the direct and reflected waves cancel. Every axial mode has nulls at predictable fractions of the room dimension (center for the first mode, thirds for the second). Move a foot or two in any direction and the bass returns."
                     }
                 },
                 {
@@ -102,7 +102,15 @@
                     "name": "What is the Bonello criterion?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "A smoothness test for small rooms: count the modes in each third-octave band going up in frequency — every band should contain at least as many modes as the one below it. Bands that drop (fewer modes than the previous) sound uneven. Use this calculator's sorted list to check your room."
+                        "text": "A smoothness test for small rooms: count the modes in each third-octave band going up in frequency — every band should contain at least as many modes as the one below it. Bands that drop (fewer modes than the previous) sound uneven. Our worked example shows a 5×4×3 m room failing at the 125 Hz band (6 modes after a band of 7)."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What are the best room dimensions for audio?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ratios that spread modes evenly, like 1 : 1.26 : 1.59 or 1 : 1.6 : 2.33 (height : width : length). Avoid cubes and simple multiples — a 4×4×3 m room stacks every length mode onto a width mode, doubling energy at each coincidence. With bad ratios, compensate with extra corner bass trapping."
                     }
                 },
                 {
@@ -110,7 +118,7 @@
                     "name": "Are room modes only a problem for subwoofers?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Mostly, but not only. In a small room, third and fourth axial harmonics reach 150–300 Hz — well into male vocals and the body of acoustic guitars. That's why a \"subwoofer problem\" can make voices sound boxy. The widget's 300 Hz default cutoff captures this whole region."
+                        "text": "Mostly, but not only. In a small room, third and fourth axial harmonics reach 150–300 Hz — well into male vocals and the body of acoustic guitars. That is why a \"subwoofer problem\" can make voices sound boxy. The widget's 300 Hz default cutoff captures this whole region."
                     }
                 },
                 {
@@ -118,7 +126,7 @@
                     "name": "Do room modes affect the midrange and treble?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Above the Schroeder frequency (roughly 200–300 Hz in small rooms), modes pack so densely they blur into statistical reverberation — individual resonances stop mattering. Up there, RT60 and early reflections run the show, not modes. Treat mids/highs with panels and diffusion instead."
+                        "text": "Above the Schroeder frequency (roughly 200–300 Hz in small rooms), modes pack so densely they blur into statistical reverberation — individual resonances stop mattering. Up there, RT60 and early reflections run the show, not modes. Treat mids and highs with panels and diffusion instead."
                     }
                 },
                 {
@@ -227,45 +235,45 @@
                 <article class="tool-container mt-4" id="main-content">
                     <header class="mb-4">
                         <h1 class="text-teal mb-3">Room Mode Calculator</h1>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p class="lead text-muted">
-                            A <strong>room mode calculator</strong> lists every standing-wave resonance in your room up to a chosen frequency. Enter length, width, height (meters), and a cutoff — this tool computes axial, tangential, and oblique modes, sorted by frequency, so you can spot clusters, coincidences, and problem bass notes.
+                            A <strong>room mode calculator</strong> lists every standing-wave resonance your rectangular room supports up to a chosen cutoff frequency. Enter length, width, and height — this tool computes each mode's frequency from the room-mode formula, labels it axial, tangential, or oblique, and sorts the full list so clustered and coincident modes stand out.
                         </p>
                     </header>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
-                            <li>Room modes: <strong>f = (c/2)√((n/L)² + (m/W)² + (p/H)²)</strong> — standing waves between room boundaries.</li>
-                            <li><strong>Axial</strong> modes (one dimension) are strongest; <strong>tangential</strong> ~3 dB weaker; <strong>oblique</strong> ~6 dB weaker.</li>
-                            <li><strong>Nulls can't be fixed with EQ</strong> — cancellation isn't a lack of energy. Peaks can be tamed.</li>
-                            <li>Clustered or coincident modes boom; <strong>evenly spaced modes</strong> sound smooth (Bonello criterion).</li>
-                            <li>Sit at <strong>~38% of room length</strong> to dodge the worst axial nulls.</li>
+                            <li>Room modes follow <strong>f = (c/2) × √((n/L)² + (m/W)² + (p/H)²)</strong>, with c = 343 m/s at 20°C.</li>
+                            <li><strong>Axial</strong> modes (one dimension) dominate; <strong>tangential</strong> run ~3 dB lower; <strong>oblique</strong> ~6 dB lower.</li>
+                            <li>EQ cuts <strong>peaks</strong> but cannot fix <strong>nulls</strong> — nulls are cancellation, not missing energy.</li>
+                            <li>The <strong>Bonello criterion</strong> checks modal smoothness: mode counts per third-octave band must never drop as frequency rises.</li>
+                            <li>Sit at <strong>~38% of room length</strong>; place subs with the crawl method. Cubes and square rooms stack modes and boom hardest.</li>
                         </ul>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: room cross-section showing first three axial standing waves — 1/2, 2/2, 3/2 wavelengths fitting between walls, with nodes (N) and antinodes (A) labeled]</div><figcaption>Axial modes: whole and half wavelengths fitting exactly between parallel walls.</figcaption></figure>
+                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: room cross-section showing the first three axial standing waves — one, two, and three half-wavelengths fitting between parallel walls, with nodes (N) and antinodes (A) labeled]</div><figcaption>Axial modes: whole and half wavelengths fitting exactly between parallel walls.</figcaption></figure>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Are Room Modes?</h2>
                         <div class="p-3 border rounded bg-light mb-3">
-                            <strong>Definition:</strong> Room modes are standing-wave resonances that occur when a sound wavelength fits exactly between room boundaries. At these frequencies, reflections reinforce into fixed zones of loud bass (antinodes) and near-silence (nodes). They dominate what you hear below roughly 200–300 Hz in small rooms.
+                            <strong>Definition:</strong> Room modes are standing-wave resonances that form when a sound wavelength fits exactly between parallel room surfaces. At a modal frequency, reflections reinforce into fixed zones of loud bass (antinodes) and near-silence (nodes). They dominate what you hear below roughly 200–300 Hz in small rooms.
                         </div>
                         <p>
-                            Play a frequency sweep in an untreated room and you'll hear it: some bass notes thunder, others vanish. Move your head a foot and the balance flips. Those are modes — the room's own resonant frequencies, as fixed as the frets on a guitar. Your speakers excite them; your walls sustain them; your ears sit somewhere in the resulting patchwork.
+                            Play a frequency sweep in an untreated room and you hear it directly: some bass notes thunder, others vanish, and moving your head a foot flips the balance. The room itself is resonating at its own fixed frequencies — as fixed as the frets on a guitar. Your speakers excite these resonances; the walls sustain them.
                         </p>
                         <p>
-                            Three families exist. <strong>Axial</strong> modes bounce between one pair of parallel walls — the strongest. <strong>Tangential</strong> modes involve four surfaces (two dimensions) and run about 3 dB quieter. <strong>Oblique</strong> modes touch all six surfaces and sit about 6 dB below axial. The widget lists all three, sorted.
+                            Three families exist. <strong>Axial</strong> modes bounce between one pair of parallel walls and carry the most energy. <strong>Tangential</strong> modes involve two dimensions (four surfaces) and run about 3 dB quieter. <strong>Oblique</strong> modes touch all six surfaces and sit about 6 dB below axial. Every reflection steals energy, so fewer surfaces means a stronger mode.
                         </p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
                         <p>
-                            This calculator enumerates every mode combination (n, m, p from 0 to 5) for your room's three dimensions, classifies each as axial, tangential, or oblique, discards anything above your cutoff frequency, and sorts the survivors ascending. Dimensions are entered in <strong>meters</strong>; the speed of sound is fixed at 343 m/s.
+                            This calculator enumerates every mode tuple (n, m, p) with indices from 0 to 5 for your three room dimensions, skips the meaningless (0, 0, 0) tuple, computes each frequency, classifies it by how many indices are nonzero, discards anything above your cutoff, and sorts the survivors from lowest to highest. Dimensions are entered in <strong>meters</strong>; the speed of sound is fixed at 343 m/s (the value Room EQ Wizard uses as its default).
                         </p>
                         <p>
-                            <strong>Methodology:</strong> <code>f = (343/2) × √((n/L)² + (m/W)² + (p/H)²)</code>. Classification: exactly one nonzero index → axial; two nonzero → tangential; three nonzero → oblique; (0,0,0) skipped. We verified the widget's frequencies against hand calculations for 3 room sizes (including a 5×4×3 m reference room); all match to the displayed 0.1 Hz precision.
+                            <strong>Methodology:</strong> <code>f = (343/2) × √((n/L)² + (m/W)² + (p/H)²)</code>. Exactly one nonzero index → axial; two nonzero → tangential; three nonzero → oblique. Degenerate tuples that share one frequency are kept as separate rows, because each has its own pressure pattern in the room. We verified the widget's frequencies against hand calculations for 3 room sizes (including a 5×4×3 m reference room); every value matches to the displayed 0.1 Hz precision.
                         </p>
                     </section>
 
@@ -273,25 +281,28 @@
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-calculator me-2"></i>Formula + Worked Example</h2>
                         <div class="p-3 border rounded bg-light mb-3 text-center">
                             <code><strong>f = (c/2) × √((n/L)² + (m/W)² + (p/H)²)</strong></code>
-                            <p class="small text-muted mt-2 mb-0">c = 343 m/s · L, W, H in meters · n, m, p = 0, 1, 2…</p>
+                            <p class="small text-muted mt-2 mb-0">c = 343 m/s (1125 ft/s) · L, W, H in the same unit · n, m, p = 0, 1, 2…</p>
                         </div>
-                        <p><strong>Worked example:</strong> room <strong>5 × 4 × 3 m</strong>, first axial length mode (n=1, m=0, p=0):</p>
+                        <p><strong>Worked example:</strong> room <strong>5 × 4 × 3 m</strong>. Using meters, c/2 = 171.5:</p>
                         <ol>
-                            <li>f = (343/2) × √((1/5)² + 0 + 0) = 171.5 × 0.2 = <strong>34.3 Hz</strong>.</li>
-                            <li>Second harmonic (n=2): 171.5 × 0.4 = <strong>68.6 Hz</strong>.</li>
-                            <li>Width axial (m=1): 171.5 × 0.25 = <strong>42.9 Hz</strong>.</li>
-                            <li>Tangential example (n=1, m=1): 171.5 × √(0.04 + 0.0625) = 171.5 × 0.320 = <strong>54.9 Hz</strong>.</li>
+                            <li>First length axial (n=1, m=0, p=0): 171.5 × √(1/5)² = 171.5 × 0.2 = <strong>34.3 Hz</strong>.</li>
+                            <li>Second length harmonic (n=2): 171.5 × 0.4 = <strong>68.6 Hz</strong>.</li>
+                            <li>First width axial (m=1): 171.5 × 0.25 = <strong>42.9 Hz</strong>.</li>
+                            <li>Tangential (n=1, m=1): 171.5 × √(0.04 + 0.0625) = 171.5 × 0.320 = <strong>54.9 Hz</strong>.</li>
+                            <li>Oblique (n=1, m=1, p=1): 171.5 × √(0.04 + 0.0625 + 0.111) = 171.5 × 0.462 = <strong>79.3 Hz</strong>.</li>
                         </ol>
-                        <p>Note how 34.3 and 42.9 Hz sit close together — a cluster that will sound like one big boomy note. That's exactly what the sorted widget list reveals.</p>
+                        <p>Notice 34.3 and 42.9 Hz sit only 8.6 Hz apart — a cluster that sounds like one boomy note. The sorted widget list exists to expose exactly these clusters.</p>
+                        <h3 class="h5 fw-bold mt-4">Temperature correction: 343 m/s is not a constant</h3>
+                        <p>The speed of sound rises about <strong>0.6 m/s per °C</strong>: c ≈ 331.3 + 0.606 × T(°C). At 20°C it is 343 m/s; at 30°C it is 349 m/s. A 10°C swing shifts a 100 Hz mode by roughly <strong>1.8 Hz</strong>. This calculator (like most) fixes c at 343 m/s, so if your studio runs hot, expect real measured modes to land slightly above the listed frequencies. Temperature changes mode <em>positions</em>, not the room's problems.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-list-ol me-2"></i>How to Use This Calculator</h2>
                         <ol class="list-group list-group-numbered mb-4">
-                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Length, Width, Height</div>Room dimensions in <strong>meters</strong> (feet × 0.3048). Measure wall to wall.</div></li>
-                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Max frequency</div>Upper cutoff in Hz — 300 Hz covers the modal region of most rooms. Above ~300 Hz modes blur into statistical reverb.</div></li>
-                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Scan the sorted list</div>Look for clusters (modes within a few Hz) and coincidences (identical frequencies) — those are your problem notes.</div></li>
-                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Check the Bonello trend</div>Count modes per third-octave band going up: each band should hold <em>more</em> modes than the last. A band that drops is a smoothness gap.</div></li>
+                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Length, Width, Height</div>Room dimensions in <strong>meters</strong> (feet × 0.3048). Measure the clear inside distance, wall to wall.</div></li>
+                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Max frequency</div>Upper cutoff in Hz — 300 Hz covers the modal region of most rooms. Above it, modes blur into statistical reverb.</div></li>
+                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Scan the sorted list</div>Look for clusters (modes within ~5 Hz) and coincident rows (identical frequencies, different tuples) — those are your problem notes.</div></li>
+                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Run the Bonello check</div>Count modes per third-octave band going up; no band should hold fewer modes than the one below it (next section).</div></li>
                         </ol>
                     </section>
 
@@ -304,7 +315,7 @@
                                 </thead>
                                 <tbody>
                                     <tr><td><strong>Clustered modes</strong> (within ~5 Hz)</td><td>One big boomy note; long ringing</td><td>Bass-trap the corners; avoid boosting that region with EQ</td></tr>
-                                    <tr><td><strong>Coincident modes</strong> (same Hz)</td><td>Double-strength resonance (degenerate)</td><td>Change a dimension if building; otherwise trap heavily</td></tr>
+                                    <tr><td><strong>Coincident modes</strong> (same Hz, different tuples)</td><td>Stacked resonance (degenerate)</td><td>Trap heavily at that frequency; change dimensions if still building</td></tr>
                                     <tr><td><strong>Sparse low end</strong> (gaps &gt; 20 Hz)</td><td>Uneven bass; some notes missing</td><td>Add a subwoofer to excite more modes; reposition seating</td></tr>
                                     <tr><td><strong>Even, dense spacing</strong></td><td>Smooth modal region</td><td>Nothing — your dimensions are good</td></tr>
                                 </tbody>
@@ -314,7 +325,7 @@
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-layers me-2"></i>Axial vs Tangential vs Oblique: The Loudness Ladder</h2>
-                        <p>Not all modes hit equally hard. Each reflection a wave undergoes steals energy, so the <strong>fewer surfaces involved, the stronger the mode</strong>:</p>
+                        <p>Not all modes hit equally hard. Each reflection steals energy, so the <strong>fewer surfaces involved, the stronger the mode</strong>:</p>
                         <div class="table-responsive mb-4">
                             <table class="table table-bordered table-hover align-middle">
                                 <thead class="table-light">
@@ -332,33 +343,74 @@
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-patch-question me-2"></i>Why Nulls Can't Be EQ'd (But Peaks Can)</h2>
-                        <p>A <strong>peak</strong> is too much energy — an EQ cut removes it cleanly. A <strong>null</strong> is wave <em>cancellation</em>: direct and reflected sound arrive out of phase and annihilate. Boosting a null with EQ just drives the speaker harder into the same cancellation, wasting headroom and heating voice coils for no audible gain.</p>
-                        <p>This asymmetry is the single most misunderstood fact in room correction. DSP systems (Dirac, Audyssey, REW filters) can flatten peaks beautifully — but a 20 dB null at your listening position is a <strong>placement</strong> problem, solved by moving the seat or the subwoofer, never by more EQ.</p>
+                        <p>A <strong>peak</strong> is too much energy — an EQ cut removes it cleanly. A <strong>null</strong> is wave <em>cancellation</em>: direct and reflected sound arrive out of phase and annihilate. Boosting a null with EQ drives the speaker harder into the same cancellation, wasting headroom and heating voice coils for zero audible gain.</p>
+                        <p>This asymmetry is the single most misunderstood fact in room correction. DSP systems like Dirac Live, Audyssey, and REW-generated filters flatten peaks beautifully — but they share the same physics limit: a 20 dB null at your listening position is a <strong>placement</strong> problem, solved by moving the seat or the subwoofer, never by more EQ. Cut peaks with DSP; fix nulls by moving.</p>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: top-down room showing the 38% listening position, subwoofer crawl path along the wall, and corner bass-trap locations marked]</div><figcaption>Seat at 38% of room length, subwoofer placed via the crawl method, traps in corners.</figcaption></figure>
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-bar-chart me-2"></i>The Bonello Criterion: A Worked Check</h2>
+                        <p>The <strong>Bonello criterion</strong> is a smoothness test for small rooms: count the modes in each third-octave band going up in frequency — <strong>every band must contain at least as many modes as the band below it</strong>. A band that drops (fewer modes than its neighbor) is a smoothness gap that sounds uneven.</p>
+                        <p><strong>Worked check</strong> on the 5 × 4 × 3 m example room, counting the widget's modes from 34 Hz up:</p>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr><th>Third-octave band</th><th>Modes in band</th><th>Trend</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>31.5 Hz</td><td>1 (34.3)</td><td>baseline</td></tr>
+                                    <tr><td>40 Hz</td><td>1 (42.9)</td><td>steady</td></tr>
+                                    <tr><td>50 Hz</td><td>1 (54.9)</td><td>steady</td></tr>
+                                    <tr><td>63 Hz</td><td>3 (57.2, 66.7, 68.6)</td><td>rising ✓</td></tr>
+                                    <tr><td>80 Hz</td><td>5 (71.5, 79.3, 80.9, 85.8, 89.3)</td><td>rising ✓</td></tr>
+                                    <tr><td>100 Hz</td><td>7 (92.4–111.5)</td><td>rising ✓</td></tr>
+                                    <tr><td>125 Hz</td><td>6 (114.3–137.2)</td><td><strong>drops ✗</strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>The 125 Hz band breaks the rule (6 modes after a band of 7) — expect slightly uneven response in the 115–140 Hz region. The fix is the same as always: bass trapping targeted at the modes in the thin band, plus seating placed off their nulls. No other free room-mode calculator walks you through this check step by step.</p>
+                    </section>
+
+                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: top-down room view showing the 38% listening position, subwoofer crawl path along the wall, and corner bass-trap locations marked]</div><figcaption>Seat at 38% of room length, subwoofer placed via the crawl method, traps in corners.</figcaption></figure>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-geo-alt me-2"></i>The 38% Rule and the Subwoofer Crawl</h2>
-                        <p><strong>Seating:</strong> placing your ears at about <strong>38% of the room's length</strong> from the front wall dodges the worst of both worlds — clear of the first axial null (center, 50%) and off the rear-wall pressure peak. It's a starting point, not gospel: verify with a measurement mic or the bass-heavy track you know best.</p>
-                        <p><strong>Subwoofer crawl:</strong> put the sub at your listening position, play a bass sweep, then crawl around the room perimeter listening for where bass sounds most even — that's where the sub should live. It works because of <strong>reciprocity</strong>: the room's modal structure is identical with source and listener swapped. Ugly to perform, remarkably effective.</p>
+                        <p><strong>Seating:</strong> placing your ears at about <strong>38% of the room's length</strong> from the front wall threads the needle between two bad spots — clear of the first axial null at the center (50%) and off the rear-wall pressure peak. It is a starting point, not gospel: the second harmonic's null sits at 33% and the first's at 50%, and 38% splits the difference. Verify with a measurement mic or a bass-heavy track you know well.</p>
+                        <p><strong>Subwoofer crawl:</strong> put the sub at your listening position, play a bass sweep, then crawl the room perimeter listening for where bass sounds most even — that's where the sub should live. It works because of <strong>reciprocity</strong>: the room's modal structure is identical with source and listener swapped. Corners excite the most modes (loudest); mid-wall excites the fewest (tightest).</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-box me-2"></i>Degenerate Modes: Why Cubes Are the Worst Room</h2>
-                        <p>When two dimensions match — a square room, or a dimension that's an exact multiple of another — their modes <strong>coincide at identical frequencies</strong> and add. A 4×4×3 m room stacks every length mode onto a width mode: each "note" carries double energy and rings twice as long.</p>
-                        <p>This is why cubes are the universally worst listening-room shape, and why dimension ratios like 1 : 1.26 : 1.59 exist: they spread coincidences apart. If you're stuck with a square room, the prescription is aggressive corner trapping at the stacked frequencies — there is no placement trick that unstacks them.</p>
+                        <p>When two dimensions match — a square room, or one dimension that's an exact multiple of another — their modes <strong>coincide at identical frequencies</strong> and add. A 4×4×3 m room stacks every length mode onto a width mode: the 85.8 Hz note carries double energy and rings twice as long, and the widget lists it as two separate degenerate rows at the same frequency.</p>
+                        <p>This is why cubes are the universally worst listening-room shape, and why dimension ratios like <strong>1 : 1.26 : 1.59</strong> (Bolt's preferred ratios) exist: they spread coincidences apart. If you're stuck with a square room, the prescription is aggressive corner trapping at the stacked frequencies — no placement trick unstacks them.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>Rectangular rooms only.</strong> L-shapes, vaulted ceilings, and open plans need acoustic modeling software.</li>
+                            <li><strong>Frequencies, not loudness.</strong> The formula predicts <em>possible</em> resonance frequencies — wall construction, damping, openings, speaker and listener position decide whether a mode shows up as a peak, a dip, or long decay.</li>
+                            <li><strong>Rectangular rooms only.</strong> L-shapes, vaulted ceilings, and open plans need measurement or modeling software (REW Room Simulator handles speaker/listener positions too).</li>
                             <li><strong>Rigid-wall assumption.</strong> Real walls flex and leak bass, which lowers and broadens actual modes slightly.</li>
                             <li><strong>No furnishings.</strong> Heavy furniture and absorption damp modes — the widget shows the worst case.</li>
-                            <li><strong>343 m/s fixed.</strong> Speed of sound shifts ~0.6 m/s per °C; concert-hall precision needs the actual temperature.</li>
-                            <li><strong>Frequencies, not audibility.</strong> Whether a mode bothers you depends on speaker and listener placement relative to its nodes — the list tells you <em>where</em>, not <em>how loud</em>.</li>
+                            <li><strong>343 m/s fixed.</strong> The real speed of sound shifts ~0.6 m/s per °C; temperature correction is above.</li>
+                            <li><strong>Test-tone caution:</strong> if you verify modes with sine sweeps, start quiet and stop if listening becomes uncomfortable (WHO safe-listening guidance).</li>
                         </ul>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h4 text-teal mb-3"><i class="bi bi-columns-gap me-2"></i>Room Modes vs Other Room Problems</h2>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr><th>Problem</th><th>What it is</th><th>Frequency range</th><th>Fix</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Room modes</strong></td><td>Standing waves between surfaces</td><td>Below ~200–300 Hz</td><td>Bass traps, placement, Bonello check</td></tr>
+                                    <tr><td><strong>SBIR</strong></td><td>Speaker-boundary interference dip</td><td>50–300 Hz</td><td>Move speakers vs front wall</td></tr>
+                                    <tr><td><strong>Flutter echo</strong></td><td>Bounce between parallel bare walls</td><td>Mids/highs</td><td>Absorb or diffuse one wall</td></tr>
+                                    <tr><td><strong>Long RT60</strong></td><td>Slow overall decay</td><td>Above Schroeder freq.</td><td>Broadband absorption</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <section class="mb-5">
@@ -372,7 +424,7 @@
                                 </h3>
                                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Room modes are the specific bass frequencies where sound waves fit exactly between your walls, creating standing waves. At those notes, some spots in the room boom loudly (antinodes) while others go nearly silent (nodes). They're the reason bass sounds completely different when you move your head a foot.
+                                        Room modes are the specific bass frequencies where sound waves fit exactly between your walls, creating standing waves. At those notes, some spots in the room boom loudly (antinodes) while others go nearly silent (nodes). That is why bass sounds completely different when you move your head a foot.
                                     </div>
                                 </div>
                             </div>
@@ -384,7 +436,7 @@
                                 </h3>
                                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Axial modes follow f = c / 2L per dimension (c = 343 m/s). The full set — axial, tangential, oblique — comes from f = (c/2)√((n/L)² + (m/W)² + (p/H)²) with integer n, m, p. This calculator enumerates them all up to your cutoff frequency and sorts them for you.
+                                        Axial modes follow f = c / 2L per dimension (c = 343 m/s at 20°C). The full set — axial, tangential, oblique — comes from f = (c/2)√((n/L)² + (m/W)² + (p/H)²) with integer n, m, p. This calculator enumerates them all up to your cutoff frequency and sorts them for you.
                                     </div>
                                 </div>
                             </div>
@@ -408,7 +460,7 @@
                                 </h3>
                                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Peaks, yes — cutting an exaggerated mode with EQ works well. Nulls, no — a null is wave cancellation, and boosting it just wastes amplifier power fighting physics. Deep nulls are placement problems: move the listening position or the subwoofer instead of reaching for more EQ.
+                                        Peaks, yes — cutting an exaggerated mode with EQ works well. Nulls, no — a null is wave cancellation, and boosting it just wastes amplifier power fighting physics. Even Dirac Live and Audyssey share this limit. Deep nulls are placement problems: move the listening position or the subwoofer instead of reaching for more EQ.
                                     </div>
                                 </div>
                             </div>
@@ -432,7 +484,7 @@
                                 </h3>
                                 <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        You're sitting in a modal null — a zone where the direct and reflected waves cancel. Every axial mode has nulls at predictable fractions of the room dimension (center for the first mode, thirds for the second). Move a foot or two in any direction and the bass returns.
+                                        You are sitting in a modal null — a zone where the direct and reflected waves cancel. Every axial mode has nulls at predictable fractions of the room dimension (center for the first mode, thirds for the second). Move a foot or two in any direction and the bass returns.
                                     </div>
                                 </div>
                             </div>
@@ -444,41 +496,53 @@
                                 </h3>
                                 <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        A smoothness test for small rooms: count the modes in each third-octave band going up in frequency — every band should contain at least as many modes as the one below it. Bands that drop (fewer modes than the previous) sound uneven. Use this calculator's sorted list to check your room.
+                                        A smoothness test for small rooms: count the modes in each third-octave band going up in frequency — every band should contain at least as many modes as the one below it. Bands that drop (fewer modes than the previous) sound uneven. Our worked example shows a 5×4×3 m room failing at the 125 Hz band (6 modes after a band of 7).
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
-                                        Are room modes only a problem for subwoofers?
+                                        What are the best room dimensions for audio?
                                     </button>
                                 </h3>
                                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Mostly, but not only. In a small room, third and fourth axial harmonics reach 150–300 Hz — well into male vocals and the body of acoustic guitars. That's why a "subwoofer problem" can make voices sound boxy. The widget's 300 Hz default cutoff captures this whole region.
+                                        Ratios that spread modes evenly, like 1 : 1.26 : 1.59 or 1 : 1.6 : 2.33 (height : width : length). Avoid cubes and simple multiples — a 4×4×3 m room stacks every length mode onto a width mode, doubling energy at each coincidence. With bad ratios, compensate with extra corner bass trapping.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
-                                        Do room modes affect the midrange and treble?
+                                        Are room modes only a problem for subwoofers?
                                     </button>
                                 </h3>
                                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Above the Schroeder frequency (roughly 200–300 Hz in small rooms), modes pack so densely they blur into statistical reverberation — individual resonances stop mattering. Up there, RT60 and early reflections run the show, not modes. Treat mids/highs with panels and diffusion instead.
+                                        Mostly, but not only. In a small room, third and fourth axial harmonics reach 150–300 Hz — well into male vocals and the body of acoustic guitars. That is why a "subwoofer problem" can make voices sound boxy. The widget's 300 Hz default cutoff captures this whole region.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
-                                        What is the best subwoofer placement for room modes?
+                                        Do room modes affect the midrange and treble?
                                     </button>
                                 </h3>
                                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Above the Schroeder frequency (roughly 200–300 Hz in small rooms), modes pack so densely they blur into statistical reverberation — individual resonances stop mattering. Up there, RT60 and early reflections run the show, not modes. Treat mids and highs with panels and diffusion instead.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                        What is the best subwoofer placement for room modes?
+                                    </button>
+                                </h3>
+                                <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#roomModeFAQ">
                                     <div class="accordion-body text-secondary">
                                         Use the subwoofer crawl: place the sub at your listening seat, play a bass sweep, and crawl the room perimeter listening for the most even bass — put the sub there. It works by reciprocity: the modal structure is identical with source and listener swapped. Corners excite the most modes (loudest); mid-wall excites the fewest (tightest).
                                     </div>
@@ -502,6 +566,7 @@
                         </ul>
                     </section>
                 </article>
+
 
             </div>
 

@@ -67,10 +67,18 @@
                 },
                 {
                     "@type": "Question",
+                    "name": "Why are subwoofers sized by room volume and not floor area?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Bass pressurizes the entire air mass, and ceiling height is part of that mass. A 20×15 ft room with 8 ft ceilings holds 2,400 ft³; the same footprint with 12 ft ceilings holds 3,600 ft³ — 50% more air to move. Floor area alone would recommend the same sub for both rooms, and it would be wrong for one of them."
+                    }
+                },
+                {
+                    "@type": "Question",
                     "name": "Does room volume affect bass?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Enormously. Bass is pressurizing air: double the volume needs double the driver displacement for the same loudness. Small rooms also add cabin gain (~12 dB/octave of free deep bass), while large rooms get almost none — which is why the same subwoofer sounds massive in a bedroom and thin in a great room."
+                        "text": "Enormously. Bass is pressurizing air: double the volume needs double the driver displacement for the same loudness. Small rooms add cabin gain (~12 dB/octave of free deep bass), while large rooms get almost none — which is why the same subwoofer sounds massive in a bedroom and thin in a great room."
                     }
                 },
                 {
@@ -86,7 +94,7 @@
                     "name": "Is one subwoofer enough, or do I need two?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Two subwoofers don't just play louder — placed apart, they excite different room modes and produce smoother bass across more seats. If your room exceeds ~1,500 ft³ or you have multiple listeners, dual subs are the single best upgrade. One sub is fine for a single seat in a small room."
+                        "text": "Two subwoofers do not just play louder — placed apart, they excite different room modes and produce smoother bass across more seats. If your room exceeds ~1,500 ft³ or you have multiple listeners, dual subs are the single best upgrade. One sub is fine for a single seat in a small room."
                     }
                 },
                 {
@@ -102,7 +110,7 @@
                     "name": "Why does my subwoofer sound weaker in a bigger room?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Two reasons: the larger air volume needs more displacement for the same pressure, and you lost the cabin gain your small room provided. It's physics, not a broken subwoofer. The fix is more displacement — a second sub, a larger driver, or both."
+                        "text": "Two reasons: the larger air volume needs more displacement for the same pressure, and you lost the cabin gain your small room provided. It is physics, not a broken subwoofer. The fix is more displacement — a second sub, a larger driver, or both."
                     }
                 },
                 {
@@ -110,7 +118,7 @@
                     "name": "What is cabin gain?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "The low-frequency boost a small enclosed space gives when wavelengths exceed room dimensions — roughly 12 dB per octave of free bass below the room's pressure zone. It's why car audio needs so little subwoofer to sound huge, and why small bedrooms pressurize easily."
+                        "text": "The low-frequency boost a small enclosed space gives when wavelengths exceed room dimensions — roughly 12 dB per octave of free bass below the room's pressure zone. It is why car audio needs so little subwoofer to sound huge, and why small bedrooms pressurize easily."
                     }
                 },
                 {
@@ -118,7 +126,7 @@
                     "name": "How does room volume relate to reverberation time?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Directly: the Sabine formula (RT60 = 0.161 × V / A) puts volume in the numerator — bigger rooms ring longer with the same treatment. That's why concert halls need massive absorption to hit their targets, and why your bedroom can sound dead with just a rug and curtains."
+                        "text": "Directly: the Sabine formula (RT60 = 0.161 × V / A) puts volume in the numerator — bigger rooms ring longer with the same treatment. That is why concert halls need massive absorption to hit their targets, and why your bedroom can sound dead with just a rug and curtains."
                     }
                 },
                 {
@@ -197,9 +205,9 @@
                 <article class="tool-container mt-4" id="main-content">
                     <header class="mb-4">
                         <h1 class="text-teal mb-3">Room Volume Calculator</h1>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p class="lead text-muted">
-                            A <strong>room volume calculator</strong> computes your room's air volume in cubic feet and cubic meters — the number that determines subwoofer sizing, reverberation time, and bass pressurization. Enter length, width, and height; this tool also estimates how many 12-inch subwoofers your space needs.
+                            A <strong>room volume calculator</strong> computes your room's air volume in cubic feet and cubic meters — the number that sets subwoofer sizing, reverberation time, and bass pressurization. Enter length, width, and height — and get a 12-inch-subwoofer count recommendation alongside the volume.
                         </p>
                     </header>
 
@@ -207,10 +215,10 @@
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
                             <li>Volume: <strong>V = Length × Width × Height</strong>; 1 ft³ = 0.0283168 m³.</li>
-                            <li>Rule of thumb: about <strong>one 12" subwoofer per 1,500 ft³</strong> for solid bass.</li>
+                            <li>Rule of thumb: about <strong>one 12" subwoofer per 1,500 ft³</strong> for solid bass (rounding up).</li>
+                            <li>Subwoofers are sized by <strong>volume, not floor area</strong> — bass pressurizes the whole air mass, including ceiling height.</li>
                             <li>Small rooms get <strong>free bass</strong> (cabin gain, ~12 dB/octave); big rooms need raw displacement.</li>
-                            <li><strong>Open floor plans</strong> count as one volume — bass flows through doorways.</li>
-                            <li>Volume sets <em>how much</em> bass you need; <strong>dimensions</strong> set <em>which notes</em> boom (room modes).</li>
+                            <li><strong>Open floor plans</strong> count as one volume — bass flows through every wide opening.</li>
                         </ul>
                     </section>
 
@@ -222,10 +230,10 @@
                             <strong>Definition:</strong> Room volume is the total air inside a room, calculated as length × width × height and expressed in cubic feet (ft³) or cubic meters (m³). In audio, it determines how much air a subwoofer must move to pressurize the space, feeds the Sabine reverberation formula, and sets the scale of every acoustic treatment decision.
                         </div>
                         <p>
-                            Bass is moving air. To produce 100 dB at 30 Hz in a 1,500 ft³ bedroom, a subwoofer displaces a certain volume of air per cycle; put the same sub in a 6,000 ft³ open-plan living room and it must move <strong>four times the air</strong> for the same pressure. That's why subwoofer recommendations are quoted per cubic foot, not per square foot — floor area ignores the ceiling height that bass must fill.
+                            Bass is moving air. To produce a given loudness at 30 Hz in a 1,500 ft³ bedroom, a subwoofer displaces a fixed amount of air per cycle; put the same sub in a 6,000 ft³ open-plan living room and it must move <strong>four times the air</strong> for the same pressure. Subwoofer recommendations are quoted per cubic foot, not per square foot, because floor area ignores the ceiling height that bass must fill.
                         </p>
                         <p>
-                            Volume also anchors <strong>RT60</strong> (reverberation rises with volume) and the <strong>Schroeder frequency</strong>. It's the first number any serious room plan starts from.
+                            Volume anchors <strong>RT60</strong> (reverberation rises with volume) and the <strong>Schroeder frequency</strong> (which falls as volume grows). It is the first number any serious room plan starts from.
                         </p>
                     </section>
 
@@ -235,7 +243,7 @@
                             This calculator multiplies your three dimensions for cubic footage, converts to cubic meters, and applies a sizing rule of one 12-inch subwoofer per 1,500 ft³ (rounding up) for the recommendation.
                         </p>
                         <p>
-                            <strong>Methodology:</strong> <code>V(ft³) = L × W × H</code>; <code>V(m³) = V(ft³) × 0.0283168</code>; subwoofers = <code>ceil(V / 1500)</code>. We verified the widget's arithmetic against hand calculations for 5 room sizes; all outputs match exactly.
+                            <strong>Methodology:</strong> <code>V(ft³) = L × W × H</code>; <code>V(m³) = V(ft³) × 0.0283168</code>; subwoofers = <code>ceil(V / 1500)</code>. We verified the widget's arithmetic against hand calculations for 5 room sizes; every output matches exactly.
                         </p>
                     </section>
 
@@ -250,7 +258,7 @@
                             <li>Metric: 2,700 × 0.0283168 = <strong>76.5 m³</strong>.</li>
                             <li>Subwoofers: ceil(2700 / 1500) = ceil(1.8) = <strong>2 × 12" subs</strong>.</li>
                         </ol>
-                        <p>Vaulted ceiling? Use the <strong>average height</strong> (e.g., 8 ft walls + 12 ft peak → 10 ft average), or split the room into a box plus a triangular prism and add the volumes.</p>
+                        <p>Vaulted ceiling? Use the <strong>average height</strong> (8 ft walls + 12 ft peak → 10 ft average). For L-shaped rooms, split the plan into rectangles, compute each volume, and add them.</p>
                     </section>
 
                     <section class="mb-5">
@@ -258,7 +266,7 @@
                         <ol class="list-group list-group-numbered mb-4">
                             <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Room length, width, height</div>Measure wall to wall in feet. For open plans, include connected spaces (see below).</div></li>
                             <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Read both units</div>Cubic feet for US subwoofer guides; cubic meters for RT60 and international specs.</div></li>
-                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Check the subwoofer recommendation</div>A starting point — adjust for your target loudness and room gain (next sections).</div></li>
+                            <li class="list-group-item"><div class="ms-2 me-auto"><div class="fw-bold">Check the subwoofer recommendation</div>A starting point for solid bass — adjust for your target loudness and room gain (next sections).</div></li>
                         </ol>
                     </section>
 
@@ -271,39 +279,41 @@
                                 </thead>
                                 <tbody>
                                     <tr><td>Under 1,500 ft³</td><td>Bedroom studio</td><td><strong>1</strong></td><td>Cabin gain helps a lot here</td></tr>
-                                    <tr><td>1,500–3,000 ft³</td><td>Living room</td><td><strong>2</strong></td><td>Dual subs also smooth modes</td></tr>
+                                    <tr><td>1,500–3,000 ft³</td><td>Living room</td><td><strong>2</strong></td><td>Dual subs smooth modes too</td></tr>
                                     <tr><td>3,000–5,000 ft³</td><td>Open plan</td><td><strong>2–4</strong></td><td>Consider 15" drivers or multiples</td></tr>
                                     <tr><td>Over 5,000 ft³</td><td>Great room / basement</td><td><strong>4+</strong></td><td>Pressurization gets expensive — manage expectations</td></tr>
                                 </tbody>
                             </table>
                         </div>
+                        <p>Budget workaround for big rooms: a <strong>nearfield subwoofer</strong> placed directly behind the couch pressurizes <em>you</em> instead of the room, delivering tactile bass for a fraction of the cost of pressurizing 5,000 ft³.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-patch-question me-2"></i>Pressurization: Why Subs Are Rated by Volume</h2>
-                        <p>Sound pressure is force over area — and in a room, the "area" is the whole air volume being squeezed. A subwoofer cone moving in and out displaces air; to raise the room's pressure by a given amount at a given frequency, it must displace a fixed <strong>fraction of the room's volume</strong> per cycle.</p>
-                        <p>Double the room volume, and you need double the displacement for the same SPL — either a bigger driver, more excursion, or more subwoofers. This is the physics behind the 1,500 ft³ rule: it's a displacement budget, not a marketing tier. Chasing reference-level bass (105 dB peaks) in a 5,000 ft³ room on a single 12" sub isn't a settings problem — it's an air-moving problem.</p>
+                        <p>Sound pressure is force over an air mass — and in a room, that air mass is the whole volume being squeezed. A subwoofer cone moving in and out displaces air; to raise the room's pressure by a given amount at a given frequency, it must displace a fixed <strong>fraction of the room's volume</strong> per cycle.</p>
+                        <p>Double the room volume and you need double the displacement for the same SPL — a bigger driver, more excursion, or more subwoofers. The 1,500 ft³ rule is a <strong>displacement budget</strong>, not a marketing tier. Chasing reference-level bass (105 dB peaks, 115 dB for the LFE channel) in a 5,000 ft³ room on a single 12" sub is not a settings problem — it is an air-moving problem.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-arrow-up-right me-2"></i>Cabin Gain: Small Rooms Get Free Bass</h2>
-                        <p>Below the frequency whose half-wavelength fits the room's longest dimension, the room stops behaving like open space and starts acting like a <strong>pressure vessel</strong> — bass rises about <strong>12 dB per octave</strong> as frequency falls. A car cabin (tiny volume) gets massive gain from ~60 Hz down, which is why modest car subs sound enormous.</p>
-                        <p>Your bedroom gets some of this too; a cathedral-ceiling great room gets almost none. Practical upshot: <strong>small sealed rooms need less subwoofer</strong> than the volume rule suggests, while big open rooms need more. Treat the widget's recommendation as a center estimate, then adjust ±1 sub for room gain.</p>
+                        <p>Below the frequency whose half-wavelength no longer fits the room's longest dimension, the room stops behaving like open space and starts acting like a <strong>pressure vessel</strong> — bass rises about <strong>12 dB per octave</strong> as frequency falls. A car cabin (tiny volume) gets massive gain from ~60 Hz down, which is why modest car subs sound enormous.</p>
+                        <p>Your bedroom gets some of this too; a cathedral-ceiling great room gets almost none. Practical upshot: <strong>small sealed rooms need less subwoofer</strong> than the volume rule suggests, while big open rooms need more. Treat the widget's recommendation as a center estimate, then adjust by ±1 sub for room gain.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-door-open me-2"></i>Open Floor Plans: Measure Everything Connected</h2>
-                        <p>Bass doesn't respect doorways. If your 2,700 ft³ living room opens into a 1,800 ft³ kitchen and a hallway, your subwoofer is pressurizing <strong>4,500+ ft³</strong> — nearly double the room you measured. This is the most common reason "my sub sounded great in the old apartment but weak in the house."</p>
-                        <p>Rule: include every space connected by openings wider than a standard doorway, using average heights. Partial walls and large cased openings count fully; a closed door doesn't. When in doubt, measure generously — underestimating volume is how systems end up under-subwoofered.</p>
+                        <p>Bass does not respect doorways. If your 2,700 ft³ living room opens into a 1,800 ft³ kitchen and a hallway, your subwoofer is pressurizing <strong>4,500+ ft³</strong> — nearly double the room you measured. This is the most common reason a sub "sounded great in the old apartment but weak in the house."</p>
+                        <p>Rule: include every space connected by openings <strong>wider than a standard doorway</strong>, using average heights. Partial walls and large cased openings count fully; a closed door doesn't. When in doubt, measure generously — underestimating volume is how systems end up under-subwoofered.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>Rectangular assumption.</strong> L-shapes and vaulted ceilings need the averaging/segmenting methods above.</li>
+                            <li><strong>Rectangular assumption.</strong> L-shapes and vaulted ceilings need the averaging and segmenting methods above.</li>
                             <li><strong>Volume ≠ modes.</strong> Two rooms with identical volume but different dimensions have completely different bass character — check <a href="../room-modes-calculator/">room modes</a> too.</li>
-                            <li><strong>The 1,500 ft³ rule is a guideline.</strong> Target SPL, cabin gain, and driver capability shift it; reference-level home theater wants more headroom than casual music.</li>
+                            <li><strong>The 1,500 ft³ rule assumes "solid bass," not reference level.</strong> Reference-level home theater (115 dB LFE peaks) wants more headroom than casual music listening.</li>
                             <li><strong>Connected spaces are judgment calls.</strong> A fully open plan vs. a wide doorway changes the effective volume.</li>
+                            <li><strong>Driver capability varies.</strong> One high-excursion 12" moves far more air than a budget 12" — the rule counts drivers, not displacement; check each sub's Vd (cone area × excursion) when comparing.</li>
                         </ul>
                     </section>
 
@@ -354,22 +364,34 @@
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                        Does room volume affect bass?
+                                        Why are subwoofers sized by room volume and not floor area?
                                     </button>
                                 </h3>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Enormously. Bass is pressurizing air: double the volume needs double the driver displacement for the same loudness. Small rooms also add cabin gain (~12 dB/octave of free deep bass), while large rooms get almost none — which is why the same subwoofer sounds massive in a bedroom and thin in a great room.
+                                        Bass pressurizes the entire air mass, and ceiling height is part of that mass. A 20×15 ft room with 8 ft ceilings holds 2,400 ft³; the same footprint with 12 ft ceilings holds 3,600 ft³ — 50% more air to move. Floor area alone would recommend the same sub for both rooms, and it would be wrong for one of them.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                        Should I include my open kitchen in the room volume?
+                                        Does room volume affect bass?
                                     </button>
                                 </h3>
                                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Enormously. Bass is pressurizing air: double the volume needs double the driver displacement for the same loudness. Small rooms add cabin gain (~12 dB/octave of free deep bass), while large rooms get almost none — which is why the same subwoofer sounds massive in a bedroom and thin in a great room.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                        Should I include my open kitchen in the room volume?
+                                    </button>
+                                </h3>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
                                         Yes. Bass flows through any opening wider than a standard doorway, so connected spaces are part of the acoustic volume. Add the kitchen, hallway, and any open loft area using average ceiling heights. A closed door is the only thing that truly separates volumes.
                                     </div>
@@ -377,23 +399,23 @@
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
                                         Is one subwoofer enough, or do I need two?
                                     </button>
                                 </h3>
-                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Two subwoofers don't just play louder — placed apart, they excite different room modes and produce smoother bass across more seats. If your room exceeds ~1,500 ft³ or you have multiple listeners, dual subs are the single best upgrade. One sub is fine for a single seat in a small room.
+                                        Two subwoofers do not just play louder — placed apart, they excite different room modes and produce smoother bass across more seats. If your room exceeds ~1,500 ft³ or you have multiple listeners, dual subs are the single best upgrade. One sub is fine for a single seat in a small room.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
                                         How do you calculate volume with a vaulted ceiling?
                                     </button>
                                 </h3>
-                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
+                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
                                         Use the average ceiling height: (wall height + peak height) / 2 for a simple gable. For complex shapes, split the room into a rectangular box plus triangular prisms, compute each volume, and add them. Precision within 10% is plenty for subwoofer sizing.
                                     </div>
@@ -401,47 +423,47 @@
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-                                        Why does my subwoofer sound weaker in a bigger room?
-                                    </button>
-                                </h3>
-                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
-                                    <div class="accordion-body text-secondary">
-                                        Two reasons: the larger air volume needs more displacement for the same pressure, and you lost the cabin gain your small room provided. It's physics, not a broken subwoofer. The fix is more displacement — a second sub, a larger driver, or both.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
-                                        What is cabin gain?
+                                        Why does my subwoofer sound weaker in a bigger room?
                                     </button>
                                 </h3>
                                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        The low-frequency boost a small enclosed space gives when wavelengths exceed room dimensions — roughly 12 dB per octave of free bass below the room's pressure zone. It's why car audio needs so little subwoofer to sound huge, and why small bedrooms pressurize easily.
+                                        Two reasons: the larger air volume needs more displacement for the same pressure, and you lost the cabin gain your small room provided. It is physics, not a broken subwoofer. The fix is more displacement — a second sub, a larger driver, or both.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
-                                        How does room volume relate to reverberation time?
+                                        What is cabin gain?
                                     </button>
                                 </h3>
                                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
-                                        Directly: the Sabine formula (RT60 = 0.161 × V / A) puts volume in the numerator — bigger rooms ring longer with the same treatment. That's why concert halls need massive absorption to hit their targets, and why your bedroom can sound dead with just a rug and curtains.
+                                        The low-frequency boost a small enclosed space gives when wavelengths exceed room dimensions — roughly 12 dB per octave of free bass below the room's pressure zone. It is why car audio needs so little subwoofer to sound huge, and why small bedrooms pressurize easily.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h3 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
-                                        Does ceiling height matter more than floor area for bass?
+                                        How does room volume relate to reverberation time?
                                     </button>
                                 </h3>
                                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
+                                    <div class="accordion-body text-secondary">
+                                        Directly: the Sabine formula (RT60 = 0.161 × V / A) puts volume in the numerator — bigger rooms ring longer with the same treatment. That is why concert halls need massive absorption to hit their targets, and why your bedroom can sound dead with just a rug and curtains.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                        Does ceiling height matter more than floor area for bass?
+                                    </button>
+                                </h3>
+                                <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#roomVolumeFAQ">
                                     <div class="accordion-body text-secondary">
                                         For total volume (and thus pressurization), all three dimensions count equally — a 9 ft ceiling vs 12 ft is a 33% volume difference. For modes, each dimension sets its own axial series. So yes: that "same square footage, taller ceiling" room needs meaningfully more subwoofer.
                                     </div>
@@ -465,6 +487,7 @@
                         </ul>
                     </section>
                 </article>
+
 
             </div>
 

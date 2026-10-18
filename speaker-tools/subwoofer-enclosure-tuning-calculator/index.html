@@ -139,38 +139,48 @@
                     </div>
                 </div>
                 <div class="tool-container mt-4">
-
-                    <div class="tool-section">
-                        <p>A <strong>subwoofer box tuning calculator</strong> estimates the optimal tuning frequency (<strong>Fb</strong>) for your enclosure from the driver's Thiele-Small parameters. Enter Fs, Qts, and box volume — get a tuning reference for ported and sealed designs, plus guidance on what the number means for bass depth versus punch.</p>
+<div class="tool-section">
+                        <p>A <strong>subwoofer box tuning calculator</strong> computes the tuning frequency (<strong>Fb</strong>) your ported enclosure will actually produce — from box volume and port dimensions, using the Helmholtz resonance formula.</p>
+<p>Enter your planned box and port, read the resulting Fb, then use the guidance below to pick an <em>optimal</em> target for your music, movies, or SPL goals. Sealed builds get the driver's Fs as the resonance reference instead.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
-                            <li><strong>Fb</strong> is the frequency where a ported box reinforces bass most — tune it to shape deep vs. punchy bass.</li>
-                            <li><strong>EBP = Fs ÷ Qes</strong>: under ~50 → sealed box; over ~100 → ported box.</li>
-                            <li>Lower tuning = deeper bass but lazier transient response; higher tuning = punchier but shallower.</li>
-                            <li>Below Fb, a ported sub <strong>unloads</strong> — set your subsonic filter at or just below Fb.</li>
-                            <li>Car cabins add ~12 dB/octave of bass boost, so car boxes tune higher than home boxes.</li>
+                            <li><strong>Fb is the frequency where a ported box reinforces bass most</strong> — tune it to shape deep vs. punchy bass.</li>
+                            <li><strong>Fb comes from box volume and port dimensions, not from the driver's Fs.</strong> Change the port or the box and the tuning moves; the driver does not set it.</li>
+                            <li><strong>EBP = Fs ÷ Qes</strong>: under ~50 → sealed box; over ~100 → ported box; 50–100 → either works.</li>
+                            <li><strong>Lower tuning = deeper bass but lazier transients;</strong> higher tuning = punchier but shallower.</li>
+                            <li><strong>Below Fb, a ported sub unloads</strong> — set your subsonic filter at or just below Fb.</li>
+                            <li><strong>Car cabins add ~12 dB/octave of bass boost,</strong> so car boxes tune higher than home boxes.</li>
                         </ul>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-info-circle me-2"></i>What Is Subwoofer Box Tuning?</h2>
-                        <p><strong>Definition:</strong> Subwoofer box tuning is the process of setting a ported enclosure's resonant frequency (Fb) — the frequency where the port's air mass resonates with the box volume (a Helmholtz resonator) to reinforce bass output. Tuning lower extends deep bass; tuning higher maximizes punch and efficiency around the tuning point. Sealed boxes have no port and no Fb; their character is set by system Q (Qtc) instead.</p>
-                        <p>Think of a ported box as a bottle you blow across: the bottle's size and neck set the note. Change the box volume or port dimensions and the note — the tuning frequency — moves. This calculator gives you the starting note from your driver's specs.</p>
+                        <p><strong>Subwoofer box tuning is the process of setting a ported enclosure's resonant frequency (Fb)</strong> — the frequency where the port's air mass resonates with the box volume (a Helmholtz resonator) to reinforce bass output.</p>
+<p>Tuning lower extends deep bass; tuning higher maximizes punch and efficiency around the tuning point. Sealed boxes have no port and no Fb; their character is set by system Q (Qtc) instead.</p>
+                        <p>Think of a ported box as a bottle you blow across: the bottle's size and neck set the note. Change the box volume or port dimensions and the note — the tuning frequency — moves.</p>
+<p>This calculator gives you the actual note your box and port produce.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                        <p>This calculator treats a ported box as what it physically is — a <strong>Helmholtz resonator</strong>: the air mass in the port resonating against the air spring of the box volume. For ported enclosures it computes <code>Fb = (c / 2π) × √(A / (Vb × (L + 0.732 × D)))</code>, where c = 343 m/s (speed of sound), A is the port's cross-sectional area, Vb the net box volume, L the physical port length, and 0.732 × D the end correction for a port flanged at one end. Enter the box volume in liters and the port diameter and length in inches; the tool converts everything to SI units internally before computing. For sealed enclosures it reports the driver's Fs as the system resonance reference — sealed boxes have no port to tune.</p>
-                        <p>Methodology: Fb comes from the physical port dimensions, not the driver's Fs — change the port length or box volume and the computed tuning moves accordingly. Verification: a 2 ft³ (56.6 L) box with a 4-inch-diameter, 10-inch-long port computes to <strong>≈ 36 Hz</strong> through this calculator, matching the Helmholtz formula worked out below. <em>Last reviewed: October 2026.</em></p>
+                        <p><strong>This calculator treats a ported box as what it physically is — a Helmholtz resonator:</strong> the air mass in the port resonating against the air spring of the box volume.</p>
+<p>For ported enclosures it computes <code>Fb = (c / 2π) × √(A / (Vb × (L + 0.732 × D)))</code>.</p>
+                    <p>Where: c = 343 m/s (speed of sound); A = port cross-sectional area; Vb = net box volume; L = physical port length; 0.732 × D = end correction.</p>
+<p>Enter the box volume in liters and the port diameter and length in inches; the tool converts everything to SI units internally before computing.</p>
+<p>For sealed enclosures it reports the driver's Fs as the system resonance reference — sealed boxes have no port to tune.</p>
+                        <p><strong>Methodology:</strong> Fb comes from the physical port dimensions, not the driver's Fs — change the port length or box volume and the computed tuning moves accordingly.</p>
+<p>The Fs and Qts fields set context (suitability, EBP) but do not enter the ported Fb computation.</p>
+<p>Verification: a 2 ft³ (56.6 L) box with a 4-inch-diameter, 10-inch-long port computes to <strong>≈ 36 Hz</strong>, matching the Helmholtz formula worked out below. <em>Last reviewed: October 2026.</em></p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-calculator me-2"></i>Tuning Formula and Worked Example</h2>
                         <p>The ported-box tuning formula is the Helmholtz resonance:</p>
-                        <p><code><strong>Fb = (c ÷ 2π) × √(A ÷ (Vb × (L + 0.732 × D)))</strong></code> <span class="text-muted">(Fb = box tuning, Hz; c = speed of sound, 343 m/s; A = port cross-sectional area; Vb = net box volume; L = physical port length; D = port diameter — all in consistent units)</span></p>
+                        <p><code><strong>Fb = (c ÷ 2π) × √(A ÷ (Vb × (L + 0.732 × D)))</strong></code></p>
+                        <p><span class="text-muted">Fb = box tuning, Hz; c = speed of sound, 343 m/s; A = port cross-sectional area; Vb = net box volume; L = physical port length; D = port diameter — all in consistent units.</span></p>
                         <p><strong>Worked example:</strong> 2 ft³ (56.6 L) box with a 4″-diameter × 10″-long round port:</p>
                         <ol>
                             <li>Port area: A = π × (0.0508 m)² = <strong>≈ 0.00811 m²</strong> (4″ diameter = 0.1016 m)</li>
@@ -178,20 +188,20 @@
                             <li>Box volume: Vb = 56.6 L = <strong>0.0566 m³</strong></li>
                             <li>Tuning: Fb = (343 ÷ 6.2832) × √(0.00811 ÷ (0.0566 × 0.328)) = 54.59 × √0.436 = 54.59 × 0.660 = <strong>≈ 36 Hz</strong></li>
                         </ol>
-                        <p>Final port dimensions (diameter and length) then set the exact Fb — use the <a href="../bass-reflex-port-length-calculator/">bass reflex port length calculator</a> to convert this tuning target into a physical port.</p>
+                        <p>Once you have a target Fb, convert it into a physical port with the <a href="../bass-reflex-port-length-calculator/">bass reflex port length calculator</a> (metric) or the <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> (imperial).</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-list-ol me-2"></i>How to Use This Calculator</h2>
                         <ol>
-                            <li><strong>Driver Fs (Hz):</strong> enter free-air resonance from the spec sheet (typically 20–60 Hz for subwoofers).</li>
+                            <li><strong>Driver Fs (Hz):</strong> enter free-air resonance from the spec sheet (typically 20–60 Hz for subwoofers). Used for sealed reference and EBP context — not for ported Fb.</li>
                             <li><strong>Driver Qts:</strong> enter total Q (typically 0.2–0.6); it hints at sealed vs. ported suitability.</li>
                             <li><strong>Enclosure volume:</strong> enter your planned net box volume in liters (subtract driver and port displacement).</li>
                             <li><strong>Port diameter (inches):</strong> the inside diameter of your round port (ported builds only).</li>
                             <li><strong>Port length (inches):</strong> the physical length of the port tube (ported builds only).</li>
                             <li><strong>Enclosure type:</strong> choose Ported or Sealed. For sealed, the tool shows Fs as the system resonance reference — no port fields needed.</li>
-                            <li>Read the <strong>tuning frequency (Fb)</strong> — your design starting point.</li>
-                            <li>For ported builds, carry Fb into the <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> for full box modeling.</li>
+                            <li>Read the <strong>tuning frequency (Fb)</strong> — the tuning your box and port actually produce.</li>
+                            <li>Carry the target Fb into a <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> to finalize port dimensions.</li>
                         </ol>
                     </div>
 
@@ -211,6 +221,15 @@
                     </div>
 
                     <div class="tool-section mt-4">
+                        <h2 class="text-mid mb-4"><i class="bi bi-exclamation-circle me-2"></i>Your Driver Doesn't Set the Tuning — the Box Does</h2>
+                        <p><strong>Ported tuning comes from box volume and port dimensions alone.</strong> Swap the driver for a different one with the same box and port, and Fb does not move.</p>
+<p>The driver's Fs, Qts, and Vas decide whether the driver <em>suits</em> a ported box and how flat the result looks — they never set the tuning note.</p>
+                        <p>This matters because the misconception is published as fact: some calculator sites give "Fb = √(Vas/Vb) × Fs" for ported boxes. That formula is the <em>sealed-box</em> system resonance (Fc) misattributed.</p>
+<p>The Helmholtz equation above is the correct ported tuning — no Vas, no Fs, no Qts in it.</p>
+<p>A practical starting point instead: target Fb ≈ <strong>0.7–1.0 × Fs</strong> for a first ported design, then let the port dimensions hit that number.</p>
+                    </div>
+
+                    <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-patch-question me-2"></i>EBP: The Number That Chooses Ported vs. Sealed</h2>
                         <p><strong>EBP (Efficiency Bandwidth Product) = Fs ÷ Qes.</strong> This single ratio predicts which enclosure type suits your driver — a rule of thumb enclosure designers have used for decades:</p>
                         <div class="table-responsive">
@@ -223,31 +242,34 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p><strong>Worked example:</strong> a driver with Fs = 30 Hz and Qes = 0.35 → EBP = 30 ÷ 0.35 ≈ 86. Flexible — but leaning ported. A driver with Fs = 25 Hz, Qes = 0.6 → EBP ≈ 42: build it sealed. Check Qes on your spec sheet (if only Qts is listed, ask the manufacturer — EBP needs Qes specifically).</p>
+                        <p><strong>Worked example:</strong> a driver with Fs = 30 Hz and Qes = 0.35 → EBP = 30 ÷ 0.35 ≈ 86: flexible, leaning ported. Fs = 25 Hz, Qes = 0.6 → EBP ≈ 42: build it sealed.</p>
+<p><strong>Spec-sheet trap:</strong> EBP needs Qes specifically — Qts gives the wrong number. If only Qts is listed, ask the manufacturer.</p>
                     </div>
 
                     <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: EBP scale — sealed zone, flexible zone, ported zone with example drivers plotted]</div><figcaption class="small text-muted">Diagram: the EBP rule — which enclosure your driver's Fs/Qes ratio points to</figcaption></figure>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-shield-exclamation me-2"></i>Below Fb, Your Subwoofer Is Unprotected</h2>
-                        <p>Here's the fact that destroys more ported subwoofers than anything else: <strong>below the tuning frequency, the port stops controlling the cone</strong>. The driver "unloads" — it moves as if in free air, and excursion skyrockets with even modest power.</p>
-                        <p>The fix is a <strong>subsonic (infrasonic) filter</strong> set at or just below Fb. Playing a 20 Hz movie effect through a box tuned to 35 Hz without that filter can bottom out the driver in seconds. Sealed boxes don't have this problem — the trapped air always resists the cone — which is why sealed is the safer choice for deep-bass experimenters.</p>
+                        <p><strong>Below the tuning frequency, the port stops controlling the cone.</strong> The driver "unloads" — it moves as if in free air, and excursion skyrockets with even modest power. This destroys more ported subwoofers than anything else.</p>
+                        <p>The fix is a <strong>subsonic (infrasonic) filter</strong> set at or just below Fb. Playing a 20 Hz movie effect through a box tuned to 35 Hz without that filter can bottom out the driver in seconds.</p>
+<p>Sealed boxes don't have this problem — the trapped air always resists the cone — which is why sealed is the safer choice for deep-bass experimenters.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-car-front me-2"></i>Car vs. Home: Cabin Gain Changes Everything</h2>
-                        <p>A car cabin is a tiny sealed room, and small rooms boost bass dramatically — roughly <strong>+12 dB per octave</strong> below the cabin's resonant frequency (typically 50–70 Hz in a sedan). This <strong>cabin gain</strong> (transfer function) hands you free deep bass no home system gets.</p>
-                        <p>Practical consequence: car boxes tune <strong>higher</strong> than equivalent home boxes. A 40 Hz tuning that sounds thin in a living room sounds deep and powerful in a trunk, because the cabin fills in everything below it. Home theater builders, without cabin gain, tune lower (20–28 Hz) and build bigger boxes to get there honestly.</p>
+                        <p><strong>A car cabin boosts bass roughly +12 dB per octave</strong> below its resonant frequency (typically 50–70 Hz in a sedan). This <strong>cabin gain</strong> (transfer function) hands you free deep bass no home system gets.</p>
+                        <p>Practical consequence: car boxes tune <strong>higher</strong> than equivalent home boxes. A 40 Hz tuning that sounds thin in a living room sounds deep and powerful in a trunk, because the cabin fills in everything below it.</p>
+<p>Home theater builders, without cabin gain, tune lower (20–28 Hz) and build bigger boxes to get there honestly.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>Starting point, not a finished design.</strong> Real ported tuning is set by port dimensions interacting with box volume — this gives the target; the <a href="../bass-reflex-port-length-calculator/">port length calculator</a> gives the physical port.</li>
+                            <li><strong>Target and result are different things.</strong> This tool reports the Fb your box and port produce; choosing the right target for your content is your job (see the bands table).</li>
                             <li><strong>Ignores port airspeed.</strong> A correctly tuned box with an undersized port chuffs audibly at high output — check port velocity separately.</li>
                             <li><strong>Assumes honest T/S specs.</strong> Budget drivers' published Fs/Vas/Qts can be optimistic; measure if the build matters.</li>
                             <li><strong>No room or cabin modeling.</strong> The number is anechoic; your car or living room reshapes the final response.</li>
-                            <li><strong>Sealed-box nuance simplified.</strong> Sealed character also depends on Qtc (0.707 = maximally flat Butterworth); this tool reports the resonance reference only.</li>
+                            <li><strong>Sealed-box nuance simplified.</strong> Sealed character depends on Qtc (0.707 = maximally flat Butterworth); this tool reports the resonance reference only.</li>
                         </ul>
                     </div>
 
@@ -280,7 +302,7 @@
                                 </h2>
                                 <div id="faqx1" class="accordion-collapse collapse show" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        For mixed music and movies, 30–35 Hz is the versatile sweet spot. Home theater chasing infrasonics tunes 20–28 Hz in large boxes; car audio tuned 35–45 Hz sounds deep thanks to cabin gain. SPL competitors tune 45 Hz and up for maximum punch in a narrow band.
+                                        <strong>For mixed music and movies, 30–35 Hz is the versatile sweet spot.</strong> Home theater chasing infrasonics tunes 20–28 Hz in large boxes; car audio tuned 35–45 Hz sounds deep thanks to cabin gain. SPL competitors tune 45 Hz and up for maximum punch in a narrow band.
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +316,7 @@
                                 </h2>
                                 <div id="faqx2" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        Compute EBP = Fs ÷ Qes: below ~50 favors sealed, above ~100 favors ported, between is flexible. Beyond the math: choose sealed for tight, accurate bass in a compact box; ported for 3–6 dB more output and deeper extension — provided you set a subsonic filter at Fb.
+                                        <strong>Compute EBP = Fs ÷ Qes:</strong> below ~50 favors sealed, above ~100 favors ported, between is flexible. Beyond the math: choose sealed for tight, accurate bass in a compact box; ported for 3–6 dB more output and deeper extension — provided you set a subsonic filter at Fb.
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +330,7 @@
                                 </h2>
                                 <div id="faqx3" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        The driver unloads — below Fb the port no longer controls cone motion, so excursion spikes and the coil can slam into the backplate. Always run a subsonic filter set at or just below Fb on ported boxes. This is the most common cause of blown ported subwoofers.
+                                        <strong>The driver unloads:</strong> below Fb the port no longer controls cone motion, so excursion spikes and the coil can slam into the backplate. Always run a subsonic filter set at or just below Fb on ported boxes. This is the most common cause of blown ported subwoofers.
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +344,7 @@
                                 </h2>
                                 <div id="faqx4" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        Generally yes: for the same driver, larger volume lowers Fb (Fb ≈ Fs × √(Vas ÷ Vb)). But box size and port dimensions work together — you can tune a small box low with a long, narrow port, at the cost of port noise. Volume sets the range; the port sets the exact note.
+                                        <strong>Yes — tuning scales with 1/√(box volume).</strong> From the Helmholtz formula, Fb is proportional to 1/√(Vb × Leff): double the net volume and Fb drops to ~71% of its value, with the same port. Volume sets the range; the port dimensions set the exact note.
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +358,7 @@
                                 </h2>
                                 <div id="faqx5" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        These Thiele-Small parameters describe the driver: Fs is free-air resonance (Hz), Qts is total damping (lower = tighter motor control), and Vas is the air volume with the same compliance as the suspension (liters). Together they predict how the driver behaves in any box — box design without them is guesswork.
+                                        <strong>These Thiele-Small parameters describe the driver:</strong> Fs is free-air resonance (Hz), Qts is total damping (lower = tighter motor control), and Vas is the air volume with the same compliance as the suspension (liters). Together they predict how the driver behaves in any box — box design without them is guesswork.
                                     </div>
                                 </div>
                             </div>
@@ -350,7 +372,7 @@
                                 </h2>
                                 <div id="faqx6" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        Cabin gain: a car's small interior boosts bass ~12 dB per octave below ~60 Hz, handing you deep bass for free. A 40 Hz car tuning sounds deep; the same tuning in a living room sounds thin. Home builders tune 20–30 Hz and use bigger boxes because no cabin helps them.
+                                        <strong>Cabin gain:</strong> a car's small interior boosts bass ~12 dB per octave below ~60 Hz, handing you deep bass for free. A 40 Hz car tuning sounds deep; the same tuning in a living room sounds thin. Home builders tune 20–30 Hz and use bigger boxes because no cabin helps them.
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +386,7 @@
                                 </h2>
                                 <div id="faqx7" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        Use the tuning target from this calculator in a port-length calculator with your box volume and chosen port diameter. Larger diameter needs longer length for the same Fb. Keep port airspeed under ~17 m/s at full power to avoid chuffing — bigger ports are quieter but longer.
+                                        <strong>Use the tuning target from this calculator in a port-length calculator</strong> with your box volume and chosen port diameter. Larger diameter needs longer length for the same Fb. Keep port airspeed under ~17 m/s at full power to avoid chuffing — bigger ports are quieter but longer.
                                     </div>
                                 </div>
                             </div>
@@ -378,7 +400,7 @@
                                 </h2>
                                 <div id="faqx8" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        No — it's a trade. Lower tuning extends depth but needs a bigger box, responds more lazily to transients (higher group delay), and demands a subsonic filter closer to your content. For punchy music, a 35–40 Hz tuning often sounds better than a 25 Hz one. Match tuning to your content, not to the lowest number.
+                                        <strong>No — it is a trade.</strong> Lower tuning extends depth but needs a bigger box, responds more lazily to transients (higher group delay), and demands a subsonic filter closer to your content. For punchy music, a 35–40 Hz tuning often sounds better than a 25 Hz one. Match tuning to your content, not to the lowest number.
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +414,7 @@
                                 </h2>
                                 <div id="faqx9" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        Qtc is the total system Q of driver + sealed box. Qtc 0.707 (Butterworth alignment) gives the flattest response — the classic target. Lower (~0.5) sounds tighter but rolls off earlier; higher (~0.9–1.1) sounds punchier with a bass hump. Most designers aim 0.7–0.8 for a natural balance.
+                                        <strong>Qtc is the total system Q of driver + sealed box.</strong> Qtc 0.707 (Butterworth alignment) gives the flattest response — the classic target. Lower (~0.5) sounds tighter but rolls off earlier; higher (~0.9–1.1) sounds punchier with a bass hump. Most designers aim 0.7–0.8 for a natural balance.
                                     </div>
                                 </div>
                             </div>
@@ -406,7 +428,7 @@
                                 </h2>
                                 <div id="faqx10" class="accordion-collapse collapse" data-bs-parent="#faqExpanded">
                                     <div class="accordion-body">
-                                        Only loosely. Bandpass boxes have two chambers and two tunings (sealed rear, ported front) that this single-Fb tool doesn't model. Use the Fb result as a rough center-frequency hint, then design bandpass properly with dedicated software like WinISD — small errors in bandpass math produce big response mistakes.
+                                        <strong>Only loosely.</strong> Bandpass boxes have two chambers and two tunings (sealed rear, ported front) that this single-Fb tool doesn't model. Use the Fb result as a rough center-frequency hint, then design bandpass properly with dedicated software like WinISD — small errors in bandpass math produce big response mistakes.
                                     </div>
                                 </div>
                             </div>
@@ -415,9 +437,9 @@
                     </div>
 
                     <div class="tool-section mt-4">
-                        <p class="small text-muted"><strong>Build note:</strong> this calculator gives a tuning starting point for design and education. Verify final designs with box-modeling software (e.g., WinISD) and protect ported builds with a subsonic filter — this page is not professional acoustic engineering advice.</p>
+                        <p class="small text-muted"><strong>Build note:</strong> this calculator reports the tuning your box and port produce, for design and education.</p>
+<p>Verify final designs with box-modeling software (e.g., WinISD) and protect ported builds with a subsonic filter — this page is not professional acoustic engineering advice.</p>
                     </div>
-
                 </div>
 
                 </div>
@@ -508,7 +530,7 @@
       "name": "What happens if I play bass below my box's tuning frequency?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The driver unloads — below Fb the port no longer controls cone motion, so excursion spikes and the coil can slam into the backplate. Always run a subsonic filter set at or just below Fb on ported boxes. This is the most common cause of blown ported subwoofers."
+        "text": "The driver unloads: below Fb the port no longer controls cone motion, so excursion spikes and the coil can slam into the backplate. Always run a subsonic filter set at or just below Fb on ported boxes. This is the most common cause of blown ported subwoofers."
       }
     },
     {
@@ -516,7 +538,7 @@
       "name": "Does a bigger box mean lower tuning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Generally yes: for the same driver, larger volume lowers Fb (Fb ≈ Fs × √(Vas ÷ Vb)). But box size and port dimensions work together — you can tune a small box low with a long, narrow port, at the cost of port noise. Volume sets the range; the port sets the exact note."
+        "text": "Yes — tuning scales with 1/√(box volume). From the Helmholtz formula, Fb is proportional to 1/√(Vb × Leff): double the net volume and Fb drops to ~71% of its value, with the same port. Volume sets the range; the port dimensions set the exact note."
       }
     },
     {
@@ -548,7 +570,7 @@
       "name": "Is lower tuning always better for bass?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No — it's a trade. Lower tuning extends depth but needs a bigger box, responds more lazily to transients (higher group delay), and demands a subsonic filter closer to your content. For punchy music, a 35–40 Hz tuning often sounds better than a 25 Hz one. Match tuning to your content, not to the lowest number."
+        "text": "No — it is a trade. Lower tuning extends depth but needs a bigger box, responds more lazily to transients (higher group delay), and demands a subsonic filter closer to your content. For punchy music, a 35–40 Hz tuning often sounds better than a 25 Hz one. Match tuning to your content, not to the lowest number."
       }
     },
     {

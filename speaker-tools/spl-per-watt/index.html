@@ -132,8 +132,8 @@
                             <h2 class="text-mid mb-4"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                             <ul>
                                 <li><strong>SPL = Sensitivity + 10 × log<sub>10</sub>(Watts)</strong> at the 1-meter reference distance.</li>
-                                <li>The <strong>first watt is the loudest</strong> — going 1→2 W adds 3 dB; going 100→200 W also adds just 3 dB.</li>
-                                <li>Typical speakers convert only <strong>0.5–2% of electrical power into sound</strong> — the rest becomes heat.</li>
+                                <li>The <strong>first watt is the loudest</strong> — going 1→2 W adds 3 dB; going 100→200 W adds the same 3 dB.</li>
+                                <li>A typical 88 dB home speaker converts about <strong>0.4% of amplifier power into sound</strong> — the other 99.6% becomes heat.</li>
                                 <li><strong>Sensitivity</strong> (dB @ 1W/1m) and <strong>efficiency</strong> (% converted) describe the same trait two ways.</li>
                                 <li>Hoffman's Iron Law: pick two — deep bass, small box, high efficiency.</li>
                             </ul>
@@ -208,17 +208,24 @@
                                 <table class="table table-bordered">
                                     <thead><tr><th>Speaker type</th><th>Typical sensitivity</th><th>Efficiency (approx.)</th></tr></thead>
                                     <tbody>
-                                        <tr><td>Small bookshelf / sealed</td><td>82–86 dB</td><td>~0.3–0.6%</td></tr>
-                                        <tr><td>Typical home speaker</td><td>87–90 dB</td><td>~0.8–1.6%</td></tr>
+                                        <tr><td>Small bookshelf / sealed</td><td>82–86 dB</td><td>~0.1–0.25%</td></tr>
+                                        <tr><td>Typical home speaker</td><td>87–90 dB</td><td>~0.3–0.6%</td></tr>
                                         <tr><td>Pro PA woofer</td><td>95–98 dB</td><td>~2–4%</td></tr>
-                                        <tr><td>Horn-loaded compression driver</td><td>105–110 dB</td><td>~10–25%</td></tr>
+                                        <tr><td>Horn-loaded compression driver</td><td>105–110 dB</td><td>~20–60% theoretical (real designs ~10–25%)</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <p>A 90 dB speaker wastes roughly 99% of its input as heat — only ~1% becomes sound. Horns look miraculous by comparison because the horn throat matches the driver's impedance to the air far better. Sensitivity is the practical spec; efficiency is the physics behind it.</p>
+                            <p>A 90 dB speaker wastes over 99% of its input as heat — only about 0.6% becomes sound. Horns look miraculous by comparison because the horn throat matches the driver's impedance to the air far better. Sensitivity is the practical spec; efficiency is the physics behind it.</p>
                         </div>
 
-                        <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: 100 W electrical input splitting into ~1 W acoustic output and ~99 W heat for a typical speaker]</div><figcaption class="small text-muted">Diagram: where your amplifier's watts actually go — ~1% sound, ~99% heat</figcaption></figure>
+                        <div class="tool-section mt-4">
+                        <h2 class="text-mid mb-4"><i class="bi bi-arrow-left-right me-2"></i>The Conversion Formula: dB ↔ Percent</h2>
+                        <p><strong>Sensitivity and efficiency convert exactly:</strong> Sensitivity (dB) = 112 + 10 × log<sub>10</sub>(η), where η is efficiency as a decimal (0.01 for 1%). A theoretically perfect speaker (η = 1) would rate 112 dB — the ceiling every real speaker falls short of.</p>
+                        <p><strong>Two worked conversions:</strong> 90 dB → η = 10<sup>((90 − 112)/10)</sup> = 10<sup>−2.2</sup> = 0.0063, about <strong>0.6%</strong>. Reverse: 5% efficiency → 112 + 10 × log<sub>10</sub>(0.05) = 112 − 13 = <strong>99 dB</strong>.</p>
+                        <p>One caveat the percentages never tell you: <strong>efficiency says nothing about sound quality.</strong> A 0.4% bookshelf speaker can sound superb while a 20% horn sounds harsh — the number measures energy conversion, not fidelity. Shop sensitivity for loudness; judge sound with your ears.</p>
+                    </div>
+
+                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: 100 W electrical input splitting into ~0.4 W acoustic output and ~99.6 W heat for a typical 88 dB speaker]</div><figcaption class="small text-muted">Diagram: where your amplifier's watts actually go — ~0.4% sound, ~99.6% heat</figcaption></figure>
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-triangle me-2"></i>Hoffman's Iron Law: Why Efficient Speakers Are Big</h2>
@@ -287,7 +294,7 @@
                                     </h3>
                                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqSPLWatt">
                                         <div class="accordion-body">
-                                            Sensitivity is measured in dB @ 1W/1m — the practical spec you shop with. Efficiency is the percentage of electrical power converted to sound — the physics behind it. A 90 dB speaker is roughly 1% efficient; both numbers describe the same trait, just in different units.
+                                            Sensitivity is measured in dB @ 1W/1m — the practical spec you shop with. Efficiency is the percentage of electrical power converted to sound — the physics behind it. A 90 dB speaker is roughly 0.6% efficient; both numbers describe the same trait, just in different units.
                                         </div>
                                     </div>
                                 </div>
@@ -329,7 +336,7 @@
                                     </h3>
                                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqSPLWatt">
                                         <div class="accordion-body">
-                                            Shockingly inefficient: a normal home speaker converts roughly 0.5–2% of input power into sound, wasting the rest as heat. Pro drivers reach 2–4%. Only horn-loaded designs break 10%, which is why a 10 W horn can outplay a 100 W direct radiator.
+                                            Shockingly inefficient: a normal home speaker converts roughly 0.3–0.6% of input power into sound, wasting the rest as heat. Pro drivers reach 2–4%. Only horn-loaded designs break 10%, which is why a 10 W horn can outplay a 100 W direct radiator.
                                         </div>
                                     </div>
                                 </div>
@@ -463,7 +470,7 @@
       "name": "What is the difference between sensitivity and efficiency?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sensitivity is measured in dB @ 1W/1m — the practical spec you shop with. Efficiency is the percentage of electrical power converted to sound — the physics behind it. A 90 dB speaker is roughly 1% efficient; both numbers describe the same trait, just in different units."
+        "text": "Sensitivity is measured in dB @ 1W/1m — the practical spec you shop with. Efficiency is the percentage of electrical power converted to sound — the physics behind it. A 90 dB speaker is roughly 0.6% efficient; both numbers describe the same trait, just in different units."
       }
     },
     {
@@ -487,7 +494,7 @@
       "name": "How efficient are typical speakers, really?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Shockingly inefficient: a normal home speaker converts roughly 0.5–2% of input power into sound, wasting the rest as heat. Pro drivers reach 2–4%. Only horn-loaded designs break 10%, which is why a 10 W horn can outplay a 100 W direct radiator."
+        "text": "Shockingly inefficient: a normal home speaker converts roughly 0.3–0.6% of input power into sound, wasting the rest as heat. Pro drivers reach 2–4%. Only horn-loaded designs break 10%, which is why a 10 W horn can outplay a 100 W direct radiator."
       }
     },
     {
@@ -519,7 +526,7 @@
       "name": "Can I compare sensitivity specs between brands directly?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only if measured the same way. The AES2-2012 standard calls for anechoic conditions at 1W/1m, but some brands quote in-room or 2.83V figures that read 3–6 dB higher. A “92 dB” budget speaker and a “90 dB” pro driver may not rank the way the numbers suggest — check the fine print."
+        "text": "Only if measured the same way. The AES2-2012 standard calls for anechoic conditions at 1W/1m, but some brands quote in-room or 2.83V figures that read 3–6 dB higher. A \"92 dB\" budget speaker and a \"90 dB\" pro driver may not rank the way the numbers suggest \u2014 check the fine print."
       }
     },
     {

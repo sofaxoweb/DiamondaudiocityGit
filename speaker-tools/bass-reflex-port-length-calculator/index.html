@@ -52,7 +52,7 @@
       "name": "How do I calculate port length for a subwoofer box?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D, with Vb in liters, Fb in Hz, D in cm, N ports — or just enter the four numbers above. Example: 50 L box tuned to 35 Hz with one 7 cm port needs about 13.7 cm of tube."
+        "text": "Use L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D, with Vb in liters, Fb in Hz, D in cm, N ports — or enter the four numbers above. Example: 50 L box tuned to 35 Hz with one 7 cm port needs about 13.7 cm of tube."
       }
     },
     {
@@ -60,7 +60,7 @@
       "name": "Does a longer port mean lower or higher tuning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lower. A longer port means a heavier air slug, which oscillates more slowly — exactly like a longer pendulum swings slower. To drop tuning from 35 Hz to 28 Hz in the same box, expect roughly double the port length."
+        "text": "Lower. A longer port means a heavier air slug, which oscillates more slowly — like a longer pendulum swings slower. To drop tuning from 35 Hz to 28 Hz in the same box, expect roughly double the port length."
       }
     },
     {
@@ -68,7 +68,7 @@
       "name": "What is the 0.732 × D end correction?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Air just outside both port ends vibrates along with the slug inside, making the port behave ~0.366 × D longer per end — 0.732 × D total. The calculator subtracts it, so the physical tube you cut produces the intended acoustic length. Skip it and your box tunes sharp."
+        "text": "Air just outside both port ends vibrates with the slug inside, making the port behave ~0.366 × D longer per end — 0.732 × D total. The calculator subtracts it, so the physical tube you cut produces the intended acoustic length. Skip it and your box tunes sharp."
       }
     },
     {
@@ -76,7 +76,7 @@
       "name": "Why does my port make a whistling or huffing noise?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "That's chuffing — turbulent airflow from a too-small port at high volume. Fix it with more port area (larger diameter or a second port), then recalculate length since area changes tuning. Flared port ends also smooth airflow and buy you a few dB of headroom before noise starts."
+        "text": "That's chuffing — turbulent airflow from a too-small port at high volume. Fix it with more port area (larger diameter or a second port), then recalculate length since area changes tuning. Flared port ends smooth airflow and buy headroom before noise starts."
       }
     },
     {
@@ -100,7 +100,7 @@
       "name": "How do I measure my box's actual tuning frequency?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Play slow sine sweeps around your target while watching the cone: at Fb, excursion visibly minimizes because the port takes over. Alternatively, an impedance sweep shows a characteristic double hump with a dip at Fb. Trim or extend the port a centimeter at a time to dial it in."
+        "text": "Play slow sine sweeps around your target while watching the cone: at Fb, excursion visibly minimizes because the port takes over. An impedance sweep shows the same point as a dip between two humps. Trim or extend the port a centimeter at a time to dial it in."
       }
     },
     {
@@ -108,7 +108,7 @@
       "name": "Can I use two ports instead of one big port?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — select 2 in the calculator. Two identical ports need roughly twice the length of one for the same tuning (total area doubled). Often one larger port is simpler to fit, but dual ports can look better and distribute airflow. Never mix different diameters in one box."
+        "text": "Yes — select 2 in the calculator. Two identical ports need roughly twice the length of one for the same tuning (total area doubled). One larger port is often simpler to fit, but dual ports distribute airflow. Never mix different diameters in one box."
       }
     },
     {
@@ -116,7 +116,7 @@
       "name": "What happens if my port is too short?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The box tunes higher than intended: bass gets peaky and thin below the peak, and the driver unloads (moves excessively) at frequencies it was supposed to be protected from. If your build tunes sharp, extend the port — or add an elbow to fit more length inside."
+        "text": "The box tunes higher than intended: bass gets peaky and thin below the peak, and the driver unloads (moves excessively) at frequencies it was supposed to be protected from. Extend the port — or add an elbow to fit more length inside."
       }
     },
     {
@@ -129,7 +129,7 @@
     }
   ]
 }
-  </script>
+    </script>
 </head>
 
 <body>
@@ -239,34 +239,38 @@
 
                 </div>
                 <article class="tool-container mt-4" id="main-content">
-          <section class="mb-4">
+<section class="mb-4">
             <h1 class="text-teal mb-3">Bass Reflex Port Length Calculator</h1>
-            <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
-            <p class="lead">A <strong>bass reflex port length calculator</strong> tells you how long to cut your vent tube for a target tuning frequency. Enter <strong>box volume, tuning frequency, port diameter, and port count</strong> — the tool applies the Helmholtz formula with end correction and returns the exact length in centimeters.</p>
+            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+            <p class="lead">A <strong>bass reflex port length calculator</strong> tells you how long to cut your vent tube for a target tuning frequency.</p>
+<p>Enter <strong>box volume, tuning frequency, port diameter, and port count</strong> — the tool applies the Helmholtz formula with end correction and returns the exact length in centimeters. Working in inches and cubic feet? Use the <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> instead.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
             <ul>
-              <li>Port length sets the box's <strong>Helmholtz tuning frequency (Fb)</strong> — the bass boost point.</li>
+              <li><strong>Port length sets the box's Helmholtz tuning frequency (Fb)</strong> — the bass boost point.</li>
               <li><strong>Longer port = lower tuning;</strong> wider port or bigger box = shorter port for the same tuning.</li>
-              <li>Formula: <strong>L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D</strong> (cm).</li>
-              <li>The <strong>−0.732 × D</strong> term is end correction — air just outside the port counts too.</li>
-              <li>Too-small ports <strong>chuff</strong> (whistle); keep air velocity modest or add port area and recalculate.</li>
+              <li><strong>Formula: L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D</strong> (cm, liters, Hz).</li>
+              <li><strong>The −0.732 × D term is end correction</strong> — air just outside the port counts too.</li>
+              <li><strong>Too-small ports chuff (whistle);</strong> add port area and recalculate, since area changes tuning.</li>
             </ul>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>What Is a Bass Reflex Port?</h2>
-            <p><strong>A bass reflex port is a tuned vent in a speaker enclosure that turns the box into a Helmholtz resonator, reinforcing bass output around the tuning frequency (Fb).</strong> The air slug in the port bounces on the "spring" of air inside the box — at Fb, the port radiates strongly, extending bass response well below what the sealed box alone could produce.</p>
+            <p><strong>A bass reflex port is a tuned vent in a speaker enclosure that turns the box into a Helmholtz resonator, reinforcing bass output around the tuning frequency (Fb).</strong></p>
+          <p>The air slug in the port bounces on the "spring" of air inside the box — at Fb, the port radiates strongly, extending bass response well below what the sealed box alone could produce.</p>
             <p>Get the length wrong and the tuning shifts: too short tunes too high (thin bass, port noise), too long tunes too low (sloppy, inefficient). This calculator nails the length from your box volume and target tuning.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-            <p>The tool solves the classic vented-box equation for length, given your box volume (Vb, liters), desired tuning (Fb, Hz), port diameter (D, cm), and number of identical ports (N). Multiple ports behave as one larger port, so the formula scales with N.</p>
-            <p>Methodology: <code><strong>L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D</strong></code>, result in centimeters. The constant 23562.5 folds in the speed of sound and unit conversions; the trailing <strong>0.732 × D</strong> is the end correction (see below). Validation method: enter Vb=50, Fb=35, D=7, N=1 → L ≈ 13.7 cm; raising N to 2 substantially increases L for the same tuning.</p>
-            <p><em>Last reviewed: October 2026. Formula is the standard cylindrical-vent equation used in loudspeaker design references.</em></p>
+            <p><strong>The tool solves the classic vented-box equation for length,</strong> given your box volume (Vb, liters), desired tuning (Fb, Hz), port diameter (D, cm), and number of identical ports (N).</p>
+<p>Multiple ports behave as one larger port, so the formula scales with N.</p>
+            <p><strong>Methodology:</strong> <code>L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D</code>, result in centimeters.</p>
+<p>The constant 23562.5 folds in the speed of sound and unit conversions (derived below); the trailing <strong>0.732 × D</strong> is the end correction.</p>
+<p>Validation: enter Vb=50, Fb=35, D=7, N=1 → L ≈ 13.7 cm; raising N to 2 substantially increases L for the same tuning. <em>Last reviewed: October 2026.</em></p>
           </section>
 
           <section class="mb-4">
@@ -276,9 +280,10 @@
               <li>D² × N = 49 × 1 = <strong>49</strong>; Fb² × Vb = 1225 × 50 = <strong>61,250</strong></li>
               <li>(23562.5 × 49) ÷ 61,250 = 1,154,562.5 ÷ 61,250 ≈ <strong>18.85 cm</strong></li>
               <li>End correction: 0.732 × 7 = <strong>5.12 cm</strong></li>
-              <li>L = 18.85 − 5.12 ≈ <strong>13.7 cm</strong></li>
+              <li>L = 18.85 − 5.12 ≈ <strong>13.7 cm</strong> — the physical tube you cut.</li>
             </ol>
-            <p>Want deeper tuning at <strong>28 Hz</strong> instead? Fb² drops to 784, so L ≈ (23562.5 × 49 ÷ 39,200) − 5.12 ≈ <strong>24.3 cm</strong> — nearly double the length for 7 Hz lower tuning. That steep sensitivity is why precise measurement matters.</p>
+            <p><strong>Tuning is brutally sensitive to length:</strong> drop the target to <strong>28 Hz</strong> and Fb² falls to 784, so L ≈ (23562.5 × 49 ÷ 39,200) − 5.12 ≈ <strong>24.3 cm</strong> — nearly double the length for 7 Hz lower tuning.</p>
+<p>That steep sensitivity is why precise measurement matters.</p>
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: cutaway of a vented box showing Vb, port diameter D, physical length L, and the end-correction air mass bulging past both port ends]</div><figcaption class="small text-muted">Port dimensions and end correction. Suggested alt text: "Cutaway diagram of a bass reflex port showing length and end correction"</figcaption></figure>
           </section>
 
@@ -310,28 +315,54 @@
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-rulers me-2"></i>End Correction: Why the Port Is "Longer" Than It Looks</h2>
-            <p>The <strong>−0.732 × D</strong> term corrects for a subtle physics fact: the air <em>just outside</em> each port end vibrates with the slug inside, so the port behaves acoustically longer than its physical tube. Each end adds roughly 0.366 × D of "virtual" length (×2 ends = 0.732 × D).</p>
-            <p>Skip the correction and your box tunes <strong>higher than intended</strong> — a 7 cm port built 5 cm too long in acoustic terms can shift Fb by several Hz. Flared port ends (aeroports) increase the effective correction slightly, which is part of why they also reduce chuffing: smoother airflow at the mouths.</p>
+            <p><strong>The −0.732 × D term corrects for a real physics effect:</strong> the air <em>just outside</em> each port end vibrates with the slug inside, so the port behaves acoustically longer than its physical tube.</p>
+<p>Each end adds roughly 0.366 × D of "virtual" length (×2 ends = 0.732 × D).</p>
+            <p>The exact factor depends on the port ends — this is the one number competitors list without explaining:</p>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead><tr><th>Port ends</th><th>Correction factor</th><th>When it applies</th></tr></thead>
+                <tbody>
+                  <tr><td>One free, one flanged</td><td><strong>0.732 × D</strong></td><td>Typical tube through a baffle — what this calculator uses</td></tr>
+                  <tr><td>Both ends free</td><td>0.614 × D</td><td>Tube suspended with air around both mouths</td></tr>
+                  <tr><td>Both ends flanged</td><td>0.850 × D</td><td>Port flush-mounted at both ends</td></tr>
+                  <tr><td>Flared ends (aeroports)</td><td>+0.58 × D per flared end</td><td>Adds to the base factor; part of why flares cut chuffing</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Skip the correction and your box tunes <strong>higher than intended</strong> — a 7 cm port built 5 cm too long in acoustic terms shifts Fb by several Hz.</p>
+          </section>
+
+          <section class="mb-4">
+            <h2 class="text-mid mb-3"><i class="bi bi-lightbulb me-2"></i>Where Does 23562.5 Come From?</h2>
+            <p><strong>The constant 23562.5 is the Helmholtz formula with the speed of sound and unit conversions folded in.</strong></p>
+          <p>Start from Fb = (c/2π)·√(S/(V·L_eff)) with c = 343 m/s; solve for length; express the port area through diameter in cm and the box volume in liters; convert the resulting meters to centimeters.</p>
+<p>The 2π, c², π/4 area factor, and the cm↔m↔L conversions collapse into the single constant 23562.5.</p>
+            <p>Why this matters: the constant assumes <strong>c = 343 m/s</strong> (air at ~20 °C).</p>
+<p>In a freezing garage (c ≈ 331 m/s) the true constant drops ~7%, tuning a touch lower than calculated — one more reason to verify the finished box by measurement rather than trusting the math to the last hertz.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-wind me-2"></i>Port Chuffing: When Air Velocity Ruins Bass</h2>
-            <p><strong>Chuffing</strong> is the whistling/huffing noise a too-small port makes when air velocity gets turbulent — typically above ~17 m/s peak. It masquerades as distortion and ruins otherwise good bass. The fix is <strong>more port area</strong> (bigger diameter or more ports), which drops velocity — but changing area shifts tuning, so <strong>recalculate length</strong> afterward.</p>
-            <p>Rule of thumb: a single 7–10 cm port suits most 10–12" subs at moderate power; high-excursion monsters or 15"+ drivers want 2 ports or a large slot. If you hear huffing on loud bass notes, the port — not the driver — is the culprit.</p>
+            <p><strong>Chuffing is the whistling/huffing noise a too-small port makes when air velocity turns turbulent</strong> — typically above ~17 m/s peak. It masquerades as distortion and ruins otherwise good bass.</p>
+<p>The fix is <strong>more port area</strong> (bigger diameter or more ports), which drops velocity — but changing area shifts tuning, so <strong>recalculate length</strong> afterward.</p>
+            <p>Rule of thumb: a single 7–10 cm port suits most 10–12" subs at moderate power; high-excursion monsters or 15"+ drivers want 2 ports or a large slot.</p>
+<p>If you hear huffing on loud bass notes, the port — not the driver — is the culprit.</p>
             <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: smooth laminar airflow through a flared port vs turbulent chuffing in a narrow straight port]</div><figcaption class="small text-muted">Laminar vs turbulent port airflow. Suggested alt text: "Diagram comparing smooth and turbulent airflow in speaker ports"</figcaption></figure>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-hammer me-2"></i>Build and Verify: Measure Your Actual Tuning</h2>
-            <p>Don't trust the math blindly — <strong>measure Fb after building</strong>. The simple method: play sine sweeps near your target tuning while watching the driver cone; at Fb, cone excursion hits a <strong>visible minimum</strong> (the port does the work). Mark the frequency where movement is smallest — that's your true tuning.</p>
-            <p>If measured Fb is high, lengthen the port; if low, shorten it. A few cm of adjustment dials in the last few Hz. Also confirm the port has <strong>clearance</strong> — keep at least one port diameter of free space behind the inner end, or the nearby wall detunes it.</p>
+            <p><strong>Don't trust the math blindly — measure Fb after building.</strong> The simple method: play sine sweeps near your target tuning while watching the driver cone; at Fb, cone excursion hits a <strong>visible minimum</strong> (the port does the work).</p>
+<p>Mark the frequency where movement is smallest — that's your true tuning.</p>
+            <p>If measured Fb is high, lengthen the port; if low, shorten it. A few cm of adjustment dials in the last few Hz.</p>
+<p>Give the port <strong>clearance</strong> too: keep at least one port diameter of free space behind the inner end, or the nearby wall detunes the port.</p>
           </section>
 
           <section class="mb-4">
             <h2 class="text-mid mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
             <ul>
               <li><strong>Cylindrical ports assumed.</strong> Slot ports need an equivalent diameter conversion; heavily flared aeros tune slightly lower than calculated.</li>
-              <li><strong>Net volume must be honest.</strong> Forgetting to subtract driver/port/bracing displacement is the #1 cause of mistuned boxes.</li>
+              <li><strong>Net volume must be honest.</strong> Forgetting to subtract driver, port, and bracing displacement is the #1 cause of mistuned boxes.</li>
               <li><strong>No air-velocity check.</strong> The tool gives length, not chuffing risk — size port area sensibly (see above).</li>
               <li><strong>Driver parameters ignored.</strong> True box design starts from Thiele/Small parameters; this tool sizes the vent once you've chosen Vb and Fb.</li>
             </ul>
@@ -362,7 +393,7 @@
                 </h3>
                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Use L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D, with Vb in liters, Fb in Hz, D in cm, N ports — or just enter the four numbers above. Example: 50 L box tuned to 35 Hz with one 7 cm port needs about 13.7 cm of tube.
+                    <strong>Use L = (23562.5 × D² × N) ÷ (Fb² × Vb) − 0.732 × D,</strong> with Vb in liters, Fb in Hz, D in cm, N ports — or enter the four numbers above. Example: 50 L box tuned to 35 Hz with one 7 cm port needs about 13.7 cm of tube.
                   </div>
                 </div>
               </div>
@@ -374,7 +405,7 @@
                 </h3>
                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Lower. A longer port means a heavier air slug, which oscillates more slowly — exactly like a longer pendulum swings slower. To drop tuning from 35 Hz to 28 Hz in the same box, expect roughly double the port length.
+                    <strong>Lower.</strong> A longer port means a heavier air slug, which oscillates more slowly — like a longer pendulum swings slower. To drop tuning from 35 Hz to 28 Hz in the same box, expect roughly double the port length.
                   </div>
                 </div>
               </div>
@@ -386,7 +417,7 @@
                 </h3>
                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Air just outside both port ends vibrates along with the slug inside, making the port behave ~0.366 × D longer per end — 0.732 × D total. The calculator subtracts it, so the physical tube you cut produces the intended acoustic length. Skip it and your box tunes sharp.
+                    <strong>Air just outside both port ends vibrates with the slug inside,</strong> making the port behave ~0.366 × D longer per end — 0.732 × D total. The calculator subtracts it, so the physical tube you cut produces the intended acoustic length. Skip it and your box tunes sharp.
                   </div>
                 </div>
               </div>
@@ -398,7 +429,7 @@
                 </h3>
                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    That's chuffing — turbulent airflow from a too-small port at high volume. Fix it with more port area (larger diameter or a second port), then recalculate length since area changes tuning. Flared port ends also smooth airflow and buy you a few dB of headroom before noise starts.
+                    <strong>That's chuffing — turbulent airflow from a too-small port at high volume.</strong> Fix it with more port area (larger diameter or a second port), then recalculate length since area changes tuning. Flared port ends smooth airflow and buy headroom before noise starts.
                   </div>
                 </div>
               </div>
@@ -410,7 +441,7 @@
                 </h3>
                 <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    30–35 Hz suits most music (rap, EDM, rock); 28 Hz and below digs deeper for home theater rumble but needs a longer port and more box. Match tuning to your content: daily music around 32–35 Hz, SPL competition often higher (40–50 Hz) for peak output.
+                    <strong>30–35 Hz suits most music</strong> (rap, EDM, rock); 28 Hz and below digs deeper for home theater rumble but needs a longer port and more box. Match tuning to your content: daily music around 32–35 Hz, SPL competition often higher (40–50 Hz) for peak output.
                   </div>
                 </div>
               </div>
@@ -422,7 +453,7 @@
                 </h3>
                 <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Acoustically they're equivalent at the same area and length. Round PVC/aeroports are easier to buy and flare; slot ports use the box walls, brace the enclosure, and fit long lengths via bends. Choose by build convenience — then calculate with the matching geometry.
+                    <strong>Acoustically they're equivalent at the same area and length.</strong> Round PVC/aeroports are easier to buy and flare; slot ports use the box walls, brace the enclosure, and fit long lengths via bends. Choose by build convenience — then calculate with the matching geometry.
                   </div>
                 </div>
               </div>
@@ -434,7 +465,7 @@
                 </h3>
                 <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Play slow sine sweeps around your target while watching the cone: at Fb, excursion visibly minimizes because the port takes over. Alternatively, an impedance sweep shows a characteristic double hump with a dip at Fb. Trim or extend the port a centimeter at a time to dial it in.
+                    <strong>Play slow sine sweeps around your target while watching the cone:</strong> at Fb, excursion visibly minimizes because the port takes over. An impedance sweep shows the same point as a dip between two humps. Trim or extend the port a centimeter at a time to dial it in.
                   </div>
                 </div>
               </div>
@@ -446,7 +477,7 @@
                 </h3>
                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Yes — select 2 in the calculator. Two identical ports need roughly twice the length of one for the same tuning (total area doubled). Often one larger port is simpler to fit, but dual ports can look better and distribute airflow. Never mix different diameters in one box.
+                    <strong>Yes — select 2 in the calculator.</strong> Two identical ports need roughly twice the length of one for the same tuning (total area doubled). One larger port is often simpler to fit, but dual ports distribute airflow. Never mix different diameters in one box.
                   </div>
                 </div>
               </div>
@@ -458,7 +489,7 @@
                 </h3>
                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    The box tunes higher than intended: bass gets peaky and thin below the peak, and the driver unloads (moves excessively) at frequencies it was supposed to be protected from. If your build tunes sharp, extend the port — or add an elbow to fit more length inside.
+                    <strong>The box tunes higher than intended:</strong> bass gets peaky and thin below the peak, and the driver unloads (moves excessively) at frequencies it was supposed to be protected from. Extend the port — or add an elbow to fit more length inside.
                   </div>
                 </div>
               </div>
@@ -470,7 +501,7 @@
                 </h3>
                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Strongly recommended. Below Fb a ported box provides almost no air-spring control, so the driver can over-excurse on deep bass. A subsonic (infrasonic) high-pass filter set just below Fb protects the driver with no audible cost.
+                    <strong>Strongly recommended.</strong> Below Fb a ported box provides almost no air-spring control, so the driver can over-excurse on deep bass. A subsonic (infrasonic) high-pass filter set just below Fb protects the driver with no audible cost.
                   </div>
                 </div>
               </div>
@@ -478,7 +509,7 @@
           </section>
 
           <section class="mb-4">
-            <p class="text-muted small">Related tools: <a href="../sealed-box-calculator/">sealed box calculator</a> for closed designs, <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> for full box specs, <a href="../subwoofer-enclosure-tuning-calculator/">subwoofer enclosure tuning</a>, <a href="../speaker-wattage-calculator/">speaker wattage calculator</a>, and <a href="../spl-calculator/">SPL calculator</a> to predict output.</p>
+            <p class="text-muted small">Related tools: <a href="../sealed-box-calculator/">sealed box calculator</a> for closed designs, <a href="../ported-enclosure-calculator/">ported enclosure calculator</a> for imperial-unit box specs, <a href="../subwoofer-enclosure-tuning-calculator/">subwoofer enclosure tuning</a>, <a href="../speaker-wattage-calculator/">speaker wattage calculator</a>, and <a href="../spl-calculator/">SPL calculator</a> to predict output.</p>
           </section>
                 </article>
             </div>

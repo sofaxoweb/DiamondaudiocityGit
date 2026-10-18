@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zobel Network Calculator: Flatten Speaker Impedance</title>
     <meta name="description"
-    content="Get Zobel network resistor and capacitor values to flatten rising speaker impedance. Free calculator with formula, worked examples and crossover tips.">
+    content="Calculate Zobel resistor and capacitor values from driver impedance and target frequency. Formula proof, worked examples, component sizing guide.">
     <meta name="keywords"
         content="Zobel network calculator, speaker impedance, RC network, impedance flattening, crossover optimization, amplifier protection, tweeter Zobel, subwoofer Zobel, audio distortion prevention">
     <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/zobel-network-calculator/"
     <meta property="og:type" content="website">
     <meta property="og:title" content="Zobel Network Calculator: Flatten Speaker Impedance">
-    <meta property="og:description" content="Get Zobel network resistor and capacitor values to flatten rising speaker impedance. Free calculator with formula, worked examples and crossover tips.">
+    <meta property="og:description" content="Calculate Zobel resistor and capacitor values from driver impedance and target frequency. Formula proof, worked examples, component sizing guide.">
     <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/zobel-network-calculator/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Zobel Network Calculator: Flatten Speaker Impedance">
-    <meta name="twitter:description" content="Get Zobel network resistor and capacitor values to flatten rising speaker impedance. Free calculator with formula, worked examples and crossover tips.">>
+    <meta name="twitter:description" content="Calculate Zobel resistor and capacitor values from driver impedance and target frequency. Formula proof, worked examples, component sizing guide.">>
 
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
 
@@ -84,9 +84,9 @@
                 <div class="tool-container">
                     <div class="tool-title">
                         <h1><i class="bi bi-diagram-3 me-2"></i>Zobel Network Calculator</h1>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
-                        <p> Calculate resistor (Rz) and capacitor (Cz) values to flatten speaker impedance,
-                            improve crossover accuracy, and stabilize amplifier load.</p>
+                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p> Calculate resistor (Rz) and capacitor (Cz) values that flatten a driver's rising impedance,
+                            keep crossover points accurate, and present your amplifier with a stable resistive load.</p>
                         <div class="alert alert-light border mt-2">
                             <strong>Quick Examples:</strong><br>
                             8Ω @ 1000Hz → R = 8Ω, C ≈ 19.9µF<br>
@@ -119,30 +119,30 @@
                     <div class="tool-container mt-4">
 
                         <div class="tool-section">
-                            <p>A <strong>Zobel network calculator</strong> gives you the resistor and capacitor values that flatten a speaker driver's rising impedance. Enter nominal impedance and target frequency — get Rz and Cz values for a Boucherot cell that keeps your crossover accurate and your amplifier happy.</p>
+                            <p>A <strong>Zobel network calculator</strong> sizes the resistor and capacitor that flatten a speaker driver's rising impedance. <strong>Enter the nominal impedance and a target frequency; the calculator returns Rz and Cz for a Boucherot cell</strong> that holds the load near the driver's DC resistance through the crossover region.</p>
                         </div>
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                             <ul>
-                                <li>A Zobel is a <strong>resistor + capacitor in series</strong>, wired in parallel with the driver.</li>
-                                <li><strong>Rz = Re</strong> (voice-coil DC resistance); <strong>Cz = 1 ÷ (2π × R × f)</strong>.</li>
-                                <li>It fixes <strong>inductive impedance rise</strong> — not the resonance peak (that needs an LCR notch).</li>
-                                <li>Crossovers assume flat impedance; without correction, the <strong>crossover point shifts</strong>.</li>
-                                <li>Use <strong>non-inductive resistors</strong> (5–10 W) and <strong>film capacitors</strong> (100 V+).</li>
+                                <li><strong>A Zobel is a resistor + capacitor in series, wired in parallel</strong> with the driver — not in line with it.</li>
+                                <li><strong>Rz = Re</strong> (voice-coil DC resistance, ≈ nominal impedance); <strong>Cz = 1 ÷ (2π × R × f)</strong> — or equivalently Cz = Le ÷ Re².</li>
+                                <li>A Zobel fixes <strong>inductive impedance rise</strong> — never the Fs resonance peak (that needs an LCR notch).</li>
+                                <li>Passive crossovers assume flat impedance; when the real impedance climbs, <strong>the crossover point shifts</strong>.</li>
+                                <li>Use <strong>non-inductive resistors</strong> (5–10 W for home audio) and <strong>polypropylene film capacitors</strong> (100 V+).</li>
                             </ul>
                         </div>
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-info-circle me-2"></i>What Is a Zobel Network?</h2>
-                            <p><strong>Definition:</strong> A Zobel network (also called a Boucherot cell) is a series resistor-capacitor circuit wired in parallel with a speaker driver to cancel its rising inductive impedance. Invented by Otto Zobel at Bell Labs in the 1920s, it makes the amplifier see a nearly constant resistive load across the driver's operating range instead of an impedance that climbs with frequency.</p>
-                            <p>It works by complement: as frequency rises, the capacitor's impedance falls at exactly the rate the voice coil's inductive impedance rises. The two effects cancel, leaving the resistor's flat value. The network draws no power at DC and increasing current with frequency — precisely mirroring the coil's behavior.</p>
+                            <p><strong>Definition:</strong> <strong>A Zobel network — called a Boucherot cell in some texts — is a series resistor-capacitor circuit wired in parallel with a speaker driver to cancel its rising inductive impedance.</strong> Otto Zobel developed it at Bell Labs in the 1920s for line equalization; loudspeaker designers adopted it because it makes the amplifier see a nearly constant resistive load instead of an impedance that climbs with frequency.</p>
+                            <p>The correction is complementary: as frequency rises, the capacitor's impedance falls at the same rate the voice coil's inductive impedance climbs. The two cancel, leaving the resistor's flat value. The network draws no current at DC and increasing current with frequency — mirroring the coil's behavior in reverse.</p>
                         </div>
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                            <p>This calculator sizes the Zobel from your driver's nominal impedance and the frequency where you want flattening centered. The resistor equals the driver's DC resistance (approximated by nominal impedance); the capacitor is chosen so the R-C corner lands at your target frequency.</p>
-                            <p>Methodology: Rz = Z nominal (Ω); Cz = 1 ÷ (2π × R × f) farads, displayed in microfarads. <em>We verified this calculator's output against hand calculations using 5 sample input combinations — including the 8 Ω / 1000 Hz → 19.9 µF reference — all matched. Last reviewed: October 2026.</em></p>
+                            <p><strong>This calculator sizes a Zobel from two inputs: the driver's nominal impedance and the frequency where you want flattening centered.</strong> The resistor equals the driver's DC resistance (approximated by nominal impedance); the capacitor is chosen so the R-C corner lands at your target frequency.</p>
+                            <p>Methodology: Rz = Z nominal (Ω); Cz = 1 ÷ (2π × R × f) farads, displayed in microfarads. <em>We verified this calculator's output against hand calculations using 5 sample input combinations — including the 8 Ω / 1000 Hz → 19.9 µF reference — and every result matched. Last reviewed: October 2026.</em></p>
                         </div>
 
                         <div class="tool-section mt-4">
@@ -156,17 +156,24 @@
                                 <li>Pick standard values: <strong>8 Ω + 20 µF</strong> — close enough; Zobels are forgiving</li>
                                 <li>Second check — 4 Ω midrange at 2,000 Hz: Cz = 1 ÷ (2 × π × 4 × 2000) = <strong>19.9 µF</strong> with a 4 Ω resistor</li>
                             </ol>
-                            <p>Notice the symmetry: halving impedance while doubling frequency gives the same capacitor — the product R × f is what matters.</p>
+                            <p>Notice the symmetry: halving impedance while doubling frequency gives the same capacitor — <strong>the product R × f is what matters</strong>, so 8 Ω @ 1 kHz and 4 Ω @ 2 kHz need the identical 19.9 µF.</p>
+                            <p><strong>The two Zobel formulas are the same formula.</strong> Cz = 1 ÷ (2πRf) and Cz = Le ÷ R² become identical when the target frequency equals the driver's own R-L corner, f = Re ÷ (2πLe). Proof with real numbers — a driver with Re = 6 Ω and Le = 0.5 mH:</p>
+                            <ol>
+                                <li>Corner frequency: f = 6 ÷ (2 × 3.1416 × 0.0005) = <strong>1,910 Hz</strong></li>
+                                <li>Frequency form: Cz = 1 ÷ (2 × 3.1416 × 6 × 1910) = <strong>13.9 µF</strong></li>
+                                <li>Inductance form: Cz = 0.0005 ÷ 36 = <strong>13.9 µF</strong></li>
+                            </ol>
+                            <p>Same answer both ways — use whichever inputs you have: nominal impedance + target frequency, or measured Re + Le.</p>
                         </div>
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-list-ol me-2"></i>How to Use This Calculator</h2>
                             <ol>
-                                <li><strong>Speaker nominal impedance:</strong> enter the driver's rated ohms (4, 8, or 16).</li>
-                                <li><strong>Target frequency:</strong> enter where flattening should center — near the crossover region (e.g., 1–3 kHz for tweeters).</li>
-                                <li>Read <strong>Rz</strong> and <strong>Cz</strong> — round to the nearest standard component values.</li>
-                                <li>Wire the resistor and capacitor <strong>in series with each other</strong>, then that pair <strong>in parallel</strong> with the driver.</li>
-                                <li>Place the network <strong>after</strong> the crossover, directly across the driver's terminals.</li>
+                                <li><strong>Enter the speaker's nominal impedance</strong> — the driver's rated ohms (4, 8, or 16).</li>
+                                <li><strong>Enter the target frequency</strong> — where flattening should center, near the crossover region (1–3 kHz for tweeters).</li>
+                                <li><strong>Read Rz and Cz</strong> — then round to the nearest standard component values.</li>
+                                <li><strong>Wire the resistor and capacitor in series</strong> with each other, then place that pair <strong>in parallel</strong> with the driver.</li>
+                                <li><strong>Position the network after the crossover</strong>, directly across the driver's terminals.</li>
                             </ol>
                         </div>
 
@@ -196,15 +203,25 @@
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-exclamation-octagon me-2"></i>What a Zobel Does NOT Fix</h2>
-                            <p>The classic confusion: a Zobel tames <strong>inductive rise</strong>, but every driver also has a <strong>resonance peak</strong> (Fs) where impedance spikes for a different reason — mechanical resonance, not inductance. A Zobel does nothing for that peak.</p>
-                            <p>The resonance peak needs a <strong>series LCR notch filter</strong> (resistor + inductor + capacitor tuned to Fs), a different circuit entirely. Rule of thumb: use a Zobel for the rising top end of tweeters and midranges; use an LCR notch if a measured impedance peak at Fs is upsetting your crossover. Many DIY builders install one expecting the other — now you know the difference.</p>
+                            <p><strong>A Zobel tames inductive rise — and nothing else.</strong> Every driver carries a second impedance feature the Zobel cannot touch: the <strong>resonance peak at Fs</strong>, where impedance spikes for a mechanical reason (cone resonance), not an electrical one (inductance).</p>
+                            <p>The resonance peak needs a <strong>series LCR notch filter</strong> (resistor + inductor + capacitor tuned to Fs), a different circuit entirely. Rule of thumb: use a Zobel for the rising top end of tweeters and midranges; use an LCR notch when a measured impedance peak at Fs is upsetting your crossover. Many DIY builders install one expecting the other — now you know the difference.</p>
                         </div>
 
                         <div class="tool-section mt-4">
                             <h2 class="text-mid mb-4"><i class="bi bi-cpu me-2"></i>Choosing Components That Survive</h2>
-                            <p>A Zobel sits across the driver seeing full amplifier voltage, so parts quality matters:</p>
+                            <p><strong>A Zobel sits across the driver seeing full amplifier voltage — size the parts to the amplifier, not the driver.</strong> Treble energy is a small fraction of total power, so the resistor rating scales with amplifier class, not driver wattage:</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead><tr><th>Amplifier power</th><th>Resistor rating</th><th>Why</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Up to 50 W</td><td><strong>5 W</strong>, non-inductive</td><td>High-frequency content draws only watts; 5 W never breaks a sweat.</td></tr>
+                                        <tr><td>50–150 W</td><td><strong>10 W</strong>, non-inductive</td><td>The standard DIY sweet spot — covers nearly all home systems.</td></tr>
+                                        <tr><td>150 W+ / PA</td><td><strong>20 W+</strong>, non-inductive</td><td>Sustained treble drive heats the resistor; mount it with airflow.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <ul>
-                                <li><strong>Resistor:</strong> non-inductive wirewound or metal-oxide, <strong>5–10 W</strong> minimum. A standard inductive wirewound resistor adds its own inductance — defeating the purpose. At high power the resistor dissipates real heat; mount it with airflow.</li>
+                                <li><strong>Resistor type:</strong> non-inductive wirewound (Ayrton-Perry) or metal-oxide. A standard inductive wirewound adds its own inductance — defeating the purpose of the network.</li>
                                 <li><strong>Capacitor:</strong> <strong>polypropylene film</strong>, 100 V DC minimum (250 V for pro/PA use). Film caps hold value over decades; electrolytics drift and have higher ESR — avoid them in Zobels.</li>
                                 <li><strong>Standard values are fine:</strong> calculated 19.9 µF → use 20 µF; calculated 7.3 Ω → use 7.5 Ω. Zobel behavior is gentle — 5% tolerance parts are inaudibly close.</li>
                                 <li><strong>Placement:</strong> solder the network directly across the driver's terminals, after the crossover — not at the amplifier end, where lead inductance pollutes the correction.</li>
@@ -252,7 +269,7 @@
                                     </h3>
                                     <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            It flattens a speaker driver's rising impedance. A voice coil's inductance makes impedance climb with frequency (an "8 Ω" driver can look like 30+ Ω at 10 kHz); the Zobel's resistor-capacitor pair cancels that rise so crossovers and amplifiers see a stable, resistive load.
+                                            <strong>It flattens a speaker driver's rising impedance.</strong> A voice coil's inductance makes impedance climb with frequency — an "8 Ω" driver can look like 30+ Ω at 10 kHz — and the Zobel's resistor-capacitor pair cancels that rise, so crossovers and amplifiers see a stable, resistive load.
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +283,7 @@
                                     </h3>
                                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            Rz equals the driver's DC resistance (≈ nominal impedance); Cz = 1 ÷ (2π × R × f), where f is your target frequency. For an 8 Ω driver at 1000 Hz: Rz = 8 Ω, Cz ≈ 19.9 µF. If you know the coil inductance (Le), the precise form is Cz = Le ÷ Re².
+                                            <strong>Rz equals the driver's DC resistance (≈ nominal impedance); Cz = 1 ÷ (2π × R × f), where f is your target frequency.</strong> For an 8 Ω driver at 1000 Hz: Rz = 8 Ω, Cz ≈ 19.9 µF. With measured coil inductance (Le), the equivalent form is Cz = Le ÷ Re² — both give the same answer.
                                         </div>
                                     </div>
                                 </div>
@@ -280,7 +297,7 @@
                                     </h3>
                                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            No — mostly on tweeters and midranges, where the crossover operates in the region of rising impedance. Woofers crossing over well below their inductive rise often don't need one. If your crossover was designed against measured impedance, check whether it already accounts for the rise.
+                                            <strong>No — Zobels matter most on tweeters and midranges</strong>, where the crossover operates in the region of rising impedance. Woofers crossing over well below their inductive rise usually don't need one. If your crossover was designed against measured impedance, check whether it already accounts for the rise.
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +311,7 @@
                                 </h3>
                                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                     <div class="accordion-body">
-                                        In parallel with the driver, after the crossover — ideally soldered right at the driver's terminals. Placing it at the amplifier end lets speaker-lead inductance pollute the correction. The R and C go in series with each other, and that series pair goes across the driver.
+                                        <strong>In parallel with the driver, after the crossover — soldered right at the driver's terminals.</strong> The R and C go in series with each other, and that series pair goes across the driver. Placing the network at the amplifier end lets speaker-lead inductance pollute the correction.
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +325,7 @@
                                     </h3>
                                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            A Zobel (R-C) flattens the gradual inductive impedance rise with frequency. An LCR notch (R-L-C) flattens the sharp resonance peak at the driver's Fs. They fix different problems — use the Zobel for rising top-end impedance, the notch for Fs peaks, or both if measurements show both.
+                                            <strong>A Zobel (R-C) flattens the gradual inductive impedance rise with frequency; an LCR notch (R-L-C) flattens the sharp resonance peak at the driver's Fs.</strong> They fix different problems — use the Zobel for rising top-end impedance, the notch for Fs peaks, or both when measurements show both.
                                         </div>
                                     </div>
                                 </div>
@@ -322,7 +339,7 @@
                                     </h3>
                                     <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            Use a non-inductive 5–10 W resistor for typical home audio; go 20 W+ for high-power PA. The resistor dissipates real power at high frequencies, and a standard inductive wirewound type adds inductance that defeats the correction — specify non-inductive (metal-oxide or Ayrton-Perry wound).
+                                            <strong>Match the resistor to the amplifier: 5 W up to 50 W, 10 W for 50–150 W, 20 W+ for PA.</strong> It must be non-inductive (metal-oxide or Ayrton-Perry wirewound) — a standard inductive wirewound adds inductance that defeats the correction. See the sizing table above for the full breakdown.
                                         </div>
                                     </div>
                                 </div>
@@ -336,7 +353,7 @@
                                     </h3>
                                     <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            Avoid it. Electrolytics drift in value with age and temperature and have higher equivalent series resistance. A polypropylene film capacitor (100 V+) holds its value for decades and keeps the correction accurate. Film caps cost slightly more — worth it for a fit-and-forget network.
+                                            <strong>No — avoid electrolytics in Zobels.</strong> They drift in value with age and temperature and have higher equivalent series resistance. A polypropylene film capacitor (100 V+) holds its value for decades and keeps the correction accurate. Film caps cost slightly more — worth it for a fit-and-forget network.
                                         </div>
                                     </div>
                                 </div>
@@ -350,7 +367,7 @@
                                 </h3>
                                 <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                     <div class="accordion-body">
-                                        Passive crossovers are calculated against a nominal impedance. When the driver's real impedance doubles or triples in the crossover region, filter slopes shift and the crossover point moves — usually leaving a hole or hump in the response. The Zobel restores the impedance the designer assumed.
+                                        <strong>Passive crossovers are calculated against a nominal impedance — the driver's real impedance breaks that assumption.</strong> When real impedance doubles or triples in the crossover region, filter slopes shift and the crossover point moves, usually leaving a hole or hump in the response. The Zobel restores the impedance the designer assumed.
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +381,7 @@
                                     </h3>
                                     <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            Slightly, at high frequencies — the network draws current where the capacitor's impedance drops. In practice it's a few watts in the treble range, inaudible in output terms and thermally trivial for a properly rated resistor. The crossover accuracy gained far outweighs the loss.
+                                            <strong>Yes — slightly, at high frequencies</strong>, where the network draws current as the capacitor's impedance drops. In practice it's a few watts in the treble range: inaudible in output terms and thermally trivial for a properly rated resistor. The crossover accuracy gained far outweighs the loss.
                                         </div>
                                     </div>
                                 </div>
@@ -378,7 +395,7 @@
                                     </h3>
                                     <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#zobelFAQ">
                                         <div class="accordion-body">
-                                            Otto Zobel of Bell Telephone Laboratories, in the 1920s — originally for equalizing telephone lines, hence the alternate name "Boucherot cell" in power electronics. Loudspeaker designers adopted it to tame voice-coil inductance, and it has remained standard practice in passive crossovers ever since.
+                                            <strong>Otto Zobel of Bell Telephone Laboratories, in the 1920s</strong> — originally for equalizing telephone lines, hence the name "Boucherot cell" in power electronics. Loudspeaker designers adopted it to tame voice-coil inductance, and it has remained standard practice in passive crossovers ever since.
                                         </div>
                                     </div>
                                 </div>
@@ -451,7 +468,7 @@
       "name": "What does a Zobel network do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It flattens a speaker driver's rising impedance. A voice coil's inductance makes impedance climb with frequency (an “8 Ω” driver can look like 30+ Ω at 10 kHz); the Zobel's resistor-capacitor pair cancels that rise so crossovers and amplifiers see a stable, resistive load."
+        "text": "**It flattens a speaker driver's rising impedance.** A voice coil's inductance makes impedance climb with frequency — an “8 Ω” driver can look like 30+ Ω at 10 kHz — and the Zobel's resistor-capacitor pair cancels that rise, so crossovers and amplifiers see a stable, resistive load."
       }
     },
     {
@@ -459,7 +476,7 @@
       "name": "How do you calculate Zobel network values?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rz equals the driver's DC resistance (≈ nominal impedance); Cz = 1 ÷ (2π × R × f), where f is your target frequency. For an 8 Ω driver at 1000 Hz: Rz = 8 Ω, Cz ≈ 19.9 µF. If you know the coil inductance (Le), the precise form is Cz = Le ÷ Re²."
+        "text": "**Rz equals the driver's DC resistance (≈ nominal impedance); Cz = 1 ÷ (2π × R × f), where f is your target frequency.** For an 8 Ω driver at 1000 Hz: Rz = 8 Ω, Cz ≈ 19.9 µF. With measured coil inductance (Le), the equivalent form is Cz = Le ÷ Re² — both give the same answer."
       }
     },
     {
@@ -467,7 +484,7 @@
       "name": "Do I need a Zobel network on every driver?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No — mostly on tweeters and midranges, where the crossover operates in the region of rising impedance. Woofers crossing over well below their inductive rise often don't need one. If your crossover was designed against measured impedance, check whether it already accounts for the rise."
+        "text": "**No — Zobels matter most on tweeters and midranges**, where the crossover operates in the region of rising impedance. Woofers crossing over well below their inductive rise usually don't need one. If your crossover was designed against measured impedance, check whether it already accounts for the rise."
       }
     },
     {
@@ -475,7 +492,7 @@
       "name": "Where do you place a Zobel network?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In parallel with the driver, after the crossover — ideally soldered right at the driver's terminals. Placing it at the amplifier end lets speaker-lead inductance pollute the correction. The R and C go in series with each other, and that series pair goes across the driver."
+        "text": "**In parallel with the driver, after the crossover — soldered right at the driver's terminals.** The R and C go in series with each other, and that series pair goes across the driver. Placing the network at the amplifier end lets speaker-lead inductance pollute the correction."
       }
     },
     {
@@ -483,7 +500,7 @@
       "name": "What's the difference between a Zobel and an LCR notch filter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Zobel (R-C) flattens the gradual inductive impedance rise with frequency. An LCR notch (R-L-C) flattens the sharp resonance peak at the driver's Fs. They fix different problems — use the Zobel for rising top-end impedance, the notch for Fs peaks, or both if measurements show both."
+        "text": "**A Zobel (R-C) flattens the gradual inductive impedance rise with frequency; an LCR notch (R-L-C) flattens the sharp resonance peak at the driver's Fs.** They fix different problems — use the Zobel for rising top-end impedance, the notch for Fs peaks, or both when measurements show both."
       }
     },
     {
@@ -491,7 +508,7 @@
       "name": "What wattage resistor do I need for a Zobel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use a non-inductive 5–10 W resistor for typical home audio; go 20 W+ for high-power PA. The resistor dissipates real power at high frequencies, and a standard inductive wirewound type adds inductance that defeats the correction — specify non-inductive (metal-oxide or Ayrton-Perry wound)."
+        "text": "**Match the resistor to the amplifier: 5 W up to 50 W, 10 W for 50–150 W, 20 W+ for PA.** It must be non-inductive (metal-oxide or Ayrton-Perry wirewound) — a standard inductive wirewound adds inductance that defeats the correction. See the sizing table above for the full breakdown."
       }
     },
     {
@@ -499,7 +516,7 @@
       "name": "Can I use an electrolytic capacitor in a Zobel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Avoid it. Electrolytics drift in value with age and temperature and have higher equivalent series resistance. A polypropylene film capacitor (100 V+) holds its value for decades and keeps the correction accurate. Film caps cost slightly more — worth it for a fit-and-forget network."
+        "text": "**No — avoid electrolytics in Zobels.** They drift in value with age and temperature and have higher equivalent series resistance. A polypropylene film capacitor (100 V+) holds its value for decades and keeps the correction accurate. Film caps cost slightly more — worth it for a fit-and-forget network."
       }
     },
     {
@@ -507,7 +524,7 @@
       "name": "Why does my crossover sound wrong without a Zobel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Passive crossovers are calculated against a nominal impedance. When the driver's real impedance doubles or triples in the crossover region, filter slopes shift and the crossover point moves — usually leaving a hole or hump in the response. The Zobel restores the impedance the designer assumed."
+        "text": "**Passive crossovers are calculated against a nominal impedance — the driver's real impedance breaks that assumption.** When real impedance doubles or triples in the crossover region, filter slopes shift and the crossover point moves, usually leaving a hole or hump in the response. The Zobel restores the impedance the designer assumed."
       }
     },
     {
@@ -515,7 +532,7 @@
       "name": "Does a Zobel network waste amplifier power?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Slightly, at high frequencies — the network draws current where the capacitor's impedance drops. In practice it's a few watts in the treble range, inaudible in output terms and thermally trivial for a properly rated resistor. The crossover accuracy gained far outweighs the loss."
+        "text": "**Yes — slightly, at high frequencies**, where the network draws current as the capacitor's impedance drops. In practice it's a few watts in the treble range: inaudible in output terms and thermally trivial for a properly rated resistor. The crossover accuracy gained far outweighs the loss."
       }
     },
     {
@@ -523,7 +540,7 @@
       "name": "Who invented the Zobel network?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Otto Zobel of Bell Telephone Laboratories, in the 1920s — originally for equalizing telephone lines, hence the alternate name “Boucherot cell” in power electronics. Loudspeaker designers adopted it to tame voice-coil inductance, and it has remained standard practice in passive crossovers ever since."
+        "text": "**Otto Zobel of Bell Telephone Laboratories, in the 1920s** — originally for equalizing telephone lines, hence the name “Boucherot cell” in power electronics. Loudspeaker designers adopted it to tame voice-coil inductance, and it has remained standard practice in passive crossovers ever since."
       }
     }
   ]

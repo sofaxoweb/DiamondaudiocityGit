@@ -254,7 +254,7 @@
 
                     <h2 class="h3 text-dark fw-bold mb-3"><i class="bi bi-gear text-teal me-2"></i>How This Calculator Works</h2>
                     <p class="text-secondary">This calculator applies the inverse-square formula <strong>ΔSPL = 20 · log₁₀(target ÷ reference)</strong> to your inputs, then scales the result by an environment factor that models how real spaces deviate from ideal free-field spreading.</p>
-                    <p class="text-secondary">Methodology: enter a reference SPL and its measurement distance, a target distance, and the environment. The widget computes the distance ratio, applies 20·log₁₀(ratio) × envFactor — <strong>1.0</strong> for free field (−6.02 dB/doubling), <strong>0.95</strong> for hemispherical ground plane (≈ −5.7 dB/doubling), <strong>0.7</strong> for enclosed indoor (≈ −4.2 dB/doubling) — and subtracts the drop from your reference SPL. It also estimates perceived loudness from the −10 dB ≈ half-as-loud rule and tabulates SPL at 1, 2, 5, 10, 20, 50, and 100 m. <em>We verified this calculator's output against hand-computed inverse-square values for 5 sample inputs; all matched to two decimal places.</em></p>
+                    <p class="text-secondary">Methodology: enter a reference SPL and its measurement distance, a target distance, and the environment. The widget computes the distance ratio, applies 20·log₁₀(ratio) × envFactor — <strong>1.0</strong> for free field (−6.02 dB/doubling), <strong>0.95</strong> for hemispherical ground plane (≈ −5.7 dB/doubling), <strong>0.7</strong> for enclosed indoor (≈ −4.2 dB/doubling) — and subtracts the drop from your reference SPL. It estimates perceived loudness from the −10 dB ≈ half-as-loud rule and tabulates SPL at 1, 2, 5, 10, 20, 50, and 100 m. <em>We verified this calculator's output against hand-computed inverse-square values for 5 sample inputs; all matched to two decimal places.</em></p>
                     <p class="text-secondary"><em>Last reviewed: October 2026. Formulas follow standard electroacoustic practice (20 µPa reference).</em></p>
 
                     <hr class="my-4">
@@ -351,6 +351,9 @@
                     <p class="text-secondary">Instead of fighting distance loss with watts, large venues place <strong>delay towers</strong> partway to the audience and delay their signal so sound arrives in sync. Sound travels ≈ 1,125 ft/s, so allow <strong>≈ 0.9 ms of delay per foot</strong> (≈ 2.9 ms per meter) of tower distance.</p>
                     <p class="text-secondary"><strong>Worked example:</strong> delay tower 100 ft from the main PA → 100 × 0.9 ≈ <strong>89 ms</strong> of delay. Set it on the system processor and the tower reinforces instead of smearing the sound. For coverage planning, pair this with our <a href="../speaker-placement-calculator/">Speaker Placement Calculator</a>.</p>
                     <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: concert venue side view — main PA, delay tower at 100 ft with 89 ms delay label, SPL values at front/middle/back rows]</div><figcaption class="small text-muted mt-2">Alt text: Infographic showing delay tower placement and delay time calculation for even concert coverage.</figcaption></figure>
+                    <h3 class="h4 text-dark fw-bold mb-3 mt-4">Work backward: how far until it fades to X dB</h3>
+                    <p class="text-secondary"><strong>Flip the formula to solve for distance:</strong> d₂ = d₁ × 10<sup>((SPL₁ − SPL₂) / 20)</sup>. Pick the level you want at the listener, subtract it from your reference SPL, and the formula returns the distance.</p>
+                    <p class="text-secondary"><strong>Worked example:</strong> a speaker plays 90 dB at 1 m. Where does it fade to 60 dB (conversation level)? (90 − 60) ÷ 20 = 1.5; 10<sup>1.5</sup> = 31.6 → about <strong>32 m</strong> outdoors. Event planners run this in reverse too: it marks where the quiet zones — and the noise-complaint zones — begin.</p>
 
                     <hr class="my-4">
 
@@ -373,7 +376,7 @@
                             </thead>
                             <tbody class="text-secondary">
                                 <tr><td><strong>Point source</strong> (this calculator)</td><td>6 dB</td><td>Single speakers, subs, quick estimates</td><td>Ignores directivity and rooms</td></tr>
-                                <tr><td><strong>Line array</strong></td><td>~3 dB (near field)</td><td>Concerts, long-throw coverage</td><td>Transitions to 6 dB far away; needs rigging</td></tr>
+                                <tr><td><strong>Line array</strong></td><td>~3 dB (near field)</td><td>Concerts, long-throw coverage</td><td>Transitions to 6 dB beyond ~1/π × array length; needs rigging</td></tr>
                                 <tr><td><strong>Distributed / delay speakers</strong></td><td>Resets the distance</td><td>Large venues, houses of worship</td><td>Requires precise delay alignment</td></tr>
                                 <tr><td><strong>More amplifier power</strong></td><td>Buys back 3 dB per doubling of watts</td><td>Small shortfalls (1–3 dB)</td><td>4× watts per 6 dB — expensive and hot</td></tr>
                             </tbody>

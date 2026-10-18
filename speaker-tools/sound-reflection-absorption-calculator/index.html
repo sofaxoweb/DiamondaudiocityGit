@@ -10,15 +10,15 @@
         content="Free sound absorption calculator: estimate RT60 reverb time from absorption coefficients. Sabine formula, material table, and panel placement guide.">
     <meta name="keywords"
         content="sound reflection calculator, sound absorption calculator, acoustic treatment, reflection coefficient, absorption coefficient, room acoustics, PA optimization, studio acoustics, echo reduction, standing waves, reverberation time, SPL optimization">
-    <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/sound-reflection-absorption-calculator/"
+    <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/sound-reflection-absorption-calculator/" />
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sound Absorption Calculator: RT60, Coefficients &amp; Panels">
     <meta property="og:description" content="Free sound absorption calculator: estimate RT60 reverb time from absorption coefficients. Sabine formula, material table, and panel placement guide.">
-    <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/sound-reflection-absorption-calculator/">
+    <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/sound-reflection-absorption-calculator/" />
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Sound Absorption Calculator: RT60, Coefficients &amp; Panels">
-    <meta name="twitter:description" content="Free sound absorption calculator: estimate RT60 reverb time from absorption coefficients. Sabine formula, material table, and panel placement guide.">>
+    <meta name="twitter:description" content="Free sound absorption calculator: estimate RT60 reverb time from absorption coefficients. Sabine formula, material table, and panel placement guide." />
 
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
 
@@ -79,7 +79,7 @@
                         <p>Optimize your room acoustics by calculating reflection and absorption coefficients for walls,
                             ceilings, and floors. Improve sound clarity, reduce echo, and balance reverberation for PA
                             systems, home theaters, or studios.</p>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
                     </div>
 
                     <div class="row mb-4">
@@ -125,15 +125,15 @@
                         <p class="mb-0 text-dark"><strong>Definition:</strong> Sound absorption is the process by which a material converts sound energy into tiny amounts of heat instead of reflecting it. The absorption coefficient (α) rates this from 0 (total reflection, like concrete) to 1 (total absorption, like an open window), and it changes with frequency.</p>
                     </div>
                     <p>
-                        When sound hits a wall, its energy splits three ways: <strong>absorbed</strong> (turned to heat in the material), <strong>reflected</strong> (bounced back into the room), and <strong>transmitted</strong> (passed through to the other side). For room acoustics we mostly care about the first two, and they trade off directly: a surface that absorbs 30% reflects roughly 70%.
+                        When sound hits a wall, its energy splits three ways: <strong>absorbed</strong> (turned to heat in the material), <strong>reflected</strong> (bounced back into the room), and <strong>transmitted</strong> (passed through to the other side). For room acoustics we mostly care about the first two: on an opaque wall, absorbed and reflected fractions add to roughly 100% — a surface that absorbs 30% reflects roughly 70%.
                     </p>
                     <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: sound wave striking a wall, splitting into absorbed, reflected, and transmitted arrows with α = 0.3 labeled]</div><figcaption class="small text-muted mt-2">Alt text: Diagram showing sound energy splitting into absorbed, reflected, and transmitted paths at a wall surface.</figcaption></figure>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
-                            <li><strong>RT60 = 0.161 × Volume ÷ Absorption</strong> (metric) — the Sabine formula this field has used for 125+ years.</li>
-                            <li>Absorption coefficients run <strong>0 (mirror-like) to 1 (total absorption)</strong>; concrete ≈ 0.02, acoustic panels ≈ 0.9.</li>
+                            <li><strong>RT60 = 0.161 × Volume ÷ Absorption</strong> (metric) — the Sabine formula acousticians have used for 125+ years.</li>
+                            <li>Absorption coefficients run <strong>0 (mirror-like) to 1 (total absorption)</strong>; concrete ≈ 0.02, thick acoustic panels ≈ 0.9.</li>
                             <li>Target RT60: <strong>0.3–0.6 s</strong> for home theaters, <strong>1.5–2.2 s</strong> for concert halls — there is no universal "best."</li>
                             <li><strong>Thin foam fixes echo, not bass</strong> — low frequencies need thick traps in corners.</li>
                             <li>To halve your RT60, you must <strong>double</strong> the room's total absorption.</li>
@@ -142,7 +142,7 @@
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                        <p>This calculator multiplies your surface area by the absorption and reflection coefficients you enter: <strong>absorbed energy = area × α</strong>, <strong>reflected energy = area × reflection coefficient</strong>. It then estimates reverberation time with the imperial Sabine formula.</p>
+                        <p>This calculator computes the <strong>energy split</strong> on your surface: <strong>absorbed energy = area × α</strong>, <strong>reflected energy = area × reflection coefficient</strong>. It then estimates reverberation time with the imperial Sabine formula.</p>
                         <p>Methodology: <code>RT60 ≈ 0.049 × Room Volume ÷ Total Absorption</code>, using a fixed <strong>1,000 ft³ demo room volume</strong>. One "sabin" of absorption = one square foot of perfect absorber, so 200 ft² at α = 0.3 gives 60 sabins → RT60 ≈ 0.049 × 1000 ÷ 60 ≈ <strong>0.82 s</strong>. <em>We verified this calculator's output against hand-computed Sabine values for 5 sample inputs; all matched to two decimal places.</em></p>
                         <h3 class="h5 fw-bold mt-3">A note on the demo room volume</h3>
                         <p>Because the widget fixes volume at 1,000 ft³, scale its RT60 to your real room: <strong>your RT60 ≈ widget RT60 × (your volume ÷ 1000)</strong>. A 2,000 ft³ room doubles the estimate. <em>Last reviewed: October 2026.</em></p>
@@ -165,7 +165,7 @@
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-table me-2"></i>Absorption Coefficients of Common Materials</h2>
-                        <p>Typical values at <strong>500 Hz</strong> (speech-range). Real products vary with frequency and mounting — always check manufacturer data for critical designs.</p>
+                        <p>Typical values at <strong>500 Hz</strong> (speech range). Real products vary with frequency and mounting — always check manufacturer data for critical designs.</p>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead><tr><th>Material</th><th>α (500 Hz)</th><th>Character</th></tr></thead>
@@ -179,9 +179,12 @@
                                     <tr><td>Acoustic foam (2 in)</td><td>0.85</td><td>Strong highs/mids absorber</td></tr>
                                     <tr><td>Mineral wool panel</td><td>0.95</td><td>Near-total absorption</td></tr>
                                     <tr><td>Seated audience (per person)</td><td>0.60</td><td>People are absorbers</td></tr>
+                                    <tr><td>Open window or doorway</td><td>≈1.0</td><td>Sound leaves — counts as perfect absorption</td></tr>
                                 </tbody>
                             </table>
                         </div>
+                        <h3 class="h5 fw-bold mt-3">The quarter-wavelength thickness rule</h3>
+                        <p>Porous absorption peaks where the material thickness (plus any air gap behind it) reaches about a <strong>quarter wavelength</strong>. A 50 mm mineral-wool panel peaks near 1,700 Hz; the same panel hung with a 100 mm air gap works down to about 850 Hz. This is why 2-inch foam tames echo but never bass — and why traps belong in corners, where bass pressure is highest.</p>
                     </div>
 
                     <div class="tool-section mt-4">
@@ -189,7 +192,7 @@
                         <ol>
                             <li><strong>Surface Area:</strong> enter the area you are treating, in square feet (measure walls, ceiling, or floor).</li>
                             <li><strong>Absorption Coefficient:</strong> enter α from 0 to 1 — use the table above or your product's spec sheet.</li>
-                            <li><strong>Reflection Coefficient:</strong> enter the reflected fraction (for most surfaces, ≈ 1 − α).</li>
+                            <li><strong>Reflection Coefficient:</strong> enter the reflected fraction (for most opaque surfaces, ≈ 1 − α).</li>
                             <li>Read <strong>absorbed vs reflected energy</strong> and the <strong>RT60 estimate</strong>, then compare against the target table below.</li>
                         </ol>
                     </div>
@@ -218,7 +221,7 @@
                         <h2 class="text-mid mb-4"><i class="bi bi-award me-2"></i>Pro Techniques Most Calculator Pages Skip</h2>
 
                         <h3 class="h5 fw-bold mt-3">Sabine vs Eyring: when the classic formula lies</h3>
-                        <p>Sabine's formula assumes absorption is spread thinly. In a <strong>dead room</strong> (average α above ~0.2–0.3), it overestimates RT60 — sometimes badly. The <strong>Norris-Eyring formula</strong> fixes this: <code>RT60 = 0.161 × V ÷ (−S × ln(1 − ᾱ))</code>.</p>
+                        <p>Sabine's formula assumes absorption is spread thinly. In a <strong>dead room</strong> (average α above ~0.2–0.3), it overestimates RT60 — sometimes badly. The <strong>Norris–Eyring formula</strong> fixes this: <code>RT60 = 0.161 × V ÷ (−S × ln(1 − ᾱ))</code>.</p>
                         <p><strong>Worked example:</strong> 100 m³ room, 140 m² surfaces, average α = 0.5 → Sabine: A = 70 sabins, RT60 = 0.161 × 100 ÷ 70 ≈ <strong>0.23 s</strong>. Eyring: 16.1 ÷ (140 × 0.693) ≈ <strong>0.17 s</strong> — Sabine overshoots by ~38%. Rule of thumb: Sabine for lively rooms, Eyring for treated ones.</p>
 
                         <h3 class="h5 fw-bold mt-3">How many panels do you actually need?</h3>
@@ -228,7 +231,7 @@
                         <p><strong>NRC (Noise Reduction Coefficient)</strong> is the single number on panel packaging: the average of α at 250, 500, 1000, and 2000 Hz, rounded to 0.05. An NRC 0.85 panel absorbs 85% on average — but the average hides bass performance, where the same panel might manage only 0.3. For home theaters, check the full frequency table, not just NRC.</p>
 
                         <h3 class="h5 fw-bold mt-3">Treat in this order: reflection points first</h3>
-                        <p>Don't randomly cover walls. <strong>1.</strong> Find <strong>first reflection points</strong> with the mirror trick: sit in the listening position while a friend slides a mirror along the side walls — everywhere you see the speaker gets a panel. <strong>2.</strong> Put <strong>bass traps</strong> in corners (low frequencies pile up there). <strong>3.</strong> Treat the rear wall — absorption for small rooms, <strong>diffusion</strong> for larger ones. Plan placement with our <a href="../speaker-placement-calculator/">Speaker Placement Calculator</a>.</p>
+                        <p>Do not randomly cover walls. <strong>1.</strong> Find <strong>first reflection points</strong> with the mirror trick: sit in the listening position while a friend slides a mirror along the side walls — everywhere you see the speaker gets a panel. <strong>2.</strong> Put <strong>bass traps</strong> in corners (low frequencies pile up there). <strong>3.</strong> Treat the rear wall — absorption for small rooms, <strong>diffusion</strong> for larger ones. Plan placement with our <a href="../speaker-placement-calculator/">Speaker Placement Calculator</a>.</p>
                     </div>
 
                     <div class="tool-section mt-4">
@@ -389,6 +392,7 @@
 
 
 
+
                 </div>
 
 
@@ -477,7 +481,7 @@
       "name": "What is the difference between Sabine and Eyring formulas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sabine (RT60 = 0.161V/A) assumes lightly treated rooms and overestimates reverb in dead rooms. Eyring (RT60 = 0.161V ÷ [−S·ln(1−ᾱ)]) stays accurate when average absorption exceeds ~0.2–0.3. In our 100 m³ worked example at α = 0.5, Sabine overshot by ~38%."
+        "text": "Sabine (RT60 = 0.161V/A) assumes lightly treated rooms and overestimates reverb in dead rooms. Eyring (RT60 = 0.161V ÷ [−S·ln(1−ᾱ)]) stays accurate when average absorption exceeds ~0.2–0.3. In our 100 m³ worked example at α = 0.5, Sabine overshot by ~38%."
       }
     },
     {

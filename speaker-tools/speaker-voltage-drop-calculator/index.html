@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speaker Voltage Drop Calculator: Wire Loss & Gauge</title>
     <meta name="description"
-        content="Calculate speaker wire voltage drop from length, AWG gauge, and load. See loss in volts and percent and choose the right cable size.">
+        content="Calculate speaker wire voltage drop in volts and percent from length, AWG gauge, and load. Keep loss under 5% and pick the right cable size.">
     <meta name="keywords"
         content="speaker voltage drop calculator, speaker wire voltage loss, amplifier voltage drop, speaker wire gauge, car audio voltage drop, PA system voltage loss">
 
     <link rel="canonical" href="https://pitchdetectors.com/speaker-tools/speaker-voltage-drop-calculator/"
     <meta property="og:type" content="website">
     <meta property="og:title" content="Speaker Voltage Drop Calculator: Wire Loss &amp; Gauge">
-    <meta property="og:description" content="Calculate speaker wire voltage drop from length, AWG gauge, and load. See loss in volts and percent and choose the right cable size.">
+    <meta property="og:description" content="Calculate speaker wire voltage drop in volts and percent from length, AWG gauge, and load. Keep loss under 5% and pick the right cable size.">
     <meta property="og:url" content="https://pitchdetectors.com/speaker-tools/speaker-voltage-drop-calculator/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Speaker Voltage Drop Calculator: Wire Loss &amp; Gauge">
-    <meta name="twitter:description" content="Calculate speaker wire voltage drop from length, AWG gauge, and load. See loss in volts and percent and choose the right cable size.">>
+    <meta name="twitter:description" content="Calculate speaker wire voltage drop in volts and percent from length, AWG gauge, and load. Keep loss under 5% and pick the right cable size.">>
 
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
 
@@ -136,35 +136,33 @@
                     <div class="tool-section mb-4">
                     </div>
 
-<!-- ARTICLE: Speaker Voltage Drop Calculator — rewritten 2026-10-12 to semantic SEO standard -->
+<!-- ARTICLE: Speaker Voltage Drop Calculator — rewritten 2026-10-18 to Expert Edition standard -->
                     <div class="tool-container">
                         <h2>What Is Speaker Wire Voltage Drop?</h2>
-                        <p>A speaker voltage drop calculator estimates how much voltage your speaker wire wastes before the signal reaches the speaker. Enter wire length, AWG gauge, speaker impedance, and amplifier voltage to get the loss in volts and percent. Keeping drop under 5% protects loudness, bass response, and amplifier control.</p>
-                        <p><strong>Definition:</strong> Voltage drop is the voltage lost as current flows through wire resistance. In speaker cables it equals current × wire resistance (V = I × R), counted over the round trip — out to the speaker and back. The lost voltage turns into heat instead of sound, so the speaker receives less power than the amplifier sends.</p>
+                        <p><strong>Voltage drop is the voltage a speaker cable wastes as heat before the signal reaches the speaker.</strong> A speaker voltage drop calculator estimates this loss from wire length, AWG gauge, speaker impedance, and amplifier voltage. The result, in volts and percent, tells you whether your cable is transparent or stealing output.</p>
+                        <p><strong>Definition:</strong> Voltage drop equals current × wire resistance (V = I × R), counted over the round trip — out to the speaker and back through the second conductor. Lost voltage never becomes sound: the speaker receives less power than the amplifier sends.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
                             <li><strong>Voltage drop = current × wire resistance</strong>, counted over the round-trip cable run.</li>
-                            <li>Keep drop under <strong>3%</strong> for best results and <strong>5%</strong> maximum.</li>
+                            <li>Keep drop under <strong>3%</strong> for best results; <strong>5%</strong> is the accepted maximum.</li>
                             <li>Doubling wire length doubles the drop; going <strong>3 AWG sizes thicker halves</strong> resistance.</li>
                             <li><strong>12-volt car audio</strong> suffers most — the same wire wastes a bigger share at low voltage.</li>
-                            <li>Wire resistance also destroys <strong>damping factor</strong>, loosening bass control.</li>
+                            <li>Wire resistance collapses <strong>damping factor</strong>, loosening the amplifier's grip on bass.</li>
                         </ul>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                        <p>This calculator models your speaker cable as a simple resistor using published copper wire data. It looks up the DC resistance per foot for your AWG gauge, doubles it for the round trip (amplifier to speaker and back), computes current from your amplifier voltage and speaker load (I = V ÷ R), then applies Ohm's law: Vdrop = I × R. The percentage is Vdrop ÷ supply voltage × 100.</p>
-                        <p>Methodology: resistance values are standard annealed-copper figures per 1,000 ft (e.g. 16 AWG = 4.016 Ω, 12 AWG = 1.588 Ω), consistent with NEC Chapter 9, Table 8 conductor properties. <em>We verified this calculator's output against hand calculations using 5 sample input combinations; results matched to two decimal places. Last reviewed: October 2026.</em></p>
+                        <p><strong>This calculator models your speaker cable as a resistor using published copper resistance data.</strong> It looks up the DC resistance per foot for your AWG gauge, doubles it for the round trip (amplifier to speaker and back), computes current from amplifier voltage and speaker load (I = V ÷ Z), then applies Ohm's law: Vdrop = I × R. The percentage is Vdrop ÷ supply voltage × 100.</p>
+                        <p>Methodology: resistance values are standard annealed-copper figures per 1,000 ft (16 AWG = 4.016 Ω, 12 AWG = 1.588 Ω), consistent with NEC Chapter 9, Table 8 conductor properties. <em>We verified this calculator's output against hand calculations using 5 sample input combinations; results matched to two decimal places. Last reviewed: October 2026.</em></p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-calculator me-2"></i>Voltage Drop Formula and Worked Example</h2>
-                        <p>The speaker wire voltage drop formula combines Ohm's law with the round-trip cable length:</p>
-                        <p><code><strong>Vdrop = 2 × I × R × L</strong></code> &nbsp;where <code><strong>I = V ÷ Z</strong></code></p>
-                        <p>R is resistance per foot for the gauge, L is one-way length in feet, V is amplifier voltage, and Z is speaker impedance in ohms. The factor of 2 accounts for both conductors.</p>
+                        <p><strong>The speaker wire voltage drop formula combines Ohm's law with the round-trip cable length: Vdrop = 2 × I × R × L, where I = V ÷ Z.</strong> R is resistance per foot for the gauge, L is one-way length in feet, V is amplifier voltage, and Z is speaker impedance in ohms. The factor of 2 covers both conductors.</p>
                         <p><strong>Worked example:</strong> 50 ft of 16 AWG wire, 4 Ω speaker, 12 V amplifier:</p>
                         <ol>
                             <li>Wire resistance: 2 × 50 ft × (4.016 Ω ÷ 1,000 ft) = <strong>0.402 Ω</strong></li>
@@ -189,25 +187,25 @@
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-list-ol me-2"></i>How to Use This Calculator</h2>
                         <ol>
-                            <li><strong>Wire length:</strong> enter the one-way distance in feet from amplifier to speaker.</li>
-                            <li><strong>Wire gauge:</strong> enter the AWG number printed on your cable jacket (lower = thicker).</li>
-                            <li><strong>Speaker load:</strong> enter the speaker's nominal impedance in ohms (4, 6, or 8 typical).</li>
-                            <li><strong>Amplifier voltage:</strong> enter the supply voltage — 12 V for car audio, or your amp's rated output voltage.</li>
-                            <li>Read the drop in <strong>volts and percent</strong>. If it exceeds 5%, choose thicker wire or a shorter run.</li>
+                            <li><strong>Enter</strong> the one-way distance in feet from amplifier to speaker.</li>
+                            <li><strong>Select</strong> the AWG number printed on your cable jacket (lower = thicker).</li>
+                            <li><strong>Enter</strong> the speaker's nominal impedance in ohms (4, 6, or 8 are typical).</li>
+                            <li><strong>Enter</strong> the supply voltage — 12 V for car audio, or your amplifier's rated output voltage.</li>
+                            <li><strong>Read</strong> the drop in volts and percent. Above 5%, choose thicker wire or shorten the run.</li>
                         </ol>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-speedometer2 me-2"></i>Reading Your Result</h2>
-                        <p>Your result shows volts lost and the percentage of supply voltage wasted as heat. Use this table to judge it:</p>
+                        <p><strong>Your result shows the volts lost and the percentage of supply voltage wasted as heat.</strong> Judge it against this table:</p>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead><tr><th>Voltage drop</th><th>Rating</th><th>Safe next step</th></tr></thead>
                                 <tbody>
                                     <tr><td>Under 1%</td><td>Excellent</td><td>Your wire is ideal — no change needed.</td></tr>
-                                    <tr><td>1–3%</td><td>Good</td><td>Fine for any system; upgrade only if lengthening the run.</td></tr>
-                                    <tr><td>3–5%</td><td>Acceptable limit</td><td>Works, but go one gauge thicker on your next cable purchase.</td></tr>
-                                    <tr><td>Over 5%</td><td>Too high</td><td>Replace with thicker <a href="../speaker-wire-gauge-calculator/">speaker wire</a> now — you are losing audible output.</td></tr>
+                                    <tr><td>1–3%</td><td>Good</td><td>Fine for any system; upgrade only when lengthening the run.</td></tr>
+                                    <tr><td>3–5%</td><td>Acceptable limit</td><td>Works, but buy one gauge thicker next time.</td></tr>
+                                    <tr><td>Over 5%</td><td>Too high</td><td>Replace it with thicker wire now — size it with the <a href="../speaker-wire-gauge-calculator/">speaker wire gauge calculator</a>.</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -215,34 +213,34 @@
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-activity me-2"></i>Damping Factor: The Hidden Cost of Thin Wire</h2>
-                        <p>Voltage drop is only half the story. Wire resistance also appears in series with your amplifier's output, which collapses its <strong>damping factor</strong> — the amp's grip on the speaker cone. Damping factor = speaker impedance ÷ (amplifier output impedance + wire resistance).</p>
-                        <p>A solid-state amp may boast a damping factor of 200, but add 0.4 Ω of thin 16 AWG wire to a 4 Ω speaker and the effective damping factor at the speaker drops below 10. Bass turns boomy and loose because the amplifier can no longer brake the woofer precisely. This is why audiophiles obsess over thick, short speaker cables: it is not about "cable sound," it is about preserving the amplifier's control.</p>
+                        <p><strong>Thin wire destroys damping factor because the wire's resistance sits in series with the amplifier's output.</strong> Damping factor = speaker impedance ÷ (amplifier output impedance + wire resistance). It measures the amplifier's grip on the speaker cone.</p>
+                        <p>A solid-state amplifier may advertise a damping factor of 200, but add 0.4 Ω of thin 16 AWG wire to a 4 Ω speaker and the effective damping factor at the speaker drops to about 10. Bass turns boomy because the amplifier can no longer brake the woofer precisely. Thick, short speaker cable is not about "cable sound" — it preserves the amplifier's control.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-battery-charging me-2"></i>Why 12-Volt Car Audio Suffers Most</h2>
-                        <p>Voltage drop hurts low-voltage systems disproportionately. A 500 W car amplifier on 12 V draws roughly 40 A, while the same 500 W from a 120 V home circuit draws about 4 A. Since drop = current × resistance, the car system sees roughly ten times the voltage loss through identical wire.</p>
-                        <p>Worse, the <em>percentage</em> loss is what you hear: losing 1.2 V from a 12 V supply is 10%, but losing 1.2 V from a 60 V pro-audio rail is only 2%. Car audio installers therefore run 12 or even 10 AWG to subwoofers as standard practice, and keep power and ground cables as short as physically possible.</p>
+                        <p><strong>Voltage drop punishes low-voltage systems disproportionately.</strong> A 500 W car amplifier on 12 V draws roughly 40 A; the same 500 W from a 120 V home circuit draws about 4 A. Drop equals current × resistance, so the car system sees roughly ten times the voltage loss through identical wire.</p>
+                        <p>The <em>percentage</em> loss is what you hear: losing 1.2 V from a 12 V supply is 10%, while losing 1.2 V from a 60 V pro-audio rail is 2%. Car audio installers run 12 or 10 AWG to subwoofers as standard practice and keep power and ground cables as short as physically possible.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-layers me-2"></i>Copper-Clad Aluminum vs. Pure Copper Wire</h2>
-                        <p>Not all "copper-colored" wire is copper. <strong>Copper-clad aluminum (CCA)</strong> has an aluminum core with a thin copper coating. Aluminum conducts only about 61% as well as copper, so CCA cable measures noticeably higher resistance than the same AWG in pure copper.</p>
-                        <p>Rule of thumb: treat CCA as roughly <strong>two AWG sizes thinner</strong> than labeled — 14 AWG CCA behaves like 16 AWG copper. For permanent installs and subwoofers, <strong>oxygen-free copper (OFC)</strong> is worth the premium because its resistance matches the published tables this calculator uses. If you already own CCA, enter a thinner effective gauge to get an honest drop estimate.</p>
+                        <p><strong>Not all copper-colored wire is copper.</strong> Copper-clad aluminum (CCA) has an aluminum core under a thin copper coating, and aluminum conducts only about 61% as well as copper. CCA cable measures noticeably higher resistance than the same AWG in pure copper.</p>
+                        <p>Rule of thumb: <strong>treat CCA as roughly two AWG sizes thinner</strong> than labeled — 14 AWG CCA behaves like 16 AWG copper. For permanent installs and subwoofers, oxygen-free copper (OFC) is worth the premium because its resistance matches the published tables this calculator uses. With CCA already installed, enter a thinner effective gauge for an honest drop estimate.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-diagram-3 me-2"></i>Long Runs? Consider a 70-Volt System</h2>
-                        <p>For very long runs — restaurants, offices, outdoor venues — no practical wire gauge wins. The professional answer is a <strong>70-volt (constant-voltage) distributed system</strong>. By stepping voltage up at the amplifier and back down at each speaker transformer, current stays tiny, so voltage drop becomes negligible even over hundreds of feet of modest 18 AWG wire.</p>
-                        <p>70V systems trade some audiophile fidelity for efficiency and simplicity, which is why they dominate commercial installs. For a single living room or car, thick copper remains the right answer; for a building, go constant-voltage.</p>
+                        <p><strong>For very long runs — restaurants, offices, outdoor venues — no practical wire gauge wins.</strong> The professional answer is a 70-volt (constant-voltage) distributed system. Stepping voltage up at the amplifier and back down at each speaker transformer keeps current tiny, so voltage drop stays negligible over hundreds of feet of modest 18 AWG wire.</p>
+                        <p>70V systems trade some audiophile fidelity for efficiency and simplicity, which is why they dominate commercial installs. For one living room or car, thick copper remains the right answer; for a building, go constant-voltage.</p>
                     </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>DC resistance model.</strong> The calculator uses DC resistance; a real speaker's impedance swings with frequency (a "4 Ω" speaker may dip to 3 Ω at resonance), so actual drop varies across the audio band.</li>
+                            <li><strong>DC resistance model.</strong> The calculator uses DC resistance; a real speaker's impedance swings with frequency (a "4 Ω" speaker dips near 3 Ω at resonance), so actual drop varies across the audio band.</li>
                             <li><strong>Room-temperature values.</strong> Copper resistance rises about 0.4% per °C — a hot car trunk in summer adds a few percent to the calculated drop.</li>
-                            <li><strong>Ignores connectors.</strong> Cheap terminals, splices, and corroded contacts add resistance the calculator cannot see; keep connections clean and tight.</li>
+                            <li><strong>Connectors ignored.</strong> Cheap terminals, splices, and corroded contacts add resistance the calculator cannot see. Keep connections clean and tight.</li>
                             <li><strong>Skin effect is negligible here.</strong> At audio frequencies and these gauges, current uses the full conductor cross-section — no correction needed.</li>
                         </ul>
                     </div>
@@ -267,7 +265,7 @@
                     <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: AWG gauge vs. resistance per 100 ft, 12–18 AWG bars]</div><figcaption class="small text-muted">Infographic: resistance per 100 ft of copper speaker wire by AWG gauge</figcaption></figure>
 
                     <div class="tool-section mt-4">
-                        <p class="small text-muted"><strong>Note:</strong> this tool is for low-voltage speaker wiring design and education. It is not a substitute for professional electrical advice — for household mains wiring, always consult a qualified electrician and follow your local electrical code.</p>
+                        <p class="small text-muted"><strong>Note:</strong> this tool is for low-voltage speaker wiring design and education. It is not a substitute for professional electrical advice — for household mains wiring, consult a qualified electrician and follow your local electrical code.</p>
                     </div>
 
                     <div class="tool-container mt-4">
@@ -284,7 +282,7 @@
                                     </h2>
                                     <div id="vfaq1" class="accordion-collapse collapse show" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            Under 3% is ideal and 5% is the accepted maximum. Below 3%, losses are inaudible and damping factor stays healthy. Between 3% and 5%, the system works but deserves thicker wire at the next upgrade. Above 5%, you are losing audible loudness and bass control — replace the cable.
+                                            Acceptable voltage drop is under 3%, with 5% as the maximum. Below 3%, losses are inaudible and damping factor stays healthy. Between 3% and 5%, the system works but deserves thicker wire at the next upgrade. Above 5%, you lose audible loudness and bass control — replace the cable.
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +296,7 @@
                                     </h2>
                                     <div id="vfaq2" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            Use Vdrop = 2 × I × R × L, where I = amplifier voltage ÷ speaker impedance, R is the wire's resistance per foot, and L is one-way length. The factor of 2 covers the round trip out and back. Divide the result by supply voltage and multiply by 100 for the percentage.
+                                            To calculate speaker wire voltage drop, use Vdrop = 2 × I × R × L, where I = amplifier voltage ÷ speaker impedance, R is the wire's resistance per foot, and L is one-way length. The factor of 2 covers the round trip out and back. Divide by supply voltage and multiply by 100 for the percentage.
                                         </div>
                                     </div>
                                 </div>
@@ -326,7 +324,7 @@
                                     </h2>
                                     <div id="vfaq4" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            For a 4-ohm speaker on a 50-ft run, use 12 AWG copper to stay near 4% drop; 14 AWG lands around 6%, which is too high. For 8-ohm speakers, 14 AWG is usually fine at 50 ft because the higher impedance draws less current. Enter your exact numbers above to confirm.
+                                            For a 4-ohm speaker on a 50-ft run, use 12 AWG copper to stay near 4% drop; 14 AWG lands around 6%, which is too high. For 8-ohm speakers, 14 AWG usually works at 50 ft because the higher impedance draws less current. Enter your exact numbers in the calculator above to confirm.
                                         </div>
                                     </div>
                                 </div>
@@ -340,7 +338,7 @@
                                     </h2>
                                     <div id="vfaq5" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            Two reasons: at 12 volts, current is high, so even modest wire resistance creates a large percentage drop — and that resistance sits in series with the amplifier, destroying damping factor. The woofer cone keeps moving after the signal stops, smearing bass. Thicker, shorter wire restores both power and control.
+                                            Your car subwoofer loses bass with thin wire for two reasons: at 12 volts current is high, so even modest wire resistance creates a large percentage drop — and that resistance sits in series with the amplifier, destroying damping factor. The woofer cone keeps moving after the signal stops, smearing bass. Thicker, shorter wire restores power and control.
                                         </div>
                                     </div>
                                 </div>
@@ -354,7 +352,7 @@
                                     </h2>
                                     <div id="vfaq6" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            You can measure the wire's resistance with the system off, then compute drop with Ohm's law — but measuring live audio voltage is unreliable because music is a constantly changing AC signal. A calculator gives a more stable, repeatable answer for system design than chasing a bouncing meter needle.
+                                            Yes, you can measure the wire's resistance with the system off, then compute the drop with Ohm's law. Measuring live audio voltage is unreliable because music is a constantly changing AC signal. A calculator gives a more stable, repeatable answer for system design than a bouncing meter needle.
                                         </div>
                                     </div>
                                 </div>
@@ -368,7 +366,7 @@
                                     </h2>
                                     <div id="vfaq7" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            It works for short, easy runs, but aluminum conducts only about 61% as well as copper, so CCA behaves like wire two gauges thinner. For subwoofers, long runs, or permanent installs, pure copper (OFC) is worth it. If you must use CCA, enter a thinner effective gauge in the calculator above.
+                                            Yes, for short, easy runs — but aluminum conducts only about 61% as well as copper, so CCA behaves like wire two gauges thinner. For subwoofers, long runs, or permanent installs, pure copper (OFC) is worth it. With CCA, enter a thinner effective gauge in the calculator above.
                                         </div>
                                     </div>
                                 </div>
@@ -382,7 +380,7 @@
                                     </h2>
                                     <div id="vfaq8" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            Round trip. Current flows out through one conductor and back through the other, so both conductors add resistance. This calculator asks for one-way length and doubles it internally — a common mistake is entering the total cable length and doubling the real drop.
+                                            Count the round trip. Current flows out through one conductor and back through the other, so both conductors add resistance. This calculator asks for one-way length and doubles it internally — a common mistake is entering the total cable length, which doubles the real drop.
                                         </div>
                                     </div>
                                 </div>
@@ -396,7 +394,7 @@
                                     </h2>
                                     <div id="vfaq9" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            Slightly, for the tweeter leg: splitting highs and lows into separate cables means each carries less current, so each sees less drop. But simply running one thicker cable usually beats bi-wiring thin cables on both cost and performance. Fix gauge first; consider bi-wiring second.
+                                            Yes, slightly — for the tweeter leg. Splitting highs and lows into separate cables means each carries less current, so each sees less drop. But one thicker cable usually beats bi-wiring thin cables on both cost and performance. Fix the gauge first; consider bi-wiring second.
                                         </div>
                                     </div>
                                 </div>
@@ -410,7 +408,7 @@
                                     </h2>
                                     <div id="vfaq10" class="accordion-collapse collapse" data-bs-parent="#voltageFaq">
                                         <div class="accordion-body">
-                                            Barely — that is their whole point. Stepping up to 70 volts slashes current, so even hundreds of feet of 18 AWG lose a negligible percentage. This calculator targets conventional low-impedance (4/8 Ω) systems; for 70V distributed audio, standard 18 AWG is fine for most commercial runs.
+                                            No — barely. That is the whole point of 70-volt systems: stepping up the voltage slashes current, so even hundreds of feet of 18 AWG lose a negligible percentage. This calculator targets conventional low-impedance (4/8 Ω) systems; for 70V distributed audio, standard 18 AWG is fine for most commercial runs.
                                         </div>
                                     </div>
                                 </div>
@@ -488,7 +486,7 @@
       "name": "What is acceptable voltage drop for speaker wire?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Under 3% is ideal and 5% is the accepted maximum. Below 3%, losses are inaudible and damping factor stays healthy. Between 3% and 5%, the system works but deserves thicker wire at the next upgrade. Above 5%, you are losing audible loudness and bass control — replace the cable."
+        "text": "Acceptable voltage drop is under 3%, with 5% as the maximum. Below 3%, losses are inaudible and damping factor stays healthy. Between 3% and 5%, the system works but deserves thicker wire at the next upgrade. Above 5%, you lose audible loudness and bass control — replace the cable."
       }
     },
     {
@@ -496,7 +494,7 @@
       "name": "How do you calculate speaker wire voltage drop?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use Vdrop = 2 × I × R × L, where I = amplifier voltage ÷ speaker impedance, R is the wire's resistance per foot, and L is one-way length. The factor of 2 covers the round trip out and back. Divide the result by supply voltage and multiply by 100 for the percentage."
+        "text": "To calculate speaker wire voltage drop, use Vdrop = 2 × I × R × L, where I = amplifier voltage ÷ speaker impedance, R is the wire's resistance per foot, and L is one-way length. The factor of 2 covers the round trip out and back. Divide by supply voltage and multiply by 100 for the percentage."
       }
     },
     {
@@ -512,7 +510,7 @@
       "name": "What gauge wire do I need for a 50-foot speaker run?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For a 4-ohm speaker on a 50-ft run, use 12 AWG copper to stay near 4% drop; 14 AWG lands around 6%, which is too high. For 8-ohm speakers, 14 AWG is usually fine at 50 ft because the higher impedance draws less current. Enter your exact numbers above to confirm."
+        "text": "For a 4-ohm speaker on a 50-ft run, use 12 AWG copper to stay near 4% drop; 14 AWG lands around 6%, which is too high. For 8-ohm speakers, 14 AWG usually works at 50 ft because the higher impedance draws less current. Enter your exact numbers in the calculator above to confirm."
       }
     },
     {
@@ -520,7 +518,7 @@
       "name": "Why does my car subwoofer lose bass with thin wire?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Two reasons: at 12 volts, current is high, so even modest wire resistance creates a large percentage drop — and that resistance sits in series with the amplifier, destroying damping factor. The woofer cone keeps moving after the signal stops, smearing bass. Thicker, shorter wire restores both power and control."
+        "text": "Your car subwoofer loses bass with thin wire for two reasons: at 12 volts current is high, so even modest wire resistance creates a large percentage drop — and that resistance sits in series with the amplifier, destroying damping factor. The woofer cone keeps moving after the signal stops, smearing bass. Thicker, shorter wire restores power and control."
       }
     },
     {
@@ -528,7 +526,7 @@
       "name": "Can I measure voltage drop with a multimeter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can measure the wire's resistance with the system off, then compute drop with Ohm's law — but measuring live audio voltage is unreliable because music is a constantly changing AC signal. A calculator gives a more stable, repeatable answer for system design than chasing a bouncing meter needle."
+        "text": "Yes, you can measure the wire's resistance with the system off, then compute the drop with Ohm's law. Measuring live audio voltage is unreliable because music is a constantly changing AC signal. A calculator gives a more stable, repeatable answer for system design than a bouncing meter needle."
       }
     },
     {
@@ -536,7 +534,7 @@
       "name": "Is copper-clad aluminum (CCA) wire okay for speakers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It works for short, easy runs, but aluminum conducts only about 61% as well as copper, so CCA behaves like wire two gauges thinner. For subwoofers, long runs, or permanent installs, pure copper (OFC) is worth it. If you must use CCA, enter a thinner effective gauge in the calculator above."
+        "text": "Yes, for short, easy runs — but aluminum conducts only about 61% as well as copper, so CCA behaves like wire two gauges thinner. For subwoofers, long runs, or permanent installs, pure copper (OFC) is worth it. With CCA, enter a thinner effective gauge in the calculator above."
       }
     },
     {
@@ -544,7 +542,7 @@
       "name": "Do I count one-way or round-trip wire length?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Round trip. Current flows out through one conductor and back through the other, so both conductors add resistance. This calculator asks for one-way length and doubles it internally — a common mistake is entering the total cable length and doubling the real drop."
+        "text": "Count the round trip. Current flows out through one conductor and back through the other, so both conductors add resistance. This calculator asks for one-way length and doubles it internally — a common mistake is entering the total cable length, which doubles the real drop."
       }
     },
     {
@@ -552,7 +550,7 @@
       "name": "Does bi-wiring reduce voltage drop?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Slightly, for the tweeter leg: splitting highs and lows into separate cables means each carries less current, so each sees less drop. But simply running one thicker cable usually beats bi-wiring thin cables on both cost and performance. Fix gauge first; consider bi-wiring second."
+        "text": "Yes, slightly — for the tweeter leg. Splitting highs and lows into separate cables means each carries less current, so each sees less drop. But one thicker cable usually beats bi-wiring thin cables on both cost and performance. Fix the gauge first; consider bi-wiring second."
       }
     },
     {
@@ -560,12 +558,12 @@
       "name": "Does voltage drop matter for 70-volt systems?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Barely — that is their whole point. Stepping up to 70 volts slashes current, so even hundreds of feet of 18 AWG lose a negligible percentage. This calculator targets conventional low-impedance (4/8 Ω) systems; for 70V distributed audio, standard 18 AWG is fine for most commercial runs."
+        "text": "No — barely. That is the whole point of 70-volt systems: stepping up the voltage slashes current, so even hundreds of feet of 18 AWG lose a negligible percentage. This calculator targets conventional low-impedance (4/8 Ω) systems; for 70V distributed audio, standard 18 AWG is fine for most commercial runs."
       }
     }
   ]
 }
-</script>
+    </script>
 </body>
 
 </html>

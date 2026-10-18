@@ -169,8 +169,7 @@
           <a href="/dj-music-production-tools/dj-set-length-calculator/" class="tool-card">
             <div class="tool-icon"><i class="bi bi-shuffle"></i></div>
             <h3>DJ Set Length Calculator</h3>
-            <p>Free DJ set length calculator. Plan your DJ set by calculating how many tracks you need,
-              average track length, and total set duration</p>
+            <p>Plan your set: how many tracks you need, average track length, and total duration for any set length.</p>
           </a>
           <a href="/dj-music-production-tools/scale-practice-generator/" class="tool-card">
             <div class="tool-icon"><i class="bi bi-shuffle"></i></div>
@@ -181,8 +180,7 @@
           <a href="/dj-music-production-tools/mix-compatibility-checker/" class="tool-card">
             <div class="tool-icon"><i class="bi bi-shuffle"></i></div>
             <h3>Mix Compatibility Checker</h3>
-            <p>Free mix compatibility checker. Check if two tracks are compatible for DJ mixing based on key
-              and BPM analysis.</p>
+            <p>Check whether two tracks mix well together based on BPM and key analysis.</p>
           </a>
           <a href="/dj-music-production-tools/key-transposition/" class="tool-card">
             <div class="tool-icon"><i class="bi bi-shuffle"></i></div>
@@ -198,7 +196,7 @@
           <a href="bpm-to-speed/" class="tool-card">
             <div class="tool-icon"><i class="bi bi-arrows-expand"></i></div>
             <h3>BPM → Pitch (Semitone) Calculator</h3>
-            <p>calculates how much pitch changes when tempo is changed without time-stretching</p>
+            <p>See how much pitch shifts when tempo changes without time-stretching.</p>
           </a>
         </div>
 
@@ -292,7 +290,7 @@
                 </tbody>
               </table>
             </div>
-            <p>The <a href="song-key-finder/">Song Key Finder</a> reports the Camelot code for your track, and the <a href="mix-compatibility-checker/">Mix Compatibility Checker</a> applies these rules to a pair of tracks. One caution: automatic key detection is right most of the time but not always — if a mix sounds wrong despite "compatible" codes, trust your ears and verify against a second source.</p>
+            <p>The <a href="song-key-finder/">Song Key Finder</a> reports the Camelot code for your track, and the <a href="mix-compatibility-checker/">Mix Compatibility Checker</a> applies these rules to a pair of tracks. One detail trips up beginners: moving one semitone is not one step on the wheel — it is seven. Raising 8A (A minor) by a semitone lands on 3A (B♭ minor), because the wheel is arranged in fifths rather than semitones. One caution: automatic key detection is right most of the time but not always — if a mix sounds wrong despite "compatible" codes, trust your ears and verify against a second source.</p>
           </div>
 
           <div class="tool-section">
@@ -314,6 +312,7 @@
             <h2 class="text-mid mb-4"><i class="bi bi-exclamation-octagon me-2"></i>Limitations</h2>
             <ul>
               <li><strong>Key detection isn't perfect.</strong> Automatic analysis can mislabel keys, especially with atonal intros, key changes mid-track, or heavy effects — verify by ear for important mixes.</li>
+              <li><strong>Key tags disagree between engines.</strong> Rekordbox, Serato, Mixed In Key, and browser analyzers can report different keys for the same track — the disagreement peaks on tracks with ambiguous or shifting tonal centers. Treat a detected key as strong evidence, not a fact.</li>
               <li><strong>Local files only.</strong> Analysis works on files on your device (MP3, WAV, FLAC, AIFF, AAC, OGG); streaming URLs and YouTube links aren't supported.</li>
               <li><strong>Compatibility scores are guidance, not verdicts.</strong> Energy, arrangement, and phrasing matter as much as BPM and key — a "compatible" pair can still sound wrong.</li>
               <li><strong>No substitute for practiced ears.</strong> These tools compute the numbers; beatmatching by ear and reading a crowd still come from practice.</li>

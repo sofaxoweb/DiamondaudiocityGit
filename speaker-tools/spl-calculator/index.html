@@ -165,7 +165,7 @@
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-                        <p>This calculator builds SPL in two stages. First it computes each speaker's output from sensitivity and effective amplifier power; then it adds acoustic coupling gain for multiple identical speakers. Wiring configuration adjusts effective power: series wiring is derated to half power (higher total impedance), parallel keeps full power.</p>
+                        <p>This calculator builds SPL in two stages. First it computes each speaker's output from sensitivity and effective amplifier power; then it adds acoustic coupling gain for multiple identical speakers. Wiring configuration adjusts effective power: series wiring is derated to half power (higher total impedance), parallel keeps full power. The watts you enter are treated as continuous (RMS) power, so the result is sustained SPL capability — brief peaks need headroom (see below).</p>
                         <p>Methodology: SPL per speaker = Sensitivity (dB @ 1W/1m) + 10 × log<sub>10</sub>(effective watts ÷ 1 W). Total SPL = per-speaker SPL + 10 × log<sub>10</sub>(N speakers). Results assume free-field (reflection-free) conditions at 1 meter. <em>We verified this calculator's output against hand calculations using 5 sample input combinations; all matched to 0.1 dB. Last reviewed: October 2026.</em></p>
                     </div>
 
@@ -218,6 +218,30 @@
                     </div>
 
                     <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: watts vs. dB curve — 1W, 10W, 100W, 1000W mapped to +0, +10, +20, +30 dB]</div><figcaption class="small text-muted">Diagram: why each 10× jump in watts buys only 10 dB more SPL</figcaption></figure>
+
+                    <div class="tool-section mt-4">
+                        <h2 class="text-mid mb-4"><i class="bi bi-speaker me-2"></i>Boundary Gain: Free Decibels from Walls</h2>
+                        <p><strong>Each nearby boundary adds about +3 dB.</strong> A speaker in open space (4π) radiates energy in every direction; put a wall behind it and the rear energy reflects forward instead of escaping. Walls, floor, and ceiling each count as one boundary:</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead><tr><th>Nearby boundaries</th><th>Gain</th><th>Example</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1 (near a wall)</td><td>+3 dB</td><td>Bookshelf speaker against the back wall</td></tr>
+                                    <tr><td>2 (wall + floor, or two walls)</td><td>+6 dB</td><td>Floorstanding speaker near a wall</td></tr>
+                                    <tr><td>3 (room corner)</td><td>+9 dB</td><td>Subwoofer tucked into a corner</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>The gain concentrates in the <strong>bass</strong>: long bass wavelengths reflect coherently off the boundary, while short treble wavelengths scatter. A corner-loaded subwoofer can play up to 9 dB louder in the deep bass — which is why setup guides start subwoofer placement with "try the corner first."</p>
+                        <p>"Near" means within roughly <strong>1 meter</strong>. Farther out, the speaker is effectively free-standing and the rule fades. This calculator assumes free-field placement, so treat its number as the conservative baseline and add boundary gain on top when your placement qualifies.</p>
+                    </div>
+
+                    <div class="tool-section mt-4">
+                        <h2 class="text-mid mb-4"><i class="bi bi-lightning me-2"></i>Peak vs. Average: The Headroom the Number Hides</h2>
+                        <p><strong>This calculator predicts continuous (RMS) capability — not drum-hit peaks.</strong> Recorded music carries peaks 10–20 dB above its average level (the crest factor). A system averaging 95 dB SPL must reproduce 105–115 dB peaks without clipping to sound clean.</p>
+                        <p>Amplifiers cover this with <strong>dynamic headroom</strong>: power reserves above the RMS rating for brief peaks. A 2 dB headroom figure equals 10<sup>2/10</sup> = 1.585× the rated watts — a 100 W RMS amp delivers about 160 W on peaks. Quality AV receivers typically carry 1–3 dB of headroom; budget mini-amps often carry almost none.</p>
+                        <p>Size for the peaks, not the average. If your target is 105 dB THX peaks, run this calculator with peak watts — or choose an amp whose continuous number already clears the target, so the peaks never ask for power that isn't there.</p>
+                    </div>
 
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-house me-2"></i>Why Real Rooms Measure Louder Than This Calculator</h2>

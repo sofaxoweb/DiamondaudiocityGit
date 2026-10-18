@@ -21,7 +21,7 @@
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Speaker Wire Gauge Calculator: AWG by Watts &amp; Distance">
-    <meta name="twitter:description" content="Pick the right AWG speaker wire for your amp and distance. Enter watts, impedance and length to get the correct copper or CCA gauge, voltage drop and loss.">>
+    <meta name="twitter:description" content="Pick the right AWG speaker wire for your amp and distance. Enter watts, impedance and length to get the correct copper or CCA gauge, voltage drop and loss.">
 
 
   <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
@@ -207,9 +207,8 @@
           <div id="result" class="result-box" style="display:none;"></div>
         </div>
         <div class="container my-5">
-
                     <h1 class="mb-4">Speaker Wire Gauge Calculator (AWG Size by Watts, Distance & Impedance)</h1>
-          <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+          <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
 
           <div class="tool-section">
             <p>A <strong>speaker wire gauge calculator</strong> picks the correct AWG wire size for your amplifier power, speaker impedance, and cable length. It converts watts and ohms into current, doubles your one-way distance for the round trip, and finds the thinnest wire that keeps power loss under your target — typically 5%.</p>
@@ -219,7 +218,7 @@
             <h2 class="text-mid mb-4"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
             <ul>
               <li>Size wire by <strong>current (amps)</strong>, not watts alone: I = √(P ÷ R).</li>
-              <li>Always <strong>double the one-way distance</strong> — speaker circuits are loops.</li>
+              <li><strong>Double the one-way distance</strong> — speaker circuits are loops.</li>
               <li>Every <strong>3 AWG steps</strong> halves or doubles resistance — the quick mental shortcut.</li>
               <li>Keep wire resistance under <strong>5% of speaker impedance</strong> for clean, controlled sound.</li>
               <li><strong>CCA wire needs ~2 sizes thicker</strong> than copper for equal performance.</li>
@@ -229,53 +228,53 @@
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-info-circle me-2"></i>What Is Speaker Wire Gauge?</h2>
-            <p><strong>Definition:</strong> Speaker wire gauge is the thickness of the conductors connecting an amplifier to its speakers, measured in AWG (American Wire Gauge). Lower numbers mean thicker wire and lower resistance — 12 AWG carries about 2.5 times the copper of 16 AWG. Correct gauge keeps voltage drop and power loss low so the amplifier's power actually reaches the speaker instead of heating the cable.</p>
-            <p>Gauge matters because wire is a resistor in series with your speaker. Too thin, and three things suffer: some amplifier power burns off as heat in the cable, the voltage reaching the speaker sags, and the amplifier loses its electrical grip on the woofer (damping factor). Too thick, and you mostly waste money and fight stiff cable — electrically, oversized wire is harmless.</p>
+            <p><strong>Speaker wire gauge is the thickness of the conductors connecting an amplifier to its speakers, measured in AWG (American Wire Gauge).</strong> Lower numbers mean thicker wire and lower resistance — 12 AWG carries about 2.5 times the copper of 16 AWG. Correct gauge keeps voltage drop and power loss low so the amplifier's power reaches the speaker instead of heating the cable.</p>
+            <p>Gauge matters because wire is a resistor in series with your speaker. Too thin, and three things suffer: amplifier power burns off as heat in the cable, the voltage reaching the speaker sags, and the amplifier loses its electrical grip on the woofer (damping factor). Too thick, and you mostly waste money and fight stiff cable — electrically, oversized wire is harmless.</p>
           </div>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
-            <p>This calculator sizes wire from electrical first principles, not a fixed chart. It derives current from your amplifier's RMS power and speaker impedance, computes the cable's round-trip resistance from standard copper resistance tables, then selects the thinnest AWG whose resistance keeps power loss within your chosen limit.</p>
-            <p>Methodology: current I = √(P ÷ R); voltage V = √(P × R). Round-trip resistance = (Ω per 1000 ft ÷ 1000) × (2 × one-way length). Maximum allowed wire resistance = (max loss % × speaker impedance) ÷ (100 − max loss %). The tool walks AWG sizes from thinnest to thickest and picks the first that satisfies both the resistance and loss limits, using NEC Chapter 9 Table 8 copper resistance values (12 AWG = 1.588 Ω/1000 ft, 14 AWG = 2.525, 16 AWG = 4.016). For CCA, resistance is multiplied by 1.5× to reflect its lower conductivity. <em>We verified this calculator's output against hand calculations using 5 sample input combinations; it recommended the correct AWG in all 5 cases. Last reviewed: October 2026.</em></p>
+            <p><strong>This calculator sizes wire from electrical first principles, not a fixed chart.</strong> It derives current from your amplifier's RMS power and speaker impedance, computes the cable's round-trip resistance from standard copper resistance tables, then selects the thinnest AWG whose resistance keeps power loss within your chosen limit.</p>
+            <p>Methodology: current I = √(P ÷ R); voltage V = √(P × R). Round-trip resistance = (Ω per 1000 ft ÷ 1000) × (2 × one-way length). Maximum allowed wire resistance = (max loss % × speaker impedance) ÷ (100 − max loss %). The tool evaluates every AWG size from 4 to 20 and keeps the thinnest whose resistance satisfies both the resistance ceiling and the loss limit (if none qualifies, it falls back to 4 AWG). Values come from NEC Chapter 9 Table 8 (12 AWG = 1.588 Ω/1000 ft, 14 AWG = 2.525, 16 AWG = 4.016). For CCA, resistance is multiplied by 1.5× to reflect its lower conductivity. <em>We verified this calculator's output against hand calculations using 5 sample input combinations; it recommended the correct AWG in all 5 cases. Last reviewed: October 2026.</em></p>
           </div>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-calculator me-2"></i>Wire Gauge Formula and Worked Example</h2>
-            <p>The sizing formula combines Ohm's Law with the wire's published resistance:</p>
+            <p><strong>The sizing formula combines Ohm's Law with the wire's published resistance:</strong></p>
             <p><code><strong>R_wire = (Ω per 1000 ft ÷ 1000) × (2 × one-way length in feet)</strong></code><br>
             <code><strong>Power loss % = R_wire ÷ (R_wire + speaker impedance) × 100</strong></code></p>
-            <p><strong>Worked example:</strong> 200 W amplifier, 4 Ω speaker, 40 ft one-way run, 5% max loss:</p>
+            <p><strong>Worked example — 200 W amplifier, 4 Ω speaker, 40 ft one-way run, 5% max loss:</strong></p>
             <ol>
               <li>Current: I = √(200 ÷ 4) = <strong>7.07 A</strong></li>
               <li>Round-trip length: 40 × 2 = <strong>80 ft</strong></li>
               <li>Try 16 AWG: R = (4.016 ÷ 1000) × 80 = <strong>0.321 Ω</strong> → loss = 0.321 ÷ 4.321 = <strong>7.4%</strong> ✗ too thin</li>
               <li>Try 14 AWG: R = (2.525 ÷ 1000) × 80 = <strong>0.202 Ω</strong> → loss = 0.202 ÷ 4.202 = <strong>4.8%</strong> ✓</li>
             </ol>
-            <p>Result: <strong>14 AWG copper</strong>. Note how the calculation used current and impedance — watts alone would never have revealed that 16 AWG fails here.</p>
+            <p>Result: <strong>14 AWG copper</strong>. The calculation used current and impedance — watts alone would never have revealed that 16 AWG fails here.</p>
           </div>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-list-ol me-2"></i>How to Use This Calculator</h2>
             <ol>
-              <li><strong>Wire length:</strong> enter the one-way distance from amplifier to speaker.</li>
-              <li><strong>Feet / Meters:</strong> toggle the unit button to match your measurement.</li>
-              <li><strong>RMS power:</strong> enter the amplifier's continuous (RMS) watts per channel — not peak.</li>
-              <li><strong>Speaker impedance:</strong> enter the nominal ohms (2, 4, 6, or 8) from the spec sheet.</li>
-              <li><strong>Max % power loss:</strong> 5% is the standard default; use 2–3% for critical listening or PA.</li>
-              <li><strong>Wire price per ft (optional):</strong> enter your cable cost to estimate the total run price.</li>
-              <li>Press <strong>Calculate</strong> — read the copper and CCA recommendations, loss figures, and delivered power.</li>
+              <li><strong>Enter the wire length</strong> — the one-way distance from amplifier to speaker.</li>
+              <li><strong>Toggle Feet / Meters</strong> to match your measurement.</li>
+              <li><strong>Enter RMS power</strong> — the amplifier's continuous (RMS) watts per channel, not peak.</li>
+              <li><strong>Enter speaker impedance</strong> — the nominal ohms (2, 4, 6, or 8) from the spec sheet.</li>
+              <li><strong>Set max % power loss</strong> — 5% is the standard default; use 2–3% for critical listening or PA.</li>
+              <li><strong>Enter wire price per ft (optional)</strong> to estimate the total run cost.</li>
+              <li><strong>Press Calculate</strong> — read the copper and CCA recommendations, loss figures, and delivered power.</li>
             </ol>
           </div>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-speedometer2 me-2"></i>Reading Your Result</h2>
-            <p>Each output tells you something specific about the run:</p>
+            <p><strong>Each output tells you something specific about the run:</strong></p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Output</th><th>What it means</th><th>Safe next step</th></tr></thead>
                 <tbody>
                   <tr><td>Copper AWG</td><td>Thinnest pure-copper gauge meeting your loss target</td><td>Buy this gauge or one thicker; never thinner.</td></tr>
-                  <tr><td>CCA AWG</td><td>Equivalent size if you choose copper-clad aluminum</td><td>If the CCA size looks absurd, switch to copper.</td></tr>
+                  <tr><td>CCA AWG</td><td>Equivalent size in copper-clad aluminum</td><td>If the CCA size looks absurd, switch to copper.</td></tr>
                   <tr><td>Wire resistance (Ω)</td><td>Total round-trip resistance of the run</td><td>Compare it to your speaker impedance — it should be tiny by comparison.</td></tr>
                   <tr><td>Voltage drop %</td><td>Signal voltage lost in the cable</td><td>Under ~2.5% is excellent; recheck if above 5%.</td></tr>
                   <tr><td>Power loss (W)</td><td>Watts burned as heat in the wire</td><td>If this exceeds a few watts, go thicker.</td></tr>
@@ -287,7 +286,7 @@
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-patch-question me-2"></i>Where Does the 5% Power-Loss Rule Come From?</h2>
-            <p>The 5% rule is a practical engineering compromise, not a law of physics. Here is the math behind it:</p>
+            <p><strong>The 5% rule is a practical engineering compromise, not a law of physics — and the math behind it is simple:</strong></p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Power loss</th><th>Loudness drop</th><th>Verdict</th></tr></thead>
@@ -299,15 +298,15 @@
                 </tbody>
               </table>
             </div>
-            <p>A 5% power loss costs just 0.22 dB of loudness — far below audibility — while keeping cable costs reasonable. That is why installers settled on it: going to 2% doubles copper cost for zero audible gain in most rooms. Reserve 2–3% for studio monitors, high-end home theater, and long PA runs where damping factor matters most.</p>
+            <p>A 5% power loss costs just 0.22 dB of loudness — far below audibility — while keeping cable costs reasonable. Going to 2% doubles copper cost for zero audible gain in most rooms. Reserve 2–3% for studio monitors, high-end home theater, and long PA runs where damping factor matters most.</p>
           </div>
 
           <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: voltage divider — amplifier → wire resistance → speaker impedance, showing where power is lost]</div><figcaption class="small text-muted">Diagram: how wire resistance and speaker impedance split your amplifier's power</figcaption></figure>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-activity me-2"></i>Damping Factor: The Number Nobody Explains</h2>
-            <p><strong>Damping factor</strong> is the amplifier's electrical grip on the woofer: speaker impedance divided by everything in series with it (amplifier output impedance + wire resistance). High damping factor means tight, controlled bass; low means loose, boomy bass.</p>
-            <p><strong>Worked example:</strong> a 4 Ω subwoofer, an amplifier with output impedance 0.02 Ω, and a 50 ft run (100 ft round trip):</p>
+            <p><strong>Damping factor is the amplifier's electrical grip on the woofer: speaker impedance divided by everything in series with it (amplifier output impedance + wire resistance).</strong> High damping factor means tight, controlled bass; low means loose, boomy bass.</p>
+            <p><strong>Worked example — 4 Ω subwoofer, amp output impedance 0.02 Ω, 50 ft run (100 ft round trip):</strong></p>
             <ul>
               <li>16 AWG: wire R = (4.016 ÷ 1000) × 100 = <strong>0.40 Ω</strong> → damping factor = 4 ÷ 0.42 ≈ <strong>9.5</strong> (poor)</li>
               <li>12 AWG: wire R = (1.588 ÷ 1000) × 100 = <strong>0.16 Ω</strong> → damping factor = 4 ÷ 0.18 ≈ <strong>22</strong> (good)</li>
@@ -317,7 +316,7 @@
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-layers me-2"></i>Copper vs. CCA: The Equivalence Table</h2>
-            <p><strong>CCA (copper-clad aluminum)</strong> is an aluminum core with a thin copper skin. Its conductivity is roughly 61% of pure copper (IACS scale), so the same AWG number has about 1.6× the resistance. The fix is simple: go about <strong>two AWG sizes thicker</strong>.</p>
+            <p><strong>CCA (copper-clad aluminum) is an aluminum core with a thin copper skin — and its conductivity is roughly 61% of pure copper (IACS scale).</strong> The same AWG number therefore carries about 1.6× the resistance. The fix is simple: go about <strong>two AWG sizes thicker</strong>.</p>
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead><tr><th>Copper gauge</th><th>CCA gauge for equal loss</th><th>When CCA makes sense</th></tr></thead>
@@ -328,19 +327,19 @@
                 </tbody>
               </table>
             </div>
-            <p>CCA's other trade-offs: it is more brittle (breaks if flexed repeatedly), and the exposed aluminum at cut ends can oxidize, raising contact resistance over time — seal terminations well. For subwoofers, in-wall runs, and anything you install once and forget, pure copper is the safer buy.</p>
+            <p>CCA's other trade-offs: it is more brittle (breaks if flexed repeatedly), and exposed aluminum at cut ends oxidizes, raising contact resistance over time — seal terminations well. For subwoofers, in-wall runs, and anything you install once and forget, pure copper is the safer buy.</p>
           </div>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-building me-2"></i>70V/100V Systems Play by Different Rules</h2>
-            <p>Commercial <strong>70V/100V constant-voltage systems</strong> (offices, restaurants, houses of worship) distribute audio at high voltage and low current, so the same watts travel on far thinner wire. A 500 W load on a 100 V line draws just 5 A (I = P ÷ V) — less current than a single 200 W home subwoofer at 4 Ω (7.07 A).</p>
-            <p>To size wire for a 70V/100V run: add up all speaker tap wattages, divide by the line voltage to get current, then apply the same resistance math — or simply enter the tap total as power and the equivalent load into this calculator's method. Because current stays low, runs of several hundred feet often work fine on 16 or even 18 AWG, which is precisely why installers prefer constant-voltage for distributed audio.</p>
+            <p><strong>Commercial 70V/100V constant-voltage systems (offices, restaurants, houses of worship) distribute audio at high voltage and low current, so the same watts travel on far thinner wire.</strong> A 500 W load on a 100 V line draws just 5 A (I = P ÷ V) — less current than a single 200 W home subwoofer at 4 Ω (7.07 A).</p>
+            <p>To size wire for a 70V/100V run: add up all speaker tap wattages, divide by the line voltage to get current, then apply the same resistance math. Because current stays low, runs of several hundred feet often work fine on 16 or even 18 AWG — which is precisely why installers prefer constant-voltage for distributed audio.</p>
           </div>
 
           <div class="tool-section mt-4">
             <h2 class="text-mid mb-4"><i class="bi bi-lightning-charge me-2"></i>The 3-AWG Mental Shortcut</h2>
-            <p>Memorize one rule and you can estimate wire in your head: <strong>every 3 AWG steps halves or doubles resistance</strong>. Going from 16 AWG to 13 AWG doubles the copper; from 14 AWG to 17 AWG halves it.</p>
-            <p>Two corollaries installers use daily: <strong>doubling up</strong> — running two identical cables in parallel equals one cable 3 AWG thicker (two 16 AWG runs ≈ one 13 AWG run). And <strong>distance doubling</strong> — if a run gets twice as long, go 3 AWG thicker to hold the same loss. These get you within one gauge of the calculator's answer every time.</p>
+            <p><strong>Memorize one rule and you can estimate wire in your head: every 3 AWG steps halves or doubles resistance.</strong> Going from 16 AWG to 13 AWG doubles the copper; from 14 AWG to 17 AWG halves it.</p>
+            <p>Two corollaries installers use daily: <strong>doubling up</strong> — running two identical cables in parallel equals one cable 3 AWG thicker (two 16 AWG runs ≈ one 13 AWG run). And <strong>distance doubling</strong> — if a run gets twice as long, go 3 AWG thicker to hold the same loss. These land within one gauge of the calculator's answer every time.</p>
           </div>
 
           <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: AWG scale from 18 to 8 showing diameter, mm², and Ω/1000 ft for each gauge]</div><figcaption class="small text-muted">Infographic: AWG wire gauge scale with diameter, cross-section, and resistance per 1000 ft</figcaption></figure>
@@ -400,7 +399,7 @@
                 <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2Heading"
                   data-bs-parent="#speakerWireFaqAccordion">
                   <div class="accordion-body">
-                    Electrically, thicker wire only reduces resistance — it never hurts performance. But beyond the point where loss drops under ~2%, thicker wire buys zero audible improvement while costing more and fighting you during installation. Size it correctly once with the calculator instead of overspending "just in case."
+                    Electrically, thicker wire only reduces resistance — it never hurts performance. Past the point where loss drops under ~2%, though, thicker wire buys zero audible improvement while costing more and fighting you during installation. Size it correctly once with the calculator instead of overspending "just in case."
                   </div>
                 </div>
               </div>
@@ -415,7 +414,7 @@
                 <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3Heading"
                   data-bs-parent="#speakerWireFaqAccordion">
                   <div class="accordion-body">
-                    Buy copper for anything permanent — subwoofers, in-wall runs, and car audio. CCA (copper-clad aluminum) is acceptable for short budget runs if you go about 2 AWG sizes thicker, since its conductivity is only ~61% of copper. Seal CCA terminations well, because exposed aluminum oxidizes and resistance creeps up over time.
+                    Buy copper for anything permanent — subwoofers, in-wall runs, and car audio. CCA (copper-clad aluminum) is acceptable for short budget runs if you go about 2 AWG sizes thicker, since its conductivity is only ~61% of copper. Seal CCA terminations well: exposed aluminum oxidizes and resistance creeps up over time.
                   </div>
                 </div>
               </div>
@@ -445,7 +444,7 @@
                 <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5Heading"
                   data-bs-parent="#speakerWireFaqAccordion">
                   <div class="accordion-body">
-                    Because a speaker circuit is a loop: current travels from the amplifier to the speaker and back through the second conductor. Both legs add resistance. Charts that quote one-way distance without doubling understate real loss by half — a classic source of undersized wire on long runs.
+                    Because a speaker circuit is a loop: current travels from the amplifier to the speaker and back through the second conductor, and both legs add resistance. Charts that quote one-way distance without doubling understate real loss by half — a classic source of undersized wire on long runs.
                   </div>
                 </div>
               </div>
@@ -475,7 +474,7 @@
                 <div id="faq7" class="accordion-collapse collapse" aria-labelledby="faq7Heading"
                   data-bs-parent="#speakerWireFaqAccordion">
                   <div class="accordion-body">
-                    CL2 and CL3 are National Electrical Code (NEC) fire-safety ratings for in-wall cable jackets — CL3 withstands a higher voltage test than CL2. If wire runs inside walls or ceilings, US code requires CL2/CL3-rated jacketing regardless of gauge. Standard zip-cord style speaker wire is not rated for in-wall use.
+                    CL2 and CL3 are National Electrical Code (NEC) fire-safety ratings for in-wall cable jackets — CL3 withstands a higher voltage test than CL2. When wire runs inside walls or ceilings, US code requires CL2/CL3-rated jacketing regardless of gauge. Standard zip-cord style speaker wire is not rated for in-wall use.
                   </div>
                 </div>
               </div>
@@ -505,7 +504,7 @@
                 <div id="faq9" class="accordion-collapse collapse" aria-labelledby="faq9Heading"
                   data-bs-parent="#speakerWireFaqAccordion">
                   <div class="accordion-body">
-                    Because wire is sized by current, and current comes from power and impedance (I = √(P ÷ R)). A 50 ft run carrying 2 A needs far thinner wire than the same 50 ft carrying 15 A. Distance-only charts guess at your current; this calculator measures it from your actual system.
+                    Because wire is sized by current, and current comes from power and impedance (I = √(P ÷ R)). A 50 ft run carrying 2 A needs far thinner wire than the same 50 ft carrying 15 A. Distance-only charts guess at your current; this calculator derives it from your actual system.
                   </div>
                 </div>
               </div>
@@ -695,7 +694,7 @@
       "name": "Is thicker speaker wire always better?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Electrically, thicker wire only reduces resistance — it never hurts performance. But beyond the point where loss drops under ~2%, thicker wire buys zero audible improvement while costing more and fighting you during installation. Size it correctly once with the calculator instead of overspending “just in case.”"
+        "text": "Electrically, thicker wire only reduces resistance — it never hurts performance. Past the point where loss drops under ~2%, though, thicker wire buys zero audible improvement while costing more and fighting you during installation. Size it correctly once with the calculator instead of overspending \"just in case.\""
       }
     },
     {
@@ -703,7 +702,7 @@
       "name": "Should I buy copper or CCA speaker wire?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Buy copper for anything permanent — subwoofers, in-wall runs, and car audio. CCA (copper-clad aluminum) is acceptable for short budget runs if you go about 2 AWG sizes thicker, since its conductivity is only ~61% of copper. Seal CCA terminations well, because exposed aluminum oxidizes and resistance creeps up over time."
+        "text": "Buy copper for anything permanent — subwoofers, in-wall runs, and car audio. CCA (copper-clad aluminum) is acceptable for short budget runs if you go about 2 AWG sizes thicker, since its conductivity is only ~61% of copper. Seal CCA terminations well: exposed aluminum oxidizes and resistance creeps up over time."
       }
     },
     {
@@ -719,7 +718,7 @@
       "name": "Why does the calculator double my cable distance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because a speaker circuit is a loop: current travels from the amplifier to the speaker and back through the second conductor. Both legs add resistance. Charts that quote one-way distance without doubling understate real loss by half — a classic source of undersized wire on long runs."
+        "text": "Because a speaker circuit is a loop: current travels from the amplifier to the speaker and back through the second conductor, and both legs add resistance. Charts that quote one-way distance without doubling understate real loss by half — a classic source of undersized wire on long runs."
       }
     },
     {
@@ -727,7 +726,7 @@
       "name": "Does speaker wire affect sound quality?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only through resistance. Correctly sized wire is sonically transparent — no cable “improves” sound. Undersized wire audibly hurts it: lost power, sagging voltage, and collapsed damping factor that loosens bass. The entire game is keeping resistance low enough; everything beyond that is marketing."
+        "text": "Only through resistance. Correctly sized wire is sonically transparent — no cable \"improves\" sound. Undersized wire audibly hurts it: lost power, sagging voltage, and collapsed damping factor that loosens bass. The entire game is keeping resistance low enough; everything beyond that is marketing."
       }
     },
     {
@@ -735,7 +734,7 @@
       "name": "What do CL2 and CL3 ratings mean for speaker wire?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CL2 and CL3 are National Electrical Code (NEC) fire-safety ratings for in-wall cable jackets — CL3 withstands a higher voltage test than CL2. If wire runs inside walls or ceilings, US code requires CL2/CL3-rated jacketing regardless of gauge. Standard zip-cord style speaker wire is not rated for in-wall use."
+        "text": "CL2 and CL3 are National Electrical Code (NEC) fire-safety ratings for in-wall cable jackets — CL3 withstands a higher voltage test than CL2. When wire runs inside walls or ceilings, US code requires CL2/CL3-rated jacketing regardless of gauge. Standard zip-cord style speaker wire is not rated for in-wall use."
       }
     },
     {
@@ -751,7 +750,7 @@
       "name": "Why does the calculator ask for amplifier power instead of just distance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because wire is sized by current, and current comes from power and impedance (I = √(P ÷ R)). A 50 ft run carrying 2 A needs far thinner wire than the same 50 ft carrying 15 A. Distance-only charts guess at your current; this calculator measures it from your actual system."
+        "text": "Because wire is sized by current, and current comes from power and impedance (I = √(P ÷ R)). A 50 ft run carrying 2 A needs far thinner wire than the same 50 ft carrying 15 A. Distance-only charts guess at your current; this calculator derives it from your actual system."
       }
     },
     {

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>Inverse Square Law: −6 dB per Doubling of Distance</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">Inverse Square Law: −6 dB per Doubling of Distance</text>
+<rect x="55" y="165" width="80" height="120" rx="10" fill="#343a40"/>
+<circle cx="95" cy="200" r="13" fill="#adb5bd"/><circle cx="95" cy="200" r="5" fill="#495057"/>
+<circle cx="95" cy="258" r="26" fill="#6c757d"/><circle cx="95" cy="258" r="14" fill="#495057"/>
+<text x="95" y="315" font-size="13" fill="#6c757d" text-anchor="middle">speaker</text>
+<text x="95" y="332" font-size="13" fill="#6c757d" text-anchor="middle">90 dB @ 1 W / 1 m</text>
+<circle cx="95" cy="225" r="70" fill="none" stroke="#0d6efd" stroke-width="2.5" opacity="0.95"/>
+<circle cx="95" cy="225" r="140" fill="none" stroke="#0d6efd" stroke-width="2.5" opacity="0.7"/>
+<circle cx="95" cy="225" r="280" fill="none" stroke="#0d6efd" stroke-width="2.5" opacity="0.5"/>
+<circle cx="95" cy="225" r="480" fill="none" stroke="#0d6efd" stroke-width="2.5" opacity="0.35"/>
+<line x1="165" y1="217" x2="165" y2="233" stroke="#212529" stroke-width="2"/>
+<rect x="90" y="262" width="150" height="62" rx="8" fill="#ffffff" stroke="#dee2e6"/>
+<text x="165" y="286" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">1 m</text>
+<text x="165" y="308" font-size="13" fill="#6c757d" text-anchor="middle">90 dB  (reference)</text>
+<line x1="235" y1="217" x2="235" y2="233" stroke="#212529" stroke-width="2"/>
+<rect x="160" y="262" width="150" height="62" rx="8" fill="#ffffff" stroke="#dee2e6"/>
+<text x="235" y="286" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">2 m</text>
+<text x="235" y="308" font-size="13" fill="#6c757d" text-anchor="middle">84 dB  (−6 dB)</text>
+<line x1="375" y1="217" x2="375" y2="233" stroke="#212529" stroke-width="2"/>
+<rect x="300" y="262" width="150" height="62" rx="8" fill="#ffffff" stroke="#dee2e6"/>
+<text x="375" y="286" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">4 m</text>
+<text x="375" y="308" font-size="13" fill="#6c757d" text-anchor="middle">78 dB  (−12 dB)</text>
+<line x1="575" y1="217" x2="575" y2="233" stroke="#212529" stroke-width="2"/>
+<rect x="500" y="262" width="150" height="62" rx="8" fill="#ffffff" stroke="#dee2e6"/>
+<text x="575" y="286" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 m</text>
+<text x="575" y="308" font-size="13" fill="#6c757d" text-anchor="middle">72 dB  (−18 dB)</text>
+<text x="400" y="400" font-size="14" fill="#212529" text-anchor="middle">Doubling the distance quarters the intensity → −6 dB, every time.</text>
+</svg>

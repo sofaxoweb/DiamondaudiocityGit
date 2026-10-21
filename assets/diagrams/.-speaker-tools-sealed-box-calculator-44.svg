@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>Qtc Shapes the Sealed-Box Response</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">Qtc Shapes the Sealed-Box Response</text>
+<line x1="70" y1="360.3" x2="540" y2="360.3" stroke="#dee2e6"/>
+<text x="62" y="364.3" font-size="12" fill="#6c757d" text-anchor="end">-12</text>
+<line x1="70" y1="308.2" x2="540" y2="308.2" stroke="#dee2e6"/>
+<text x="62" y="312.2" font-size="12" fill="#6c757d" text-anchor="end">-9</text>
+<line x1="70" y1="256.2" x2="540" y2="256.2" stroke="#dee2e6"/>
+<text x="62" y="260.2" font-size="12" fill="#6c757d" text-anchor="end">-6</text>
+<line x1="70" y1="204.1" x2="540" y2="204.1" stroke="#dee2e6"/>
+<text x="62" y="208.1" font-size="12" fill="#6c757d" text-anchor="end">-3</text>
+<line x1="70" y1="152.1" x2="540" y2="152.1" stroke="#dee2e6"/>
+<text x="62" y="156.1" font-size="12" fill="#6c757d" text-anchor="end">0</text>
+<line x1="70.0" y1="100" x2="70.0" y2="395" stroke="#eef1f4"/>
+<text x="70.0" y="415" font-size="12" fill="#6c757d" text-anchor="middle">20</text>
+<line x1="211.5" y1="100" x2="211.5" y2="395" stroke="#eef1f4"/>
+<text x="211.5" y="415" font-size="12" fill="#6c757d" text-anchor="middle">40</text>
+<line x1="353.0" y1="100" x2="353.0" y2="395" stroke="#eef1f4"/>
+<text x="353.0" y="415" font-size="12" fill="#6c757d" text-anchor="middle">80</text>
+<line x1="494.5" y1="100" x2="494.5" y2="395" stroke="#eef1f4"/>
+<text x="494.5" y="415" font-size="12" fill="#6c757d" text-anchor="middle">160</text>
+<line x1="540.0" y1="100" x2="540.0" y2="395" stroke="#eef1f4"/>
+<text x="540.0" y="415" font-size="12" fill="#6c757d" text-anchor="middle">200 Hz</text>
+<line x1="257.0" y1="100" x2="257.0" y2="395" stroke="#212529" stroke-dasharray="6,4" stroke-width="1.5"/>
+<text x="263.0" y="118" font-size="13" fill="#212529" font-weight="600">Fc = 50 Hz</text>
+<text x="305" y="438" font-size="13" fill="#6c757d" text-anchor="middle">Frequency (Hz, log scale)</text>
+<text x="20" y="247" font-size="13" fill="#6c757d" text-anchor="middle" transform="rotate(-90 20 247)">Relative output (dB)</text>
+<path d="M70.0,395.0 L89.5,395.0 L115.5,394.6 L138.7,368.0 L165.9,338.3 L190.0,314.0 L211.5,293.9 L235.5,273.2 L257.0,256.5 L280.2,240.4 L304.2,225.7 L328.6,212.8 L353.0,201.8 L377.0,192.6 L398.5,185.7 L421.6,179.5 L444.1,174.4 L467.2,170.2 L494.5,166.1 L518.5,163.3 L540.0,161.2" fill="none" stroke="#6c757d" stroke-width="2"/>
+<path d="M70.0,395.0 L89.5,395.0 L115.5,381.6 L138.7,352.9 L165.9,321.0 L190.0,294.9 L211.5,273.5 L235.5,251.9 L257.0,234.9 L280.2,219.1 L304.2,205.4 L328.6,194.0 L353.0,184.8 L377.0,177.7 L398.5,172.6 L421.6,168.3 L444.1,164.9 L467.2,162.2 L494.5,159.8 L518.5,158.1 L540.0,156.9" fill="none" stroke="#198754" stroke-width="2"/>
+<path d="M70.0,395.0 L89.5,395.0 L115.5,365.6 L138.7,333.9 L165.9,298.3 L190.0,269.0 L211.5,245.2 L235.5,221.9 L257.0,204.3 L280.2,189.2 L304.2,177.3 L328.6,168.6 L353.0,162.8 L377.0,158.9 L398.5,156.6 L421.6,155.0 L444.1,154.0 L467.2,153.3 L494.5,152.8 L518.5,152.5 L540.0,152.4" fill="none" stroke="#0d6efd" stroke-width="3.5"/>
+<path d="M70.0,395.0 L89.5,390.7 L115.5,350.6 L138.7,315.3 L165.9,274.7 L190.0,240.8 L211.5,213.0 L235.5,186.5 L257.0,167.9 L280.2,153.9 L304.2,145.3 L328.6,141.2 L353.0,140.1 L377.0,140.6 L398.5,141.7 L421.6,143.0 L444.1,144.4 L467.2,145.7 L494.5,147.0 L518.5,147.9 L540.0,148.7" fill="none" stroke="#b98a00" stroke-width="2.5"/>
+<path d="M70.0,395.0 L89.5,383.7 L115.5,341.2 L138.7,303.2 L165.9,258.3 L190.0,219.8 L211.5,187.8 L235.5,157.5 L257.0,137.7 L280.2,125.2 L304.2,120.5 L328.6,121.2 L353.0,124.5 L377.0,128.7 L398.5,132.3 L421.6,135.8 L444.1,138.7 L467.2,141.3 L494.5,143.7 L518.5,145.4 L540.0,146.6" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<circle cx="159.0" cy="140.1" r="5" fill="#b98a00"/>
+<text x="169.0" y="132.1" font-size="13" fill="#b98a00" font-weight="700">+0.7 dB peak</text>
+<circle cx="202.6" cy="120.3" r="5" fill="#dc3545"/>
+<text x="212.6" y="112.3" font-size="13" fill="#dc3545" font-weight="700">+1.8 dB peak</text>
+<text x="560" y="120" font-size="14" font-weight="700" fill="#212529">Qtc</text>
+<rect x="560" y="137" width="24" height="6" fill="#6c757d"/>
+<text x="592" y="148" font-size="12" fill="#212529">0.5 · early roll-off</text>
+<rect x="560" y="169" width="24" height="6" fill="#198754"/>
+<text x="592" y="180" font-size="12" fill="#212529">0.577 · Bessel</text>
+<rect x="560" y="201" width="24" height="6" fill="#0d6efd"/>
+<text x="592" y="212" font-size="12" fill="#212529">0.707 · maximally flat</text>
+<rect x="560" y="233" width="24" height="6" fill="#b98a00"/>
+<text x="592" y="244" font-size="12" fill="#212529">0.9 · slight lift</text>
+<rect x="560" y="265" width="24" height="6" fill="#dc3545"/>
+<text x="592" y="276" font-size="12" fill="#212529">1.1 · +1.8 dB peak</text>
+<text x="560" y="330" font-size="12" fill="#6c757d">All curves → 0 dB</text>
+<text x="560" y="348" font-size="12" fill="#6c757d">above ~100 Hz.</text>
+<text x="560" y="376" font-size="12" fill="#6c757d">Higher Qtc = more lift</text>
+<text x="560" y="394" font-size="12" fill="#6c757d">at resonance, smaller box.</text>
+</svg>

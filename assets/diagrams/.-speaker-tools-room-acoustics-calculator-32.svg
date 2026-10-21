@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Priority treatment layout: corner bass traps, first-reflection panels, rear-wall diffusion.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Priority acoustic treatment layout (top-down)</text>
+<rect x="150" y="70" width="500" height="320" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<text x="400" y="60" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">FRONT</text>
+<text x="400" y="408" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">REAR</text>
+<polyline points="150.0,70.0 196.0,70.0 150.0,116.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<polyline points="650.0,70.0 604.0,70.0 650.0,116.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<polyline points="150.0,390.0 196.0,390.0 150.0,344.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<polyline points="650.0,390.0 604.0,390.0 650.0,344.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<text x="210" y="105" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#198754" text-anchor="start" font-weight="bold">bass trap ×4</text>
+<rect x="282" y="92" width="36" height="30" rx="4" fill="#212529"/>
+<text x="300" y="140" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">L</text>
+<rect x="482" y="92" width="36" height="30" rx="4" fill="#212529"/>
+<text x="500" y="140" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">R</text>
+<circle cx="400" cy="300" r="16" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="400" y="332" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">Listener</text>
+<line x1="300" y1="122" x2="400" y2="284" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="500" y1="122" x2="400" y2="284" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="300" y1="122" x2="500" y2="122" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="6,4"/>
+<rect x="142" y="185" width="16" height="60" fill="#ffc107" stroke="#856404" stroke-width="2"/>
+<text x="150" y="262" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">panel</text>
+<rect x="642" y="185" width="16" height="60" fill="#ffc107" stroke="#856404" stroke-width="2"/>
+<text x="650" y="262" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">panel</text>
+<text x="150" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">mirror point</text>
+<text x="650" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">mirror point</text>
+<polyline points="300.0,390.0 315.0,372.0 330.0,390.0 345.0,372.0 360.0,390.0 375.0,372.0 390.0,390.0 405.0,372.0 420.0,390.0 435.0,372.0 450.0,390.0" fill="none" stroke="#6610f2" stroke-width="2.5"/>
+<text x="375" y="408" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start"></text>
+<text x="400" y="426" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start"></text>
+<text x="560" y="428" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6610f2" text-anchor="start">diffuser on rear wall</text>
+<text x="400" y="60" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start"></text>
+<rect x="40" y="70" width="0" height="0" fill="none"/>
+<text x="30" y="100" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start" font-weight="bold">Priority order:</text>
+<text x="30" y="122" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start">1. Corners</text>
+<text x="30" y="142" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start">2. 1st reflections</text>
+<text x="30" y="162" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start">3. Rear diffusion</text>
+</svg>

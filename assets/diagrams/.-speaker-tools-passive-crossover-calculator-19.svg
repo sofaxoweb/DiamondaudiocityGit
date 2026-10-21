@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>2-Way Passive Crossover Schematic</title>
+<desc>Signal flow: low-pass inductor feeds the woofer, high-pass capacitor feeds the tweeter via an L-pad.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">2-Way Passive Crossover Schematic</text>
+<rect x="50" y="200" width="110" height="110" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="105" y="246" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Amplifier</text>
+<text x="105" y="268" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">output</text>
+<line x1="160" y1="225" x2="225" y2="225" stroke="#212529" stroke-width="2.5"/>
+<line x1="160" y1="285" x2="225" y2="285" stroke="#212529" stroke-width="2.5"/>
+<text x="196" y="218" font-size="14" font-weight="400" fill="#6c757d" text-anchor="middle">+</text>
+<text x="196" y="300" font-size="16" font-weight="400" fill="#6c757d" text-anchor="middle">-</text>
+<line x1="225" y1="225" x2="225" y2="120" stroke="#212529" stroke-width="2.5"/>
+<line x1="225" y1="285" x2="225" y2="380" stroke="#212529" stroke-width="2.5"/>
+<line x1="225" y1="120" x2="640" y2="120" stroke="#212529" stroke-width="2.5"/>
+<line x1="225" y1="190" x2="640" y2="190" stroke="#212529" stroke-width="2.5"/>
+<circle cx="320" cy="120" r="16" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<circle cx="354" cy="120" r="16" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<circle cx="388" cy="120" r="16" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<circle cx="422" cy="120" r="16" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<text x="370" y="92" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">low-pass inductor</text>
+<circle cx="590" cy="155" r="35" fill="#ffffff" stroke="#0d6efd" stroke-width="3"/>
+<text x="590" y="163" font-size="17" font-weight="700" fill="#0d6efd" text-anchor="middle">W</text>
+<text x="648" y="160" font-size="13" font-weight="400" fill="#6c757d" text-anchor="start">woofer</text>
+<line x1="225" y1="310" x2="640" y2="310" stroke="#212529" stroke-width="2.5"/>
+<line x1="225" y1="380" x2="640" y2="380" stroke="#212529" stroke-width="2.5"/>
+<line x1="320" y1="283" x2="320" y2="337" stroke="#198754" stroke-width="3.5"/>
+<line x1="334" y1="283" x2="334" y2="337" stroke="#198754" stroke-width="3.5"/>
+<text x="327" y="362" font-size="13" font-weight="700" fill="#198754" text-anchor="middle">high-pass capacitor</text>
+<rect x="420" y="286" width="96" height="48" rx="8" fill="#ffffff" stroke="#dc3545" stroke-width="2"/>
+<text x="468" y="306" font-size="13.5" font-weight="700" fill="#212529" text-anchor="middle">R series</text>
+<text x="468" y="326" font-size="12.5" font-weight="400" fill="#dc3545" text-anchor="middle">L-pad</text>
+<line x1="556" y1="310" x2="556" y2="380" stroke="#212529" stroke-width="2.5"/>
+<rect x="524" y="322" width="64" height="40" rx="8" fill="#ffffff" stroke="#dc3545" stroke-width="2"/>
+<text x="556" y="348" font-size="12.5" font-weight="700" fill="#212529" text-anchor="middle">R shunt</text>
+<text x="470" y="262" font-size="13.5" font-weight="700" fill="#dc3545" text-anchor="middle">L-pad attenuates the tweeter</text>
+<circle cx="624" cy="345" r="35" fill="#ffffff" stroke="#198754" stroke-width="3"/>
+<text x="624" y="353" font-size="17" font-weight="700" fill="#198754" text-anchor="middle">T</text>
+<text x="668" y="350" font-size="13" font-weight="400" fill="#6c757d" text-anchor="start">tweeter</text>
+<text x="400" y="424" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">Each branch sits in parallel across the amplifier output; the L-pad trims tweeter level.</text>
+</svg>

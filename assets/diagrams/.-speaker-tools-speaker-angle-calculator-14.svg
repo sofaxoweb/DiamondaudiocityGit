@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>The 60° Stereo Listening Triangle</title>
+<desc>Top-down view: two speakers and the listener form a 60-degree triangle with toe-in per speaker.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">The 60° Stereo Listening Triangle</text>
+<line x1="400" y1="380" x2="190" y2="150" stroke="#0d6efd" stroke-width="2.5"/>
+<line x1="400" y1="380" x2="610" y2="150" stroke="#0d6efd" stroke-width="2.5"/>
+<line x1="190" y1="150" x2="610" y2="150" stroke="#adb5bd" stroke-width="2" stroke-dasharray="6,4"/>
+<polygon points="190,128 176,164 204,164" fill="#212529"/>
+<path d="M216,184 A40,40 0 0 0 230,152" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<text x="248" y="194" font-size="13" font-weight="700" fill="#dc3545" text-anchor="middle">toe-in θ</text>
+<text x="190" y="116" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">speaker</text>
+<polygon points="610,128 624,164 596,164" fill="#212529"/>
+<path d="M584,184 A40,40 0 0 1 570,152" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<text x="552" y="194" font-size="13" font-weight="700" fill="#dc3545" text-anchor="middle">toe-in θ</text>
+<text x="610" y="116" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">speaker</text>
+<circle cx="400" cy="380" r="16" fill="#198754"/>
+<text x="426" y="385" font-size="13" font-weight="400" fill="#6c757d" text-anchor="start">listener</text>
+<path d="M352.8,328.3 A70,70 0 0 1 447.2,328.3" fill="none" stroke="#dc3545" stroke-width="3"/>
+<text x="400" y="280" font-size="15" font-weight="700" fill="#dc3545" text-anchor="middle">60° total</text>
+<text x="400" y="428" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">Each speaker aims at the listener: +/-30 deg each side, equal distances (equilateral).</text>
+</svg>

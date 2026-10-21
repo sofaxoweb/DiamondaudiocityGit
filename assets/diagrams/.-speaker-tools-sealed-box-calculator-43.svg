@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="The trapped air in a sealed box acts as a spring, raising system resonance and controlling the cone.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Sealed box: trapped air is the spring</text>
+<rect x="150" y="80" width="380" height="300" fill="#f8f9fa" stroke="#212529" stroke-width="3"/>
+<circle cx="225" cy="230" r="55" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<circle cx="225" cy="230" r="30" fill="none" stroke="#6c757d" stroke-width="2"/>
+<circle cx="225" cy="230" r="8" fill="#6c757d"/>
+<polyline points="320.0,190.0 360.0,196.7 320.0,203.3 360.0,210.0 320.0,216.7 360.0,223.3 320.0,230.0 360.0,236.7 320.0,243.3 360.0,250.0 320.0,256.7 360.0,263.3 320.0,270.0" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<text x="340" y="320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">trapped air = spring</text>
+<text x="340" y="342" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#0d6efd" text-anchor="middle" font-weight="bold">Vb</text>
+<line x1="290" y1="230" x2="262" y2="230" stroke="#198754" stroke-width="3"/>
+<polyline points="272.0,224.0 262.0,230.0 272.0,236.0" fill="none" stroke="#198754" stroke-width="3"/>
+<text x="200" y="150" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#198754" text-anchor="middle" font-weight="bold">cone moves in →</text>
+<text x="200" y="172" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#198754" text-anchor="middle">air compresses</text>
+<line x1="430" y1="230" x2="470" y2="230" stroke="#198754" stroke-width="2.5" stroke-dasharray="6,4"/>
+<line x1="400" y1="180" x2="440" y2="180" stroke="#198754" stroke-width="2.5" stroke-dasharray="6,4"/>
+<line x1="400" y1="280" x2="440" y2="280" stroke="#198754" stroke-width="2.5" stroke-dasharray="6,4"/>
+<rect x="150" y="392" width="380" height="40" rx="8" fill="#e7f1ff" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="340" y="418" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" fill="#212529" text-anchor="middle">Air spring raises resonance (Fc &gt; Fs) and damps the cone — airtight box required</text>
+</svg>

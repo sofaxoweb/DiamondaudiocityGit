@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Inverse Square Law for Sound</title>
+<desc>Sound intensity spreads over a sphere whose area grows with the square of distance.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Inverse Square Law for Sound</text>
+<circle cx="190" cy="225" r="8" fill="#0d6efd"/>
+<text x="190" y="333" font-size="13" font-weight="700" fill="#212529" text-anchor="middle">point source</text>
+<circle cx="190" cy="225" r="60" fill="none" stroke="#0d6efd" stroke-width="2.5" opacity="0.85"/>
+<circle cx="190" cy="225" r="120" fill="none" stroke="#198754" stroke-width="2.5" opacity="0.85"/>
+<circle cx="190" cy="225" r="180" fill="none" stroke="#fd7e14" stroke-width="2.5" opacity="0.85"/>
+<line x1="190" y1="225" x2="385" y2="225" stroke="#212529" stroke-width="2"/>
+<line x1="250" y1="215" x2="250" y2="235" stroke="#0d6efd" stroke-width="3"/>
+<text x="250" y="257" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">r</text>
+<line x1="310" y1="215" x2="310" y2="235" stroke="#198754" stroke-width="3"/>
+<text x="310" y="257" font-size="14" font-weight="700" fill="#198754" text-anchor="middle">2r</text>
+<line x1="370" y1="215" x2="370" y2="235" stroke="#fd7e14" stroke-width="3"/>
+<text x="370" y="257" font-size="14" font-weight="700" fill="#fd7e14" text-anchor="middle">4r</text>
+<text x="440" y="110" font-size="14" font-weight="700" fill="#212529" text-anchor="start">As distance doubles, the sphere quadruples:</text>
+<circle cx="440" cy="155" r="7" fill="#0d6efd"/>
+<text x="462" y="160" font-size="14" font-weight="700" fill="#212529" text-anchor="start">at r:</text>
+<text x="518" y="160" font-size="14" font-weight="400" fill="#6c757d" text-anchor="start">area = 4πr^2</text>
+<text x="518" y="184" font-size="14" font-weight="400" fill="#212529" text-anchor="start">intensity I</text>
+<text x="660" y="184" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="start">0 dB (ref)</text>
+<circle cx="440" cy="217" r="7" fill="#198754"/>
+<text x="462" y="222" font-size="14" font-weight="700" fill="#212529" text-anchor="start">at 2r:</text>
+<text x="518" y="222" font-size="14" font-weight="400" fill="#6c757d" text-anchor="start">4x the area</text>
+<text x="518" y="246" font-size="14" font-weight="400" fill="#212529" text-anchor="start">intensity I/4</text>
+<text x="660" y="246" font-size="14" font-weight="700" fill="#198754" text-anchor="start">-6 dB</text>
+<circle cx="440" cy="279" r="7" fill="#fd7e14"/>
+<text x="462" y="284" font-size="14" font-weight="700" fill="#212529" text-anchor="start">at 4r:</text>
+<text x="518" y="284" font-size="14" font-weight="400" fill="#6c757d" text-anchor="start">16x the area</text>
+<text x="518" y="308" font-size="14" font-weight="400" fill="#212529" text-anchor="start">intensity I/16</text>
+<text x="660" y="308" font-size="14" font-weight="700" fill="#fd7e14" text-anchor="start">-12 dB</text>
+<text x="620" y="400" font-size="14.5" font-weight="700" fill="#212529" text-anchor="middle">Intensity falls as 1/r^2 - SPL drops 6 dB</text>
+<text x="620" y="424" font-size="14" font-weight="400" fill="#6c757d" text-anchor="middle">every time the distance doubles.</text>
+</svg>

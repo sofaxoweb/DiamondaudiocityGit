@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Speaker Wiring: Series, Parallel, Series-Parallel</title>
+<desc>Three wiring layouts and their total-impedance formulas (shown with 8 Ω drivers).</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Speaker Wiring: Series, Parallel, Series-Parallel</text>
+<text x="170" y="100" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">SERIES</text>
+<rect x="100" y="130" width="64" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="132.0" y="156" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<rect x="200" y="130" width="64" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="232.0" y="156" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="60" y1="150" x2="100" y2="150" stroke="#212529" stroke-width="2.5"/>
+<line x1="164" y1="150" x2="200" y2="150" stroke="#212529" stroke-width="2.5"/>
+<line x1="264" y1="150" x2="300" y2="150" stroke="#212529" stroke-width="2.5"/>
+<text x="180" y="230" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">R = R1 + R2</text>
+<text x="180" y="254" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">8 + 8 = 16 Ω</text>
+<text x="410" y="100" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">PARALLEL</text>
+<rect x="378" y="120" width="64" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="410.0" y="146" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<rect x="378" y="190" width="64" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="410.0" y="216" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="300" y1="140" x2="378" y2="140" stroke="#212529" stroke-width="2.5"/>
+<line x1="300" y1="210" x2="378" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="300" y1="140" x2="300" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="442" y1="140" x2="520" y2="140" stroke="#212529" stroke-width="2.5"/>
+<line x1="442" y1="210" x2="520" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="520" y1="140" x2="520" y2="210" stroke="#212529" stroke-width="2.5"/>
+<text x="410" y="300" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">1/R = 1/R1 + 1/R2</text>
+<text x="410" y="324" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">8 ‖ 8 = 4 Ω</text>
+<text x="660" y="100" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">SERIES-PARALLEL</text>
+<rect x="570" y="120" width="56" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="598.0" y="146" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<rect x="654" y="120" width="56" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="682.0" y="146" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="626" y1="140" x2="654" y2="140" stroke="#212529" stroke-width="2.5"/>
+<rect x="570" y="190" width="56" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="598.0" y="216" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<rect x="654" y="190" width="56" height="40" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="682.0" y="216" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="626" y1="210" x2="654" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="540" y1="140" x2="570" y2="140" stroke="#212529" stroke-width="2.5"/>
+<line x1="710" y1="140" x2="780" y2="140" stroke="#212529" stroke-width="2.5"/>
+<line x1="540" y1="210" x2="570" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="710" y1="210" x2="780" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="540" y1="140" x2="540" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="780" y1="140" x2="780" y2="210" stroke="#212529" stroke-width="2.5"/>
+<text x="660" y="300" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">series pairs in parallel</text>
+<text x="660" y="324" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">(8+8) ‖ (8+8) = 8 Ω</text>
+<text x="400" y="380" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">Series raises impedance · parallel lowers it · series-parallel keeps 8 Ω with four drivers</text>
+</svg>

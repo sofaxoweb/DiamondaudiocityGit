@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Seat at 38% of room length, subwoofer placed via the crawl method, traps in corners.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Seat at 38%, sub crawl path, corner traps</text>
+<rect x="170" y="70" width="460" height="320" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<line x1="344.8" y1="70" x2="344.8" y2="390" stroke="#0d6efd" stroke-width="2" stroke-dasharray="8,5"/>
+<circle cx="344.8" cy="260" r="16" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="344.8" y="292" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">Seat</text>
+<text x="352.8" y="100" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#0d6efd" text-anchor="start" font-weight="bold">38% of length</text>
+<path d="M200,360 C300,330 450,330 590,360" fill="none" stroke="#ffc107" stroke-width="3" stroke-dasharray="9,6"/>
+<polyline points="572.0,348.0 590.0,360.0 570.0,366.0" fill="none" stroke="#ffc107" stroke-width="3"/>
+<text x="395" y="322" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">subwoofer crawl path</text>
+<polyline points="170.0,70.0 210.0,70.0 170.0,110.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<polyline points="630.0,70.0 590.0,70.0 630.0,110.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<polyline points="170.0,390.0 210.0,390.0 170.0,350.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<polyline points="630.0,390.0 590.0,390.0 630.0,350.0" fill="#d1e7dd" stroke="#198754" stroke-width="2"/>
+<text x="400" y="425" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">Avoid the exact center (nulls overlap) · traps in all four corners tame the modal peaks</text>
+</svg>

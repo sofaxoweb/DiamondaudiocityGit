@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">Where Your Mic Level Should Sit</text>
+
+<!-- meter: 0 to -60 dB, y = 70 + (-db)*5.5 -->
+<text x="300" y="62" font-size="14" fill="#6c757d">dBFS</text>
+<rect x="330" y="70" width="70" height="330" fill="#f1f3f5" stroke="#212529" stroke-width="2"/>
+<rect x="330" y="169" width="70" height="231" fill="#198754" opacity="0.35"/>
+<rect x="330" y="103" width="70" height="36" fill="#ffc107" opacity="0.5"/>
+<rect x="330" y="70" width="70" height="33" fill="#dc3545" opacity="0.45"/>
+
+<g font-size="13" fill="#212529" text-anchor="end">
+<text x="322" y="75">0</text><text x="322" y="108">−6</text><text x="322" y="141">−12</text><text x="322" y="174">−18</text><text x="322" y="262">−30</text><text x="322" y="345">−48</text><text x="322" y="404">−60</text>
+</g>
+
+<!-- target bracket -->
+<rect x="410" y="103" width="150" height="66" rx="8" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<line x1="400" y1="103" x2="412" y2="103" stroke="#0d6efd" stroke-width="3"/>
+<line x1="400" y1="169" x2="412" y2="169" stroke="#0d6efd" stroke-width="3"/>
+<text x="570" y="130" font-size="15" font-weight="bold" fill="#0d6efd">YOUR TARGET</text>
+<text x="570" y="152" font-size="13" fill="#6c757d">keep peaks between</text>
+<text x="570" y="172" font-size="13" fill="#6c757d">−18 and −6 dBFS</text>
+
+<!-- zone labels -->
+<text x="470" y="80" font-size="14" fill="#dc3545" font-weight="bold">RED — clipping</text>
+<text x="470" y="100" font-size="12" fill="#6c757d">(0 dBFS)</text>
+<text x="470" y="130" font-size="14" fill="#9a6d00" font-weight="bold">YELLOW — hot</text>
+<text x="470" y="150" font-size="12" fill="#6c757d">(−12 to −6 dBFS)</text>
+<text x="470" y="290" font-size="14" fill="#198754" font-weight="bold">GREEN — safe</text>
+<text x="470" y="310" font-size="12" fill="#6c757d">(below −18 dBFS)</text>
+<text x="470" y="380" font-size="13" fill="#6c757d">too quiet = noisy after</text>
+<text x="470" y="398" font-size="13" fill="#6c757d">you turn it up later</text>
+</svg>

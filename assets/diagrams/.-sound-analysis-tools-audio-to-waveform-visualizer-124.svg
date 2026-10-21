@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">Where Your Exported WebM Plays</text>
+
+<defs>
+<marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6c757d"/></marker>
+</defs>
+
+<!-- source -->
+<rect x="40" y="180" width="170" height="90" rx="12" fill="#eef4ff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="125" y="216" font-size="17" font-weight="bold" fill="#212529" text-anchor="middle">Export as</text>
+<text x="125" y="242" font-size="17" font-weight="bold" fill="#0d6efd" text-anchor="middle">WebM</text>
+
+<line x1="210" y1="205" x2="300" y2="130" stroke="#6c757d" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="210" y1="245" x2="300" y2="320" stroke="#6c757d" stroke-width="2" marker-end="url(#ar2)"/>
+
+<!-- direct upload branch -->
+<rect x="310" y="70" width="200" height="70" rx="12" fill="#e6f7ee" stroke="#198754" stroke-width="2.5"/>
+<text x="410" y="98" font-size="16" font-weight="bold" fill="#198754" text-anchor="middle">✓ Direct upload</text>
+<text x="410" y="122" font-size="13" fill="#6c757d" text-anchor="middle">no conversion needed</text>
+<g text-anchor="middle" font-size="15" font-weight="bold" fill="#212529">
+<rect x="540" y="58" width="200" height="44" rx="10" fill="#ffffff" stroke="#198754" stroke-width="2"/><text x="640" y="86">YouTube</text>
+<rect x="540" y="112" width="200" height="44" rx="10" fill="#ffffff" stroke="#198754" stroke-width="2"/><text x="640" y="140">Chrome (playback)</text>
+<rect x="540" y="166" width="200" height="44" rx="10" fill="#ffffff" stroke="#198754" stroke-width="2"/><text x="640" y="194">Discord</text>
+</g>
+
+<!-- convert branch -->
+<rect x="310" y="290" width="200" height="70" rx="12" fill="#fff8e6" stroke="#e0a800" stroke-width="2.5"/>
+<text x="410" y="318" font-size="16" font-weight="bold" fill="#9a6d00" text-anchor="middle">⚠ Convert to MP4</text>
+<text x="410" y="342" font-size="13" fill="#6c757d" text-anchor="middle">first, then upload</text>
+<g text-anchor="middle" font-size="15" font-weight="bold" fill="#212529">
+<rect x="540" y="290" width="200" height="44" rx="10" fill="#ffffff" stroke="#e0a800" stroke-width="2"/><text x="640" y="318">Instagram</text>
+<rect x="540" y="344" width="200" height="44" rx="10" fill="#ffffff" stroke="#e0a800" stroke-width="2"/><text x="640" y="372">TikTok</text>
+</g>
+
+<text x="24" y="420" font-size="13" fill="#6c757d">WebM is open and royalty-free, but Meta/TikTok apps expect MP4 (H.264) — convert once, upload everywhere.</text>
+</svg>

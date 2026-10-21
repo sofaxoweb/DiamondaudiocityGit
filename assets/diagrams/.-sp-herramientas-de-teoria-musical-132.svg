@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">El círculo de quintas</text>
+
+<!-- rings -->
+<circle cx="330" cy="245" r="150" fill="#f8f9fa" stroke="#212529" stroke-width="2"/>
+<circle cx="330" cy="245" r="95" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+
+<!-- outer major keys with signatures -->
+<g text-anchor="middle" font-size="15" font-weight="bold" fill="#212529">
+<text x="330" y="101">Do</text><text x="330" y="70" font-size="12" fill="#6c757d" font-weight="normal">0</text>
+<text x="405" y="121">Sol</text><text x="405" y="90" font-size="12" fill="#6c757d" font-weight="normal">1♯</text>
+<text x="460" y="176">Re</text><text x="460" y="145" font-size="12" fill="#6c757d" font-weight="normal">2♯</text>
+<text x="480" y="251">La</text><text x="480" y="220" font-size="12" fill="#6c757d" font-weight="normal">3♯</text>
+<text x="460" y="326">Mi</text><text x="460" y="295" font-size="12" fill="#6c757d" font-weight="normal">4♯</text>
+<text x="405" y="381">Si</text><text x="405" y="350" font-size="12" fill="#6c757d" font-weight="normal">5♯</text>
+<text x="330" y="401">Fa♯/Sol♭</text><text x="330" y="428" font-size="12" fill="#6c757d" font-weight="normal">6♯ / 6♭</text>
+<text x="255" y="381">Re♭</text><text x="255" y="350" font-size="12" fill="#6c757d" font-weight="normal">5♭</text>
+<text x="200" y="326">La♭</text><text x="200" y="295" font-size="12" fill="#6c757d" font-weight="normal">4♭</text>
+<text x="180" y="251">Mi♭</text><text x="180" y="220" font-size="12" fill="#6c757d" font-weight="normal">3♭</text>
+<text x="200" y="176">Si♭</text><text x="200" y="145" font-size="12" fill="#6c757d" font-weight="normal">2♭</text>
+<text x="255" y="121">Fa</text><text x="255" y="90" font-size="12" fill="#6c757d" font-weight="normal">1♭</text>
+</g>
+
+<!-- inner relative minors -->
+<g text-anchor="middle" font-size="13" fill="#0d6efd">
+<text x="330" y="155">Lam</text>
+<text x="378" y="168">Mim</text>
+<text x="412" y="203">Sim</text>
+<text x="425" y="250">Fa♯m</text>
+<text x="412" y="298">Do♯m</text>
+<text x="378" y="333">Sol♯m</text>
+<text x="330" y="345">Mi♭m</text>
+<text x="282" y="333">Si♭m</text>
+<text x="248" y="298">Fam</text>
+<text x="235" y="250">Dom</text>
+<text x="248" y="203">Solm</text>
+<text x="282" y="168">Rem</text>
+</g>
+
+<!-- center -->
+<text x="330" y="240" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">quinta</text>
+<text x="330" y="258" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">justa</text>
+
+<!-- legend -->
+<text x="540" y="130" font-size="15" font-weight="bold" fill="#212529">Cómo leerlo</text>
+<text x="540" y="160" font-size="14" fill="#212529">↻ En el sentido de las agujas</text>
+<text x="540" y="182" font-size="14" fill="#212529">del reloj: cada paso añade</text>
+<text x="540" y="204" font-size="14" fill="#212529"><tspan font-weight="bold">un sostenido (♯)</tspan></text>
+<text x="540" y="244" font-size="14" fill="#212529">↺ En sentido contrario: cada</text>
+<text x="540" y="266" font-size="14" fill="#212529">paso añade <tspan font-weight="bold">un bemol (♭)</tspan></text>
+<text x="540" y="306" font-size="14" fill="#0d6efd">Interior: relativas menores</text>
+<text x="540" y="328" font-size="13" fill="#6c757d">(comparten armadura con</text>
+<text x="540" y="348" font-size="13" fill="#6c757d">su mayor exterior)</text>
+<text x="540" y="388" font-size="13" fill="#6c757d">Vecinos = tonalidades cercanas:</text>
+<text x="540" y="408" font-size="13" fill="#6c757d">ideales para modular.</text>
+</svg>

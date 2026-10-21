@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Schematic diagram of a second-order passive speaker crossover">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">2nd-order crossover schematic (3000 Hz, 8 Ω)</text>
+<rect x="40" y="190" width="110" height="80" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="95" y="226" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">AMP</text>
+<text x="95" y="248" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">Fc = 3 kHz</text>
+<line x1="150" y1="210" x2="280" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="150" y1="250" x2="280" y2="250" stroke="#212529" stroke-width="2.5"/>
+<text x="300" y="120" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="start" font-weight="bold">LOW-PASS → woofer</text>
+<path d="M320,200 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<path d="M346,200 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<path d="M372,200 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<path d="M398,200 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<text x="372" y="190" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">L = 0.60 mH</text>
+<line x1="424" y1="210" x2="560" y2="210" stroke="#212529" stroke-width="2.5"/>
+<line x1="424" y1="250" x2="560" y2="250" stroke="#212529" stroke-width="2.5"/>
+<line x1="380" y1="210" x2="380" y2="228" stroke="#212529" stroke-width="2.5"/>
+<line x1="370" y1="228" x2="390" y2="228" stroke="#212529" stroke-width="3"/>
+<line x1="370" y1="236" x2="390" y2="236" stroke="#212529" stroke-width="3"/>
+<line x1="380" y1="236" x2="380" y2="250" stroke="#212529" stroke-width="2.5"/>
+<text x="380" y="268" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">C = 4.7 µF</text>
+<circle cx="600" cy="230" r="30" fill="#ffffff" stroke="#212529" stroke-width="2.5"/>
+<text x="600" y="236" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">W</text>
+<text x="300" y="310" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#dc3545" text-anchor="start" font-weight="bold">HIGH-PASS → tweeter</text>
+<line x1="320" y1="330" x2="352" y2="330" stroke="#212529" stroke-width="2.5"/>
+<line x1="352" y1="318" x2="352" y2="342" stroke="#212529" stroke-width="3"/>
+<line x1="360" y1="318" x2="360" y2="342" stroke="#212529" stroke-width="3"/>
+<line x1="360" y1="330" x2="424" y2="330" stroke="#212529" stroke-width="2.5"/>
+<text x="372" y="322" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start"></text>
+<text x="340" y="312" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">C = 4.7 µF</text>
+<path d="M450,330 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<path d="M476,330 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<path d="M502,330 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<path d="M528,330 a13,13 0 0 1 26,0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<text x="502" y="322" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="start"></text>
+<text x="502" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">L = 0.60 mH</text>
+<line x1="424" y1="350" x2="560" y2="350" stroke="#212529" stroke-width="2.5"/>
+<line x1="450" y1="343" x2="450" y2="350" stroke="#212529" stroke-width="2.5"/>
+<line x1="554" y1="343" x2="554" y2="350" stroke="#212529" stroke-width="2.5"/>
+<circle cx="600" cy="340" r="30" fill="#ffffff" stroke="#212529" stroke-width="2.5"/>
+<text x="600" y="346" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">T</text>
+<line x1="630" y1="230" x2="700" y2="230" stroke="#212529" stroke-width="2.5"/>
+<line x1="630" y1="340" x2="700" y2="340" stroke="#212529" stroke-width="2.5"/>
+<text x="400" y="415" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle">2nd-order (12 dB/oct) Butterworth: L = R√2 ÷ 2πFc · C = 1 ÷ 2πFcR√2</text>
+</svg>

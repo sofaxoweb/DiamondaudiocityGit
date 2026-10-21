@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Cutaway diagram of a bass reflex port showing length and end correction">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Port length and end correction</text>
+<rect x="120" y="80" width="360" height="300" fill="#f8f9fa" stroke="#212529" stroke-width="3"/>
+<rect x="400" y="240" width="200" height="60" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<ellipse cx="400" cy="270" rx="26" ry="30" fill="none" stroke="#0d6efd" stroke-width="2.5" stroke-dasharray="7,5"/>
+<ellipse cx="600" cy="270" rx="26" ry="30" fill="none" stroke="#0d6efd" stroke-width="2.5" stroke-dasharray="7,5"/>
+<text x="400" y="200" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#0d6efd" text-anchor="middle">air mass bulges past</text>
+<text x="400" y="218" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#0d6efd" text-anchor="middle">the port ends</text>
+<line x1="620" y1="240" x2="620" y2="300" stroke="#198754" stroke-width="2.5"/>
+<polyline points="615.0,248.0 620.0,240.0 625.0,248.0" fill="none" stroke="#198754" stroke-width="2.5"/>
+<polyline points="615.0,292.0 620.0,300.0 625.0,292.0" fill="none" stroke="#198754" stroke-width="2.5"/>
+<text x="632" y="274" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#198754" text-anchor="start" font-weight="bold">D = 7 cm</text>
+<line x1="400" y1="330" x2="600" y2="330" stroke="#212529" stroke-width="2.5"/>
+<polyline points="408.0,325.0 400.0,330.0 408.0,335.0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<polyline points="592.0,325.0 600.0,330.0 592.0,335.0" fill="none" stroke="#212529" stroke-width="2.5"/>
+<text x="500" y="352" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">L = 13.7 cm (physical tube)</text>
+<text x="480" y="120" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Vb = 50 L · Fb = 35 Hz</text>
+<rect x="120" y="386" width="560" height="46" rx="8" fill="#e7f1ff" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="400" y="413" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle">Effective length ≈ L + 0.732 × D = 13.7 + 5.1 ≈ 18.8 cm — cut the tube shorter than the formula says</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">LUFS Measurement Windows Compared</text>
+
+<!-- song waveform -->
+<rect x="24" y="70" width="752" height="150" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<polyline points="24,145 60,145 90,130 120,160 150,110 180,180 210,125 240,165 270,145 300,145 330,145 360,120 390,170 420,100 450,190 480,115 510,175 540,105 570,185 600,120 630,170 660,140 690,150 720,145 776,145" fill="none" stroke="#0d6efd" stroke-width="2"/>
+<text x="150" y="240" font-size="13" fill="#6c757d" text-anchor="middle">verse</text>
+<text x="510" y="240" font-size="13" fill="#6c757d" text-anchor="middle">chorus</text>
+
+<!-- momentary 400ms bracket -->
+<line x1="440" y1="262" x2="480" y2="262" stroke="#dc3545" stroke-width="3"/>
+<line x1="440" y1="254" x2="440" y2="270" stroke="#dc3545" stroke-width="3"/>
+<line x1="480" y1="254" x2="480" y2="270" stroke="#dc3545" stroke-width="3"/>
+<text x="494" y="268" font-size="14" fill="#dc3545" font-weight="bold">Momentary — 400 ms</text>
+<text x="494" y="288" font-size="13" fill="#6c757d">fast, twitchy needle; shows right now</text>
+
+<!-- short-term 3s bracket -->
+<line x1="420" y1="312" x2="580" y2="312" stroke="#e0a800" stroke-width="3"/>
+<line x1="420" y1="304" x2="420" y2="320" stroke="#e0a800" stroke-width="3"/>
+<line x1="580" y1="304" x2="580" y2="320" stroke="#e0a800" stroke-width="3"/>
+<text x="594" y="318" font-size="14" fill="#9a6d00" font-weight="bold">Short-term — 3 s</text>
+<text x="594" y="338" font-size="13" fill="#6c757d">smoothed; shows the last phrase</text>
+
+<!-- integrated bracket -->
+<line x1="24" y1="362" x2="776" y2="362" stroke="#198754" stroke-width="3"/>
+<line x1="24" y1="354" x2="24" y2="370" stroke="#198754" stroke-width="3"/>
+<line x1="776" y1="354" x2="776" y2="370" stroke="#198754" stroke-width="3"/>
+<text x="24" y="396" font-size="14" fill="#198754" font-weight="bold">Integrated — the whole track (gated)</text>
+<text x="24" y="416" font-size="13" fill="#6c757d">one number for the entire song; silences and quiet intros are excluded by the gate</text>
+</svg>

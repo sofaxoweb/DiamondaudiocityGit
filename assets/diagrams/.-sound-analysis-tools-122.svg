@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">Peak Level Is Not Perceived Loudness</text>
+
+<!-- top panel: amplitude waveform -->
+<text x="24" y="70" font-size="15" font-weight="bold" fill="#212529">Amplitude waveform (what a peak meter sees)</text>
+<rect x="24" y="80" width="752" height="120" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<polyline points="24,140 60,140 90,110 120,170 150,95 180,185 210,120 240,160 270,140 300,140 340,132 380,148 420,118 460,162 500,108 540,172 580,125 620,155 660,140 700,140 740,140 776,140" fill="none" stroke="#0d6efd" stroke-width="2"/>
+<line x1="24" y1="95" x2="776" y2="95" stroke="#dc3545" stroke-width="1.5" stroke-dasharray="7 4"/>
+<text x="770" y="88" font-size="12" fill="#dc3545" text-anchor="end">peak −1 dBFS</text>
+<text x="150" y="218" font-size="13" fill="#6c757d" text-anchor="middle">quiet verse</text>
+<text x="550" y="218" font-size="13" fill="#6c757d" text-anchor="middle">loud chorus</text>
+<text x="350" y="192" font-size="13" fill="#212529" text-anchor="middle">both sections peak at the <tspan font-weight="bold">same level</tspan></text>
+
+<!-- bottom panel: LUFS curve -->
+<text x="24" y="252" font-size="15" font-weight="bold" fill="#212529">LUFS loudness curve (what you actually hear)</text>
+<rect x="24" y="262" width="752" height="120" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<path d="M 24 340 C 120 340, 160 335, 260 335 C 340 335, 360 300, 440 292 C 520 284, 600 290, 776 288" fill="none" stroke="#198754" stroke-width="3"/>
+<text x="150" y="400" font-size="13" fill="#198754" text-anchor="middle" font-weight="bold">≈ −28 LUFS</text>
+<text x="550" y="400" font-size="13" fill="#198754" text-anchor="middle" font-weight="bold">≈ −11 LUFS</text>
+<text x="350" y="400" font-size="13" fill="#212529" text-anchor="middle">chorus is ~17 LU much louder — same peak, wildly different loudness</text>
+
+<text x="24" y="432" font-size="13" fill="#6c757d">This is why LUFS exists: peak meters measure electrical maximums; loudness meters model human hearing.</text>
+</svg>

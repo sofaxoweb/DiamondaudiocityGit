@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Axial Room Modes: Standing Waves</title>
+<desc>First axial standing wave in a rectangular room: pressure peaks at the walls, null at the center.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Axial Room Modes: Standing Waves</text>
+<rect x="140" y="130" width="520" height="180" rx="0" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<text x="124" y="225.0" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">wall</text>
+<text x="676" y="225.0" font-size="13" font-weight="400" fill="#6c757d" text-anchor="start">wall</text>
+<polyline points="140.0,160.0 144.3,160.0 148.7,160.1 153.0,160.2 157.3,160.3 161.7,160.5 166.0,160.7 170.3,161.0 174.7,161.3 179.0,161.7 183.3,162.0 187.7,162.5 192.0,162.9 196.3,163.4 200.7,164.0 205.0,164.6 209.3,165.2 213.7,165.8 218.0,166.5 222.3,167.3 226.7,168.0 231.0,168.8 235.3,169.7 239.7,170.6 244.0,171.5 248.3,172.4 252.7,173.4 257.0,174.4 261.3,175.4 265.7,176.5 270.0,177.6 274.3,178.7 278.7,179.9 283.0,181.0 287.3,182.2 291.7,183.5 296.0,184.7 300.3,186.0 304.7,187.3 309.0,188.7 313.3,190.0 317.7,191.4 322.0,192.8 326.3,194.2 330.7,195.6 335.0,197.0 339.3,198.5 343.7,200.0 348.0,201.5 352.3,203.0 356.7,204.5 361.0,206.0 365.3,207.5 369.7,209.1 374.0,210.6 378.3,212.2 382.7,213.7 387.0,215.3 391.3,216.9 395.7,218.4 400.0,220.0 404.3,221.6 408.7,223.1 413.0,224.7 417.3,226.3 421.7,227.8 426.0,229.4 430.3,230.9 434.7,232.5 439.0,234.0 443.3,235.5 447.7,237.0 452.0,238.5 456.3,240.0 460.7,241.5 465.0,243.0 469.3,244.4 473.7,245.8 478.0,247.2 482.3,248.6 486.7,250.0 491.0,251.3 495.3,252.7 499.7,254.0 504.0,255.3 508.3,256.5 512.7,257.8 517.0,259.0 521.3,260.1 525.7,261.3 530.0,262.4 534.3,263.5 538.7,264.6 543.0,265.6 547.3,266.6 551.7,267.6 556.0,268.5 560.3,269.4 564.7,270.3 569.0,271.2 573.3,272.0 577.7,272.7 582.0,273.5 586.3,274.2 590.7,274.8 595.0,275.4 599.3,276.0 603.7,276.6 608.0,277.1 612.3,277.5 616.7,278.0 621.0,278.3 625.3,278.7 629.7,279.0 634.0,279.3 638.3,279.5 642.7,279.7 647.0,279.8 651.3,279.9 655.7,280.0 660.0,280.0" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<line x1="140" y1="220.0" x2="660" y2="220.0" stroke="#adb5bd" stroke-width="1" stroke-dasharray="6,4"/>
+<circle cx="140" cy="160.0" r="6" fill="#dc3545"/>
+<text x="140" y="148.0" font-size="13" font-weight="700" fill="#dc3545" text-anchor="middle">pressure peak</text>
+<circle cx="660" cy="160.0" r="6" fill="#dc3545"/>
+<text x="660" y="148.0" font-size="13" font-weight="700" fill="#dc3545" text-anchor="middle">pressure peak</text>
+<circle cx="400.0" cy="220.0" r="6" fill="#198754"/>
+<text x="400.0" y="336.0" font-size="13" font-weight="700" fill="#198754" text-anchor="middle">null (quiet spot)</text>
+<line x1="400.0" y1="226.0" x2="400.0" y2="314.0" stroke="#198754" stroke-width="2" stroke-dasharray="4,3"/>
+<text x="400" y="370" font-size="16" font-weight="700" fill="#212529" text-anchor="middle">First axial mode:  f = c / 2L</text>
+<text x="400" y="396" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">c = 343 m/s (speed of sound) · L = distance between parallel walls</text>
+<text x="400" y="420" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">This is why bass booms at the walls and vanishes mid-room.</text>
+</svg>

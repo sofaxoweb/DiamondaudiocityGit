@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">The Gain Staging Chain</text>
+
+<defs>
+<marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0d6efd"/></marker>
+</defs>
+
+<g text-anchor="middle">
+<!-- mouth -->
+<rect x="30" y="130" width="130" height="150" rx="10" fill="#f8f9fa" stroke="#212529" stroke-width="2"/>
+<circle cx="95" cy="175" r="26" fill="none" stroke="#212529" stroke-width="3"/>
+<path d="M 78 190 Q 95 205 112 190" fill="none" stroke="#212529" stroke-width="3" stroke-linecap="round"/>
+<text x="95" y="240" font-size="14" font-weight="bold" fill="#212529">Mouth</text>
+<text x="95" y="260" font-size="12" fill="#6c757d">speak/sing at a</text>
+<text x="95" y="276" font-size="12" fill="#6c757d">steady level</text>
+
+<!-- mic -->
+<rect x="200" y="130" width="130" height="150" rx="10" fill="#f8f9fa" stroke="#212529" stroke-width="2"/>
+<rect x="252" y="155" width="26" height="44" rx="13" fill="#0d6efd"/>
+<line x1="265" y1="199" x2="265" y2="215" stroke="#212529" stroke-width="3"/>
+<line x1="250" y1="215" x2="280" y2="215" stroke="#212529" stroke-width="3"/>
+<text x="265" y="240" font-size="14" font-weight="bold" fill="#212529">Microphone</text>
+<text x="265" y="260" font-size="12" fill="#6c757d">15–30 cm away,</text>
+<text x="265" y="276" font-size="12" fill="#6c757d">slightly off-axis</text>
+
+<!-- interface gain knob -->
+<rect x="370" y="130" width="150" height="150" rx="10" fill="#f8f9fa" stroke="#212529" stroke-width="2"/>
+<circle cx="445" cy="185" r="30" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<line x1="445" y1="185" x2="462" y2="165" stroke="#dc3545" stroke-width="4" stroke-linecap="round"/>
+<g font-size="11" fill="#6c757d"><text x="445" y="145">GAIN</text></g>
+<text x="445" y="240" font-size="14" font-weight="bold" fill="#212529">Interface gain</text>
+<text x="445" y="260" font-size="12" fill="#6c757d">turn up until peaks</text>
+<text x="445" y="276" font-size="12" fill="#6c757d">hit the target zone</text>
+
+<!-- dBFS meter -->
+<rect x="560" y="130" width="210" height="150" rx="10" fill="#f8f9fa" stroke="#212529" stroke-width="2"/>
+<rect x="600" y="150" width="26" height="110" fill="#f1f3f5" stroke="#212529" stroke-width="1.5"/>
+<rect x="600" y="200" width="26" height="40" fill="#198754" opacity="0.5"/>
+<rect x="600" y="178" width="26" height="22" fill="#ffc107" opacity="0.6"/>
+<rect x="600" y="166" width="26" height="12" fill="#dc3545" opacity="0.5"/>
+<rect x="590" y="178" width="46" height="62" fill="none" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="700" y="200" font-size="13" font-weight="bold" fill="#0d6efd">−12…−6</text>
+<text x="700" y="220" font-size="13" font-weight="bold" fill="#0d6efd">dBFS</text>
+<text x="665" y="262" font-size="12" fill="#6c757d">target zone</text>
+</g>
+
+<line x1="160" y1="205" x2="196" y2="205" stroke="#0d6efd" stroke-width="2.5" marker-end="url(#ar3)"/>
+<line x1="330" y1="205" x2="366" y2="205" stroke="#0d6efd" stroke-width="2.5" marker-end="url(#ar3)"/>
+<line x1="520" y1="205" x2="556" y2="205" stroke="#0d6efd" stroke-width="2.5" marker-end="url(#ar3)"/>
+
+<rect x="24" y="320" width="752" height="100" rx="8" fill="#eef4ff"/>
+<text x="40" y="348" font-size="14" fill="#212529"><tspan font-weight="bold">Golden rule:</tspan> set the gain once, then leave it alone — record at −12 to −6 dBFS peaks.</text>
+<text x="40" y="372" font-size="14" fill="#212529">Too low = hiss when you boost later. Clipping = distortion you can never undo.</text>
+<text x="40" y="396" font-size="14" fill="#6c757d">Fix problems in order: your distance, then the mic, then the gain knob — never the other way around.</text>
+</svg>

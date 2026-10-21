@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">How FFT Bin Resolution Shapes What You See</text>
+
+<rect x="24" y="52" width="752" height="40" rx="8" fill="#eef4ff"/>
+<text x="40" y="77" font-size="14" fill="#212529">2,048-point FFT @ 44.1 kHz → <tspan font-weight="bold">44,100 ÷ 2,048 = 21.53 Hz per bin</tspan> — every bin is the same width in Hz.</text>
+
+<!-- Bass strip: 40-200 Hz linear -->
+<text x="24" y="128" font-size="15" font-weight="bold" fill="#212529">Bass region (40–200 Hz): wide bins vs pitch</text>
+<line x1="60" y1="170" x2="740" y2="170" stroke="#212529" stroke-width="2"/>
+<!-- bins every 21.53 Hz: x = 60 + (f-40)/160*680 -->
+<g stroke="#0d6efd" stroke-width="2">
+<line x1="60" y1="158" x2="60" y2="182"/><line x1="151.5" y1="158" x2="151.5" y2="182"/><line x1="243" y1="158" x2="243" y2="182"/><line x1="334.6" y1="158" x2="334.6" y2="182"/><line x1="426.1" y1="158" x2="426.1" y2="182"/><line x1="517.6" y1="158" x2="517.6" y2="182"/><line x1="609.1" y1="158" x2="609.1" y2="182"/><line x1="700.6" y1="158" x2="700.6" y2="182"/>
+</g>
+<!-- note markers: A1 55, C2 65.4, E2 82.4, G2 98, A2 110, C3 130.8, E3 164.8, G3 196 -->
+<g font-size="12" fill="#212529" text-anchor="middle">
+<text x="123.8" y="200">A1 55</text><text x="168" y="200">C2 65.4</text><text x="240" y="200">E2 82.4</text><text x="306" y="200">G2 98</text><text x="357.5" y="200">A2 110</text><text x="446" y="200">C3 130.8</text><text x="592.6" y="200">E3 164.8</text><text x="723.5" y="200">G3 196</text>
+</g>
+<text x="60" y="232" font-size="13" fill="#dc3545" font-weight="bold">≈ 2.6 bins per octave — one bin can swallow several semitones (A1→A2 = 55 Hz ≈ 2.6 bins)</text>
+
+<!-- Treble strip: 8000-16000 Hz -->
+<text x="24" y="272" font-size="15" font-weight="bold" fill="#212529">Treble region (8–16 kHz): same bins, tiny in musical terms</text>
+<line x1="60" y1="314" x2="740" y2="314" stroke="#212529" stroke-width="2"/>
+<g stroke="#0d6efd" stroke-width="1.5">
+<line x1="60" y1="306" x2="60" y2="322"/><line x1="128" y1="306" x2="128" y2="322"/><line x1="196" y1="306" x2="196" y2="322"/><line x1="264" y1="306" x2="264" y2="322"/><line x1="332" y1="306" x2="332" y2="322"/><line x1="400" y1="306" x2="400" y2="322"/><line x1="468" y1="306" x2="468" y2="322"/><line x1="536" y1="306" x2="536" y2="322"/><line x1="604" y1="306" x2="604" y2="322"/><line x1="672" y1="306" x2="672" y2="322"/><line x1="740" y1="306" x2="740" y2="322"/>
+</g>
+<text x="60" y="344" font-size="12" fill="#6c757d">8 kHz</text>
+<text x="730" y="344" font-size="12" fill="#6c757d" text-anchor="end">16 kHz</text>
+<text x="60" y="376" font-size="13" fill="#198754" font-weight="bold">≈ 465 bins per octave — many bins per semitone; treble detail is over-resolved while bass is under-resolved</text>
+
+<text x="24" y="420" font-size="13" fill="#6c757d">Practical effect: spectrum analyzers smear bass notes together but show treble in fine detail.</text>
+</svg>

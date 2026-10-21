@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">True Peak vs Sample Peak</text>
+<text x="24" y="58" font-size="14" fill="#6c757d">Digital samples are snapshots — the real waveform peaks between them.</text>
+
+<!-- axes -->
+<line x1="60" y1="380" x2="740" y2="380" stroke="#212529" stroke-width="2"/>
+<line x1="60" y1="380" x2="60" y2="80" stroke="#212529" stroke-width="2"/>
+<!-- 0 dBFS line at y=140 -->
+<line x1="60" y1="140" x2="740" y2="140" stroke="#dc3545" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="730" y="130" font-size="13" fill="#dc3545" font-weight="bold" text-anchor="end">0 dBFS (digital ceiling)</text>
+
+<!-- reconstructed true waveform peaking at +0.4 dBTP (y=128) -->
+<path d="M 60 320 C 150 300, 220 180, 330 140 C 380 122, 420 122, 470 140 C 580 180, 650 300, 740 320" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<!-- sample dots just below 0 dBFS: -0.1 dBFS ≈ y=143 -->
+<g fill="#212529">
+<circle cx="180" cy="235" r="6"/><circle cx="260" cy="172" r="6"/><circle cx="330" cy="143" r="6"/><circle cx="400" cy="143" r="6"/><circle cx="470" cy="143" r="6"/><circle cx="540" cy="172" r="6"/><circle cx="620" cy="235" r="6"/>
+</g>
+<!-- sample peak label -->
+<line x1="470" y1="143" x2="600" y2="100" stroke="#6c757d" stroke-width="1.5"/>
+<text x="606" y="96" font-size="14" fill="#212529">sample peak: <tspan font-weight="bold">−0.1 dBFS</tspan></text>
+<text x="606" y="116" font-size="13" fill="#6c757d">no sample clips — looks safe</text>
+<!-- true peak label -->
+<line x1="400" y1="124" x2="240" y2="200" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="120" y="196" font-size="14" fill="#0d6efd" font-weight="bold">true peak: +0.4 dBTP</text>
+<text x="120" y="216" font-size="13" fill="#6c757d">reconstructed curve overshoots —</text>
+<text x="120" y="234" font-size="13" fill="#6c757d">clips in the analog domain</text>
+
+<rect x="24" y="396" width="752" height="34" rx="8" fill="#fff8e6"/>
+<text x="40" y="419" font-size="14" fill="#212529">dBTP = dB True Peak: always leave ~1 dB of headroom below 0 dBFS when mastering.</text>
+</svg>

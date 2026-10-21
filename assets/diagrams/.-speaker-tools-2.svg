@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Amplifier Power vs Loudness</title>
+<desc>Bar chart: 1, 10, 100, 1000 watts against +0, +10, +20, +30 dB; doubling watts adds only 3 dB.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Amplifier Power vs Loudness</text>
+<line x1="120" y1="400" x2="600" y2="400" stroke="#212529" stroke-width="2"/>
+<line x1="120" y1="400" x2="120" y2="100" stroke="#212529" stroke-width="2"/>
+<text x="108" y="405" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">0</text>
+<line x1="120" y1="300.0" x2="600" y2="300.0" stroke="#dee2e6" stroke-width="1"/>
+<text x="108" y="305.0" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+10</text>
+<line x1="120" y1="200.0" x2="600" y2="200.0" stroke="#dee2e6" stroke-width="1"/>
+<text x="108" y="205.0" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+20</text>
+<line x1="120" y1="100.0" x2="600" y2="100.0" stroke="#dee2e6" stroke-width="1"/>
+<text x="108" y="105.0" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+30</text>
+<text x="65" y="250" font-size="14" font-weight="400" fill="#6c757d" text-anchor="start" transform="rotate(-90 65 250)">Loudness (dB)</text>
+<rect x="135.0" y="396" width="90" height="4" fill="#0d6efd" opacity="0.85"/>
+<text x="180.0" y="386" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">+0 dB</text>
+<text x="180.0" y="424" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">1 W</text>
+<rect x="255.0" y="300.0" width="90" height="100.0" fill="#0d6efd" opacity="0.85"/>
+<text x="300.0" y="290.0" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">+10 dB</text>
+<text x="300.0" y="424" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">10 W</text>
+<rect x="375.0" y="200.0" width="90" height="200.0" fill="#0d6efd" opacity="0.85"/>
+<text x="420.0" y="190.0" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">+20 dB</text>
+<text x="420.0" y="424" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">100 W</text>
+<rect x="495.0" y="100.0" width="90" height="300.0" fill="#0d6efd" opacity="0.85"/>
+<text x="540.0" y="90.0" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">+30 dB</text>
+<text x="540.0" y="424" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">1,000 W</text>
+<text x="400" y="62" font-size="13.5" font-weight="700" fill="#856404" text-anchor="middle">Key fact: doubling watts = +3 dB (1 W to 2 W sounds barely louder)</text>
+</svg>

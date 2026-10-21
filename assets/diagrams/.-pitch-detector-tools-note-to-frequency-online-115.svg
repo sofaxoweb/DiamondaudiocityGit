@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">One Octave on the Piano: C4 to C5</text>
+
+<!-- white keys: 7 keys, x 60..740, each 97.14 wide, y 90..290 -->
+<g text-anchor="middle">
+<rect x="60" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="108.6" y="230" font-size="16" font-weight="bold" fill="#212529">C4</text><text x="108.6" y="252" font-size="13" fill="#0d6efd" font-weight="bold">261.63 Hz</text>
+<rect x="157.1" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="205.7" y="230" font-size="16" font-weight="bold" fill="#212529">D4</text><text x="205.7" y="252" font-size="13" fill="#0d6efd" font-weight="bold">293.66 Hz</text>
+<rect x="254.3" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="302.8" y="230" font-size="16" font-weight="bold" fill="#212529">E4</text><text x="302.8" y="252" font-size="13" fill="#0d6efd" font-weight="bold">329.63 Hz</text>
+<rect x="351.4" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="400" y="230" font-size="16" font-weight="bold" fill="#212529">F4</text><text x="400" y="252" font-size="13" fill="#0d6efd" font-weight="bold">349.23 Hz</text>
+<rect x="448.6" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="497.1" y="230" font-size="16" font-weight="bold" fill="#212529">G4</text><text x="497.1" y="252" font-size="13" fill="#0d6efd" font-weight="bold">392.00 Hz</text>
+<rect x="545.7" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="594.3" y="230" font-size="16" font-weight="bold" fill="#212529">A4</text><text x="594.3" y="252" font-size="13" fill="#0d6efd" font-weight="bold">440.00 Hz</text>
+<rect x="642.8" y="90" width="97.1" height="200" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="691.4" y="230" font-size="16" font-weight="bold" fill="#212529">B4</text><text x="691.4" y="252" font-size="13" fill="#0d6efd" font-weight="bold">493.88 Hz</text>
+</g>
+<!-- black keys -->
+<g text-anchor="middle">
+<rect x="128.1" y="90" width="60" height="120" fill="#212529"/><text x="158.1" y="165" font-size="13" font-weight="bold" fill="#ffffff">C♯4</text><text x="158.1" y="185" font-size="11" fill="#ffffff">277.18</text>
+<rect x="225.2" y="90" width="60" height="120" fill="#212529"/><text x="255.2" y="165" font-size="13" font-weight="bold" fill="#ffffff">D♯4</text><text x="255.2" y="185" font-size="11" fill="#ffffff">311.13</text>
+<rect x="419.4" y="90" width="60" height="120" fill="#212529"/><text x="449.4" y="165" font-size="13" font-weight="bold" fill="#ffffff">F♯4</text><text x="449.4" y="185" font-size="11" fill="#ffffff">369.99</text>
+<rect x="516.6" y="90" width="60" height="120" fill="#212529"/><text x="546.6" y="165" font-size="13" font-weight="bold" fill="#ffffff">G♯4</text><text x="546.6" y="185" font-size="11" fill="#ffffff">415.30</text>
+<rect x="613.7" y="90" width="60" height="120" fill="#212529"/><text x="643.7" y="165" font-size="13" font-weight="bold" fill="#ffffff">A♯4</text><text x="643.7" y="185" font-size="11" fill="#ffffff">466.16</text>
+</g>
+<!-- C5 label -->
+<text x="775" y="230" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">C5</text>
+<text x="775" y="250" font-size="12" fill="#0d6efd" font-weight="bold" text-anchor="middle">523.25</text>
+<text x="775" y="264" font-size="12" fill="#0d6efd" text-anchor="middle">Hz</text>
+
+<rect x="24" y="320" width="752" height="100" rx="8" fill="#eef4ff"/>
+<text x="40" y="348" font-size="15" fill="#212529"><tspan font-weight="bold">Octave rule:</tspan> C4 = 261.63 Hz, C5 = 523.25 Hz — frequency <tspan fill="#0d6efd" font-weight="bold">doubles (×2)</tspan> every octave.</text>
+<text x="40" y="372" font-size="14" fill="#6c757d">Each semitone multiplies frequency by 2^(1/12) ≈ 1.0595 — that is why the gaps in Hz grow as you go up.</text>
+<text x="40" y="396" font-size="14" fill="#6c757d">Middle C is C4 = 261.63 Hz; A4 = 440 Hz is the concert-pitch anchor.</text>
+</svg>

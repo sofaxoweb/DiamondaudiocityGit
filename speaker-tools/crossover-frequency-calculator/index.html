@@ -373,7 +373,7 @@
               <li>High-pass (tweeter): series <strong>9.38 µF</strong> capacitor + shunt <strong>0.60 mH</strong> inductor — and <strong>reverse the tweeter's polarity</strong> (180° phase shift)</li>
             </ol>
             <p>Buy the nearest standard values (0.60 mH air-core; 9.38 µF → 9.4 µF or 10 µF film cap) — 5–10% tolerance is normal and shifts Fc only slightly.</p>
-            <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: 2nd-order crossover schematic — amplifier splitting to low-pass branch (series L, shunt C to woofer) and high-pass branch (series C, shunt L to tweeter)]</div><figcaption class="small text-muted">2nd-order crossover topology. Suggested alt text: "Schematic diagram of a second-order passive speaker crossover"</figcaption></figure>
+            <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-crossover-frequency-calculator-38.svg" alt="Schematic diagram of a second-order passive speaker crossover" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted">2nd-order crossover topology. Suggested alt text: "Schematic diagram of a second-order passive speaker crossover"</figcaption></figure>
           </section>
 
           <section class="mb-4">
@@ -425,7 +425,7 @@
             <h2 class="text-mid mb-3"><i class="bi bi-arrow-repeat me-2"></i>The 180° Phase Flip (and the One-Wire Fix)</h2>
             <p><strong>A 2nd-order filter rotates phase 180°, so the tweeter's output arrives 180° out of phase with the woofer at the crossover point.</strong> In-phase drivers sum; out-of-phase drivers <em>cancel</em>, carving a deep null right where the two bands meet.</p>
             <p>The fix is one wire: <strong>reverse the tweeter's +/− connections</strong>. This is standard practice in 2nd-order designs, not a hack — commercial speakers do it routinely. (4th-order Linkwitz-Riley stays in phase and needs no reversal; 1st and 3rd order shift 90°/270°, where the answer depends on driver offset.) If a fresh build sounds hollow in the midrange, reversed tweeter polarity is suspect number one.</p>
-            <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: frequency response curves showing the cancellation null with normal polarity vs flat summing with reversed tweeter polarity at Fc]</div><figcaption class="small text-muted">Tweeter polarity and the crossover null. Suggested alt text: "Graph showing crossover response null fixed by reversing tweeter polarity"</figcaption></figure>
+            <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-crossover-frequency-calculator-39.svg" alt="Graph showing crossover response null fixed by reversing tweeter polarity" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted">Tweeter polarity and the crossover null. Suggested alt text: "Graph showing crossover response null fixed by reversing tweeter polarity"</figcaption></figure>
           </section>
 
           <section class="mb-4">

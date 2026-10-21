@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>Cost per Hour: Same 8.5-Hour Book</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">Cost per Hour: Same 8.5-Hour Book</text>
+<line x1="120" y1="308.8" x2="720" y2="308.8" stroke="#dee2e6"/>
+<text x="112" y="312.8" font-size="12" fill="#6c757d" text-anchor="end">$1</text>
+<line x1="120" y1="227.5" x2="720" y2="227.5" stroke="#dee2e6"/>
+<text x="112" y="231.5" font-size="12" fill="#6c757d" text-anchor="end">$2</text>
+<line x1="120" y1="146.2" x2="720" y2="146.2" stroke="#dee2e6"/>
+<text x="112" y="150.2" font-size="12" fill="#6c757d" text-anchor="end">$3</text>
+<rect x="165.0" y="247.0" width="110" height="143.0" fill="#198754" rx="6"/>
+<text x="220" y="235.0" font-size="16" font-weight="700" fill="#212529" text-anchor="middle">$1.76/hr</text>
+<text x="220" y="416" font-size="14" fill="#6c757d" text-anchor="middle">Audible credit</text>
+<rect x="365.0" y="199.1" width="110" height="190.9" fill="#0d6efd" rx="6"/>
+<text x="420" y="187.1" font-size="16" font-weight="700" fill="#212529" text-anchor="middle">$2.35/hr</text>
+<text x="420" y="416" font-size="14" fill="#6c757d" text-anchor="middle">Direct download</text>
+<rect x="565.0" y="151.1" width="110" height="238.9" fill="#0d6efd" rx="6"/>
+<text x="620" y="139.1" font-size="16" font-weight="700" fill="#212529" text-anchor="middle">$2.94/hr</text>
+<text x="620" y="416" font-size="14" fill="#6c757d" text-anchor="middle">CD</text>
+</svg>

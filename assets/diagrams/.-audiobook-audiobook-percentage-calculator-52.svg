@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>Progress Milestones on a 10-Hour Book</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">Progress Milestones on a 10-Hour Book</text>
+<text x="160" y="139" font-size="17" font-weight="700" fill="#212529" text-anchor="end">25%</text>
+<rect x="180" y="105" width="480" height="44" rx="8" fill="#e9ecef"/>
+<rect x="180" y="105" width="120" height="44" rx="8" fill="#0d6efd"/>
+<text x="676" y="134" font-size="14" fill="#6c757d">2 h 30 m listened</text>
+<text x="160" y="231" font-size="17" font-weight="700" fill="#212529" text-anchor="end">50%</text>
+<rect x="180" y="197" width="480" height="44" rx="8" fill="#e9ecef"/>
+<rect x="180" y="197" width="240" height="44" rx="8" fill="#0d6efd"/>
+<text x="676" y="226" font-size="14" fill="#6c757d">5 h 00 m listened</text>
+<text x="160" y="323" font-size="17" font-weight="700" fill="#212529" text-anchor="end">75%</text>
+<rect x="180" y="289" width="480" height="44" rx="8" fill="#e9ecef"/>
+<rect x="180" y="289" width="360" height="44" rx="8" fill="#0d6efd"/>
+<text x="676" y="318" font-size="14" fill="#6c757d">7 h 30 m listened</text>
+<rect x="180" y="392" width="480" height="1" fill="#ffffff"/>
+<text x="400" y="410" font-size="14" fill="#212529" text-anchor="middle">Rule of thumb: each 0.1% of a 10-hour book = 36 seconds of listening.</text>
+</svg>

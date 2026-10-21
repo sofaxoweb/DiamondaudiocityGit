@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">Note Subdivisions at 120 BPM</text>
+<text x="24" y="66" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="start">Quarter note = 60,000 ÷ 120 = 500 ms — every value below follows by ratio</text>
+<text x="24" y="120" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Half note</text>
+<rect x="280" y="102" width="200.0" height="26" rx="4" fill="#0d6efd"/>
+<text x="490.0" y="120" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">1000 ms</text>
+<text x="24" y="165" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Quarter note</text>
+<rect x="280" y="147" width="100.0" height="26" rx="4" fill="#6ea8fe"/>
+<text x="390.0" y="165" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">500 ms</text>
+<text x="24" y="210" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Dotted quarter</text>
+<rect x="280" y="192" width="150.0" height="26" rx="4" fill="#0d6efd"/>
+<text x="440.0" y="210" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">750 ms</text>
+<text x="24" y="255" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Quarter-note triplet</text>
+<rect x="280" y="237" width="66.7" height="26" rx="4" fill="#6ea8fe"/>
+<text x="356.66" y="255" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">333.3 ms</text>
+<text x="24" y="300" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Eighth note</text>
+<rect x="280" y="282" width="50.0" height="26" rx="4" fill="#0d6efd"/>
+<text x="340.0" y="300" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">250 ms</text>
+<text x="24" y="345" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Eighth-note triplet</text>
+<rect x="280" y="327" width="33.3" height="26" rx="4" fill="#6ea8fe"/>
+<text x="323.34" y="345" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">166.7 ms</text>
+<text x="24" y="390" font-size="14" font-weight="normal" fill="#212529" text-anchor="start">Sixteenth note</text>
+<rect x="280" y="372" width="25.0" height="26" rx="4" fill="#0d6efd"/>
+<text x="315.0" y="390" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">125 ms</text>
+<text x="280" y="92" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="start">0</text>
+<text x="680.0" y="92" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="end">2000 ms</text>
+<line x1="280" y1="98" x2="680" y2="98" stroke="#6c757d" stroke-width="1.5"/>
+<line x1="280.0" y1="94" x2="280.0" y2="102" stroke="#6c757d" stroke-width="1.5"/>
+<line x1="380.0" y1="94" x2="380.0" y2="102" stroke="#6c757d" stroke-width="1.5"/>
+<line x1="480.0" y1="94" x2="480.0" y2="102" stroke="#6c757d" stroke-width="1.5"/>
+<line x1="580.0" y1="94" x2="580.0" y2="102" stroke="#6c757d" stroke-width="1.5"/>
+<line x1="680.0" y1="94" x2="680.0" y2="102" stroke="#6c757d" stroke-width="1.5"/>
+</svg>

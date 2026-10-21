@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>From Word Count to Listening Time</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">From Word Count to Listening Time</text>
+<polygon points="120.0,96 680.0,96 620.0,170 180.0,170" fill="#cfe2ff" stroke="#ffffff" stroke-width="3"/>
+<text x="400" y="140" font-size="15" font-weight="600" fill="#212529" text-anchor="middle">Word count: 90,000 words</text>
+<rect x="330" y="156" width="140" height="28" rx="14" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="400" y="176" font-size="13" font-weight="700" fill="#0d6efd" text-anchor="middle">÷ 150 WPM</text>
+<polygon points="180.0,176 620.0,176 560.0,250 240.0,250" fill="#b6d4fe" stroke="#ffffff" stroke-width="3"/>
+<text x="400" y="220" font-size="15" font-weight="600" fill="#212529" text-anchor="middle">Raw listening time: 600 min = 10 h</text>
+<rect x="330" y="236" width="140" height="28" rx="14" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="400" y="256" font-size="13" font-weight="700" fill="#0d6efd" text-anchor="middle">+ 10–15% pauses</text>
+<polygon points="240.0,256 560.0,256 500.0,330 300.0,330" fill="#6ea8fe" stroke="#ffffff" stroke-width="3"/>
+<text x="400" y="300" font-size="15" font-weight="600" fill="#212529" text-anchor="middle">Finished duration: ≈ 11–11.5 h</text>
+<text x="400" y="392" font-size="14" fill="#6c757d" text-anchor="middle">Narration at ~150 words per minute, plus natural pauses between phrases.</text>
+</svg>

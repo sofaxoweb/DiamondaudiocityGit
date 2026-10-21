@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>Cost per Hour by Format (8.5-Hour Book)</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">Cost per Hour by Format (8.5-Hour Book)</text>
+<rect x="40" y="120" width="210" height="230" rx="12" fill="#ffffff" stroke="#198754" stroke-width="3"/>
+<rect x="85" y="100" width="120" height="32" rx="16" fill="#198754"/>
+<text x="145" y="122" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">BEST VALUE</text>
+<text x="145" y="168" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">Audible credit</text>
+<text x="145" y="196" font-size="14" fill="#6c757d" text-anchor="middle">$14.95 / 8.5 h</text>
+<text x="145" y="262" font-size="40" font-weight="700" fill="#198754" text-anchor="middle">$1.76</text>
+<text x="145" y="292" font-size="14" fill="#6c757d" text-anchor="middle">per hour</text>
+<text x="145" y="322" font-size="13" fill="#6c757d" text-anchor="middle">cheapest per hour</text>
+<rect x="295" y="120" width="210" height="230" rx="12" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+<text x="400" y="168" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">CD set</text>
+<text x="400" y="196" font-size="14" fill="#6c757d" text-anchor="middle">$24.95 / 8.5 h</text>
+<text x="400" y="262" font-size="40" font-weight="700" fill="#212529" text-anchor="middle">$2.94</text>
+<text x="400" y="292" font-size="14" fill="#6c757d" text-anchor="middle">per hour</text>
+<text x="400" y="322" font-size="13" fill="#6c757d" text-anchor="middle">same 8.5 h of audio</text>
+<rect x="550" y="120" width="210" height="230" rx="12" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+<text x="655" y="168" font-size="15" font-weight="700" fill="#212529" text-anchor="middle">Direct download</text>
+<text x="655" y="196" font-size="14" fill="#6c757d" text-anchor="middle">$19.95 / 8.5 h</text>
+<text x="655" y="262" font-size="40" font-weight="700" fill="#212529" text-anchor="middle">$2.35</text>
+<text x="655" y="292" font-size="14" fill="#6c757d" text-anchor="middle">per hour</text>
+<text x="655" y="322" font-size="13" fill="#6c757d" text-anchor="middle">same 8.5 h of audio</text>
+<text x="400" y="410" font-size="14" fill="#6c757d" text-anchor="middle">Same audiobook, three prices — divide price by finished hours to compare value.</text>
+</svg>

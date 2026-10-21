@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">Reverse Mode: From Loop Length Back to Tempo</text>
+<rect x="30" y="150" width="160" height="110" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="110" y="185" font-size="15" font-weight="bold" fill="#212529" text-anchor="middle">4,000 ms loop</text>
+<text x="110" y="210" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">2 bars = 8 beats</text>
+<text x="110" y="232" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">trimmed on bar lines</text>
+<line x1="190" y1="205" x2="222" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="222,205 212,200 212,210" fill="#0d6efd"/>
+<rect x="222" y="150" width="160" height="110" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="302" y="185" font-size="15" font-weight="bold" fill="#212529" text-anchor="middle">÷ 8 beats</text>
+<text x="302" y="210" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">500 ms per beat</text>
+<line x1="382" y1="205" x2="414" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="414,205 404,200 404,210" fill="#0d6efd"/>
+<rect x="414" y="150" width="160" height="110" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="494" y="185" font-size="15" font-weight="bold" fill="#212529" text-anchor="middle">60,000 ÷ 500</text>
+<text x="494" y="210" font-size="15" font-weight="bold" fill="#198754" text-anchor="middle">= 120 BPM</text>
+<line x1="574" y1="205" x2="606" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="606,205 596,200 596,210" fill="#0d6efd"/>
+<rect x="606" y="130" width="164" height="150" rx="8" fill="#212529"/>
+<text x="688" y="160" font-size="12" font-weight="normal" fill="#adb5bd" text-anchor="middle">TEMPO</text>
+<text x="688" y="225" font-size="44" font-weight="bold" fill="#ffffff" text-anchor="middle">120</text>
+<text x="688" y="258" font-size="14" font-weight="normal" fill="#adb5bd" text-anchor="middle">BPM</text>
+<text x="400" y="340" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">A cleanly trimmed loop carries its tempo in its length — measure, divide, set the DAW.</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>The Percentage Formula, as a Triangle</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">The Percentage Formula, as a Triangle</text>
+<rect x="320" y="62" width="160" height="66" rx="10" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="400.0" y="88" font-size="13" fill="#6c757d" text-anchor="middle">Time listened</text>
+<text x="400.0" y="114" font-size="19" font-weight="700" fill="#212529" text-anchor="middle">225 min</text>
+<rect x="80" y="250" width="220" height="72" rx="10" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="190.0" y="276" font-size="13" fill="#6c757d" text-anchor="middle">Total duration</text>
+<text x="190.0" y="302" font-size="19" font-weight="700" fill="#212529" text-anchor="middle">510 min</text>
+<rect x="500" y="250" width="220" height="72" rx="10" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="610.0" y="276" font-size="13" fill="#6c757d" text-anchor="middle">Multiply by</text>
+<text x="610.0" y="302" font-size="19" font-weight="700" fill="#212529" text-anchor="middle">× 100</text>
+<line x1="360" y1="128" x2="200" y2="250" stroke="#adb5bd" stroke-width="2.5"/>
+<line x1="440" y1="128" x2="600" y2="250" stroke="#adb5bd" stroke-width="2.5"/>
+<line x1="300" y1="286" x2="500" y2="286" stroke="#adb5bd" stroke-width="2.5"/>
+<text x="272" y="200" font-size="22" font-weight="700" fill="#212529">÷</text>
+<text x="512" y="200" font-size="22" font-weight="700" fill="#212529">×</text>
+<text x="392" y="280" font-size="22" font-weight="700" fill="#212529">=</text>
+<rect x="230" y="360" width="340" height="56" rx="10" fill="#198754" />
+<text x="400" y="396" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">225 ÷ 510 × 100 = 44.1%</text>
+</svg>

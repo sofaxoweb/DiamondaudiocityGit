@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>The Audiobook Number Chain</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">The Audiobook Number Chain</text>
+<rect x="20" y="140" width="200" height="130" rx="10" fill="#f8f9fa" stroke="#adb5bd" stroke-width="2"/>
+<rect x="305" y="140" width="165" height="130" rx="10" fill="#f8f9fa" stroke="#adb5bd" stroke-width="2"/>
+<rect x="555" y="140" width="205" height="130" rx="10" fill="#f8f9fa" stroke="#adb5bd" stroke-width="2"/>
+<text x="120" y="170" font-size="13" fill="#6c757d" text-anchor="middle">MANUSCRIPT</text>
+<text x="120" y="205" font-size="26" font-weight="700" fill="#212529" text-anchor="middle">93,000</text>
+<text x="120" y="232" font-size="14" fill="#212529" text-anchor="middle">words</text>
+<text x="387" y="170" font-size="13" fill="#6c757d" text-anchor="middle">FINISHED AUDIO</text>
+<text x="387" y="205" font-size="26" font-weight="700" fill="#212529" text-anchor="middle">10</text>
+<text x="387" y="232" font-size="14" fill="#212529" text-anchor="middle">hours</text>
+<text x="657" y="170" font-size="13" fill="#6c757d" text-anchor="middle">PRODUCTION BUDGET</text>
+<text x="657" y="205" font-size="26" font-weight="700" fill="#198754" text-anchor="middle">$2,500</text>
+<text x="657" y="232" font-size="14" fill="#212529" text-anchor="middle">10 h × $250/h PFH</text>
+<line x1="220" y1="205" x2="297" y2="205" stroke="#212529" stroke-width="2.5"/>
+<polygon points="297,198 311,205 297,212" fill="#212529"/>
+<text x="262.5" y="191" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">÷ 9,300</text>
+<line x1="470" y1="205" x2="547" y2="205" stroke="#212529" stroke-width="2.5"/>
+<polygon points="547,198 561,205 547,212" fill="#212529"/>
+<text x="512.5" y="191" font-size="14" font-weight="700" fill="#0d6efd" text-anchor="middle">× PFH rate</text>
+<rect x="20" y="320" width="300" height="100" rx="10" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2"/>
+<text x="170" y="352" font-size="13" fill="#6c757d" text-anchor="middle">LISTENING TIME</text>
+<text x="170" y="388" font-size="20" font-weight="700" fill="#212529" text-anchor="middle">10 h ÷ 1.5× = 6 h 40 m</text>
+<text x="460" y="352" font-size="14" fill="#212529" text-anchor="middle">finished hours ÷ playback speed</text>
+<text x="460" y="386" font-size="14" fill="#6c757d" text-anchor="middle">= actual listening time</text>
+<text x="640" y="352" font-size="13" fill="#6c757d" text-anchor="middle">PFH = per finished hour:</text>
+<text x="640" y="374" font-size="13" fill="#6c757d" text-anchor="middle">the narrator’s rate for each</text>
+<text x="640" y="396" font-size="13" fill="#6c757d" text-anchor="middle">hour of finished audio</text>
+</svg>

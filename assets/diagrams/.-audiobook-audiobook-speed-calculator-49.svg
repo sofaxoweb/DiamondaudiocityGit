@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img"><title>Listening Time vs Time Saved (10-Hour Book)</title><rect x="0" y="0" width="800" height="450" fill="#ffffff"/><text x="24" y="42" font-size="20" font-weight="700" fill="#212529">Listening Time vs Time Saved (10-Hour Book)</text>
+<defs><pattern id="hatch49" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#d1e7dd"/><line x1="0" y1="0" x2="0" y2="9" stroke="#198754" stroke-width="2.5"/></pattern></defs>
+<text x="128" y="149" font-size="16" font-weight="700" fill="#212529" text-anchor="end">1×</text>
+<rect x="140" y="120" width="600" height="44" fill="#e9ecef"/>
+<rect x="140" y="120" width="600.0" height="44" fill="#0d6efd"/>
+<text x="440.0" y="149" font-size="14" fill="#ffffff" text-anchor="middle">10 h listening</text>
+<text x="128" y="233" font-size="16" font-weight="700" fill="#212529" text-anchor="end">1.5×</text>
+<rect x="140" y="204" width="600" height="44" fill="#e9ecef"/>
+<rect x="140" y="204" width="400.0" height="44" fill="#0d6efd"/>
+<text x="340.0" y="233" font-size="14" fill="#ffffff" text-anchor="middle">6 h 40 m</text>
+<rect x="540.0" y="204" width="200.0" height="44" fill="url(#hatch49)" stroke="#198754"/>
+<text x="640.0" y="233" font-size="14" font-weight="600" fill="#212529" text-anchor="middle">3 h 20 m saved</text>
+<text x="128" y="317" font-size="16" font-weight="700" fill="#212529" text-anchor="end">2×</text>
+<rect x="140" y="288" width="600" height="44" fill="#e9ecef"/>
+<rect x="140" y="288" width="300.0" height="44" fill="#0d6efd"/>
+<text x="290.0" y="317" font-size="14" fill="#ffffff" text-anchor="middle">5 h</text>
+<rect x="440.0" y="288" width="300.0" height="44" fill="url(#hatch49)" stroke="#198754"/>
+<text x="590.0" y="317" font-size="14" font-weight="600" fill="#212529" text-anchor="middle">5 h saved</text>
+<rect x="140" y="392" width="16" height="16" fill="#0d6efd"/><text x="162" y="405" font-size="13" fill="#212529">listening time</text>
+<rect x="300" y="392" width="16" height="16" fill="url(#hatch49)" stroke="#198754"/><text x="322" y="405" font-size="13" fill="#212529">time saved (shaded)</text>
+</svg>

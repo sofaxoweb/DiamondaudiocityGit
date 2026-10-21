@@ -267,7 +267,7 @@
                         </ul>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: 2-way passive crossover schematic — amplifier input splitting to a low-pass inductor feeding the woofer and a high-pass capacitor feeding the tweeter, with an L-pad on the tweeter leg]</div><figcaption>Signal flow in a 2-way passive crossover with tweeter L-pad attenuation.</figcaption></figure>
+                    <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-passive-crossover-calculator-19.svg" alt="Signal flow in a 2-way passive crossover with tweeter L-pad attenuation." class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>Signal flow in a 2-way passive crossover with tweeter L-pad attenuation.</figcaption></figure>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Is a Passive Crossover?</h2>
@@ -360,40 +360,7 @@
                         <p>Example: the worked 6.63 µF / 0.42 mH base becomes 9.38 µF / 0.60 mH per leg for LR2. The <a href="../crossover-slope-calculator/">crossover slope calculator</a> applies these scalings automatically.</p>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: crossover board layout showing two inductors mounted at 90° to each other, 10 cm apart, with film capacitors and an L-pad resistor pair labeled]</div><figcaption>Keep inductors at right angles and well separated to prevent magnetic crosstalk.</figcaption></figure>
-
-                    <section class="mb-5">
-                        <h2 class="h4 text-teal mb-3"><i class="bi bi-grid-1x2 me-2"></i>Inductor Layout: The 90° Rule</h2>
-                        <p><strong>Inductors talk to each other magnetically.</strong> Two coils mounted side by side couple like a transformer, leaking signal between filter sections and smearing your carefully calculated slopes. The fix is geometric:</p>
-                        <ul>
-                            <li>Mount adjacent inductors with their <strong>magnetic axes at 90°</strong> to each other (one flat, one on edge).</li>
-                            <li>Keep at least <strong>10 cm (4 in)</strong> between large coils.</li>
-                            <li>Keep inductors away from steel chassis parts and driver magnets.</li>
-                        </ul>
-                        <p>Air-core coils are worst for crosstalk (their field spreads freely) yet best for sound (no core saturation) — the classic trade-off. If space is tight, orient the most sensitive pair — woofer low-pass and tweeter high-pass inductors — at right angles first.</p>
-                    </section>
-
-                    <section class="mb-5">
-                        <h2 class="h4 text-teal mb-3"><i class="bi bi-volume-down me-2"></i>Baffle Step: The 6 dB Your Calculator Didn't Mention</h2>
-                        <p><strong>Below a certain frequency, bass wraps around the cabinet instead of projecting forward — the speaker loses up to 6 dB of low-frequency output.</strong> This <strong>baffle step</strong> kicks in around f ≈ 4560 / baffle-width-in-inches (about 570 Hz for an 8-inch-wide box).</p>
-                        <p>Calculator values ignore it, so a speaker built strictly to the numbers sounds thin. The standard fix is a shelving network in the woofer section restoring 3–6 dB below the step frequency (full 6 dB only for free-standing speakers; near-wall placement needs less). If your finished speaker sounds bright and bass-shy despite "correct" parts, baffle step is the prime suspect.</p>
-                    </section>
-
-                    <section class="mb-5">
-                        <h2 class="h4 text-teal mb-3"><i class="bi bi-123 me-2"></i>E12 Rounding: From Math to Parts Bin</h2>
-                        <p><strong>You can't buy a 6.63 µF capacitor — parts come in E12 standard values (±10%) or E24 (±5%).</strong> Round to the nearest stocked value and check the damage:</p>
-                        <div class="table-responsive mb-4">
-                            <table class="table table-bordered table-hover align-middle">
-                                <thead class="table-light">
-                                    <tr><th>Calculated</th><th>Buy this (E12)</th><th>fc shift</th><th>Audible?</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>6.63 µF</td><td>6.8 µF</td><td>−2.5%</td><td>No</td></tr>
-                                    <tr><td>0.42 mH</td><td>0.39 mH or 0.47 mH</td><td>+8% / −11%</td><td>Barely — pick the nearer value</td></tr>
-                                    <tr><td>19.39 Ω (R2)</td><td>20 Ω</td><td>Padding −3.0 dB — effectively unchanged</td><td>No</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-passive-crossover-calculator-20.svg" alt="Keep inductors at right angles and well separated to prevent magnetic crosstalk." class="img-fluid border rounded" width="800" height="450" loading="lazy">
                         <p>Rule of thumb: a ±5% part shifts fc by about ∓5%. Crossover points are forgiving — driver variation and room effects dwarf rounding error. Buy film capacitors (MKP) for tweeter sections; bipolar electrolytics are acceptable only for large-value woofer shunt legs.</p>
                     </section>
 

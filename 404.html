@@ -4,232 +4,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found (404) – Audio Tools & Calculators | Pitchetectors</title>
-
+    <title>Page Not Found (404) | Pitch Detectors</title>
     <meta name="description"
-        content="Sorry, the page you’re looking for doesn’t exist. Explore free online audio tools like BPM calculators, pitch detectors, DJ tools, and music production utilities on Pitchetectors." />
-
-    <meta name="keywords"
-        content="404 page, page not found, audio tools, music calculators, BPM calculator, pitch detector, DJ tools, music production tools" />
-
-
-    <link rel="icon" href="./assets/imgs/logo.png" type="image/x-icon">
-
+        content="The page you are looking for does not exist. Explore free online audio tools: BPM calculators, pitch detectors, speaker calculators, DJ tools and audiobook calculators on Pitch Detectors.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" href="/assets/imgs/logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="./assets/bootstrap5.css" rel="stylesheet">
-    <link href="./assets/style.css" rel="stylesheet">
-    <link href="./assets/tools.css" rel="stylesheet">
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408671496512773"
-        crossorigin="anonymous"></script>
+    <link href="/assets/bootstrap5.css" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <link href="/assets/tools.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="header"></div>
-    <!-- 404 Message Section -->
-    <section class="error-section py-5">
-        <div class="container text-center">
-            <h2 class="error-title">404 - Page Not Found</h2>
-            <p class="error-message">Sorry, the page you’re looking for doesn’t exist.</p>
-            <a href="/" class="btn btn-primary mt-3">Go Back to Home</a>
+<!-- Pitchetectors Header -->
+<nav class="navbar navbar-expand-lg navbar-dark main-nav">
+    <div class="container px-0">
+        <a class="navbar-brand fw-bold" href="/">
+            <img src="/assets/imgs/logo.png" alt="Pitch Detectors Logo" class="brand-logo me-2">
+        </a>
+        <div class="d-flex align-items-center order-lg-3 ms-auto ms-lg-3">
+            <button class="nav-search-btn" id="navSearchTrigger" type="button" aria-label="Search tools"
+                onclick="openGlobalSearch()">
+                <i class="bi bi-search"></i>
+                <span class="nav-search-label d-none d-sm-inline">Search tools...</span>
+                <span class="nav-search-kbd d-none d-md-inline">Ctrl+K</span>
+            </button>
+            <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-    </section>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content text-center">
-                <h1 class="hero-title">Free Audio Tools Online</h1>
-                <p class="hero-subtitle">
-                    Practical browser-based tools for common audio tasks in music production and sound work.
-                    No installation needed.
-                </p>
+        <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <!-- dj bpm category -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-disc me-1"></i>DJ & Production
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="/dj-music-production-tools/"><i
+                                    class="bi bi-grid me-2"></i>All DJ Tools</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/dj-music-production-tools/bpm-calculator/"><i
+                                    class="bi bi-speedometer2 me-2"></i>BPM
+                                Calculator</a></li>
+                        <li><a class="dropdown-item" href="/dj-music-production-tools/bpm-tap-tempo/"><i
+                                    class="bi bi-hand-index me-2"></i>BPM
+                                Tap Tempo</a></li>
+                        <li><a class="dropdown-item" href="/dj-music-production-tools/bpm-to-ms/"><i
+                                    class="bi bi-clock me-2"></i>BPM to
+                                Milliseconds</a></li>
+                        <li><a class="dropdown-item" href="/dj-music-production-tools/song-key-finder/"><i
+                                    class="bi bi-key me-2"></i>Song
+                                Key Finder</a></li>
+
+                        <li><a class="dropdown-item" href="https://pitchdetectors.com/BPM-Pitch-Calculator.html"><i
+                                    class="bi bi-sliders me-2"></i>Pitch
+                                Shifter</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="/dj-music-production-tools/guides/"><i
+                                    class="bi bi-book-half me-2"></i>Guide
+                            </a></li>
+                    </ul>
+                </li>
+                <!-- music category -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-music-note-list me-1"></i>Music Theory
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="/music-theory-tools/"><i class="bi bi-grid me-2"></i>All
+                                Music Theory</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/music-theory-tools/online-metronome/"><i
+                                    class="bi bi-stopwatch me-2"></i>Online
+                                Metronome</a></li>
+                        <li><a class="dropdown-item" href="/music-theory-tools/scale-finder/"><i
+                                    class="bi bi-grid-3x3 me-2"></i>Scale
+                                Finder</a></li>
+                        <li><a class="dropdown-item" href="/music-theory-tools/chord-identifier/"><i
+                                    class="bi bi-vinyl me-2"></i>Chord
+                                Identifier</a></li>
+                        <li><a class="dropdown-item" href="/music-theory-tools/chord-progression-generator/"><i
+                                    class="bi bi-diagram-3 me-2"></i>Chord
+                                Progression</a></li>
+                    </ul>
+                </li>
+                <!-- ptich category -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-soundwave me-1"></i>Pitch Tools
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="/pitch-detector-tools/"><i class="bi bi-grid me-2"></i>All
+                                Pitch Tools</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/pitch-detector-tools/guitar-tuner-online/"><i
+                                    class="bi bi-music-note-beamed me-2"></i>Guitar
+                                Tuner</a></li>
+                        <li><a class="dropdown-item" href="/pitch-detector-tools/pitch-shift-calculator/"><i
+                                    class="bi bi-music-note me-2"></i>Pitch Shift</a></li>
+                        <li><a class="dropdown-item" href="/pitch-detector-tools/vocal-range-finder-online/"><i
+                                    class="bi bi-mic me-2"></i>Vocal
+                                Range Finder</a></li>
+                        <li><a class="dropdown-item" href="/pitch-detector-tools/frequency-to-note-online/"><i
+                                    class="bi bi-arrow-left-right me-2"></i>Frequency
+                                to Note</a></li>
+                        <li><a class="dropdown-item" href="/pitch-detector-tools/note-to-frequency-online/"><i
+                                    class="bi bi-calculator me-2"></i>Note
+                                to Frequency</a></li>
+                    </ul>
+                </li>
+                <!-- analysis -->
+                <!-- voice editing tools -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-mic-fill me-1"></i>Voice & Edit
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+
+                        <li><a class="dropdown-item" href="/audio-editing-tools/"><i
+                                    class="bi bi-scissors me-2"></i>Audio Editing</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
 
-                <!-- Search Bar -->
-                <div class="hero-search">
+                        <li><a class="dropdown-item" href="/sound-analysis-tools/"><i
+                                    class="bi bi-music-note me-2"></i>Sound Analysis</a></li>
+                    </ul>
+                </li>
+                <!-- audio book -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-book me-1"></i>Audiobook Tools
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="/audiobook/"><i class="bi bi-grid me-2"></i>All Audiobook
+                                Tools</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/audiobook/audiobook-speed-calculator/"><i
+                                    class="bi bi-speedometer2 me-2"></i>Audiobook
+                                Speed Calculator</a></li>
+                        <li><a class="dropdown-item" href="/audiobook/audiobook-length-calculator/"><i
+                                    class="bi bi-clock me-2"></i>Audiobook
+                                Length Calculator</a></li>
+                        <li><a class="dropdown-item" href="/audiobook/audiobook-progress-calculator/"><i
+                                    class="bi bi-graph-up me-2"></i>Audiobook
+                                Progress Calculator</a></li>
+                        <li><a class="dropdown-item" href="/audiobook/audiobook-percentage-calculator/"><i
+                                    class="bi bi-percent me-2"></i>Audiobook
+                                Percentage Calculator</a></li>
+                        <li><a class="dropdown-item" href="/audiobook/audiobook-price-calculator/"><i
+                                    class="bi bi-currency-dollar me-2"></i>Audiobook
+                                Price Calculator</a></li>
+                    </ul>
+                </li>
+                <!-- spkeaker -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-speaker me-1"></i>Speaker Tools
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/">
+                                <i class="bi bi-grid me-2"></i>All Speaker Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/speaker-wattage-calculator/">
+                                <i class="bi bi-lightning me-2"></i>Speaker Wattage
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/speaker-impedance-calculator/">
+                                <i class="bi bi-diagram-3 me-2"></i>Impedance Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/amplifier-power-calculator/">
+                                <i class="bi bi-plug me-2"></i>Amplifier Power
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/sound-distance-drop-calculator/">
+                                <i class="bi bi-rulers me-2"></i>Sound Distance Drop
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/speaker-placement-calculator/">
+                                <i class="bi bi-arrows-move me-2"></i>Speaker Placement
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/room-acoustics-calculator/">
+                                <i class="bi bi-house me-2"></i>Room Acoustics
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/ported-enclosure-calculator/">
+                                <i class="bi bi-box me-2"></i>Ported Enclosure
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/sealed-box-calculator/">
+                                <i class="bi bi-box-seam me-2"></i>Sealed Box
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/speaker-tools/crossover-frequency-calculator/">
+                                <i class="bi bi-filter me-2"></i>Crossover Frequency
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+            <!-- <form class="d-flex" role="search" action="/search/" method="get">
+                <div class="input-group">
+                    <input class="form-control search-nav" type="search" name="q" placeholder="Search tools...">
+                    <button class="btn btn-search" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form> -->
+        </div>
+    </div>
+</nav>
+
+<!-- Global Search Modal -->
+<div id="globalSearchModal" class="search-modal-backdrop" onclick="closeGlobalSearch(event)">
+    <div class="search-modal-card" onclick="event.stopPropagation()">
+        <div class="search-modal-header">
+            <i class="bi bi-search search-modal-icon"></i>
+            <input type="text" id="modalSearchInput" class="search-modal-input"
+                placeholder="Search 60+ audio calculators & tools..." autocomplete="off">
+            <button type="button" class="search-modal-close" onclick="closeGlobalSearch()" aria-label="Close search">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="search-modal-tags">
+            <button type="button" class="search-tag active" data-cat="all"
+                onclick="filterModalCat(this, 'all')">All</button>
+            <button type="button" class="search-tag" data-cat="DJ & Production"
+                onclick="filterModalCat(this, 'DJ & Production')">DJ & Production</button>
+            <button type="button" class="search-tag" data-cat="Speaker Tools"
+                onclick="filterModalCat(this, 'Speaker Tools')">Speakers</button>
+            <button type="button" class="search-tag" data-cat="Pitch Detector"
+                onclick="filterModalCat(this, 'Pitch Detector')">Pitch & Tuning</button>
+            <button type="button" class="search-tag" data-cat="Music Theory"
+                onclick="filterModalCat(this, 'Music Theory')">Music Theory</button>
+            <button type="button" class="search-tag" data-cat="Sound Analysis"
+                onclick="filterModalCat(this, 'Sound Analysis')">Analysis</button>
+            <button type="button" class="search-tag" data-cat="Audio Editing"
+                onclick="filterModalCat(this, 'Audio Editing')">Editing</button>
+            <button type="button" class="search-tag" data-cat="Audiobook Tools"
+                onclick="filterModalCat(this, 'Audiobook Tools')">Audiobooks</button>
+        </div>
+        <div id="modalSearchResults" class="search-modal-results">
+            <!-- Results dynamically generated -->
+        </div>
+        <div class="search-modal-footer">
+            <span class="d-none d-sm-inline"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+            <span class="d-none d-sm-inline ms-3"><kbd>ESC</kbd> to close</span>
+            <span class="ms-auto"><i class="bi bi-soundwave text-teal me-1"></i>Pitch Detectors Tools</span>
+        </div>
+    </div>
+</div>
+
+    <main>
+        <section class="error-section py-5">
+            <div class="container text-center">
+                <p class="display-1 fw-bold text-primary mb-0">404</p>
+                <h1 class="error-title">Page Not Found</h1>
+                <p class="error-message">Sorry, the page you are looking for does not exist. It may have been moved,
+                    renamed, or the link may be broken.</p>
+                <a href="/" class="btn btn-primary mt-3">Go Back to Home</a>
+            </div>
+        </section>
+
+        <section class="py-4">
+            <div class="container">
+                <h2 class="text-center mb-3">Search for a Tool</h2>
+                <div class="hero-search mx-auto" style="max-width: 640px;">
                     <div class="search-container">
                         <i class="bi bi-search search-icon"></i>
                         <input type="text" id="globalSearch" class="search-input"
                             placeholder="Search for tools... (e.g., BPM calculator, pitch detector, metronome)">
-                        <button class="search-btn" onclick="performSearch()">Search</button>
                     </div>
                     <div id="searchResults" class="search-results"></div>
                 </div>
+            </div>
+        </section>
 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">60+</span>
-                        <span class="stat-label">Free Tools</span>
+        <section class="py-4">
+            <div class="container">
+                <h2 class="text-center mb-4">Popular Tools</h2>
+                <div class="row g-3 justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/dj-music-production-tools/bpm-calculator/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-speedometer2 fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">BPM Calculator</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Browser Based</span>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/dj-music-production-tools/bpm-tap-tempo/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-hand-index fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Tap Tempo</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Downloads Required</span>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/dj-music-production-tools/song-key-finder/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-key fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Song Key Finder</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/pitch-detector-tools/guitar-tuner-online/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-music-note-beamed fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Guitar Tuner</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/pitch-detector-tools/pitch-detector/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-soundwave fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Pitch Detector</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/pitch-detector-tools/vocal-range-finder-online/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-mic fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Vocal Range Finder</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/music-theory-tools/online-metronome/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-stopwatch fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Online Metronome</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/music-theory-tools/chord-identifier/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-vinyl fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Chord Identifier</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/music-theory-tools/scale-finder/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-grid-3x3 fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Scale Finder</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/sound-analysis-tools/decibel-meter/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-volume-up fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Decibel Meter</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/sound-analysis-tools/loudness-meter/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-speedometer fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Loudness Meter</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <a href="/sound-analysis-tools/microphone-test/" class="text-decoration-none">
+                            <div class="card h-100 text-center py-3">
+                                <div class="card-body">
+                                    <i class="bi bi-mic-fill fs-2 text-primary"></i>
+                                    <p class="card-text mt-2 mb-0 fw-semibold">Microphone Test</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="py-4 pb-5">
+            <div class="container text-center">
+                <h2 class="mb-3">Browse by Category</h2>
+                <a href="/pitch-detector-tools/" class="btn btn-outline-primary m-1">Pitch Detector Tools</a> <a href="/music-theory-tools/" class="btn btn-outline-primary m-1">Music Theory Tools</a> <a href="/dj-music-production-tools/" class="btn btn-outline-primary m-1">DJ & Music Production Tools</a> <a href="/speaker-tools/" class="btn btn-outline-primary m-1">Speaker Tools</a> <a href="/sound-analysis-tools/" class="btn btn-outline-primary m-1">Sound Analysis Tools</a> <a href="/audio-editing-tools/" class="btn btn-outline-primary m-1">Audio Editing Tools</a> <a href="/audiobook/" class="btn btn-outline-primary m-1">Audiobook Tools</a>
+            </div>
+        </section>
+    </main>
+
+<!-- Pitch Detectors Footer -->
+<footer class="main-footer">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="footer-brand">
+                    <img src="/assets/imgs/logo.png" alt="Pitch Detectors Logo" class="footer-logo me-2">
+                    <span>Pitch<span class="brand-accent">Detectors</span></span>
+                </h5>
+                <p class="footer-desc">Fast, accurate, and free online audio tools for musicians, DJs, producers,
+                    authors, and audio professionals. All tools run directly in your browser with zero installation.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+                <h6 class="footer-title">DJ & Production</h6>
+                <ul class="footer-links">
+                    <li><a href="/dj-music-production-tools/bpm-calculator/">BPM Calculator</a></li>
+                    <li><a href="/dj-music-production-tools/bpm-tap-tempo/">Tap Tempo</a></li>
+                    <li><a href="/dj-music-production-tools/song-key-finder/">Key Finder</a></li>
+                    <li><a href="/dj-music-production-tools/dj-transition-calculator/">Transition Calculator</a></li>
+                    <li><a href="/pitch-detector-tools/pitch-shift-calculator/">Pitch Shifter</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+                <h6 class="footer-title">Audiobook Tools</h6>
+                <ul class="footer-links">
+                    <li><a href="/audiobook/">All Audiobook Tools</a></li>
+                    <li><a href="/audiobook/audiobook-speed-calculator/">Speed Calculator</a></li>
+                    <li><a href="/audiobook/audiobook-length-calculator/">Length Calculator</a></li>
+                    <li><a href="/audiobook/audiobook-progress-calculator/">Progress Calculator</a></li>
+                    <li><a href="/audiobook/audiobook-price-calculator/">Price & Budget</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+                <h6 class="footer-title">Pitch & Theory</h6>
+                <ul class="footer-links">
+                    <li><a href="/pitch-detector-tools/guitar-tuner-online/">Guitar Tuner</a></li>
+                    <li><a href="/pitch-detector-tools/pitch-detector/">Pitch Detector</a></li>
+                    <li><a href="/pitch-detector-tools/vocal-range-finder-online/">Vocal Range</a></li>
+                    <li><a href="/music-theory-tools/online-metronome/">Metronome</a></li>
+                    <li><a href="/pitch-detector-tools/cents-calculator-online/">Cents Calculator</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+                <h6 class="footer-title">Speaker Tools</h6>
+                <ul class="footer-links">
+                    <li><a href="/speaker-tools/speaker-wattage-calculator/">Speaker Wattage</a></li>
+                    <li><a href="/speaker-tools/speaker-impedance-calculator/">Impedance Calculator</a></li>
+                    <li><a href="/speaker-tools/amplifier-power-calculator/">Amplifier Power</a></li>
+                    <li><a href="/speaker-tools/spl-calculator/">SPL Calculator</a></li>
+                    <li><a href="/speaker-tools/sound-distance-drop-calculator/">Distance Drop</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-1 col-md-3 col-6 mb-4">
+                <h6 class="footer-title">Company</h6>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy-policy.html">Privacy</a></li>
+                    <li><a href="/terms-and-conditions.html">Terms</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
+        <hr class="footer-divider">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="copyright">&copy; 2026 Pitch Detectors. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="made-with">Made with <i class="bi bi-heart-fill text-danger"></i> for musicians & creators
+                    worldwide</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-
-
-
-    <div id="footer"></div>
-
-    <script src="./assets/bootstrap5.js" defer></script>
-    <script src="./assets/tools.js" defer></script>
-
-
-    <script defer>
-
-        window.addEventListener("load", () => {
-            Promise.all([
-                fetch("header.html").then(res => res.text()),
-                fetch("footer.html").then(res => res.text())
-            ])
-                .then(([header, footer]) => {
-                    document.getElementById("header").innerHTML = header;
-                    document.getElementById("footer").innerHTML = footer;
-                })
-                .catch(err => console.error("Include load failed:", err));
-        });
-    </script>
-    <script defer>
-
-
-        const allTools = [
-            // DJ & Music Production
-            { name: 'BPM Calculator', url: '/dj-music-production-tools/bpm-calculator/', category: 'DJ & Production', icon: 'bi-speedometer2' },
-            { name: 'BPM Tap Tempo', url: '/dj-music-production-tools/bpm-tap-tempo/', category: 'DJ & Production', icon: 'bi-hand-index' },
-            { name: 'BPM to Milliseconds', url: '/dj-music-production-tools/bpm-to-ms/', category: 'DJ & Production', icon: 'bi-clock' },
-            { name: 'BPM to Speed', url: '/dj-music-production-tools/bpm-to-speed/', category: 'DJ & Production', icon: 'bi-arrow-repeat' },
-            { name: 'Song Length Calculator', url: '/dj-music-production-tools/song-length-from-bpm-calculator.html', category: 'DJ & Production', icon: 'bi-stopwatch' },
-            { name: 'Song Key Finder', url: '/dj-music-production-tools/song-key-finder/', category: 'DJ & Production', icon: 'bi-key' },
-            { name: 'BPM Pitch Calculator', url: '/BPM-Pitch-Calculator.html', category: 'DJ & Production', icon: 'bi-sliders' },
-            { name: 'DJ Transition Calculator', url: '/dj-music-production-tools/dj-transition-calculator/', category: 'DJ & Production', icon: 'bi-shuffle' },
-            { name: 'DJ Set Length Calculator', url: '/dj-music-production-tools/dj-set-length-calculator/', category: 'DJ & Production', icon: 'bi-clock-history' },
-            { name: 'Mix Compatibility Checker', url: '/dj-music-production-tools/mix-compatibility-checker/', category: 'DJ & Production', icon: 'bi-check2-circle' },
-
-            // Music Theory
-            { name: 'Online Metronome', url: '/music-theory-tools/online-metronome/', category: 'Music Theory', icon: 'bi-stopwatch' },
-            { name: 'Scale Finder', url: '/music-theory-tools/scale-finder/', category: 'Music Theory', icon: 'bi-grid-3x3' },
-            { name: 'Chord Identifier', url: '/music-theory-tools/chord-identifier/', category: 'Music Theory', icon: 'bi-vinyl' },
-            { name: 'Chord Progression Generator', url: '/music-theory-tools/chord-progression-generator/', category: 'Music Theory', icon: 'bi-diagram-3' },
-            { name: 'Melody Generator', url: '/music-theory-tools/melody-generator/', category: 'Music Theory', icon: 'bi-music-note' },
-            { name: 'Interval Calculator', url: '/music-theory-tools/interval-calculator/', category: 'Music Theory', icon: 'bi-arrow-left-right' },
-            { name: 'Rhythm Pattern Maker', url: '/music-theory-tools/rhythm-pattern-maker/', category: 'Music Theory', icon: 'bi-bar-chart' },
-
-            // Pitch Detector
-            { name: 'Guitar Tuner', url: '/pitch-detector-tools/guitar-tuner-online/', category: 'Pitch Detector', icon: 'bi-music-note-beamed' },
-            { name: 'Pitch Detector', url: '/pitch-detector-tools/pitch-detector.html', category: 'Pitch Detector', icon: 'bi-soundwave' },
-            { name: 'Vocal Range Finder', url: '/pitch-detector-tools/vocal-range-finder-online/', category: 'Pitch Detector', icon: 'bi-mic' },
-            { name: 'Vocal Range Test', url: '/pitch-detector-tools/vocal-range-test.html', category: 'Pitch Detector', icon: 'bi-mic-fill' },
-            { name: 'Frequency to Note', url: '/pitch-detector-tools/frequency-to-note-online/', category: 'Pitch Detector', icon: 'bi-arrow-left-right' },
-            { name: 'Note to Frequency', url: '/pitch-detector-tools/note-to-frequency-online/', category: 'Pitch Detector', icon: 'bi-calculator' },
-            { name: 'Cents Calculator', url: '/pitch-detector-tools/cents-calculator-online/', category: 'Pitch Detector', icon: 'bi-rulers' },
-            { name: 'Harmonic Series Calculator', url: '/pitch-detector-tools/harmonic-series-calculator-online/', category: 'Pitch Detector', icon: 'bi-graph-up' },
-            { name: 'Pitch Shift Calculator', url: '/pitch-detector-tools/pitch-shift-calculator/', category: 'Pitch Detector', icon: 'bi-arrow-repeat' },
-            { name: 'Transpose Calculator', url: '/pitch-detector-tools/transpose-calculator-online/', category: 'Pitch Detector', icon: 'bi-arrow-left-right' },
-
-            // Sound Analysis
-            { name: 'Decibel Meter', url: '/sound-analysis-tools/decibel-meter/', category: 'Sound Analysis', icon: 'bi-volume-up' },
-            { name: 'Loudness Meter', url: '/sound-analysis-tools/loudness-meter/', category: 'Sound Analysis', icon: 'bi-speedometer' },
-            { name: 'Waveform Visualizer', url: '/sound-analysis-tools/audio-to-waveform-visualizer.html', category: 'Sound Analysis', icon: 'bi-activity' },
-            { name: 'Microphone Test', url: '/sound-analysis-tools/microphone-test/', category: 'Sound Analysis', icon: 'bi-mic' },
-
-            // Audio Editing
-            { name: 'Audio Trimmer', url: '/audio-editing-tools/audio-trimmer/', category: 'Audio Editing', icon: 'bi-scissors' },
-            { name: 'Audio Merger', url: '/audio-editing-tools/audio-merger/', category: 'Audio Editing', icon: 'bi-union' },
-            { name: 'Audio Reverser', url: '/audio-editing-tools/reverse-audio.html', category: 'Audio Editing', icon: 'bi-arrow-counterclockwise' },
-            { name: 'Audio Speed Changer', url: '/audio-editing-tools/audio-speed-changer/', category: 'Audio Editing', icon: 'bi-speedometer' },
-            { name: 'Audio Normalizer', url: '/audio-editing-tools/audio-normalizer/', category: 'Audio Editing', icon: 'bi-sliders' },
-            { name: 'Audio Volume Booster', url: '/audio-editing-tools/Audio-Volume-Booster.html', category: 'Audio Editing', icon: 'bi-volume-up' },
-            { name: 'Loop Generator', url: '/audio-editing-tools/loop-generator/', category: 'Audio Editing', icon: 'bi-arrow-repeat' },
-
-            // Speaker Tools
-            { name: 'Speaker Load Balancer', url: '/speaker-tools/speaker-load-balancer/', category: 'Speaker Tools', icon: 'bi-diagram-3' },
-            { name: 'Speaker Impedance Calculator', url: '/speaker-tools/speaker-impedance-calculator/', category: 'Speaker Tools', icon: 'bi-lightning' },
-            { name: 'Speaker Sensitivity Calculator', url: '/speaker-tools/speaker-sensitivity-calculator/', category: 'Speaker Tools', icon: 'bi-graph-up' },
-            { name: 'Sensitivity vs Distance Calculator', url: '/speaker-tools/sensitivity-vs-distance-calculator/', category: 'Speaker Tools', icon: 'bi-rulers' },
-            { name: 'SPL Calculator', url: '/speaker-tools/spl-calculator/', category: 'Speaker Tools', icon: 'bi-volume-up' },
-            { name: 'SPL per Watt Calculator', url: '/speaker-tools/spl-per-watt/', category: 'Speaker Tools', icon: 'bi-bar-chart' },
-            { name: 'Crossover Frequency Calculator', url: '/speaker-tools/crossover-frequency-calculator/', category: 'Speaker Tools', icon: 'bi-sliders' },
-            { name: 'Crossover Slope Calculator', url: '/speaker-tools/crossover-slope-calculator/', category: 'Speaker Tools', icon: 'bi-graph-up-arrow' },
-            { name: 'Passive Crossover Calculator', url: '/speaker-tools/passive-crossover-calculator/', category: 'Speaker Tools', icon: 'bi-filter' },
-            { name: 'Room Modes Calculator', url: '/speaker-tools/room-modes-calculator/', category: 'Speaker Tools', icon: 'bi-house' },
-            { name: 'Room Volume Calculator', url: '/speaker-tools/room-volume-calculator/', category: 'Speaker Tools', icon: 'bi-box' },
-            { name: 'Speaker Placement Calculator', url: '/speaker-tools/speaker-placement-calculator/', category: 'Speaker Tools', icon: 'bi-geo-alt' },
-            { name: 'Speaker Wire Gauge Calculator', url: '/speaker-tools/speaker-wire-gauge-calculator/', category: 'Speaker Tools', icon: 'bi-plug' },
-            { name: 'Amplifier Power Calculator', url: '/speaker-tools/amplifier-power-calculator/', category: 'Speaker Tools', icon: 'bi-lightning-charge' },
-            { name: 'Subwoofer Enclosure Calculator', url: '/speaker-tools/subwoofer-enclosure-tuning-calculator/', category: 'Speaker Tools', icon: 'bi-speaker' },
-            { name: 'Ported Box Calculator', url: '/speaker-tools/ported-enclosure-calculator/', category: 'Speaker Tools', icon: 'bi-speaker-fill' },
-            { name: 'Sealed Box Calculator', url: '/speaker-tools/sealed-box-calculator/', category: 'Speaker Tools', icon: 'bi-box' },
-            { name: 'Zobel Network Calculator', url: '/speaker-tools/zobel-network-calculator/', category: 'Speaker Tools', icon: 'bi-diagram-2' },
-
-            // Audiobook Tools
-            { name: 'Audiobook Tools Hub', url: '/audiobook/', category: 'Audiobook Tools', icon: 'bi-grid' },
-            { name: 'Audiobook Length Calculator', url: '/audiobook/audiobook-length-calculator/', category: 'Audiobook Tools', icon: 'bi-clock' },
-            { name: 'Audiobook Speed Calculator', url: '/audiobook/audiobook-speed-calculator/', category: 'Audiobook Tools', icon: 'bi-speedometer' },
-            { name: 'Audiobook Price Calculator', url: '/audiobook/audiobook-price-calculator/', category: 'Audiobook Tools', icon: 'bi-currency-dollar' },
-            { name: 'Audiobook Progress Calculator', url: '/audiobook/audiobook-progress-calculator/', category: 'Audiobook Tools', icon: 'bi-graph-up' },
-            { name: 'Audiobook Percentage Calculator', url: '/audiobook/audiobook-percentage-calculator/', category: 'Audiobook Tools', icon: 'bi-percent' }
-        ];
-
+    <script src="/assets/bootstrap5.js" defer></script>
+    <script>
+        const allTools = [{"name": "BPM Calculator", "url": "/dj-music-production-tools/bpm-calculator/"}, {"name": "Tap Tempo", "url": "/dj-music-production-tools/bpm-tap-tempo/"}, {"name": "Song Key Finder", "url": "/dj-music-production-tools/song-key-finder/"}, {"name": "Guitar Tuner", "url": "/pitch-detector-tools/guitar-tuner-online/"}, {"name": "Pitch Detector", "url": "/pitch-detector-tools/pitch-detector/"}, {"name": "Vocal Range Finder", "url": "/pitch-detector-tools/vocal-range-finder-online/"}, {"name": "Online Metronome", "url": "/music-theory-tools/online-metronome/"}, {"name": "Chord Identifier", "url": "/music-theory-tools/chord-identifier/"}, {"name": "Scale Finder", "url": "/music-theory-tools/scale-finder/"}, {"name": "Decibel Meter", "url": "/sound-analysis-tools/decibel-meter/"}, {"name": "Loudness Meter", "url": "/sound-analysis-tools/loudness-meter/"}, {"name": "Microphone Test", "url": "/sound-analysis-tools/microphone-test/"}, {"name": "SPL Calculator", "url": "/speaker-tools/spl-calculator/"}, {"name": "Speaker Wattage Calculator", "url": "/speaker-tools/speaker-wattage-calculator/"}, {"name": "Audio Trimmer", "url": "/audio-editing-tools/audio-trimmer/"}, {"name": "Audio Merger", "url": "/audio-editing-tools/audio-merger/"}, {"name": "Audiobook Length Calculator", "url": "/audiobook/audiobook-length-calculator/"}, {"name": "Audiobook Price Calculator", "url": "/audiobook/audiobook-price-calculator/"}];
         const searchInput = document.getElementById('globalSearch');
         const searchResults = document.getElementById('searchResults');
-
         searchInput.addEventListener('input', function () {
             const query = this.value.toLowerCase().trim();
-
-            if (query.length < 2) {
-                searchResults.innerHTML = '';
-                searchResults.style.display = 'none';
-                return;
-            }
-
-            const filtered = allTools.filter(tool =>
-                tool.name.toLowerCase().includes(query) ||
-                tool.category.toLowerCase().includes(query)
-            ).slice(0, 8);
-
-            if (filtered.length === 0) {
-                searchResults.innerHTML = '<div class="search-no-results">No tools found</div>';
-            } else {
-                searchResults.innerHTML = filtered.map(tool => `
-                    <a href="${tool.url}" class="search-result-item">
-                        <i class="bi ${tool.icon}"></i>
-                        <div>
-                            <strong>${tool.name}</strong>
-                            <small>${tool.category}</small>
-                        </div>
-                    </a>
-                `).join('');
-            }
+            if (query.length < 2) { searchResults.innerHTML = ''; searchResults.style.display = 'none'; return; }
+            const filtered = allTools.filter(t => t.name.toLowerCase().includes(query)).slice(0, 8);
+            searchResults.innerHTML = filtered.length === 0
+                ? '<div class="search-no-results">No tools found</div>'
+                : filtered.map(t => `<a href="${t.url}" class="search-result-item"><div><strong>${t.name}</strong></div></a>`).join('');
             searchResults.style.display = 'block';
         });
-
         document.addEventListener('click', function (e) {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                 searchResults.style.display = 'none';
             }
         });
-
-        function performSearch() {
-            const query = searchInput.value.toLowerCase().trim();
-            if (query) {
-                window.location.href = '/search/?q=' + encodeURIComponent(query);
-            }
-        }
-
-        searchInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
-
     </script>
 </body>
 

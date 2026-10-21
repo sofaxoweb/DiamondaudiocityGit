@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="Notas de piano en el espectro de frecuencias de 20 Hz a 20 kHz">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">Notas de piano en el espectro de frecuencias (20 Hz – 20 kHz)</text>
+
+<!-- log axis: x = 60 + log10(f/20) * 226.667 -->
+<line x1="60" y1="330" x2="740" y2="330" stroke="#212529" stroke-width="2"/>
+<g font-size="13" fill="#212529" text-anchor="middle">
+<line x1="60" y1="330" x2="60" y2="340" stroke="#212529" stroke-width="2"/><text x="60" y="360">20 Hz</text>
+<line x1="150.2" y1="330" x2="150.2" y2="336" stroke="#6c757d" stroke-width="1.5"/><text x="150.2" y="360">50</text>
+<line x1="218.5" y1="330" x2="218.5" y2="340" stroke="#212529" stroke-width="2"/><text x="218.5" y="360">100</text>
+<line x1="286.7" y1="330" x2="286.7" y2="336" stroke="#6c757d" stroke-width="1.5"/><text x="286.7" y="360">200</text>
+<line x1="376.9" y1="330" x2="376.9" y2="340" stroke="#212529" stroke-width="2"/><text x="376.9" y="360">500</text>
+<line x1="445.2" y1="330" x2="445.2" y2="340" stroke="#212529" stroke-width="2"/><text x="445.2" y="360">1 kHz</text>
+<line x1="513.4" y1="330" x2="513.4" y2="336" stroke="#6c757d" stroke-width="1.5"/><text x="513.4" y="360">2 k</text>
+<line x1="603.6" y1="330" x2="603.6" y2="340" stroke="#212529" stroke-width="2"/><text x="603.6" y="360">5 k</text>
+<line x1="671.8" y1="330" x2="671.8" y2="340" stroke="#212529" stroke-width="2"/><text x="671.8" y="360">10 k</text>
+<line x1="740" y1="330" x2="740" y2="340" stroke="#212529" stroke-width="2"/><text x="740" y="360">20 kHz</text>
+</g>
+
+<!-- piano-key overlays: white keys with stems down to axis -->
+<g text-anchor="middle">
+<rect x="63" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="91" y="178" font-size="15" font-weight="bold" fill="#212529">A0</text><text x="91" y="200" font-size="13" fill="#6c757d">27.5 Hz</text><line x1="91" y1="222" x2="91.4" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="132" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="160" y="178" font-size="15" font-weight="bold" fill="#212529">A1</text><text x="160" y="200" font-size="13" fill="#6c757d">55 Hz</text><line x1="160" y1="222" x2="159.6" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="200" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="228" y="178" font-size="15" font-weight="bold" fill="#212529">A2</text><text x="228" y="200" font-size="13" fill="#6c757d">110 Hz</text><line x1="228" y1="222" x2="227.9" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="268" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="296" y="178" font-size="15" font-weight="bold" fill="#212529">A3</text><text x="296" y="200" font-size="13" fill="#6c757d">220 Hz</text><line x1="296" y1="222" x2="296.1" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="336" y="120" width="64" height="88" rx="6" fill="#eef4ff" stroke="#0d6efd" stroke-width="3"/><text x="368" y="152" font-size="16" font-weight="bold" fill="#0d6efd">A4</text><text x="368" y="176" font-size="13" font-weight="bold" fill="#0d6efd">440 Hz</text><text x="368" y="196" font-size="13" fill="#0d6efd">tono de concierto</text><line x1="368" y1="208" x2="364.3" y2="330" stroke="#0d6efd" stroke-width="2.5"/>
+<rect x="405" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="433" y="178" font-size="15" font-weight="bold" fill="#212529">A5</text><text x="433" y="200" font-size="13" fill="#6c757d">880 Hz</text><line x1="433" y1="222" x2="432.5" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="473" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="501" y="178" font-size="15" font-weight="bold" fill="#212529">A6</text><text x="501" y="200" font-size="13" fill="#6c757d">1760 Hz</text><line x1="501" y1="222" x2="500.8" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="541" y="150" width="56" height="72" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/><text x="569" y="178" font-size="15" font-weight="bold" fill="#212529">A7</text><text x="569" y="200" font-size="13" fill="#6c757d">3520 Hz</text><line x1="569" y1="222" x2="569" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="609" y="240" width="56" height="64" rx="6" fill="#212529"/><text x="637" y="264" font-size="15" font-weight="bold" fill="#ffffff">C8</text><text x="637" y="286" font-size="13" fill="#ffffff">4186 Hz</text><line x1="637" y1="240" x2="586.1" y2="330" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4 3"/>
+</g>
+<text x="24" y="410" font-size="14" fill="#6c757d">Las 88 teclas del piano van de A0 (27.5 Hz) a C8 (4186 Hz) — la percepción del tono es logarítmica, por eso el eje es logarítmico.</text>
+</svg>

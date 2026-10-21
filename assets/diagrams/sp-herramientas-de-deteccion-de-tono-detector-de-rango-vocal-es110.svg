@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="Registros vocales y zonas de passaggio">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">Registros vocales y zonas de passaggio</text>
+
+<!-- pitch arrow -->
+<line x1="120" y1="400" x2="120" y2="110" stroke="#6c757d" stroke-width="2" marker-end="url(#ah)"/>
+<defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<text x="60" y="255" font-size="14" fill="#6c757d" transform="rotate(-90 60 255)" text-anchor="middle">tono ascendente</text>
+<text x="120" y="420" font-size="13" fill="#6c757d" text-anchor="middle">grave</text>
+<text x="120" y="98" font-size="13" fill="#6c757d" text-anchor="middle">agudo</text>
+
+<!-- head profile (facing right, stylized) -->
+<path d="M 400 50 C 335 50, 285 105, 285 180 C 285 215, 292 245, 305 268 L 308 450 L 415 450 C 415 415, 418 400, 425 388 C 442 368, 450 350, 446 335 C 458 330, 464 320, 462 308 C 468 296, 470 284, 464 274 C 472 258, 474 238, 466 220 C 456 200, 450 190, 448 182 C 440 140, 425 50, 400 50 Z" fill="#f8f9fa" stroke="#212529" stroke-width="2.5"/>
+
+<!-- vocal tract tube -->
+<path d="M 456 310 C 430 316, 408 322, 400 336 C 394 356, 396 382, 400 406 C 402 428, 403 442, 403 450" fill="none" stroke="#0d6efd" stroke-width="24" stroke-linecap="round" opacity="0.35"/>
+<circle cx="402" cy="410" r="7" fill="#0d6efd" opacity="0.8"/>
+<text x="440" y="414" font-size="13" fill="#212529">cuerdas vocales</text>
+
+<!-- Registro de CABEZA zone -->
+<ellipse cx="360" cy="135" rx="82" ry="58" fill="#6f42c1" opacity="0.16"/>
+<ellipse cx="360" cy="135" rx="82" ry="58" fill="none" stroke="#6f42c1" stroke-width="2" stroke-dasharray="7 4"/>
+<!-- passaggio 2 (head/mix) -->
+<rect x="278" y="208" width="165" height="26" rx="13" fill="#ffc107" opacity="0.4" stroke="#b98a00" stroke-width="1.5" stroke-dasharray="6 4"/>
+<!-- Registro MIXTO zone -->
+<ellipse cx="398" cy="292" rx="78" ry="46" fill="#0dcaf0" opacity="0.2"/>
+<ellipse cx="398" cy="292" rx="78" ry="46" fill="none" stroke="#0dcaf0" stroke-width="2" stroke-dasharray="7 4"/>
+<!-- passaggio 1 (chest/mix) -->
+<rect x="300" y="348" width="160" height="26" rx="13" fill="#ffc107" opacity="0.4" stroke="#b98a00" stroke-width="1.5" stroke-dasharray="6 4"/>
+<!-- Registro de PECHO zone -->
+<ellipse cx="362" cy="418" rx="88" ry="34" fill="#0d6efd" opacity="0.16"/>
+<ellipse cx="362" cy="418" rx="88" ry="34" fill="none" stroke="#0d6efd" stroke-width="2" stroke-dasharray="7 4"/>
+
+<!-- right-side labels with leader lines -->
+<line x1="442" y1="120" x2="520" y2="100" stroke="#6c757d" stroke-width="1.5"/>
+<text x="528" y="96" font-size="15" font-weight="bold" fill="#6f42c1">Registro de CABEZA</text>
+<text x="528" y="116" font-size="13" fill="#6c757d">resuena en la cabeza — notas agudas</text>
+
+<line x1="443" y1="216" x2="520" y2="180" stroke="#6c757d" stroke-width="1.5"/>
+<text x="528" y="176" font-size="15" font-weight="bold" fill="#b98a00">Passaggio</text>
+<text x="528" y="196" font-size="13" fill="#6c757d">zona de transición (p. ej. ~E4–G4 en tenores)</text>
+
+<line x1="476" y1="285" x2="520" y2="255" stroke="#6c757d" stroke-width="1.5"/>
+<text x="528" y="251" font-size="15" font-weight="bold" fill="#0aa2c0">Registro MIXTO</text>
+<text x="528" y="271" font-size="13" fill="#6c757d">resonancia mixta — rango medio</text>
+
+<line x1="460" y1="356" x2="520" y2="330" stroke="#6c757d" stroke-width="1.5"/>
+<text x="528" y="326" font-size="15" font-weight="bold" fill="#b98a00">Passaggio</text>
+<text x="528" y="346" font-size="13" fill="#6c757d">zona de transición — de pecho a mixto</text>
+
+<line x1="440" y1="425" x2="520" y2="405" stroke="#6c757d" stroke-width="1.5"/>
+<text x="528" y="401" font-size="15" font-weight="bold" fill="#0d6efd">Registro de PECHO</text>
+<text x="528" y="421" font-size="13" fill="#6c757d">resuena en el pecho — notas graves</text>
+</svg>

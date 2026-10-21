@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">A Typical Club Set Arc</text>
+<line x1="80" y1="380.0" x2="720" y2="380.0" stroke="#e9ecef" stroke-width="1"/>
+<text x="68" y="385.0" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="end">115</text>
+<line x1="80" y1="315.0" x2="720" y2="315.0" stroke="#e9ecef" stroke-width="1"/>
+<text x="68" y="320.0" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="end">120</text>
+<line x1="80" y1="250.0" x2="720" y2="250.0" stroke="#e9ecef" stroke-width="1"/>
+<text x="68" y="255.0" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="end">125</text>
+<line x1="80" y1="185.0" x2="720" y2="185.0" stroke="#e9ecef" stroke-width="1"/>
+<text x="68" y="190.0" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="end">130</text>
+<line x1="80" y1="120.0" x2="720" y2="120.0" stroke="#e9ecef" stroke-width="1"/>
+<text x="68" y="125.0" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="end">135</text>
+<line x1="80" y1="120" x2="80" y2="380" stroke="#212529" stroke-width="2"/>
+<line x1="80" y1="380" x2="720" y2="380" stroke="#212529" stroke-width="2"/>
+<path d="M 80.0,341.0 C 176.0,341.0 208.0,263.0 272.0,263.0 S 368.0,211.0 432.0,211.0 S 515.2,159.0 560.0,159.0 S 656.0,289.0 720.0,289.0" fill="none" stroke="#0d6efd" stroke-width="3.5"/>
+<circle cx="80.0" cy="341.0" r="7" fill="#0d6efd" stroke="#ffffff" stroke-width="2"/>
+<text x="80.0" y="325.0" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">118 · warm-up</text>
+<circle cx="272.0" cy="263.0" r="7" fill="#0d6efd" stroke="#ffffff" stroke-width="2"/>
+<text x="272.0" y="247.0" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">124 · climb</text>
+<circle cx="432.0" cy="211.0" r="7" fill="#0d6efd" stroke="#ffffff" stroke-width="2"/>
+<text x="432.0" y="195.0" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">128</text>
+<circle cx="560.0" cy="159.0" r="7" fill="#0d6efd" stroke="#ffffff" stroke-width="2"/>
+<text x="560.0" y="143.0" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">132 · peak</text>
+<circle cx="720.0" cy="289.0" r="7" fill="#0d6efd" stroke="#ffffff" stroke-width="2"/>
+<text x="720.0" y="273.0" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">122 · close</text>
+<text x="400" y="415" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">Warm-up → climb → peak → close, mapped to BPM.</text>
+</svg>

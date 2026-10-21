@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">One Planned Transition: Pitch Move, Key Check, Timed Blend</text>
+<text x="24" y="66" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="start">Track A 124 BPM · 11B  →  Track B 128 BPM · 12B  ·  30-second crossfade</text>
+<rect x="553.3" y="100" width="186.7" height="250" fill="#0d6efd" opacity="0.12"/>
+<text x="646.6666666666667" y="92" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">30 s crossfade</text>
+<text x="24" y="144" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">Track A — 124 BPM · Camelot 11B</text>
+<polyline points="180.0,134.5 194.0,151.5 208.0,140.6 222.0,166.8 236.0,165.1 250.0,132.8 264.0,147.7 278.0,141.4 292.0,147.7 306.0,176.0 320.0,146.7 334.0,140.4 348.0,147.9 362.0,133.9 376.0,165.9 390.0,166.5 404.0,139.4 418.0,150.8 432.0,135.2 446.0,143.7 460.0,174.7 474.0,150.0 488.0,148.0 502.0,146.7 516.0,128.3 530.0,162.7 544.0,165.2 558.0,146.0 572.0,155.9 586.0,131.4 600.0,139.7 614.0,170.5 628.0,151.4 642.0,156.1 656.0,147.9 670.0,125.0 684.0,158.4 698.0,161.0 712.0,151.5 726.0,162.1 740.0,130.6" fill="none" stroke="#0d6efd" stroke-width="2"/>
+<text x="24" y="264" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">Track B — 128 BPM · Camelot 12B</text>
+<polyline points="180.0,273.5 194.0,245.3 208.0,271.8 222.0,271.4 236.0,274.9 250.0,290.7 264.0,254.8 278.0,256.6 292.0,273.9 306.0,264.7 320.0,290.0 334.0,277.5 348.0,249.3 362.0,269.7 376.0,263.3 390.0,274.4 404.0,294.2 418.0,259.3 432.0,260.2 446.0,267.9 460.0,259.0 474.0,291.2 488.0,280.4 502.0,255.6 516.0,269.9 530.0,255.8 544.0,271.8 558.0,294.9 572.0,264.1 586.0,266.3 600.0,263.8 614.0,253.2 628.0,289.5 642.0,281.4 656.0,263.0 670.0,272.5 684.0,250.1 698.0,268.1 712.0,292.5 726.0,267.9 740.0,273.8" fill="none" stroke="#198754" stroke-width="2"/>
+<rect x="180" y="120" width="560" height="190" fill="none" stroke="#adb5bd" stroke-width="1"/>
+<line x1="180.0" y1="315" x2="180.0" y2="330" stroke="#212529" stroke-width="2"/>
+<text x="180.0" y="348" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">0 s</text>
+<text x="180.0" y="118" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">16 bars</text>
+<line x1="366.7" y1="315" x2="366.7" y2="330" stroke="#212529" stroke-width="2"/>
+<text x="366.66666666666663" y="348" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">30 s</text>
+<text x="366.66666666666663" y="118" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">16 bars</text>
+<line x1="553.3" y1="315" x2="553.3" y2="330" stroke="#212529" stroke-width="2"/>
+<text x="553.3333333333333" y="348" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">60 s</text>
+<text x="553.3333333333333" y="118" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">16 bars</text>
+<line x1="740.0" y1="315" x2="740.0" y2="330" stroke="#212529" stroke-width="2"/>
+<text x="740.0" y="348" font-size="12" font-weight="normal" fill="#6c757d" text-anchor="middle">90 s</text>
+<line x1="90" y1="170" x2="165" y2="170" stroke="#b8860b" stroke-width="2.5"/>
+<polygon points="165,170 155,165 155,175" fill="#b8860b"/>
+<text x="60" y="162" font-size="13" font-weight="bold" fill="#b8860b" text-anchor="start">+3.23% pitch</text>
+<text x="400" y="400" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">+3.23% = 128 ÷ 124 − 1  ·  11B → 12B is one Camelot step — a safe key move</text>
+</svg>

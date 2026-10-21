@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">The Fastest Path From Reading About Tempo to Hearing It</text>
+<rect x="20" y="130" width="170" height="150" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<circle cx="48" cy="162" r="14" fill="#0d6efd"/>
+<text x="48" y="167" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="70" y="168" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">1 · Count it</text>
+<text x="34" y="196" font-size="13" font-weight="normal" fill="#212529" text-anchor="start">Count 1-2-3-4 on the kick</text>
+<text x="34" y="218" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="start">for a full minute, daily</text>
+<line x1="190" y1="205" x2="210" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="210,205 200,200 200,210" fill="#0d6efd"/>
+<rect x="210" y="130" width="170" height="150" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<circle cx="238" cy="162" r="14" fill="#0d6efd"/>
+<text x="238" y="167" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="260" y="168" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">2 · Tap it</text>
+<text x="224" y="196" font-size="13" font-weight="normal" fill="#212529" text-anchor="start">BPM Tap Tempo tool</text>
+<text x="224" y="218" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="start">aim within ±2 BPM</text>
+<line x1="380" y1="205" x2="400" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="400,205 390,200 390,210" fill="#0d6efd"/>
+<rect x="400" y="130" width="170" height="150" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<circle cx="428" cy="162" r="14" fill="#0d6efd"/>
+<text x="428" y="167" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="450" y="168" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">3 · Match it</text>
+<text x="414" y="196" font-size="13" font-weight="normal" fill="#212529" text-anchor="start">How DJs Match BPM Manually</text>
+<text x="414" y="218" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="start">two copies, one fader, screens off</text>
+<line x1="570" y1="205" x2="590" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="590,205 580,200 580,210" fill="#0d6efd"/>
+<rect x="590" y="130" width="170" height="150" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<circle cx="618" cy="162" r="14" fill="#0d6efd"/>
+<text x="618" y="167" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="640" y="168" font-size="14" font-weight="bold" fill="#212529" text-anchor="start">4 · Feel it</text>
+<text x="604" y="196" font-size="13" font-weight="normal" fill="#212529" text-anchor="start">BPM and Groove Explained</text>
+<text x="604" y="218" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="start">hear swing vs. straight by ear</text>
+<text x="400" y="350" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">Most learners stall at stage 2 — tap the kick, not the hi-hats.</text>
+</svg>

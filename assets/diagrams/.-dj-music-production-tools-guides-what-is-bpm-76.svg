@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">120 BPM = Two Beats Per Second</text>
+<line x1="60.0" y1="140" x2="60.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="60.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="60.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">0</text>
+<line x1="145.0" y1="140" x2="145.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="145.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="145.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">0.5</text>
+<line x1="230.0" y1="140" x2="230.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="230.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="230.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">1</text>
+<line x1="315.0" y1="140" x2="315.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="315.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="315.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">1.5</text>
+<line x1="400.0" y1="140" x2="400.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="400.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="400.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">2</text>
+<line x1="485.0" y1="140" x2="485.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="485.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="485.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">2.5</text>
+<line x1="570.0" y1="140" x2="570.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="570.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="570.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">3</text>
+<line x1="655.0" y1="140" x2="655.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="655.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="655.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">3.5</text>
+<line x1="740.0" y1="140" x2="740.0" y2="200" stroke="#212529" stroke-width="2"/>
+<circle cx="740.0" cy="225" r="10" fill="#0d6efd"/>
+<text x="740.0" y="262" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">4</text>
+<text x="60" y="288" font-size="13" font-weight="normal" fill="#212529" text-anchor="middle">0 s</text>
+<text x="740" y="288" font-size="13" font-weight="normal" fill="#212529" text-anchor="middle">4.0 s</text>
+<line x1="60" y1="200" x2="740" y2="200" stroke="#adb5bd" stroke-width="1"/>
+<text x="400" y="330" font-size="15" font-weight="bold" fill="#212529" text-anchor="middle">8 beats land in 4 seconds — one beat every 0.5 s.</text>
+</svg>

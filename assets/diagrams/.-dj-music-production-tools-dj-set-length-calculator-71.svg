@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">Fitting a Fixed Tracklist Into Your Slot</text>
+<rect x="60" y="150" width="680" height="80" rx="8" fill="#e9ecef"/>
+<rect x="60" y="150" width="589.3" height="80" rx="8" fill="#0d6efd"/>
+<rect x="649.3" y="150" width="90.7" height="80" fill="#ffc107" opacity="0.85"/>
+<rect x="649.3" y="150" width="90.7" height="80" fill="none" stroke="#212529" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="354.6666666666667" y="185" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">78 min tracklist</text>
+<text x="354.6666666666667" y="210" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">87%</text>
+<text x="694.6666666666667" y="178" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">12 min</text>
+<text x="694.6666666666667" y="200" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">13%</text>
+<text x="400" y="285" font-size="15" font-weight="bold" fill="#212529" text-anchor="middle">“Breathing room” — requests and reading the crowd</text>
+<text x="400" y="315" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">78 ÷ 90 = 86.7% ≈ 87% full · a tracklist at 100% leaves no room to react</text>
+</svg>

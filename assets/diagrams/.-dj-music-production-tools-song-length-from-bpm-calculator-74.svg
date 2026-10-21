@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">Song-Length Formula Pipeline</text>
+<rect x="20" y="150" width="168" height="110" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="104.0" y="192" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Bars × beats per bar</text>
+<text x="104.0" y="218" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">128 × 4</text>
+<line x1="188" y1="205" x2="198" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="198,205 188,200 188,210" fill="#0d6efd"/>
+<rect x="198" y="150" width="168" height="110" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="282.0" y="192" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Total beats</text>
+<text x="282.0" y="218" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">512 beats</text>
+<line x1="366" y1="205" x2="376" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="376,205 366,200 366,210" fill="#0d6efd"/>
+<rect x="376" y="150" width="168" height="110" rx="8" fill="#f8f9fa" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="460.0" y="192" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">÷ BPM × 60</text>
+<text x="460.0" y="218" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">512 ÷ 128 × 60</text>
+<line x1="544" y1="205" x2="554" y2="205" stroke="#0d6efd" stroke-width="2.5"/>
+<polygon points="554,205 544,200 544,210" fill="#0d6efd"/>
+<rect x="554" y="150" width="168" height="110" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="1.5"/>
+<text x="638.0" y="192" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Clock time</text>
+<text x="638.0" y="218" font-size="14" font-weight="bold" fill="#198754" text-anchor="middle">240 s = 4:00</text>
+<text x="400" y="330" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">Why club tracks land on 4:00 — 128 bars × 4 beats at 128 BPM is exactly 240 seconds.</text>
+</svg>

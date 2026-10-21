@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="40" font-size="20" font-weight="bold" fill="#212529">Genre Tempos: 80–180 BPM</text>
+<rect x="60" y="190" width="680" height="44" rx="8" fill="#e9ecef"/>
+<rect x="94.0" y="190" width="68.0" height="44" fill="#6c757d" opacity="0.85"/>
+<text x="128.0" y="172" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Hip-hop ~90</text>
+<line x1="128.0" y1="178" x2="128.0" y2="190" stroke="#6c757d" stroke-width="2"/>
+<rect x="332.0" y="190" width="54.4" height="44" fill="#0d6efd" opacity="0.85"/>
+<text x="359.2" y="172" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">House</text>
+<line x1="359.2" y1="178" x2="359.2" y2="190" stroke="#0d6efd" stroke-width="2"/>
+<rect x="366.0" y="190" width="81.6" height="44" fill="#198754" opacity="0.85"/>
+<text x="406.8" y="262" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Techno</text>
+<line x1="406.8" y1="234" x2="406.8" y2="246" stroke="#198754" stroke-width="2"/>
+<rect x="447.6" y="190" width="54.4" height="44" fill="#b8860b" opacity="0.85"/>
+<text x="474.8" y="172" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Trance</text>
+<line x1="474.8" y1="178" x2="474.8" y2="190" stroke="#b8860b" stroke-width="2"/>
+<rect x="658.4" y="190" width="81.6" height="44" fill="#dc3545" opacity="0.85"/>
+<text x="699.2" y="262" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">Drum and bass ~174</text>
+<line x1="699.2" y1="234" x2="699.2" y2="246" stroke="#dc3545" stroke-width="2"/>
+<line x1="60.0" y1="234" x2="60.0" y2="244" stroke="#212529" stroke-width="2"/>
+<text x="60.0" y="300" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">80</text>
+<line x1="196.0" y1="234" x2="196.0" y2="244" stroke="#212529" stroke-width="2"/>
+<text x="196.0" y="300" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">100</text>
+<line x1="332.0" y1="234" x2="332.0" y2="244" stroke="#212529" stroke-width="2"/>
+<text x="332.0" y="300" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">120</text>
+<line x1="468.0" y1="234" x2="468.0" y2="244" stroke="#212529" stroke-width="2"/>
+<text x="468.0" y="300" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">140</text>
+<line x1="604.0" y1="234" x2="604.0" y2="244" stroke="#212529" stroke-width="2"/>
+<text x="604.0" y="300" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">160</text>
+<line x1="740.0" y1="234" x2="740.0" y2="244" stroke="#212529" stroke-width="2"/>
+<text x="740.0" y="300" font-size="13" font-weight="normal" fill="#6c757d" text-anchor="middle">180</text>
+<text x="400" y="350" font-size="14" font-weight="normal" fill="#6c757d" text-anchor="middle">Genre tempos form a near-continuous ladder from hip-hop (~90) to drum and bass (~174).</text>
+</svg>

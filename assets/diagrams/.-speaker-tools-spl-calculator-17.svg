@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Each 10× Watts = +10 dB SPL</title>
+<desc>Every tenfold jump in amplifier power buys just 10 dB more sound pressure level.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Each 10× Watts = +10 dB SPL</text>
+<line x1="110" y1="400" x2="670" y2="400" stroke="#212529" stroke-width="2"/>
+<line x1="110" y1="400" x2="110" y2="100" stroke="#212529" stroke-width="2"/>
+<text x="390.0" y="438" font-size="14" font-weight="400" fill="#6c757d" text-anchor="middle">Power (watts)</text>
+<text x="48" y="250.0" font-size="14" font-weight="400" fill="#6c757d" text-anchor="middle" transform="rotate(-90 48 250.0)">SPL gain (dB)</text>
+<line x1="110" y1="382.3529411764706" x2="670" y2="382.3529411764706" stroke="#dee2e6" stroke-width="1"/>
+<text x="100" y="387.3529411764706" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+0</text>
+<line x1="110" y1="294.11764705882354" x2="670" y2="294.11764705882354" stroke="#dee2e6" stroke-width="1"/>
+<text x="100" y="299.11764705882354" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+10</text>
+<line x1="110" y1="205.88235294117646" x2="670" y2="205.88235294117646" stroke="#dee2e6" stroke-width="1"/>
+<text x="100" y="210.88235294117646" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+20</text>
+<line x1="110" y1="117.64705882352939" x2="670" y2="117.64705882352939" stroke="#dee2e6" stroke-width="1"/>
+<text x="100" y="122.64705882352939" font-size="13" font-weight="400" fill="#6c757d" text-anchor="end">+30</text>
+<text x="110.0" y="422" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">1</text>
+<text x="296.66666666666663" y="422" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">10</text>
+<text x="483.3333333333333" y="422" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">100</text>
+<text x="670.0" y="422" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">1000</text>
+<polyline points="110.0,382.4 296.7,382.4 296.7,294.1 483.3,294.1 483.3,205.9 670.0,205.9 670.0,117.6" fill="none" stroke="#0d6efd" stroke-width="3.5"/>
+<circle cx="110.0" cy="382.4" r="7" fill="#0d6efd"/>
+<text x="110.0" y="366.3529411764706" font-size="13" font-weight="700" fill="#212529" text-anchor="middle">1 W → +0 dB</text>
+<circle cx="296.7" cy="294.1" r="7" fill="#0d6efd"/>
+<text x="296.66666666666663" y="278.11764705882354" font-size="13" font-weight="700" fill="#212529" text-anchor="middle">10 W → +10 dB</text>
+<circle cx="483.3" cy="205.9" r="7" fill="#0d6efd"/>
+<text x="483.3333333333333" y="189.88235294117646" font-size="13" font-weight="700" fill="#212529" text-anchor="middle">100 W → +20 dB</text>
+<circle cx="670.0" cy="117.6" r="7" fill="#0d6efd"/>
+<text x="670.0" y="101.64705882352939" font-size="13" font-weight="700" fill="#212529" text-anchor="middle">1000 W → +30 dB</text>
+<rect x="130" y="120" width="280" height="56" rx="8" fill="#f2fbf5" stroke="#198754" stroke-width="1.5"/>
+<text x="270" y="144" font-size="13.5" font-weight="700" fill="#198754" text-anchor="middle">Each flat tread:</text>
+<text x="270" y="166" font-size="13.5" font-weight="400" fill="#198754" text-anchor="middle">x10 power = +10 dB</text>
+<text x="400" y="62" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">To sound twice as loud (+10 dB) you need ten times the watts</text>
+</svg>

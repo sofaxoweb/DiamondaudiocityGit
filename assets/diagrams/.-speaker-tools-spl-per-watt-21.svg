@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Where 100 W Really Goes (88 dB Speaker)</title>
+<desc>A typical 88 dB speaker turns about 0.4% of electrical power into sound; the rest becomes heat.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Where 100 W Really Goes (88 dB Speaker)</text>
+<rect x="60" y="160" width="130" height="120" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="125" y="210" font-size="20" font-weight="700" fill="#212529" text-anchor="middle">100 W</text>
+<text x="125" y="236" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">electrical in</text>
+<defs><marker id="ah0d6efd" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#0d6efd"/></marker></defs>
+<line x1="190" y1="220" x2="235" y2="220" stroke="#0d6efd" stroke-width="2.5" marker-end="url(#ah0d6efd)"/>
+<rect x="245" y="175" width="160" height="40" rx="8" fill="#ffffff" stroke="#198754" stroke-width="2"/>
+<text x="325" y="201" font-size="13.5" font-weight="700" fill="#198754" text-anchor="middle">0.4 W sound (about 0.4%)</text>
+<rect x="245" y="235" width="160" height="60" rx="8" fill="#ffffff" stroke="#dc3545" stroke-width="2"/>
+<text x="325" y="258" font-size="14" font-weight="700" fill="#dc3545" text-anchor="middle">99.6 W heat</text>
+<text x="325" y="278" font-size="13" font-weight="400" fill="#dc3545" text-anchor="middle">(about 99.6%)</text>
+<path d="M430,183.0 A20,20 0 0 1 430,207.0" fill="none" stroke="#198754" stroke-width="2.5"/>
+<path d="M430,173.4 A36,36 0 0 1 430,216.6" fill="none" stroke="#198754" stroke-width="2.5"/>
+<path d="M430,163.8 A52,52 0 0 1 430,226.2" fill="none" stroke="#198754" stroke-width="2.5"/>
+<path d="M470,300 q10,-10 0,-20 q-10,-10 0,-20" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<path d="M510,300 q10,-10 0,-20 q-10,-10 0,-20" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<path d="M550,300 q10,-10 0,-20 q-10,-10 0,-20" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<path d="M590,300 q10,-10 0,-20 q-10,-10 0,-20" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<path d="M630,300 q10,-10 0,-20 q-10,-10 0,-20" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<text x="550" y="330" font-size="13" font-weight="400" fill="#dc3545" text-anchor="middle">heat radiates away</text>
+<text x="400" y="380" font-size="14" font-weight="400" fill="#6c757d" text-anchor="middle">That is why speaker efficiency matters more than raw amplifier watts.</text>
+<text x="400" y="404" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">Typical direct-radiator speakers are under 1% efficient.</text>
+</svg>

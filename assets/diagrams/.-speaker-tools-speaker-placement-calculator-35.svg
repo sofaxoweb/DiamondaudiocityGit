@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Diagram of the subwoofer crawl technique with listening test positions around the room.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">The subwoofer crawl: test positions</text>
+<rect x="170" y="80" width="460" height="300" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<rect x="352" y="240" width="96" height="50" rx="6" fill="#212529"/>
+<text x="400" y="270" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">SUB at</text>
+<text x="400" y="286" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">listening seat</text>
+<circle cx="230" cy="130" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="230" y="135" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">1</text>
+<circle cx="400" cy="130" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="400" y="135" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">2</text>
+<circle cx="570" cy="130" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="570" y="135" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">3</text>
+<circle cx="570" cy="230" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="570" y="235" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">4</text>
+<circle cx="570" cy="330" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="570" y="335" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">5</text>
+<circle cx="400" cy="330" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="400" y="335" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">6</text>
+<circle cx="230" cy="330" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="230" y="335" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">7</text>
+<circle cx="230" cy="230" r="17" fill="#ffffff" stroke="#0d6efd" stroke-width="2.5"/>
+<text x="230" y="235" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle" font-weight="bold">8</text>
+<polyline points="230.0,210.0 235.3,222.7 249.0,223.8 238.6,232.8 241.8,246.2 230.0,239.0 218.2,246.2 221.4,232.8 211.0,223.8 224.7,222.7" fill="#ffc107" stroke="#856404" stroke-width="2"/>
+<polyline points="570.0,110.0 575.3,122.7 589.0,123.8 578.6,132.8 581.8,146.2 570.0,139.0 558.2,146.2 561.4,132.8 551.0,123.8 564.7,122.7" fill="#ffc107" stroke="#856404" stroke-width="2"/>
+<text x="255" y="218" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="start">best</text>
+<text x="595" y="118" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="start">best</text>
+<text x="400" y="415" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle">Put the sub at your seat, play bass, crawl — where it sounds best is where the sub goes</text>
+</svg>

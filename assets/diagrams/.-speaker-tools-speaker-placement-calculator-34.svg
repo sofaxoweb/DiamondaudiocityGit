@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Top-down room diagram showing speaker triangle, 38-percent listening position, and reflection points.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Stereo speaker placement (top-down)</text>
+<rect x="120" y="70" width="560" height="320" fill="#ffffff" stroke="#212529" stroke-width="3"/>
+<text x="400" y="60" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">FRONT WALL</text>
+<line x1="332.8" y1="70" x2="332.8" y2="390" stroke="#0d6efd" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="340.8" y="96" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#0d6efd" text-anchor="start" font-weight="bold">38% of room length</text>
+<rect x="242" y="185" width="36" height="30" rx="4" fill="#212529"/>
+<text x="260" y="234" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">L</text>
+<rect x="522" y="185" width="36" height="30" rx="4" fill="#212529"/>
+<text x="540" y="234" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">R</text>
+<circle cx="452.8" cy="360" r="16" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="452.8" y="392" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">Listener</text>
+<line x1="260" y1="200" x2="540" y2="200" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="260" y1="200" x2="452.8" y2="360" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="540" y1="200" x2="452.8" y2="360" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="400" y="178" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle" font-style="italic">equilateral triangle</text>
+<rect x="112" y="230" width="16" height="60" fill="#ffc107" stroke="#856404" stroke-width="2"/>
+<rect x="672" y="230" width="16" height="60" fill="#ffc107" stroke="#856404" stroke-width="2"/>
+<text x="120" y="312" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">1st reflection</text>
+<text x="680" y="312" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#856404" text-anchor="middle">1st reflection</text>
+<rect x="600" y="330" width="56" height="44" rx="6" fill="#212529"/>
+<text x="628" y="398" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">SUB</text>
+<text x="628" y="412" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">in corner</text>
+</svg>

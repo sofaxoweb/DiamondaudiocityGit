@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="Anatomía de la pantalla de un afinador de guitarra">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="34" font-size="20" font-weight="bold" fill="#212529">Anatomía de la pantalla de un afinador de guitarra</text>
+
+<!-- tuner panel mock -->
+<rect x="40" y="70" width="400" height="330" rx="16" fill="#f8f9fa" stroke="#212529" stroke-width="2"/>
+<text x="240" y="180" font-size="96" font-weight="bold" fill="#212529" text-anchor="middle">E</text>
+<text x="240" y="222" font-size="22" fill="#6c757d" text-anchor="middle">82.4 Hz</text>
+
+<!-- cents bar -->
+<line x1="80" y1="270" x2="400" y2="270" stroke="#212529" stroke-width="3"/>
+<g stroke="#212529" stroke-width="2">
+<line x1="80" y1="262" x2="80" y2="278"/><line x1="160" y1="264" x2="160" y2="276"/><line x1="240" y1="258" x2="240" y2="282"/><line x1="320" y1="264" x2="320" y2="276"/><line x1="400" y1="262" x2="400" y2="278"/>
+</g>
+<g font-size="13" fill="#6c757d" text-anchor="middle">
+<text x="80" y="296">−50¢</text><text x="160" y="296">−25¢</text><text x="240" y="296">0</text><text x="320" y="296">+25¢</text><text x="400" y="296">+50¢</text>
+</g>
+<!-- needle at +3 cents -->
+<polygon points="256,248 272,248 264,268" fill="#dc3545"/>
+<rect x="262" y="226" width="4" height="22" fill="#dc3545"/>
+
+<!-- status badge -->
+<rect x="150" y="322" width="180" height="52" rx="26" fill="#198754"/>
+<text x="240" y="356" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">✓ AFINADO</text>
+
+<!-- leader lines to labels -->
+<line x1="440" y1="150" x2="490" y2="110" stroke="#6c757d" stroke-width="1.5"/>
+<text x="498" y="106" font-size="15" font-weight="bold" fill="#212529">Lectura de la nota</text>
+<text x="498" y="126" font-size="13" fill="#6c757d">el nombre de la nota más cercana</text>
+
+<line x1="440" y1="212" x2="490" y2="180" stroke="#6c757d" stroke-width="1.5"/>
+<text x="498" y="176" font-size="15" font-weight="bold" fill="#212529">Línea de frecuencia</text>
+<text x="498" y="196" font-size="13" fill="#6c757d">Hz medidos de la cuerda</text>
+
+<line x1="440" y1="268" x2="490" y2="250" stroke="#6c757d" stroke-width="1.5"/>
+<text x="498" y="246" font-size="15" font-weight="bold" fill="#212529">Medidor de cents + aguja</text>
+<text x="498" y="266" font-size="13" fill="#6c757d">aguja a la izquierda = grave, a la derecha = agudo,</text>
+<text x="498" y="284" font-size="13" fill="#6c757d">centro = afinado</text>
+
+<line x1="440" y1="348" x2="490" y2="330" stroke="#6c757d" stroke-width="1.5"/>
+<text x="498" y="326" font-size="15" font-weight="bold" fill="#212529">Indicador de estado</text>
+<text x="498" y="346" font-size="13" fill="#6c757d">GRAVE (rojo) · AGUDO (ámbar) ·</text>
+<text x="498" y="364" font-size="13" fill="#6c757d">AFINADO (verde)</text>
+</svg>

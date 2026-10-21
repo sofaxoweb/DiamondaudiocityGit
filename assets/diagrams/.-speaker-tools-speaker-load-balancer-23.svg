@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Diagram of a 70V constant-voltage system with transformer tap settings per speaker.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">70V constant-voltage system</text>
+<rect x="50" y="190" width="110" height="90" rx="8" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="105" y="226" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">70V</text>
+<text x="105" y="248" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">AMP</text>
+<line x1="160" y1="215" x2="720" y2="215" stroke="#212529" stroke-width="3"/>
+<line x1="160" y1="240" x2="720" y2="240" stroke="#212529" stroke-width="3"/>
+<text x="440" y="200" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#6c757d" text-anchor="middle" font-style="italic">70.7 V line — everything in parallel, no ohm math</text>
+<line x1="240" y1="215" x2="240" y2="280" stroke="#212529" stroke-width="2.5"/>
+<line x1="240" y1="240" x2="240" y2="280" stroke="#212529" stroke-width="2.5"/>
+<rect x="195" y="280" width="90" height="52" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="240" y="302" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Lobby</text>
+<text x="240" y="323" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle">tap: 15 W</text>
+<line x1="360" y1="215" x2="360" y2="280" stroke="#212529" stroke-width="2.5"/>
+<line x1="360" y1="240" x2="360" y2="280" stroke="#212529" stroke-width="2.5"/>
+<rect x="315" y="280" width="90" height="52" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="360" y="302" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Office</text>
+<text x="360" y="323" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle">tap: 7.5 W</text>
+<line x1="480" y1="215" x2="480" y2="280" stroke="#212529" stroke-width="2.5"/>
+<line x1="480" y1="240" x2="480" y2="280" stroke="#212529" stroke-width="2.5"/>
+<rect x="435" y="280" width="90" height="52" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="480" y="302" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Hall</text>
+<text x="480" y="323" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle">tap: 30 W</text>
+<line x1="600" y1="215" x2="600" y2="280" stroke="#212529" stroke-width="2.5"/>
+<line x1="600" y1="240" x2="600" y2="280" stroke="#212529" stroke-width="2.5"/>
+<rect x="555" y="280" width="90" height="52" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="600" y="302" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Store</text>
+<text x="600" y="323" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#0d6efd" text-anchor="middle">tap: 7.5 W</text>
+<rect x="50" y="360" width="700" height="58" rx="8" fill="#e7f1ff" stroke="#0d6efd" stroke-width="1.5"/>
+<text x="400" y="384" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#212529" text-anchor="middle" font-weight="bold">Total taps: 15 + 7.5 + 30 + 7.5 = 60 W</text>
+<text x="400" y="408" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#212529" text-anchor="middle">Add 20% headroom → 60 × 1.2 = 72 W → use a 75 W (or larger) 70V amp</text>
+</svg>

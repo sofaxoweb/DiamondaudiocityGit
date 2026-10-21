@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Matching Tasks to the Right Tool Category</title>
+<desc>Six common audio tasks routed to the correct tool category hub.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Matching Tasks to the Right Tool Category</text>
+<rect x="20" y="78" width="290" height="52" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="165" y="110" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">Find a song's tempo</text>
+<rect x="490" y="78" width="290" height="52" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="2"/>
+<text x="635" y="110" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">DJ &amp; Music Production</text>
+<defs><marker id="ah6c757d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<line x1="312" y1="104" x2="488" y2="104" stroke="#6c757d" stroke-width="2" marker-end="url(#ah6c757d)"/>
+<rect x="20" y="140" width="290" height="52" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="165" y="172" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">Tune a guitar or bass</text>
+<rect x="490" y="140" width="290" height="52" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="2"/>
+<text x="635" y="172" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Pitch &amp; Tuning</text>
+<defs><marker id="ah6c757d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<line x1="312" y1="166" x2="488" y2="166" stroke="#6c757d" stroke-width="2" marker-end="url(#ah6c757d)"/>
+<rect x="20" y="202" width="290" height="52" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="165" y="234" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">Check how loud a room is</text>
+<rect x="490" y="202" width="290" height="52" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="2"/>
+<text x="635" y="234" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Sound Analysis</text>
+<defs><marker id="ah6c757d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<line x1="312" y1="228" x2="488" y2="228" stroke="#6c757d" stroke-width="2" marker-end="url(#ah6c757d)"/>
+<rect x="20" y="264" width="290" height="52" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="165" y="296" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">Cut silence from a recording</text>
+<rect x="490" y="264" width="290" height="52" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="2"/>
+<text x="635" y="296" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Audio Editing</text>
+<defs><marker id="ah6c757d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<line x1="312" y1="290" x2="488" y2="290" stroke="#6c757d" stroke-width="2" marker-end="url(#ah6c757d)"/>
+<rect x="20" y="326" width="290" height="52" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="165" y="358" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">Match an amplifier to speakers</text>
+<rect x="490" y="326" width="290" height="52" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="2"/>
+<text x="635" y="358" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Speaker &amp; Acoustic Tools</text>
+<defs><marker id="ah6c757d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<line x1="312" y1="352" x2="488" y2="352" stroke="#6c757d" stroke-width="2" marker-end="url(#ah6c757d)"/>
+<rect x="20" y="388" width="290" height="52" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="165" y="420" font-size="14" font-weight="400" fill="#212529" text-anchor="middle">Practice steady timing</text>
+<rect x="490" y="388" width="290" height="52" rx="8" fill="#f8f9fa" stroke="#198754" stroke-width="2"/>
+<text x="635" y="420" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Music Theory</text>
+<defs><marker id="ah6c757d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#6c757d"/></marker></defs>
+<line x1="312" y1="414" x2="488" y2="414" stroke="#6c757d" stroke-width="2" marker-end="url(#ah6c757d)"/>
+<text x="165" y="66" font-size="14" font-weight="700" fill="#6c757d" text-anchor="middle">Your task</text>
+<text x="635" y="66" font-size="14" font-weight="700" fill="#6c757d" text-anchor="middle">Start in this category</text>
+</svg>

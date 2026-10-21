@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img">
+<title>Speaker Wire Voltage Drop</title>
+<desc>Voltage divides between wire resistance (lost as heat) and the speaker.</desc>
+<rect x="0" y="0" width="800" height="450" fill="#ffffff"/>
+<text x="20" y="36" font-size="20" font-weight="700" fill="#212529">Speaker Wire Voltage Drop</text>
+<rect x="40" y="170" width="120" height="110" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="100" y="215" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Amplifier</text>
+<text x="100" y="238" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">V amp</text>
+<line x1="160" y1="180" x2="300" y2="180" stroke="#212529" stroke-width="2.5"/>
+<line x1="500" y1="180" x2="640" y2="180" stroke="#212529" stroke-width="2.5"/>
+<polyline points="300,180 320,162 340,198 360,162 380,198 400,162 420,198 440,180 500,180" fill="none" stroke="#dc3545" stroke-width="3"/>
+<text x="400" y="145" font-size="14" font-weight="700" fill="#dc3545" text-anchor="middle">Wire resistance (go + return)</text>
+<text x="400" y="122" font-size="13" font-weight="400" fill="#dc3545" text-anchor="middle">V wire lost here as heat</text>
+<path d="M340,104 q8,-8 0,-16 q-8,-8 0,-16" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<path d="M400,104 q8,-8 0,-16 q-8,-8 0,-16" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<path d="M460,104 q8,-8 0,-16 q-8,-8 0,-16" fill="none" stroke="#dc3545" stroke-width="2.5"/>
+<line x1="160" y1="270" x2="640" y2="270" stroke="#212529" stroke-width="2.5"/>
+<line x1="160" y1="180" x2="160" y2="270" stroke="#212529" stroke-width="2.5"/>
+<line x1="640" y1="180" x2="640" y2="270" stroke="#212529" stroke-width="2.5"/>
+<rect x="640" y="170" width="120" height="110" rx="8" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<text x="700" y="215" font-size="14" font-weight="700" fill="#212529" text-anchor="middle">Speaker</text>
+<text x="700" y="238" font-size="13" font-weight="400" fill="#6c757d" text-anchor="middle">V spk</text>
+<text x="400" y="330" font-size="17" font-weight="700" fill="#212529" text-anchor="middle">V amp  =  V wire  +  V speaker</text>
+<text x="400" y="358" font-size="14" font-weight="400" fill="#6c757d" text-anchor="middle">Power wasted in the wire:  P = I² × R wire</text>
+<text x="400" y="382" font-size="13.5" font-weight="400" fill="#6c757d" text-anchor="middle">Longer, thinner wire = more resistance = less voltage at the speaker.</text>
+</svg>

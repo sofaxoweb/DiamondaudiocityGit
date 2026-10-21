@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Diagram comparing total impedance for series, parallel, and series-parallel wiring of four 8-ohm speakers.">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Wiring four 8-ohm speakers: total load</text>
+<text x="150" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">All series</text>
+<line x1="150" y1="86" x2="150" y2="352" stroke="#212529" stroke-width="3"/>
+<circle cx="150" cy="130" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="150" y="135" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="150" cy="195" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="150" y="200" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="150" cy="260" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="150" y="265" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="150" cy="325" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="150" y="330" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<text x="162" y="104" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="start">from amp</text>
+<text x="162" y="344" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="start">back to amp</text>
+<text x="150" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#212529" text-anchor="middle" font-weight="bold">8+8+8+8 = 32 Ω</text>
+<text x="150" y="396" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">safe but very quiet</text>
+<text x="400" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">All parallel</text>
+<circle cx="310" cy="215" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="310" y="220" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="352" cy="215" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="352" y="220" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="394" cy="215" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="394" y="220" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="436" cy="215" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="436" y="220" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="280" y1="180" x2="466" y2="180" stroke="#212529" stroke-width="3"/>
+<line x1="280" y1="250" x2="466" y2="250" stroke="#212529" stroke-width="3"/>
+<line x1="310" y1="180" x2="310" y2="195" stroke="#212529" stroke-width="3"/>
+<line x1="310" y1="235" x2="310" y2="250" stroke="#212529" stroke-width="3"/>
+<line x1="352" y1="180" x2="352" y2="195" stroke="#212529" stroke-width="3"/>
+<line x1="352" y1="235" x2="352" y2="250" stroke="#212529" stroke-width="3"/>
+<line x1="394" y1="180" x2="394" y2="195" stroke="#212529" stroke-width="3"/>
+<line x1="394" y1="235" x2="394" y2="250" stroke="#212529" stroke-width="3"/>
+<line x1="436" y1="180" x2="436" y2="195" stroke="#212529" stroke-width="3"/>
+<line x1="436" y1="235" x2="436" y2="250" stroke="#212529" stroke-width="3"/>
+<text x="400" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#dc3545" text-anchor="middle" font-weight="bold">8 ÷ 4 = 2 Ω</text>
+<text x="400" y="396" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#dc3545" text-anchor="middle">danger: below most amps&#x27; rating</text>
+<text x="650" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">Series-parallel</text>
+<circle cx="605" cy="150" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="605" y="155" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="605" cy="220" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="605" y="225" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="605" y1="170" x2="605" y2="200" stroke="#212529" stroke-width="3"/>
+<circle cx="695" cy="150" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="695" y="155" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<circle cx="695" cy="220" r="20" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="695" y="225" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">8 Ω</text>
+<line x1="695" y1="170" x2="695" y2="200" stroke="#212529" stroke-width="3"/>
+<line x1="585" y1="120" x2="715" y2="120" stroke="#212529" stroke-width="3"/>
+<line x1="585" y1="250" x2="715" y2="250" stroke="#212529" stroke-width="3"/>
+<line x1="605" y1="120" x2="605" y2="130" stroke="#212529" stroke-width="3"/>
+<line x1="605" y1="240" x2="605" y2="250" stroke="#212529" stroke-width="3"/>
+<line x1="695" y1="120" x2="695" y2="130" stroke="#212529" stroke-width="3"/>
+<line x1="695" y1="240" x2="695" y2="250" stroke="#212529" stroke-width="3"/>
+<text x="650" y="372" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#198754" text-anchor="middle" font-weight="bold">(8+8) ∥ (8+8) = 8 Ω</text>
+<text x="650" y="396" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#198754" text-anchor="middle">matches the amp — full power</text>
+<circle cx="745" cy="70" r="14" fill="#198754"/>
+<path d="M738,70 l5,6 l9,-12" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

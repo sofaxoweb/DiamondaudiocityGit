@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Diagram: how series, parallel, and series-parallel wiring change total impedance">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="24" y="36" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#212529">Wiring two DVC 4-ohm subwoofers</text>
+<text x="150" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">All series</text>
+<line x1="30" y1="175" x2="270" y2="175" stroke="#212529" stroke-width="3"/>
+<rect x="36" y="159" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="70" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="86" y="159" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="120" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="136" y="159" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="170" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="186" y="159" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="220" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<text x="30" y="158" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="start">from amp</text>
+<text x="270" y="158" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="end">to amp</text>
+<text x="150" y="300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#212529" text-anchor="middle" font-weight="bold">4+4+4+4 = 16 Ω</text>
+<text x="150" y="324" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">too high for most amps</text>
+<text x="400" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">Series-parallel</text>
+<rect x="321" y="133" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="355" y="154" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="321" y="185" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="355" y="206" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<text x="355" y="237" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">DVC sub</text>
+<rect x="411" y="133" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="445" y="154" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="411" y="185" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="445" y="206" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<text x="445" y="237" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">DVC sub</text>
+<line x1="321" y1="175" x2="389" y2="175" stroke="#212529" stroke-width="3"/>
+<line x1="411" y1="175" x2="479" y2="175" stroke="#212529" stroke-width="3"/>
+<line x1="355" y1="140" x2="445" y2="140" stroke="#212529" stroke-width="3"/>
+<line x1="355" y1="210" x2="445" y2="210" stroke="#212529" stroke-width="3"/>
+<text x="400" y="300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#198754" text-anchor="middle" font-weight="bold">(4+4) ∥ (4+4) = 4 Ω</text>
+<text x="400" y="324" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#198754" text-anchor="middle">the sane daily load</text>
+<circle cx="493" cy="70" r="14" fill="#198754"/>
+<path d="M486,70 l5,6 l9,-12" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="650" y="78" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">All parallel</text>
+<rect x="571" y="133" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="605" y="154" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="571" y="185" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="605" y="206" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<text x="605" y="237" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">DVC sub</text>
+<rect x="661" y="133" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="695" y="154" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<rect x="661" y="185" width="68" height="32" rx="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<text x="695" y="206" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#212529" text-anchor="middle">4 Ω</text>
+<text x="695" y="237" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#6c757d" text-anchor="middle">DVC sub</text>
+<line x1="560" y1="140" x2="740" y2="140" stroke="#212529" stroke-width="3"/>
+<line x1="560" y1="210" x2="740" y2="210" stroke="#212529" stroke-width="3"/>
+<line x1="605" y1="140" x2="605" y2="149" stroke="#212529" stroke-width="3"/>
+<line x1="605" y1="201" x2="605" y2="210" stroke="#212529" stroke-width="3"/>
+<line x1="695" y1="140" x2="695" y2="149" stroke="#212529" stroke-width="3"/>
+<line x1="695" y1="201" x2="695" y2="210" stroke="#212529" stroke-width="3"/>
+<text x="650" y="300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#dc3545" text-anchor="middle" font-weight="bold">4 ÷ 4 = 1 Ω</text>
+<text x="650" y="324" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#dc3545" text-anchor="middle">competition only — amp killer</text>
+</svg>

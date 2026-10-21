@@ -222,7 +222,7 @@
                             <li><strong>A flat in-room curve sounds harsh</strong>; listening research favors a gentle downward tilt with a bass lift (the Harman curve).</li>
                         </ul>
 
-                        <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: anechoic ±3 dB speaker curve vs the same speaker's in-room curve with ±12 dB modal swings below 250 Hz]</div><figcaption>Anechoic lab response vs typical in-room response — the room dominates below the Schroeder frequency.</figcaption></figure>
+                        <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-frequency-response-calculator-8.svg" alt="Anechoic lab response vs typical in-room response — the room dominates below the Schroeder frequency." class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>Anechoic lab response vs typical in-room response — the room dominates below the Schroeder frequency.</figcaption></figure>
 
                         <hr class="my-4">
 
@@ -316,35 +316,7 @@
                             Takeaway: calibrate <em>to</em> a tilted target, not to flat. If your room-correction software offers a Harman-style target curve, use it.
                         </p>
 
-                        <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: Harman target curve — flat-ish bass shelf +4 dB below 100 Hz, smooth −1 dB/octave tilt to 10 kHz]</div><figcaption>The Harman in-room target curve: the downward tilt listeners prefer over a flat line.</figcaption></figure>
-
-                        <hr class="my-4">
-
-                        <h3 class="h4 text-dark fw-bold mb-3">Worked Room Example</h3>
-                        <p class="text-secondary">
-                            Room: 5 × 4 × 2.7 m living room. Speaker: rated 40 Hz–20 kHz ±3 dB. Schroeder frequency ≈ 2000·√(0.4/54) ≈ <strong>172 Hz</strong> — so everything below ~172 Hz is modal territory.
-                        </p>
-                        <ul class="text-secondary">
-                            <li class="mb-2"><strong>Corner placement</strong> (room gain +9): calculator predicts <strong>±12 dB</strong> variation — huge bass swings; pull the speaker out or treat heavily.</li>
-                            <li class="mb-2"><strong>Against one wall</strong> (room gain +3): <strong>±6 dB</strong> — workable; a little EQ on broad peaks plus careful listening position.</li>
-                            <li class="mb-2"><strong>With an 80 Hz subwoofer crossover</strong>: the main speaker's 40 Hz limit stops mattering — the sub (placed optimally, e.g. mid-wall) takes over exactly where the room is worst.</li>
-                        </ul>
-
-                        <hr class="my-4">
-
-                        <h3 class="h4 text-dark fw-bold mb-3">Measurement Comparison: Choosing the Right Curve</h3>
-                        <div class="table-responsive my-3">
-                            <table class="table table-bordered table-hover align-middle">
-                                <thead class="table-light">
-                                    <tr><th>Method</th><th>What it shows</th><th>Trust it for…</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td><strong>Anechoic / spinorama (CTA-2034)</strong></td><td>The speaker itself, no room</td><td>Comparing speakers fairly</td></tr>
-                                    <tr><td><strong>Time-gated (quasi-anechoic)</strong></td><td>Speaker above fmin = 1/tgate</td><td>DIY measurement with REW; valid midrange/treble</td></tr>
-                                    <tr><td><strong>In-room spatial average (MMM)</strong></td><td>Speaker + room at your seat</td><td>Setting EQ and target curves</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-frequency-response-calculator-9.svg" alt="The Harman in-room target curve: the downward tilt listeners prefer over a flat line." class="img-fluid border rounded" width="800" height="450" loading="lazy">
                         <p class="text-secondary"><strong>Watch the smoothing.</strong> A 1/3-octave-smoothed curve hides narrow dips and peaks that 1/12-octave smoothing reveals — always check which smoothing a published curve uses before comparing two speakers. Heavy smoothing flatters; fine smoothing tells the truth.</p>
 
                         <hr class="my-4">

@@ -298,7 +298,7 @@
                         </ul>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: attenuation curves for 6, 12, 18, 24 dB/octave slopes crossing at fc, log-frequency axis]</div><figcaption>Attenuation curves for 1st–4th order crossover slopes, all crossing at the crossover frequency fc.</figcaption></figure>
+                    <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-crossover-slope-calculator-4.svg" alt="Attenuation curves for 1st–4th order crossover slopes, all crossing at the crossover frequency fc." class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>Attenuation curves for 1st–4th order crossover slopes, all crossing at the crossover frequency fc.</figcaption></figure>
 
                     <section class="mb-5">
                         <h2 class="h4 text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Is a Crossover Slope?</h2>
@@ -413,22 +413,7 @@
                         <p><strong>"Linkwitz-Riley" alone doesn't tell you the slope.</strong> <strong>LR2</strong> is the 12 dB/octave version (two cascaded 1st-order Butterworths); <strong>LR4</strong> is the 24 dB/octave version (two cascaded 2nd-order Butterworths) — and the one most people mean. Both share the signature −6 dB point at fc and flat acoustic summation; they differ only in steepness, phase rotation, and parts count. When following a design or forum advice, confirm which one is meant.</p>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Diagram: summed frequency response of Butterworth (+3 dB bump at fc) vs Linkwitz-Riley (flat) vs Bessel (gentle knee), two drivers]</div><figcaption>How Butterworth, Linkwitz-Riley, and Bessel alignments sum at the crossover frequency.</figcaption></figure>
-
-                    <section class="mb-5">
-                        <h2 class="h4 text-teal mb-3"><i class="bi bi-columns-gap me-2"></i>Crossover Slope Comparison: Which Filter to Use</h2>
-                        <div class="table-responsive mb-4">
-                            <table class="table table-bordered table-hover align-middle">
-                                <thead class="table-light">
-                                    <tr><th>Alignment</th><th>At fc</th><th>Summation</th><th>Phase behavior</th><th>Use when…</th></tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td><strong>Butterworth</strong></td><td>−3 dB</td><td>+3 dB bump on-axis</td><td>Standard rotation</td><td>You want maximum simplicity and efficiency; car audio and PA.</td></tr>
-                                    <tr><td><strong>Linkwitz-Riley</strong></td><td>−6 dB</td><td>Perfectly flat</td><td>In-phase (even orders)</td><td>Flat on-axis response matters most; studio monitors, hi-fi.</td></tr>
-                                    <tr><td><strong>Bessel</strong></td><td>−3 dB</td><td>Slight dip, wide knee</td><td>Linear phase, minimal ringing</td><td>Transient accuracy matters most; percussive music, audiophile builds.</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <figure class="my-4 text-center"><img src="../../assets/diagrams/.-speaker-tools-crossover-slope-calculator-5.svg" alt="How Butterworth, Linkwitz-Riley, and Bessel alignments sum at the crossover frequency." class="img-fluid border rounded" width="800" height="450" loading="lazy">
                     </section>
 
                     <section class="mb-5">

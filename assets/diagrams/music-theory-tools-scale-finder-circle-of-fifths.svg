@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="400" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Circle of Fifths: Relative Major &amp; Minor Pairs</text>
+<circle cx="400" cy="245" r="152" fill="none" stroke="#dee2e6" stroke-width="1"/>
+<circle cx="400" cy="245" r="104" fill="none" stroke="#dee2e6" stroke-width="1"/>
+<line x1="400" y1="141" x2="400" y2="93" stroke="#dee2e6" stroke-width="1"/>
+<text x="400" y="80" text-anchor="middle" font-size="19" font-weight="700" fill="#0d6efd" font-family='system-ui, -apple-system, sans-serif'>C</text>
+<text x="400" y="170" text-anchor="middle" font-size="13" font-weight="600" fill="#dc3545" font-family='system-ui, -apple-system, sans-serif'>Am</text>
+<line x1="452" y1="155" x2="476" y2="113" stroke="#dee2e6" stroke-width="1"/>
+<text x="486" y="103" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>G</text>
+<text x="440" y="181" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Em</text>
+<line x1="490" y1="193" x2="532" y2="169" stroke="#dee2e6" stroke-width="1"/>
+<text x="549" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>D</text>
+<text x="469" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Bm</text>
+<line x1="504" y1="245" x2="552" y2="245" stroke="#dee2e6" stroke-width="1"/>
+<text x="572" y="252" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>A</text>
+<text x="480" y="250" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>F#m</text>
+<line x1="490" y1="297" x2="532" y2="321" stroke="#dee2e6" stroke-width="1"/>
+<text x="549" y="338" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>E</text>
+<text x="469" y="290" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>C#m</text>
+<line x1="452" y1="335" x2="476" y2="377" stroke="#dee2e6" stroke-width="1"/>
+<text x="486" y="401" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>B</text>
+<text x="440" y="319" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>G#m</text>
+<line x1="400" y1="349" x2="400" y2="397" stroke="#dee2e6" stroke-width="1"/>
+<text x="400" y="424" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>F#</text>
+<text x="400" y="330" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Ebm</text>
+<line x1="348" y1="335" x2="324" y2="377" stroke="#dee2e6" stroke-width="1"/>
+<text x="314" y="401" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Db</text>
+<text x="360" y="319" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Bbm</text>
+<line x1="310" y1="297" x2="268" y2="321" stroke="#dee2e6" stroke-width="1"/>
+<text x="251" y="338" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Ab</text>
+<text x="331" y="290" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Fm</text>
+<line x1="296" y1="245" x2="248" y2="245" stroke="#dee2e6" stroke-width="1"/>
+<text x="228" y="252" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Eb</text>
+<text x="320" y="250" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Cm</text>
+<line x1="310" y1="193" x2="268" y2="169" stroke="#dee2e6" stroke-width="1"/>
+<text x="251" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Bb</text>
+<text x="331" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Gm</text>
+<line x1="348" y1="155" x2="324" y2="113" stroke="#dee2e6" stroke-width="1"/>
+<text x="314" y="103" text-anchor="middle" font-size="16" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>F</text>
+<text x="360" y="181" text-anchor="middle" font-size="13" font-weight="600" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Dm</text>
+<text x="400" y="241" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>outer: major</text>
+<text x="400" y="259" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>inner: relative minor</text>
+</svg>

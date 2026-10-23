@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="400" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Verse vs Chorus: The Lift (Key of C Major)</text>
+<text x="70" y="148" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>VERSE</text>
+<rect x="220" y="108" width="92" height="72" rx="10" fill="#0d6efd"/>
+<text x="266" y="142" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>I</text>
+<text x="266" y="166" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>C</text>
+<text x="332" y="150" text-anchor="middle" font-size="20" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>&#8594;</text>
+<rect x="352" y="108" width="92" height="72" rx="10" fill="#0d6efd"/>
+<text x="398" y="142" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>vi</text>
+<text x="398" y="166" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>Am</text>
+<text x="464" y="150" text-anchor="middle" font-size="20" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>&#8594;</text>
+<rect x="484" y="108" width="92" height="72" rx="10" fill="#0d6efd"/>
+<text x="530" y="142" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>IV</text>
+<text x="530" y="166" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>F</text>
+<text x="596" y="150" text-anchor="middle" font-size="20" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>&#8594;</text>
+<rect x="616" y="108" width="92" height="72" rx="10" fill="#0d6efd"/>
+<text x="662" y="142" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>V</text>
+<text x="662" y="166" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>G</text>
+<line x1="400" y1="196" x2="400" y2="248" stroke="#198754" stroke-width="3"/>
+<path d="M392,238 L400,252 L408,238 Z" fill="#198754"/>
+<text x="416" y="230" font-size="15" font-weight="700" fill="#198754" font-family='system-ui, -apple-system, sans-serif'>the lift</text>
+<text x="70" y="318" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>CHORUS</text>
+<rect x="220" y="278" width="92" height="72" rx="10" fill="#198754"/>
+<text x="266" y="312" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>vi</text>
+<text x="266" y="336" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>Am</text>
+<text x="332" y="320" text-anchor="middle" font-size="20" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>&#8594;</text>
+<rect x="352" y="278" width="92" height="72" rx="10" fill="#198754"/>
+<text x="398" y="312" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>IV</text>
+<text x="398" y="336" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>F</text>
+<text x="464" y="320" text-anchor="middle" font-size="20" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>&#8594;</text>
+<rect x="484" y="278" width="92" height="72" rx="10" fill="#198754"/>
+<text x="530" y="312" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>I</text>
+<text x="530" y="336" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>C</text>
+<text x="596" y="320" text-anchor="middle" font-size="20" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>&#8594;</text>
+<rect x="616" y="278" width="92" height="72" rx="10" fill="#198754"/>
+<text x="662" y="312" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>V</text>
+<text x="662" y="336" text-anchor="middle" font-size="14" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>G</text>
+<text x="400" y="420" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Same four chords, new starting point — beginning the chorus on vi darkens the verse, then IV–I–V opens it up</text>
+</svg>

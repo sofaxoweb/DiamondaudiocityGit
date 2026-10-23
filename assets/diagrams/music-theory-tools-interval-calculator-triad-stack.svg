@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="400" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Building a C Major Triad: Stacked Thirds</text>
+<circle cx="150" cy="270" r="52" fill="#0d6efd"/>
+<text x="150" y="282" text-anchor="middle" font-size="32" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>C</text>
+<circle cx="400" cy="270" r="52" fill="#0d6efd"/>
+<text x="400" y="282" text-anchor="middle" font-size="32" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>E</text>
+<circle cx="650" cy="270" r="52" fill="#0d6efd"/>
+<text x="650" y="282" text-anchor="middle" font-size="32" font-weight="700" fill="#ffffff" font-family='system-ui, -apple-system, sans-serif'>G</text>
+<path d="M150,205 Q275,120 400,205" fill="none" stroke="#198754" stroke-width="3"/>
+<text x="275" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#198754" font-family='system-ui, -apple-system, sans-serif'>major 3rd · 4 semitones</text>
+<path d="M400,205 Q525,120 650,205" fill="none" stroke="#198754" stroke-width="3"/>
+<text x="525" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#198754" font-family='system-ui, -apple-system, sans-serif'>minor 3rd · 3 semitones</text>
+<line x1="150" y1="352" x2="650" y2="352" stroke="#6c757d" stroke-width="2"/>
+<line x1="150" y1="344" x2="150" y2="360" stroke="#6c757d" stroke-width="2"/>
+<line x1="650" y1="344" x2="650" y2="360" stroke="#6c757d" stroke-width="2"/>
+<text x="400" y="382" text-anchor="middle" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>C to G = perfect 5th · 7 semitones</text>
+<text x="400" y="424" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Major triad = major 3rd below + minor 3rd above; swap the order and the triad turns minor</text>
+</svg>

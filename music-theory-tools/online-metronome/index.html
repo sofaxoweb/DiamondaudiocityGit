@@ -63,7 +63,7 @@
       "name": "What do the Italian tempo markings mean?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They are traditional tempo words, and this tool uses these ranges: Largo (20–60, broad), Adagio (60–80, slow), Andante (80–100, walking), Moderato (100–120), Allegro (120–140, fast and cheerful), Vivace (140–168, lively), Presto (168–200, very fast), Prestissimo (200–300). Composers used them before BPM existed; boundaries vary by publisher, which is why the widget shows the marking matching your tempo."
+        "text": "They are traditional tempo words, and this tool uses these exact ranges: Largo (20–59, broad), Adagio (60–79, slow), Andante (80–99, walking), Moderato (100–119), Allegro (120–139, fast and cheerful), Vivace (140–167, lively), Presto (168–199, very fast), Prestissimo (200–300). Composers used them before BPM existed; boundaries vary by publisher, which is why the widget shows the marking matching your tempo."
       }
     },
     {
@@ -112,6 +112,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Very — slow tempos expose unevenness that speed hides. Below ~40 BPM most players switch to feeling subdivisions (count 8ths at 30 BPM as quarters at 60). The metronome goes down to 20 BPM precisely for this deep slow-practice work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this metronome remember my settings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It opens at 120 BPM in 4/4 on every visit and stores nothing — no account, no cookies for your tempo, nothing to load. If you reload the page mid-practice, set your tempo and time signature again before pressing play."
       }
     }
   ]
@@ -327,7 +335,7 @@
                 <div class="tool-container">
                     <div class="tool-title">
                         <h1><i class="bi bi-stopwatch me-2"></i>Online Metronome</h1>
-                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p>A free online metronome with steady browser clicks from 20–300 BPM, time signatures from 2/4 to 7/8, and a visual beat display. Set the tempo, pick a meter, press play.</p>
                     </div>
 
@@ -430,13 +438,14 @@
 
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-gear me-2"></i>How This Metronome Works</h2>
-                        <p><strong>This metronome generates clicks with a repeating browser timer.</strong> The exact mechanics:</p>
+                        <p><strong>This metronome generates its clicks with a Web Audio oscillator, scheduled by a repeating browser timer.</strong> The exact mechanics:</p>
                         <ol>
-                            <li><strong>Set the tempo:</strong> the slider spans 20–300 BPM; the ±1/±10 buttons fine-tune it.</li>
+                            <li><strong>Set the tempo:</strong> the slider spans 20–300 BPM; the ±1/±10 buttons fine-tune it, and the marking presets jump straight to 60, 80, 100, 120, 140, or 180 BPM.</li>
                             <li><strong>Pick a meter:</strong> time-signature buttons (2/4 through 7/8) set how many clicks form a bar.</li>
-                            <li><strong>Press play:</strong> the timer fires each beat — a 1,000 Hz tone on beat 1, an 800 Hz click on the rest — while the beat dots flash in sync.</li>
+                            <li><strong>Press play:</strong> the timer fires each beat and an oscillator plays a 50 ms sine blip — 1,000 Hz on beat 1, 800 Hz on the other beats — while the beat dots flash in sync.</li>
                             <li><strong>Read the telemetry:</strong> milliseconds-per-beat and seconds-per-bar compute live for DAW sync work.</li>
                         </ol>
+                        <p>Change the tempo or the time signature while it plays and the metronome restarts the bar from beat 1 — the accent can never land mid-bar by accident.</p>
                         <p>Beat interval follows <code><strong>ms per beat = 60,000 ÷ BPM</strong></code> — at 120 BPM each click lands exactly 500 ms apart.</p>
                     </div>
 
@@ -451,12 +460,13 @@
                             <li>A 32-bar practice loop: 32 × 2.5 = <strong>80 seconds</strong> per repetition.</li>
                         </ol>
                         <p>The same arithmetic converts any tempo into delay times: at 120 BPM a quarter-note delay is 500 ms, an 8th is 250 ms, a 16th is 125 ms.</p>
+                        <p>One wrinkle matters in the /8 meters: there, the BPM counts each eighth-note click. A 6/8 bar at 120 BPM spans 6 × 500 ms = <strong>3.00 seconds</strong>, and if you feel the bar in two, each dotted-quarter pulse lasts 1.5 seconds — a sway of 40 pulses per minute, not 120.</p>
                     </div>
 
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-list-ol me-2"></i>How to Use the Online Metronome</h2>
                         <ol>
-                            <li><strong>Dial your BPM:</strong> drag the slider or tap ±1/±10 for precision.</li>
+                            <li><strong>Dial your BPM:</strong> drag the slider, tap ±1/±10 for precision, or tap a tempo-marking preset (60, 80, 100, 120, 140, 180).</li>
                             <li><strong>Choose the meter:</strong> 4/4 for most music, 3/4 for waltzes, 6/8 for compound feels, 5/4 or 7/8 for odd meters.</li>
                             <li><strong>Press the center play button:</strong> the downbeat accent (higher pitch) marks beat 1 of each bar.</li>
                             <li><strong>Play along:</strong> start with simple material at a comfortable tempo, then raise the BPM in small steps.</li>
@@ -465,22 +475,42 @@
 
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-table me-2"></i>Reading Your Result: Italian Tempo Markings</h2>
-                        <p>The widget labels your tempo with its traditional Italian marking. These ranges match this tool's display exactly:</p>
+                        <p>The widget labels your tempo with its traditional Italian marking. These are the exact ranges this tool displays — set 60 BPM and it reads Adagio, not Largo:</p>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead><tr><th>Marking</th><th>BPM range</th><th>Character</th></tr></thead>
                                 <tbody>
-                                    <tr><td>Largo</td><td>20–60</td><td>Broad, very slow</td></tr>
-                                    <tr><td>Adagio</td><td>60–80</td><td>Slow, stately</td></tr>
-                                    <tr><td>Andante</td><td>80–100</td><td>Walking pace</td></tr>
-                                    <tr><td>Moderato</td><td>100–120</td><td>Moderate</td></tr>
-                                    <tr><td>Allegro</td><td>120–140</td><td>Fast, cheerful</td></tr>
-                                    <tr><td>Vivace</td><td>140–168</td><td>Lively, brisk</td></tr>
-                                    <tr><td>Presto</td><td>168–200</td><td>Very fast</td></tr>
+                                    <tr><td>Largo</td><td>20–59</td><td>Broad, very slow</td></tr>
+                                    <tr><td>Adagio</td><td>60–79</td><td>Slow, stately</td></tr>
+                                    <tr><td>Andante</td><td>80–99</td><td>Walking pace</td></tr>
+                                    <tr><td>Moderato</td><td>100–119</td><td>Moderate</td></tr>
+                                    <tr><td>Allegro</td><td>120–139</td><td>Fast, cheerful</td></tr>
+                                    <tr><td>Vivace</td><td>140–167</td><td>Lively, brisk</td></tr>
+                                    <tr><td>Presto</td><td>168–199</td><td>Very fast</td></tr>
                                     <tr><td>Prestissimo</td><td>200–300</td><td>As fast as possible</td></tr>
                                 </tbody>
                             </table>
                         </div>
+                        <p>Published references draw these boundaries a few BPM either way — treat the marking as a character guide, and the number as the fact.</p>
+                    </div>
+
+                    <div class="tool-section">
+                        <h2 class="text-mid mb-3"><i class="bi bi-soundwave me-2"></i>Common Tempos: Where Genres Live</h2>
+                        <p><strong>Most recorded music clusters between 80 and 180 BPM, and each genre favors a band inside that span.</strong> Use the table to sanity-check a tempo you tapped out, or to pick a realistic practice target for the style you play:</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead><tr><th>Genre</th><th>Typical BPM</th><th>Marking on this tool</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Ballads and slow worship</td><td>60–90</td><td>Adagio – Andante</td></tr>
+                                    <tr><td>Hip-hop and R&amp;B</td><td>85–100</td><td>Andante – Moderato</td></tr>
+                                    <tr><td>Pop and rock</td><td>100–140</td><td>Moderato – Vivace</td></tr>
+                                    <tr><td>House</td><td>120–130</td><td>Allegro</td></tr>
+                                    <tr><td>Techno</td><td>125–140</td><td>Allegro – Vivace</td></tr>
+                                    <tr><td>Drum &amp; bass</td><td>170–180</td><td>Presto</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>These are conventions, not rules — individual tracks stray. Dubstep, for instance, is produced near 140 BPM but usually felt in half time, at 70.</p>
                     </div>
 
                     <div class="tool-section">
@@ -491,7 +521,7 @@
 
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-hourglass-split me-2"></i>Why 20–300 BPM? The Maelzel Scale Story</h2>
-                        <p><strong>The metronome's range comes from Johann Maelzel's 1815 mechanical metronome, whose pendulum scale ran 40–208 BPM.</strong> Digital metronomes kept the familiar span and extended it: 20 BPM for extreme slow practice, 300 for blast beats and speed drills.</p>
+                        <p><strong>The metronome's range echoes the classic Maelzel scale: Johann Maelzel's mechanical metronome, patented in 1815, settled on a pendulum scale of 40–208 BPM.</strong> Digital metronomes kept the familiar span and extended it: 20 BPM for extreme slow practice, 300 for blast beats and speed drills.</p>
                         <p>Below ~40 BPM, most musicians stop feeling the pulse and start counting subdivisions instead — which is exactly what the subdivision practice below is for. Above ~208, individual clicks blur together, and players feel the half-time pulse instead.</p>
                     </div>
 
@@ -500,14 +530,14 @@
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-grid-3x3 me-2"></i>Subdivisions: The Secret to Actually Improving</h2>
                         <p><strong>The fastest way to fix shaky timing is to subdivide: hear 8th or 16th notes instead of quarters.</strong> Quarter-note clicks let you rush the gaps unnoticed; subdivisions put a click on every slice of time, exposing exactly where you drag or hurry.</p>
-                        <p>Practice method: set the metronome to <strong>half tempo with double subdivisions</strong> — e.g. 60 BPM clicking 8ths instead of 120 BPM clicking quarters. Same absolute time, twice the information. When 16ths feel easy, return to quarters: the steadiness transfers. Our <a href="../rhythm-pattern-maker/">rhythm pattern maker</a> builds subdivision exercises on the same principle.</p>
+                        <p>Practice method with this tool: <strong>double the click rate and let each click stand for a subdivision.</strong> To drill a 60 BPM passage in 8ths, set the metronome to 120 BPM and treat every click as an 8th note — the accent then marks every second click, so count your bars in click pairs. Same absolute time, twice the information. For true subdivision clicks at the beat tempo, our <a href="../rhythm-pattern-maker/">rhythm pattern maker</a> builds subdivision exercises on the same principle.</p>
                         <p>The goal is to land your notes exactly <strong>with</strong> the click, so the two sounds disappear into each other. When you hear the click separate from your playing, that gap is your timing work.</p>
                     </div>
 
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-stopwatch me-2"></i>The Timing Accuracy Question, Answered Honestly</h2>
                         <p><strong>Browser metronomes using JavaScript timers are accurate enough for practice, but not sample-perfect.</strong> This tool schedules clicks with a repeating timer, which can jitter by a few milliseconds when the browser is busy — inaudible while practicing, but not suitable for scientific measurement.</p>
-                        <p>True sample-accurate timing uses the Web Audio clock (<code>AudioContext.currentTime</code>), which runs on high-priority audio threads. For practice, recording, and rehearsal, the difference is academic: your own timing variance dwarfs any timer jitter. Bluetooth adds output latency on top, so use wired headphones for the tightest feel. For DAW-grade click tracks, render the click in your DAW instead.</p>
+                        <p>True sample-accurate timing schedules clicks ahead on the Web Audio clock (<code>AudioContext.currentTime</code>), which runs on a dedicated audio thread. For practice, recording, and rehearsal, the difference is academic: your own timing variance dwarfs any timer jitter. Bluetooth adds roughly 100–250 ms of output latency, depending on the codec — the delay is constant, so beats stay evenly spaced, but wired headphones give the tightest feel. For DAW-grade click tracks, render the click in your DAW instead.</p>
                     </div>
 
                     <div class="tool-section">
@@ -528,10 +558,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p>Start at half tempo with the accent loud in your mind, clap the grouping before touching your instrument, and only then play. Most musicians learn 7/8 in a single focused session this way; the fear is bigger than the difficulty.</p>
+                        <p>Start at half tempo with the accent loud in your mind, clap the grouping before touching your instrument, and only then play. Most musicians learn 7/8 in a single focused session this way; the fear is bigger than the difficulty. Remember what the number means here: in 7/8 the BPM counts eighth-note clicks, so 90 BPM produces a bar of 7 × 667 ms ≈ 4.67 seconds.</p>
                     </div>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: the slow-practice ladder — 60% tempo → 70% → 80% → 90% → full tempo, with "perfect reps only" rule]</div><figcaption class="small text-muted mt-2">Alt text: Infographic of the slow-practice ladder from 60 percent tempo to full tempo.</figcaption></figure>
+                    <figure class="my-4 text-center"><img src="../../assets/diagrams/music-theory-tools-online-metronome-practice-ladder.svg" alt="Infographic of the slow-practice ladder from 60 percent tempo to full tempo" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted mt-2">Alt text: Infographic of the slow-practice ladder from 60 percent tempo to full tempo.</figcaption></figure>
 
                     <div class="tool-section">
                         <h2 class="text-mid mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
@@ -540,6 +570,7 @@
                             <li><strong>No subdivision or swing clicks:</strong> the tool clicks beats only; subdivide mentally or use the rhythm pattern maker.</li>
                             <li><strong>No tap tempo:</strong> you set the BPM directly — find a song's tempo first with the <a href="../../dj-music-production-tools/bpm-tap-tempo/">BPM tap tempo</a> tool.</li>
                             <li><strong>Fixed accent pattern:</strong> beat 1 is always accented — music with displaced accents needs a programmable click.</li>
+                            <li><strong>Settings are not saved:</strong> the metronome keeps no tempo or meter between visits — reload the page and it opens at 120 BPM in 4/4.</li>
                             <li><strong>Sound depends on your device:</strong> laptop speakers smear transients; wired headphones give the tightest feel. Some phones pause web audio when the screen locks, so keep the screen on during practice.</li>
                         </ul>
                     </div>
@@ -618,7 +649,7 @@
                                 </h3>
                                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        They are traditional tempo words, and this tool uses these ranges: Largo (20–60, broad), Adagio (60–80, slow), Andante (80–100, walking), Moderato (100–120), Allegro (120–140, fast and cheerful), Vivace (140–168, lively), Presto (168–200, very fast), Prestissimo (200–300). Composers used them before BPM existed; boundaries vary by publisher, which is why the widget shows the marking matching your tempo.
+                                        They are traditional tempo words, and this tool uses these exact ranges: Largo (20–59, broad), Adagio (60–79, slow), Andante (80–99, walking), Moderato (100–119), Allegro (120–139, fast and cheerful), Vivace (140–167, lively), Presto (168–199, very fast), Prestissimo (200–300). Composers used them before BPM existed; boundaries vary by publisher, which is why the widget shows the marking matching your tempo.
                                     </div>
                                 </div>
                             </div>
@@ -703,6 +734,20 @@
                                 <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         Very — slow tempos expose unevenness that speed hides. Below ~40 BPM most players switch to feeling subdivisions (count 8ths at 30 BPM as quarters at 60). The metronome goes down to 20 BPM precisely for this deep slow-practice work.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq11">
+                                        Does this metronome remember my settings?
+                                    </button>
+                                </h3>
+                                <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        No. It opens at 120 BPM in 4/4 on every visit and stores nothing — no account, no cookies for your tempo, nothing to load. If you reload the page mid-practice, set your tempo and time signature again before pressing play.
                                     </div>
                                 </div>
                             </div>

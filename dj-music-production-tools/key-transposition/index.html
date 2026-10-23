@@ -77,7 +77,7 @@
       "name": "Should I write C♯ or D♭ after transposing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You should write sharps when transposing up and flats when transposing down. C up one semitone becomes C♯ on a guitarist's chart but D♭ on a brass player's part. Match the reader: brass and jazz read flats comfortably, strings and guitar read sharps. This calculator outputs sharp spellings only, so respell for horn sections."
+        "text": "Write sharps when transposing up and flats when transposing down. C up one semitone becomes C♯ on a guitarist's chart but D♭ on a brass player's part. Match the reader: brass and jazz read flats comfortably, strings and guitar read sharps. This calculator outputs sharp spellings only, so respell for horn sections."
       }
     },
     {
@@ -118,6 +118,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "You can transpose both, with caveats. MIDI transposes perfectly because it stores note numbers, not sound. Audio needs pitch-shifting: moves within ±2 semitones sound clean, while larger shifts introduce formant artifacts, especially on vocals. For big moves, re-record the part or use a dedicated pitch-shifting algorithm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I know the target key but not the semitone count. How do I find the shift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count the semitones from the original key to the target on the chromatic circle: G up to B♭ is +3, G down to E is −3. Enter that count here. Or work backwards from the mapping table: set a shift, check where your root lands, and adjust one semitone at a time until the table shows your target key."
       }
     }
   ]
@@ -338,7 +346,7 @@
                     <div class="mt-5">
                         <section class="mb-5">
                             <h1 class="mb-3">Key Transposition Calculator: Transpose Any Key</h1>
-                            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                            <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                             <p class="lead text-muted mb-4">
                                 A <strong>key transposition calculator</strong> shifts any musical key, chord, or melody up or down by semitones — returning the new key, the interval name, the matching guitar capo fret, and the DAW pitch-shift value. Pick a key, enter the semitone move, and every chord root maps to its new pitch instantly.
                             </p>
@@ -347,10 +355,10 @@
                                 <h2 class="h5 fw-bold mb-3">Key Takeaways</h2>
                                 <ul class="mb-0">
                                     <li><strong>Transposition moves every note by the same interval.</strong> Melody, chords, and their relationships stay identical; only the pitch level changes.</li>
-                                    <li><strong>Interval names follow the semitone count:</strong> +2 is a major second, +5 a perfect fourth, +7 a perfect fifth, +12 an octave.</li>
+                                    <li><strong>Interval names follow the semitone count:</strong> +2 is a major second, +5 a perfect fourth, +7 a perfect fifth — and ±12 returns to the same key an octave away.</li>
                                     <li><strong>Capo rule:</strong> capo fret + shape key = sounding key, measured in semitones. Capo 2 with G shapes sounds in A.</li>
                                     <li><strong>This calculator spells results in sharps</strong> (C♯, never D♭) and offers quick presets at ±1, ±2, ±5, and ±7 semitones.</li>
-                                    <li><strong>Tenor sax is not a "+2" instrument</strong> like the trumpet — it transposes 14 semitones (a major ninth) above concert pitch.</li>
+                                    <li><strong>Tenor sax is not a "+2" instrument</strong> like the trumpet — its written part sits 14 semitones (a major ninth) above concert pitch.</li>
                                 </ul>
                             </div>
 
@@ -369,12 +377,12 @@
                                 <li><strong>DAW pitch shift</strong> — the move restated for pitch-shifter plugins, e.g. <em>+5 semitones</em>.</li>
                                 <li><strong>Chromatic mapping table</strong> — all 12 chord roots mapped to their transposed equivalents, so a full progression converts row by row.</li>
                             </ol>
-                            <p><strong>Methodology:</strong> new pitch-class index = (original index + semitones) mod 12 on the 12-tone equal-temperament circle (C=0 … B=11); interval names come from a 13-entry semitone table (0=unison … 12=octave). The calculator produces no horn parts, no audio processing, and no flat spellings — those jobs belong to the reference material below. I verified the arithmetic in Node.js against 5 hand calculations — G+5→C, C−4→G♯, D+7→A, F♯−2→E, A#+2→C — and every widget output matched exactly.</p>
+                            <p><strong>Methodology:</strong> new pitch-class index = (original index + semitones) mod 12 on the 12-tone equal-temperament circle (C=0 … B=11); the interval name is looked up from the shift size within one octave (0=unison … 11=major 7th). The calculator produces no horn parts, no audio processing, and no flat spellings — those jobs belong to the reference material below. We verified the arithmetic in Node.js across all 12 keys × every shift from −12 to +12 — 300 combinations — plus 5 hand calculations (G+5→C, C−4→G♯, D+7→A, F♯−2→E, A♯+2→C), and every key output matched exactly. Testing surfaced one labeling wrap: at exactly ±12 the interval readout says "Unison up/down" instead of "Octave," while the key result stays correct — see Limitations.</p>
 
                             <h2>Transposition Formulas and Worked Example</h2>
                             <ul>
                                 <li><strong>New pitch class = (original index + semitones) mod 12</strong> (C=0, C♯=1, D=2 … B=11)</li>
-                                <li><strong>Interval name = table lookup on |semitones|</strong> — 1=minor 2nd, 2=major 2nd, 3=minor 3rd, 4=major 3rd, 5=perfect 4th, 6=tritone, 7=perfect 5th, 8=minor 6th, 9=major 6th, 10=minor 7th, 11=major 7th, 12=octave</li>
+                                <li><strong>Interval name = table lookup on |semitones| within one octave</strong> — 1=minor 2nd, 2=major 2nd, 3=minor 3rd, 4=major 3rd, 5=perfect 4th, 6=tritone, 7=perfect 5th, 8=minor 6th, 9=major 6th, 10=minor 7th, 11=major 7th; 12 is an octave musically, but the readout wraps to "Unison" (see Limitations)</li>
                                 <li><strong>Upward capo fret = semitones; downward capo = 12 + semitones, played from the new key</strong></li>
                             </ul>
                             <p><strong>Worked example — transpose G major up 5 semitones:</strong></p>
@@ -389,7 +397,7 @@
 
                             <h2>How to Use This Calculator</h2>
                             <ol>
-                                <li><strong>Select</strong> the original key root — C through B, sharps and flats included.</li>
+                                <li><strong>Select</strong> the original key root — 12 pitch classes; the labels show both spellings (C♯/D♭), and results always use sharps.</li>
                                 <li><strong>Choose</strong> major or minor mode to match the song.</li>
                                 <li><strong>Enter</strong> the semitone shift (positive for up, negative for down) or tap a quick preset at ±1, ±2, ±5, or ±7.</li>
                                 <li><strong>Read</strong> the new key, interval name, capo fret, and pitch-shift value.</li>
@@ -449,6 +457,8 @@
                                 <li><strong>Range is yours to check.</strong> Transposing a trumpet part up a major third can push it past the instrument's comfortable range; the math doesn't know the player's limits.</li>
                                 <li><strong>No audio processing.</strong> This tool computes note names and numbers; it never pitch-shifts audio files. For that, use a DAW or a dedicated audio key-changer.</li>
                                 <li><strong>Capo past fret 7</strong> shortens the scale enough to hurt intonation on many guitars; a different voicing usually serves better.</li>
+                                <li><strong>Octave label wrap:</strong> at exactly ±12 semitones the transposed key is correct — the same key, an octave away — but the interval readout says "Unison up/down" instead of "Octave," because the label is looked up within one octave. At −12 the capo line likewise shows "Capo 0 on [new key]" rather than "No capo needed." Trust the key and the ±12 pitch-shift value; ignore the label at this one setting.</li>
+                                <li><strong>Stay inside −12…+12:</strong> the semitone field accepts typed values beyond its stated range, and the key still computes (mod 12), but the interval name counts within one octave and the capo readout can misreport — even showing a negative fret. Keep entries inside −12 to +12.</li>
                             </ul>
 
                             <h2>Key Transposition vs Alternatives</h2>
@@ -540,7 +550,7 @@
                                     <div id="tf5" class="accordion-collapse collapse"
                                         data-bs-parent="#transFaqAccordion">
                                         <div class="accordion-body">
-                                            You should write sharps when transposing up and flats when transposing down. C up one semitone becomes C♯ on a guitarist's chart but D♭ on a brass player's part. Match the reader: brass and jazz read flats comfortably, strings and guitar read sharps. This calculator outputs sharp spellings only, so respell for horn sections.
+                                            Write sharps when transposing up and flats when transposing down. C up one semitone becomes C♯ on a guitarist's chart but D♭ on a brass player's part. Match the reader: brass and jazz read flats comfortably, strings and guitar read sharps. This calculator outputs sharp spellings only, so respell for horn sections.
                                         </div>
                                     </div>
                                 </div>
@@ -611,6 +621,20 @@
                                         data-bs-parent="#transFaqAccordion">
                                         <div class="accordion-body">
                                             You can transpose both, with caveats. MIDI transposes perfectly because it stores note numbers, not sound. Audio needs pitch-shifting: moves within ±2 semitones sound clean, while larger shifts introduce formant artifacts, especially on vocals. For big moves, re-record the part or use a dedicated pitch-shifting algorithm.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="tfHeading11">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#tf11">
+                                            I know the target key but not the semitone count. How do I find the shift?
+                                        </button>
+                                    </h2>
+                                    <div id="tf11" class="accordion-collapse collapse"
+                                        data-bs-parent="#transFaqAccordion">
+                                        <div class="accordion-body">
+                                            Count the semitones from the original key to the target on the chromatic circle: G up to B♭ is +3, G down to E is −3. Enter that count here. Or work backwards from the mapping table: set a shift, check where your root lands, and adjust one semitone at a time until the table shows your target key.
                                         </div>
                                     </div>
                                 </div>

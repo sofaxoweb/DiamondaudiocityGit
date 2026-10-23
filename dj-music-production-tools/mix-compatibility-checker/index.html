@@ -16,7 +16,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Mix Compatibility Checker – Key & BPM DJ Mixing Calculator">
     <meta property="og:description"
-        content="Check if two tracks are compatible for DJ mixing based on musical key (Camelot) and BPM analysis.">
+        content="Check if two tracks mix well: free mix compatibility checker scores key harmony (Camelot wheel) and BPM match, with transition tips for clean DJ blends.">
     <meta property="og:url" content="https://pitchdetectors.com/dj-music-production-tools/mix-compatibility-checker/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="./assets/imgs/logo.png">
@@ -25,7 +25,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mix Compatibility Checker – Key & BPM DJ Mixing Calculator">
     <meta name="twitter:description"
-        content="Calculate harmonic key compatibility and tempo difference between any two tracks.">
+        content="Check if two tracks mix well: free mix compatibility checker scores key harmony (Camelot wheel) and BPM match, with transition tips for clean DJ blends.">
     <meta name="twitter:image" content="./assets/imgs/logo.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -61,7 +61,7 @@
       "name": "What is the maximum BPM difference before a mix sounds bad?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Past 10 BPM, most DJs pick another track. 0–3 BPM is easy (~2.3% at 128 BPM); 4–6 BPM wants key lock on; past 10 BPM (roughly 8%+) vocals and transients degrade audibly. The exception: half-time/double-time pairs (70 vs 140 BPM) share a beat grid despite the gap."
+        "text": "Past 10 BPM, most DJs pick another track. 0–3 BPM is easy (~2.3% at 128 BPM); 4–6 BPM wants key lock on; past 10 BPM (7.8% at 128 BPM) vocals and transients degrade audibly. The exception: half-time/double-time pairs (70 vs 140 BPM) share a beat grid despite the gap."
       }
     },
     {
@@ -207,8 +207,8 @@
                 <div class="tool-container">
                     <div class="tool-title mb-4">
                         <h1 class="display-6 fw-bold text-teal"><i class="bi bi-check2-circle me-2"></i>Mix Compatibility Checker: DJ Key &amp; BPM Tool</h1>
-                        <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
-                        <p class="lead text-muted">A <strong>mix compatibility checker</strong> scores whether two tracks blend cleanly — <strong>key harmony</strong> on the Camelot Wheel plus <strong>tempo match</strong> on the BPM gap. Enter both tracks below for an instant verdict and transition tips when a pair only partly fits.</p>
+                        <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="lead text-muted">A <strong>mix compatibility checker</strong> scores whether two tracks blend cleanly — <strong>key harmony</strong> on the Camelot Wheel plus <strong>tempo match</strong> on the BPM gap. Enter both tracks’ BPM and Camelot key below — no audio upload, no track catalog — for an instant verdict and transition tips when a pair only partly fits.</p>
                     </div>
 
                     <div class="row g-4 mb-4">
@@ -335,7 +335,7 @@
                             <ul>
                                 <li><strong>Mix compatibility has two halves:</strong> key harmony (Camelot Wheel) and tempo match (BPM difference). Both must pass for a clean blend.</li>
                                 <li><strong>The rubric scores each half −1 to +3 and adds them:</strong> 5–6 = Excellent, 3–4 = Good, 1–2 = Possible, 0 or less = Not Recommended.</li>
-                                <li><strong>Same Camelot code always mixes cleanly;</strong> ±1 step with the same letter shifts the music up a perfect fifth (the energy-boost move).</li>
+                                <li><strong>Same Camelot code always mixes cleanly;</strong> ±1 step with the same letter shifts the music up a perfect fifth (the energy-boost move), while a diagonal move (±1 plus a letter change) shares fewer notes and scores lower at +1.</li>
                                 <li><strong>±3 BPM is the easy-mix line</strong> — a 2.3% pitch shift at 128 BPM, comfortably inside a standard ±8% pitch fader.</li>
                                 <li><strong>The recommendation box follows fixed bands</strong> — key score ≥2 / 0–1 / below 0, BPM gap 0 / ≤3 / ≤6 / above 6 — so identical inputs always produce identical advice. No black box.</li>
                             </ul>
@@ -344,12 +344,12 @@
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">What Is Mix Compatibility?</h2>
                             <p><strong>Mix compatibility is a measure of whether two tracks can be blended smoothly in a DJ set.</strong> It judges two things: do the musical keys harmonize (so melodies and basslines don't clash), and are the tempos close enough to beatmatch without audible pitch damage? When both pass, a transition sounds like one continuous piece of music.</p>
-                            <p>DJs call the key side <strong>harmonic mixing</strong> — choosing the next track by musical key instead of feel alone. The tempo side is <strong>beatmatching</strong>: aligning beats per minute so both tracks run in sync. Most train-wreck transitions fail on one of these two axes, which is why this checker tests both at once. If you don't know a track's key yet, run it through our <a href="../song-key-finder/">Song Key Finder</a> first.</p>
+                            <p>DJs call the key side <strong>harmonic mixing</strong> — choosing the next track by musical key instead of feel alone. The tempo side is <strong>beatmatching</strong>: aligning beats per minute so both tracks run in sync. Most train-wreck transitions fail on one of these two axes, which is why this checker tests both at once. The checker scores the BPM and key values you enter; it does not listen to or analyze audio. If you don't know a track's key yet, run it through our <a href="../song-key-finder/">Song Key Finder</a> first.</p>
                         </section>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">How This Calculator Works</h2>
-                            <p>This calculator grades your two tracks with a transparent scoring rubric — the same logic running in the widget above, published here so you can check exactly why a pair passes or fails. Each axis earns −1 to +3 points. We verified the rubric against the widget's own code with five key/BPM pairs at every tier boundary; each result matched.</p>
+                            <p>This calculator grades your two tracks with a transparent scoring rubric — the same logic running in the widget above, published here so you can check exactly why a pair passes or fails. Each axis earns −1 to +3 points. Every rule in the tables below is the exact rule the widget applies — including the wrap-around: 12 and 1 are neighbors on the wheel, so 12A → 1A counts as an Adjacent Key, not a clash.</p>
                             <h3 class="h4 fw-bold mb-3">Key compatibility scoring (Camelot Wheel)</h3>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -364,6 +364,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <p>One rule deserves a second look: <strong>the diagonal move</strong>. Stepping ±1 <em>and</em> changing letter (8A → 9B) moves the tonic a fifth <em>and</em> swaps major for minor, so the two scales share fewer notes than a same-letter fifth step (8A → 9A). That is why the diagonal earns +1 while the same-letter step earns +2. Most Camelot charts lump both moves together as “compatible”; this rubric grades the difference.</p>
                             <h3 class="h4 fw-bold mb-3">Tempo compatibility scoring (BPM difference)</h3>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -445,8 +446,21 @@
                             <p>Moving <strong>+1 Camelot number</strong> (e.g. 8A → 9A) shifts the music up a <strong>perfect fifth — 7 semitones</strong>. Our ears hear a fifth as a lift: the same melody feels brighter and more urgent. DJs use this "energy boost" to escalate a set before a peak-time track; moving −1 does the reverse and cools the room. One caveat from Mixed In Key itself: the key change alone doesn't guarantee a rise — loudness, groove, and where you enter the track decide whether the room actually lifts. Try the interval first with our <a href="../key-transposition/">Key Transposition</a> tool.</p>
                             <h3 class="h4 fw-bold mb-3">Why ±3 BPM is the "easy" line</h3>
                             <p>The widget calls a 1–3 BPM gap an Easy Mix because of pitch-fader math. A standard DJ pitch fader spans <strong>±8%</strong> (Pioneer CDJ). At 128 BPM, 3 BPM is only a <strong>2.3% shift</strong> — comfortably inside the fader, with no audible strain. A 10+ BPM gap needs ~8% or more, which sits at the fader's edge and is where most DJs engage key lock or choose another track.</p>
+                            <p>The bands are fixed in BPM, but a pitch fader works in percent — so the same BPM gap is a bigger fader move on a slower track:</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead><tr><th>Base tempo</th><th>3 BPM gap</th><th>6 BPM gap</th><th>10 BPM gap</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>100 BPM</td><td>3.0%</td><td>6.0%</td><td>10.0%</td></tr>
+                                        <tr><td>120 BPM</td><td>2.5%</td><td>5.0%</td><td>8.3%</td></tr>
+                                        <tr><td>128 BPM</td><td>2.3%</td><td>4.7%</td><td>7.8%</td></tr>
+                                        <tr><td>140 BPM</td><td>2.1%</td><td>4.3%</td><td>7.1%</td></tr>
+                                        <tr><td>174 BPM</td><td>1.7%</td><td>3.4%</td><td>5.7%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <h3 class="h4 fw-bold mb-3">Key lock: when it saves a mix and when it wrecks it</h3>
-                            <p><strong>Key lock</strong> (Master Tempo) holds a track's musical pitch steady while you change its tempo, using time-stretching. It saves mixes with 6–10 BPM gaps — but past roughly <strong>±6% shift</strong>, time-stretching smears transients and thins vocals, an artifact dancers can hear. Rule of thumb: inside ±3 BPM, leave key lock off; from ±4 to ±8 BPM, switch it on; past that, pick a closer track.</p>
+                            <p><strong>Key lock</strong> (Master Tempo) holds a track's musical pitch steady while you change its tempo, using time-stretching. It saves mixes with 6–10 BPM gaps — but past roughly <strong>±6% shift</strong>, time-stretching smears transients and thins vocals, an artifact dancers can hear. Rule of thumb: inside ±3 BPM, leave key lock off; at a 4–6 BPM gap, switch it on — that is exactly the band where the recommendation box tells you to; past that, pick a closer track.</p>
                             <h3 class="h4 fw-bold mb-3">Half-time and double-time transitions</h3>
                             <p>Tracks at a <strong>0.5× or 2× tempo ratio</strong> — say 70 BPM against 140 BPM — share the same beat grid: every downbeat of the slower track lands on the faster one's. That makes them mixable despite a huge BPM number gap. Hip-hop DJs ride 70↔140 transitions constantly; the trick is matching phrases, not just beats, so the switch lands on a natural break.</p>
                             <p><strong>Honest note:</strong> this calculator's rubric has no ratio exception, so it scores these pairs Difficult. That warning is correct for naive blends — and wrong when your phrases align. Override the score by ear here.</p>
@@ -473,21 +487,18 @@
                             <p>Converting is mechanical: <strong>subtract 7 from the Camelot number</strong> (wrapping around 1–12), then swap A→m and B→d. 8A becomes 1m, 9B becomes 2d, 11A becomes 4m. Both wheels ascend by fifths in the same direction — Open Key simply starts its count at C major / A minor (1d / 1m). Rekordbox and Serato show Camelot-style codes; Traktor shows Open Key — check which one your library uses before a gig.</p>
                         </section>
 
-                        <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: pitch-fader percentage scale showing where the 3, 6, and 10 BPM bands sit at 128 BPM]</div><figcaption class="small text-muted mt-2">Alt text: Infographic mapping the calculator's BPM bands to pitch-fader percentages at 128 BPM.</figcaption></figure>
+                        <figure class="my-4 text-center"><img src="../../assets/diagrams/dj-music-production-tools-mix-compatibility-checker-fader-bands.svg" alt="Infographic mapping the calculator's BPM bands to pitch-fader percentages at 128 BPM." class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted mt-2">Alt text: Infographic mapping the calculator's BPM bands to pitch-fader percentages at 128 BPM.</figcaption></figure>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">Limitations</h2>
                             <ul>
-                                <li><strong>Key detection isn't perfect.</strong> Software key analysis mislabels a real share of tracks — one survey of tools puts errors anywhere from 14% to 59% depending on the tool (digitaldjpool). If a "Perfect Match" sounds wrong, trust your ears and re-analyze.</li>
+                                <li><strong>Key detection isn't perfect.</strong> Software key analysis mislabels a real share of tracks. Independent accuracy tests (bascurtiz’s comparisons of key-detection tools, published by Digital DJ Tips) put accuracy between roughly 43% and 77% depending on the tool — even the best mislabels about one track in four. If a "Perfect Match" sounds wrong, trust your ears and re-analyze.</li>
                                 <li><strong>Energy and phrasing aren't scored.</strong> Two compatible tracks still clash when a vocal sits on the other's drop — phrase matching matters as much as key.</li>
                                 <li><strong>No half-time/double-time exception.</strong> The rubric scores 70-vs-140 BPM pairs Difficult even when the beat grids align; override it when phrases match.</li>
                                 <li><strong>Genre conventions differ.</strong> Hip-hop and drum &amp; bass DJs routinely break harmonic rules with cuts and doubles; the rubric fits smooth house/techno-style blending best.</li>
                                 <li><strong>Live key changes fool the math.</strong> Tracks that modulate mid-song (common in pop) get one label but contain two keys.</li>
+                                <li><strong>Whole-BPM inputs only.</strong> The tempo fields read whole numbers, so tracks tagged 128.0 and 128.4 BPM both enter as 128 — a sub-BPM drift between two “identical” tags stays invisible here.</li>
                             </ul>
-                        </section>
-
-                        <section class="mb-5">
-                            <p class="small text-muted"><em>This tool is for informational and practice purposes. Key and tempo analysis is an estimate — always confirm by ear before a live set.</em></p>
                         </section>
 
                         <!-- FAQ Section -->
@@ -532,7 +543,7 @@
                                     <div id="mixFaq3" class="accordion-collapse collapse "
                                         data-bs-parent="#mixFaqAccordion">
                                         <div class="accordion-body">
-                                            <strong>Past 10 BPM, most DJs pick another track.</strong> 0–3 BPM is easy (~2.3% at 128 BPM); 4–6 BPM wants key lock on; past 10 BPM (roughly 8%+) vocals and transients degrade audibly. The exception: half-time/double-time pairs (70 vs 140 BPM) share a beat grid despite the gap.
+                                            <strong>Past 10 BPM, most DJs pick another track.</strong> 0–3 BPM is easy (~2.3% at 128 BPM); 4–6 BPM wants key lock on; past 10 BPM (7.8% at 128 BPM) vocals and transients degrade audibly. The exception: half-time/double-time pairs (70 vs 140 BPM) share a beat grid despite the gap.
                                         </div>
                                     </div>
                                 </div>

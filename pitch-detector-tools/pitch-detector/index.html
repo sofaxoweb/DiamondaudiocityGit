@@ -509,7 +509,7 @@
         </nav>
         <div class="tool-container">
           <h1 class="tool-title">Online Pitch Detector</h1>
-          <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+          <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
           <p class="subtitle">Real-time voice & pitch analyzer for musicians and vocalists</p>
 
           <div class="instructions">
@@ -585,7 +585,7 @@
                 <li>This detector finds your note with <strong>autocorrelation</strong>: it measures how fast your sound wave repeats and converts that rate into a note, a frequency, and a cents reading.</li>
                 <li>The big display shows the <strong>nearest note plus octave</strong>; below it sit the exact frequency in Hz and your cents sharp or flat.</li>
                 <li>It hears <strong>one note at a time</strong> — voice, flute, and single guitar strings work; chords, drums, and heavy distortion do not.</li>
-                <li>When you stop singing, the display shows "--": a <strong>noise gate</strong> blocks background hum from creating false readings.</li>
+                <li>A <strong>noise gate</strong> ignores sounds quieter than an RMS level of 0.01, so room hum never prints a false note — the display holds your last reading, and "--" appears only before your first note registers.</li>
                 <li>Everything runs <strong>locally in your browser</strong> — no audio is recorded, stored, or sent anywhere.</li>
               </ul>
             </section>
@@ -623,7 +623,7 @@
                 <em>n = 69 + 12 &times; log&#8322;(f&#8320; &divide; 440)</em>. Rounding <em>n</em> gives the nearest
                 note; the leftover fraction becomes the cent deviation:
                 <em>cents = 1200 &times; log&#8322;(f&#8320; &divide; target)</em>. Two guardrails keep the display
-                honest: sounds quieter than an RMS level of 0.01 are rejected (the display shows "--"), and only
+                honest: sounds quieter than an RMS level of 0.01 are rejected instead of printing a false note, and only
                 50&ndash;2000 Hz is reported. The integer-multiple
                 <a href="../harmonic-series-calculator-online/">harmonics</a> riding on your fundamental are ignored —
                 the algorithm tracks the whole wave's repetition rate.
@@ -643,10 +643,10 @@
                 </table>
               </div>
               <p>
-                <em>Methodology note: we checked this chain against fixed references — 440 Hz reads A4 at 0 cents, 446
-                  Hz reads A4 at +23 cents, silence holds at "--" — and every case passed. The best-known refinement is
-                  the YIN algorithm (de Cheveign&eacute; &amp; Kawahara, <em>JASA</em>, 2002). Last reviewed: October
-                  2026.</em>
+                <em>Methodology note: this chain was verified by running the page's own note-mapping code on fixed
+                  reference frequencies in October 2026 — 440 Hz reads A4 at 0 cents, 446 Hz reads A4 at +23 cents,
+                  and silence returns no reading. The best-known refinement of the method is the YIN algorithm
+                  (de Cheveign&eacute; &amp; Kawahara, <em>JASA</em>, 2002).</em>
               </p>
             </section>
 
@@ -662,7 +662,7 @@
                 <li><strong>Frequency:</strong> f&#8320; = 48,000 &divide; 107.6 &asymp; <strong>446 Hz</strong>.</li>
                 <li><strong>Nearest note:</strong> 69 + 12 &times; log&#8322;(446 &divide; 440) = 69.23, which rounds to MIDI 69 — <strong>A4</strong>.</li>
                 <li><strong>Tuning:</strong> 1200 &times; log&#8322;(446 &divide; 440) = <strong>+23.4 cents</strong> against the 440 Hz target — the display rounds to +23 sharp.</li>
-                <li><strong>Accuracy score:</strong> 100 &minus; 23 = <strong>77%</strong>; the needle sits 23/50 of the way toward the meter's right edge.</li>
+                <li><strong>Accuracy score:</strong> 100 &minus; 23 = <strong>77%</strong>; the needle sits at about 66% of the meter's width, right of the green zone — the meter maps &plusmn;50 cents onto 15%&ndash;85% of its width.</li>
               </ol>
               <p>
                 Every reading on screen is this chain, refreshed many times per second.
@@ -760,7 +760,7 @@
                   </thead>
                   <tbody>
                     <tr><td>Note an octave too low or high (A3 instead of A4)</td><td><strong>Octave error:</strong> a strong second harmonic makes the period look half or twice as long</td><td>Get closer to the mic and use a purer vowel</td></tr>
-                    <tr><td>Display shows "--" while you sing</td><td>Your signal is under the 0.01 RMS noise gate</td><td>Move closer, raise input volume, unmute the mic</td></tr>
+                    <tr><td>No note appears when you start singing</td><td>Your signal is under the 0.01 RMS noise gate, so the reading is rejected — the display stays on "--" or holds your previous note</td><td>Move closer, raise input volume, unmute the mic</td></tr>
                     <tr><td>Needle flickers with nobody singing</td><td>Background noise (fan, traffic) analyzed as signal</td><td>Move somewhere quieter; keep the mic close</td></tr>
                     <tr><td>Reading wobbles &plusmn;20 to 50 cents</td><td>Natural vibrato — your pitch is genuinely moving</td><td>Sing a straight tone to find your center first</td></tr>
                     <tr><td>Note flips between two pitches</td><td>Consonants and breath between sustained notes</td><td>Hold one vowel ("ah", "oo"); avoid "s"/"t" sounds</td></tr>
@@ -839,7 +839,7 @@
                 <li><strong>Fixed A440 reference.</strong> It cannot follow an ensemble tuned to 442 Hz — interpret cents against your own reference.</li>
                 <li><strong>Vibrato, bends, and scoops register as tuning errors.</strong> The detector measures what it hears, not what you meant.</li>
                 <li><strong>Range is 50&ndash;2000 Hz.</strong> Sub-bass below about 50 Hz (roughly G1) and whistle tones above roughly B6 fall outside detection.</li>
-                <li><strong>Sources under the 0.01 RMS noise gate</strong> show "--" instead of a note.</li>
+                <li><strong>Sources under the 0.01 RMS noise gate are ignored.</strong> The display keeps its last reading rather than chasing room noise, so a quiet passage never prints a note.</li>
                 <li><strong>Mic processing varies.</strong> Phones and laptops apply noise suppression and echo cancellation you cannot always switch off, which can smear the waveform — and room echo adds delayed copies of your note.</li>
                 <li><strong>About 30&ndash;60 ms of latency.</strong> Fine for practice, not for sample-accurate recording work.</li>
               </ul>

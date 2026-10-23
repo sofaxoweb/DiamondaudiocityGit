@@ -215,7 +215,7 @@
           <div class="tool-container">
             <section id="bpm-calculator-guide">
               <h1 class="mb-3">BPM Calculator – Calculate Tempo, Time Duration & Beat Count</h1>
-              <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+              <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
               <p class="lead text-muted mb-4">
                 A <strong>BPM calculator</strong> converts between tempo, time, and beat count with exact math: enter any two values and it finds the third. Count 32 beats in 16 seconds and you get exactly 120 BPM. DJs, producers, and musicians use it to set DAW tempos, sync delays, and plan track lengths.
               </p>
@@ -235,11 +235,11 @@
               <div class="p-3 border rounded bg-light mb-3">
                 <strong>Definition:</strong> BPM (beats per minute) is the standard unit of musical tempo, counting how many quarter-note beats occur in one minute. A track at 120 BPM plays two beats per second; at 60 BPM it plays one beat per second. Every DAW, DJ deck, and metronome uses BPM as its common tempo language.
               </div>
-              <p>Tempo is one of the three variables this calculator juggles, alongside <strong>elapsed time</strong> and <strong>beat count</strong>. They lock together mathematically: fix any two and the third is determined. That relationship is what makes the calculator useful in both directions — finding the tempo of a recorded loop, or finding how long your 64-bar arrangement will run at a chosen tempo.</p>
+              <p>Tempo is one of the three variables this calculator juggles, alongside <strong>elapsed time</strong> and <strong>beat count</strong>. They lock together mathematically: fix any two and the third is determined. That relationship is what makes the calculator useful in both directions — finding the tempo of a recorded loop, or finding how long your 64-bar arrangement will run at a chosen tempo. One abbreviation, two fields: BPM counts heartbeats per minute in medicine and fitness too, but every formula on this page assumes beats in music, not a pulse.</p>
 
               <h2>How This BPM Calculator Works</h2>
               <p>This calculator solves the tempo–time–beats triangle in three modes. <strong>Calculate BPM</strong> takes a beat count and a measured duration and returns tempo. <strong>Calculate Time</strong> takes a BPM and beat count and returns seconds — the mode arrangers use to time intros, drops, and outros. <strong>Calculate Beats</strong> takes BPM and seconds and returns how many beats fit, useful for slicing loops to exact bar lengths.</p>
-              <p><strong>Methodology:</strong> <code>BPM = (beats × 60) ÷ seconds</code>; <code>seconds = (beats × 60) ÷ BPM</code>; <code>beats = (BPM × seconds) ÷ 60</code>. Each result includes beat duration (<code>60,000 ÷ BPM</code> ms), one 4/4 bar length, and a genre classification. We verified the widget's math against six hand-calculated inputs (32 beats in 16 s → 120 BPM; 120 BPM × 32 beats → 16 s; 120 BPM over 60 s → 120 beats; beat duration 500 ms at 120 BPM) — every result matched exactly.</p>
+              <p><strong>Methodology:</strong> <code>BPM = (beats × 60) ÷ seconds</code>; <code>seconds = (beats × 60) ÷ BPM</code>; <code>beats = (BPM × seconds) ÷ 60</code>. Each result includes beat duration (<code>60,000 ÷ BPM</code> ms), one 4/4 bar length, and a genre classification. The widget's calculation code was executed against hand-calculated values in all three modes (32 beats in 16 s → 120.0 BPM; 120 BPM × 32 beats → 16.00 s; 120 BPM over 60 s → 120.0 beats) and at the genre-bracket boundaries (119.9 → Pop/Rock, 120 → House/EDM, 135 → Techno/Trance) — every result matched the formulas exactly.</p>
 
               <h2>BPM Formulas and Worked Example</h2>
               <p>All three modes derive from one relationship: beats per minute means beats divided by minutes.</p>
@@ -257,6 +257,7 @@
                 <li>One 4/4 bar (4 beats): 500 × 4 = <strong>2,000 ms = 2 seconds</strong></li>
               </ol>
               <p>Reverse check with Calculate Time mode: a 32-beat section at 120 BPM lasts (32 ÷ 120) × 60 = <strong>16 seconds</strong> — consistent both ways.</p>
+              <p><strong>Full-track example:</strong> a song at 128 BPM running 3 minutes 30 seconds holds 128 × 3.5 = <strong>448 beats = 112 bars</strong> of 4/4. Run the same math in reverse with Calculate Beats mode to find how many bars fit a fixed slot — the core calculation behind radio edits and DJ set planning.</p>
               <figure class="my-4 text-center"><img src="../../assets/diagrams/.-dj-music-production-tools-bpm-calculator-61.svg" alt="How tempo, time, and beat count relate — fixing any two determines the third" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>How tempo, time, and beat count relate — fixing any two determines the third</figcaption></figure>
 
               <h2>How to Use This Calculator</h2>
@@ -269,6 +270,22 @@
                 <li>Read the result plus the extras: <strong>beat duration in ms</strong>, <strong>bar duration</strong>, and <strong>genre match</strong>.</li>
               </ol>
               <p>Measuring tempo by ear instead? Try the <a href="../bpm-tap-tempo/">BPM Tap Tempo</a> tool, then verify the tapped value here with exact math.</p>
+
+              <h2>How Long Should You Count? The Window Sets the Error</h2>
+              <p><strong>A one-beat counting error costs 60 ÷ window seconds in BPM</strong> — the shorter your counting window, the more a single miscount moves the result. The error does not depend on the tempo, only on how long you counted:</p>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr><th>Counting window</th><th>Shortcut</th><th>Cost of a one-beat miscount</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>15 seconds</td><td>Count × 4</td><td>±4 BPM</td></tr>
+                    <tr><td>30 seconds</td><td>Count × 2</td><td>±2 BPM</td></tr>
+                    <tr><td>60 seconds</td><td>Count = BPM</td><td>±1 BPM</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Count for 30 seconds or longer whenever the music allows it. Treat any reading from a window under 15 seconds as an estimate and measure again — the second count costs less than a mix built on the wrong tempo.</p>
 
               <h2>Reading Your Result</h2>
               <p>Each mode returns one headline number plus four reference readouts. Here's what each means and what to do with it:</p>
@@ -304,6 +321,20 @@
                 </table>
               </div>
               <p>For any other tempo, compute from the beat duration: <strong>dotted 8th = beat ms × 0.75</strong>, <strong>triplet 8th = beat ms × 0.667</strong>. The dedicated <a href="../bpm-to-ms/">BPM to Milliseconds</a> tool calculates these instantly for any BPM.</p>
+
+              <h2>BPM in Hertz: Tempo as a Frequency</h2>
+              <p><strong>Hertz = BPM ÷ 60</strong> — every rate has a frequency, and a beat is a repeating event. At 120 BPM the beat repeats at exactly 2 Hz, which is the value to type into an LFO, gate, or tremolo that must pulse with the track.</p>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr><th>BPM</th><th>60</th><th>90</th><th>120</th><th>128</th><th>140</th><th>174</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Beat frequency</td><td>1.00 Hz</td><td>1.50 Hz</td><td>2.00 Hz</td><td>2.13 Hz</td><td>2.33 Hz</td><td>2.90 Hz</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Synth LFOs and modular clocks speak in hertz, DAWs speak in BPM — this conversion is the dictionary between them. It is the beat-duration readout turned inside out: a 2 Hz beat has a period of 1,000 ÷ 2 = 500 ms.</p>
 
               <h2>Genre BPM Ranges</h2>
               <p>Tempo is the fastest genre fingerprint in DJing. Use this table to identify tracks or pick compatible ones for a set:</p>
@@ -355,7 +386,7 @@
               <ul>
                 <li><strong>Assumes steady tempo.</strong> Live drummers drift; rubato passages breathe. The result is an <em>average</em> over your measured interval — count longer sections (32+ beats) for a stable average.</li>
                 <li><strong>Assumes 4/4 quarter-note beats.</strong> 6/8, 3/4, and half-time feels need manual interpretation (see above).</li>
-                <li><strong>Garbage in, garbage out.</strong> A one-beat miscount over 16 seconds shifts the result by nearly 4 BPM at 120. Count carefully or measure twice.</li>
+                <li><strong>Garbage in, garbage out.</strong> A one-beat miscount over 16 seconds shifts the result by nearly 4 BPM at 120. Count carefully, count longer, or measure twice (see the count-window table above).</li>
                 <li><strong>Genre match is approximate.</strong> Tempo hints at genre but doesn't define it — 128 BPM could be house, trance, or pop.</li>
               </ul>
 
@@ -522,6 +553,20 @@
                   </div>
                 </div>
 
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="faq11">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer11"
+                      aria-expanded="false" aria-controls="answer11">
+                      Can this calculator find the BPM of a song automatically?
+                    </button>
+                  </h3>
+                  <div id="answer11" class="accordion-collapse collapse" data-bs-parent="#bpmFaqAccordion">
+                    <div class="accordion-body">
+                      No — this calculator computes BPM from numbers you enter; it cannot listen to or analyze audio. To measure a song that is playing, tap along with the <a href="../bpm-tap-tempo/">BPM Tap Tempo</a> tool. For an audio file, run your DAW's tempo detection first, then verify its reading here by counting 32 beats against a stopwatch.
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
             </section>
@@ -551,7 +596,7 @@
                   </ul>
                 </div>
               </div>
-              <p class="text-muted small mt-3 mb-0">This calculator is a planning and education tool. Results are mathematical estimates; always confirm tempo by ear before a live set or final mix.</p>
+              <p class="text-muted small mt-3 mb-0">This calculator is a planning and education tool. Its results are exact calculations from the numbers you enter — error creeps in through the count, not the math — so confirm tempo by ear before a live set or final mix.</p>
             </div>
           </div>
         </div>
@@ -769,7 +814,15 @@
       "name": "How long is a 32-bar intro at 124 BPM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In 4/4, 32 bars = 128 beats. At 124 BPM: (128 ÷ 124) × 60 = 61.9 seconds — just over a minute."
+        "text": "In 4/4, 32 bars = 128 beats. At 124 BPM: (128 ÷ 124) × 60 = 61.9 seconds — just over a minute. Use Calculate Time mode with your bar count × 4 as the beat number for any arrangement section."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this calculator find the BPM of a song automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this calculator computes BPM from numbers you enter; it cannot listen to or analyze audio. To measure a song that is playing, tap along with the BPM Tap Tempo tool. For an audio file, run your DAW's tempo detection first, then verify its reading here by counting 32 beats against a stopwatch."
       }
     }
   ]

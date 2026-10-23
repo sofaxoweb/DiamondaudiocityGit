@@ -38,7 +38,7 @@
       "name": "How do you convert BPM to milliseconds?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Divide 60,000 by the BPM: a quarter note at 120 BPM lasts 60,000 ÷ 120 = 500 ms. Every other subdivision is a fixed ratio of that value — an eighth note is half (250 ms), a dotted eighth is three-quarters (375 ms), an eighth-note triplet is one-third (167 ms). Multiply or divide from the quarter-note value; no other math is required."
+        "text": "Divide 60,000 by the BPM: a quarter note at 120 BPM lasts 60,000 ÷ 120 = 500 ms. Every other subdivision is a fixed ratio of that value — an eighth note is half (250 ms), a dotted eighth is three-quarters (375 ms), an eighth-note triplet is one-third (166.67 ms). Multiply or divide from the quarter-note value; no other math is required."
       }
     },
     {
@@ -54,7 +54,7 @@
       "name": "How do I convert milliseconds back to BPM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Divide 60,000 by the milliseconds: BPM = 60,000 ÷ ms. A 500 ms loop is 120 BPM. The calculator's ms → BPM mode returns the answer instantly — useful for trimmed loops and one-shot samples when the tempo tag is missing."
+        "text": "Divide 60,000 by the length of one beat in milliseconds: BPM = 60,000 ÷ ms. Enter 500 ms and you get 120 BPM, because 500 ms is one beat at that tempo. For a full loop, divide its total length by the number of beats first: a two-bar loop of 4,000 ms has 8 beats, so 4,000 ÷ 8 = 500 ms per beat, which is 120 BPM. Entering the whole 4,000 ms directly returns 15 BPM, because the calculator reads the input as a single beat."
       }
     },
     {
@@ -70,7 +70,7 @@
       "name": "What is reverb pre-delay and how do I sync it to tempo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pre-delay is the millisecond gap between the dry signal and the reverb tail. Sync it with a 32nd- or 64th-note value from the calculator (roughly 15–60 ms at common tempos) so the reverb breathes with the track. Shorter values keep vocals upfront; longer values build spacious, rhythmic tails."
+        "text": "Pre-delay is the millisecond gap between the dry signal and the reverb tail. Sync it with a 32nd- or 64th-note value from the calculator (a 32nd note is 62.5 ms and a 64th is 31.25 ms at 120 BPM) so the reverb breathes with the track. Shorter values keep vocals upfront; longer values build spacious, rhythmic tails."
       }
     },
     {
@@ -94,7 +94,7 @@
       "name": "What's the difference between straight, dotted, and triplet delays?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Straight delays repeat on the grid (quarter = 500 ms at 120 BPM). Dotted delays stretch the value by half (dotted eighth = 375 ms), producing the famous off-beat bounce. Triplet delays squeeze three repeats into two beats (167 ms eighth triplets at 120 BPM) for rolling, shuffle-like movement."
+        "text": "Straight delays repeat on the grid (quarter = 500 ms at 120 BPM). Dotted delays stretch the value by half (dotted eighth = 375 ms), producing the famous off-beat bounce. Triplet delays squeeze three repeats into two beats (166.67 ms eighth triplets at 120 BPM) for rolling, shuffle-like movement."
       }
     },
     {
@@ -255,9 +255,9 @@
                     <div class="tool-container">
                         <section id="bpm-to-ms-guide">
                             <h1 class="mb-3">BPM to MS Calculator: Delay Times &amp; Note Values</h1>
-                            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                            <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                             <p class="lead text-muted mb-4">
-                                A <strong>BPM to ms calculator</strong> converts musical tempo into exact millisecond durations for delay times, reverb pre-delays, and LFO rates — and converts milliseconds back into BPM. Enter any tempo to get every note subdivision instantly, from whole notes to 32nd-note triplets.
+                                A <strong>BPM to ms calculator</strong> converts musical tempo into exact millisecond durations for delay times, reverb pre-delays, and LFO rates — and converts the length of one beat back into BPM. Enter any tempo to get every note value from a full bar of 4/4 down to a 64th note, each in straight, dotted, and triplet form. At 120 BPM one beat lasts 500 ms, an eighth note 250 ms, and a dotted eighth 375 ms — this page returns those values at your tempo.
                             </p>
 
                             <div class="p-4 border rounded bg-light mb-4">
@@ -266,7 +266,7 @@
                                     <li><strong>Quarter note = 60,000 ÷ BPM ms</strong> — the single formula behind every value on this page.</li>
                                     <li><strong>Dotted notes multiply by 1.5; triplet notes multiply by 2/3.</strong> Two rules replace all memorization.</li>
                                     <li>The classic dotted-eighth delay is <strong>352 ms at 128 BPM</strong> and 375 ms at 120 BPM.</li>
-                                    <li><strong>Reverse mode</strong> reads tempo from loop length: a 500 ms loop is 120 BPM (60,000 ÷ ms).</li>
+                                    <li><strong>Reverse mode</strong> reads the length of one beat: 500 ms per beat = 120 BPM (60,000 ÷ ms). A multi-beat loop must be divided by its beat count first.</li>
                                     <li><strong>LFO rate in Hz = BPM ÷ 60</strong> — an eighth-note wobble at 120 BPM runs at 4 Hz.</li>
                                 </ul>
                             </div>
@@ -278,8 +278,8 @@
                             <p>Every tempo-synced effect in a DAW performs this calculation silently. Set a delay to "dotted 8th" and the plugin derives milliseconds from the project BPM behind the scenes. The numbers matter most where sync does not exist: hardware pedals, vintage-style plugins without sync, reverb pre-delays (most reverbs accept ms only), and DJ effects on standalone gear.</p>
 
                             <h2>How This BPM to MS Calculator Works</h2>
-                            <p>This calculator converts in both directions. <strong>BPM → ms mode</strong> takes a tempo and returns the millisecond duration of every standard subdivision — whole, half, quarter, eighth, sixteenth, and 32nd notes, each in straight, dotted, and triplet forms — plus the matching LFO rate in Hz. <strong>ms → BPM mode</strong> reverses the math: enter a loop length, delay time, or sample duration and read the tempo it implies.</p>
-                            <p><strong>Methodology:</strong> <code>quarter note ms = 60,000 ÷ BPM</code>; subdivisions use fixed ratios (eighth = ×0.5, dotted eighth = ×0.75, eighth-note triplet = ×1/3); reverse mode uses <code>BPM = 60,000 ÷ ms</code>; LFO rate uses <code>Hz = BPM ÷ 60</code> per quarter note. We checked the widget against hand calculations on 5 sample inputs — 120 BPM → 500 ms quarter, 375 ms dotted 8th, 167 ms 8th triplet; 500 ms → 120 BPM; 128 BPM → 4.27 Hz eighth-note LFO — and every result matched exactly.</p>
+                            <p>This calculator converts in both directions. <strong>BPM → ms mode</strong> takes a tempo and returns the millisecond duration of seven note values — a full bar of 4/4, half, quarter, eighth, 16th, 32nd, and 64th notes — each in straight, dotted, and triplet form, plus the matching LFO rate in Hz for the bar, half, quarter, and eighth. <strong>ms → BPM mode</strong> reverses the math: enter the length of one beat and read the tempo it implies.</p>
+                            <p><strong>Methodology:</strong> <code>quarter note ms = 60,000 ÷ BPM</code>; subdivisions use fixed ratios (eighth = ×0.5, dotted eighth = ×0.75, eighth-note triplet = ×1/3); reverse mode uses <code>BPM = 60,000 ÷ ms</code> on a single beat's length; LFO rate uses <code>Hz = BPM ÷ 60</code> per quarter note. For this review we executed the widget's own code and checked every table value and frequency against an independent implementation at five tempos (87.5, 100, 120, 128, and 174 BPM) — 120 BPM → 500 ms quarter, 375 ms dotted 8th, 166.67 ms 8th triplet; 468.75 ms per beat → 128 BPM; 128 BPM → 4.27 Hz eighth-note LFO — and every result matched exactly.</p>
 
                             <h2>BPM to MS Formulas and Worked Example</h2>
                             <p>The number 60,000 is the count of milliseconds in one minute. One beat at 120 BPM takes half a second — 500 ms — and every other value follows by ratio:</p>
@@ -305,7 +305,7 @@
                             <ol>
                                 <li><strong>Choose a direction</strong> with the mode tabs: BPM → ms turns tempo into delay times; ms → BPM turns a loop or sample length into tempo.</li>
                                 <li><strong>BPM → ms mode:</strong> type the tempo (20–300 BPM) or tap a quick preset such as 128 or 174.</li>
-                                <li><strong>ms → BPM mode:</strong> type the millisecond value — a loop length, a delay time, a one-shot sample.</li>
+                                <li><strong>ms → BPM mode:</strong> type the length of one beat in ms. For a loop, divide its total length by the number of beats first — a 4,000 ms two-bar loop is 500 ms per beat.</li>
                                 <li><strong>Read the subdivision table:</strong> every note value in ms, ready to dial into a delay, reverb pre-delay, or LFO.</li>
                                 <li><strong>Copy the LFO rate</strong> in Hz for filter wobbles, tremolo, and auto-pan locked to the track.</li>
                             </ol>
@@ -319,12 +319,13 @@
                                         <tr><th>Readout</th><th>Meaning</th><th>Next step</th></tr>
                                     </thead>
                                     <tbody>
+                                        <tr><td>1 Bar (4/4)</td><td>Four beats in ms — this row assumes 4/4 time</td><td>Check loop lengths and bar-long effect cycles against this</td></tr>
                                         <tr><td>Quarter / 8th / 16th</td><td>Straight subdivisions in ms</td><td>Dial straight delays and echo throws from these</td></tr>
                                         <tr><td>Dotted 8th</td><td>0.75 of a beat — the classic rhythmic delay</td><td>Set ping-pong delays here (352 ms at 128 BPM)</td></tr>
                                         <tr><td>Triplets</td><td>3 notes in the time of 2</td><td>Shape shuffle-feel delays and trap hi-hat rolls</td></tr>
-                                        <tr><td>Pre-delay range</td><td>Reverb pre-delay sweet spot</td><td>Start vocals at a 64th note; go shorter on drums</td></tr>
+                                        <tr><td>32nd / 64th</td><td>The shortest values in the table</td><td>Reverb pre-delay lives here — a 64th note (31.25 ms at 120 BPM) is a vocal starting point</td></tr>
                                         <tr><td>LFO Hz</td><td>Modulation rate locked to tempo</td><td>Sync filter wobbles and tremolo without a sync button</td></tr>
-                                        <tr><td>Reverse: BPM</td><td>Tempo matching the ms input</td><td>Identify the tempo of loops and one-shots</td></tr>
+                                        <tr><td>Reverse: BPM</td><td>Tempo implied by one beat's length</td><td>Identify a loop's tempo after dividing its length by its beat count</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -333,13 +334,34 @@
                             <p>60,000 is the number of milliseconds in one minute. A quarter note at X BPM fills 1/X of a minute, so its duration is 60,000 ÷ X ms. That single fact generates the whole table: an eighth note is half a quarter (30,000 ÷ BPM), a sixteenth is a quarter of one (15,000 ÷ BPM).</p>
                             <p>Dotted and triplet values follow two more rules. A <strong>dot adds half the note's value</strong> (×1.5), making a dotted eighth equal to three sixteenths. A <strong>triplet fits three notes into the space of two</strong> (×2/3), making an eighth-note triplet one-third of a quarter. The quarter-note value plus these two rules derives any table entry by hand.</p>
 
+                            <h2>Quick-Reference Delay Chart</h2>
+                            <p>For the tempos producers reach for most, the key values are printed here so they can be read — or screenshotted for a session notebook — without touching the calculator. Every figure is this page's own computed output at that tempo, to two decimal places:</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr><th>Tempo</th><th>Quarter</th><th>8th</th><th>Dotted 8th</th><th>8th triplet</th><th>16th</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>120 BPM</td><td>500.00 ms</td><td>250.00 ms</td><td>375.00 ms</td><td>166.67 ms</td><td>125.00 ms</td></tr>
+                                        <tr><td>128 BPM</td><td>468.75 ms</td><td>234.38 ms</td><td>351.56 ms</td><td>156.25 ms</td><td>117.19 ms</td></tr>
+                                        <tr><td>140 BPM</td><td>428.57 ms</td><td>214.29 ms</td><td>321.43 ms</td><td>142.86 ms</td><td>107.14 ms</td></tr>
+                                        <tr><td>174 BPM</td><td>344.83 ms</td><td>172.41 ms</td><td>258.62 ms</td><td>114.94 ms</td><td>86.21 ms</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                             <h2>Pre-Delay: The Reverb Setting Everyone Ignores</h2>
-                            <p><strong>Pre-delay</strong> is the millisecond gap between the dry signal and the start of the reverb tail. Set it to a tempo-synced subdivision — usually a 32nd or 64th note (roughly 15–60 ms at common tempos) — and the reverb breathes with the track instead of smearing the transient. Longer values detach the reverb into an audible echo; shorter values muddy the attack.</p>
+                            <p><strong>Pre-delay</strong> is the millisecond gap between the dry signal and the start of the reverb tail. Set it to a tempo-synced subdivision — usually a 32nd or 64th note (62.5 ms and 31.25 ms respectively at 120 BPM, less as tempo rises) — and the reverb breathes with the track instead of smearing the transient. Longer values detach the reverb into an audible echo; shorter values muddy the attack.</p>
                             <p>Most reverb plugins accept pre-delay in ms only, never as note values — the exact gap this calculator fills. Start vocals around 20–40 ms, keep drums shorter (10–25 ms) to protect the punch, and stretch pads toward an eighth note for spacious rhythmic tails.</p>
+                            <p><strong>Budget the whole tail, not just the gap.</strong> Pre-delay plus decay is what the listener hears as one reverb length, so make the sum land on a note value. For an eighth-note tail at 120 BPM (250 ms total) with a 32nd-note pre-delay (62.5 ms), set the decay to 187.5 ms: the tail still starts late, but it finishes on the grid instead of washing past the next beat.</p>
+
+                            <h2>Compressor Attack and Release in Tempo</h2>
+                            <p>Compressors are the other place millisecond values meet the grid. Attack decides how much of the transient survives; release decides whether the gain recovers in time with the music. Set the release to a subdivision from the table — an eighth note is 234.38 ms at 128 BPM, a quarter note 468.75 ms — and the gain reduction breathes on the beat instead of pumping at an unrelated rate. Bus compression on dance tracks is the classic case: a release that returns just before the next kick keeps the low end steady without swallowing it.</p>
+                            <p>Attack is usually kept off the grid on purpose: very fast attacks shave transients flat, while a common starting range of 10–30 ms lets the hit through before the gain turns down. The release is where tempo sync pays off — read the value for your tempo above, then fine-tune by ear. The table gives the grid; the track decides the final setting.</p>
 
                             <h2>Reverse Mode: Finding the Tempo of Loops and Samples</h2>
-                            <p>A drum loop with no tempo tag still carries its tempo in its length. <strong>Measure the length in milliseconds and reverse the formula.</strong> A 2-bar loop at 120 BPM lasts 4,000 ms; feed 4,000 ms into ms → BPM mode and the readout returns 120 BPM. The trick works for any cleanly trimmed loop — one bar, four bars, or a single one-shot.</p>
-                            <p><strong>Trim accuracy</strong> decides the result: a loop cut 50 ms too long reads several BPM slow. Zoom into the waveform, cut on zero crossings at the exact bar lines, then measure. For chopped samples and risers, the reverse readout places the sample in the right tempo family for clean time-stretching in the DAW.</p>
+                            <p>A drum loop with no tempo tag still carries its tempo in its length — but the reverse mode reads <strong>one beat</strong>, not the whole loop. Measure the loop, count its beats, and divide first: a two-bar loop in 4/4 has 8 beats, so a 4,000 ms loop is 4,000 ÷ 8 = 500 ms per beat, and entering 500 ms returns 120 BPM. Enter the full 4,000 ms instead and the readout says 15 BPM — the correct tempo for a single beat lasting four seconds, not for your loop. The same division works for any cleanly trimmed loop: one bar ÷ 4 beats, four bars ÷ 16.</p>
+                            <p><strong>Trim accuracy</strong> decides the result: a two-bar loop cut 50 ms too long reads about 1.5 BPM slow, and the error grows as loops get shorter. Zoom into the waveform, cut on zero crossings at the exact bar lines, then measure. For chopped samples and risers, the reverse readout places the sample in the right tempo family for clean time-stretching in the DAW.</p>
                             <figure class="my-4 text-center"><img src="../../assets/diagrams/.-dj-music-production-tools-bpm-to-ms-67.svg" alt="Reverse mode: from a measured loop length back to its tempo" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>Reverse mode: from a measured loop length back to its tempo</figcaption></figure>
 
                             <h2>Why Your "Synced" Delay Still Sounds Off</h2>
@@ -354,8 +376,8 @@
                                 <li><strong>Straight time only.</strong> Swing, shuffle, and rubato need manual adjustment — arithmetic does not feel groove.</li>
                                 <li><strong>Millisecond rounding.</strong> Values round to whole or tenth ms; at 44.1/48 kHz sample rates, sub-millisecond differences have no audible meaning.</li>
                                 <li><strong>One tempo per calculation.</strong> Tracks with tempo ramps or meter changes need one calculation per section.</li>
-                                <li><strong>Reverse mode demands clean loops.</strong> Sloppy trims and reverb tails inflate the ms reading and deflate the BPM result.</li>
-                                <li><strong>LFO Hz assumes quarter-note cycles.</strong> Multiply by 1.5 for dotted or 2/3 for triplet modulation rates.</li>
+                                <li><strong>Reverse mode reads one beat.</strong> It cannot count a loop's beats for you — divide the loop length by the beat count yourself, and trim cleanly: sloppy cuts and reverb tails inflate the per-beat ms and deflate the BPM result.</li>
+                                <li><strong>Hz panel covers straight values only.</strong> Bar, half, quarter, and eighth rates are shown; for a dotted modulation cycle divide the straight rate by 1.5, and for a triplet cycle multiply it by 1.5.</li>
                             </ul>
 
                             <h2>BPM to MS vs Alternatives</h2>
@@ -391,7 +413,7 @@
                                     <div id="faqCollapse1" class="accordion-collapse collapse show"
                                         data-bs-parent="#faqMsAccordion">
                                         <div class="accordion-body">
-                                            Divide 60,000 by the BPM: a quarter note at 120 BPM lasts 60,000 ÷ 120 = 500 ms. Every other subdivision is a fixed ratio of that value — an eighth note is half (250 ms), a dotted eighth is three-quarters (375 ms), an eighth-note triplet is one-third (167 ms). Multiply or divide from the quarter-note value; no other math is required.
+                                            Divide 60,000 by the BPM: a quarter note at 120 BPM lasts 60,000 ÷ 120 = 500 ms. Every other subdivision is a fixed ratio of that value — an eighth note is half (250 ms), a dotted eighth is three-quarters (375 ms), an eighth-note triplet is one-third (166.67 ms). Multiply or divide from the quarter-note value; no other math is required.
                                         </div>
                                     </div>
                                 </div>
@@ -421,7 +443,7 @@
                                     <div id="faqCollapse3" class="accordion-collapse collapse"
                                         data-bs-parent="#faqMsAccordion">
                                         <div class="accordion-body">
-                                            Divide 60,000 by the milliseconds: BPM = 60,000 ÷ ms. A 500 ms loop is 120 BPM. The calculator's ms → BPM mode returns the answer instantly — useful for trimmed loops and one-shot samples when the tempo tag is missing.
+                                            Divide 60,000 by the length of one beat in milliseconds: BPM = 60,000 ÷ ms. Enter 500 ms and you get 120 BPM, because 500 ms is one beat at that tempo. For a full loop, divide its total length by the number of beats first: a two-bar loop of 4,000 ms has 8 beats, so 4,000 ÷ 8 = 500 ms per beat, which is 120 BPM. Entering the whole 4,000 ms directly returns 15 BPM, because the calculator reads the input as a single beat.
                                         </div>
                                     </div>
                                 </div>
@@ -451,7 +473,7 @@
                                     <div id="faqCollapse5" class="accordion-collapse collapse"
                                         data-bs-parent="#faqMsAccordion">
                                         <div class="accordion-body">
-                                            Pre-delay is the millisecond gap between the dry signal and the reverb tail. Sync it with a 32nd- or 64th-note value from the calculator (roughly 15–60 ms at common tempos) so the reverb breathes with the track. Shorter values keep vocals upfront; longer values build spacious, rhythmic tails.
+                                            Pre-delay is the millisecond gap between the dry signal and the reverb tail. Sync it with a 32nd- or 64th-note value from the calculator (a 32nd note is 62.5 ms and a 64th is 31.25 ms at 120 BPM) so the reverb breathes with the track. Shorter values keep vocals upfront; longer values build spacious, rhythmic tails.
                                         </div>
                                     </div>
                                 </div>
@@ -496,7 +518,7 @@
                                     <div id="faqCollapse8" class="accordion-collapse collapse"
                                         data-bs-parent="#faqMsAccordion">
                                         <div class="accordion-body">
-                                            Straight delays repeat on the grid (quarter = 500 ms at 120 BPM). Dotted delays stretch the value by half (dotted eighth = 375 ms), producing the famous off-beat bounce. Triplet delays squeeze three repeats into two beats (167 ms eighth triplets at 120 BPM) for rolling, shuffle-like movement.
+                                            Straight delays repeat on the grid (quarter = 500 ms at 120 BPM). Dotted delays stretch the value by half (dotted eighth = 375 ms), producing the famous off-beat bounce. Triplet delays squeeze three repeats into two beats (166.67 ms eighth triplets at 120 BPM) for rolling, shuffle-like movement.
                                         </div>
                                     </div>
                                 </div>

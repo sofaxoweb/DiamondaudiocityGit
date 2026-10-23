@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="400" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Concert Pitch A Through History</text>
+<line x1="80" y1="325" x2="760" y2="325" stroke="#dee2e6" stroke-width="1"/>
+<text x="72" y="330" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>415</text>
+<line x1="80" y1="261" x2="760" y2="261" stroke="#dee2e6" stroke-width="1"/>
+<text x="72" y="266" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>425</text>
+<line x1="80" y1="196" x2="760" y2="196" stroke="#dee2e6" stroke-width="1"/>
+<text x="72" y="201" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>435</text>
+<line x1="80" y1="132" x2="760" y2="132" stroke="#dee2e6" stroke-width="1"/>
+<text x="72" y="137" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>445</text>
+<path d="M120,325 L320,196 L540,164 L720,142" fill="none" stroke="#0d6efd" stroke-width="3"/>
+<rect x="706" y="132" width="28" height="19" fill="#0d6efd" opacity="0.25"/>
+<circle cx="120" cy="325" r="6" fill="#0d6efd"/>
+<text x="120" y="293" text-anchor="middle" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>A415</text>
+<text x="120" y="311" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'></text>
+<text x="120" y="394" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Baroque</text>
+<circle cx="320" cy="196" r="6" fill="#0d6efd"/>
+<text x="320" y="164" text-anchor="middle" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>A435</text>
+<text x="320" y="182" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>diapason normal</text>
+<text x="320" y="394" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>France 1859</text>
+<circle cx="540" cy="164" r="6" fill="#0d6efd"/>
+<text x="540" y="132" text-anchor="middle" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>A440</text>
+<text x="540" y="150" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>international standard</text>
+<text x="540" y="394" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>ISO 1955</text>
+<circle cx="720" cy="142" r="6" fill="#0d6efd"/>
+<text x="720" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>A442–445</text>
+<text x="720" y="128" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>modern orchestras</text>
+<text x="720" y="394" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Today</text>
+<text x="400" y="438" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Pitch inflation: the reference A rose about a semitone from the Baroque era to today</text>
+</svg>

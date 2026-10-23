@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="400" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>Temperament Error: Just Intonation vs 12-TET (cents)</text>
+<line x1="70" y1="390" x2="770" y2="390" stroke="#dee2e6" stroke-width="1"/>
+<text x="62" y="395" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>-20</text>
+<line x1="70" y1="312" x2="770" y2="312" stroke="#dee2e6" stroke-width="1"/>
+<text x="62" y="318" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>-10</text>
+<line x1="70" y1="235" x2="770" y2="235" stroke="#adb5bd" stroke-width="2"/>
+<text x="62" y="240" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+0</text>
+<line x1="70" y1="158" x2="770" y2="158" stroke="#dee2e6" stroke-width="1"/>
+<text x="62" y="162" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+10</text>
+<line x1="70" y1="80" x2="770" y2="80" stroke="#dee2e6" stroke-width="1"/>
+<text x="62" y="85" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+20</text>
+<rect x="83" y="144" width="32" height="91" fill="#0d6efd"/>
+<text x="99" y="137" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+11.73</text>
+<text x="99" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>m2</text>
+<rect x="142" y="205" width="32" height="30" fill="#0d6efd"/>
+<text x="158" y="198" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+3.91</text>
+<text x="158" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>M2</text>
+<rect x="200" y="114" width="32" height="121" fill="#0d6efd"/>
+<text x="216" y="107" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+15.64</text>
+<text x="216" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>m3</text>
+<rect x="258" y="235" width="32" height="106" fill="#dc3545"/>
+<text x="274" y="357" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>-13.69</text>
+<text x="274" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>M3</text>
+<rect x="317" y="235" width="32" height="15" fill="#dc3545"/>
+<text x="333" y="266" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>-1.96</text>
+<text x="333" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>P4</text>
+<rect x="375" y="235" width="32" height="76" fill="#dc3545"/>
+<text x="391" y="327" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>-9.78</text>
+<text x="391" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>TT</text>
+<rect x="433" y="220" width="32" height="15" fill="#0d6efd"/>
+<text x="449" y="213" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+1.96</text>
+<text x="449" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>P5</text>
+<rect x="492" y="129" width="32" height="106" fill="#0d6efd"/>
+<text x="508" y="122" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+13.69</text>
+<text x="508" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>m6</text>
+<rect x="550" y="235" width="32" height="121" fill="#dc3545"/>
+<text x="566" y="372" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>-15.64</text>
+<text x="566" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>M6</text>
+<rect x="608" y="99" width="32" height="136" fill="#0a58ca"/>
+<text x="624" y="92" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+17.60</text>
+<text x="624" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>m7</text>
+<rect x="666" y="235" width="32" height="91" fill="#dc3545"/>
+<text x="682" y="342" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>-11.73</text>
+<text x="682" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>M7</text>
+<rect x="725" y="235" width="32" height="2" fill="#0d6efd"/>
+<text x="741" y="228" text-anchor="middle" font-size="12" font-weight="600" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>+0.00</text>
+<text x="741" y="412" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Oct</text>
+<text x="400" y="438" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Largest error: minor 7th (9:5) at +17.60 cents — the major third (5:4) sits at −13.69 cents</text>
+</svg>

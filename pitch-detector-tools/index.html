@@ -129,7 +129,7 @@
 
                 <div class="category-header">
                     <h1><i class="bi bi-soundwave me-2"></i>Free Pitch Detector Tools: Tune, Analyze & Convert</h1>
-                    <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                    <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                     <p>Pitch detector tools measure, convert, and calculate musical pitch. These 9 free tools tune instruments, name notes from your microphone in real time, convert between frequencies and note names, and handle the math of cents, transposition, and harmonics. Pick a card below — no sign-up, no downloads.</p>
                 </div>
 
@@ -199,7 +199,7 @@
                             <li><strong>9 free tools:</strong> guitar tuner, pitch detector, pitch shift calculator, vocal range finder, two frequency↔note converters, cents calculator, transpose calculator, and harmonic series calculator.</li>
                             <li>The international tuning standard is <strong>A4 = 440 Hz</strong> (ISO 16) — every converter on this page defaults to it.</li>
                             <li>A <strong>cent</strong> is 1/100 of a semitone; cents = 1200 × log₂(f₂/f₁). Trained ears hear mistuning from about 5–10 cents.</li>
-                            <li>Browser pitch detection runs autocorrelation-style algorithms on your microphone input — accurate within a few cents in a quiet room.</li>
+                            <li>Browser pitch detection runs autocorrelation-style algorithms on your microphone input and reports pitch in cents; your microphone and room noise set the practical accuracy, not the math.</li>
                             <li>Nothing installs and no audio uploads: converters run on math; detectors process audio on your device.</li>
                         </ul>
                     </div>
@@ -266,7 +266,7 @@
                     <div class="tool-section mt-4">
                         <h2 class="text-mid mb-4"><i class="bi bi-mic me-2"></i>How Browser Pitch Detection Works</h2>
                         <p>Grant microphone access and the browser captures audio, then runs a pitch-detection algorithm — usually <strong>autocorrelation</strong> or its refined descendant <strong>YIN</strong>. The algorithm finds the period that best repeats in the waveform and converts it to a frequency. The Web Audio API's AnalyserNode supplies the raw samples; all processing happens on your device.</p>
-                        <p>Accuracy lands within a few cents in a quiet room. Three things degrade it: <strong>background noise</strong> (the algorithm locks onto the loudest periodic signal — possibly a fan), <strong>room reverberation</strong> (reflections smear the periodicity), and <strong>weak fundamentals</strong> (some instruments and vocal fry produce stronger overtones than fundamental, causing octave errors). If the tuner jumps an octave, play or sing louder and closer to the mic. For level checks rather than pitch, the <a href="../sound-analysis-tools/decibel-meter/">Decibel Meter</a> shows what your mic is actually hearing.</p>
+                        <p>The math resolves pitch to the nearest cent; how steady the reading looks in practice depends on your microphone and your room. Three things degrade it: <strong>background noise</strong> (the algorithm locks onto the loudest periodic signal — possibly a fan), <strong>room reverberation</strong> (reflections smear the periodicity), and <strong>weak fundamentals</strong> (some instruments and vocal fry produce stronger overtones than fundamental, causing octave errors). If the tuner jumps an octave, play or sing louder and closer to the mic. For level checks rather than pitch, the <a href="../sound-analysis-tools/decibel-meter/">Decibel Meter</a> shows what your mic is actually hearing.</p>
                     </div>
 
                     <div class="tool-section mt-4">
@@ -296,14 +296,14 @@
                                 <tbody>
                                     <tr><td>Soprano</td><td>C4 – C6</td></tr>
                                     <tr><td>Mezzo-soprano</td><td>A3 – A5</td></tr>
-                                    <tr><td>Alto / Contralto</td><td>G3 – G5</td></tr>
+                                    <tr><td>Contralto</td><td>F3 – F5</td></tr>
                                     <tr><td>Tenor</td><td>C3 – C5</td></tr>
-                                    <tr><td>Baritone</td><td>G2 – G4</td></tr>
+                                    <tr><td>Baritone</td><td>A2 – A4</td></tr>
                                     <tr><td>Bass</td><td>E2 – E4</td></tr>
                                 </tbody>
                             </table>
                         </div>
-                        <p>Range is only half the classification. <strong>Tessitura</strong> — where your voice sounds best and tires least — matters as much. A baritone who can squeak out a C5 is still a baritone if his comfortable notes sit in the G2–G4 band.</p>
+                        <p>Range is only half the classification. <strong>Tessitura</strong> — where your voice sounds best and tires least — matters as much. A baritone who can squeak out a C5 is still a baritone if his comfortable notes sit in the A2–A4 band.</p>
                     </div>
 
                     <div class="tool-section mt-4">
@@ -387,7 +387,7 @@
                                 </h3>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Within a few cents in a quiet room — enough for tuning and practice. Accuracy depends on microphone quality, background noise, and room reflections. If readings jump or land an octave off, move closer to the mic, cut background noise, and play or sing louder. Strong overtones fool every detector.
+                                        The math tools are exact — they run on formulas. The listening tools resolve pitch to the nearest cent, and in a quiet room with a decent microphone their readings are steady enough for tuning and practice. Practical accuracy depends on microphone quality, background noise, and room reflections. If readings jump or land an octave off, move closer to the mic, cut background noise, and play or sing louder. Strong overtones fool every detector.
                                     </div>
                                 </div>
                             </div>
@@ -429,7 +429,7 @@
                                 </h3>
                                 <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Sing your lowest comfortable note, then your highest, into the Vocal Range Finder. It maps your range to the standard types: soprano (C4–C6), alto (G3–G5), tenor (C3–C5), bass (E2–E4), plus mezzo-soprano and baritone between. Classify by tessitura — where you sound best — not by extreme notes.
+                                        Sing your lowest comfortable note, then your highest, into the Vocal Range Finder. It maps your range to the standard types: soprano (C4–C6), contralto (F3–F5), tenor (C3–C5), bass (E2–E4), plus mezzo-soprano (A3–A5) and baritone (A2–A4) between. Classify by tessitura — where you sound best — not by extreme notes.
                                     </div>
                                 </div>
                             </div>
@@ -471,7 +471,7 @@
                                 </h3>
                                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        No installation and no account. The math tools — converters, cents, transpose, harmonic series — need nothing but the page. The listening tools — tuner, pitch detector, vocal range finder — ask for microphone permission once. Processing happens entirely in your browser; no audio is recorded or uploaded.
+                                        No installation and no account. The math tools — converters, cents, transpose, harmonic series — need nothing but the page. The listening tools — tuner, pitch detector, vocal range finder — ask for microphone permission once, and they run on phones, tablets, and computers alike: any modern browser with a microphone. Processing happens entirely in your browser; no audio is recorded or uploaded.
                                     </div>
                                 </div>
                             </div>
@@ -540,7 +540,7 @@
       "name": "How accurate are these pitch detection tools?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Within a few cents in a quiet room — enough for tuning and practice. Accuracy depends on microphone quality, background noise, and room reflections. If readings jump or land an octave off, move closer to the mic, cut background noise, and play or sing louder. Strong overtones fool every detector."
+        "text": "The math tools are exact — they run on formulas. The listening tools resolve pitch to the nearest cent, and in a quiet room with a decent microphone their readings are steady enough for tuning and practice. Practical accuracy depends on microphone quality, background noise, and room reflections. If readings jump or land an octave off, move closer to the mic, cut background noise, and play or sing louder. Strong overtones fool every detector."
       }
     },
     {
@@ -564,7 +564,7 @@
       "name": "How do I find my vocal range and voice type?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sing your lowest comfortable note, then your highest, into the Vocal Range Finder. It maps your range to the standard types: soprano (C4–C6), alto (G3–G5), tenor (C3–C5), bass (E2–E4), plus mezzo-soprano and baritone between. Classify by tessitura — where you sound best — not by extreme notes."
+        "text": "Sing your lowest comfortable note, then your highest, into the Vocal Range Finder. It maps your range to the standard types: soprano (C4–C6), contralto (F3–F5), tenor (C3–C5), bass (E2–E4), plus mezzo-soprano (A3–A5) and baritone (A2–A4) between. Classify by tessitura — where you sound best — not by extreme notes."
       }
     },
     {
@@ -588,7 +588,7 @@
       "name": "Do I need to install anything or create an account?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No installation and no account. The math tools — converters, cents, transpose, harmonic series — need nothing but the page. The listening tools — tuner, pitch detector, vocal range finder — ask for microphone permission once. Processing happens entirely in your browser; no audio is recorded or uploaded."
+        "text": "No installation and no account. The math tools — converters, cents, transpose, harmonic series — need nothing but the page. The listening tools — tuner, pitch detector, vocal range finder — ask for microphone permission once, and they run on phones, tablets, and computers alike: any modern browser with a microphone. Processing happens entirely in your browser; no audio is recorded or uploaded."
       }
     },
     {

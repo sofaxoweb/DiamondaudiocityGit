@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#ffffff"/>
+<text x="400" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>A4 Reference Pitch Around the World (cents from 440 Hz)</text>
+<line x1="80" y1="349" x2="770" y2="349" stroke="#dee2e6" stroke-width="1"/>
+<text x="72" y="354" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>-100¢</text>
+<line x1="80" y1="245" x2="770" y2="245" stroke="#dee2e6" stroke-width="1"/>
+<text x="72" y="250" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>-50¢</text>
+<line x1="80" y1="142" x2="770" y2="142" stroke="#adb5bd" stroke-width="2"/>
+<text x="72" y="147" text-anchor="end" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+0¢</text>
+<rect x="119" y="142" width="60" height="210" fill="#dc3545"/>
+<text x="149" y="382" text-anchor="middle" font-size="14" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>415 Hz</text>
+<text x="149" y="398" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>-101.3¢</text>
+<text x="149" y="402" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Baroque</text>
+<rect x="257" y="142" width="60" height="2" fill="#0d6efd"/>
+<text x="287" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>440 Hz</text>
+<text x="287" y="134" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+0.0¢</text>
+<text x="287" y="402" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>ISO standard</text>
+<rect x="395" y="134" width="60" height="8" fill="#198754"/>
+<text x="425" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>441 Hz</text>
+<text x="425" y="126" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+3.9¢</text>
+<text x="425" y="402" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Orchestral</text>
+<rect x="533" y="126" width="60" height="16" fill="#198754"/>
+<text x="563" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>442 Hz</text>
+<text x="563" y="118" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+7.9¢</text>
+<text x="563" y="402" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Orchestral</text>
+<rect x="671" y="117" width="60" height="24" fill="#198754"/>
+<text x="701" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="#212529" font-family='system-ui, -apple-system, sans-serif'>443 Hz</text>
+<text x="701" y="109" text-anchor="middle" font-size="12" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>+11.8¢</text>
+<text x="701" y="402" text-anchor="middle" font-size="13" fill="#6c757d" font-family='system-ui, -apple-system, sans-serif'>Modern orch.</text>
+</svg>

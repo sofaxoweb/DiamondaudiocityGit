@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melody Generator: Write Hooks with a Step Sequencer</title>
   <meta name="description"
-  content="Write catchy melodies free: a scale-locked step sequencer with tempo and instrument controls. Compose hooks that always stay in key.">
+  content="Free melody generator: compose hooks on a 16-step sequencer with 12 scale-locked rows, 5 scales, 12 roots, 5 instruments and a 60–200 BPM tempo.">
   <meta name="keywords"
     content="melody generator online, step sequencer web audio, melody maker, melodic hook generator, synth sequencer online, scale melody creator, songwriting tools" />
   <link rel="canonical" href="https://pitchdetectors.com/music-theory-tools/melody-generator/">
@@ -15,12 +15,12 @@
     <link rel="alternate" hreflang="x-default" href="https://pitchdetectors.com/music-theory-tools/melody-generator/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Melody Generator: Write Hooks with a Step Sequencer">
-    <meta property="og:description" content="Write catchy melodies free: a scale-locked step sequencer with tempo and instrument controls. Compose hooks that always stay in key.">
+    <meta property="og:description" content="Free melody generator: compose hooks on a 16-step sequencer with 12 scale-locked rows, 5 scales, 12 roots, 5 instruments and a 60–200 BPM tempo.">
     <meta property="og:url" content="https://pitchdetectors.com/music-theory-tools/melody-generator/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Melody Generator: Write Hooks with a Step Sequencer">
-    <meta name="twitter:description" content="Write catchy melodies free: a scale-locked step sequencer with tempo and instrument controls. Compose hooks that always stay in key."> />
+    <meta name="twitter:description" content="Free melody generator: compose hooks on a 16-step sequencer with 12 scale-locked rows, 5 scales, 12 roots, 5 instruments and a 60–200 BPM tempo.">
   <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="../../assets/bootstrap5.css" rel="stylesheet">
@@ -37,7 +37,7 @@
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This one is a step sequencer, not an AI composer. Columns are time steps; rows are pitches from your chosen scale. Click cells to place notes, set a tempo (60–200 BPM) and instrument, then press play — the browser schedules each note via the Web Audio API and loops the pattern. Four of the five scales lock rows to in-key pitches; Chromatic mode offers all twelve semitones."
+        "text": "This one is a step sequencer, not an AI composer. Columns are 16 time steps; the 12 rows are pitches from your chosen scale. Click cells to place notes, set a tempo (60–200 BPM) and instrument, then press play — the browser schedules each note via the Web Audio API and loops the pattern. Four of the five scales lock rows to in-key pitches; Chromatic mode offers all twelve semitones."
       },
       "name": "How does the melody generator work?"
     },
@@ -112,6 +112,14 @@
         "text": "Recreate the grid in your DAW's piano roll by ear: set the same tempo and scale, then place notes at matching steps — 16 grid steps at 120 BPM equals one 4/4 bar of 16th notes. Record the browser audio as a reference track if your DAW supports loopback, and use it as a guide while programming the final MIDI."
       },
       "name": "How do I export my melody to a DAW?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The grid's 12 rows are a window of consecutive scale notes in a bright, high register, not one octave starting on the root. In C major the rows run from E at the bottom to B at the top, so C sits six rows up. Find the root rows first and anchor your motif around them — every row stays in key either way."
+      },
+      "name": "Why don't the rows start on my root note?"
     }
   ]
 }
@@ -204,9 +212,9 @@
         <div class="tool-container">
           <div class="tool-title">
             <h1><i class="bi bi-music-note-list me-2"></i>Melody Generator</h1>
-            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
-            <p>Create melodies on a step-grid. Click cells to enable notes, set tempo, choose scale/instrument, then
-              press Play.</p>
+            <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
+            <p>Compose melodies on a 16-step grid: 12 rows of notes drawn from your chosen scale and root. Click cells
+              to place notes, set the tempo, pick an instrument, then press Play.</p>
           </div>
 
           <!-- Controls row: scale, instrument, play, tempo -->
@@ -271,7 +279,7 @@
                         <h2 class="text-teal mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
                             <li><strong>A melody generator comes in two families:</strong> compositional (this step sequencer — you place every note) and generative (AI tools that compose for you). Compositional tools keep authorship clear.</li>
-                            <li><strong>Constraint beats freedom for beginners:</strong> 7 scale-locked rows produce better melodies than 88 piano keys.</li>
+                            <li><strong>Constraint beats freedom for beginners:</strong> the grid always shows 12 rows — in the four scale modes, 12 consecutive notes of one scale — and that narrow window produces better melodies than 88 piano keys.</li>
                             <li><strong>The 3-note hook recipe works:</strong> 6 rhythmic hits on scale degrees 1–3–5, repeated with one varied ending.</li>
                             <li><strong>Compose rhythm first, pitches second:</strong> tap the groove on one row, then move notes to new rows.</li>
                             <li><strong>Scale lock applies to 4 of the 5 modes</strong> — Chromatic mode offers all 12 semitones with no lock.</li>
@@ -281,7 +289,7 @@
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-info-circle me-2"></i>What Is a Melody Generator?</h2>
-                        <p><strong>A melody generator is an interactive tool that creates a tune.</strong> This one is a compositional step sequencer: a 16-step grid where columns are time steps and rows are pitches from your chosen scale. Click cells to place notes, set a tempo and instrument, and press play. Unlike AI generators that compose for you, every note here is your decision.</p>
+                        <p><strong>A melody generator is an interactive tool that helps you create a tune.</strong> This one is a compositional step sequencer: a 16-step by 12-row grid where columns are time steps and rows are pitches from your chosen scale. Click cells to place notes, set a tempo and instrument, and press play. Unlike AI generators that compose for you, every note here is your decision.</p>
                         <p>The grid removes the fear of wrong notes without removing authorship. Scale lock constrains which pitches are available; rhythm, repetition, and contour — the real ingredients of a hook — are entirely yours.</p>
                     </section>
 
@@ -289,7 +297,7 @@
                         <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Melody Generator Works</h2>
                         <p><strong>This melody generator is a browser-based step sequencer running on the Web Audio API.</strong> It schedules each filled cell as an oscillator note and loops the pattern. The exact mechanics:</p>
                         <ol>
-                            <li><strong>Choose a scale and root:</strong> rows remap to the scale's pitches (C major: C–D–E–F–G–A–B; Blues: C–E♭–F–F♯–G–B♭). Chromatic mode skips the lock and offers all 12 semitones.</li>
+                            <li><strong>Choose a scale and root:</strong> the 12 rows remap to 12 consecutive notes of that scale in a bright, high register. In C major the rows run from E at the bottom up to B at the top — the root C sits six rows up, not on the bottom row. Major and minor windows span 12 scale notes (an octave plus a fifth); pentatonic and blues windows span two octaves of their notes; Chromatic mode skips the lock and offers all 12 semitones in one octave.</li>
                             <li><strong>Click cells:</strong> each filled cell plays one note at its step; empty cells are rests. Multiple filled cells in one column play together as a chord.</li>
                             <li><strong>Set tempo and instrument:</strong> the slider sets 60–200 BPM; the selector switches oscillator timbre (sine, square, triangle, sawtooth, pluck).</li>
                             <li><strong>Press play:</strong> a scheduler walks the columns left to right, triggering each step's notes — looping until you stop it.</li>
@@ -309,6 +317,17 @@
                             <li>Frequencies follow equal temperament: A4 = 440 Hz, each semitone multiplies by 2<sup>1/12</sup>.</li>
                         </ol>
                         <p>This math is your DAW transfer key: 16 grid steps at 120 BPM always equals one bar, so a pattern you sketch here drops straight into a piano roll at the same tempo.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead><tr><th>Tempo</th><th>One step</th><th>Full 16-step loop</th></tr></thead>
+                                <tbody>
+                                    <tr><td>60 BPM</td><td>250 ms</td><td>4.00 s</td></tr>
+                                    <tr><td>90 BPM</td><td>166.7 ms</td><td>2.67 s</td></tr>
+                                    <tr><td>120 BPM</td><td>125 ms</td><td>2.00 s</td></tr>
+                                    <tr><td>200 BPM</td><td>75 ms</td><td>1.20 s</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <section class="mb-4">
@@ -316,7 +335,7 @@
                         <ol>
                             <li><strong>Pick a scale and root:</strong> start with Major Pentatonic for foolproof hooks or Natural Minor for darker melodies.</li>
                             <li><strong>Set the tempo:</strong> match your project's BPM first — find it with <a href="../../dj-music-production-tools/bpm-tap-tempo/">BPM tap tempo</a>.</li>
-                            <li><strong>Tap a rhythm:</strong> fill 4–8 cells in a single row until the groove loops well — rhythm before pitch.</li>
+                            <li><strong>Tap a rhythm:</strong> fill 4–8 cells in a single row until the groove loops well — rhythm before pitch. Click cells one by one, or drag across them to paint a run.</li>
                             <li><strong>Assign pitches:</strong> move notes to 2–3 different rows, keeping the rhythm. Neighboring scale degrees sound most natural.</li>
                             <li><strong>Loop and refine:</strong> press play, listen on repeat, and change one note at a time until the pattern sticks in your head.</li>
                         </ol>
@@ -332,7 +351,7 @@
                                     <tr><td>Contour</td><td>The shape: up, down, arch, or flat</td><td>Arches (up then down) feel most songlike</td></tr>
                                     <tr><td>Rest density</td><td>Empty cells between notes</td><td>≥25% empty = breathing room and groove</td></tr>
                                     <tr><td>Repetition</td><td>Does a 2–4 step motif repeat?</td><td>A repeated motif is what makes hooks hook</td></tr>
-                                    <tr><td>Range</td><td>Highest vs lowest row used</td><td>One octave or less stays singable</td></tr>
+                                    <tr><td>Range</td><td>Highest vs lowest row you actually used</td><td>About an octave or less keeps the line singable</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -340,7 +359,7 @@
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-bounding-box me-2"></i>Why Constraint Creates Better Melodies</h2>
-                        <p><strong>Beginners write better melodies with 7 allowed notes than with 88.</strong> Unlimited choice produces random wandering; a scale constraint forces you to build from rhythm, repetition, and contour — the actual ingredients of memorable melody. Jazz improvisers practice the same way, restricting themselves to one scale until it sings.</p>
+                        <p><strong>Beginners write better melodies inside a 12-row window of one scale than across 88 piano keys.</strong> Unlimited choice produces random wandering; a scale constraint forces you to build from rhythm, repetition, and contour — the actual ingredients of memorable melody. Jazz improvisers practice the same way, restricting themselves to one scale until it sings.</p>
                         <p>Run the experiment: compose one 16-step pattern using all rows, then one using only 3 rows. The 3-row version almost always sounds more like a real hook. Limitation is a compositional technique, not a training wheel.</p>
                     </section>
 
@@ -351,7 +370,7 @@
                         <p><strong>Fill this exact recipe into the grid and you get a working hook in under a minute.</strong></p>
                         <ol>
                             <li>Set the scale to Major Pentatonic, root C, tempo 120.</li>
-                            <li>Place notes on <strong>steps 1, 4, 7, 10, 13, and 16</strong>, using only the rows for scale degrees <strong>1–3–5</strong> (C–E–G, the tonic triad).</li>
+                            <li>Place notes on <strong>steps 1, 4, 7, 10, 13, and 16</strong>, using only rows that play scale degrees <strong>1–3–5</strong> (C–E–G, the tonic triad — in C pentatonic each of those notes appears on two rows; either set works).</li>
                             <li>Leave steps 8 and 15 empty — rests are part of the groove.</li>
                             <li>Press play and loop it twice.</li>
                             <li>On the second loop, change <strong>one</strong> note to a different scale degree — the small surprise the brain remembers.</li>
@@ -377,12 +396,14 @@
                         <p>Check your melody's note set against the <a href="../scale-finder/">scale finder</a> if you plan key changes, and verify any sung version sits in a comfortable range with the <a href="../../pitch-detector-tools/vocal-range-finder-online/">vocal range finder</a>.</p>
                     </section>
 
-                    <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: the 5-step workflow — scale → rhythm → pitches → loop/refine → DAW — with icons]</div><figcaption class="small text-muted mt-2">Alt text: Infographic of the five-step melody workflow from scale selection to DAW production.</figcaption></figure>
+                    <figure class="my-4 text-center"><img src="../../assets/diagrams/music-theory-tools-melody-generator-workflow.svg" alt="Infographic of the five-step melody workflow from scale selection to DAW production" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted mt-2">Alt text: Infographic of the five-step melody workflow from scale selection to DAW production.</figcaption></figure>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
-                            <li><strong>Scale lock is not universal:</strong> Chromatic mode offers all 12 semitones — including clashing ones. In the other four modes, chromatic passing tones and blue notes aren't on the grid; add them in your DAW.</li>
+                            <li><strong>Scale lock is not universal:</strong> Chromatic mode offers all 12 semitones — including clashing ones. In the other four modes, chromatic passing tones aren't on the grid (the Blues scale's ♭5 is, in Blues mode); add passing tones in your DAW.</li>
+                            <li><strong>No save and no export:</strong> the grid holds your pattern only while this page stays open — reloading loses it, and there is no MIDI or audio download. Recreate the pattern in your DAW with the step math above before you close the tab.</li>
+                            <li><strong>High register:</strong> the rows sit in a bright, lead-synth register, well above a typical singing range. Treat the loop as a sketch and transpose it down in your DAW for vocals.</li>
                             <li><strong>Fixed grid resolution:</strong> triplets and swung rhythms can't be represented on an even step grid.</li>
                             <li><strong>Synth preview, not production audio:</strong> the Web Audio timbres sketch the idea; final sound design happens in your DAW.</li>
                             <li><strong>No dynamics:</strong> every step plays at equal velocity — accents and phrasing are up to you.</li>
@@ -424,7 +445,7 @@
                                 <div id="mFaqCol1" class="accordion-collapse collapse show" aria-labelledby="mFaqHead1"
                                     data-bs-parent="#melodyFaqAccordion">
                                     <div class="accordion-body">
-                                        This one is a step sequencer, not an AI composer. Columns are time steps; rows are pitches from your chosen scale. Click cells to place notes, set a tempo (60–200 BPM) and instrument, then press play — the browser schedules each note via the Web Audio API and loops the pattern. Four of the five scales lock rows to in-key pitches; Chromatic mode offers all twelve semitones.
+                                        This one is a step sequencer, not an AI composer. Columns are 16 time steps; the 12 rows are pitches from your chosen scale. Click cells to place notes, set a tempo (60–200 BPM) and instrument, then press play — the browser schedules each note via the Web Audio API and loops the pattern. Four of the five scales lock rows to in-key pitches; Chromatic mode offers all twelve semitones.
                                     </div>
                                 </div>
                             </div>
@@ -551,6 +572,20 @@
                                     data-bs-parent="#melodyFaqAccordion">
                                     <div class="accordion-body">
                                         Recreate the grid in your DAW's piano roll by ear: set the same tempo and scale, then place notes at matching steps — 16 grid steps at 120 BPM equals one 4/4 bar of 16th notes. Record the browser audio as a reference track if your DAW supports loopback, and use it as a guide while programming the final MIDI.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="mFaqHead11">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mFaqCol11">
+                                        Why don't the rows start on my root note?
+                                    </button>
+                                </h3>
+                                <div id="mFaqCol11" class="accordion-collapse collapse" aria-labelledby="mFaqHead11"
+                                    data-bs-parent="#melodyFaqAccordion">
+                                    <div class="accordion-body">
+                                        The grid's 12 rows are a window of consecutive scale notes in a bright, high register, not one octave starting on the root. In C major the rows run from E at the bottom to B at the top, so C sits six rows up. Find the root rows first and anchor your motif around them — every row stays in key either way.
                                     </div>
                                 </div>
                             </div>

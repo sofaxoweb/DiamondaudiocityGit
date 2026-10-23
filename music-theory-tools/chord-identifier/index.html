@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chord Identifier: Name Any Chord from Its Notes</title>
     <meta name="description"
-    content="Free chord identifier: enter the notes you play and get the chord name, formula, inversion, and alternative readings for triads, sevenths, and sixths.">
+    content="Free chord identifier: enter the notes you play and get the chord name, formula, and every alternative reading — triads, seventh chords, and sixths.">
     <meta name="keywords"
         content="chord identifier, reverse chord finder, identify chord from notes, piano chord identifier, chord namer online, reverse chord analyzer, guitar chord identifier" />
     <link rel="canonical" href="https://pitchdetectors.com/music-theory-tools/chord-identifier/">
@@ -15,12 +15,12 @@
     <link rel="alternate" hreflang="x-default" href="https://pitchdetectors.com/music-theory-tools/chord-identifier/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Chord Identifier: Name Any Chord from Its Notes">
-    <meta property="og:description" content="Free chord identifier: enter the notes you play and get the chord name, formula, inversion, and alternative readings for triads, sevenths, and sixths.">
+    <meta property="og:description" content="Free chord identifier: enter the notes you play and get the chord name, formula, and every alternative reading — triads, seventh chords, and sixths.">
     <meta property="og:url" content="https://pitchdetectors.com/music-theory-tools/chord-identifier/">
     <meta property="og:image" content="https://pitchdetectors.com/assets/imgs/logo.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Chord Identifier: Name Any Chord from Its Notes">
-    <meta name="twitter:description" content="Free chord identifier: enter the notes you play and get the chord name, formula, inversion, and alternative readings for triads, sevenths, and sixths.">
+    <meta name="twitter:description" content="Free chord identifier: enter the notes you play and get the chord name, formula, and every alternative reading — triads, seventh chords, and sixths.">
     <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="../../assets/bootstrap5.css" rel="stylesheet">
@@ -46,7 +46,7 @@
       "name": "What notes make up a C major chord?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C, E, and G — root, major third (4 semitones), and perfect fifth (7 semitones). Any voicing containing exactly these pitch classes in any octave or order is some form of C major. The inversion follows the lowest note: E lowest makes it C/E, G lowest makes it C/G."
+        "text": "C, E, and G — root, major third (4 semitones), and perfect fifth (7 semitones). Any selection containing exactly these pitch classes, in any order, returns C major. Which inversion you are playing depends on your own lowest note — E lowest makes it C/E, G lowest makes it C/G — but the identifier itself reports the root-position name."
       }
     },
     {
@@ -59,10 +59,10 @@
     },
     {
       "@type": "Question",
-      "name": "What is a chord inversion and how is it detected?",
+      "name": "What is a chord inversion and does this tool detect it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An inversion puts a non-root chord tone in the bass: C–E–G becomes C/E (first inversion) with E lowest, or C/G (second inversion) with G lowest. The widget reads your lowest selected note as the bass and labels the inversion from it. Enter the voicing low-to-high, exactly as you play it, for the correct label."
+        "text": "An inversion puts a non-root chord tone in the bass: C–E–G becomes C/E (first inversion) with E lowest, or C/G (second inversion) with G lowest. This identifier cannot detect inversions — its buttons select pitch classes without octaves, so it always reports the root-position name. To name your inversion, take your lowest played note and apply the rule above."
       }
     },
     {
@@ -78,7 +78,7 @@
       "name": "What is the difference between voicing and inversion?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Inversion concerns only the lowest note (C/E vs C/G). Voicing is the full vertical arrangement — octaves, doublings, and spacing. Two pianists can play the same inversion with completely different voicings. The identifier reports the chord and its inversion; the voicing stays your artistic choice."
+        "text": "Inversion concerns only the lowest note (C/E vs C/G). Voicing is the full vertical arrangement — octaves, doublings, and spacing. Two pianists can play the same inversion with completely different voicings. This identifier reads pitch classes only, so it reports the chord name and leaves both inversion and voicing to you."
       }
     },
     {
@@ -86,7 +86,7 @@
       "name": "Can it identify jazz extensions like 9ths and 13ths?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The template library covers triads, seventh chords, and sixth chords — 9th, 11th, and 13th templates are not included, and the interval math collapses octaves. An extended voicing may return no match or a simpler core reading. Identify the triad or seventh underneath first, then name the extension yourself from the leftover tones."
+        "text": "No. The library covers triads, seventh chords, and sixth chords; 9th, 11th, and 13th templates are not included, and the interval math folds every note into one octave. A voicing containing a 9th returns no match — drop the extension, identify the triad or seventh underneath, then name the extension yourself from the leftover tone."
       }
     },
     {
@@ -102,7 +102,7 @@
       "name": "What is a polychord and can this tool name one?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A polychord stacks two recognizable triads — D major over C major, written D/C. The identifier reads all selected notes as one set, so it may return a single extended-chord name instead. Name polychords by identifying the upper and lower triads separately, 3 notes at a time."
+        "text": "A polychord stacks two recognizable triads — D major over C major, written D/C. The identifier reads all selected notes as one set, and any set of 5 or more pitch classes matches no template at all, so a polychord returns “Unknown”. Name polychords by identifying the upper and lower triads separately, 3 notes at a time."
       }
     },
     {
@@ -238,8 +238,7 @@
                 <div class="tool-container">
                     <div class="tool-title">
                         <h2><i class="bi bi-vinyl me-2"></i>Chord Identifier</h2>
-                        <p>Select notes to identify the chord. Supports triads, 7th chords, extended chords, and
-                            inversions.</p>
+                        <p>Select notes to identify the chord. Covers triads, seventh chords, and sixth chords — every matching reading is listed, not just one.</p>
                     </div>
 
                     <div class="mb-4">
@@ -351,19 +350,19 @@
                 <!-- content -->
                                 <article class="tool-container mt-4">
                     <section class="mb-4">
-                        <h1 class="mb-3">Chord Identifier: Reverse Harmony & Voicing Analyzer</h1>
-                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <h1 class="mb-3">Chord Identifier: Name Any Chord from Its Notes</h1>
+                        <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p class="lead text-muted">
-                            A <strong>chord identifier is a reverse chord finder: enter the notes you are playing and it names the chord</strong> — root, quality, interval formula, and inversion. Select any combination of pitches above for an instant, theory-grade identification.
+                            A <strong>chord identifier is a reverse chord finder: enter the notes you are playing and it names the chord</strong> — root, quality, and interval formula, plus every alternative reading the same notes support. Select any 3 or more pitches above for an instant identification.
                         </p>
                     </section>
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-check2-square me-2"></i>Key Takeaways</h2>
                         <ul>
-                            <li><strong>A chord identifier names any chord from its notes</strong> — select 3 or more pitches to get the chord name, quality, interval formula, and inversion.</li>
+                            <li><strong>A chord identifier names any chord from its notes</strong> — select 3 or more pitches to get the chord name, quality, interval formula, and every alternative reading.</li>
                             <li>Chords are identified by <strong>interval patterns</strong>: C–E–G is a major triad (4 + 3 semitones) in any octave or order.</li>
                             <li><strong>One voicing can carry several valid names</strong> — C–E–G–A is both Am7 and C6. The tool lists every match instead of guessing.</li>
-                            <li>The <strong>bass note decides the inversion</strong>: the same three notes are root position, first, or second inversion depending on the lowest pitch.</li>
+                            <li>The <strong>bass note decides the inversion</strong> in real playing: the same three notes are root position, first, or second inversion depending on your lowest pitch — this tool names the pitch set, and the Inversions section below shows how to read yours off in seconds.</li>
                             <li>Feed identified chords into the <a href="../chord-progression-generator/">chord progression generator</a> to build a full song section around your voicing.</li>
                         </ul>
                     </section>
@@ -375,13 +374,13 @@
                     </section>
 
                     <section class="mb-4">
-                        <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Calculator Works</h2>
+                        <h2 class="text-teal mb-3"><i class="bi bi-gear me-2"></i>How This Chord Identifier Works</h2>
                         <p><strong>The widget above identifies chords by exhaustive root analysis — the method a theorist uses, automated.</strong> The exact procedure:</p>
                         <ol>
                             <li><strong>Try every note as root:</strong> each selected pitch is tested as the potential root.</li>
                             <li><strong>Measure intervals:</strong> the remaining notes convert to semitone distances above that candidate root (modulo 12, so octaves collapse).</li>
-                            <li><strong>Match 16 templates:</strong> each interval pattern is compared against the library — 6 triad types, 7 seventh-chord types, and major and minor sixth chords. Ninth, eleventh, and thirteenth templates are not included.</li>
-                            <li><strong>Report every match:</strong> each root/template pair that fits is listed with its interval formula (e.g. 0 – 4 – 7 – 11) and the inversion implied by the lowest note.</li>
+                            <li><strong>Match 16 templates:</strong> each interval pattern is compared against the library — 6 triad types, 7 seventh-chord types, major and minor sixth chords, and an add9 entry. Ninth, eleventh, and thirteenth templates are not included.</li>
+                            <li><strong>Report every match:</strong> each root/template pair that fits is listed with its interval formula (e.g. 0 – 4 – 7 – 11). The headline result is the first match found — roots are tested in the order you selected the notes — and the remaining matches appear as clickable alternative readings.</li>
                         </ol>
                         <p>Because every candidate root is tested, the chord identifier never forces one answer on ambiguous voicings. It shows the alternatives and your ear decides.</p>
                     </section>
@@ -393,20 +392,20 @@
                         <p><strong>Worked example:</strong> you select C, E, G, B.</p>
                         <ol>
                             <li>Testing <strong>C as root</strong>: intervals 0 (C), 4 (E), 7 (G), 11 (B) match the <strong>major-seventh</strong> template → <strong>Cmaj7</strong>.</li>
-                            <li>Testing <strong>E as root</strong>: intervals 0 (E), 3 (G), 8 (B), 9 (C) match no standard template.</li>
+                            <li>Testing <strong>E as root</strong>: intervals 0 (E), 3 (G), 7 (B), 8 (C) match no template in the library.</li>
                             <li>The other roots fail the same way, so the tool reports <strong>Cmaj7</strong>, formula 0 – 4 – 7 – 11.</li>
-                            <li>If the lowest selected note were E, the same pitch set would read as <strong>Cmaj7/E — first inversion</strong>.</li>
+                            <li>The same four pitch classes return Cmaj7 in any click order — the matcher reads pitch sets, not voicings, so it never adds inversion or slash labels (see Inversions below for how to name yours).</li>
                         </ol>
                     </section>
 
                     <section class="mb-4">
-                        <h2 class="text-teal mb-3"><i class="bi bi-list-ol me-2"></i>How to Use This Calculator</h2>
+                        <h2 class="text-teal mb-3"><i class="bi bi-list-ol me-2"></i>How to Use This Chord Identifier</h2>
                         <ol>
-                            <li><strong>Select notes:</strong> click pitches on the interactive note selector (choose at least 3; order doesn't matter).</li>
-                            <li><strong>Read the chord name:</strong> the primary identification appears instantly, with the chord quality (major, minor, diminished…).</li>
+                            <li><strong>Select notes:</strong> click pitches on the interactive note selector (choose at least 3). The set of matches never depends on click order.</li>
+                            <li><strong>Read the chord name:</strong> the headline identification appears instantly, with the chord quality (major, minor, diminished…).</li>
                             <li><strong>Check the formula:</strong> the interval pattern (e.g. 0 – 3 – 7) shows you the chord's anatomy in semitones.</li>
-                            <li><strong>Review alternatives:</strong> open the alternative readings — different roots can explain the same notes.</li>
-                            <li><strong>Hear it:</strong> press play to audition the voicing and confirm it matches what you imagined.</li>
+                            <li><strong>Review alternatives:</strong> when several readings fit, they appear as cards under Possible Interpretations — the headline shows the first match, tested in the order you clicked the notes. Click any alternative card to preview it as the headline.</li>
+                            <li><strong>Hear it:</strong> press play to hear the selected notes sounded together in the middle octave and confirm the chord's character.</li>
                         </ol>
                     </section>
 
@@ -424,6 +423,8 @@
                                     <tr><td>Dominant 7th</td><td>0 – 4 – 7 – 10</td><td>C – E – G – B♭</td></tr>
                                     <tr><td>Minor 7th</td><td>0 – 3 – 7 – 10</td><td>C – E♭ – G – B♭</td></tr>
                                     <tr><td>Suspended 4th</td><td>0 – 5 – 7</td><td>C – F – G</td></tr>
+                                    <tr><td>Suspended 2nd</td><td>0 – 2 – 7</td><td>C – D – G</td></tr>
+                                    <tr><td>Major 6th</td><td>0 – 4 – 7 – 9</td><td>C – E – G – A</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -438,13 +439,15 @@
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-patch-question me-2"></i>Sus2 vs Add9: the One-Octave Rule</h2>
                         <p><strong>Csus2 and Cadd9 share the note D but mean different things.</strong> In Csus2 (C–D–G), the D <em>replaces</em> the third — the chord has no third at all. In Cadd9 (C–E–G–D), the third stays and the D is <em>added</em>, usually voiced above the octave.</p>
-                        <p>The rule: <strong>"sus" means a chord tone is missing; "add" means a tone joins a complete chord.</strong> The widget's library includes sus2 (0 – 2 – 7) but its interval math collapses octaves, so an add9 voicing never matches a template. Identify the C–E–G core as C major first, then label the added D yourself.</p>
+                        <p>The rule: <strong>"sus" means a chord tone is missing; "add" means a tone joins a complete chord.</strong> This identifier matches sus2 (0 – 2 – 7) directly. An add9 voicing returns no match at all, because the matcher folds every interval into a single octave and cannot represent the 9th — select C–E–G, read C major, then label the added D yourself.</p>
+                        <p>The same C–D–G set hides a second reading: measured from G, the notes form 0 – 5 – 7, a <strong>Gsus4</strong>. Sus chords come in mirror pairs — every sus2 set is also a sus4 set built on its fifth — and the identifier lists both readings whenever they occur.</p>
                     </section>
 
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-question-circle me-2"></i>Why One Voicing Has Three Names</h2>
                         <p><strong>Chord names are interpretations, not facts — the most useful lesson a chord identifier teaches.</strong> C–E–G–B is Cmaj7 with C in the bass, while C–E–G–A is both <strong>Am7</strong> (A–C–E–G) and <strong>C6</strong> (C–E–G–A). Same four notes, two legitimate names, different harmonic functions.</p>
                         <p><strong>Choose between alternative readings in 3 steps. First, check the bass note:</strong> A in the bass points to Am7; C points to C6. <strong>Second, check where the chord resolves:</strong> motion toward D minor favors Am7; motion toward F favors C6. <strong>Third, check for missing tones:</strong> prefer the name that needs fewer invented notes. Then use the <a href="../interval-calculator/">interval calculator</a> to double-check any single interval you are unsure about.</p>
+                        <p><strong>Symmetrical chords multiply the effect.</strong> A diminished seventh chord divides the octave into equal minor thirds, so B–D–F–G♯ returns four equally valid names — Bdim7, Ddim7, Fdim7, and G♯dim7. An augmented triad does the same in major thirds, returning 3 readings (Caug, Eaug, G♯aug). With symmetrical sets no reading outranks another; only the key and the bass line break the tie.</p>
                     </section>
 
                     <figure class="my-4 text-center"><img src="../../assets/diagrams/.-music-theory-tools-chord-identifier-100.svg" alt="Alt text: Staff diagram showing how the same four notes are named Am7 or C6 depending on the bass note." class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted mt-2">Alt text: Staff diagram showing how the same four notes are named Am7 or C6 depending on the bass note.</figcaption></figure>
@@ -452,7 +455,7 @@
                     <section class="mb-4">
                         <h2 class="text-teal mb-3"><i class="bi bi-arrow-down-up me-2"></i>Inversions: The Bass Note Changes Everything</h2>
                         <p><strong>An inversion is the same chord with a different note in the bass.</strong> C–E–G with C lowest is root position; E lowest is first inversion (C/E); G lowest is second inversion (C/G). The chord's identity holds, but stability shifts — second-inversion triads sound restless and pull toward resolution, which is why composers place them at cadences.</p>
-                        <p>Because the widget reads the lowest selected note as the bass, <strong>selection order sets the inversion label</strong> (the chord name itself is order-independent). Build the voicing low-to-high exactly as you play it for the most useful reading.</p>
+                        <p><strong>This identifier does not label inversions.</strong> Its note buttons are pitch classes with no octave and no bass, so every arrangement of C–E–G returns the same root-position name. Read your own inversion from the note your left hand or bass player sounds lowest: root in the bass means root position, the 3rd means first inversion, the 5th means second inversion — and in a seventh chord, the 7th in the bass means third inversion.</p>
                     </section>
 
                     <section class="mb-4">
@@ -465,7 +468,9 @@
                         <h2 class="text-teal mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
                         <ul>
                             <li><strong>Needs at least 3 notes.</strong> Two notes make an interval, not a chord — use the interval calculator for dyads.</li>
-                            <li><strong>16-template library.</strong> Triads, seventh chords, and sixth chords are covered; 9th, 11th, and 13th extensions are not — extended voicings may return no match or a simpler core reading.</li>
+                            <li><strong>15 of the 16 templates can match.</strong> The library holds 16 entries — triads, seventh chords, sixth chords, and add9 — but the add9 entry stores its top interval at 14 semitones while the matcher folds intervals into one octave (mod 12), so it can never fire. Voicings containing a 9th, 11th, or 13th return no match, and any selection of 5 or more pitch classes matches nothing at all.</li>
+                            <li><strong>No inversion or slash-chord labels.</strong> Input is a set of pitch classes — no octaves, no bass note — so the result is always the root-position name. Determine the inversion from your own lowest note (see Inversions above).</li>
+                            <li><strong>Voicing-blind.</strong> Doublings, spacing, and octave placement are invisible to the matcher: a close-position triad and the same notes spread across three octaves return identical results.</li>
                             <li><strong>12-tone equal temperament assumed.</strong> Microtonal or just-intonation voicings round to the nearest semitone template.</li>
                             <li><strong>Context-free naming.</strong> The tool names the pitch set, not its function in your song — Am7 vs C6 stays your call.</li>
                             <li><strong>Cluster voicings may match nothing.</strong> Dense chromatic clusters (e.g. C–C♯–D) have no standard chord name, and the tool says so honestly.</li>
@@ -478,17 +483,13 @@
                             <table class="table table-bordered">
                                 <thead><tr><th>Method</th><th>How it works</th><th>Best for</th><th>Watch out for</th></tr></thead>
                                 <tbody>
-                                    <tr><td>This tool</td><td>Note input → template matching, all roots tested</td><td>Quick naming, inversions, alternatives</td><td>Context-free; you pick the final name</td></tr>
+                                    <tr><td>This tool</td><td>Note input → template matching, all roots tested</td><td>Quick naming, formulas, alternative readings</td><td>No inversion labels; context-free — you pick the final name</td></tr>
                                     <tr><td>Chord dictionary book/app</td><td>Look up shapes by name</td><td>Learning standard voicings</td><td>One direction only (name → notes)</td></tr>
                                     <tr><td>DAW chord track</td><td>Analyzes MIDI in your project</td><td>Chords already in a session</td><td>Tied to one DAW; naming varies</td></tr>
                                     <tr><td>Teacher / forum</td><td>Human analysis</td><td>Ambiguous jazz voicings</td><td>Slow; answers vary by theorist</td></tr>
                                 </tbody>
                             </table>
                         </div>
-                    </section>
-
-                    <section class="mb-4">
-                        <p class="small text-muted"><em>Chord names are analytical interpretations of pitch collections. Results are provided for informational and creative purposes — in ambiguous cases, choose the name that matches your chord's function in the music.</em></p>
                     </section>
 
                     <!-- FAQ Section -->
@@ -521,7 +522,7 @@
                                 <div id="cFaqCol2" class="accordion-collapse collapse" aria-labelledby="cFaqHead2"
                                     data-bs-parent="#chordFaqAccordion">
                                     <div class="accordion-body">
-                                        C, E, and G — root, major third (4 semitones), and perfect fifth (7 semitones). Any voicing containing exactly these pitch classes in any octave or order is some form of C major. The inversion follows the lowest note: E lowest makes it C/E, G lowest makes it C/G.
+                                        C, E, and G — root, major third (4 semitones), and perfect fifth (7 semitones). Any selection containing exactly these pitch classes, in any order, returns C major. Which inversion you are playing depends on your own lowest note — E lowest makes it C/E, G lowest makes it C/G — but the identifier itself reports the root-position name.
                                     </div>
                                 </div>
                             </div>
@@ -545,13 +546,13 @@
                                 <h3 class="accordion-header" id="cFaqHead4">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#cFaqCol4">
-                                        What is a chord inversion and how is it detected?
+                                        What is a chord inversion and does this tool detect it?
                                     </button>
                                 </h3>
                                 <div id="cFaqCol4" class="accordion-collapse collapse" aria-labelledby="cFaqHead4"
                                     data-bs-parent="#chordFaqAccordion">
                                     <div class="accordion-body">
-                                        An inversion puts a non-root chord tone in the bass: C–E–G becomes C/E (first inversion) with E lowest, or C/G (second inversion) with G lowest. The widget reads your lowest selected note as the bass and labels the inversion from it. Enter the voicing low-to-high, exactly as you play it, for the correct label.
+                                        An inversion puts a non-root chord tone in the bass: C–E–G becomes C/E (first inversion) with E lowest, or C/G (second inversion) with G lowest. This identifier cannot detect inversions — its buttons select pitch classes without octaves, so it always reports the root-position name. To name your inversion, take your lowest played note and apply the rule above.
                                     </div>
                                 </div>
                             </div>
@@ -581,7 +582,7 @@
                                 <div id="cFaqCol6" class="accordion-collapse collapse" aria-labelledby="cFaqHead6"
                                     data-bs-parent="#chordFaqAccordion">
                                     <div class="accordion-body">
-                                        Inversion concerns only the lowest note (C/E vs C/G). Voicing is the full vertical arrangement — octaves, doublings, and spacing. Two pianists can play the same inversion with completely different voicings. The identifier reports the chord and its inversion; the voicing stays your artistic choice.
+                                        Inversion concerns only the lowest note (C/E vs C/G). Voicing is the full vertical arrangement — octaves, doublings, and spacing. Two pianists can play the same inversion with completely different voicings. This identifier reads pitch classes only, so it reports the chord name and leaves both inversion and voicing to you.
                                     </div>
                                 </div>
                             </div>
@@ -596,7 +597,7 @@
                                 <div id="cFaqCol7" class="accordion-collapse collapse" aria-labelledby="cFaqHead7"
                                     data-bs-parent="#chordFaqAccordion">
                                     <div class="accordion-body">
-                                        No. The template library covers triads, seventh chords, and sixth chords — 9th, 11th, and 13th templates are not included, and the interval math collapses octaves. An extended voicing may return no match or a simpler core reading. Identify the triad or seventh underneath first, then name the extension yourself from the leftover tones.
+                                        No. The library covers triads, seventh chords, and sixth chords; 9th, 11th, and 13th templates are not included, and the interval math folds every note into one octave. A voicing containing a 9th returns no match — drop the extension, identify the triad or seventh underneath, then name the extension yourself from the leftover tone.
                                     </div>
                                 </div>
                             </div>
@@ -626,7 +627,7 @@
                                 <div id="cFaqCol9" class="accordion-collapse collapse" aria-labelledby="cFaqHead9"
                                     data-bs-parent="#chordFaqAccordion">
                                     <div class="accordion-body">
-                                        A polychord stacks two recognizable triads — D major over C major, written D/C. The identifier reads all selected notes as one set, so it may return a single extended-chord name instead. Name polychords by identifying the upper and lower triads separately, 3 notes at a time.
+                                        A polychord stacks two recognizable triads — D major over C major, written D/C. The identifier reads all selected notes as one set, and any set of 5 or more pitch classes matches no template at all, so a polychord returns “Unknown”. Name polychords by identifying the upper and lower triads separately, 3 notes at a time.
                                     </div>
                                 </div>
                             </div>

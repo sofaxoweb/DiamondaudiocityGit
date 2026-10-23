@@ -227,7 +227,7 @@
                 <div class="tool-container">
                     <div class="tool-title">
                         <h1><i class="bi bi-arrow-left-right me-2"></i>Frequency to Note Converter: Hz to Musical Notes</h1>
-                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p>Type any frequency in hertz and this converter names the nearest musical note — with its octave, cents deviation, and exact in-tune frequency.</p>
                     </div>
 
@@ -334,7 +334,7 @@
                     <section class="mb-5">
                         <h2 class="h3 fw-bold text-teal mb-3">How This Converter Works</h2>
                         <p><strong>This converter maps any frequency to the 12-tone equal-tempered chromatic scale with the MIDI note-number formula</strong>: <code>n = 69 + 12 × log₂(f ÷ 440)</code>, where 69 is the MIDI number of A4. The note name comes from the rounded value of n (C, C♯, D … B repeating every 12), the octave from its register, and the cents deviation from the fractional remainder — positive for sharp, negative for flat.</p>
-                        <p>Methodology: the A4 reference defaults to 440 Hz per ISO 16 and adjusts from 430–450 Hz, because working ensembles do not all tune to 440. Results assume 12-tone equal temperament. We verified this converter against a published 88-key piano frequency table from A0 to C8 — every conversion matched to two decimal places. <em>Last reviewed: October 2026.</em></p>
+                        <p>Methodology: the A4 reference defaults to 440 Hz per ISO 16 and adjusts from 430–450 Hz, because working ensembles do not all tune to 440. Results assume 12-tone equal temperament. The formula reproduces the standard 88-key piano values exactly — A0 at 27.50 Hz, middle C at 261.63 Hz, C8 at 4186.01 Hz. <em>Last reviewed: October 2026.</em></p>
                     </section>
 
                     <section class="mb-5">
@@ -352,7 +352,7 @@
                         <h2 class="h3 fw-bold text-teal mb-3">How to Use This Frequency-to-Note Converter</h2>
                         <ol>
                             <li><strong>Enter the frequency</strong> in the input box — any value from 20 to 20,000 Hz.</li>
-                            <li><strong>Set the A4 reference</strong> when your ensemble does not tune to 440 — orchestras often use 441–443 Hz, Baroque groups 415 Hz.</li>
+                            <li><strong>Set the A4 reference</strong> (430–450 Hz) when your ensemble does not tune to 440 — orchestras often use 441–443 Hz.</li>
                             <li><strong>Tap a quick button</strong> for common cases: C4, A4, C5, A5, the 1000 Hz test tone, or 60 Hz mains hum.</li>
                             <li><strong>Press Convert to Note</strong> and read the result box: note name, octave, exact frequency, and cents deviation.</li>
                             <li><strong>Read the cents bar</strong> under the result — the dot shows how sharp or flat the frequency sits against the nearest note.</li>
@@ -374,12 +374,38 @@
                                 </tbody>
                             </table>
                         </div>
+                        <p><strong>The midpoint rule:</strong> a frequency belongs to whichever note sits within ±50 cents of it. Near that boundary, small measurement noise flips the answer — 60 Hz reads B1 at −49.4 cents, just 0.6 cents from tipping toward A♯1. Treat any reading beyond ±45 cents as "between notes" and measure the source again before you trust the name.</p>
                     </section>
 
                     <figure class="my-4 text-center">
                         <img src="../../assets/diagrams/.-pitch-detector-tools-frequency-to-note-online-112.svg" alt="Piano keyboard mapped to frequencies from A0 at 27.5 Hz to C8 at 4186 Hz" class="img-fluid border rounded" width="800" height="450" loading="lazy">
                         <figcaption class="small text-muted mt-2">Alt text: "Piano keyboard mapped to frequencies from A0 at 27.5 Hz to C8 at 4186 Hz"</figcaption>
                     </figure>
+
+                    <section class="mb-5">
+                        <h2 class="h3 fw-bold text-teal mb-3">Common Frequencies and Their Nearest Notes</h2>
+                        <p><strong>Round numbers rarely land exactly on notes.</strong> The table converts the frequencies people most often measure or type — test tones, mains hum, round oscillator settings — at the standard A4 = 440 Hz reference.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered align-middle">
+                                <thead class="table-dark">
+                                    <tr><th>Frequency (Hz)</th><th>Nearest note</th><th>Exact note frequency (Hz)</th><th>Cents deviation</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>50</td><td>G1</td><td>49.00</td><td>+35.0</td></tr>
+                                    <tr><td>60</td><td>B1</td><td>61.74</td><td>−49.4</td></tr>
+                                    <tr><td>100</td><td>G2</td><td>98.00</td><td>+35.0</td></tr>
+                                    <tr><td>110</td><td>A2</td><td>110.00</td><td>0.0</td></tr>
+                                    <tr><td>150</td><td>D3</td><td>146.83</td><td>+37.0</td></tr>
+                                    <tr><td>200</td><td>G3</td><td>196.00</td><td>+35.0</td></tr>
+                                    <tr><td>250</td><td>B3</td><td>246.94</td><td>+21.3</td></tr>
+                                    <tr><td>400</td><td>G4</td><td>392.00</td><td>+35.0</td></tr>
+                                    <tr><td>440</td><td>A4</td><td>440.00</td><td>0.0</td></tr>
+                                    <tr><td>1,000</td><td>B5</td><td>987.77</td><td>+21.3</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Octaves repeat the same cents value: 100, 200, and 400 Hz each sit +35.0 cents sharp of G, because doubling a frequency moves it to the same note name one octave up, at the identical distance from that note.</p>
+                    </section>
 
                     <section class="mb-5">
                         <h2 class="h3 fw-bold text-teal mb-3">A440 Is Not Universal: The A4 Reference Problem</h2>
@@ -434,7 +460,7 @@
                     </section>
 
                     <figure class="my-4 text-center">
-                        <div class="border rounded p-5 bg-light text-muted">[Infographic: A4 reference pitch around the world — ISO 440, European orchestras 441–443, Baroque 415, with cent offsets from 440 for each]</div>
+                        <img src="../../assets/diagrams/pitch-detector-tools-frequency-to-note-a4-standards.svg" alt="A4 concert pitch standards compared: 415 Hz Baroque, 440 Hz ISO, 442 Hz orchestral" class="img-fluid border rounded" width="800" height="450" loading="lazy">
                         <figcaption class="small text-muted mt-2">Alt text: "A4 concert pitch standards compared: 415 Hz Baroque, 440 Hz ISO, 442 Hz orchestral"</figcaption>
                     </figure>
 

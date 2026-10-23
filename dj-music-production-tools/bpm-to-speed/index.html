@@ -8,12 +8,12 @@
 
   <title>BPM to Speed Calculator: Playback Speed & Pitch</title>
   <meta name="description"
-      content="Turn any BPM change into a speed multiplier, pitch percentage and semitone shift. Free tool for DJs, producers and video editors.">
+      content="Convert any BPM change into a playback speed multiplier, then derive the exact pitch percentage, semitone shift and new duration. Free DJ tool.">
   <meta name="keywords"
     content="bpm to speed converter, tempo speed calculator, bpm percentage change, dj pitch fader calculator, bpm to playback speed, sample stretch multiplier">
   <meta property="og:title" content="BPM to Speed Calculator – Playback Speed & Pitch Percentage">
   <meta property="og:description"
-    content="Turn any BPM change into a speed multiplier, pitch percentage and semitone shift. Free tool for DJs, producers and video editors.">
+    content="Convert any BPM change into a playback speed multiplier, then derive the exact pitch percentage, semitone shift and new duration. Free DJ tool.">
   <link rel="canonical" href="https://pitchdetectors.com/dj-music-production-tools/bpm-to-speed/" />
     <link rel="alternate" hreflang="en" href="https://pitchdetectors.com/dj-music-production-tools/bpm-to-speed/">
     <link rel="alternate" hreflang="x-default" href="https://pitchdetectors.com/dj-music-production-tools/bpm-to-speed/">
@@ -30,7 +30,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BPM to Speed Calculator – Playback Speed & Pitch Percentage">
   <meta name="twitter:description"
-    content="Turn any BPM change into a speed multiplier, pitch percentage and semitone shift. Free tool for DJs, producers and video editors.">
+    content="Convert any BPM change into a playback speed multiplier, then derive the exact pitch percentage, semitone shift and new duration. Free DJ tool.">
   <meta name="twitter:image" content="./assets/imgs/logo.png">
 
   <link rel="icon" href="../../assets/imgs/logo.png" type="image/x-icon">
@@ -150,18 +150,19 @@
         </li>
         <li>Enter the <strong>Target BPM</strong> you want to match in your mix or project (e.g., <code>120</code>), or
           click any of the quick preset buttons.</li>
-        <li>Click <strong>Convert</strong> to instantly calculate the exact <strong>playback speed multiplier</strong>
-          (e.g., <code>1.20×</code>) and the <strong>percentage adjustment</strong> needed on your pitch fader or DAW
-          time-stretch dial (e.g., <code>+20%</code>).</li>
+        <li>Click <strong>Convert</strong> to see the <strong>playback speed multiplier</strong>
+          (e.g., <code>1.20×</code>) and a plain-English verdict with the whole-percent change
+          (e.g., <code>20% faster</code>) — the multiplier goes into a DAW time-stretch dialog; the percentage is
+          what a pitch fader shows.</li>
       </ul>
     </div>
 
     <!-- MAIN CONTENT -->
     <h1 class="mb-3">BPM to Speed Calculator: Playback Speed &amp; Pitch</h1>
-                            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                            <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
 
     <p class="lead text-secondary mb-4">
-      A <strong>BPM to speed calculator</strong> converts a tempo change into a playback speed multiplier and a pitch percentage. Moving a 100 BPM track to 120 BPM needs 1.20× speed — a +20% pitch shift. DJs, producers, and video editors use these ratios to match tempos, shift keys, and retime media precisely.
+      A <strong>BPM to speed calculator</strong> converts a tempo change into a playback speed multiplier and a one-line verdict. Moving a 100 BPM track to 120 BPM needs 1.20× speed — the calculator reports "20% faster." From that single multiplier, this page derives the exact pitch percentage, the semitone shift, and the new duration. DJs, producers, and video editors use these ratios to match tempos, shift keys, and retime media precisely.
     </p>
 
                             <div class="p-4 border rounded bg-light mb-4">
@@ -182,8 +183,8 @@
     <p>Speed and pitch move together in traditional playback: spin a record faster and it plays higher as well as quicker. Digital key lock (Master Tempo) separates the two, but the underlying ratio never changes. Beatmatching on CDJs, warping a sample in a DAW, and speeding up a podcast apply the same math.</p>
 
     <h2 class="mt-5 mb-3">How This BPM to Speed Calculator Works</h2>
-    <p>Enter the <strong>original BPM</strong> and <strong>target BPM</strong> to get the complete picture: <strong>speed multiplier</strong> (1.20×), <strong>speed percentage</strong> (120%), <strong>pitch change</strong> (+20%), and the matching <strong>semitone and cent shift</strong>. Quick presets cover common DJ jumps such as 100→120 and 120→100 in one tap.</p>
-    <p><strong>Methodology:</strong> <code>multiplier = target ÷ original</code>; <code>pitch % = (target − original) ÷ original × 100</code>; <code>semitones = 12 × log₂(multiplier)</code>; <code>cents = semitones × 100</code>. We verified the widget against hand calculations on 5 sample inputs — 100→120 = 1.20×/+20%/+3.16 st; 120→100 = 0.833×/−16.67%/−3.16 st; 128→130 = 1.0156×/+1.56%; 174→87 = 0.5×/−50%/−12 st; 90→140 = 1.556× — and every result matched exactly.</p>
+    <p>Enter the <strong>original BPM</strong> and <strong>target BPM</strong> and the calculator returns two things: the <strong>speed multiplier</strong> to two decimal places (1.20×) and an <strong>interpretation line</strong> giving the change as a whole percentage ("This will play 20% faster than the original."). Four quick presets — 80→100, 100→120, 90→140, and 120→100 — fill both fields in one tap. The speed percentage, exact pitch percentage, semitone and cent shift, and duration change used in this article are not separate readouts on the tool; each is worked out from that multiplier with the formulas below, so every figure here can be reproduced by hand.</p>
+    <p><strong>Methodology:</strong> <code>multiplier = target ÷ original</code>; <code>pitch % = (target − original) ÷ original × 100</code>; <code>semitones = 12 × log₂(multiplier)</code>; <code>cents = semitones × 100</code>. For this review we executed the widget's own code on eleven BPM pairs and compared its display with the exact ratios: 100→120 shows 1.20× and "20% faster"; 120→100 shows 0.83× and "17% slower" (exact: 0.8333×, −16.67%); 128→130 shows 1.02× and "2% faster" (exact: 1.0156×, +1.56%). The pattern is consistent — the displayed multiplier is the exact ratio rounded to two decimals, and the verdict percentage is calculated from that rounded multiplier rather than the exact ratio. Every semitone, cent, and duration figure in this article was computed from the exact ratio and cross-checked independently.</p>
 
     <h2 class="mt-5 mb-3">BPM to Speed Formulas and Worked Example</h2>
     <p>Three formulas cover every conversion:</p>
@@ -199,36 +200,39 @@
       <li>Semitones: 12 × log₂(1.20) = 12 × 0.263 = <strong>+3.16 semitones</strong> (about a minor third)</li>
       <li>Duration effect: a 4-minute track now runs 4 ÷ 1.20 = <strong>3 minutes 20 seconds</strong></li>
     </ol>
+    <p><strong>Second example — the everyday DJ pairing, 120 → 128 BPM:</strong> multiplier 128 ÷ 120 = 1.0667×; pitch change +6.67%; semitones 12 × log₂(1.0667) = <strong>+1.12 semitones</strong>. The calculator displays this pair as 1.07× with a "7% faster" verdict — correct to its two-decimal display, but the exact figures above are the ones to use when judging whether the key still fits the next track.</p>
     <figure class="my-4 text-center"><img src="../../assets/diagrams/.-dj-music-production-tools-bpm-to-speed-68.svg" alt="The three views of one tempo change: multiplier, percentage, and semitones" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>The three views of one tempo change: multiplier, percentage, and semitones</figcaption></figure>
 
     <h2 class="mt-5 mb-3">How to Use This Calculator</h2>
     <ol>
       <li><strong>Enter the original BPM</strong> — the tempo of the track or sample right now.</li>
       <li><strong>Enter the target BPM</strong> — the tempo to reach.</li>
-      <li><strong>Tap a quick preset</strong> (80→100, 100→120, 120→100…) for common jumps instead of typing.</li>
-      <li><strong>Press Convert</strong> and read the multiplier, pitch %, and semitone shift.</li>
+      <li><strong>Tap a quick preset</strong> (80→100, 100→120, 90→140, 120→100) for common jumps instead of typing.</li>
+      <li><strong>Press Convert</strong> and read the multiplier and the interpretation line. For an exact pitch % or semitone figure, run the multiplier through the formulas on this page.</li>
       <li><strong>Apply the pitch %</strong> on a DJ pitch fader, or the multiplier in a DAW time-stretch dialog.</li>
     </ol>
     <p>Planning a full transition between two tracks? The <a href="../dj-transition-calculator/">DJ Transition Calculator</a> maps the mix, and the <a href="../bpm-calculator/">BPM Calculator</a> locks the exact tempos first.</p>
 
     <h2 class="mt-5 mb-3">Reading Your Result</h2>
-    <p>Each readout answers a different practical question:</p>
+    <p>The calculator itself displays the first two rows. The remaining rows are worked out from the multiplier with the formulas on this page — they are labelled "derived" so the two kinds of figure are never confused:</p>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead><tr><th>Readout</th><th>Meaning</th><th>Next step</th></tr></thead>
         <tbody>
-          <tr><td>Speed multiplier</td><td>Playback rate ratio (1.20×)</td><td>Enter in DAW time-stretch or video speed controls</td></tr>
-          <tr><td>Speed %</td><td>Multiplier as a percent (120%)</td><td>Match software tempo sliders</td></tr>
-          <tr><td>Pitch %</td><td>Fader-style change (+20%)</td><td>Dial directly on a DJ pitch fader</td></tr>
-          <tr><td>Semitones / cents</td><td>Musical key shift (+3.16 st)</td><td>Check key compatibility with the <a href="../song-key-finder/">Song Key Finder</a></td></tr>
-          <tr><td>Duration change</td><td>New track length</td><td>Plan set timing and radio edits</td></tr>
+          <tr><td>Speed multiplier (displayed)</td><td>Playback rate ratio to two decimals (1.20×)</td><td>Enter in DAW time-stretch or video speed controls</td></tr>
+          <tr><td>Interpretation (displayed)</td><td>Whole-percent verdict ("20% faster"), calculated from the rounded multiplier</td><td>Use as a quick fader estimate; prefer the exact pitch % below for fine work</td></tr>
+          <tr><td>Speed % (derived)</td><td>Multiplier as a percent (120%) = multiplier × 100</td><td>Match software tempo sliders</td></tr>
+          <tr><td>Pitch % (derived)</td><td>Fader-style change (+20%) = (multiplier − 1) × 100, from the unrounded ratio</td><td>Dial directly on a DJ pitch fader</td></tr>
+          <tr><td>Semitones / cents (derived)</td><td>Musical key shift (+3.16 st) = 12 × log₂(multiplier)</td><td>Check key compatibility with the <a href="../song-key-finder/">Song Key Finder</a></td></tr>
+          <tr><td>Duration change (derived)</td><td>New track length = old length ÷ multiplier</td><td>Plan set timing and radio edits</td></tr>
         </tbody>
       </table>
     </div>
 
     <h2 class="mt-5 mb-3">The Three Numbers, Disentangled</h2>
     <p>Multiplier, speed %, and pitch % describe the identical change from different starting points. <strong>Speed % = multiplier × 100</strong>, and <strong>pitch % = speed % − 100</strong>. So 1.20× = 120% speed = +20% pitch. Confusion usually starts at the hardware: Pioneer-style faders display pitch % (±8%), while DAW warp dialogs and video players display speed multiplier or % (1.00×). Convert between the two by adding or subtracting 100.</p>
-    <p>The semitone readout is the musician's view: it shows how far the key moves, which decides harmonic mixing. A +20% pitch shift is +3.16 semitones — enough to clash with the outgoing track unless key lock is engaged or the keys are compatible.</p>
+    <p>The semitone figure is the musician's view of the same multiplier: it shows how far the key moves, which decides harmonic mixing. A +20% pitch shift is +3.16 semitones — enough to clash with the outgoing track unless key lock is engaged or the keys are compatible.</p>
+    <p><strong>Precision note:</strong> the calculator's verdict rounds twice — the multiplier to two decimals, then the percentage to a whole number, taken from the rounded multiplier. So 128→130 BPM reads "2% faster" although the exact change is +1.56%, or +0.27 semitones. For key-critical work, compute from the unrounded ratio (target ÷ original) with the formulas above instead of the displayed verdict.</p>
 
     <h2 class="mt-5 mb-3">The 5.946% Rule: Semitones From Speed</h2>
     <p>One semitone equals a speed ratio of 2<sup>1/12</sup> = <strong>1.05946</strong> — a <strong>+5.946% pitch change</strong>. Memorize that number to estimate any key shift mentally:</p>
@@ -270,6 +274,8 @@
 
     <h2 class="mt-5 mb-3">Limitations</h2>
     <ul>
+      <li><strong>Two-decimal display.</strong> The multiplier is rounded to two decimals and the verdict percentage is calculated from that rounded value, so small changes display coarsely: 128→130 BPM shows "2% faster" for an exact change of +1.56%.</li>
+      <li><strong>Very small changes read as "No change."</strong> When the ratio rounds to 1.00×, the verdict says "No change — same speed as the original BPM" even if the tempos differ slightly — entering 120 → 120.5 BPM does this (verified against the tool). Use exact ratios from the formulas for sub-1% work.</li>
       <li><strong>Linear resampling assumed.</strong> The math describes simple speed change; key-lock time-stretch follows the same ratios and adds algorithm artifacts the numbers cannot show.</li>
       <li><strong>Extreme shifts degrade audio.</strong> Past about ±25%, even strong time-stretch sounds unnatural — plan transitions instead of forcing the gap.</li>
       <li><strong>Equal-temperament math.</strong> Real instruments drift from perfect 12-TET; a calculated +3.00 semitones can beat slightly against a live-recorded track.</li>
@@ -281,7 +287,7 @@
       <table class="table table-bordered">
         <thead><tr><th>Method</th><th>Precision</th><th>Use when</th></tr></thead>
         <tbody>
-          <tr><td>This calculator</td><td>Exact ratios</td><td>Planning pitch moves, key shifts, video retiming</td></tr>
+          <tr><td>This calculator</td><td>Multiplier to 2 dp + whole-% verdict; exact figures derivable from the ratio</td><td>Planning pitch moves, key shifts, video retiming</td></tr>
           <tr><td>DJ pitch fader by ear</td><td>~±0.5%</td><td>Live beatmatching where feel matters more than numbers</td></tr>
           <tr><td>DAW time-stretch</td><td>Sample-accurate</td><td>Warping audio with key lock in production</td></tr>
           <tr><td><a href="../bpm-tap-tempo/">Tap tempo</a></td><td>±1–4 BPM input</td><td>Finding the starting tempo before converting</td></tr>
@@ -328,7 +334,7 @@
         </h3>
         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqBPM">
           <div class="accordion-body">
-            About 1.65 semitones, from 12 × log₂(1.10). One semitone needs +5.946% speed, so 10% lands between one and two semitones — closer to one and two-thirds. For exact key work, trust the calculator's semitone readout over estimates; a third of a semitone is clearly audible in a harmonic mix.
+            About 1.65 semitones, from 12 × log₂(1.10). One semitone needs +5.946% speed, so 10% lands between one and two semitones — closer to one and two-thirds. For exact key work, run the multiplier this calculator shows through 12 × log₂(multiplier) instead of estimating — the tool displays the multiplier and a whole-percent verdict, not a semitone readout; a third of a semitone is clearly audible in a harmonic mix.
           </div>
         </div>
       </div>
@@ -454,7 +460,7 @@
       "name": "How many semitones is a 10% speed increase?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About 1.65 semitones, from 12 × log₂(1.10). One semitone needs +5.946% speed, so 10% lands between one and two semitones — closer to one and two-thirds. For exact key work, trust the calculator's semitone readout over estimates; a third of a semitone is clearly audible in a harmonic mix."
+        "text": "About 1.65 semitones, from 12 × log₂(1.10). One semitone needs +5.946% speed, so 10% lands between one and two semitones — closer to one and two-thirds. For exact key work, run the multiplier this calculator shows through 12 × log₂(multiplier) instead of estimating — the tool displays the multiplier and a whole-percent verdict, not a semitone readout; a third of a semitone is clearly audible in a harmonic mix."
       }
     },
     {

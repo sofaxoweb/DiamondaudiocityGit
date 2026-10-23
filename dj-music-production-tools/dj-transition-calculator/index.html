@@ -351,7 +351,7 @@
                     <div class="mt-5 pt-3">
                         <section class="mb-5">
                             <h1 class="mb-3">DJ Transition Calculator: BPM, Key &amp; Timing</h1>
-                            <p class="text-muted small">Last updated: October 12, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                            <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                             <p class="lead text-muted mb-4">
                                 A <strong>DJ transition calculator</strong> plans the blend between two tracks: it converts the BPM gap into a pitch percentage, scores Camelot key compatibility, and converts your bar count into seconds. Enter both tracks' BPM and key, choose a transition length, and get a concrete mix plan — pitch move, key verdict, timing — ready to execute on phrase boundaries.
                             </p>
@@ -369,13 +369,13 @@
 
                             <h2>What Is a DJ Transition Calculator?</h2>
                             <div class="p-3 border rounded bg-light mb-3">
-                                <strong>Definition:</strong> A DJ transition calculator analyzes two tracks — their tempos and musical keys — and computes what's needed to mix between them: the pitch adjustment percentage, whether the keys are harmonically compatible, and how long a bar-counted transition lasts in seconds. It turns "can I mix these?" into a concrete plan: pitch move, key verdict, timing.
+                                <strong>Definition:</strong> A DJ transition calculator takes two tracks' tempos and musical keys — values you enter — and computes what's needed to mix between them: the pitch adjustment percentage, whether the keys are harmonically compatible, and how long a bar-counted transition lasts in seconds. It turns "can I mix these?" into a concrete plan: pitch move, key verdict, timing.
                             </div>
                             <p>Every transition is three problems at once: <strong>tempo</strong> (do the BPMs match?), <strong>key</strong> (do the keys clash?), and <strong>timing</strong> (when do I start the blend?). Bedroom DJs guess; working DJs calculate. This tool handles the arithmetic so your ears can handle the art — which tracks to pair, how long to blend, and when to cut instead.</p>
 
                             <h2>How This Transition Calculator Works</h2>
                             <p>Enter <strong>Track A's BPM and key</strong> and <strong>Track B's BPM and key</strong>, choose a <strong>transition length in bars</strong>, and pick which tempo to match. The calculator returns the <strong>pitch percentage</strong> Track A needs to reach the target, the <strong>pitch shift in semitones</strong>, a <strong>key compatibility verdict</strong> (Perfect, Good, Caution, or Clash), and the <strong>transition duration in seconds</strong> — plus recommendations that adapt to your BPM gap.</p>
-                            <p><strong>Methodology:</strong> <code>pitch % = (target − current) ÷ current × 100</code>; <code>semitones = 12 × log₂(target ÷ current)</code>; <code>transition seconds = bars × 240 ÷ target BPM</code> (4/4); Camelot adjacency on the entered codes (same code = Perfect; same number letter-swap or ±1 = Good; ±2 = Caution; further = Clash). The key check scores the <em>nominal</em> codes — it does not adjust for your pitch move (see the Camelot section for what that means with key lock on vs off). We verified the widget against hand calculations on five sample inputs (124→128 = +3.23%, +0.55 semitones, 16 bars = 30 s; 100→120 = +20%; 8A→9A = Good; 8A→2A = Clash; 174→174 = 0%) — every result matched exactly.</p>
+                            <p><strong>Methodology:</strong> <code>pitch % = (target − current) ÷ current × 100</code>; <code>semitones = 12 × log₂(target ÷ current)</code>; <code>transition seconds = bars × 240 ÷ target BPM</code> (4/4); Camelot adjacency on the entered codes (same code = Perfect; same number letter-swap or ±1 = Good; ±2 = Caution; further = Clash). The key check scores the <em>nominal</em> codes — it does not adjust for your pitch move (see the Camelot section for what that means with key lock on vs off). The formulas reproduce the calculator's own outputs exactly: 124→128 BPM returns +3.23% and +0.55 semitones, with 16 bars timed at 30 seconds; 100→120 returns +20%; 8A→9A returns Good; 8A→2A returns Clash; equal tempos return 0%.</p>
 
                             <h2>Transition Formulas and Worked Example</h2>
                             <ul>
@@ -384,7 +384,7 @@
                                 <li><strong>One bar (4/4) = 240 ÷ BPM seconds</strong></li>
                                 <li><strong>Transition seconds = bars × 240 ÷ target BPM</strong></li>
                             </ul>
-                            <p><strong>Worked example</strong> (the widget's defaults): blending from a <strong>124 BPM</strong> track in <strong>11B</strong> to a <strong>128 BPM</strong> track in <strong>12B</strong>, over <strong>16 bars</strong>, matching Track B's tempo:</p>
+                            <p><strong>Worked example</strong> (the widget's default tempos, bar count and match target, with the keys set to 11B and 12B): blending from a <strong>124 BPM</strong> track in <strong>11B</strong> to a <strong>128 BPM</strong> track in <strong>12B</strong>, over <strong>16 bars</strong>, matching Track B's tempo:</p>
                             <ol>
                                 <li>Pitch move: (128 − 124) ÷ 124 × 100 = <strong>+3.23%</strong> on Track A — inside the ±6% safe zone</li>
                                 <li>Semitone shift: 12 × log₂(128 ÷ 124) = <strong>+0.55 semitones</strong> — well under 1 semitone, so the key verdict holds even without key lock</li>
@@ -392,7 +392,7 @@
                                 <li>Timing: 16 × 240 ÷ 128 = <strong>30 seconds</strong></li>
                                 <li>Plan: pitch Track A up 3.23%, start the blend at a 16-bar phrase boundary, ride it for 30 seconds</li>
                             </ol>
-                            <p><strong>Middle-ground variant:</strong> choose "Middle ground" with 124 vs 132 BPM and the target becomes 128 — Track A moves +3.23% while Track B moves −3.03%. Neither track bears the full gap, which is exactly how experienced DJs split large moves manually (digitaldjtips' "push both tracks" trick, automated).</p>
+                            <p><strong>Middle-ground variant:</strong> choose "Middle ground" with 124 vs 132 BPM and the target becomes 128. The calculator displays Track A's move to that shared target: +3.23%. Track B's move is not displayed — work it out the same way against its own tempo: (128 − 132) ÷ 132 = −3.03%. Splitting the gap keeps either track's pitch shift small enough to leave vocals intact, which is why experienced DJs nudge both decks toward each other on wide gaps instead of dragging one track the whole way.</p>
                             <figure class="my-4 text-center"><img src="../../assets/diagrams/.-dj-music-production-tools-dj-transition-calculator-72.svg" alt="One planned transition: pitch move, key check, and timed blend" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>One planned transition: pitch move, key check, and timed blend</figcaption></figure>
 
                             <h2>How to Use This Calculator</h2>
@@ -413,7 +413,7 @@
                                         <tr><td>Target BPM</td><td>Tempo both tracks meet at</td><td>Set by your match-to choice — incoming, outgoing, or middle</td></tr>
                                         <tr><td>Transition time</td><td>Real-time seconds of your bar count</td><td>Start the incoming track that many seconds before your planned exit</td></tr>
                                         <tr><td>Key compatibility</td><td>Perfect / Good / Caution / Clash</td><td>Perfect/Good: blend freely. Caution: keep it short. Clash: breakdown or quick cut</td></tr>
-                                        <tr><td>Speed adjustment</td><td>% move for Track A toward the target</td><td>Dial it on Track A's pitch fader</td></tr>
+                                        <tr><td>Speed adjustment</td><td>% move for Track A toward the target — reads 0.00% when you match Track A, because A stays put and B does the moving</td><td>Dial it on Track A's pitch fader</td></tr>
                                         <tr><td>Pitch shift</td><td>Semitone move of Track A</td><td>Past 1 semitone without key lock, re-check the key verdict</td></tr>
                                         <tr><td>Beats in transition</td><td>Bars × 4</td><td>Use with the seconds readout to plan phrase exits</td></tr>
                                         <tr><td>Recommendations</td><td>Key + BPM-gap advice</td><td>Follows fixed bands: ≤3 / ≤6 / ≤10 / 10+ BPM</td></tr>
@@ -424,7 +424,7 @@
                             <h2>The BPM Gap Rule: When Blends Work and When They Don't</h2>
                             <p><strong>At 3 BPM or less, blend naturally.</strong> The pitch nudge stays small — 3 BPM at 128 is 2.3%, at 100 BPM it's 3% — and keys barely move. <strong>Between 4 and 6 BPM,</strong> the move is manageable: engage key lock (Master Tempo) so pitch holds steady while tempo shifts. <strong>Between 7 and 10 BPM,</strong> the gap is significant — shorten the blend or cover it with a filter sweep. <strong>Past 10 BPM,</strong> don't force a blend: cut on a drop, echo out, or bridge with a track at an intermediate tempo.</p>
                             <p>These bands are this calculator's own recommendation thresholds, measured in absolute BPM — not percentages. The pitch fader on most club gear spans ±8% (with ±6% and ±16% ranges on many controllers), so a +3.23% move sits comfortably inside it while a +20% move does not.</p>
-                            <p>The genre-crossing trick: <strong>halve or double the tempo.</strong> A 70 BPM hip-hop track and a 140 BPM track share a pulse at different resolutions — mix them at half/double time with zero pitch change. One honest caveat: this calculator has no ratio exception, so it scores 2:1 pairs as Difficult. Plan those by ear, not by the score.</p>
+                            <p>The genre-crossing trick: <strong>halve or double the tempo.</strong> A 70 BPM hip-hop track and a 140 BPM track share a pulse at different resolutions — mix them at half/double time with zero pitch change. One honest caveat: this calculator has no half/double-time exception, so a 70 BPM gap lands in the same over-10 band as any other wide gap and the recommendation box turns red. The beat grids still align at half/double time — plan those transitions by ear, not by the band.</p>
 
                             <h2>Camelot Math: Which Key Moves Are Safe</h2>
                             <p>Harmonic mixing runs on the <strong>Camelot wheel</strong>: each key gets a number (1–12) and a letter (A minor / B major). Positions next to each other share nearly all their notes, so the music flows:</p>
@@ -435,6 +435,7 @@
                                         <tr><td>Same key</td><td>8A → 8A</td><td>Perfect — seamless</td></tr>
                                         <tr><td>±1 number, same letter</td><td>8A → 9A</td><td>Good — the classic energy lift</td></tr>
                                         <tr><td>Same number, letter swap</td><td>8A → 8B</td><td>Good — relative major/minor</td></tr>
+                                        <tr><td>±1 number, letter swap</td><td>8A → 9B</td><td>Good — the diagonal step (fifth plus mode change)</td></tr>
                                         <tr><td>±2 numbers</td><td>8A → 10A</td><td>Caution — short blends only</td></tr>
                                         <tr><td>Anything further</td><td>8A → 2A</td><td>Clash — breakdown or quick cut</td></tr>
                                     </tbody>
@@ -444,6 +445,16 @@
 
                             <h2>Bars to Seconds: Timing Your Transition</h2>
                             <p>DJ software counts in bars; your instincts work in seconds. <strong>One 4/4 bar = 240 ÷ BPM seconds</strong> — 1.875 s at 128 BPM, 2 s at 120, 1.38 s at 174. Multiply by your bar count: a 16-bar blend at 124 BPM is 16 × 1.935 = <strong>31 seconds</strong>.</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead><tr><th>Tempo</th><th>8 bars</th><th>16 bars</th><th>32 bars</th><th>64 bars</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>120 BPM</td><td>16 s</td><td>32 s</td><td>64 s</td><td>128 s</td></tr>
+                                        <tr><td>128 BPM</td><td>15 s</td><td>30 s</td><td>60 s</td><td>120 s</td></tr>
+                                        <tr><td>174 BPM</td><td>11 s</td><td>22.1 s</td><td>44.1 s</td><td>88.3 s</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <p>Why it matters: transitions should start and end on <strong>phrase boundaries</strong> — multiples of 16 bars in most electronic music, where new elements enter. A 32-bar blend started mid-phrase sounds wrong no matter how perfect the math is. Count phrases (groups of 4 bars × 4), start the incoming track at a phrase start, and let the bar math tell you when you'll be fully mixed.</p>
                             <figure class="my-4 text-center"><img src="../../assets/diagrams/.-dj-music-production-tools-dj-transition-calculator-73.svg" alt="Phrase-aligned blending: start and end transitions on 16-bar boundaries" class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption>Phrase-aligned blending: start and end transitions on 16-bar boundaries</figcaption></figure>
 
@@ -456,7 +467,7 @@
                                         <tr><td>4–6 BPM</td><td>Any</td><td>Key lock on, medium blend or filter-sweep transition</td></tr>
                                         <tr><td>7–10 BPM</td><td>Any</td><td>Short blend, breakdown cover, or echo-out</td></tr>
                                         <tr><td>10+ BPM</td><td>Any</td><td>Cut/drop mix, echo out, or bridge track</td></tr>
-                                        <tr><td>2:1 ratio</td><td>Any</td><td>Half/double-time blend — no pitch change (the widget scores this Difficult; trust your ears)</td></tr>
+                                        <tr><td>2:1 ratio</td><td>Any</td><td>Half/double-time blend — no pitch change (the calculator flags the raw gap as 10+ BPM; trust your ears)</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -468,7 +479,7 @@
 
                             <h2>Limitations</h2>
                             <ul>
-                                <li><strong>Keys are detected, not guaranteed.</strong> Auto-detected keys err 14–59% of the time depending on the tool (digitaldjpool's survey of key-detection software) — trust your ears over the readout on unfamiliar tracks.</li>
+                                <li><strong>Keys are detected, not guaranteed.</strong> Independent accuracy tests (bascurtiz's comparisons of key-detection tools, published by Digital DJ Tips) put auto-detected key accuracy between roughly 43% and 77% depending on the tool — trust your ears over the readout on unfamiliar tracks.</li>
                                 <li><strong>The key check ignores your pitch move.</strong> It scores the codes you enter; with key lock off and a wide pitch move, the sounding key shifts — use the semitone readout to stay honest.</li>
                                 <li><strong>Assumes 4/4 time.</strong> Broken beat, 3/4, and mixed-meter tracks need manual phrase counting.</li>
                                 <li><strong>Numbers aren't music.</strong> EQ, phrasing, and energy decide whether a transition works; the math clears the technical path.</li>

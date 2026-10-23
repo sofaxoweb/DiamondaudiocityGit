@@ -210,7 +210,7 @@
                 <div class="tool-container">
                     <div class="tool-title">
                         <h1><i class="bi bi-calculator me-2"></i>Note to Frequency Converter: Exact Hz for Any Note</h1>
-                        <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+                        <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
                         <p>Select a note and octave to get its exact frequency in hertz — plus the MIDI number, wavelength, and wave period. Adjust the A4 reference to match your tuning standard.</p>
                     </div>
 
@@ -337,14 +337,14 @@
                         <div class="p-3 bg-light rounded border-start border-4 border-info mb-3">
                             <strong>Definition:</strong> Note-to-frequency conversion is the process of translating a named musical pitch, such as E4 or B♭2, into its physical vibration rate in hertz. It connects notation to physics: a performer reads "A4" on the page, while the vibrating string or air column behind the sound actually oscillates 440 times per second.
                         </div>
-                        <p>Musicians think in note names; synthesizers, EQ plug-ins, and signal generators think in hertz. A producer who wants the sub-bass on D2 needs 73.42 Hz; an engineer treating a room mode at 65 Hz targets C2.</p>
+                        <p>Musicians think in note names; synthesizers, EQ plug-ins, and signal generators think in hertz. A producer who wants the sub-bass on D2 needs 73.42 Hz; a piano technician setting the tuning fork's A needs exactly 440.00 Hz.</p>
                         <p>This page's mapping assumes <strong>12-tone equal temperament (12-TET)</strong>, the tuning system behind pianos, guitars, and every DAW piano roll. In 12-TET, each semitone multiplies the frequency by the same ratio, so one formula converts every note in every octave.</p>
                     </section>
 
                     <section class="mb-5">
                         <h2 class="h3 fw-bold text-teal mb-3">How This Calculator Works</h2>
                         <p>This calculator takes three inputs — a note name (C through B, with sharps), an octave number (0–8), and the A4 reference (default 440 Hz). It counts the semitones between the note and A4, then applies the equal-temperament formula to get the frequency. From that one number it derives the rest: the <strong>MIDI note number</strong> (69 plus the semitone count), the <strong>wavelength</strong> (343 ÷ frequency, the speed of sound at 20°C), the <strong>wave period</strong> (1000 ÷ frequency, in milliseconds), and the <strong>frequency one octave below</strong> (frequency ÷ 2).</p>
-                        <p>Methodology: the All Octaves table repeats the calculation for octaves 0 through 8, and the Play button renders the result as a pure sine tone through the Web Audio API. Every readout comes from the same frequency value, so the outputs always agree — with each other and with any DAW or tuner using the same standard. <em>Last reviewed: October 2026.</em></p>
+                        <p>Methodology: the All Octaves table repeats the calculation for octaves 0 through 8, and the Play button renders the result as a pure sine tone through the Web Audio API. Every readout derives from that single frequency value, so the outputs always agree with each other. <em>Last reviewed: October 2026.</em></p>
                     </section>
 
                     <section class="mb-5">
@@ -355,7 +355,7 @@
                         </div>
                         <p>Here m is the note's <strong>MIDI number</strong> (A4 = 69, middle C = 60, each semitone = ±1), and A4 is the reference pitch, usually 440. Each semitone multiplies the frequency by 2^(1/12) ≈ 1.059463094, and twelve semitones multiply it by exactly 2 — the octave.</p>
                         <p><strong>Worked example — E4, the guitar's high E string.</strong> E4 is MIDI 64, so f = 440 × 2^((64 − 69)/12) = 440 × 2^(−5/12) = 440 × 0.749154 = <strong>329.63 Hz</strong>. Wavelength: 343 ÷ 329.63 = 1.04 m (about 3.41 ft). Period: 1000 ÷ 329.63 = 3.03 ms. One octave below: E3 = 329.63 ÷ 2 = 164.81 Hz. Try it above — every number will match.</p>
-                        <p>One more note on sharps: F♯4 and G♭4 are the same piano key, so they share one frequency (369.99 Hz). The widget's sharp buttons give each enharmonic pair a single value — spelling differs for notation, not for physics.</p>
+                        <p>F♯4 and G♭4 share one piano key and one frequency: 369.99 Hz. The widget's sharp buttons give each enharmonic pair a single value.</p>
                     </section>
 
                     <figure class="my-4 text-center">
@@ -393,6 +393,24 @@
                             </table>
                         </div>
                         <p>Wavelength displays in meters; multiply by 3.281 for feet (C4's 1.31 m wave is about 4.30 ft). If instead you measured a frequency and want its note name, run it through the reverse <a href="../frequency-to-note-online/">frequency-to-note converter</a>.</p>
+                    </section>
+
+                    <section class="mb-5">
+                        <h2 class="h3 fw-bold text-teal mb-3">Using Note Frequencies in EQ and Synthesis</h2>
+                        <p><strong>Producers convert notes to Hz to set EQ bands, key-tracked filters, and synth oscillators on exact fundamentals</strong> instead of sweeping by ear. Convert the note first, then type the value into the plug-in.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered align-middle">
+                                <thead class="table-dark">
+                                    <tr><th>Task</th><th>Note</th><th>Frequency</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Sub-bass line rooted in D</td><td>D2</td><td>73.42 Hz</td></tr>
+                                    <tr><td>Kick drum tuned to the key of G</td><td>G1</td><td>49.00 Hz</td></tr>
+                                    <tr><td>Room-mode check in a small studio</td><td>C2</td><td>65.41 Hz</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Harmonics sit at exact multiples of the fundamental — ×2, ×3, ×4 — so one conversion targets the fundamental and its first overtones together.</p>
                     </section>
 
                     <section class="mb-5">
@@ -437,15 +455,15 @@
                     </section>
 
                     <figure class="my-4 text-center">
-                        <div class="border rounded p-5 bg-light text-muted">[Infographic: historical concert pitch timeline from A415 (Baroque) through A435 (France 1859) to A440 (ISO 1955) and modern orchestral A442–445]</div>
+                        <img src="../../assets/diagrams/pitch-detector-tools-note-to-frequency-pitch-timeline.svg" alt="Timeline of concert pitch: A415 Baroque, A435 France 1859, A440 ISO 1955, A442-445 today" class="img-fluid border rounded" width="800" height="450" loading="lazy">
                         <figcaption class="small text-muted mt-2">Alt text: "Timeline of concert pitch: A415 Baroque, A435 France 1859, A440 ISO 1955, A442-445 today"</figcaption>
                     </figure>
 
                     <section class="mb-5">
                         <h2 class="h3 fw-bold text-teal mb-3">Tuning Forks: The Original Note-to-Frequency Reference</h2>
                         <p>Before apps, musicians carried a piece of steel stamped with a frequency. The tuning fork was invented in 1711 by British musician John Shore, and it vibrates almost purely at its fundamental — which is why orchestras and choirs trusted it as their reference.</p>
-                        <p>The standard fork is A440, but physics labs keep forks at 256, 512, and 1024 Hz from the "scientific pitch" system. Proposed by Joseph Sauveur in 1713 and promoted by Giuseppe Verdi in the 19th century, scientific pitch sets middle C to exactly 256 Hz, which puts A at 430.54 Hz — mathematically tidy, since every C is a power of two (<a href="https://en.wikipedia.org/wiki/Scientific_pitch">Wikipedia — Scientific pitch</a>).</p>
-                        <p>To use one: strike an A440 fork and hold it near your guitar's A string. The beats between fork and string slow as the string approaches 440 Hz and vanish when it matches — a physical note-to-frequency check with no batteries required.</p>
+                        <p>The standard fork is A440, but physics labs keep forks at 256, 512, and 1024 Hz from the "scientific pitch" system, proposed by Joseph Sauveur in 1713. Scientific pitch sets middle C to exactly 256 Hz, which puts A at 430.54 Hz — mathematically tidy, since every C is a power of two (<a href="https://en.wikipedia.org/wiki/Scientific_pitch">Wikipedia — Scientific pitch</a>).</p>
+                        <p>To use one: strike an A440 fork near your guitar's A string. The beats between fork and string slow as the string approaches 440 Hz and vanish at an exact match.</p>
                     </section>
 
                     <section class="mb-5">
@@ -458,7 +476,7 @@
                                 </thead>
                                 <tbody>
                                     <tr><td><strong>Guitar</strong></td><td>E2 82.41 · A2 110.00 · D3 146.83 · G3 196.00 · B3 246.94 · E4 329.63</td></tr>
-                                    <tr><td><strong>Violin</strong></td><td>G3 196.00 · D4 293.66 · A4 440.00 · E5 659.25</td></tr>
+                                    <tr><td><strong>Violin</strong></td><td>G3 196.00 · D4 293.66 · A4 440.00 · E5 659.26</td></tr>
                                     <tr><td><strong>Viola</strong></td><td>C3 130.81 · G3 196.00 · D4 293.66 · A4 440.00</td></tr>
                                     <tr><td><strong>Cello</strong></td><td>C2 65.41 · G2 98.00 · D3 146.83 · A3 220.00</td></tr>
                                     <tr><td><strong>Double bass</strong></td><td>E1 41.20 · A1 55.00 · D2 73.42 · G2 98.00</td></tr>
@@ -466,7 +484,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p>The rest follow the same equal-temperament math this calculator uses. For hands-on tuning, use the <a href="../guitar-tuner-online/">guitar tuner</a>.</p>
+                        <p>For hands-on tuning, use the <a href="../guitar-tuner-online/">guitar tuner</a>.</p>
                     </section>
 
                     <section class="mb-5">

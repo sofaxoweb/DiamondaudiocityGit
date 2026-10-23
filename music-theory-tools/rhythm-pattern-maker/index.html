@@ -50,7 +50,7 @@
       "name": "What swing percentage should I use for hip-hop drums?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start at 56–58%, the classic MPC pocket for boom-bap and 90s hip-hop. Laid-back neo-soul grooves sit around 60–62%. Swing moves only the off-beat 16ths — downbeats and the snare on 2 and 4 stay fixed. Back off 2–3% when the pattern starts stumbling instead of bouncing. Trap and drill usually stay near 0–15% swing and get their feel from triplet hi-hat rolls instead."
+        "text": "On this tool's slider, start near 12–16% for boom-bap and 90s hip-hop — the pocket an MPC calls 56–58%, because the MPC scale starts at 50% for straight timing and this slider starts at 0%. Laid-back neo-soul sits later, around 20–30%. Swing moves only the off-beat 16ths; downbeats and the snare on 2 and 4 stay fixed. About 33% is a full triplet shuffle. Trap and drill stay near 0–10% and get their feel from triplet hi-hat rolls instead."
       }
     },
     {
@@ -74,7 +74,7 @@
       "name": "How do I get my pattern into Ableton or FL Studio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Click Export JSON to download your pattern as a text file mapping each drum to its active step numbers. In your DAW, set the same BPM and grid length, then enable the matching steps in its drum sequencer. Re-apply your swing percentage on the DAW's groove control and you're done."
+        "text": "Click Export JSON and your pattern opens as JSON text in a new browser tab — it is not a file download. Copy the text into a file to keep it. The JSON maps each drum voice to its steps as 0s and 1s, plus the pattern length; BPM and swing are not stored. In your DAW, set the same BPM and grid length, enable the steps marked 1 for each voice, and re-apply your swing on the DAW's groove control."
       }
     },
     {
@@ -90,7 +90,7 @@
       "name": "What is the tresillo rhythm and where is it used?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The tresillo is a 3+3+2 accent pattern (hits on steps 1, 4, and 7 of an 8-pulse cycle) with Afro-Cuban roots. It's the rhythmic DNA of reggaeton's dembow, dancehall, Afrobeats, and countless pop hits. Program kick on 1, 4, 7, 10, 13, 16 — the full 3+3+2+3+3+2 cycle — with snare on 5 and 13 to hear it instantly."
+        "text": "The tresillo is a 3+3+2 accent pattern (hits on steps 1, 4, and 7 of an 8-pulse cycle) with Afro-Cuban roots. It's the rhythmic DNA of reggaeton's dembow, dancehall, Afrobeats, and countless pop hits. Program kick on 1, 4, 7, 9, 12, 15 — the 3+3+2 grouping played twice across a 16-step bar — with snare on 5 and 13 to hear it instantly."
       }
     },
     {
@@ -106,7 +106,7 @@
       "name": "What does the Randomize button actually do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Randomize generates a fresh pattern by randomly toggling steps across the drum voices — a creativity spark, not a finished beat. Treat the result as raw material: keep the 2–3 happy accidents, delete the clutter, and lock the kick and snare to your genre's blueprint. Hit it a few times until something inspires you."
+        "text": "Randomize replaces the whole grid with a fresh dice roll: every cell in every drum voice independently gets about a 1-in-5 chance of switching on, so roughly 20% of the grid lights up. It erases your current pattern, so export first if you want to keep it. Treat the result as raw material: keep the 2–3 happy accidents, delete the clutter, and lock the kick and snare to your genre's blueprint."
       }
     },
     {
@@ -338,9 +338,9 @@
       <div class="col-lg-9 col-md-8">
         <div class="tool" role="application" aria-label="Rhythm Pattern Maker">
           <h1 class="title">Rhythm Pattern Maker</h1>
-          <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
-          <div class="desc">16-step sequencer with swing, BPM, multiple instruments, step preview, randomize,
-            export/import.
+          <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
+          <div class="desc">16-step drum sequencer with 7 drum voices, two kits, swing, step preview, randomize and
+            JSON export/import.
             Uses Tone.js for accurate timing.</div>
 
           <div class="controls">
@@ -408,8 +408,8 @@
         <div class="tool-container mt-4">
           <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-info-circle me-2"></i>What Is a Rhythm Pattern Maker?</h2>
-            <p><strong>A rhythm pattern maker is an online step sequencer that lets you program drum grooves by toggling steps on a grid.</strong> Each column is a slice of musical time and each row is a drum sound; the pattern loops continuously. This free tool gives you a 16-step grid (expandable to 32 or 64), tempo and swing controls, classic drum kits, and one-click export.</p>
-            <p>The step sequencer is one of the oldest ideas in electronic music: divide a bar into equal steps, decide which steps trigger a sound, and loop it. This tool brings that workflow to your browser with sample-accurate timing.</p>
+            <p><strong>A rhythm pattern maker is an online step sequencer that lets you program drum grooves by toggling steps on a grid.</strong> Each column is a slice of musical time and each row is a drum sound; the pattern loops continuously. This free tool gives you a 16-step grid (expandable to 32 or 64), 7 drum voices, tempo and swing controls, two drum kits, and JSON export/import.</p>
+            <p>The step sequencer is one of the oldest ideas in electronic music: divide a bar into equal steps, decide which steps trigger a sound, and loop it. This tool brings that workflow to your browser with hits scheduled ahead on the Web Audio clock.</p>
           </div>
         </div>
 
@@ -419,9 +419,9 @@
             <ul>
               <li>A <strong>16-step grid = one bar of 16th notes</strong> in 4/4 time; steps 1, 5, 9, and 13 are the quarter-note downbeats.</li>
               <li>Each step's length in milliseconds is <strong>15,000 ÷ BPM</strong> — at 120 BPM every step lasts exactly 125 ms.</li>
-              <li><strong>Swing delays the off-beat steps only</strong>; 54–62% gives the classic MPC hip-hop groove, 66.7% equals a triplet shuffle. Downbeats never move.</li>
+              <li><strong>Swing delays the off-beat 16ths only</strong>, by a fraction of one step: about 33% on this slider is a full triplet shuffle, and the classic MPC pocket lands near 12–16% here. Downbeats never move.</li>
               <li>Start from <strong>genre blueprints</strong> (four-on-the-floor, boom-bap, tresillo) instead of an empty grid.</li>
-              <li>Export your pattern as <strong>JSON</strong> and rebuild it in any DAW in under a minute.</li>
+              <li><strong>Export JSON</strong> opens your pattern as JSON text in a new tab — copy it, keep it, and rebuild it in any DAW from the same step numbers.</li>
             </ul>
           </div>
         </div>
@@ -430,7 +430,7 @@
           <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-cpu me-2"></i>How This Rhythm Pattern Maker Works</h2>
             <p>This tool schedules every drum hit on the <strong>Tone.js Transport clock</strong>, wired directly to the Web Audio API's hardware clock. Standard browser timers like <code>setTimeout</code> drift under CPU load; the Transport clock pre-schedules each hit against audio-hardware timestamps, so a 120 BPM loop stays locked to the grid.</p>
-            <p>Methodology: each active cell maps to a sixteenth-note subdivision of the pattern length. Tempo (40–240 BPM) sets the pulse; <strong>Division</strong> re-maps the grid to quarter, eighth, sixteenth, or triplet-sixteenth notes; <strong>Swing</strong> (0–60%) delays even-numbered steps. Two kits are built in — <strong>Classic</strong> and <strong>505</strong>. <em>Last reviewed: October 2026.</em></p>
+            <p>Methodology: each active cell maps to a sixteenth-note subdivision of the pattern length. Tempo (40–240 BPM) sets the pulse; <strong>Division</strong> re-maps the grid to quarter, eighth, sixteenth, or triplet-sixteenth notes; <strong>Swing</strong> (0–60%) delays the off-beat sixteenths by that fraction of one step. The sounds are real samples streamed from the Tone.js audio library: the <strong>Classic</strong> kit pairs CR78 kick, snare and hi-hat with TR-505 open hat, clap, percussion and rim, while the <strong>505</strong> kit uses TR-505 samples for all seven voices. <em>Last reviewed: October 2026.</em></p>
           </div>
         </div>
 
@@ -465,10 +465,10 @@
               <li><strong>Set the BPM:</strong> drag the tempo slider (40–240). Start near your genre's home tempo — 90–95 for boom-bap, 124–128 for house, 140 for trap. Tap along with our <a href="../../dj-music-production-tools/bpm-tap-tempo/">BPM tap tempo</a> tool if you're matching an existing track.</li>
               <li><strong>Choose the pattern length:</strong> 16 steps = 1 bar, 32 = 2 bars, 64 = 4 bars. Use 16 for sketching, 32–64 when your fill needs room to breathe.</li>
               <li><strong>Pick a division:</strong> 1/16 for standard programming, 1/8 for half-time feels, Triplet 16 for shuffles and trap rolls.</li>
-              <li><strong>Select a drum kit:</strong> Classic for warm analog-style tones, 505 for punchy digital drums.</li>
+              <li><strong>Select a drum kit:</strong> Classic (CR78-style samples) loads by default. The 505 kit is listed in the same menu, but switching mid-session is unreliable — see Limitations before you rely on it.</li>
               <li><strong>Program the grid:</strong> click cells to toggle hits — click and drag to paint runs. Clicking a step previews its sound immediately.</li>
-              <li><strong>Dial in swing:</strong> raise the Swing slider from 0% toward 55–60% for hip-hop bounce, or leave it at 0% for rigid techno quantization.</li>
-              <li><strong>Play, randomize, export:</strong> hit Play to loop the pattern, Randomize for algorithmic inspiration, Clear to start over, and Export JSON to save your work.</li>
+              <li><strong>Dial in swing:</strong> start near 12–18% for a hip-hop pocket — swing scales differ between machines, and about 33% on this slider is already a full triplet shuffle. Leave it at 0% for rigid techno quantization.</li>
+              <li><strong>Play, randomize, export:</strong> hit Play to loop the pattern, Randomize for algorithmic inspiration, Clear to start over, and Export JSON to view and copy your pattern as JSON text.</li>
             </ol>
           </div>
         </div>
@@ -505,9 +505,9 @@
             <p>Start from a genre's rhythmic DNA, then change 2–3 steps to make it yours:</p>
             <ul>
               <li><strong>House / Techno (124–128 BPM):</strong> kick on 1, 5, 9, 13 (four-on-the-floor); clap on 5, 13; open hats on 3, 7, 11, 15; closed hats on every even step.</li>
-              <li><strong>Boom-bap hip-hop (90–94 BPM):</strong> kick on 1, 7, 10; snare on 5, 13; hats on every step with swing at 56–58%. The lazy kick placement <em>behind</em> the grid is the whole sound.</li>
+              <li><strong>Boom-bap hip-hop (90–94 BPM):</strong> kick on 1, 7, 10; snare on 5, 13; hats on every step with swing near 12–16% on this slider — the pocket an MPC calls 56–58%. The lazy kick placement <em>behind</em> the grid is the whole sound.</li>
               <li><strong>Trap (140 BPM, half-time feel):</strong> kick on 1, 8, 11; snare on 9 only (the "third-beat" snap); rapid hat rolls on 14–16 using the Triplet 16 division.</li>
-              <li><strong>Dembow / Reggaeton (~100 BPM):</strong> kick on 1, 4, 7, 10, 13 — add 16 to resolve the 3+3+2+3+3+2 cycle; snare on 5 and 13 for the backbeat over it. That tresillo kick skeleton is non-negotiable.</li>
+              <li><strong>Dembow / Reggaeton (~100 BPM):</strong> kick on 1, 4, 7, 9, 12, 15 — the tresillo's 3+3+2 grouping played twice across the bar; snare on 5 and 13 for the backbeat over it. That tresillo kick skeleton is non-negotiable.</li>
               <li><strong>Drum and bass (172–176 BPM):</strong> kick on 1, 11; snare on 5, 13; two-step hats shuffling on the off-beats. Speed does the work — keep the pattern sparse.</li>
             </ul>
             
@@ -517,25 +517,26 @@
         <div class="tool-container mt-4">
           <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-sliders me-2"></i>Swing Percentage Translated to Milliseconds</h2>
-            <p>Swing delays every even-numbered step by a fraction of the step duration. The offset formula is:</p>
+            <p>Swing delays every off-beat sixteenth — steps 2, 4, 6, 8 and so on — by a fraction of one step's duration. The offset formula is:</p>
             <p><code><strong>Swing offset (ms) = (Swing% ÷ 100) × Step duration (ms)</strong></code></p>
-            <p><strong>Worked example:</strong> at <strong>120 BPM</strong> with <strong>58% swing</strong>, one step lasts 125 ms. Each off-beat step shifts later by 0.58 × 125 = <strong>72.5 ms</strong>. That 72 ms delay is the difference between a robotic grid and a head-nodding groove — long enough to feel, short enough to stay locked.</p>
-            <p>Reference points: <strong>0%</strong> is machine-straight; <strong>54–62%</strong> is the classic MPC hip-hop pocket; <strong>66.7%</strong> equals a true triplet shuffle (2:1 ratio).</p>
-            <p><strong>Swing moves only the off-beats.</strong> The "e" and "a" of each beat shift; downbeats — and the snare on beats 2 and 4 — stay exactly in time, the way classic drum machines like the MPC and TR-909 handle swing. This tool's Swing slider runs 0–60%: enough for any hip-hop or house pocket, just short of a full triplet shuffle.</p>
+            <p><strong>Worked example:</strong> at <strong>120 BPM</strong> with the slider at <strong>25%</strong>, one step lasts 125 ms. Each off-beat step shifts later by 0.25 × 125 = <strong>31.25 ms</strong>. That small delay is the difference between a robotic grid and a head-nodding groove — long enough to feel, short enough to stay locked.</p>
+            <p>Reference points on this slider: <strong>0%</strong> is machine-straight; about <strong>33%</strong> equals a true triplet shuffle (the off-beat sits two-thirds through its pair, a 2:1 ratio); the <strong>60%</strong> maximum pushes off-beats 60% of a step late — an extreme shuffle, well past triplet.</p>
+            <p><strong>Read this slider on its own scale.</strong> On an MPC, swing percentages start at 50% for straight timing and the classic boom-bap pocket sits at 54–62%. This slider starts at 0% for straight, so the same pocket lands near 8–24% here, and the MPC's 66.7% triplet point lands near 33%. Same delays, different zero point — convert by the delay you want, not by the printed number.</p>
+            <p><strong>Swing moves only the off-beats.</strong> The "e" and "a" of each beat shift; downbeats — and the snare on beats 2 and 4 — stay exactly in time, the way classic drum machines like the MPC and TR-909 handle swing.</p>
           </div>
         </div>
 
         <div class="tool-container mt-4">
           <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-box-arrow-up me-2"></i>From Browser to DAW: The Export Workflow</h2>
-            <p>The Export JSON button downloads your pattern as a small text file: your step grid (each drum voice mapped to its on/off steps) plus the pattern length. The format is plain JSON, so you can read every step number in a text editor. To continue in a DAW:</p>
+            <p>The Export JSON button opens your pattern as JSON text in a new browser tab — nothing downloads. The JSON holds your step grid (each drum voice as a row of 0s and 1s, where 1 is a hit) plus the pattern length. It does not store your BPM, swing, kit, or division, so note those separately. To continue in a DAW:</p>
             <ol>
-              <li>Export the JSON and open it in any text editor to see your step numbers.</li>
+              <li>Export the JSON, copy the text from the new tab, and save it in a text editor.</li>
               <li>In your DAW's drum sequencer (Ableton Drum Rack, FL Studio Channel Rack, or Logic's Step Sequencer), set the same BPM and step count.</li>
-              <li>Enable the matching step numbers for each drum voice — the numbers transfer 1:1.</li>
-              <li>Re-apply swing in the DAW (most offer a groove/swing knob) using the percentage you dialed in here.</li>
+              <li>For each drum voice, enable the steps marked 1 — the grid transfers 1:1.</li>
+              <li>Re-apply swing in the DAW with its groove/swing control, converting from this slider's scale using the swing section above.</li>
             </ol>
-            <p>Keep the JSON files as versioned sketches (<code>chorus-v1.json</code>, <code>chorus-v2.json</code>) — they weigh kilobytes, and Import JSON reloads any of them for quick auditioning.</p>
+            <p>Keep the JSON files as versioned sketches (<code>chorus-v1.json</code>, <code>chorus-v2.json</code>) — they weigh kilobytes, and Import JSON reloads any of them from a paste for quick auditioning.</p>
           </div>
         </div>
 
@@ -551,12 +552,12 @@
           <div class="tool-section">
             <h2 class="text-mid mb-3"><i class="bi bi-diagram-3 me-2"></i>Polyrhythm vs. Polymeter: Stop Mixing Them Up</h2>
             <p>A <strong>polyrhythm</strong> layers two subdivisions over the <em>same</em> timespan — 3 evenly spaced hits in the time of 2 beats (the 3:2 hemiola). A <strong>polymeter</strong> layers two <em>different bar lengths</em> sharing the same step duration — a 4-step loop against a 5-step loop, realigning every 20 steps (their lowest common multiple).</p>
-            <p>On this grid, accent steps 1, 6, and 11 against straight quarter-note kicks for a 3-against-4 polyrhythm. For a polymeter, loop a 12-step phrase inside the 16-step grid by muting one voice's last 4 steps and let the downbeat drift.</p>
+            <p>On this grid, accent steps 1, 6, and 11 — the closest grid positions — against straight quarter-note kicks for a 3-against-4 polyrhythm. A true polymeter can't loop here: every row shares the one pattern length you select, so voices can't cycle at different lengths. Take that idea to a DAW — a 12-step phrase against this 16-step bar realigns every 48 steps, their lowest common multiple.</p>
           </div>
         </div>
 
         <figure class="my-4 text-center">
-          <div class="border rounded p-5 bg-light text-muted">[Infographic: swing timing diagram — straight 16ths vs 58% swing vs triplet shuffle, with millisecond offsets at 120 BPM]</div>
+          <img src="../../assets/diagrams/music-theory-tools-rhythm-pattern-maker-swing-timing.svg" alt="How swing percentage shifts off-beat steps in milliseconds" class="img-fluid border rounded" width="800" height="450" loading="lazy">
           <figcaption class="small text-muted mt-2">Alt text: "How swing percentage shifts off-beat steps in milliseconds"</figcaption>
         </figure>
 
@@ -565,10 +566,11 @@
             <h2 class="text-mid mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Limitations</h2>
             <ul>
               <li><strong>Browser audio latency varies.</strong> The Transport clock keeps timing tight, but Bluetooth headphones and heavy system load can add 20–100 ms of output delay. Use wired headphones for critical groove work.</li>
-              <li><strong>Export is JSON, not audio.</strong> This tool saves patterns, not rendered WAV files — you rebuild the sound in a DAW or re-record the browser output.</li>
+              <li><strong>Export is JSON text, not audio or MIDI.</strong> It opens in a new browser tab instead of downloading, and it stores only the grid and pattern length — BPM, swing, kit and division are not saved. You rebuild the sound in a DAW or re-record the browser output.</li>
               <li><strong>No per-step velocity.</strong> Every hit plays at full volume, so ghost notes and accents must be programmed with density rather than dynamics.</li>
               <li><strong>Fixed 4/4 framework.</strong> Odd meters like 7/8 or 5/4 can't be represented on the 16-step grid; approximate them with muted steps or use a DAW.</li>
               <li><strong>Two kits only.</strong> The Classic and 505 kits cover a lot of ground, but they won't replace a full sample library for acoustic genres.</li>
+              <li><strong>Kit switching is unreliable.</strong> Choosing the 505 kit mid-session unloads the current samples and the tool asks for a page reload — and a reload restarts the tool on the Classic kit. Treat Classic as the working kit; the 505 option cannot be auditioned reliably in a normal session.</li>
               <li><strong>Small speakers hide the low end.</strong> Phone and laptop speakers roll off hard below a few hundred hertz, so the kick loses its weight — judge the mix on headphones before you commit to a pattern.</li>
             </ul>
           </div>
@@ -623,7 +625,7 @@
                 </h3>
                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Start at 56–58%, the classic MPC pocket for boom-bap and 90s hip-hop. Laid-back neo-soul grooves sit around 60–62%. Swing moves only the off-beat 16ths — downbeats and the snare on 2 and 4 stay fixed. Back off 2–3% when the pattern starts stumbling instead of bouncing. Trap and drill usually stay near 0–15% swing and get their feel from triplet hi-hat rolls instead.
+                    On this tool's slider, start near 12–16% for boom-bap and 90s hip-hop — the pocket an MPC calls 56–58%, because the MPC scale starts at 50% for straight timing and this slider starts at 0%. Laid-back neo-soul sits later, around 20–30%. Swing moves only the off-beat 16ths; downbeats and the snare on 2 and 4 stay fixed. About 33% is a full triplet shuffle. Trap and drill stay near 0–10% and get their feel from triplet hi-hat rolls instead.
                   </div>
                 </div>
               </div>
@@ -665,7 +667,7 @@
                 </h3>
                 <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Click Export JSON to download your pattern as a text file mapping each drum to its active step numbers. In your DAW, set the same BPM and grid length, then enable the matching steps in its drum sequencer. Re-apply your swing percentage on the DAW's groove control and you're done.
+                    Click Export JSON and your pattern opens as JSON text in a new browser tab — it is not a file download. Copy the text into a file to keep it. The JSON maps each drum voice to its steps as 0s and 1s, plus the pattern length; BPM and swing are not stored. In your DAW, set the same BPM and grid length, enable the steps marked 1 for each voice, and re-apply your swing on the DAW's groove control.
                   </div>
                 </div>
               </div>
@@ -693,7 +695,7 @@
                 </h3>
                 <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    The tresillo is a 3+3+2 accent pattern (hits on steps 1, 4, and 7 of an 8-pulse cycle) with Afro-Cuban roots. It's the rhythmic DNA of reggaeton's dembow, dancehall, Afrobeats, and countless pop hits. Program kick on 1, 4, 7, 10, 13, 16 — the full 3+3+2+3+3+2 cycle — with snare on 5 and 13 to hear it instantly.
+                    The tresillo is a 3+3+2 accent pattern (hits on steps 1, 4, and 7 of an 8-pulse cycle) with Afro-Cuban roots. It's the rhythmic DNA of reggaeton's dembow, dancehall, Afrobeats, and countless pop hits. Program kick on 1, 4, 7, 9, 12, 15 — the 3+3+2 grouping played twice across a 16-step bar — with snare on 5 and 13 to hear it instantly.
                   </div>
                 </div>
               </div>
@@ -721,7 +723,7 @@
                 </h3>
                 <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Randomize generates a fresh pattern by randomly toggling steps across the drum voices — a creativity spark, not a finished beat. Treat the result as raw material: keep the 2–3 happy accidents, delete the clutter, and lock the kick and snare to your genre's blueprint. Hit it a few times until something inspires you.
+                    Randomize replaces the whole grid with a fresh dice roll: every cell in every drum voice independently gets about a 1-in-5 chance of switching on, so roughly 20% of the grid lights up. It erases your current pattern, so export first if you want to keep it. Treat the result as raw material: keep the 2–3 happy accidents, delete the clutter, and lock the kick and snare to your genre's blueprint.
                   </div>
                 </div>
               </div>

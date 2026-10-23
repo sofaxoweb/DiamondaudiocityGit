@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Scale Practice Generator: Scales &amp; Modes Tool</title>
   <meta name="description"
-    content="Free scale practice generator: build custom routines for major, minor, pentatonic, blues and modal scales with metronome and tone playback. Start today.">
+    content="Free scale practice generator with playback: build timed routines for 12 scales and modes, set tempo and direction, and play along to the click.">
   <link rel="canonical" href="https://pitchdetectors.com/dj-music-production-tools/scale-practice-generator/">
     <link rel="alternate" hreflang="en" href="https://pitchdetectors.com/dj-music-production-tools/scale-practice-generator/">
     <link rel="alternate" hreflang="x-default" href="https://pitchdetectors.com/dj-music-production-tools/scale-practice-generator/">
@@ -15,7 +15,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Scale Practice Generator Online – Piano, Guitar & Modal Scales Tool">
   <meta property="og:description"
-    content="Practice major, minor, pentatonic, and modal scales with real-time audio playback and metronome.">
+    content="Free scale practice generator with playback: build timed routines for 12 scales and modes, set tempo and direction, and play along to the click.">
   <meta property="og:url" content="https://pitchdetectors.com/dj-music-production-tools/scale-practice-generator/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="./assets/imgs/logo.png">
@@ -23,7 +23,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Scale Practice Generator Online">
-  <meta name="twitter:description" content="Generate and practice scales with audio playback and metronome online.">
+  <meta name="twitter:description" content="Free scale practice generator with playback: build timed routines for 12 scales and modes, set tempo and direction, and play along to the click.">
   <meta name="twitter:image" content="./assets/imgs/logo.png">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -224,7 +224,7 @@
         <div class="tool-container">
           <div class="tool-title mb-4">
             <h1 class="display-6 fw-bold text-teal"><i class="bi bi-file-music me-2"></i>Scale Practice Generator</h1>
-            <p class="text-muted small">Last updated: October 18, 2026 · Written by the Pitch Detectors Editorial Team</p>
+            <p class="text-muted small">Last updated: October 23, 2026 · Written by the Pitch Detectors Editorial Team</p>
             <p class="lead text-muted">A <strong>scale practice generator</strong> builds structured scale routines — pick a root note and scale type, set tempo and direction, and play along with the built-in metronome and tone synthesizer. It turns aimless noodling into deliberate practice across 12 scale types, from major and pentatonic to all seven modes.</p>
           </div>
 
@@ -383,7 +383,7 @@
                                 <li><strong>Speed comes from slow, clean repetitions</strong> — not from practicing fast. Start at 60 BPM and climb +4 BPM after 3 flawless reps.</li>
                                 <li>The 7 modes are <strong>rotations of one major scale</strong>, not 7 separate scales: D Dorian is C major played from D to D.</li>
                                 <li><strong>First scale by goal:</strong> guitarists start with minor pentatonic, pianists with major, jazz players add Dorian and Mixolydian.</li>
-                                <li>The metronome <strong>clicks once per beat</strong> regardless of subdivision, and the up-down direction replays the top octave note at the turnaround.</li>
+                                <li>The metronome <strong>clicks once per beat</strong> regardless of subdivision, and the up-down direction plays the top note once — the descent starts a step below the peak, so an 8-note scale makes a 15-note round.</li>
                                 <li>Practice <strong>descending too</strong> — most players are sloppier coming down, and solos don't only go up.</li>
                             </ul>
                         </section>
@@ -397,13 +397,13 @@
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">How This Generator Works</h2>
                             <p><strong>This generator builds a complete practice routine from your settings — and its behavior is fully documented.</strong> Pick a <strong>root note</strong> and one of <strong>12 scale types</strong>, set a <strong>starting octave</strong> (1–6), <strong>tempo</strong> (30–300 BPM), <strong>direction pattern</strong>, and <strong>rhythmic subdivision</strong>, then choose <strong>repeats</strong> (1–10). Press Generate and the built-in <strong>tone synthesizer</strong> plays the scale while the <strong>metronome</strong> keeps time — you play along.</p>
-                            <p><strong>Methodology:</strong> every scale is computed from its semitone interval formula (table below), so the notes are always theoretically correct for the selected root. Frequencies follow 12-tone equal temperament with A4 = 440 Hz — I verified A4 renders at exactly 440.00 Hz and C4 at 261.63 Hz in the page's code. Two behaviors worth knowing: the metronome clicks <strong>once per beat</strong> regardless of subdivision (eighth notes at 80 BPM give 80 clicks and 160 notes per minute), and the <strong>Ascending + Descending</strong> direction replays the top octave note at the turnaround. The output is a numbered note list with semitone offsets, exercise stats, and <strong>Copy</strong> / <strong>Export .txt</strong> buttons. Check any pitch against the <a href="../../pitch-detector-tools/note-to-frequency-online/">Note to Frequency Converter</a>.</p>
-                            <p><em>Last reviewed: October 18, 2026. Scale formulas follow standard Western music theory; frequencies use A4 = 440 Hz equal temperament.</em></p>
+                            <p><strong>Methodology:</strong> every scale is computed from its semitone interval formula (table below), so the notes are always theoretically correct for the selected root. Frequencies follow 12-tone equal temperament with A4 = 440 Hz — verified against the page's code for this update: A4 renders at exactly 440.00 Hz and C4 at 261.63 Hz. Two behaviors worth knowing: the metronome clicks <strong>once per beat</strong> regardless of subdivision (eighth notes at 80 BPM give 80 clicks and 160 notes per minute), and the <strong>Ascending + Descending</strong> direction plays the top note exactly once — the descent starts on the step below the peak, so the turnaround never doubles a note. Two more: <strong>melodic minor</strong> uses its ascending form in both directions, the way jazz players practice it, and the sequence spells notes with <strong>sharps</strong> — F major lists A♯ where theory books write B♭; the pitch is identical. The output is a numbered note list with semitone offsets, exercise stats, and <strong>Copy</strong> / <strong>Export .txt</strong> buttons. Check any pitch against the <a href="../../pitch-detector-tools/note-to-frequency-online/">Note to Frequency Converter</a>.</p>
+                            <p><em>Last reviewed: October 23, 2026. Scale formulas follow standard Western music theory; frequencies use A4 = 440 Hz equal temperament.</em></p>
                         </section>
 
                         <section class="mb-5">
                             <h2 class="h3 fw-bold text-teal mb-3">Scale Formulas and Worked Example</h2>
-                            <p>Every scale is a recipe of whole steps (W = 2 semitones) and half steps (H = 1 semitone). Here are all 12 types in this generator:</p>
+                            <p>Every scale is a recipe of whole steps (W = 2 semitones) and half steps (H = 1 semitone). Here are all 12 types in this generator. The examples below use textbook spellings (E♭, B♭); the generator's on-screen sequence spells the same pitches with sharps instead (D♯, A♯).</p>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead><tr><th>Scale</th><th>Interval formula</th><th>Example in C</th></tr></thead>
@@ -425,7 +425,7 @@
                             </div>
                             <p><strong>Worked example:</strong> G major pentatonic, up-down direction, quarter notes at 80 BPM.</p>
                             <ol>
-                                <li><strong>Notes:</strong> apply 1-2-3-5-6 to G → <strong>G A B D E G E D B A G</strong> — 11 notes; the top G sounds twice at the turnaround.</li>
+                                <li><strong>Notes:</strong> apply 1-2-3-5-6 to G → <strong>G A B D E G E D B A G</strong> — 11 notes; the top G sounds once, because the descent starts a step below the peak.</li>
                                 <li><strong>Timing:</strong> quarter notes at 80 BPM = 0.75 seconds per note; one up-down round = 11 × 0.75 = <strong>8.25 seconds</strong>.</li>
                                 <li><strong>Reps:</strong> 4 clean repeats ≈ 33 seconds of focused work on one scale shape.</li>
                                 <li><strong>Progression:</strong> when all 4 reps are flawless, raise to 84 BPM (the +4 rule below).</li>
@@ -447,7 +447,7 @@
                         </section>
 
                         <section class="mb-5">
-                            <h2 class="h3 fw-bold text-teal mb-3">Reading Your Result: Build a 15-Minute Routine</h2>
+                            <h2 class="h3 fw-bold text-teal mb-3">Build a 15-Minute Routine From the Output</h2>
                             <p>The generator outputs a playable routine. Structure your session like this:</p>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -499,6 +499,7 @@
                                 <li><strong>Equal temperament only.</strong> The synthesizer uses A4 = 440 Hz; fretless strings, winds, and vocalists bend pitches microtonally in ways this tool can't model.</li>
                                 <li><strong>Technique needs a teacher's eyes.</strong> The generator can't see tense shoulders or collapsing wrists — video yourself or get occasional feedback.</li>
                                 <li><strong>Diminishing returns are real.</strong> Past ~15 focused minutes on scales, switch to repertoire; application consolidates what drills introduce.</li>
+                                <li><strong>One octave per routine.</strong> Every sequence spans a single octave from your starting octave — multi-octave patterns need a second run at the next octave setting.</li>
                             </ul>
                         </section>
 
@@ -519,7 +520,7 @@
                             <p>Generate the routine here, then take the hard bars to a teacher or a mirror — the generator plans the work; a human eye fixes the technique.</p>
                         </section>
 
-                        <figure class="my-4 text-center"><div class="border rounded p-5 bg-light text-muted">[Infographic: the 7-day tempo ladder — 60 BPM start, +4 BPM per 3 clean reps, typical weekly gains]</div><figcaption class="small text-muted mt-2">Alt text: Infographic of the 7-day tempo ladder for scale practice, from 60 BPM upward in 4 BPM steps.</figcaption></figure>
+                        <figure class="my-4 text-center"><img src="../../assets/diagrams/dj-music-production-tools-scale-practice-generator-tempo-ladder.svg" alt="Infographic of the 7-day tempo ladder for scale practice, from 60 BPM upward in 4 BPM steps." class="img-fluid border rounded" width="800" height="450" loading="lazy"><figcaption class="small text-muted mt-2">Alt text: Infographic of the 7-day tempo ladder for scale practice, from 60 BPM upward in 4 BPM steps.</figcaption></figure>
 
                         <section class="mb-5">
                             <p class="small text-muted"><em>This tool is for informational and practice purposes. For graded exams, follow your exam board's official syllabus (e.g. ABRSM) and your teacher's guidance.</em></p>
